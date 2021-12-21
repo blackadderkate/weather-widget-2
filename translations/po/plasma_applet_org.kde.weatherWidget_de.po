@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
+"POT-Creation-Date: 2016-03-28 11:43+0200\n"
+"PO-Revision-Date: 2016-06-25 20:33+0100\n"
+"Last-Translator: mfroeb\n"
+"Language-Team: mfroeb\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../package/contents/code/unit-utils.js:26
+#: ../package/contents/ui/config/ConfigUnits.qml:99
+msgid "°C"
+msgstr "°C"
+
+#: ../package/contents/code/unit-utils.js:26
+#: ../package/contents/ui/config/ConfigUnits.qml:110
+msgid "°F"
+msgstr "°F"
+
+#: ../package/contents/code/unit-utils.js:54
+#: ../package/contents/ui/config/ConfigUnits.qml:138
+msgid "inHg"
+msgstr "inHg"
+
+#: ../package/contents/code/unit-utils.js:57
+#: ../package/contents/ui/config/ConfigUnits.qml:144
+msgid "mmHg"
+msgstr "mmHg"
+
+#: ../package/contents/code/unit-utils.js:59
+#: ../package/contents/ui/config/ConfigUnits.qml:127
+msgid "hPa"
+msgstr "hPa"
+
+#: ../package/contents/code/unit-utils.js:86
+#: ../package/contents/ui/config/ConfigUnits.qml:172
+msgid "mph"
+msgstr "mph"
+
+#: ../package/contents/code/unit-utils.js:88
+#: ../package/contents/ui/config/ConfigUnits.qml:178
+msgid "km/h"
+msgstr "km/h"
+
+#: ../package/contents/code/unit-utils.js:90
+#: ../package/contents/ui/config/ConfigUnits.qml:161
+msgid "m/s"
+msgstr "m/s"
+
+#: ../package/contents/config/config.qml:6
+msgid "General"
+msgstr "Allgemein"
+
+#: ../package/contents/config/config.qml:11
+msgid "Appearance"
+msgstr "Aussehen"
+
+#: ../package/contents/config/config.qml:16
+msgid "Units"
+msgstr "Einheiten"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:41
+msgid "Render meteogram for yr.no"
+msgstr "Meteogram für yr.no erzeugen"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:52
+msgid "Layout"
+msgstr "Anordnung"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:58
+msgid "Layout type:"
+msgstr "Darstellung:"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:64
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:68
+msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
+msgstr ""
+"ACHTUNG: Diese Einstellung hat keine Auswirkung auf die Anzeige im "
+"Systemabschnitt der Kontrolleiste."
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:81
+msgid "Vertical"
+msgstr "Vertikal"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:87
+msgid "Compact"
+msgstr "Kompakt"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:99
+msgid "In-Tray Settings"
+msgstr "Anzeige im Systemabschnitt der Kontrolleiste"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:105
+msgid "Active timeout:"
+msgstr "Ausblendzeit:"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:114
+msgctxt "Abbreviation for seconds"
+msgid "sec"
+msgstr "s"
+
+#: ../package/contents/ui/config/ConfigAppearance.qml:117
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"ACHTUNG: Nach dieser Zeit wird das Symbol im Systemabschnitt automatisch "
+"ausgeblendet, bis eine Aktualisierung stattfindet. Sie können die Anzeige "
+"der Symbole in den Einstellungen für den Systemabschnitt der Kontrollleiste "
+"verändern."
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:45
+msgid "Add yr.no Place"
+msgstr "Ort von \"yr.no\" hinzufügen"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:76
+#: ../package/contents/ui/config/ConfigGeneral.qml:120
+msgid "Paste URL here"
+msgstr "URL hier einfügen"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:84
+msgid ""
+"Find your town string in yr.no (english version)\n"
+"and use the URL from your browser to add a new location. E.g. paste this:\n"
+"http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
+msgstr ""
+"Suchen Sie die URL für Ihre Stadt auf \"www.yr.no\" (Englische Version)\n"
+"und fügen Sie diese hier ein, um einen neuen Ort hinzuzufügen, z.B.\n"
+"\"http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/\" für Bonn, "
+"Deutschland"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:91
+msgid "Add Open Weather Map Place"
+msgstr "Ort von \"Open Weather Map\" hinzufügen"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:128
+msgid "City alias"
+msgstr "Anzeigename"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:137
+msgid "Find your city ID by searching here:"
+msgstr "Suchen Sie Ihren Ort hier:"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:169
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"... und fügen Sie die URL hier ein, z.B.\n"
+"http://openweathermap.org/city/2946447 für Bonn, Deutschland."
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:176
+msgid "Change Displayed As"
+msgstr "Anzeigename ändern"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:190
+msgid "Enter place alias"
+msgstr "Anzeigename eingeben"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:201
+msgid "Plasmoid version: "
+msgstr "Plasmoid-Version: "
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:207
+msgid "Location"
+msgstr "Orte"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:224
+msgid "Source"
+msgstr "Quelle"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:240
+msgid "Place Identifier"
+msgstr "Ortskennzeichnung"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:255
+msgid "Displayed as"
+msgstr "Anzeigename"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:294
+msgid "Action"
+msgstr "Aktionen"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:382
+msgid "Miscellaneous"
+msgstr "Verschiedenes"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:393
+msgid "Reload interval:"
+msgstr "Aktualisierungsintervall:"
+
+#: ../package/contents/ui/config/ConfigGeneral.qml:403
+msgctxt "Abbreviation for minutes"
+msgid "min"
+msgstr "min"
+
+#: ../package/contents/ui/config/ConfigUnits.qml:93
+msgid "Temperature:"
+msgstr "Temperatur:"
+
+#: ../package/contents/ui/config/ConfigUnits.qml:121
+msgid "Pressure:"
+msgstr "Druck:"
+
+#: ../package/contents/ui/config/ConfigUnits.qml:155
+msgid "Wind speed:"
+msgstr "Windgeschwindigkeit:"
+
+#: ../package/contents/ui/config/ConfigUnits.qml:189
+msgid "Timezone:"
+msgstr "Zeitzone:"
+
+#: ../package/contents/ui/config/ConfigUnits.qml:195
+msgid "My local-time"
+msgstr "Lokalzeit"
+
+#: ../package/contents/ui/config/ConfigUnits.qml:206
+msgid "UTC"
+msgstr "Weltzeit (UTC)"
+
+#: ../package/contents/ui/FullRepresentation.qml:59
+#: ../package/contents/ui/FullRepresentationInTray.qml:58
+msgid "Next Location"
+msgstr "Nächster Ort"
+
+#: ../package/contents/ui/main.qml:132
+msgid "Resume Updating"
+msgstr "Aktualisierungen fortsetzen"
+
+#: ../package/contents/ui/main.qml:132
+msgid "Pause Updating"
+msgstr "Aktualisierungen unterbrechen"
+
+#: ../package/contents/ui/main.qml:343
+msgid "%1 ago"
+msgstr "vor %1"
+
+#: ../package/contents/ui/main.qml:373
+msgid "humidity"
+msgstr "Feuchtigkeit"
+
+#: ../package/contents/ui/main.qml:374
+msgid "clouds"
+msgstr "Wolken"
+
+#: ../package/contents/ui/main.qml:378 ../package/contents/ui/main.qml:400
+msgid "near future"
+msgstr "Demnächst"
+
+#: ../package/contents/ui/Meteogram.qml:557
+msgid "Offline mode"
+msgstr "Offline-Modus"
+
+#: ../package/contents/ui/Meteogram.qml:557
+msgid "Loading image..."
+msgstr "Lade Bild..."
+
+#: ../package/contents/ui/providers/OpenWeatherMap.qml:323
+#: ../package/contents/ui/providers/OpenWeatherMap.qml:406
+#: ../package/contents/ui/providers/YrNo.qml:258
+msgid "today"
+msgstr "heute"
