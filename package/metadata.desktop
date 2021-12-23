@@ -1,13 +1,9 @@
 [Desktop Entry]
 Name=Weather Widget 2
-Name[lt]=Orų valdiklis 2
-
+Name[lt]=Orų valdiklis2
 Comment=Plasmoid showing weather information from met.no server
 Comment[lt]=Plasma valdiklis, rodantis orų informaciją iš met.no serverio
-
-
-Icon=/usr/share/plasma/plasmoids/org.kde.weatherWidget-2/contents/images/weather-widget.svg
-
+Icon=weather-clouds
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
 X-Plasma-API=declarativeappletscript
@@ -18,7 +14,7 @@ X-KDE-ParentApp=
 X-KDE-PluginInfo-Author=Kate
 X-KDE-PluginInfo-Email=kate.buckley@gmail.com
 X-KDE-PluginInfo-Name=org.kde.weatherWidget-2
-X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Version=1.1
 X-KDE-PluginInfo-Website=https://github.com/blackadderkate/weather-widget-2
 X-KDE-PluginInfo-Category=Examples
 X-KDE-PluginInfo-Depends=

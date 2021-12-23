@@ -3,7 +3,6 @@ var scheduledDataReload = null
 function isReadyToReload(reloadIntervalMs, lastReloaded) {
     var now = new Date().getTime()
 
-dbginout("isReadyToReload","in")
     dbgprint("loadingError=" + loadingError)
     dbgprint("scheduledDataReload=" + scheduledDataReload)
     dbgprint("lastReloaded=" + lastReloaded)
@@ -16,7 +15,6 @@ dbginout("isReadyToReload","in")
     if (!lastReloaded) {
         lastReloaded = 0
     }
-dbginout("isReadyToReload","out")
     return now - lastReloaded > reloadIntervalMs
 }
 

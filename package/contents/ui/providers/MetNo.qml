@@ -54,11 +54,11 @@ Item {
         function buildMetogramData(readingsArray) {
             meteogramModel.clear()
             var readingsLength=(readingsArray.properties.timeseries.length);
-            readingsLength=59
             var dateFrom=parseISOString(readingsArray.properties.timeseries[0].time)
             var precipitation_unit=readingsArray.properties.meta.units["precipitation_amount"]
             var counter=0
-            for (var i=1; i<readingsLength; i++) {
+            var i=1
+            while (readingsArray.properties.timeseries[i].data.next_1_hours) {
                 var obj=readingsArray.properties.timeseries[i]
                 var dateTo=parseISOString(obj.time)
                 var wd=obj.data.instant.details["wind_from_direction"]
@@ -68,9 +68,6 @@ Item {
                 var icon=obj.data.next_1_hours.summary["symbol_code"]
                 var prec=obj.data.next_1_hours.details["precipitation_amount"]
                 var unit=""
-                if(geticonNumber(icon) ==0 ) {
-                    dbgprint("ERROR ********************"+icon+"*********************")
-                }
                 if (prec > 0) {
                     counter++
                     if (counter === 1) {
@@ -96,8 +93,8 @@ Item {
                     iconName: geticonNumber(icon)
                 })
                 dateFrom=dateTo
+                i++
             }
-
             main.meteogramModelChanged = !main.meteogramModelChanged
         }
 
@@ -216,15 +213,9 @@ Item {
     function geticonNumber(text) {
     var codes = {
             "partlycloudy":    3,
-            "partlycloudy_day":    3,
-            "partlycloudy_night":    3,
             "clearsky":    1,
-            "clearsky_day":    1,
-            "clearsky_night":    1,
             "cloudy":    4,
             "fair":    2,
-            "fair_day":    2,
-            "fair_night":    2,
             "fog":    15,
             "heavyrain":    10,
             "heavyrainandthunder":    11,
@@ -263,6 +254,10 @@ Item {
             "snowandthunder":    14,
             "snowshowers":    8,
             "snowshowersandthunder":    21
+        }
+        var underscore=text.indexOf("_")
+        if (underscore > -1) {
+          text=text.substr(0,underscore)
         }
         var num=codes[text]
         return num
