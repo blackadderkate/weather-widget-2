@@ -16,7 +16,7 @@ Item {
     property bool sunRiseSetFlag: false
 
     function getCreditLabel(placeIdentifier) {
-        return 'Weather forecast from met.no, delivered by the Norwegian Meteorological Institute and the NRK'
+        return 'Weather forecast compiled using Data provided by The Norwegian Meteorological Institute'
     }
 
     function getCreditLink(placeIdentifier) {
@@ -87,7 +87,7 @@ Item {
                     precipitationAvg: prec,
                     precipitationMin: unit,
                     precipitationMax: prec,
-                    windDirection: wd,
+                    windDirection: parseFloat(wd),
                     windSpeedMps: parseFloat(ws),
                     pressureHpa: parseFloat(ap),
                     iconName: geticonNumber(icon)
@@ -200,7 +200,8 @@ Item {
             refreshTooltipSubText()
             successCallback()
         }
-
+        weatherDataFlag=false
+        sunRiseSetFlag=false
         var xhr1 = DataLoader.fetchJsonFromInternet('https://api.sunrise-sunset.org/json?formatted=0&'+placeIdentifier, successSRAS, failureCallback)
         var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
         return [xhr1, xhr2]

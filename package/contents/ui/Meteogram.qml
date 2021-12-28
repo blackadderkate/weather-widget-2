@@ -62,6 +62,7 @@ Item {
     property color pressureColor: textColorLight ? Qt.rgba(0.3, 1, 0.3, 1) : Qt.rgba(0.0, 0.6, 0.0, 1)
     property color temperatureWarmColor: textColorLight ? Qt.rgba(1, 0.3, 0.3, 1) : Qt.rgba(1, 0.0, 0.0, 1)
     property color temperatureColdColor: textColorLight ? Qt.rgba(0.2, 0.7, 1, 1) : Qt.rgba(0.1, 0.5, 1, 1)
+    property var wind_speed_array: ["🠣","🠫","🠯","🡇"]
 
     onMeteogramModelChangedChanged: {
         dbgprint('meteogram changed')
@@ -94,6 +95,8 @@ Item {
                 precipitationMax: meteogramModelObj.precipitationMax,
                 canShowDay: true,
                 canShowPrec: true,
+                windDirection: meteogramModelObj.windDirection,
+                windSpeedMps: meteogramModelObj.windSpeedMps,
                 differenceHours: differenceHours
             })
         }
@@ -153,22 +156,22 @@ Item {
 
         _adjustLastDay()
 
-        dbgprint('minValue: ' + minValue)
-        dbgprint('maxValue: ' + maxValue)
-        dbgprint('temperatureSizeY: ' + temperatureSizeY)
+//         dbgprint('minValue: ' + minValue)
+//         dbgprint('maxValue: ' + maxValue)
+//         dbgprint('temperatureSizeY: ' + temperatureSizeY)
 
         var mid = (maxValue - minValue) / 2 + minValue
         var halfSize = temperatureSizeY / 2
 
         temperatureAdditiveY = Math.round(- (mid - halfSize))
 
-        dbgprint('temperatureAdditiveY: ' + temperatureAdditiveY)
+//         dbgprint('temperatureAdditiveY: ' + temperatureAdditiveY)
 
         redrawCanvas()
     }
 
     function redrawCanvas() {
-        dbgprint('redrawing canvas with temperatureMultiplierY=' + temperatureMultiplierY)
+//         dbgprint('redrawing canvas with temperatureMultiplierY=' + temperatureMultiplierY)
 
         var newPathElements = []
         var newPressureElements = []
@@ -215,7 +218,7 @@ Item {
     function precipitationFormat(precFloat) {
         if (precFloat >= 0.1) {
             var result = Math.round(precFloat * 10) / 10
-            dbgprint('precipitationFormat returns ' + result)
+//             dbgprint('precipitationFormat returns ' + result)
             return String(result)
         }
         return ''
@@ -402,6 +405,20 @@ Item {
                     text: (differenceHours === 1 && textVisible) || index === hourGridModel.count-1 || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, timePeriod)
                 }
 
+                PlasmaComponents.Label {
+                    id: wind
+                    font.family: 'weathericons'
+                    font.pixelSize: 14 * units.devicePixelRatio
+                    font.pointSize: -1
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: wind_speed_array[ Math.min( wind_speed_array.length, Math.trunc( windSpeedMps / 8)) ]
+                    rotation: Math.round( windDirection / 22.5 ) * 22.5
+                    anchors.top: hourText.bottom
+                    anchors.topMargin: -12
+                     visible: (windDirection > 0) || (windSpeedMps > 0)
+                }
+
                 Item {
                     visible: canShowPrec
                     anchors.fill: parent
@@ -557,7 +574,7 @@ Item {
         Image {
             id: overviewImage
             cache: false
-            source: !enableRendering ? overviewImageSource : undefined
+            source: !enableRendering ? overviewImageSource : ''
             anchors.fill: parent
         }
 

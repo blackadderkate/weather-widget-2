@@ -36,7 +36,7 @@ Item {
     property double hourLegendBottomMargin: defaultFontPixelSize * 0.2
 
     width: imageWidth
-    height: headingHeight + imageHeight + footerHeight + nextDaysHeight + nextDaysVerticalMargin * 2
+    height: headingHeight + imageHeight + footerHeight + nextDaysHeight + nextDaysVerticalMargin * 2 + 10
 
     PlasmaComponents.Label {
         id: currentLocationText
@@ -54,7 +54,7 @@ Item {
         anchors.right: parent.right
         anchors.top: parent.top
         verticalAlignment: Text.AlignTop
-//        visible: !onlyOnePlace
+        visible: !onlyOnePlace
         color: theme.textColor
         text: i18n('Next Location')
     }
