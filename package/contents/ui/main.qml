@@ -39,7 +39,7 @@ Item {
     property int windSpeedType: plasmoid.configuration.windSpeedType
     property int timezoneType: plasmoid.configuration.timezoneType
     property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
-    property string placesJsonStr: ''
+    property string placesJsonStr: plasmoid.configuration.places
     property bool onlyOnePlace: true
 
     property string datetimeFormat: 'yyyy-MM-dd\'T\'hh:mm:ss'
@@ -137,6 +137,7 @@ Item {
         cacheId: plasmoidCacheId
     }
 
+
     Component.onCompleted: {
         inTray = (plasmoid.parent !== null && (plasmoid.parent.pluginName === 'org.kde.plasma.private.systemtray' || plasmoid.parent.objectName === 'taskItemContainer'))
         plasmoidCacheId = inTray ? plasmoid.parent.id : plasmoid.id
@@ -152,6 +153,7 @@ Item {
                 temperature: null
             }
         }
+
 
         // systray settings
         if (inTray) {
@@ -184,17 +186,17 @@ Item {
             lastReloadedMsMap = JSON.parse(lastReloadedMsJson)
         }
         lastReloadedMsMap = lastReloadedMsMap || {}
-
         // set initial place
         setNextPlace(true)
     }
 
     onPlacesJsonStrChanged: {
+      dbgprint("onPlacesJsonStrChanged")
         if (placesJsonStr === '') {
             return
         }
-      setNextPlace(true)
-      onlyOnePlace = ConfigUtils.getPlacesArray().length === 1
+        onlyOnePlace = ConfigUtils.getPlacesArray().length === 1
+        setNextPlace(true)
     }
 
     function showData() {
@@ -220,7 +222,9 @@ Item {
             dbgprint('setting provider metno')
             currentProvider = metnoProvider
         }
-    }
+     }
+
+
 
     function setNextPlace(initial) {
         actualWeatherModel.clear()
@@ -228,6 +232,7 @@ Item {
         meteogramModel.clear()
 
         var places = ConfigUtils.getPlacesArray()
+        onlyOnePlace = places.length === 1
         dbgprint('places count=' + places.length + ', placeIndex=' + plasmoid.configuration.placeIndex)
         var placeIndex = plasmoid.configuration.placeIndex
         if (!initial) {
@@ -358,7 +363,6 @@ Item {
     }
 
     function updateAdditionalWeatherInfoText() {
-        dbgprint(JSON.stringify(additionalWeatherInfo))
         var sunRise = additionalWeatherInfo.sunRise
         var sunSet = additionalWeatherInfo.sunSet
         var now = new Date()
@@ -481,5 +485,4 @@ Item {
         }
         print('[weatherWidget] ' + msg)
     }
-
 }

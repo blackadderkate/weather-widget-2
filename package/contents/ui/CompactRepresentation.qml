@@ -22,53 +22,53 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
     id: compactRepresentation
-    
+
     anchors.fill: parent
-    
+
     CompactItem {
         id: compactItem
         inTray: false
     }
-    
+
     property double partHeight: compactItem.partHeight
-    
+
     Layout.preferredWidth: compactItem.widgetWidth
-    Layout.maximumWidth: onDesktop ? undefined : compactItem.widgetWidth
+    Layout.maximumWidth: onDesktop ? 0 : compactItem.widgetWidth
     Layout.preferredHeight: compactItem.widgetHeight
-    Layout.maximumHeight: onDesktop ? undefined : compactItem.widgetHeight
-    
+    Layout.maximumHeight: onDesktop ? 0 : compactItem.widgetHeight
+
     PlasmaComponents.Label {
         id: lastReloadedNotifier
-        
+
         anchors.left: parent.left
         anchors.bottom: parent.bottom
         anchors.bottomMargin: - partHeight * 0.05
         verticalAlignment: Text.AlignBottom
-        
+
         font.pixelSize: partHeight * 0.26 * (layoutType === 2 ? 0.7 : 1)
         font.pointSize: -1
         color: theme.highlightColor
-        
+
         text: lastReloadedText
-        
+
         visible: false
     }
-    
+
     MouseArea {
         anchors.fill: parent
-        
+
         acceptedButtons: Qt.LeftButton | Qt.MiddleButton
-        
+
         hoverEnabled: true
-        
+
         onEntered: {
             lastReloadedNotifier.visible = !plasmoid.expanded
         }
-        
+
         onExited: {
             lastReloadedNotifier.visible = false
         }
-        
+
         onClicked: {
             if (mouse.button == Qt.MiddleButton) {
                 main.reloadData()
@@ -77,7 +77,7 @@ Item {
                 lastReloadedNotifier.visible = !plasmoid.expanded
             }
         }
-        
+
         PlasmaCore.ToolTipArea {
             id: toolTipArea
             anchors.fill: parent
@@ -89,5 +89,5 @@ Item {
             icon: Qt.resolvedUrl('../images/weather-widget.svg')
         }
     }
-    
+
 }

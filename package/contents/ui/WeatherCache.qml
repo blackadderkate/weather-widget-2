@@ -23,7 +23,7 @@ Item {
     property var cacheId
     property var cacheBackend: null
     property bool cacheBackendFailedToInitialize: false
-    
+
     function getCacheBackend() {
         if (cacheBackend !== null) {
             return cacheBackend
@@ -31,7 +31,7 @@ Item {
         if (!cacheBackendFailedToInitialize) {
             dbgprint('initializing cacheBackend...')
             try {
-                cacheBackend = Qt.createQmlObject('import org.kde.private.weatherWidget 1.0 as WW; WW.Backend {}', weatherCache, 'cacheBackend')
+                cacheBackend = Qt.createQmlObject('import org.kde.private.weatherWidget 2.0 as WW; WW.Backend {}', weatherCache, 'cacheBackend')
             } catch (e) {
                 print('cacheBackend failed to initialize')
                 cacheBackendFailedToInitialize = true
@@ -40,7 +40,7 @@ Item {
         }
         return cacheBackend
     }
-    
+
     function writeCache(cacheContent) {
         dbgprint('writing cache')
         var backend = getCacheBackend()
@@ -50,7 +50,7 @@ Item {
             dbgprint('cacheBackend N/A')
         }
     }
-    
+
     function readCache() {
         dbgprint('reading cache')
         var backend = getCacheBackend()
@@ -61,5 +61,5 @@ Item {
             return ''
         }
     }
-    
+
 }

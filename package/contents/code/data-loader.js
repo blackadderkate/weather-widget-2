@@ -92,7 +92,7 @@ function fetchXmlFromInternet(getUrl, successCallback, failureCallback) {
         // success
         dbgprint('successfully loaded from the internet')
         dbgprint('successfully of url-call: ' + getUrl)
-        dbgprint('responseText: ' + xhr.responseText)
+//        dbgprint('responseText: ' + xhr.responseText)
 
         var xmlString = xhr.responseText;
         if (!DataLoader.isXmlStringValid(xmlString)) {
