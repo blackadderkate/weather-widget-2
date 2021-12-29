@@ -62,7 +62,7 @@ Item {
     property color pressureColor: textColorLight ? Qt.rgba(0.3, 1, 0.3, 1) : Qt.rgba(0.0, 0.6, 0.0, 1)
     property color temperatureWarmColor: textColorLight ? Qt.rgba(1, 0.3, 0.3, 1) : Qt.rgba(1, 0.0, 0.0, 1)
     property color temperatureColdColor: textColorLight ? Qt.rgba(0.2, 0.7, 1, 1) : Qt.rgba(0.1, 0.5, 1, 1)
-    property var wind_speed_array: ["🠣","🠫","🠯","🡇"]
+//    property var wind_speed_array: ["🠣","🠫","🠯","🡇"]
 
     onMeteogramModelChangedChanged: {
         dbgprint('meteogram changed')
@@ -405,18 +405,30 @@ Item {
                     text: (differenceHours === 1 && textVisible) || index === hourGridModel.count-1 || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, timePeriod)
                 }
 
-                PlasmaComponents.Label {
+                function windFrom(rotation) {
+                  rotation=(Math.round( rotation / 22.5 ) * 22.5)
+                  rotation = (rotation >= 180) ? rotation - 180 : rotation + 180
+                  return rotation
+                }
+
+                function windStrength(windspeed,themecolor) {
+                  var img="images/"
+                  img += (themecolor) ? "light" : "dark"
+                  img += Math.min(5,Math.trunc(windspeed / 8) + 1)
+                  return img
+                }
+
+
+                Image {
                     id: wind
-                    font.family: 'weathericons'
-                    font.pixelSize: 14 * units.devicePixelRatio
-                    font.pointSize: -1
-                    horizontalAlignment: Text.AlignHCenter
+                    source: windStrength(windSpeedMps,textColorLight)
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: wind_speed_array[ Math.min( wind_speed_array.length, Math.trunc( windSpeedMps / 8)) ]
-                    rotation: Math.round( windDirection / 22.5 ) * 22.5
+                    rotation: windFrom(windDirection)
                     anchors.top: hourText.bottom
-                    anchors.topMargin: -12
-                     visible: (windDirection > 0) || (windSpeedMps > 0)
+                    anchors.topMargin: -2
+                    width: 16
+                    height: 16
+                     visible: ((windDirection > 0) || (windSpeedMps > 0)) && (dateFrom.getHours() % 2 === 1)
                 }
 
                 Item {
