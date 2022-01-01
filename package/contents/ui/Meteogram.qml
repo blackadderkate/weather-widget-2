@@ -401,7 +401,6 @@ Item {
                     anchors.topMargin: (temperatureSizeY - (temperature + temperatureAdditiveY)) * temperatureMultiplierY - font.pixelSize * 2.5
 
                     font.family: 'weathericons'
-                    //text: textVisible || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, timePeriod)
                     text: (differenceHours === 1 && textVisible) || index === hourGridModel.count-1 || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, timePeriod)
                 }
 
@@ -414,21 +413,56 @@ Item {
                 function windStrength(windspeed,themecolor) {
                   var img="images/"
                   img += (themecolor) ? "light" : "dark"
-                  img += Math.min(5,Math.trunc(windspeed / 8) + 1)
+                  img += Math.min(5,Math.trunc(windspeed / 5) + 1)
                   return img
                 }
 
+                Item {
+                    id: windspeedAnchor
+                     width: parent.width
+                     height: 32
+                     anchors.top: hourText.bottom
 
-                Image {
-                    id: wind
-                    source: windStrength(windSpeedMps,textColorLight)
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    rotation: windFrom(windDirection)
-                    anchors.top: hourText.bottom
-                    anchors.topMargin: -2
-                    width: 16
-                    height: 16
-                     visible: ((windDirection > 0) || (windSpeedMps > 0)) && (dateFrom.getHours() % 2 === 1)
+                    Rectangle {
+                        id: windspeedhover
+                        rotation: 0
+                        color: "red"
+                        x: -(childrenRect.width / 2)
+                        y: -20
+                        visible: false
+                        Text {
+                            text: UnitUtils.getWindSpeedText(windSpeedMps, windSpeedType)
+                            color: theme.textColor
+                            wrapMode: Text.Wrap
+                        }
+                        width: childrenRect.width
+                        height: childrenRect.height
+                    }
+
+                    Image {
+                        id: wind
+                        source: windStrength(windSpeedMps,textColorLight)
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        rotation: windFrom(windDirection)
+                        anchors.top: windspeedAnchor.top
+                        width: 16
+                        height: 16
+                        z: 1
+                        fillMode: Image.PreserveAspectFit
+                        visible: ((windDirection > 0) || (windSpeedMps > 0)) && (! textVisible) && (index > 0) && (index < hourGridModel.count-1)
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        hoverEnabled: true
+
+                        onEntered: {
+                            windspeedhover.visible = true
+                        }
+
+                        onExited: {
+                            windspeedhover.visible = false
+                        }
+                    }
                 }
 
                 Item {
