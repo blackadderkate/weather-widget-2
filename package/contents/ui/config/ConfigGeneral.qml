@@ -41,52 +41,6 @@ Item {
 
 
     Dialog {
-        id: addYrNoTownStringDialog
-        title: i18n('Add yr.no Place')
-
-        width: 500
-
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
-
-        onAccepted: {
-            // http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/
-            var url = newYrNoTownStringField.text
-            var match = /https?:\/\/www\.yr\.no\/[a-zA-Z]+\/(([^\/ ]+\/){2,}[^\/ ]+)\/[^\/ ]*/.exec(url)
-            var resultString = null
-            if (match !== null) {
-                resultString = match[1]
-            }
-            if (!resultString) {
-                return
-            }
-
-            var placeAlias = resultString.substring(resultString.lastIndexOf('/') + 1).replace(/_/g, ' ')
-
-            placesModel.append({
-                providerId: 'yrno',
-                placeIdentifier: decodeURI(resultString),
-                placeAlias: decodeURI(placeAlias)
-            })
-            placesModelChanged()
-            close()
-        }
-
-        TextField {
-            id: newYrNoTownStringField
-            placeholderText: i18n('Paste URL here')
-            width: parent.width
-        }
-
-        Label {
-            anchors.top: newYrNoTownStringField.bottom
-            anchors.topMargin: 10
-            font.italic: true
-            text: i18n('Find your town string in yr.no (english version)\nand use the URL from your browser to add a new location. E.g. paste this:\nhttp://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/')
-            Layout.columnSpan: 2
-        }
-    }
-
-    Dialog {
         id: addOwmCityIdDialog
         title: i18n('Add Open Weather Map Place')
 
@@ -387,17 +341,6 @@ Item {
 
         Row {
             Layout.columnSpan: 2
-
-            Button {
-                iconName: 'list-add'
-                text: 'yr.no'
-                width: 100
-                onClicked: {
-                    addYrNoTownStringDialog.open()
-                    newYrNoTownStringField.text = ''
-                    newYrNoTownStringField.focus = true
-                }
-            }
 
             Button {
                 iconName: 'list-add'

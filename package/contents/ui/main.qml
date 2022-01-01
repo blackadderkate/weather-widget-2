@@ -103,9 +103,6 @@ Item {
         source: '../fonts/weathericons-regular-webfont-2.0.10.ttf'
     }
 
-    YrNo {
-        id: yrnoProvider
-    }
     MetNo {
         id: metnoProvider
     }
@@ -214,17 +211,11 @@ Item {
             dbgprint('setting provider OpenWeatherMap')
             currentProvider = owmProvider
         }
-        if (providerId === 'yrno') {
-            dbgprint('setting provider yr.no')
-            currentProvider = yrnoProvider
-        }
         if (providerId === "metno") {
             dbgprint('setting provider metno')
             currentProvider = metnoProvider
         }
      }
-
-
 
     function setNextPlace(initial) {
         actualWeatherModel.clear()
