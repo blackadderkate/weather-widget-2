@@ -125,6 +125,15 @@ Item {
 
     }
 
+    MessageDialog {
+        id: invalidData
+        title: "Error."
+        text: ""
+        icon: StandardIcon.Critical
+        informativeText: ""
+        visible: false
+    }
+
     Dialog {
         id: addMetnoCityIdDialog
         title: i18n('Add Met.no Map Place')
@@ -132,42 +141,99 @@ Item {
         width: 500
 
         standardButtons: StandardButton.Ok | StandardButton.Cancel
-
-        onAccepted: {
+        onActionChosen: {
             function isNumeric(n) {
                 return !isNaN(parseFloat(n)) && isFinite(n);
             }
-            if (isNumeric(newMetnoCityLatitudeField.text) && isNumeric(newMetnoCityLongtitudeField.text)) {
-                var resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text
-                placesModel.append({
-                    providerId: 'metno',
-                    placeIdentifier: resultString,
-                    placeAlias: newMetnoCityAlias.text
-                })
-                placesModelChanged()
-                close()
+
+            function between(x, min, max) {
+                return x >= min && x <= max;
+            }
+
+            if (action.button === Dialog.Ok) {
+                var reason=""
+                var latValid=isNumeric(newMetnoCityLatitudeField.text)
+                var longValid=isNumeric(newMetnoCityLongtitudeField.text)
+
+                action.accepted = false
+
+                if (!(latValid)) {
+                    reason+="The Latitude is not numeric.\n"}
+                else {
+                    if (! between(newMetnoCityLatitudeField.text,-90,90)) {
+                    reason+="The Latitude is not between -90 and 90.\n"}
+                }
+
+                if (!(longValid)) {
+                    reason+="The Longtitude is not numeric.\n"}
+                else {
+                    if (! between(newMetnoCityLongtitudeField.text,-180,180)) {
+                    reason+="The Longtitude is not between -180 and 180.\n"}
+                }
+
+                if (newMetnoCityAlias.text.length === 0) {
+                    reason+="No Placename is specified.\n"
+                }
+
+                if (reason === "" ) {
+                    action.accepted = true
+                } else {
+                    action.accepted = false
+                    invalidData.text="Invalid data"
+                    invalidData.informativeText=reason
+                    invalidData.open()
+                }
             }
         }
 
-        TextField {
-            id: newMetnoCityLatitudeField
-            placeholderText: i18n('Latitude')
-            width: parent.width / 2
-
-        }
-        TextField {
-            id: newMetnoCityLongtitudeField
-            placeholderText: i18n('Longtitude')
-            width: parent.width / 2
-            anchors.left: newMetnoCityLatitudeField.right
+        onAccepted: {
+            var resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text
+            placesModel.append({
+                providerId: 'metno',
+                placeIdentifier: resultString,
+                placeAlias: newMetnoCityAlias.text
+            })
+            placesModelChanged()
+            close()
         }
 
-        TextField {
-            id: newMetnoCityAlias
-            anchors.top: newMetnoCityLatitudeField.bottom
-            anchors.topMargin: 10
-            placeholderText: i18n('City alias')
-            width: parent.width
+        GridLayout {
+            id: metNoRowLayout
+            anchors.fill: parent
+            columns: 5
+            Label {
+                id: newMetnoCityLatitudeLabel
+                text: i18n('Latitude:')
+            }
+
+            TextField {
+                id: newMetnoCityLatitudeField
+//                 inputMask: "#09.0000"
+                Layout.fillWidth: true
+            }
+
+            Item {
+              width: 20
+            }
+
+            Label {
+                id: newMetnoCityLongtitudeLabel
+                text: i18n('Longtitude:')
+            }
+
+            TextField {
+                id: newMetnoCityLongtitudeField
+//                 inputMask: "#009.000"
+                Layout.fillWidth: true
+                anchors.right: parent.right
+            }
+
+          TextField {
+              id: newMetnoCityAlias
+              placeholderText: i18n('City alias')
+              Layout.columnSpan: 5
+              Layout.fillWidth: true
+          }
         }
     }
 
