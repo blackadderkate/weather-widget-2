@@ -14,7 +14,7 @@ ConfigModel {
     }
     ConfigCategory {
          name: i18n('Units')
-         icon: 'kronometer'
+         icon: 'plugins'
          source: 'config/ConfigUnits.qml'
     }
 }

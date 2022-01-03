@@ -445,7 +445,6 @@ Item {
         running: true
         repeat: true
         onTriggered: {
-          console.log(i18n("Miscellaneous"))
             debugLogging = plasmoid.configuration.debugLogging
             if (updatingPaused) {
                 action_toggleUpdatingPaused()
