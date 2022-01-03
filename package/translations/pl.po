@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2016-03-28 11:59+0100\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:19+0000\n"
 "Last-Translator: Tomasz Przybył <fademind@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -45,7 +45,7 @@ msgstr "Poziomy"
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
 msgstr ""
-"UWAGA: Ustawienie rozmieszczenia dla ikony w zasobniku nie ma zastosowania. "
+"UWAGA: Ustawienie rozmieszczenia dla ikony w zasobniku nie ma zastosowania."
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Vertical"
@@ -80,11 +80,11 @@ msgstr ""
 "Weather Widget\"  aby ikona w zasobniku była zawsze widoczna. Opcja działa "
 "dla ikony \"Weather Widget\" wyświetlanej za pomocą ustawień \"Dodatkowe "
 "Elementy\" we właściwościach Tacki Systemowej Plasma 5 i nie ma zastosowania "
-"dla samodzielnego plasmoidu dodanego jako osobny element Panelu. "
+"dla samodzielnego plasmoidu dodanego jako osobny element Panelu."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
-msgstr "Dodaj miejscowość z Open Weather "
+msgstr "Dodaj miejscowość z Open Weather"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Paste URL here"
@@ -107,15 +107,46 @@ msgstr ""
 "np. http://openweathermap.org/city/756135 dla Warszawa, Polska."
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "Dodaj miejscowość z Met.no"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
@@ -127,8 +158,8 @@ msgid "Enter place alias"
 msgstr "Wpisz alias miejsca"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "Wersja plasmoidu:"
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -150,7 +181,7 @@ msgstr "Alias"
 msgid "Action"
 msgstr "Akcja"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Różne"
 
@@ -181,7 +212,7 @@ msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
-msgstr "Ciśnienie"
+msgstr "Ciśnienie:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "hPa"
@@ -250,7 +281,10 @@ msgstr "Tryb offline"
 
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
-msgstr "Wczytuję obraz... "
+msgstr "Wczytuję obraz..."
+
+#~ msgid "Plasmoid version: "
+#~ msgstr "Wersja plasmoidu:"
 
 #~ msgid "General"
 #~ msgstr "Główne"

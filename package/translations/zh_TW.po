@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2016-03-28 22:35+0800\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:18+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -100,16 +100,46 @@ msgstr ""
 "範例：德國波昂為 http://openweathermap.org/city/2946447"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "添加 Met.no 地圖地點"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "緯度"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "長身材"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -120,8 +150,8 @@ msgid "Enter place alias"
 msgstr "輸入位置別稱"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "Plasmoid 版本："
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -143,7 +173,7 @@ msgstr "顯示為"
 msgid "Action"
 msgstr "動作"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "雜項"
 
@@ -244,6 +274,9 @@ msgstr "離線模式"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "正在載入圖片..."
+
+#~ msgid "Plasmoid version: "
+#~ msgstr "Plasmoid 版本："
 
 #~ msgid "General"
 #~ msgstr "一般"

@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2016-06-27 14:24+0800\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:17+0000\n"
 "Last-Translator: 吴相东 <wuxiangdong156@gmail.com>\n"
 "Language-Team: 吴相东 <wuxiangdong156@gmail.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -22,7 +23,7 @@ msgstr ""
 
 #: ../metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
+msgstr "添加 Open Weather Map"
 
 #: ../metadata.desktop
 msgid "weather-clouds"
@@ -66,8 +67,13 @@ msgid "sec"
 msgstr "秒"
 
 #: ../contents/ui/config/ConfigAppearance.qml
-msgid "NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings."
-msgstr "注意: 过了此时间后部件将会被隐藏至托盘中,直到天气更新后重新显示.你可以通过系统托盘 \"项目\"设置中将其设置为总是显示."
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"注意: 过了此时间后部件将会被隐藏至托盘中,直到天气更新后重新显示.你可以通过系"
+"统托盘 \"项目\"设置中将其设置为总是显示."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -94,16 +100,46 @@ msgstr ""
 "例如: http://openweathermap.org/city/2946447 德国,波恩."
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "添加 Met.no"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Latitude"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "长身材"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -114,8 +150,8 @@ msgid "Enter place alias"
 msgstr "输入城市名称"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "部件版本:"
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -137,7 +173,7 @@ msgstr "显示名称"
 msgid "Action"
 msgstr "动作"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "杂项"
 
@@ -210,7 +246,8 @@ msgstr "本地时间"
 msgid "UTC"
 msgstr "UTC"
 
-#: ../contents/ui/FullRepresentationInTray.qml ../contents/ui/FullRepresentation.qml
+#: ../contents/ui/FullRepresentationInTray.qml
+#: ../contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "下一个位置"
 
@@ -238,6 +275,9 @@ msgstr "离线模式"
 msgid "Loading image..."
 msgstr "载入图片中..."
 
+#~ msgid "Plasmoid version: "
+#~ msgstr "部件版本:"
+
 #~ msgid "General"
 #~ msgstr "常规"
 
@@ -255,7 +295,8 @@ msgstr "载入图片中..."
 
 #~ msgid ""
 #~ "Find your town string in yr.no (english version)\n"
-#~ "and use the URL from your browser to add a new location. E.g. paste this:\n"
+#~ "and use the URL from your browser to add a new location. E.g. paste "
+#~ "this:\n"
 #~ "http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
 #~ msgstr ""
 #~ "在 yr.no 中找到您城市的英文字串\n"

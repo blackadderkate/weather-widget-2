@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-applet-weather-widget\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2017-02-20 19:53+0100\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:07+0000\n"
 "Last-Translator: Laszlo Espadas <kardiweb@protonmail.ch>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "Language: hu_HU\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Language: hu_HU\n"
 "X-Source-Language: C\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -104,16 +104,45 @@ msgstr ""
 "példa: http://openweathermap.org/city/2946447 Bonn, Germany."
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "Met.no Map hely hozzáadás"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Szélesség"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "Hosszúság"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -124,8 +153,8 @@ msgid "Enter place alias"
 msgstr "Hely hozzáadás"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "Plasmoid verzió:"
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -147,7 +176,7 @@ msgstr "Város"
 msgid "Action"
 msgstr "Művelet"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Továbbiak"
 
@@ -162,7 +191,7 @@ msgstr "perccel"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
-msgstr "Hőmérséklet"
+msgstr "Hőmérséklet:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "°C"
@@ -248,6 +277,9 @@ msgstr "Offline mód"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Kép betöltés..."
+
+#~ msgid "Plasmoid version: "
+#~ msgstr "Plasmoid verzió:"
 
 #~ msgid "General"
 #~ msgstr "Általános"

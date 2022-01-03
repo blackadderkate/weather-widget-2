@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2016-03-26 21:59+0100\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:15+0000\n"
 "Last-Translator: Jacobtey <jacobtey@gmail.com>\n"
 "Language-Team: Jacobtey <jacobtey@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -58,7 +59,7 @@ msgstr "Настройки лотка"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Active timeout:"
-msgstr "Время отображения"
+msgstr "Время отображения:"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
@@ -66,8 +67,14 @@ msgid "sec"
 msgstr "сек"
 
 #: ../contents/ui/config/ConfigAppearance.qml
-msgid "NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings."
-msgstr "ВНИМАНИЕ: По истечении указанного времени виджет будет скрыт в системном лотке, пока не обновятся данные. Также в разделе  \"Элементы\" настроек системного лотка можно установить значение \"Показывать всегда\"."
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"ВНИМАНИЕ: По истечении указанного времени виджет будет скрыт в системном "
+"лотке, пока не обновятся данные. Также в разделе  \"Элементы\" настроек "
+"системного лотка можно установить значение \"Показывать всегда\"."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -94,16 +101,46 @@ msgstr ""
 "напр., http://openweathermap.org/city/524901 для Москвы, Россия."
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "Добавить место  Met.no"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Широта"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "Долгота"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -114,8 +151,8 @@ msgid "Enter place alias"
 msgstr "Введите название места"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "Версия плазмоида: "
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -137,7 +174,7 @@ msgstr "Отображать как"
 msgid "Action"
 msgstr "Действие"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Разное"
 
@@ -200,7 +237,7 @@ msgstr "км/ч"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
-msgstr "Часовой пояс"
+msgstr "Часовой пояс:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
@@ -210,7 +247,8 @@ msgstr "Местное время"
 msgid "UTC"
 msgstr ""
 
-#: ../contents/ui/FullRepresentationInTray.qml ../contents/ui/FullRepresentation.qml
+#: ../contents/ui/FullRepresentationInTray.qml
+#: ../contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Следующее"
 
@@ -238,6 +276,9 @@ msgstr "Режим оффлайн"
 msgid "Loading image..."
 msgstr "Загрузка..."
 
+#~ msgid "Plasmoid version: "
+#~ msgstr "Версия плазмоида: "
+
 #~ msgid "General"
 #~ msgstr "Основное"
 
@@ -255,11 +296,13 @@ msgstr "Загрузка..."
 
 #~ msgid ""
 #~ "Find your town string in yr.no (english version)\n"
-#~ "and use the URL from your browser to add a new location. E.g. paste this:\n"
+#~ "and use the URL from your browser to add a new location. E.g. paste "
+#~ "this:\n"
 #~ "http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
 #~ msgstr ""
 #~ "Найдите свой населенный пункт на yr.no (по английски)\n"
-#~ "и используйте строку с адресом из браузера, чтобы добавить новое место. Например:\n"
+#~ "и используйте строку с адресом из браузера, чтобы добавить новое место. "
+#~ "Например:\n"
 #~ "http://www.yr.no/place/Russia/Moscow/Moscow/"
 
 #~ msgid "humidity"

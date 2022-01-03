@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2016-03-26 21:59+0100\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:03+0000\n"
 "Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -66,8 +67,14 @@ msgid "sec"
 msgstr ""
 
 #: ../contents/ui/config/ConfigAppearance.qml
-msgid "NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings."
-msgstr "Pozn.: Po tomto čase bude aplet skryt dokud nedojde k jeho aktualizaci. Vždy je však možné aplet nastavit tak, aby byl stále viditelný tím, že u něj nastavíte \"Zobrazeno\" v sekci \"Položky\" v nastavení lišty."
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"Pozn.: Po tomto čase bude aplet skryt dokud nedojde k jeho aktualizaci. Vždy "
+"je však možné aplet nastavit tak, aby byl stále viditelný tím, že u něj "
+"nastavíte \"Zobrazeno\" v sekci \"Položky\" v nastavení lišty."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -94,16 +101,46 @@ msgstr ""
 "např. http://openweathermap.org/city/3065328 pro Prahu, ČR."
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "Přidat lokaci Met.no Map Map"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Zeměpisná šířka"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "Dlouhá síla"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -114,8 +151,8 @@ msgid "Enter place alias"
 msgstr "Napište alias lokace"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "Verze apletu: "
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -137,7 +174,7 @@ msgstr "Alias"
 msgid "Action"
 msgstr "Akce"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Ostatní"
 
@@ -210,7 +247,8 @@ msgstr "Můj místní čas"
 msgid "UTC"
 msgstr ""
 
-#: ../contents/ui/FullRepresentationInTray.qml ../contents/ui/FullRepresentation.qml
+#: ../contents/ui/FullRepresentationInTray.qml
+#: ../contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Další lokace"
 
@@ -238,6 +276,9 @@ msgstr "Offline režim"
 msgid "Loading image..."
 msgstr "Načítání obrázku..."
 
+#~ msgid "Plasmoid version: "
+#~ msgstr "Verze apletu: "
+
 #~ msgid "General"
 #~ msgstr "Obecné"
 
@@ -255,7 +296,8 @@ msgstr "Načítání obrázku..."
 
 #~ msgid ""
 #~ "Find your town string in yr.no (english version)\n"
-#~ "and use the URL from your browser to add a new location. E.g. paste this:\n"
+#~ "and use the URL from your browser to add a new location. E.g. paste "
+#~ "this:\n"
 #~ "http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
 #~ msgstr ""
 #~ "Najděte svou lokalitu na stránkách yr.no (zvolte anglickou verzi)\n"

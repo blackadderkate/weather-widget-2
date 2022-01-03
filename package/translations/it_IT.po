@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 20:34+0000\n"
-"PO-Revision-Date: 2016-07-05 23:18+0200\n"
+"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"PO-Revision-Date: 2022-01-03 22:09+0000\n"
 "Last-Translator: Armando Brandonisio <armando.bradonisio@gmail.com>\n"
 "Language-Team: Armando Brandonisio <armando.brandonisio@gmail.com>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -102,16 +102,46 @@ msgstr ""
 "esempio http://openweathermap.org/city/2946447 per Bonn, Germania."
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
+msgstr "Aggiungi Met.no Map Place"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Latitude:"
+msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude:"
+msgid "The Longtitude is not numeric."
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Latitudine"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "Longitudine"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -122,8 +152,8 @@ msgid "Enter place alias"
 msgstr "Inserisci il nome del luogo"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version: "
-msgstr "Versione plasmoide:"
+msgid "Plasmoid version:"
+msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -145,7 +175,7 @@ msgstr "Visualizzato come"
 msgid "Action"
 msgstr "Azione"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Altro"
 
@@ -160,7 +190,7 @@ msgstr "min"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
-msgstr "Temperatura"
+msgstr "Temperatura:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "°C"
@@ -176,7 +206,7 @@ msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
-msgstr "Pressione"
+msgstr "Pressione:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "hPa"
@@ -192,7 +222,7 @@ msgstr "mmHg"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Wind speed:"
-msgstr "Velocità del vento"
+msgstr "Velocità del vento:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "m/s"
@@ -208,7 +238,7 @@ msgstr "km/h"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
-msgstr "Fuso orario"
+msgstr "Fuso orario:"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
@@ -246,6 +276,9 @@ msgstr "Modalità offline"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Caricando l'immagine..."
+
+#~ msgid "Plasmoid version: "
+#~ msgstr "Versione plasmoide:"
 
 #~ msgid "General"
 #~ msgstr "Generale"

@@ -128,7 +128,7 @@ Item {
 
     MessageDialog {
         id: invalidData
-        title: "Error."
+        title: i18n("Error!")
         text: ""
         icon: StandardIcon.Critical
         informativeText: ""
@@ -153,34 +153,44 @@ Item {
 
             if (action.button === Dialog.Ok) {
                 var reason=""
+                var reasoncount=0;
                 var latValid=isNumeric(newMetnoCityLatitudeField.text)
                 var longValid=isNumeric(newMetnoCityLongtitudeField.text)
 
                 action.accepted = false
 
                 if (!(latValid)) {
-                    reason+="The Latitude is not numeric.\n"}
+                    reason+=i18n("The Latitude is not numeric.")+"\n"
+                    reasoncount++
+                }
                 else {
                     if (! between(newMetnoCityLatitudeField.text,-90,90)) {
-                    reason+="The Latitude is not between -90 and 90.\n"}
+                        reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
+                        reasoncount++
+                    }
                 }
 
                 if (!(longValid)) {
-                    reason+="The Longtitude is not numeric.\n"}
+                    reason+=i18n("The Longtitude is not numeric.")+"\n"
+                    reasoncount++
+                }
                 else {
                     if (! between(newMetnoCityLongtitudeField.text,-180,180)) {
-                    reason+="The Longtitude is not between -180 and 180.\n"}
+                        reason+=i18n("The Longtitude is not between -180 and 180.")+"\n"
+                        reasoncount++
+                    }
                 }
 
                 if (newMetnoCityAlias.text.length === 0) {
-                    reason+="No Placename is specified.\n"
+                    reason+=i18n("The Place Name is empty.")+"\n"
+                    reasoncount++
                 }
 
-                if (reason === "" ) {
+                if (reasoncount === 0 ) {
                     action.accepted = true
                 } else {
                     action.accepted = false
-                    invalidData.text="Invalid data"
+                    invalidData.text=i18np("There is an error!", "There are %1 errors!",reasoncount)
                     invalidData.informativeText=reason
                     invalidData.open()
                 }
@@ -204,12 +214,11 @@ Item {
             columns: 5
             Label {
                 id: newMetnoCityLatitudeLabel
-                text: i18n("Latitude:")
+                text: i18n("Latitude")+":"
             }
 
             TextField {
                 id: newMetnoCityLatitudeField
-//                 inputMask: "#09.0000"
                 Layout.fillWidth: true
             }
 
@@ -219,12 +228,11 @@ Item {
 
             Label {
                 id: newMetnoCityLongtitudeLabel
-                text: i18n("Longtitude:")
+                text: i18n("Longtitude")+":"
             }
 
             TextField {
                 id: newMetnoCityLongtitudeField
-//                 inputMask: "#009.000"
                 Layout.fillWidth: true
                 anchors.right: parent.right
             }
@@ -264,7 +272,7 @@ Item {
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version: ") + '2.0.0'
+            text: i18n("Plasmoid version:") + ' 2.0.0'
             Layout.alignment: Qt.AlignRight
         }
 
