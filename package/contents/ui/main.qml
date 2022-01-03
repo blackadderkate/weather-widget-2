@@ -127,7 +127,7 @@ Item {
     function action_toggleUpdatingPaused() {
         updatingPaused = !updatingPaused
         abortTooLongConnection(true)
-        plasmoid.setAction('toggleUpdatingPaused', updatingPaused ? i18n('Resume Updating') : i18n('Pause Updating'), updatingPaused ? 'media-playback-start' : 'media-playback-pause');
+        plasmoid.setAction('toggleUpdatingPaused', updatingPaused ? i18n("Resume Updating") : i18n("Pause Updating"), updatingPaused ? 'media-playback-start' : 'media-playback-pause');
     }
 
     WeatherCache {
@@ -350,7 +350,7 @@ Item {
     function updateLastReloadedText() {
         var lastReloadedMs = getLastReloadedMs()
         dbgprint("lastReloadedMs=",lastReloadedMs)
-        lastReloadedText = '⬇ ' + i18n('%1 ago', DataLoader.getLastReloadedTimeText(lastReloadedMs))
+        lastReloadedText = '⬇ ' + i18n("%1 ago", DataLoader.getLastReloadedTimeText(lastReloadedMs))
         plasmoid.status = DataLoader.getPlasmoidStatus(lastReloadedMs, inTrayActiveTimeoutSec)
     }
 
@@ -393,7 +393,7 @@ Item {
         subText += '</table>'
 
         subText += '<br /><br />'
-        subText += '<font size="3">' + i18n('near future') + '</font>'
+        subText += '<font size="3">' + i18n("near future") + '</font>'
         subText += '<b>'
         subText += '<font size="6">&nbsp;&nbsp;&nbsp;' + UnitUtils.getTemperatureNumber(nearFutureWeather.temperature, temperatureType) + UnitUtils.getTemperatureEnding(temperatureType)
         subText += '&nbsp;&nbsp;&nbsp;<font style="font-family: weathericons">' + futureWeatherIcon + '</font></font>'
@@ -445,6 +445,7 @@ Item {
         running: true
         repeat: true
         onTriggered: {
+          console.log(i18n("Miscellaneous"))
             debugLogging = plasmoid.configuration.debugLogging
             if (updatingPaused) {
                 action_toggleUpdatingPaused()

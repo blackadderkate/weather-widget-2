@@ -43,7 +43,7 @@ Item {
 
     Dialog {
         id: addOwmCityIdDialog
-        title: i18n('Add Open Weather Map Place')
+        title: i18n("Add Open Weather Map Place")
 
         width: 500
 
@@ -72,7 +72,7 @@ Item {
 
         TextField {
             id: newOwmCityIdField
-            placeholderText: i18n('Paste URL here')
+            placeholderText: i18n("Paste URL here")
             width: parent.width
         }
 
@@ -80,7 +80,7 @@ Item {
             id: newOwmCityAlias
             anchors.top: newOwmCityIdField.bottom
             anchors.topMargin: 10
-            placeholderText: i18n('City alias')
+            placeholderText: i18n("City alias")
             width: parent.width
         }
 
@@ -89,7 +89,7 @@ Item {
             anchors.top: newOwmCityAlias.bottom
             anchors.topMargin: 10
             font.italic: true
-            text: i18n('Find your city ID by searching here:')
+            text: i18n("Find your city ID by searching here:")
         }
 
         Label {
@@ -121,7 +121,7 @@ Item {
         Label {
             anchors.top: owmLink.bottom
             font.italic: true
-            text: i18n('...and paste here the whole URL\ne.g. http://openweathermap.org/city/2946447 for Bonn, Germany.')
+            text: i18n("...and paste here the whole URL\ne.g. http://openweathermap.org/city/2946447 for Bonn, Germany.")
         }
 
     }
@@ -137,7 +137,7 @@ Item {
 
     Dialog {
         id: addMetnoCityIdDialog
-        title: i18n('Add Met.no Map Place')
+        title: i18n("Add Met.no Map Place")
 
         width: 500
 
@@ -204,7 +204,7 @@ Item {
             columns: 5
             Label {
                 id: newMetnoCityLatitudeLabel
-                text: i18n('Latitude:')
+                text: i18n("Latitude:")
             }
 
             TextField {
@@ -219,7 +219,7 @@ Item {
 
             Label {
                 id: newMetnoCityLongtitudeLabel
-                text: i18n('Longtitude:')
+                text: i18n("Longtitude:")
             }
 
             TextField {
@@ -231,7 +231,7 @@ Item {
 
           TextField {
               id: newMetnoCityAlias
-              placeholderText: i18n('City alias')
+              placeholderText: i18n("City alias")
               Layout.columnSpan: 5
               Layout.fillWidth: true
           }
@@ -240,7 +240,7 @@ Item {
 
     Dialog {
         id: changePlaceAliasDialog
-        title: i18n('Change Displayed As')
+        title: i18n("Change Displayed As")
 
         standardButtons: StandardButton.Ok | StandardButton.Cancel
 
@@ -254,7 +254,7 @@ Item {
 
         TextField {
             id: newPlaceAliasField
-            placeholderText: i18n('Enter place alias')
+            placeholderText: i18n("Enter place alias")
             width: parent.width
         }
     }
@@ -264,12 +264,12 @@ Item {
         width: parent.width
 
         Label {
-            text: i18n('Plasmoid version: ') + '1.6.10'
+            text: i18n("Plasmoid version: ") + '2.0.0'
             Layout.alignment: Qt.AlignRight
         }
 
         Label {
-              text: i18n('Location')
+              text: i18n("Location")
               font.bold: true
               Layout.alignment: Qt.AlignLeft
         }
@@ -281,7 +281,7 @@ Item {
             TableViewColumn {
                 id: providerIdCol
                 role: 'providerId'
-                title: i18n('Source')
+                title: i18n("Source")
                 width: parent.width * 0.1
 
                 delegate: Label {
@@ -297,7 +297,7 @@ Item {
             TableViewColumn {
                 id: placeIdentifierCol
                 role: 'placeIdentifier'
-                title: i18n('Place Identifier')
+                title: i18n("Place Identifier")
                 width: parent.width * 0.4
 
                 delegate: Label {
@@ -312,7 +312,7 @@ Item {
 
             TableViewColumn {
                 role: 'placeAlias'
-                title: i18n('Displayed as')
+                title: i18n("Displayed as")
                 width: parent.width * 0.2
 
                 delegate: MouseArea {
@@ -351,7 +351,7 @@ Item {
             }
 
             TableViewColumn {
-                title: i18n('Action')
+                title: i18n("Action")
                 width: parent.width * 0.2
 
                 delegate: Item {
@@ -429,14 +429,14 @@ Item {
         Label {
             topPadding: 16
             bottomPadding: 4
-            text: i18n('Miscellaneous')
+            text: i18n("Miscellaneous")
             font.bold: true
             Layout.alignment: Qt.AlignLeft
         }
 
         Row {
             Label {
-                text: i18n('Reload interval:')
+                text: i18n("Reload interval:")
                 Layout.alignment: Qt.AlignLeft
                 anchors.verticalCenter: parent.verticalCenter
                 rightPadding: 6
@@ -447,7 +447,7 @@ Item {
                 stepSize: 10
                 minimumValue: 20
                 maximumValue: 120
-                suffix: i18nc('Abbreviation for minutes', 'min')
+                suffix: i18nc("Abbreviation for minutes", "min")
             }
         }
 

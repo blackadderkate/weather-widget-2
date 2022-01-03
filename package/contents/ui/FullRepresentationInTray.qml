@@ -55,7 +55,7 @@ Item {
         anchors.top: parent.top
         visible: !onlyOnePlace
 
-        text: i18n('Next Location')
+        text: i18n("Next Location")
         color: theme.textColor
     }
 

@@ -48,7 +48,7 @@ Item {
             Layout.columnSpan: 3
         }
         Label {
-            text: i18n('Layout type:')
+            text: i18n("Layout type:")
             Layout.alignment: Qt.AlignVCenter|Qt.AlignRight
         }
         RadioButton {
@@ -58,7 +58,7 @@ Item {
             onCheckedChanged: if (checked) cfg_layoutType = 0;
         }
         Label {
-            text: i18n('NOTE: Setting layout type for in-tray plasmoid has no effect.')
+            text: i18n("NOTE: Setting layout type for in-tray plasmoid has no effect.")
             Layout.rowSpan: 3
             Layout.preferredWidth: 250
             wrapMode: Text.WordWrap
@@ -104,10 +104,10 @@ Item {
             stepSize: 10
             minimumValue: 10
             maximumValue: 8000
-            suffix: i18nc('Abbreviation for seconds', 'sec')
+            suffix: i18nc("Abbreviation for seconds", "sec")
         }
         Label {
-            text: i18n('NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always "Shown" in system tray "Entries" settings.')
+            text: i18n("NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings.")
             Layout.rowSpan: 3
             Layout.preferredWidth: 250
             wrapMode: Text.WordWrap

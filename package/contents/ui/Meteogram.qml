@@ -614,7 +614,7 @@ Item {
             verticalAlignment: Text.AlignVCenter
             anchors.top: parent.top
             anchors.topMargin: headingHeight
-            text: loadingError ? i18n('Offline mode') : i18n('Loading image...')
+            text: loadingError ? i18n("Offline mode") : i18n("Loading image...")
         }
 
         Image {

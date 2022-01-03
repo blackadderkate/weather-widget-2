@@ -56,7 +56,7 @@ Item {
         verticalAlignment: Text.AlignTop
         visible: !onlyOnePlace
         color: theme.textColor
-        text: i18n('Next Location')
+        text: i18n("Next Location")
     }
 
     MouseArea {
