@@ -20,6 +20,9 @@
         <entry name="reloadIntervalMin" type="Int">
             <default>60</default>
         </entry>
+        <entry name="debugLogging" type="Bool">
+            <default>false</default>
+        </entry>
 
         <entry name="xmlCacheJson" type="String">
             <default></default>

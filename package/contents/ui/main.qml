@@ -52,6 +52,7 @@ Item {
     property int reloadIntervalMin: plasmoid.configuration.reloadIntervalMin
     property int reloadIntervalMs: reloadIntervalMin * 60 * 1000
 
+    property int startupDelay: 3
     property bool loadingData: false
     property double loadingDataSinceTime: 0
     property int loadingDataTimeoutMs: 15000
@@ -97,7 +98,7 @@ Item {
     Plasmoid.compactRepresentation: cr
     Plasmoid.fullRepresentation: fr
 
-    property bool debugLogging: false
+    property bool debugLogging: plasmoid.configuration.debugLogging
 
     FontLoader {
         source: '../fonts/weathericons-regular-webfont-2.0.10.ttf'
@@ -444,6 +445,10 @@ Item {
         running: true
         repeat: true
         onTriggered: {
+            debugLogging = plasmoid.configuration.debugLogging
+            if (updatingPaused) {
+                action_toggleUpdatingPaused()
+            }
             tryReload()
             abortTooLongConnection(false)
         }

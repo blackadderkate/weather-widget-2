@@ -9,6 +9,7 @@ Item {
 
     property alias cfg_reloadIntervalMin: reloadIntervalMin.value
     property string cfg_places
+    property alias cfg_debugLogging: debugLogging.checked
 
     ListModel {
         id: placesModel
@@ -258,26 +259,19 @@ Item {
         }
     }
 
-    GridLayout {
-        columns: 2
-        anchors.left: parent.left
-        anchors.right: parent.right
+    ColumnLayout{
+        id: rhsColumn
+        width: parent.width
 
         Label {
             text: i18n('Plasmoid version: ') + '1.6.10'
             Layout.alignment: Qt.AlignRight
-            Layout.columnSpan: 2
         }
 
         Label {
-            text: i18n('Location')
-            font.bold: true
-            Layout.alignment: Qt.AlignLeft
-        }
-
-        Item {
-            width: 2
-            height: 2
+              text: i18n('Location')
+              font.bold: true
+              Layout.alignment: Qt.AlignLeft
         }
 
         TableView {
@@ -406,8 +400,6 @@ Item {
         }
 
         Row {
-            Layout.columnSpan: 2
-
             Button {
                 iconName: 'list-add'
                 text: 'OWM'
@@ -432,47 +424,38 @@ Item {
                     newOwmCityIdField.focus = true
                 }
             }
-
-
-        }
-
-        Item {
-            width: 2
-            height: 20
-            Layout.columnSpan: 2
-        }
-
-        Item {
-            width: 2
-            height: 2
-            Layout.columnSpan: 2
         }
 
         Label {
+            topPadding: 16
+            bottomPadding: 4
             text: i18n('Miscellaneous')
             font.bold: true
             Layout.alignment: Qt.AlignLeft
         }
 
-        Item {
-            width: 2
-            height: 2
+        Row {
+            Label {
+                text: i18n('Reload interval:')
+                Layout.alignment: Qt.AlignLeft
+                anchors.verticalCenter: parent.verticalCenter
+                rightPadding: 6
+            }
+            SpinBox {
+                id: reloadIntervalMin
+                decimals: 0
+                stepSize: 10
+                minimumValue: 20
+                maximumValue: 120
+                suffix: i18nc('Abbreviation for minutes', 'min')
+            }
         }
 
-        Label {
-            text: i18n('Reload interval:')
-            Layout.alignment: Qt.AlignRight
+        CheckBox {
+            id: debugLogging
+            checked: false
+            text: "Debug"
+            Layout.alignment: Qt.AlignLeft
         }
-
-        SpinBox {
-            id: reloadIntervalMin
-            decimals: 0
-            stepSize: 10
-            minimumValue: 20
-            maximumValue: 120
-            suffix: i18nc('Abbreviation for minutes', 'min')
-        }
-
     }
-
 }
