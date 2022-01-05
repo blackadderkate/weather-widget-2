@@ -29,3 +29,4 @@ I have added rainfall Units to the Meteogram.
 
 
 I am just a hobbyist / enthusiastic amateur - I'm sure a professional Javascript / QML programmer will be horrified with my code!
+So bug reports, suggestions, code polishes and bugfixes are welcome - as are translations (as Google Translate may not have been entirely accurate)!
