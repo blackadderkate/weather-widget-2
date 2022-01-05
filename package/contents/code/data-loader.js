@@ -1,32 +1,6 @@
-var scheduledDataReload = null
-
-function isReadyToReload(reloadIntervalMs, lastReloaded) {
-    var now = new Date().getTime()
-
-    dbgprint("loadingError=" + loadingError)
-    dbgprint("scheduledDataReload=" + scheduledDataReload)
-    dbgprint("lastReloaded=" + lastReloaded)
-    dbgprint("reloadIntervalMs=" + reloadIntervalMs)
-    dbgprint("reloadIntervalMs=" + ( now - lastReloaded ) + " > " + reloadIntervalMs)
-
-    if (loadingError && scheduledDataReload !== null) {
-        return scheduledDataReload < now
-    }
-    if (!lastReloaded) {
-        lastReloaded = 0
-    }
-    return now - lastReloaded > reloadIntervalMs
-}
-
-function setReloaded() {
-    loadingError = false
-    return new Date().getTime()
-}
 
 function getLastReloadedTimeText(lastReloaded) {
-    var reloadedAgoMs = getReloadedAgoMs(lastReloaded)
-
-    var mins = reloadedAgoMs / 60000
+    var mins = lastReloaded / 60000
     if (mins <= 180) {
         return Math.round(mins) + 'm'
     }
@@ -47,7 +21,7 @@ function getLastReloadedTimeText(lastReloaded) {
 function scheduleDataReload() {
     var now = new Date().getTime()
     loadingError = true
-    scheduledDataReload = now + 600000
+    return now + 600000
 }
 
 function getReloadedAgoMs(lastReloaded) {
@@ -129,7 +103,7 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
         // success
         dbgprint('successfully loaded from the internet')
         dbgprint('successfully of url-call: ' + getUrl)
-        dbgprint('responseText: ' + xhr.responseText)
+//        dbgprint('responseText: ' + xhr.responseText)
 
         var jsonString = xhr.responseText;
         if (!DataLoader.IsJsonString(jsonString)) {
