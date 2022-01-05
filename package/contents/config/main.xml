@@ -12,22 +12,20 @@
         <entry name="places" type="String">
           <default>
           [
+            {"providerId": "owm", "placeIdentifier": "2644668", "placeAlias": "Leicester, UK"},
             {"providerId": "metno", "placeIdentifier": "lat=52.63333&amp;lon=-1.13333", "placeAlias": "Leicester, UK"},
             {"providerId": "metno", "placeIdentifier": "lat=38.50245&amp;lon=-0.13044", "placeAlias": "Benidorm, ES" }
           ]
         </default>
         </entry>
         <entry name="reloadIntervalMin" type="Int">
-            <default>60</default>
+            <default>20</default>
         </entry>
         <entry name="debugLogging" type="Bool">
             <default>false</default>
         </entry>
 
         <entry name="xmlCacheJson" type="String">
-            <default></default>
-        </entry>
-        <entry name="lastReloadedMsJson" type="String">
             <default></default>
         </entry>
     </group>

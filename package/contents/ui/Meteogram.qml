@@ -402,6 +402,7 @@ Item {
 
                     font.family: 'weathericons'
                     text: (differenceHours === 1 && textVisible) || index === hourGridModel.count-1 || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, timePeriod)
+                    visible: iconName != "\uf07b"
                 }
 
                 function windFrom(rotation) {

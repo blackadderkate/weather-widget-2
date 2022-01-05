@@ -28,6 +28,10 @@ Item {
     property string urlPrefix: 'http://api.openweathermap.org/data/2.5'
     property string appIdAndModeSuffix: '&units=metric&mode=xml&appid=5819a34c58f8f07bc282820ca08948f1'
 
+// DEBUGGING URLs
+//     property string urlPrefix: 'http://localhost/forecast'
+//     property string appIdAndModeSuffix: ''
+
     XmlListModel {
         id: xmlModelLongTerm
         query: '/weatherdata/forecast/time'
@@ -38,19 +42,19 @@ Item {
         }
         XmlRole {
             name: 'temperatureMorning'
-            query: 'temperature/@morn/string()'
+            query: 'temperature/@morn/number()'
         }
         XmlRole {
             name: 'temperatureDay'
-            query: 'temperature/@day/string()'
+            query: 'temperature/@day/number()'
         }
         XmlRole {
             name: 'temperatureEvening'
-            query: 'temperature/@eve/string()'
+            query: 'temperature/@eve/number()'
         }
         XmlRole {
             name: 'temperatureNight'
-            query: 'temperature/@night/string()'
+            query: 'temperature/@night/number()'
         }
         XmlRole {
             name: 'iconName'
@@ -58,15 +62,15 @@ Item {
         }
         XmlRole {
             name: 'windDirection'
-            query: 'windDirection/@code/string()'
+            query: 'windDirection/@code/number()'
         }
         XmlRole {
             name: 'windSpeedMps'
-            query: 'windSpeed/@mps/string()'
+            query: 'windSpeed/@mps/number()'
         }
         XmlRole {
             name: 'pressureHpa'
-            query: 'pressure/@value/string()'
+            query: 'pressure/@value/number()'
         }
     }
 
@@ -84,7 +88,7 @@ Item {
         }
         XmlRole {
             name: 'temperature'
-            query: 'temperature/@value/string()'
+            query: 'temperature/@value/number()'
         }
         XmlRole {
             name: 'iconName'
@@ -92,19 +96,19 @@ Item {
         }
         XmlRole {
             name: 'windDirection'
-            query: 'windDirection/@code/string()'
+            query: 'windDirection/@code/number()'
         }
         XmlRole {
             name: 'windSpeedMps'
-            query: 'windSpeed/@mps/string()'
+            query: 'windSpeed/@mps/number()'
         }
         XmlRole {
             name: 'pressureHpa'
-            query: 'pressure/@value/string()'
+            query: 'pressure/@value/number()'
         }
         XmlRole {
             name: 'precipitationAvg'
-            query: 'precipitation/@value/string()'
+            query: 'precipitation/@value/number()'
         }
     }
 
@@ -114,7 +118,7 @@ Item {
 
         XmlRole {
             name: 'temperature'
-            query: 'temperature/@value/string()'
+            query: 'temperature/@value/number()'
         }
         XmlRole {
             name: 'iconName'
@@ -122,7 +126,7 @@ Item {
         }
         XmlRole {
             name: 'humidity'
-            query: 'humidity/@value/string()'
+            query: 'humidity/@value/number()'
         }
         XmlRole {
             name: 'pressureHpa'
@@ -261,7 +265,6 @@ Item {
     }
 
     function updateNextDaysModel() {
-
         var nextDaysFixedCount = nextDaysCount
 
         dbgprint('updating NEXT DAYS MODEL...')
@@ -490,9 +493,8 @@ Item {
             var obj = xmlModelHourByHour.get(i)
             var dateFrom = parseDate(obj.from)
             var dateTo = parseDate(obj.to)
-            dbgprint('meteo fill: i=' + i + ', from=' + obj.from + ', to=' + obj.to)
-            dbgprint('parsed: from=' + dateFrom + ', to=' + dateTo)
-
+//             dbgprint('meteo fill: i=' + i + ', from=' + obj.from + ', to=' + obj.to)
+//             dbgprint('parsed: from=' + dateFrom + ', to=' + dateTo)
             if (now > dateTo) {
                 continue;
             }
@@ -503,13 +505,17 @@ Item {
             }
 
             var prec = obj.precipitationAvg
+            if (typeof(prec)==="string"  && prec==="") {
+              prec = 0
+            }
+
             meteogramModel.append({
                 from: dateFrom,
                 to: dateTo,
                 temperature: parseInt(obj.temperature),
-                precipitationAvg: obj.precipitationAvg,
+                precipitationAvg: prec,
                 precipitationMin: '',
-                precipitationMax: obj.precipitationAvg,
+                precipitationMax: prec,
                 windDirection: obj.windDirection,
                 windSpeedMps: parseFloat(obj.windSpeedMps),
                 pressureHpa: parseFloat(obj.pressureHpa),
@@ -536,7 +542,6 @@ Item {
      * failureCallback()
      */
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
-
         var placeIdentifier = locationObject.placeIdentifier
 
         var loadedCounter = 0
