@@ -20,12 +20,12 @@ import QtGraphicalEffects 1.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
-    
+
     property int itemRowSpacing: 5 * units.devicePixelRatio
     property double periodFontSize: theme.defaultFont.pixelSize
     property double periodHeight: (height - periodFontSize - itemRowSpacing * 4) / 4
     property color lineColor: theme.textColor
-    
+
     PlasmaComponents.Label {
         id: dayTitleText
         text: dayTitle
@@ -33,14 +33,14 @@ Item {
         height: periodFontSize
         verticalAlignment: Text.AlignBottom
     }
-    
+
     Item {
         id: dayTitleLine
         width: parent.width
         height: 1 * units.devicePixelRatio
         anchors.top: parent.top
         anchors.topMargin: periodFontSize * 0.8
-        
+
         LinearGradient {
             anchors.fill: parent
             start: Qt.point(0, 0)
@@ -51,70 +51,70 @@ Item {
                 GradientStop { position: 1.0; color: Qt.rgba(lineColor.r, lineColor.g, lineColor.b, 0) }
             }
         }
-        
+
     }
-    
-    
-    
-    
+
+
+
+
     /*
-     * 
+     *
      * four item data
-     * 
+     *
      */
     GridLayout {
         anchors.fill: parent
         anchors.topMargin: periodFontSize
-        
+
         columns: 1
         rowSpacing: 5 * units.devicePixelRatio
-        
+
         height: parent.height - anchors.topMargin
         width: parent.width
-        
+
         NextDayPeriodItem {
             width: parent.width
             height: periodHeight
             temperature: temperature0
-            iconName: iconName0
+            iconName: (iconName0 != undefined) ? iconName0 : ""
             hidden: hidden0
             past: isPast0
             partOfDay: 1
             pixelFontSize: periodFontSize
         }
-        
+
         NextDayPeriodItem {
             width: parent.width
             height: periodHeight
             temperature: temperature1
-            iconName: iconName1
+            iconName: (iconName1 != undefined) ? iconName1 : ""
             hidden: hidden1
             past: isPast1
             partOfDay: 0
             pixelFontSize: periodFontSize
         }
-        
+
         NextDayPeriodItem {
             width: parent.width
             height: periodHeight
             temperature: temperature2
-            iconName: iconName2
+            iconName: (iconName2 != undefined) ? iconName2 : ""
             hidden: hidden2
             past: isPast2
             partOfDay: 0
             pixelFontSize: periodFontSize
         }
-        
+
         NextDayPeriodItem {
             width: parent.width
             height: periodHeight
             temperature: temperature3
-            iconName: iconName3
+            iconName: (iconName3 != undefined) ? iconName3 : ""
             hidden: hidden3
             past: isPast3
             partOfDay: 1
             pixelFontSize: periodFontSize
         }
     }
-    
+
 }
