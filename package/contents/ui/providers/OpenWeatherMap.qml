@@ -130,11 +130,11 @@ Item {
         }
         XmlRole {
             name: 'pressureHpa'
-            query: 'pressure/@value/string()'
+            query: 'pressure/@value/number()'
         }
         XmlRole {
             name: 'windSpeedMps'
-            query: 'wind/speed/@value/string()'
+            query: 'wind/speed/@value/number()'
         }
         XmlRole {
             name: 'windDirection'
