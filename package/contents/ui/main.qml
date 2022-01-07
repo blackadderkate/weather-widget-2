@@ -420,7 +420,7 @@ Item {
         onTriggered: {
             var now=dateNow()
             dbgprint("*** Timer triggered")
-            dbgprint("*** loadingData Flag: " + loadingData)
+            dbgprint("*** loadingData Flag : " + loadingData)
             dbgprint("*** Last Load Success: " + (lastloadingSuccessTime))
             dbgprint("*** Next Load Due    : " + (nextReload))
             dbgprint("*** Time Now         : " + now)
@@ -434,6 +434,7 @@ Item {
             if (loadingData) {
                 dbgprint("Timeout in:" + (lastloadingStartTime + loadingDataTimeoutMs - now))
                 if (now > (lastloadingStartTime + loadingDataTimeoutMs)) {
+                    console.log("Timed out downloading weather data - aborting attempt. Retrying in 60 seconds time.")
                     abortTooLongConnection(true)
                     nextReload=now + 60000
                 }
