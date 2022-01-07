@@ -351,7 +351,7 @@ Item {
     }
 
     function updateLastReloadedText() {
-      dbgprint("updateLastReloadedText" + lastloadingSuccessTime)
+      dbgprint("updateLastReloadedText: " + lastloadingSuccessTime)
         if (lastloadingSuccessTime > 0) {
             lastReloadedText = '⬇ ' + i18n("%1 ago", DataLoader.getLastReloadedTimeText(dateNow() - lastloadingSuccessTime))
         }
@@ -443,16 +443,21 @@ Item {
     }
 
     Timer {
-        interval: 5000
+        interval: 10000
         running: true
         repeat: true
         onTriggered: {
             var now=dateNow()
             dbgprint("*** Timer triggered")
-//             dbgprint("*** loadingData Flag:" + loadingData)
-//             dbgprint("*** Next Load Due:" + (nextReload))
-//             dbgprint("*** Time Now     :" + now)
-//             dbgprint("*** Next Load in :" + Math.round((nextReload - now) / 1000) + " sec = "+ ((nextReload - now) / 60000).toFixed(2) + " min")
+            dbgprint("*** loadingData Flag: " + loadingData)
+            dbgprint("*** Next Load Due: " + (nextReload))
+            dbgprint("*** Time Now     : " + now)
+            dbgprint("*** Next Load in : " + Math.round((nextReload - now) / 1000) + " sec = "+ ((nextReload - now) / 60000).toFixed(2) + " min")
+
+            updateLastReloadedText()
+            if ((lastloadingSuccessTime===0) && (updatingPaused)) {
+              toggleUpdatingPaused()
+            }
 
             if (loadingData) {
                 dbgprint("Timeout in:" + (lastloadingStartTime + loadingDataTimeoutMs - now))
