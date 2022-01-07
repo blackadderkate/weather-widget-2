@@ -410,13 +410,7 @@ Item {
             return
         }
 
-        if (imageLoadingError && !loadingError && renderMeteogram) {
-            reloadMeteogram()
-            imageLoadingError = false
-        }
-        if (loadingError) {
-            reloadData()
-        }
+        reloadData()
     }
 
     Timer {
@@ -427,9 +421,10 @@ Item {
             var now=dateNow()
             dbgprint("*** Timer triggered")
             dbgprint("*** loadingData Flag: " + loadingData)
-            dbgprint("*** Next Load Due: " + (nextReload))
-            dbgprint("*** Time Now     : " + now)
-            dbgprint("*** Next Load in : " + Math.round((nextReload - now) / 1000) + " sec = "+ ((nextReload - now) / 60000).toFixed(2) + " min")
+            dbgprint("*** Last Load Success: " + (lastloadingSuccessTime))
+            dbgprint("*** Next Load Due    : " + (nextReload))
+            dbgprint("*** Time Now         : " + now)
+            dbgprint("*** Next Load in     : " + Math.round((nextReload - now) / 1000) + " sec = "+ ((nextReload - now) / 60000).toFixed(2) + " min")
 
             updateLastReloadedText()
             if ((lastloadingSuccessTime===0) && (updatingPaused)) {
