@@ -180,13 +180,7 @@ Item {
         }
         cacheMap = cacheMap || {}
 
-        // fill last reloaded
-//        var lastReloadedMsJson = plasmoid.configuration.lastReloadedMsJson
-//         if (lastReloadedMsJson) {
-//             lastReloadedMsMap = JSON.parse(lastReloadedMsJson)
-//         }
-//         lastReloadedMsMap = lastReloadedMsMap || {}
-        // set initial place
+// set initial place
         setNextPlace(true)
     }
 
@@ -293,23 +287,6 @@ Item {
     function reloadMeteogram() {
         currentProvider.reloadMeteogramImage(placeIdentifier)
     }
-
-//     function setLastReloadedMs(lastReloadedMs) {
-//         lastReloadedMsMap[cacheKey] = lastReloadedMs
-//         plasmoid.configuration.lastReloadedMsJson = JSON.stringify(lastReloadedMsMap)
-//     }
-//
-//     function getLastReloadedMs() {
-//         if (!lastReloadedMsMap) {
-//             return new Date().getTime()
-//         }
-//       return lastReloadedMsMap[cacheKey]
-//     }
-//
-//     function reloaded() {
-//         setLastReloadedMs(DataLoader.setReloaded())
-//         updateLastReloadedText()
-//     }
 
     function loadFromCache() {
          dbgprint('loading from cache, config key: ' + cacheKey)
