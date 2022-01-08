@@ -211,7 +211,7 @@ Item {
         GridLayout {
             id: metNoRowLayout
             anchors.fill: parent
-            columns: 5
+            columns: 8
             Label {
                 id: newMetnoCityLatitudeLabel
                 text: i18n("Latitude")+":"
@@ -234,13 +234,50 @@ Item {
             TextField {
                 id: newMetnoCityLongtitudeField
                 Layout.fillWidth: true
+            }
+
+            Item {
+              width: 20
+            }
+
+            Label {
+                id: newMetnoCityAltitudeLabel
+                text: i18n("Altitude")+":"
+            }
+
+            TextField {
+                id: newMetnoCityAltitudeField
+                Layout.fillWidth: true
                 anchors.right: parent.right
             }
 
+            Label {
+              text: i18n("URL")+":"
+            }
+
+          TextField {
+              id: newMetnoUrl
+              placeholderText: i18n("URL")
+              Layout.columnSpan: 7
+              Layout.fillWidth: true
+
+              onEditingFinished: {
+                  var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,54})","g"))
+                  if (data.length === 3) {
+                    newMetnoCityLatitudeField.text=data[0]
+                    newMetnoCityLongtitudeField.text=data[1]
+                    newMetnoCityAltitudeField.text=data[2]
+                  }
+              }
+          }
+
+          Label {
+              text: i18n("Place Identifier")+":"
+          }
           TextField {
               id: newMetnoCityAlias
               placeholderText: i18n("City alias")
-              Layout.columnSpan: 5
+              Layout.columnSpan: 7
               Layout.fillWidth: true
           }
         }
