@@ -262,7 +262,7 @@ Item {
               Layout.fillWidth: true
 
               onEditingFinished: {
-                  var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,54})","g"))
+                  var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                   if (data.length === 3) {
                     newMetnoCityLatitudeField.text=data[0]
                     newMetnoCityLongtitudeField.text=data[1]
