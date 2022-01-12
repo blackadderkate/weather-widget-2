@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import "../../code/config-utils.js" as ConfigUtils
+import "../../code/placesearch-helpers.js" as Helper
 
 Item {
 
@@ -135,6 +136,27 @@ Item {
         visible: false
     }
 
+    MessageDialog {
+        id: saveSearchedData
+        title: i18n("Confirmation")
+        text: i18n("Do you want to select this place?")
+        icon: StandardIcon.Question
+        standardButtons: StandardButton.Yes | StandardButton.No
+        informativeText: ""
+        visible: false
+        onYes: {
+            let data=filteredCSVData.get(tableView.currentRow)
+            newMetnoCityLatitudeField.text=data["latitude"]
+            newMetnoCityLongtitudeField.text=data["longtitude"]
+            newMetnoCityAltitudeField.text=data["altitude"]
+            newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longtitude"]+"&altitude="+data["altitude"]
+            let loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+            newMetnoCityAlias.text=loc
+            searchWindow.close()
+            addMetnoCityIdDialog.open()
+        }
+    }
+
     Dialog {
         id: addMetnoCityIdDialog
         title: i18n("Add Met.no Map Place")
@@ -198,7 +220,8 @@ Item {
         }
 
         onAccepted: {
-            var resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text
+            var resultString = newMetnoUrl.text
+//             var resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text
             placesModel.append({
                 providerId: 'metno',
                 placeIdentifier: resultString,
@@ -277,8 +300,14 @@ Item {
           TextField {
               id: newMetnoCityAlias
               placeholderText: i18n("City alias")
-              Layout.columnSpan: 7
+              Layout.columnSpan: 6
               Layout.fillWidth: true
+          }
+          Button {
+              text: i18n("Search")
+              onClicked: {
+                  searchWindow.open()
+              }
           }
         }
     }
@@ -304,12 +333,157 @@ Item {
         }
     }
 
+    Dialog {
+        title: i18n("Location Search")
+        id: searchWindow
+        width: 640
+        height: 400
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        onAccepted: {
+           if(tableView.currentRow > -1) {
+               saveSearchedData.open()
+           }
+        }
+        Component.onCompleted: {
+            let locale=Qt.locale().name.substr(3,2)
+            let userCountry=Helper.getDisplayName(locale)
+            let tmpDB=Helper.getDisplayNames()
+            for (var i=0; i < tmpDB.length - 1 ; i++) {
+                countryCodesModel.append({ id: tmpDB[i] })
+                if (tmpDB[i] === userCountry) {
+                    countryList.currentIndex = i
+                }
+            }
+        }
+        TableView {
+            id: tableView
+            height: 140
+            verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
+            highlightOnFocus: true
+            anchors.bottom: row2.top
+            anchors.right: parent.right
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.bottomMargin: 10
+            model: filteredCSVData
+            TableViewColumn { role: "locationName"; title: "Location" }
+            TableViewColumn { role: "region"; title: "Area"; width :75 }
+            TableViewColumn { role: "latitude"; title: "Latitude"; width :75 }
+            TableViewColumn { role: "longtitude"; title: "Longtitude"; width :75 }
+            TableViewColumn { role: "altitude"; title: "Altitude"; width :75}
+            onDoubleClicked: {
+                saveSearchedData.open()
+            }
+        }
+        Item {
+            id: row1
+            anchors.bottom: parent.bottom
+            height: 20
+            width: parent.width
+            Label {
+                id:locationDataCredit
+                text: "Search data extracted from data provided by Geonames.org."
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+        }
+        MouseArea {
+            cursorShape: Qt.PointingHandCursor
+            anchors.fill: row1
+
+            hoverEnabled: true
+
+            onClicked: {
+                Qt.openUrlExternally("https://www.geonames.org/")
+            }
+
+            onEntered: {
+                locationDataCredit.font.underline = true
+            }
+
+            onExited: {
+                locationDataCredit.font.underline = false
+            }
+        }
+
+        Item {
+            id: row2
+            x: 0
+            y: 0
+            height: 54
+            anchors.left: parent.left
+            anchors.leftMargin: 0
+            anchors.right: parent.right
+            anchors.rightMargin: 0
+            anchors.bottom: row1.top
+            anchors.bottomMargin: 0
+            Label {
+                id: countryLabel
+                text: qsTr("Country:")
+                anchors.left: parent.left
+                anchors.leftMargin: 10
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            ComboBox {
+                id: countryList
+                anchors.left: countryLabel.right
+                anchors.leftMargin: 20
+                anchors.verticalCenterOffset: 0
+                anchors.verticalCenter: parent.verticalCenter
+                model: countryCodesModel
+                width: 200
+                editable: false
+                onCurrentIndexChanged: {
+                    let tmp1=countryList.textAt(countryList.currentIndex)
+                    Helper.loadCSVDatabase(tmp1)
+                }
+            }
+            Label {
+                id: locationLabel
+                anchors.right: locationEdit.left
+                anchors.rightMargin: 10
+                anchors.verticalCenter: parent.verticalCenter
+                text: qsTr("Filter:")
+            }
+            TextField {
+                id: locationEdit
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                verticalAlignment: Text.AlignVCenter
+                width: 160
+                height: 31
+                text: qsTr("")
+                font.capitalization: Font.Capitalize
+                selectByMouse: true
+                clip: false
+                Keys.onReturnPressed: {
+                    event.accepted = true
+                }
+                onTextChanged: {
+                    Helper.updateListView(locationEdit.text)
+                }
+            }
+        }
+
+
+
+        ListModel {
+            id: myCSVData
+        }
+        ListModel {
+            id: countryCodesModel
+        }
+        ListModel {
+            id: filteredCSVData
+        }
+    }
+
     ColumnLayout{
         id: rhsColumn
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.0.1'
+            text: i18n("Plasmoid version:") + ' 2.1.0'
             Layout.alignment: Qt.AlignRight
         }
 
