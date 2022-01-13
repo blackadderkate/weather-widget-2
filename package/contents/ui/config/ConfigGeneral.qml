@@ -305,6 +305,7 @@ Item {
           }
           Button {
               text: i18n("Search")
+              anchors.right: parent.right
               onClicked: {
                   searchWindow.open()
               }
