@@ -62,7 +62,7 @@ Item {
         }
         XmlRole {
             name: 'windDirection'
-            query: 'windDirection/@code/number()'
+            query: 'windDirection/@deg/number()'
         }
         XmlRole {
             name: 'windSpeedMps'
@@ -96,7 +96,7 @@ Item {
         }
         XmlRole {
             name: 'windDirection'
-            query: 'windDirection/@code/number()'
+            query: 'windDirection/@deg/number()'
         }
         XmlRole {
             name: 'windSpeedMps'
@@ -138,7 +138,7 @@ Item {
         }
         XmlRole {
             name: 'windDirection'
-            query: 'wind/direction/@code/string()'
+            query: 'wind/direction/@deg/number()'
         }
         XmlRole {
             name: 'cloudiness'
@@ -508,7 +508,6 @@ Item {
             if (typeof(prec)==="string"  && prec==="") {
               prec = 0
             }
-
             meteogramModel.append({
                 from: dateFrom,
                 to: dateTo,
