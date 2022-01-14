@@ -484,7 +484,7 @@ Item {
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.1.0'
+            text: i18n("Plasmoid version:") + ' 2.1.1'
             Layout.alignment: Qt.AlignRight
         }
 
@@ -637,11 +637,13 @@ Item {
                 text: 'metno'
                 width: 100
                 onClicked: {
-                    addMetnoCityIdDialog.open()
                     newMetnoCityAlias.text = ''
                     newMetnoCityLatitudeField.text = ''
                     newMetnoCityLongtitudeField.text = ''
-                    newOwmCityIdField.focus = true
+                    newMetnoCityAltitudeField.text = ''
+                    newMetnoUrl.text = ''
+                    newMetnoCityLatitudeField.focus = true
+                    addMetnoCityIdDialog.open()
                 }
             }
         }
