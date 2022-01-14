@@ -484,7 +484,7 @@ Item {
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.1.1'
+            text: i18n("Plasmoid version:") + ' 2.1.2'
             Layout.alignment: Qt.AlignRight
         }
 
@@ -678,6 +678,7 @@ Item {
             checked: false
             text: "Debug"
             Layout.alignment: Qt.AlignLeft
+            visible: false
         }
     }
 }
