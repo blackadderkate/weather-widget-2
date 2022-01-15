@@ -587,7 +587,7 @@ Item {
     }
 
     function getCreditLabel(placeIdentifier) {
-        return 'Open Weather Map'
+        return 'Weather forecast data provided by OpenWeather.'
     }
 
     function getCreditLink(placeIdentifier) {
