@@ -32,7 +32,7 @@ Item {
             var currentWeather=readingsArray.properties.timeseries[0]
             var futureWeather=readingsArray.properties.timeseries[1]
             var iconnumber=geticonNumber(currentWeather.data.next_1_hours.summary.symbol_code)
-            var wd=windDirection(currentWeather.data.instant.details["wind_from_direction"])
+            var wd=currentWeather.data.instant.details["wind_from_direction"]
             var ws=currentWeather.data.instant.details["wind_speed"]
             var ap=currentWeather.data.instant.details["air_pressure_at_sea_level"]
             actualWeatherModel.append({"temperature": currentWeather.data.instant.details["air_temperature"], "iconName": iconnumber, "windDirection": wd,"windSpeedMps": ws, "pressureHpa": ap})
