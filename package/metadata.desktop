@@ -11,7 +11,7 @@ X-KDE-PluginInfo-Category=Environment and Weather
 X-KDE-ParentApp=X-KDE-PluginInfo-Author=Kate
 X-KDE-PluginInfo-Email=kate.buckley@gmail.com
 X-KDE-PluginInfo-Name=org.kde.weatherWidget-2
-X-KDE-PluginInfo-Version=2.0.3
+X-KDE-PluginInfo-Version=2.0.4
 X-KDE-PluginInfo-Website=https://github.com/blackadderkate/weather-widget-2
 X-KDE-PluginInfo-Category=Examples
 X-KDE-PluginInfo-Depends=X-KDE-PluginInfo-License=GPL2
