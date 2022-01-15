@@ -181,25 +181,6 @@ var WeatherFont = {
     }
 }
 
-var iconCodeByWindDirectionCode = {
-    'N'  : '&#xf060;',
-    'NNE': '&#xf05e;',
-    'NE' : '&#xf05e;',
-    'ENE': '&#xf05e;',
-    'E'  : '&#xf061;',
-    'ESE': '&#xf05b;',
-    'SE' : '&#xf05b;',
-    'SSE': '&#xf05b;',
-    'S'  : '&#xf05c;',
-    'SSW': '&#xf05a;',
-    'SW' : '&#xf05a;',
-    'WSW': '&#xf05a;',
-    'W'  : '&#xf059;',
-    'WNW': '&#xf05d;',
-    'NW' : '&#xf05d;',
-    'NNW': '&#xf05d;'
-}
-
 function getIconCode(iconName, providerId, partOfDay) {
     var iconCodeParts = null
     if (providerId === 'yrno') {
@@ -216,9 +197,11 @@ function getIconCode(iconName, providerId, partOfDay) {
 }
 
 function getWindDirectionIconCode(code) {
-    var iconCode = iconCodeByWindDirectionCode[code]
+    const iconCodes=[ "\uf060", "\uf05e", "\uf061", "\uf05b", "\uf05c","\uf05a", "\uf059", "\uf05d"]
+    let n=Math.round((code + 22.5) / 45 ) - 1
+    var iconCode=iconCodes[n]
     if (!iconCode) {
-        return 'f073'
+        return '\uf073'
     }
     return iconCode
 }

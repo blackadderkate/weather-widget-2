@@ -138,7 +138,7 @@ Item {
         }
         XmlRole {
             name: 'windDirection'
-            query: 'wind/direction/@deg/string()'
+            query: 'wind/direction/@value/number()'
         }
         XmlRole {
             name: 'cloudiness'
