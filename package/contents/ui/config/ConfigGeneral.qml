@@ -198,7 +198,7 @@ Item {
         }
 
         onAccepted: {
-            var resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text
+            var resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&alt="+newMetnoCityAltitudeField.text
             placesModel.append({
                 providerId: 'metno',
                 placeIdentifier: resultString,
