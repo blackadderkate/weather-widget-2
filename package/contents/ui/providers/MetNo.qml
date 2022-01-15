@@ -16,11 +16,11 @@ Item {
     property bool sunRiseSetFlag: false
 
     function getCreditLabel(placeIdentifier) {
-        return 'Weather forecast compiled using Data provided by The Norwegian Meteorological Institute'
-    }
+        return 'Weather forecast data provided by The Norwegian Meteorological Institute,'
+     }
 
     function getCreditLink(placeIdentifier) {
-        return urlPrefix + placeIdentifier + '/'
+        return urlPrefix + placeIdentifier
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
