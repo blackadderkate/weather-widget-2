@@ -16,7 +16,7 @@ Item {
     property bool sunRiseSetFlag: false
 
     function getCreditLabel(placeIdentifier) {
-        return 'Weather forecast dData provided by The Norwegian Meteorological Institute,'
+        return 'Weather forecast data provided by The Norwegian Meteorological Institute,'
     }
 
     function getCreditLink(placeIdentifier) {
