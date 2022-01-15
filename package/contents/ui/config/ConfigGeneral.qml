@@ -273,7 +273,6 @@ Item {
             TextField {
                 id: newMetnoCityAltitudeField
                 Layout.fillWidth: true
-                anchors.right: parent.right
             }
 
             Label {
@@ -307,7 +306,7 @@ Item {
           }
           Button {
               text: i18n("Search")
-              anchors.right: parent.right
+              Layout.alignment: Qt.AlignRight
               onClicked: {
                   searchWindow.open()
               }
@@ -437,8 +436,9 @@ Item {
                 width: 200
                 editable: false
                 onCurrentIndexChanged: {
-                    let tmp1=countryList.textAt(countryList.currentIndex)
-                    Helper.loadCSVDatabase(tmp1)
+                    if (countryList.currentIndex > 0) {
+                        Helper.loadCSVDatabase(countryList.textAt(countryList.currentIndex))
+                    }
                 }
             }
             Label {
