@@ -354,7 +354,7 @@ Item {
         }
         var nearFutureWeather = additionalWeatherInfo.nearFutureWeather
         var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentProvider.providerId, getPartOfDayIndex())
-        var wind1=actualWeatherModel.get(0).windDirection
+        var wind1=Math.round(actualWeatherModel.get(0).windDirection)
         var windDirectionIcon = IconTools.getWindDirectionIconCode(wind1)
         var subText = ''
         subText += '<br /><font size="4" style="font-family: weathericons;">' + windDirectionIcon + '</font><font size="4"> ' + wind1 + '\u064c &nbsp; @ ' + UnitUtils.getWindSpeedText(actualWeatherModel.get(0).windSpeedMps, windSpeedType) + '</font>'
