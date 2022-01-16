@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-01-16 17:56+0000\n"
-"PO-Revision-Date: 2022-01-15 13:18+0100\n"
+"PO-Revision-Date: 2022-01-16 20:20+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -68,15 +68,15 @@ msgstr "m/s"
 
 #: ../contents/config/config.qml
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: ../contents/config/config.qml
 msgid "Appearance"
-msgstr ""
+msgstr "Vormgeving"
 
 #: ../contents/config/config.qml
 msgid "Units"
-msgstr ""
+msgstr "Eenheden"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -195,11 +195,11 @@ msgstr "Lengtegraad"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Altitude"
-msgstr ""
+msgstr "Hoogte"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
@@ -301,4 +301,4 @@ msgstr "Bezig met laden van afbeelding…"
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
-msgstr ""
+msgstr "Vandaag"
