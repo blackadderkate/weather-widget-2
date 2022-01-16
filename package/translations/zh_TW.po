@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"POT-Creation-Date: 2022-01-16 17:56+0000\n"
 "PO-Revision-Date: 2022-01-03 22:18+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
@@ -28,6 +28,54 @@ msgstr ""
 #: ../metadata.desktop
 msgid "weather-clouds"
 msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "°C"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "英寸汞柱"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "毫米汞柱"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "百帕"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "mph"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "公里／小時"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "公尺／秒"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "一般"
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr "外觀"
+
+#: ../contents/config/config.qml
+msgid "Units"
+msgstr "單位"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -142,6 +190,18 @@ msgid "Longtitude"
 msgstr "長身材"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "位置識別符"
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
 msgstr "變更顯示為"
 
@@ -151,7 +211,7 @@ msgstr "輸入位置別稱"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
-msgstr ""
+msgstr "Plasmoid 版本:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -160,10 +220,6 @@ msgstr "位置"
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "來源"
-
-#: ../contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "位置識別符"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
@@ -191,48 +247,12 @@ msgid "Temperature:"
 msgstr "溫度："
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "°C"
-msgstr "°C"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "°F"
-msgstr "°F"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "K"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
 msgstr "壓力："
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "hPa"
-msgstr "百帕"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "inHg"
-msgstr "英寸汞柱"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mmHg"
-msgstr "毫米汞柱"
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Wind speed:"
 msgstr "風速："
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "m/s"
-msgstr "公尺／秒"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mph"
-msgstr "mph"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "km/h"
-msgstr "公里／小時"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
@@ -275,17 +295,9 @@ msgstr "離線模式"
 msgid "Loading image..."
 msgstr "正在載入圖片..."
 
-#~ msgid "Plasmoid version: "
-#~ msgstr "Plasmoid 版本："
-
-#~ msgid "General"
-#~ msgstr "一般"
-
-#~ msgid "Appearance"
-#~ msgstr "外觀"
-
-#~ msgid "Units"
-#~ msgstr "單位"
+#: ../contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "今天"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "繪製 yr.no 天氣圖表"
@@ -308,6 +320,3 @@ msgstr "正在載入圖片..."
 
 #~ msgid "clouds"
 #~ msgstr "雲"
-
-#~ msgid "today"
-#~ msgstr "今天"

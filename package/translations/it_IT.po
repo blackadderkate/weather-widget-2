@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"POT-Creation-Date: 2022-01-16 17:56+0000\n"
 "PO-Revision-Date: 2022-01-03 22:09+0000\n"
 "Last-Translator: Armando Brandonisio <armando.bradonisio@gmail.com>\n"
 "Language-Team: Armando Brandonisio <armando.brandonisio@gmail.com>\n"
@@ -28,6 +28,54 @@ msgstr ""
 #: ../metadata.desktop
 msgid "weather-clouds"
 msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "°C"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "inHg"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "mmHg"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "hPa"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "mph"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "km/h"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "m/s"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "Generale"
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: ../contents/config/config.qml
+msgid "Units"
+msgstr "Unità"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -144,6 +192,18 @@ msgid "Longtitude"
 msgstr "Longitudine"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Identificatore posto"
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
 msgstr "Modifica Visualizzato Come"
 
@@ -153,7 +213,7 @@ msgstr "Inserisci il nome del luogo"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
-msgstr ""
+msgstr "Versione plasmoide:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -162,10 +222,6 @@ msgstr "Luogo"
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Sorgente"
-
-#: ../contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Identificatore posto"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
@@ -193,48 +249,12 @@ msgid "Temperature:"
 msgstr "Temperatura:"
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "°C"
-msgstr "°C"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "°F"
-msgstr "°F"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "K"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
 msgstr "Pressione:"
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "hPa"
-msgstr "hPa"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "inHg"
-msgstr "inHg"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mmHg"
-msgstr "mmHg"
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Wind speed:"
 msgstr "Velocità del vento:"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "m/s"
-msgstr "m/s"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mph"
-msgstr "mph"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "km/h"
-msgstr "km/h"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
@@ -277,17 +297,9 @@ msgstr "Modalità offline"
 msgid "Loading image..."
 msgstr "Caricando l'immagine..."
 
-#~ msgid "Plasmoid version: "
-#~ msgstr "Versione plasmoide:"
-
-#~ msgid "General"
-#~ msgstr "Generale"
-
-#~ msgid "Appearance"
-#~ msgstr "Aspetto"
-
-#~ msgid "Units"
-#~ msgstr "Unità"
+#: ../contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "Oggi"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Renderizza il meteogramma per yr.no"
@@ -311,6 +323,3 @@ msgstr "Caricando l'immagine..."
 
 #~ msgid "clouds"
 #~ msgstr "nuvole"
-
-#~ msgid "today"
-#~ msgstr "Oggi"

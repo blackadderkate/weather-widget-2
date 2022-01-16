@@ -1,4 +1,4 @@
-# Translation of weatherWidget-2 in LANGUAGE
+# Translation of weatherWidget-2 in nl
 # Copyright (C) 2022
 # This file is distributed under the same license as the weatherWidget-2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"POT-Creation-Date: 2022-01-16 17:56+0000\n"
 "PO-Revision-Date: 2022-01-15 13:18+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
-"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language: nl\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -29,6 +29,54 @@ msgstr "Een plasmoid die weerinformatie toont van de met.no-server"
 #: ../metadata.desktop
 msgid "weather-clouds"
 msgstr "Wolken"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "°C"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr "K"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "inHg"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "mmHg"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "hPa"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "mpu"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "km/u"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "m/s"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "Units"
+msgstr ""
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -75,9 +123,9 @@ msgid ""
 "refreshed. You can always set the widget to be always \"Shown\" in system "
 "tray \"Entries\" settings."
 msgstr ""
-"LET OP: na deze time-out wordt de widget niet meer getoond in het "
-"systeemvak tot aan de volgende verversing. Je kunt dit gedrag aanpassen "
-"in de systeemvakinstellingen van het paneel."
+"LET OP: na deze time-out wordt de widget niet meer getoond in het systeemvak "
+"tot aan de volgende verversing. Je kunt dit gedrag aanpassen in de "
+"systeemvakinstellingen van het paneel."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -146,6 +194,18 @@ msgid "Longtitude"
 msgstr "Lengtegraad"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Locatie-id"
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
 msgstr "Weergavenaam aanpassen"
 
@@ -164,10 +224,6 @@ msgstr "Locatie"
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Bron"
-
-#: ../contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Locatie-id"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
@@ -195,48 +251,12 @@ msgid "Temperature:"
 msgstr "Temperatuur:"
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "°C"
-msgstr "°C"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "°F"
-msgstr "°F"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "K"
-msgstr "K"
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
 msgstr "Luchtdruk:"
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "hPa"
-msgstr "hPa"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "inHg"
-msgstr "inHg"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mmHg"
-msgstr "mmHg"
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Wind speed:"
 msgstr "Windsnelheid:"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "m/s"
-msgstr "m/s"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mph"
-msgstr "mpu"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "km/h"
-msgstr "km/u"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
@@ -278,3 +298,7 @@ msgstr "Offline-modus"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Bezig met laden van afbeelding…"
+
+#: ../contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr ""
