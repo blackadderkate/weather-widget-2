@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"POT-Creation-Date: 2022-01-16 18:31+0000\n"
 "PO-Revision-Date: 2022-01-03 22:03+0000\n"
 "Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
@@ -28,6 +28,54 @@ msgstr ""
 #: ../metadata.desktop
 msgid "weather-clouds"
 msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "Obecné"
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr "Vzhled"
+
+#: ../contents/config/config.qml
+msgid "Units"
+msgstr "Jednotky"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -105,6 +153,14 @@ msgid "Error!"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
 msgstr "Přidat lokaci Met.no Map Map"
 
@@ -143,6 +199,22 @@ msgid "Longtitude"
 msgstr "Dlouhá síla"
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "ID lokace"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
 msgstr "Změnit alias"
 
@@ -151,8 +223,12 @@ msgid "Enter place alias"
 msgstr "Napište alias lokace"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
+msgid "Location Search"
 msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Verze apletu:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -161,10 +237,6 @@ msgstr "Lokace"
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Zdroj"
-
-#: ../contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "ID lokace"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
@@ -192,48 +264,12 @@ msgid "Temperature:"
 msgstr "Teplota:"
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "°C"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "°F"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "K"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
 msgstr "Tlak:"
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "hPa"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "inHg"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mmHg"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Wind speed:"
 msgstr "Ryhlost větru:"
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "m/s"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mph"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "km/h"
-msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
@@ -276,17 +312,9 @@ msgstr "Offline režim"
 msgid "Loading image..."
 msgstr "Načítání obrázku..."
 
-#~ msgid "Plasmoid version: "
-#~ msgstr "Verze apletu: "
-
-#~ msgid "General"
-#~ msgstr "Obecné"
-
-#~ msgid "Appearance"
-#~ msgstr "Vzhled"
-
-#~ msgid "Units"
-#~ msgstr "Jednotky"
+#: ../contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "dnes"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Použít renderovaný meteogram pro yr.no"
@@ -309,6 +337,3 @@ msgstr "Načítání obrázku..."
 
 #~ msgid "clouds"
 #~ msgstr "oblačnost"
-
-#~ msgid "today"
-#~ msgstr "dnes"

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Weather Widget 2
 Comment=Plasmoid showing weather information from met.no server
+Icon[nl]=Wolken
 Icon=weather-clouds
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet
@@ -18,4 +19,7 @@ X-KDE-PluginInfo-Depends=X-KDE-PluginInfo-License=GPL2
 X-KDE-PluginInfo-EnabledByDefault=true
 X-Plasma-RemoteLocation=
 
+Name[nl]=Weerwidget 2
+Comment[nl]=Een plasmoid die weerinformatie toont van de met.no-server
 Comment[zh_CN]=添加 Open Weather Map
+Icon[nl]=Wolken

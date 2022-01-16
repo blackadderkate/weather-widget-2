@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-03 22:36+0000\n"
+"POT-Creation-Date: 2022-01-16 18:31+0000\n"
 "PO-Revision-Date: 2016-03-26 21:59+0100\n"
 "Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
@@ -26,6 +26,54 @@ msgstr ""
 
 #: ../metadata.desktop
 msgid "weather-clouds"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr ""
+
+#: ../contents/config/config.qml
+msgid "Units"
 msgstr ""
 
 #: ../contents/ui/config/ConfigAppearance.qml
@@ -96,6 +144,14 @@ msgid "Error!"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
 msgstr ""
 
@@ -134,11 +190,31 @@ msgid "Longtitude"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Enter place alias"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
@@ -151,10 +227,6 @@ msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
-msgstr ""
-
-#: ../contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
@@ -183,47 +255,11 @@ msgid "Temperature:"
 msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "°C"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "°F"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "K"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Pressure:"
 msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
-msgid "hPa"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "inHg"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mmHg"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
 msgid "Wind speed:"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "m/s"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "mph"
-msgstr ""
-
-#: ../contents/ui/config/ConfigUnits.qml
-msgid "km/h"
 msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
@@ -264,4 +300,8 @@ msgstr ""
 
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
+msgstr ""
+
+#: ../contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
 msgstr ""

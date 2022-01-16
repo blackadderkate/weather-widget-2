@@ -334,7 +334,7 @@ Item {
                 // today?
                 if (dateFrom <= now && now <= dateTo) {
                     dbgprint('setting today')
-                    lastObjectHourByHour.dayTitle = i18n('today')
+                    lastObjectHourByHour.dayTitle = i18n("today")
                     isToday = true
                 } else {
                     lastObjectHourByHour.dayTitle = composeNextDayTitle(dateTo)
@@ -417,7 +417,7 @@ Item {
             var isToday = false
             if (dateFrom <= now && now <= dateTo) {
                 dbgprint('setting today')
-                lastObject.dayTitle = i18n('today')
+                lastObject.dayTitle = i18n("today")
                 isToday = true
             } else {
                 lastObject.dayTitle = composeNextDayTitle(dateTo)
