@@ -683,105 +683,110 @@ Item {
             visible: false
         }
     }
-    Text {
-        id: attribution1
-        anchors.bottom: attribution2.top
-        anchors.bottomMargin: 2
-        font.pointSize: 8
-        text: 'Met.no weather forecast data provided by The Norwegian Meteorological Institute.'
-    }
-    Text {
-        id: attribution2
-        anchors.bottom: attribution3.top
-        anchors.bottomMargin: 2
-        font.pointSize: 8
-        text: 'Sunrise/sunset data provided by Sunrise - Sunset.'
-    }
-    Text {
-        id: attribution3
-        anchors.bottom: attribution4.top
-        anchors.bottomMargin: 2
-        font.pointSize: 8
-        text: 'OWM weather forecast data provided by OpenWeather.'
-    }
-    Text {
-        id: attribution4
+
+    Item {
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 2
-        font.pointSize: 8
-        text: 'Weather icons created by Erik Flowers.'
+        anchors.left: parent.left
+        anchors.right: parent.right
+        Label {
+            id: attribution1
+            anchors.bottom: attribution2.top
+            anchors.bottomMargin: 2
+            font.pointSize: 8
+            text: 'Met.no weather forecast data provided by The Norwegian Meteorological Institute.'
+        }
+        Label {
+            id: attribution2
+            anchors.bottom: attribution3.top
+            anchors.bottomMargin: 2
+            font.pointSize: 8
+            text: 'Sunrise/sunset data provided by Sunrise - Sunset.'
+        }
+        Label {
+            id: attribution3
+            anchors.bottom: attribution4.top
+            anchors.bottomMargin: 2
+            font.pointSize: 8
+            text: 'OWM weather forecast data provided by OpenWeather.'
+        }
+        Label {
+            id: attribution4
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            font.pointSize: 8
+            text: 'Weather icons created by Erik Flowers.'
+        }
+        MouseArea {
+            cursorShape: Qt.PointingHandCursor
+            anchors.fill: attribution1
+
+            hoverEnabled: true
+
+            onClicked: {
+                Qt.openUrlExternally('https://www.met.no/en/About-us')
+            }
+
+            onEntered: {
+                owmLink.font.underline = true
+            }
+
+            onExited: {
+                owmLink.font.underline = false
+            }
+        }
+        MouseArea {
+            cursorShape: Qt.PointingHandCursor
+            anchors.fill: attribution2
+
+            hoverEnabled: true
+
+            onClicked: {
+                Qt.openUrlExternally('https://sunrise-sunset.org/about')
+            }
+
+            onEntered: {
+                owmLink.font.underline = true
+            }
+
+            onExited: {
+                owmLink.font.underline = false
+            }
+        }
+        MouseArea {
+            cursorShape: Qt.PointingHandCursor
+            anchors.fill: attribution3
+
+            hoverEnabled: true
+
+            onClicked: {
+                Qt.openUrlExternally('https://openweathermap.org/about-us')
+            }
+
+            onEntered: {
+                owmLink.font.underline = true
+            }
+
+            onExited: {
+                owmLink.font.underline = false
+            }
+        }
+        MouseArea {
+            cursorShape: Qt.PointingHandCursor
+            anchors.fill: attribution4
+
+            hoverEnabled: true
+
+            onClicked: {
+                Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
+            }
+
+            onEntered: {
+                owmLink.font.underline = true
+            }
+
+            onExited: {
+                owmLink.font.underline = false
+            }
+        }
     }
-    MouseArea {
-        cursorShape: Qt.PointingHandCursor
-        anchors.fill: attribution1
-
-        hoverEnabled: true
-
-        onClicked: {
-            Qt.openUrlExternally('https://www.met.no/en/About-us')
-        }
-
-        onEntered: {
-            owmLink.font.underline = true
-        }
-
-        onExited: {
-            owmLink.font.underline = false
-        }
-    }
-    MouseArea {
-        cursorShape: Qt.PointingHandCursor
-        anchors.fill: attribution2
-
-        hoverEnabled: true
-
-        onClicked: {
-            Qt.openUrlExternally('https://sunrise-sunset.org/about')
-        }
-
-        onEntered: {
-            owmLink.font.underline = true
-        }
-
-        onExited: {
-            owmLink.font.underline = false
-        }
-    }
-    MouseArea {
-        cursorShape: Qt.PointingHandCursor
-        anchors.fill: attribution3
-
-        hoverEnabled: true
-
-        onClicked: {
-            Qt.openUrlExternally('https://openweathermap.org/about-us')
-        }
-
-        onEntered: {
-            owmLink.font.underline = true
-        }
-
-        onExited: {
-            owmLink.font.underline = false
-        }
-    }
-    MouseArea {
-    cursorShape: Qt.PointingHandCursor
-    anchors.fill: attribution4
-
-    hoverEnabled: true
-
-    onClicked: {
-        Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
-    }
-
-    onEntered: {
-        owmLink.font.underline = true
-    }
-
-    onExited: {
-        owmLink.font.underline = false
-    }
-    }
-
 }

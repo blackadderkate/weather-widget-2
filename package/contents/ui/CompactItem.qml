@@ -106,7 +106,7 @@ Item {
         width: partWidth
         height: partHeight
 
-        horizontalAlignment: layoutType === 1 ? Text.AlignHCenter : Text.AlignRight
+        horizontalAlignment: layoutType === 2 ? Text.AlignRight : Text.AlignHCenter
         verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
 
         text: temperatureStr
