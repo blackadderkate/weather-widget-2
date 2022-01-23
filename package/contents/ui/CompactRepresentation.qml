@@ -30,12 +30,7 @@ Item {
         inTray: false
     }
 
-    property double partHeight: compactItem.partHeight
-
-    Layout.preferredWidth: compactItem.widgetWidth
-    Layout.maximumWidth: onDesktop ? 0 : compactItem.widgetWidth
-    Layout.preferredHeight: compactItem.widgetHeight
-    Layout.maximumHeight: onDesktop ? 0 : compactItem.widgetHeight
+    property double partHeight: compactItem.widgetHeight
 
     PlasmaComponents.Label {
         id: lastReloadedNotifier

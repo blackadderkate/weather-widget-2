@@ -32,13 +32,15 @@ Item {
     property double parentWidth: parent.width
     property double parentHeight: parent.height
 
-    property double partRatio: layoutType === 2 ? 1 : (4 / 3)
-
-    property double partWidth: 0
     property double partHeight: 0
 
     property double widgetWidth: 0
     property double widgetHeight: 0
+
+    property int boxLeft: 0
+    property int boxTop: 0
+    property int boxWidth: 0
+    property int boxHeight: 0
 
     onParentWidthChanged: {
         computeWidgetSize()
@@ -53,101 +55,113 @@ Item {
     }
 
     function computeWidgetSize() {
-        if (layoutType === 0) {
-            partWidth = vertical ? (parentWidth / 2) : parentHeight * partRatio
-            partHeight = partWidth / partRatio
-            widgetWidth = partWidth * 2
-            widgetHeight = partHeight
-        } else if (layoutType === 1) {
-            partWidth = vertical ? parentWidth : (parentHeight / 2) * partRatio
-            partHeight = partWidth / partRatio
-            widgetWidth = partWidth
-            widgetHeight = partHeight * 2
-        } else if (layoutType === 2) {
-            partWidth = vertical ? parentWidth : parentHeight
-            partHeight = partWidth
-            widgetWidth = partWidth
-            widgetHeight = partHeight
-        }
+      widgetWidth = compactItem.width
+      widgetHeight = compactItem.height
+
+      if ((widgetWidth === 0) || (widgetHeight === 0))
+        return
+
+      switch (layoutType) {
+        case 0:
+          boxWidth = widgetHeight
+          boxHeight = widgetHeight
+          widgetWidth = widgetHeight * 2
+          break
+        case 1:
+          boxWidth = widgetHeight
+          boxHeight = widgetHeight / 2
+          widgetWidth = widgetHeight
+          break
+        case 2:
+          boxWidth = widgetHeight
+          boxHeight = widgetHeight
+          widgetWidth = widgetHeight
+          break
+      }
+      compactRepresentation.Layout.preferredHeight = widgetHeight
+      compactRepresentation.Layout.preferredWidth = widgetWidth
     }
 
-
-    property double fontPixelSize: partHeight * (layoutType === 2 ? 0.7 : 0.7)
+    property double fontPixelSize: boxHeight * (layoutType === 2 ? 0.7 : 0.7)
 
     property string iconNameStr:    actualWeatherModel.count > 0 ? IconTools.getIconCode(actualWeatherModel.get(0).iconName, currentProvider.providerId, getPartOfDayIndex()) : '\uf07b'
     property string temperatureStr: actualWeatherModel.count > 0 ? UnitUtils.getTemperatureNumberExt(actualWeatherModel.get(0).temperature, temperatureType) : '--'
-
-    PlasmaComponents.Label {
-
-        width: partWidth
-        height: partHeight
-
-        anchors.left: parent.left
-        anchors.leftMargin: layoutType === 0 ? partWidth : 0
-        anchors.top: parent.top
-        anchors.topMargin: layoutType === 1 ? partHeight : 0
-
-        horizontalAlignment: layoutType === 2 ? Text.AlignLeft : Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        fontSizeMode: layoutType === 2 ? Text.Fit : Text.FixedSize
-
-        font.family: 'weathericons'
-        text: iconNameStr
-
-        opacity: layoutType === 2 ? 0.8 : 1
-
-        font.pixelSize: fontPixelSize
-        font.pointSize: -1
-    }
-
-    PlasmaComponents.Label {
-        id: temperatureText
-
-        width: partWidth
-        height: partHeight
-
-        horizontalAlignment: layoutType === 2 ? Text.AlignRight : Text.AlignHCenter
-        verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
-
-        text: temperatureStr
-        font.pixelSize: fontPixelSize * (layoutType === 2 ? 0.5 : (temperatureType !== UnitUtils.TemperatureType.CELSIUS ? 6/7 : 1))
-        font.pointSize: -1
-    }
-
-    DropShadow {
-        anchors.fill: temperatureText
-        radius: 3
-        samples: 16
-        spread: 0.9
-        fast: true
-        color: theme.backgroundColor
-        source: temperatureText
-        visible: layoutType === 2
-    }
-
-    PlasmaComponents.BusyIndicator {
-        id: busyIndicator
+    Item {
+        id: innerWindow
         anchors.fill: parent
-        visible: false
-        running: false
-    }
 
-    states: [
-        State {
-            name: 'loading'
-            when: loadingData
+        PlasmaComponents.Label {
+            width: boxWidth
+            height: boxHeight
 
-            PropertyChanges {
-                target: busyIndicator
-                visible: true
-                running: true
-            }
+            anchors.left: parent.left
+            anchors.leftMargin: layoutType === 0 ? boxWidth : 0
+            anchors.top: parent.top
+            anchors.topMargin: layoutType === 1 ? boxHeight : 0
 
-            PropertyChanges {
-                target: compactItem
-                opacity: 0.5
-            }
+            horizontalAlignment: layoutType === 2 ? Text.AlignLeft : Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            fontSizeMode: layoutType === 2 ? Text.Fit : Text.FixedSize
+
+            font.family: 'weathericons'
+            text: iconNameStr
+
+            opacity: layoutType === 2 ? 0.8 : 1
+
+            font.pixelSize: fontPixelSize
+            font.pointSize: -1
         }
-    ]
+        PlasmaComponents.Label {
+            id: temperatureText
 
+            width: boxWidth
+            height: boxHeight
+
+              anchors.left: parent.left
+              anchors.leftMargin: 0
+              anchors.top: parent.top
+              anchors.topMargin: 0
+
+            horizontalAlignment: layoutType === 1 ? Text.AlignHCenter : Text.AlignRight
+            verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
+
+            text: temperatureStr
+            font.pixelSize: fontPixelSize * (layoutType === 2 ? 0.5 : (temperatureType !== UnitUtils.TemperatureType.CELSIUS ? 6/7 : 1))
+            font.pointSize: -1
+        }
+        DropShadow {
+            anchors.fill: temperatureText
+            radius: 3
+            samples: 16
+            spread: 0.9
+            fast: true
+            color: theme.backgroundColor
+            source: temperatureText
+            visible: layoutType === 2
+        }
+        PlasmaComponents.BusyIndicator {
+            id: busyIndicator
+            anchors.fill: parent
+            visible: false
+            running: false
+        }
+
+        states: [
+            State {
+                name: 'loading'
+                when: loadingData
+
+                PropertyChanges {
+                    target: busyIndicator
+                    visible: true
+                    running: true
+                }
+
+                PropertyChanges {
+                    target: compactItem
+                    opacity: 0.5
+                }
+            }
+        ]
+    }
 }
