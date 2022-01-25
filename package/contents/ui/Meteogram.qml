@@ -20,6 +20,7 @@ import QtGraphicalEffects 1.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import "../code/unit-utils.js" as UnitUtils
 import "../code/icons.js" as IconTools
+import QtQuick.Controls 2.5
 
 Item {
     id: meteogram
@@ -420,26 +421,19 @@ Item {
 
                 Item {
                     id: windspeedAnchor
-                     width: parent.width
-                     height: 32
-                     anchors.top: hourText.bottom
+                    width: parent.width
+                    height: 32
+                    anchors.top: hourText.bottom
 
-                    Rectangle {
+                    ToolTip{
                         id: windspeedhover
-                        rotation: 0
-                        color: "red"
-                        x: -(childrenRect.width / 2)
-                        y: -20
+                        text: UnitUtils.getWindSpeedText(windSpeedMps, windSpeedType)
+                        padding: 4
+                        x: windspeedAnchor.width + 12
+                        y: (windspeedAnchor.height / 2) - (windspeedhover.height / 2)
+                        opacity: 1
                         visible: false
-                        Text {
-                            text: UnitUtils.getWindSpeedText(windSpeedMps, windSpeedType)
-                            color: theme.textColor
-                            wrapMode: Text.Wrap
-                        }
-                        width: childrenRect.width
-                        height: childrenRect.height
                     }
-
                     Image {
                         id: wind
                         source: windStrength(windSpeedMps,textColorLight)
