@@ -1,3 +1,4 @@
 # Ignore common temporary files
 *~
 *.mo
+*.swp
