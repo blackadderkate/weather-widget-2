@@ -77,7 +77,7 @@ Item {
         dateFrom.setSeconds(0)
         dateFrom.setMinutes(0)
         var dateTo = meteogramModelObj.to
-        var differenceHours = Math.round((dateTo.getTime() - dateFrom.getTime()) / oneHourMs)
+        var differenceHours = Math.floor((dateTo.getTime() - dateFrom.getTime()) / oneHourMs)
 //         dbgprint('differenceHours=' + differenceHours + ', oneHourMs=' + oneHourMs + ', dateFrom=' + dateFrom + ', dateTo=' + dateTo)
         if (differenceHours > 20) {
             return
