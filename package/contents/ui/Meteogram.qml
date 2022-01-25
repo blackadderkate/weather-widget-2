@@ -429,8 +429,8 @@ Item {
                         id: windspeedhover
                         text: UnitUtils.getWindSpeedText(windSpeedMps, windSpeedType)
                         padding: 4
-                        x: windspeedAnchor.width + 12
-                        y: (windspeedAnchor.height / 2) - (windspeedhover.height / 2)
+                        x: windspeedAnchor.width + 6
+                        y: (windspeedAnchor.height / 2)
                         opacity: 1
                         visible: false
                     }
