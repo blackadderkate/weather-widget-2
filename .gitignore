@@ -1,0 +1,3 @@
+# Ignore common temporary files
+*~
+*.mo
