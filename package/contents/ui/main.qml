@@ -357,7 +357,7 @@ Item {
         var wind1=Math.round(actualWeatherModel.get(0).windDirection)
         var windDirectionIcon = IconTools.getWindDirectionIconCode(wind1)
         var subText = ''
-        subText += '<br /><font size="4" style="font-family: weathericons;">' + windDirectionIcon + '</font><font size="4"> ' + wind1 + '\u064c &nbsp; @ ' + UnitUtils.getWindSpeedText(actualWeatherModel.get(0).windSpeedMps, windSpeedType) + '</font>'
+        subText += '<br /><font size="4" style="font-family: weathericons;">' + windDirectionIcon + '</font><font size="4"> ' + wind1 + '\u00B0 &nbsp; @ ' + UnitUtils.getWindSpeedText(actualWeatherModel.get(0).windSpeedMps, windSpeedType) + '</font>'
         subText += '<br /><font size="4">' + UnitUtils.getPressureText(actualWeatherModel.get(0).pressureHpa, pressureType) + '</font>'
         subText += '<br /><table>'
         if (typeof(actualWeatherModel.get(0).humidity) === 'string' && typeof(actualWeatherModel.get(0).cloudiness) === 'string') {

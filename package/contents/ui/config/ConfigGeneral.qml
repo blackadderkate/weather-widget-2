@@ -200,7 +200,7 @@ Item {
         onAccepted: {
             var resultString = newMetnoUrl.text
             if (resultString.length===0) {
-                resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&alt="+newMetnoCityAltitudeField.text
+                resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
             }
             placesModel.append({
                 providerId: 'metno',
@@ -465,11 +465,13 @@ Item {
                 text: 'metno'
                 width: 100
                 onClicked: {
-                    addMetnoCityIdDialog.open()
                     newMetnoCityAlias.text = ''
                     newMetnoCityLatitudeField.text = ''
                     newMetnoCityLongtitudeField.text = ''
-                    newOwmCityIdField.focus = true
+                    newMetnoCityAltitudeField.text = ''
+                    newMetnoUrl.text = ''
+                    newMetnoCityLatitudeField.focus = true
+                    addMetnoCityIdDialog.open()
                 }
             }
         }
@@ -595,22 +597,22 @@ Item {
             }
         }
         MouseArea {
-        cursorShape: Qt.PointingHandCursor
-        anchors.fill: attribution4
+            cursorShape: Qt.PointingHandCursor
+            anchors.fill: attribution4
 
-        hoverEnabled: true
+            hoverEnabled: true
 
-        onClicked: {
-            Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
-        }
+            onClicked: {
+                Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
+            }
 
-        onEntered: {
-            owmLink.font.underline = true
-        }
+            onEntered: {
+                owmLink.font.underline = true
+            }
 
-        onExited: {
-            owmLink.font.underline = false
-        }
+            onExited: {
+                owmLink.font.underline = false
+            }
         }
     }
 }
