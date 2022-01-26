@@ -1,3 +1,12 @@
+Important Note: This master branch is not being actively developed - the placeSearch branch is the "latest and greatest" and is the branch you should pull from.
+I am more familiar with CVS and the way Mozilla used to use their branches, which I think is the opposite way to how Github works...
+
+So if anyone knows the best way to "archive" this main/master branch, and turn this into the new "main/master" branch please let me know, using issue #22.
+
+
+
+
+
 An updated version of the "plasma-applet-weather-widget" by Kotelnik.
 
 To summarise the reason for this fork, YR.NO have changed their API and Kotelnik's original widget no longer works correctly with their data, and their project seems to be abandoned.
