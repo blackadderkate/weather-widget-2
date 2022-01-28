@@ -40,14 +40,12 @@ fi
 IFS=. read ver1 ver2 ver3 ver4 <<< $VER
 
 if [ $((ver1)) -eq 0 ]; then
-  case "$((ver2))" in
-    21)
-      iconArgs="";;
-    20)
-      if [ $((ver2)) -ge 2 ]; then
-        iconArgs=""
-      fi;;
-  esac
+  if [ $((ver2)) -ge 21 ]; then
+    iconArgs=""
+  fi
+  if [ $((ver2)) -eq 20 ] && [ $((ver2)) -ge 2 ]; then
+    iconArgs=""
+  fi
 else
   iconArgs=""
 fi
