@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-16 18:31+0000\n"
+"POT-Creation-Date: 2022-01-28 11:38+0000\n"
 "PO-Revision-Date: 2022-01-15 13:18+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -25,10 +25,6 @@ msgstr "Weerwidget 2"
 #: ../metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
 msgstr "Een plasmoid die weerinformatie toont van de met.no-server"
-
-#: ../metadata.desktop
-msgid "weather-clouds"
-msgstr "Wolken"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "°C"

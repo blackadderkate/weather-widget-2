@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-applet-weather-widget\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-16 18:31+0000\n"
+"POT-Creation-Date: 2022-01-28 11:38+0000\n"
 "PO-Revision-Date: 2022-01-03 22:07+0000\n"
 "Last-Translator: Laszlo Espadas <kardiweb@protonmail.ch>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -26,10 +26,6 @@ msgstr ""
 
 #: ../metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
-
-#: ../metadata.desktop
-msgid "weather-clouds"
 msgstr ""
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
