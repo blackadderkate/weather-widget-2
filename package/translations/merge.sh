@@ -4,21 +4,13 @@
 # https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems
 # https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems/Outside_KDE_repositories
 # https://invent.kde.org/sysadmin/l10n-scripty/-/blob/master/extract-messages.sh
-echo "1"
 DIR=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
-echo "$DIR"
 plasmoidName=`kreadconfig5 --file="$DIR/../metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
-echo "$plasmoidName"
 widgetName="${plasmoidName##*.}" # Strip namespace
-echo "4"
 website=`kreadconfig5 --file="$DIR/../metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Website"`
-echo "5"
 bugAddress="$website"
-echo "6"
 packageRoot=".." # Root of translatable sources
-echo "7"
 projectName="plasma_applet_${plasmoidName}" # project name
-echo "8"
 
 #---
 if [ -z "$plasmoidName" ]; then
@@ -37,9 +29,33 @@ fi
 echo "[merge] Extracting messages"
 potArgs="--from-code=UTF-8 --width=200 --add-location=file"
 
+# Don't extract Icon string if xgettext version < 0.20.2
+iconArgs="-k -kName -kGenericName -kComment -kKeywords"
+REGEX="([0-9]{1,3}\.)+([0-9]{1,3})"
+VERBOSE=$(xgettext -V)
+VER="0.0.0.0"
+if [[ $VERBOSE =~ $REGEX ]]; then
+  VER="${BASH_REMATCH[0]}"
+fi
+IFS=. read ver1 ver2 ver3 ver4 <<< $VER
+
+if [ $((ver1)) -eq 0 ]; then
+  case "$((ver2))" in
+    21)
+      iconArgs="";;
+    20)
+      if [ $((ver2)) -ge 2 ]; then
+        iconArgs=""
+      fi;;
+  esac
+else
+  iconArgs=""
+fi
+
 find "${packageRoot}" -name '*.desktop' | sort > "${DIR}/infiles.list"
 xgettext \
 	${potArgs} \
+	${iconArgs} \
 	--files-from="${DIR}/infiles.list" \
 	--language=Desktop \
 	-D "${packageRoot}" \

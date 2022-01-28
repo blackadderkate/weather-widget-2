@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-16 17:56+0000\n"
+"POT-Creation-Date: 2022-01-28 11:54+0000\n"
 "PO-Revision-Date: 2022-01-25 10:35+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -25,10 +25,6 @@ msgstr "Weather Widget 2"
 #: ../metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
 msgstr "Plasmoid som viser værinformasjon fra met.no"
-
-#: ../metadata.desktop
-msgid "weather-clouds"
-msgstr "weather-clouds"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "°C"
@@ -123,9 +119,9 @@ msgid ""
 "refreshed. You can always set the widget to be always \"Shown\" in system "
 "tray \"Entries\" settings."
 msgstr ""
-"MERK: Etter denne tidsavbruddet vil widgeten være skjult i "
-"systemkurvfeltet til den er oppdatert. Du kan alltid angi at widgeten "
-"alltid skal være «Vist» i «Oppføringer» i systemkurv-innstillinger."
+"MERK: Etter denne tidsavbruddet vil widgeten være skjult i systemkurvfeltet "
+"til den er oppdatert. Du kan alltid angi at widgeten alltid skal være «Vist» "
+"i «Oppføringer» i systemkurv-innstillinger."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -302,3 +298,6 @@ msgstr "Laster bilde..."
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "i dag"
+
+#~ msgid "weather-clouds"
+#~ msgstr "weather-clouds"

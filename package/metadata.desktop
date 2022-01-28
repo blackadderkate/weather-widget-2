@@ -18,4 +18,8 @@ X-KDE-PluginInfo-Depends=X-KDE-PluginInfo-License=GPL2
 X-KDE-PluginInfo-EnabledByDefault=false
 X-Plasma-RemoteLocation=
 
+Name[nb]=Weather Widget 2
+Name[nl]=Weerwidget 2
+Comment[nb]=Plasmoid som viser værinformasjon fra met.no
+Comment[nl]=Een plasmoid die weerinformatie toont van de met.no-server
 Comment[zh_CN]=添加 Open Weather Map
