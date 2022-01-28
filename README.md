@@ -5,11 +5,7 @@ So I have downloaded their code, did some serious research and hacking over Chri
 
 There are a couple of significant changes:
 
-The new API uses Latitude and Longtitude to download the weather data - they have helpfully created some lookup files, but they are too large to be included in the widget.
-You can find them here:
-
-https://www.yr.no/storage/lookup/Norsk.csv.zip
-https://www.yr.no/storage/lookup/English.csv.zip.
+The new API uses Latitude and Longtitude to download the weather data - this version includes a searchable database of places.
 
 The new Data does not include Sunrise or Sunset times, so I've had to find an alternative API but this new source does not appear to be very accurate.
 
