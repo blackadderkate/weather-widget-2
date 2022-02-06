@@ -6,6 +6,9 @@
     <kcfgfile name=""/>
 
     <group name="General">
+        <entry name="firstRun" type="Bool">
+            <default>true</default>
+        </entry>
         <entry name="placeIndex" type="Int">
             <default>0</default>
         </entry>

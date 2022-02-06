@@ -142,6 +142,35 @@ Item {
 
 
     Component.onCompleted: {
+        if (plasmoid.configuration.firstRun) {
+            switch (Qt.locale().measurementSystem) {
+                case (Locale.MetricSystem):
+                  plasmoid.configuration.temperatureType = 0
+                  temperatureType = 0
+                  plasmoid.configuration.pressureType = 0
+                  pressureType = 0
+                  plasmoid.configuration.windSpeedType = 2
+                  windSpeedType = 2
+                  break;
+                case (Locale.ImperialUSSystem):
+                  plasmoid.configuration.temperatureType = 1
+                  temperatureType = 1
+                  plasmoid.configuration.pressureType = 1
+                  pressureType = 1
+                  plasmoid.configuration.windSpeedType = 1
+                  windSpeedType = 1
+                  break;
+                case (Locale.ImperialUKSystem):
+                  plasmoid.configuration.temperatureType = 0
+                  temperatureType = 0
+                  plasmoid.configuration.pressureType = 0
+                  pressureType = 0
+                  plasmoid.configuration.windSpeedType = 1
+                  windSpeedType = 1
+                  break;
+            }
+            plasmoid.configuration.firstRun = false
+        }
         inTray = (plasmoid.parent !== null && (plasmoid.parent.pluginName === 'org.kde.plasma.private.systemtray' || plasmoid.parent.objectName === 'taskItemContainer'))
         plasmoidCacheId = inTray ? plasmoid.parent.id : plasmoid.id
         dbgprint('inTray=' + inTray + ', plasmoidCacheId=' + plasmoidCacheId)
