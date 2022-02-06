@@ -1,3 +1,4 @@
+.import "./db/timezoneData.js" as TZData;
 var countries=Array(
             {shortCode: "AD" , displayName: "Andorra"},
             {shortCode: "AE" , displayName: "United Arab Emirates"},
@@ -253,7 +254,6 @@ function getDisplayNames() {
     })
     return (tmp.sort());
 }
-
 function getshortCode(displayName) {
     var __FOUND = countries.find(function(post, index) {
         if(post.displayName == displayName)
@@ -268,7 +268,6 @@ function getDisplayName(shortCode) {
     });
     return __FOUND["displayName"]
 }
-
 function updateListView(filter) {
     filteredCSVData.clear()
     for (var f = 0; f < myCSVData.rowCount(); f++) {
@@ -278,13 +277,12 @@ function updateListView(filter) {
         }
     }
 }
-
 function loadCSVDatabase(countryName) {
     if (countryName.length===0) {
         return
     }
     myCSVData.clear()
-    let filename=Qt.resolvedUrl("./db/"+Helper.getshortCode(countryName)+".csv")
+    let filename=Qt.resolvedUrl("./db/"+getshortCode(countryName)+".csv")
     var xhr = new XMLHttpRequest
     xhr.open("GET", filename)
     xhr.onreadystatechange = function() {
@@ -304,13 +302,14 @@ function parseCSVLine(csvLine) {
         return str.replace(/['"]+/g, '')
     }
 
-    var items=csvLine.split(/,/);
+    var items=csvLine.split(/\t/);
     return ({
-//                countryCode: stripquotes(items[0]),
                 region: stripquotes((items[0])),
                 locationName: stripquotes(items[1]),
                 latitude: parseFloat(items[2]),
                 longtitude: parseFloat(items[3]),
-                altitude: parseInt(items[4])
+                altitude: parseInt(items[4]),
+                timezoneId: parseInt(items[5]),
+                timezoneName: TZData.TZData[items[5]].displayName
             })
 }

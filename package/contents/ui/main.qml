@@ -31,6 +31,8 @@ Item {
     property string placeIdentifier
     property string placeAlias
     property string cacheKey
+    property int timezoneID
+    property string timezoneShortName
     property var cacheMap: {}
     property bool renderMeteogram: plasmoid.configuration.renderMeteogram
     property int temperatureType: plasmoid.configuration.temperatureType
@@ -233,6 +235,10 @@ Item {
         var placeObject = places[placeIndex]
         placeIdentifier = placeObject.placeIdentifier
         placeAlias = placeObject.placeAlias
+        if (placeObject.timezoneID  === undefined ) {
+          placeObject.timezoneID = -1
+        }
+        timezoneID = parseInt(placeObject.timezoneID)
         dbgprint('next placeIdentifier is: ' + placeIdentifier)
         cacheKey = DataLoader.generateCacheKey(placeIdentifier)
         dbgprint('next cacheKey is: ' + cacheKey)
@@ -280,7 +286,7 @@ Item {
 
         loadingData = true
         lastloadingStartTime=dateNow()
-        loadingXhrs = currentProvider.loadDataFromInternet(dataLoadedFromInternet, reloadDataFailureCallback, { placeIdentifier: placeIdentifier })
+        loadingXhrs = currentProvider.loadDataFromInternet(dataLoadedFromInternet, reloadDataFailureCallback, { placeIdentifier: placeIdentifier, timezoneID: timezoneID })
 
     }
 
@@ -368,8 +374,8 @@ Item {
             subText += '<tr><td>&nbsp;</td><td></td></tr>'
         }
         subText += '<tr>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + additionalWeatherInfo.sunRiseTime + '&nbsp;&nbsp;&nbsp;</font></td>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + additionalWeatherInfo.sunSetTime + '</font></td>'
+        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + additionalWeatherInfo.sunRiseTime + ' '+timezoneShortName + '&nbsp;&nbsp;&nbsp;</font></td>'
+        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + additionalWeatherInfo.sunSetTime + ' '+timezoneShortName + '</font></td>'
         subText += '</tr>'
         subText += '</table>'
 

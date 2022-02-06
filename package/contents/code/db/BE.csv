@@ -1,2254 +1,2254 @@
-"BRU","Anderlecht",50.83619,4.31454,27
-"BRU","Auderghem",50.81667,4.43333,75
-"BRU","Berchem-Sainte-Agathe",50.86567,4.29557,63
-"BRU","Brussels",50.85045,4.34878,28
-"BRU","Etterbeek",50.83272,4.38835,71
-"BRU","Evere",50.87441,4.39905,50
-"BRU","Forest",50.81678,4.32775,52
-"BRU","Ganshoren",50.87065,4.31531,49
-"BRU","Ixelles",50.83333,4.36667,84
-"BRU","Jette",50.87309,4.33419,41
-"BRU","Koekelberg",50.86117,4.33136,35
-"BRU","Molenbeek-Saint-Jean",50.8499,4.31248,39
-"BRU","Saint-Gilles",50.82763,4.34389,59
-"BRU","Saint-Josse-ten-Noode",50.8538,4.37282,46
-"BRU","Schaerbeek",50.86935,4.37737,29
-"BRU","Uccle",50.80225,4.33943,48
-"BRU","Watermael-Boitsfort",50.80154,4.41436,96
-"BRU","Woluwe-Saint-Lambert",50.84389,4.42912,72
-"VLG","Aaigem",50.88921,3.93674,50
-"VLG","Aalbeke",50.77848,3.22952,39
-"VLG","Aalst",50.78195,5.20915,72
-"VLG","Aalst",50.93604,4.0355,12
-"VLG","Aalter",51.09017,3.44693,17
-"VLG","Aalterbrug",51.1093,3.43378,9
-"VLG","Aarschot",50.98715,4.83695,14
-"VLG","Aarsele",50.99663,3.41954,35
-"VLG","Aartrijke",51.11915,3.09076,36
-"VLG","Aartselaar",51.13412,4.38678,12
-"VLG","Achel",51.253,5.47977,34
-"VLG","Adegem",51.20509,3.4954,8
-"VLG","Adinkerke",51.07409,2.59914,3
-"VLG","Alken",50.87553,5.30558,39
-"VLG","Alsemberg",50.74134,4.33754,65
-"VLG","Alveringem",51.01238,2.71117,8
-"VLG","Antwerpen",51.22047,4.40026,13
-"VLG","Anzegem",50.837,3.47786,51
-"VLG","Appels",51.03225,4.06141,2
-"VLG","Appelterre-Eichem",50.81597,3.97808,16
-"VLG","Ardooie",50.9757,3.19736,21
-"VLG","Arendonk",51.32267,5.08289,25
-"VLG","As",51.00755,5.58453,81
-"VLG","Aspelare",50.84189,3.95743,26
-"VLG","Asper",50.9137,3.65126,14
-"VLG","Asse",50.91011,4.19836,81
-"VLG","Assebroek",51.19367,3.2623,5
-"VLG","Assenede",51.22598,3.75085,3
-"VLG","Assent",50.95187,5.01473,36
-"VLG","Astene",50.98512,3.56654,8
-"VLG","Attenhoven",50.76591,5.09296,63
-"VLG","Attenrode",50.87782,4.92438,62
-"VLG","Avelgem",50.77618,3.44502,17
-"VLG","Averbode",51.02887,4.98067,27
-"VLG","Baaigem",50.932,3.72026,39
-"VLG","Baal",50.9955,4.75317,14
-"VLG","Baardegem",50.9548,4.14203,45
-"VLG","Baarle-Hertog",51.40504,4.89226,24
-"VLG","Baasrode",51.03805,4.1546,5
-"VLG","Bachte-Maria-Leerne",51.01132,3.58145,8
-"VLG","Balegem",50.9257,3.79076,43
-"VLG","Balen",51.16837,5.17027,34
-"VLG","Bambrugge",50.92115,3.92993,30
-"VLG","Bassevelde",51.23103,3.67798,5
-"VLG","Bavegem",50.94435,3.86497,26
-"VLG","Bavikhove",50.87532,3.31062,16
-"VLG","Bazel",51.14741,4.30129,14
-"VLG","Beek",51.15517,5.60302,41
-"VLG","Beernem",51.13981,3.33896,10
-"VLG","Beerse",51.31927,4.85304,27
-"VLG","Beersel",50.76589,4.3002,43
-"VLG","Beerst",51.05983,2.88501,5
-"VLG","Beervelde",51.08302,3.88635,5
-"VLG","Beerzel",51.05753,4.67127,27
-"VLG","Begijnendijk",51.01942,4.78377,13
-"VLG","Beigem",50.94911,4.36908,37
-"VLG","Bekegem",51.15976,3.0457,14
-"VLG","Bekkerzeel",50.88541,4.23785,60
-"VLG","Bekkevoort",50.94074,4.969,44
-"VLG","Bellegem",50.77686,3.27933,57
-"VLG","Bellem",51.09403,3.49277,7
-"VLG","Bellingen",50.74085,4.15369,49
-"VLG","Belsele",51.14598,4.08859,18
-"VLG","Berbroek",50.95031,5.20904,29
-"VLG","Berchem",50.79017,3.51317,16
-"VLG","Berchem",51.19021,4.43264,12
-"VLG","Berg",50.79059,5.49312,120
-"VLG","Berg",50.93063,4.54336,20
-"VLG","Beringen",51.04954,5.22606,39
-"VLG","Berlaar",51.1176,4.65835,8
-"VLG","Berlare",51.03333,4,9
-"VLG","Bertem",50.86403,4.62918,39
-"VLG","Beselare",50.84812,3.02449,45
-"VLG","Betekom",50.98683,4.78185,19
-"VLG","Bevel",51.13783,4.68026,8
-"VLG","Bever",50.71635,3.94117,34
-"VLG","Bever",50.91667,4.31667,49
-"VLG","Bevere",50.8496,3.5873,21
-"VLG","Beveren",50.93912,2.63997,8
-"VLG","Beveren",50.97256,3.14389,20
-"VLG","Beveren",51.21187,4.25633,12
-"VLG","Beveren-Leie",50.87538,3.34034,15
-"VLG","Beverlo",51.08646,5.21855,39
-"VLG","Beverst",50.89091,5.47548,40
-"VLG","Bierbeek",50.82876,4.75949,59
-"VLG","Bikschote",50.92795,2.86267,6
-"VLG","Bilzen",50.87325,5.5184,53
-"VLG","Binderveld",50.86077,5.16492,30
-"VLG","Binkom",50.87163,4.88414,80
-"VLG","Bissegem",50.82378,3.22844,15
-"VLG","Blaasveld",51.05585,4.37668,4
-"VLG","Blanden",50.82622,4.71022,62
-"VLG","Blankenberge",51.31306,3.13227,6
-"VLG","Blauwput",50.88587,4.72415,25
-"VLG","Bocholt",51.17337,5.57994,42
-"VLG","Boechout",51.15959,4.49195,18
-"VLG","Boekhoute",51.25859,3.71783,4
-"VLG","Boezinge",50.89672,2.85421,9
-"VLG","Bommershoven",50.7873,5.37899,81
-"VLG","Bonheiden",51.02261,4.54714,7
-"VLG","Booischot",51.05219,4.7751,12
-"VLG","Boom",51.09242,4.3717,10
-"VLG","Boorsem",50.94206,5.71898,43
-"VLG","Boortmeerbeek",50.97929,4.57443,10
-"VLG","Borchtlombeek",50.8479,4.13884,50
-"VLG","Borgerhout",51.20957,4.43539,7
-"VLG","Borgloon",50.80505,5.34366,98
-"VLG","Borlo",50.74229,5.18087,86
-"VLG","Bornem",51.09716,4.24364,6
-"VLG","Borsbeek",51.19661,4.48543,10
-"VLG","Borsbeke",50.90633,3.88996,53
-"VLG","Bossuit",50.74851,3.40822,17
-"VLG","Bost",50.78879,4.94076,61
-"VLG","Bottelare",50.96411,3.75487,34
-"VLG","Boutersem",50.84105,4.83367,63
-"VLG","Bouwel",51.17289,4.7418,10
-"VLG","Bovekerke",51.05429,2.96324,12
-"VLG","Brakel",50.80101,3.76264,42
-"VLG","Brasschaat",51.2912,4.49182,10
-"VLG","Brecht",51.35024,4.63829,23
-"VLG","Bredene",51.23489,2.97559,3
-"VLG","Bree",51.14152,5.5969,48
-"VLG","Breendonk",51.04301,4.32364,6
-"VLG","Brielen",50.86776,2.84796,19
-"VLG","Broechem",51.18133,4.60181,12
-"VLG","Brugge",51.20892,3.22424,13
-"VLG","Brussegem",50.9256,4.26682,71
-"VLG","Brustem",50.80485,5.22263,57
-"VLG","Budingen",50.86509,5.09847,28
-"VLG","Buggenhout",51.0159,4.20173,9
-"VLG","Buizingen",50.74227,4.25278,38
-"VLG","Buken",50.93966,4.61692,16
-"VLG","Bulskamp",51.04229,2.64943,2
-"VLG","Bunsbeek",50.84172,4.94522,52
-"VLG","Burcht",51.20393,4.34286,8
-"VLG","Burst",50.91497,3.91636,43
-"VLG","Dadizele",50.85138,3.09468,22
-"VLG","Daknam",51.12583,3.9824,4
-"VLG","Damme",51.25147,3.28144,4
-"VLG","Deerlijk",50.85337,3.35416,18
-"VLG","Deftinge",50.78656,3.83978,40
-"VLG","De Haan",51.27261,3.03446,7
-"VLG","Deinze",50.98175,3.53096,10
-"VLG","De Klinge",51.25627,4.09041,6
-"VLG","Denderbelle",51.00139,4.09069,4
-"VLG","Denderhoutem",50.87234,4.01821,32
-"VLG","Denderleeuw",50.88506,4.07601,17
-"VLG","Dendermonde",51.02869,4.10106,6
-"VLG","Denderwindeke",50.79731,4.02512,37
-"VLG","Dentergem",50.96429,3.41617,11
-"VLG","De Panne",51.09793,2.59368,11
-"VLG","De Pinte",50.99339,3.64747,7
-"VLG","Dessel",51.23855,5.11448,25
-"VLG","Desselgem",50.88611,3.35958,16
-"VLG","Destelbergen",51.05952,3.79899,6
-"VLG","Desteldonk",51.12193,3.78705,5
-"VLG","Deurle",51.00411,3.61475,12
-"VLG","Deurne",51.03907,5.09654,31
-"VLG","Deurne",51.22134,4.46595,8
-"VLG","Diegem",50.89727,4.43354,19
-"VLG","Diepenbeek",50.90769,5.41875,50
-"VLG","Diest",50.98923,5.05062,22
-"VLG","Dikkebus",50.82131,2.82873,29
-"VLG","Dikkelvenne",50.91927,3.69507,24
-"VLG","Diksmuide",51.03248,2.86384,9
-"VLG","Dilbeek",50.84799,4.25972,84
-"VLG","Dilsen",51.03718,5.72096,37
-"VLG","Donk",50.93882,5.13719,24
-"VLG","Dormaal",50.80778,5.09903,41
-"VLG","Dranouter",50.76602,2.7839,56
-"VLG","Drieslinter",50.84573,5.05045,30
-"VLG","Drogenbos",50.78733,4.31471,31
-"VLG","Drongen",51.05067,3.65649,5
-"VLG","Dudzele",51.2737,3.22533,3
-"VLG","Duffel",51.09554,4.50903,5
-"VLG","Duisburg",50.81584,4.55533,91
-"VLG","Dworp",50.72983,4.30106,48
-"VLG","Edegem",51.15662,4.44504,17
-"VLG","Eeklo",51.18703,3.55654,6
-"VLG","Eernegem",51.1326,3.02562,7
-"VLG","Egem",51.01531,3.25853,38
-"VLG","Eigenbilzen",50.87491,5.57582,85
-"VLG","Eindhout",51.10385,4.9999,17
-"VLG","Eine",50.86726,3.61815,10
-"VLG","Eisden",50.98463,5.71433,38
-"VLG","Eke",50.95929,3.6396,7
-"VLG","Ekeren",51.28087,4.41813,3
-"VLG","Eksaarde",51.14876,3.96814,5
-"VLG","Eksel",51.15184,5.3906,60
-"VLG","Elen",51.06643,5.75126,35
-"VLG","Elene",50.89004,3.81001,48
-"VLG","Elewijt",50.96043,4.49684,10
-"VLG","Ellikom",51.12766,5.52389,58
-"VLG","Elsegem",50.8236,3.53601,17
-"VLG","Elst",50.83024,3.73921,96
-"VLG","Elverdinge",50.88476,2.8171,13
-"VLG","Elversele",51.11806,4.14904,25
-"VLG","Emblem",51.16238,4.60485,8
-"VLG","Ename",50.85847,3.6366,12
-"VLG","Eppegem",50.96237,4.45513,11
-"VLG","Erembodegem",50.91905,4.05041,15
-"VLG","Erondegem",50.94118,3.95611,35
-"VLG","Erpe",50.93565,3.97219,16
-"VLG","Erps-Kwerps",50.90119,4.55984,35
-"VLG","Ertvelde",51.17921,3.74722,11
-"VLG","Erwetegem",50.85547,3.81444,81
-"VLG","Esen",51.0294,2.90189,5
-"VLG","Essen",51.46791,4.46901,13
-"VLG","Essene",50.90163,4.13743,41
-"VLG","Etikhove",50.81162,3.62489,31
-"VLG","Ettelgem",51.17984,3.02919,5
-"VLG","Everbeek",50.7626,3.80852,36
-"VLG","Everberg",50.87685,4.56983,55
-"VLG","Evergem",51.11306,3.70976,9
-"VLG","Galmaarden",50.75389,3.97121,32
-"VLG","Gavere",50.92917,3.66184,25
-"VLG","Geel",51.16557,4.98917,22
-"VLG","Geetbets",50.89431,5.11199,30
-"VLG","Gelinden",50.7656,5.26121,75
-"VLG","Gellik",50.88473,5.61007,95
-"VLG","Gelrode",50.96632,4.80412,19
-"VLG","Geluveld",50.83511,2.99343,53
-"VLG","Geluwe",50.80978,3.07695,22
-"VLG","Genk",50.965,5.50082,66
-"VLG","Genoelselderen",50.80206,5.53737,92
-"VLG","Gent",51.05,3.71667,10
-"VLG","Gentbrugge",51.03692,3.76509,10
-"VLG","Geraardsbergen",50.77343,3.88223,32
-"VLG","Gierle",51.26852,4.86733,20
-"VLG","Gijzegem",50.98602,4.04938,6
-"VLG","Gijzenzele",50.971,3.81698,33
-"VLG","Gingelom",50.74792,5.13422,83
-"VLG","Gistel",51.15612,2.96387,7
-"VLG","Gits",50.99687,3.09564,24
-"VLG","Glabbeek",50.87267,4.95615,51
-"VLG","Godveerdegem",50.85932,3.82092,82
-"VLG","Goeferdinge",50.76605,3.83978,33
-"VLG","Goetsenhoven",50.76882,4.95157,81
-"VLG","Gontrode",50.9838,3.79756,19
-"VLG","Gooik",50.79443,4.11378,39
-"VLG","Gottem",50.96419,3.46389,11
-"VLG","Grammene",50.97779,3.46706,10
-"VLG","Grazen",50.87448,5.13141,26
-"VLG","Grembergen",51.05406,4.10458,2
-"VLG","Grimbergen",50.93409,4.37213,29
-"VLG","Grimminge",50.79433,3.95196,19
-"VLG","Grobbendonk",51.19043,4.73562,10
-"VLG","Groot-Bijgaarden",50.87174,4.24973,54
-"VLG","Groot-Gelmen",50.78355,5.26381,86
-"VLG","Grote-Brogel",51.15281,5.5059,56
-"VLG","Grotenberge",50.87332,3.82278,56
-"VLG","Grote-Spouwen",50.83283,5.55428,111
-"VLG","Gruitrode",51.08936,5.58824,67
-"VLG","Guigoven",50.83925,5.40039,66
-"VLG","Gullegem",50.84301,3.20466,19
-"VLG","Haacht",50.97737,4.63777,10
-"VLG","Haaltert",50.90634,4.00093,43
-"VLG","Haasdonk",51.18151,4.24137,19
-"VLG","Haasrode",50.83169,4.72953,74
-"VLG","Hakendover",50.7959,4.98231,48
-"VLG","Halen",50.94837,5.11096,24
-"VLG","Hallaar",51.0842,4.72918,15
-"VLG","Halle",50.73385,4.23454,34
-"VLG","Halle",51.24075,4.64327,11
-"VLG","Halle-Booienhoven",50.80534,5.11173,49
-"VLG","Hamme",50.92089,4.28295,52
-"VLG","Hamme",51.09822,4.13705,6
-"VLG","Hamont",51.25332,5.54732,36
-"VLG","Handzame",51.0254,3.0032,5
-"VLG","Hansbeke",51.07442,3.53571,10
-"VLG","Harelbeke",50.85343,3.30935,16
-"VLG","Hasselt",50.93106,5.33781,42
-"VLG","Hechtel",51.12518,5.36768,64
-"VLG","Heers",50.75383,5.3021,75
-"VLG","Hees",50.84681,5.60766,84
-"VLG","Heestert",50.78204,3.41218,24
-"VLG","Heffen",51.04722,4.41599,4
-"VLG","Heikruis",50.73506,4.1116,86
-"VLG","Heindonk",51.06703,4.40806,2
-"VLG","Heist",51.33867,3.23882,5
-"VLG","Heist-op-den-Berg",51.07537,4.72827,36
-"VLG","Hekelgem",50.90569,4.10769,49
-"VLG","Helchteren",51.05591,5.38244,72
-"VLG","Heldergem",50.87799,3.95789,58
-"VLG","Helen-Bos",50.81851,5.08285,32
-"VLG","Helkijn",50.73214,3.38408,16
-"VLG","Hemiksem",51.14484,4.33874,18
-"VLG","Henis",50.79986,5.47033,84
-"VLG","Heppen",51.10934,5.22898,44
-"VLG","Herderen",50.80734,5.5735,124
-"VLG","Herdersem",50.97193,4.06667,10
-"VLG","Herent",50.90861,4.67056,27
-"VLG","Herentals",51.17655,4.83248,16
-"VLG","Herenthout",51.1401,4.75572,12
-"VLG","Herfelingen",50.74816,4.09754,62
-"VLG","Herk-de-Stad",50.94013,5.16636,31
-"VLG","Herne",50.72423,4.03481,43
-"VLG","Herselt",51.05159,4.88231,18
-"VLG","Hertsberge",51.10728,3.26936,12
-"VLG","Herzele",50.88681,3.89014,58
-"VLG","Heule",50.83752,3.23818,16
-"VLG","Heurne",50.88096,3.62598,18
-"VLG","Heusden",51.02815,3.80425,9
-"VLG","Heusden",51.03664,5.28013,39
-"VLG","Hever",50.99545,4.55126,7
-"VLG","Heverlee",50.86426,4.69597,31
-"VLG","Hillegem",50.89567,3.8531,60
-"VLG","Hingene",51.10345,4.26904,6
-"VLG","Hoboken",51.17611,4.34844,12
-"VLG","Hoegaarden",50.7756,4.88952,54
-"VLG","Hoeilaart",50.7673,4.46835,84
-"VLG","Hoelbeek",50.87209,5.55911,76
-"VLG","Hoeleden",50.86662,4.98538,39
-"VLG","Hoepertingen",50.81217,5.28442,58
-"VLG","Hoeselt",50.84714,5.48767,77
-"VLG","Hoevenen",51.30604,4.40203,3
-"VLG","Hofstade",50.9613,4.02663,8
-"VLG","Hofstade",50.99134,4.49229,7
-"VLG","Hollebeke",50.80509,2.93661,39
-"VLG","Holsbeek",50.92097,4.75747,21
-"VLG","Hombeek",51.01753,4.43891,7
-"VLG","Hooglede",50.98333,3.08333,41
-"VLG","Hoogstraten",51.40029,4.76034,21
-"VLG","Horpmaal",50.75958,5.33518,75
-"VLG","Houtem",51.01077,2.60946,5
-"VLG","Houthalen",51.03427,5.37429,64
-"VLG","Houthulst",50.97824,2.9505,18
-"VLG","Houtvenne",51.0418,4.80863,11
-"VLG","Houwaart",50.93368,4.85991,26
-"VLG","Hove",51.15446,4.4707,22
-"VLG","Huise",50.90059,3.59096,46
-"VLG","Huizingen",50.7465,4.27377,38
-"VLG","Huldenberg",50.78939,4.5831,48
-"VLG","Hulshout",51.07451,4.79081,13
-"VLG","Hulste",50.88217,3.29497,18
-"VLG","Humbeek",50.96799,4.3796,17
-"VLG","Hundelgem",50.8889,3.75124,49
-"VLG","Ichtegem",51.09572,3.01549,16
-"VLG","Iddergem",50.87634,4.04434,28
-"VLG","Idegem",50.80178,3.92595,20
-"VLG","Ieper",50.85114,2.88569,24
-"VLG","Impe",50.96048,3.9501,21
-"VLG","Ingelmunster",50.92081,3.25571,15
-"VLG","Ingooigem",50.82013,3.43373,42
-"VLG","Itegem",51.10328,4.72855,9
-"VLG","Itterbeek",50.83803,4.24948,71
-"VLG","Izegem",50.91396,3.21378,18
-"VLG","Jabbeke",51.18185,3.08935,7
-"VLG","Jesseren",50.80583,5.39208,76
-"VLG","Jeuk",50.73499,5.20992,111
-"VLG","Kachtem",50.93341,3.19425,18
-"VLG","Kaggevinne",50.98037,5.01886,49
-"VLG","Kalken",51.03836,3.9186,5
-"VLG","Kallo",51.2525,4.27546,4
-"VLG","Kalmthout",51.38442,4.47556,21
-"VLG","Kampenhout",50.9421,4.55103,14
-"VLG","Kanegem",51.0129,3.40188,31
-"VLG","Kanne",50.81331,5.66946,62
-"VLG","Kapellen",50.88593,4.95174,72
-"VLG","Kapellen",51.31377,4.43539,8
-"VLG","Kapelle-op-den-Bos",51.0097,4.36303,12
-"VLG","Kaprijke",51.2172,3.61519,4
-"VLG","Kaster",50.8133,3.49591,32
-"VLG","Kasterlee",51.24118,4.96651,22
-"VLG","Kaulille",51.18763,5.52372,45
-"VLG","Keerbergen",51.00295,4.63434,10
-"VLG","Keiem",51.08144,2.88217,2
-"VLG","Kemmel",50.78333,2.82714,57
-"VLG","Kemzeke",51.20981,4.07428,8
-"VLG","Kerkhove",50.79851,3.50267,14
-"VLG","Kerkom",50.85568,4.87422,66
-"VLG","Kerkom-bij-Sint-Truiden",50.7737,5.17842,75
-"VLG","Kerksken",50.89068,3.99478,46
-"VLG","Kermt",50.94757,5.24832,32
-"VLG","Kerniel",50.81667,5.36509,101
-"VLG","Kersbeek-Miskom",50.88544,4.99578,38
-"VLG","Kessel",51.13892,4.62962,9
-"VLG","Kessel-Lo",50.88549,4.73717,35
-"VLG","Kessenich",51.15086,5.8233,29
-"VLG","Kester",50.76398,4.12058,65
-"VLG","Kieldrecht",51.28914,4.17587,3
-"VLG","Kinrooi",51.14543,5.74207,33
-"VLG","Kleine-Brogel",51.17267,5.45059,53
-"VLG","Kleine-Spouwen",50.83837,5.55007,110
-"VLG","Klein-Gelmen",50.77109,5.27588,72
-"VLG","Klemskerke",51.24222,3.02401,2
-"VLG","Klerken",50.99643,2.90771,33
-"VLG","Kluizen",51.1582,3.73194,4
-"VLG","Knesselare",51.13932,3.41282,16
-"VLG","Knokke",51.35113,3.28744,13
-"VLG","Knokke-Heist",51.35,3.26667,5
-"VLG","Kobbegem",50.90822,4.25253,60
-"VLG","Koekelare",51.09047,2.9783,15
-"VLG","Koersel",51.05909,5.27121,44
-"VLG","Koksijde",51.11642,2.63772,8
-"VLG","Koningshooikt",51.09607,4.60992,10
-"VLG","Koninksem",50.76535,5.43892,91
-"VLG","Kontich",51.13213,4.44706,20
-"VLG","Kooigem",50.74007,3.33159,19
-"VLG","Koolkerke",51.23931,3.24745,2
-"VLG","Koolskamp",51.00233,3.2104,42
-"VLG","Korbeek-Dijle",50.83813,4.63794,41
-"VLG","Korbeek-Lo",50.86028,4.76274,40
-"VLG","Kortemark",51.02951,3.04112,11
-"VLG","Kortenaken",50.90862,5.05968,35
-"VLG","Kortenberg",50.88982,4.54353,47
-"VLG","Kortessem",50.8589,5.38974,55
-"VLG","Kortrijk",50.82803,3.26487,22
-"VLG","Kortrijk-Dutsel",50.92676,4.80799,27
-"VLG","Kozen",50.8752,5.24005,60
-"VLG","Kraainem",50.86155,4.46946,51
-"VLG","Krombeke",50.91488,2.68826,9
-"VLG","Kruibeke",51.17048,4.31444,6
-"VLG","Kruishoutem",50.90168,3.52588,45
-"VLG","Kumtich",50.82101,4.88723,73
-"VLG","Kuringen",50.94426,5.29902,33
-"VLG","Kuurne",50.85143,3.2824,16
-"VLG","Kwaadmechelen",51.10099,5.14478,32
-"VLG","Kwaremont",50.77677,3.5238,77
-"VLG","Laakdal",51.08067,5.00556,18
-"VLG","Laarne",51.03078,3.85077,8
-"VLG","Lanaken",50.89318,5.6468,63
-"VLG","Landegem",51.05518,3.57667,8
-"VLG","Landen",50.75267,5.082,72
-"VLG","Landskouter",50.96953,3.79339,19
-"VLG","Langdorp",50.99561,4.87175,23
-"VLG","Langemark",50.9131,2.91965,14
-"VLG","Lanklaar",51.01937,5.72508,37
-"VLG","Lauw",50.73881,5.41333,95
-"VLG","Lauwe",50.79479,3.1869,21
-"VLG","Lebbeke",51.00464,4.13457,6
-"VLG","Lede",50.96626,3.98594,25
-"VLG","Ledeberg",50.84356,4.09112,61
-"VLG","Ledeberg",51.03859,3.74458,10
-"VLG","Ledegem",50.85785,3.12409,20
-"VLG","Leefdaal",50.84759,4.58936,51
-"VLG","Leerbeek",50.77788,4.11936,62
-"VLG","Leest",51.03319,4.4153,8
-"VLG","Leeuwergem",50.888,3.831,73
-"VLG","Leffinge",51.17576,2.87576,3
-"VLG","Leisele",50.98435,2.62001,7
-"VLG","Leke",51.10022,2.89098,2
-"VLG","Lembeek",50.7157,4.21832,45
-"VLG","Lembeke",51.19487,3.63333,8
-"VLG","Lemberge",50.97629,3.77054,30
-"VLG","Lendelede",50.88626,3.23747,38
-"VLG","Lennik",50.80903,4.16219,42
-"VLG","Leopoldsburg",51.11667,5.25,48
-"VLG","Letterhoutem",50.92768,3.8797,50
-"VLG","Leut",50.99107,5.73624,36
-"VLG","Leuven",50.87959,4.70093,28
-"VLG","Lichtaart",51.22495,4.91681,19
-"VLG","Lichtervelde",51.03333,3.15,24
-"VLG","Liedekerke",50.86892,4.08743,24
-"VLG","Lier",51.13128,4.57041,9
-"VLG","Liezele",51.05998,4.28038,6
-"VLG","Lille",51.24197,4.82313,17
-"VLG","Linden",50.89494,4.77027,36
-"VLG","Linkebeek",50.76781,4.33688,85
-"VLG","Linkhout",50.96778,5.1374,30
-"VLG","Lint",51.12707,4.49669,11
-"VLG","Lippelo",51.04258,4.259,10
-"VLG","Lissewege",51.29427,3.19331,4
-"VLG","Lo",50.98036,2.74965,6
-"VLG","Lochristi",51.09644,3.83194,8
-"VLG","Loenhout",51.39947,4.64404,18
-"VLG","Loker",50.78166,2.77234,86
-"VLG","Lokeren",51.10364,3.99339,6
-"VLG","Loksbergen",50.93408,5.06983,43
-"VLG","Lombardsijde",51.15,2.75,0
-"VLG","Lommel",51.23074,5.31349,48
-"VLG","Londerzeel",51.00468,4.30304,12
-"VLG","Loonbeek",50.80941,4.60971,49
-"VLG","Loppem",51.15662,3.19599,6
-"VLG","Lot",50.7679,4.27711,26
-"VLG","Lotenhulle",51.0502,3.46162,21
-"VLG","Lovendegem",51.10168,3.61298,6
-"VLG","Lovenjoel",50.85852,4.78094,49
-"VLG","Lubbeek",50.88278,4.83896,59
-"VLG","Lummen",50.98772,5.19121,41
-"VLG","Maarke-Kerkem",50.82038,3.66528,32
-"VLG","Maaseik",51.09802,5.78379,30
-"VLG","Maasmechelen",50.96545,5.69452,39
-"VLG","Machelen",50.91061,4.44174,30
-"VLG","Machelen-aan-de-Leie",50.95973,3.49046,9
-"VLG","Mal",50.76869,5.5197,85
-"VLG","Maldegem",51.20737,3.44511,9
-"VLG","Malderen",51.02077,4.24639,10
-"VLG","Maria Aalter",51.09455,3.36917,21
-"VLG","Mariakerke",51.07476,3.68289,10
-"VLG","Mariekerke",51.06503,4.19249,4
-"VLG","Marke",50.80678,3.23344,23
-"VLG","Markegem",50.94633,3.4003,12
-"VLG","Martenslinde",50.85597,5.53385,76
-"VLG","Massemen",50.98086,3.87394,16
-"VLG","Massenhoven",51.20021,4.63572,7
-"VLG","Mater",50.84321,3.66258,65
-"VLG","Mazenzele",50.94247,4.17224,45
-"VLG","Mechelen",51.02574,4.47762,8
-"VLG","Mechelen-aan-de-Maas",50.96589,5.69144,39
-"VLG","Mechelen-Bovelingen",50.74081,5.26278,79
-"VLG","Meensel-Kiezegem",50.89621,4.92496,73
-"VLG","Meer",51.44641,4.73906,13
-"VLG","Meerbeek",50.88213,4.58972,41
-"VLG","Meerbeke",50.82444,4.03674,18
-"VLG","Meerdonk",51.26667,4.15,-1
-"VLG","Meerhout",51.1321,5.07842,30
-"VLG","Meerle",51.47235,4.80316,14
-"VLG","Meeswijk",50.99998,5.74808,32
-"VLG","Meeuwen",51.0991,5.52106,67
-"VLG","Meigem",51.01746,3.54106,9
-"VLG","Meise",50.93934,4.32655,58
-"VLG","Melden",50.81449,3.56538,15
-"VLG","Meldert",50.78814,4.83776,66
-"VLG","Meldert",50.93449,4.13504,35
-"VLG","Meldert",51.00007,5.14215,30
-"VLG","Melle",51.00232,3.80526,8
-"VLG","Melsbroek",50.91559,4.47985,23
-"VLG","Melsele",51.22285,4.28201,6
-"VLG","Melsen",50.95622,3.69567,22
-"VLG","Membruggen",50.81526,5.53368,85
-"VLG","Mendonk",51.14701,3.82121,5
-"VLG","Menen",50.79722,3.12245,18
-"VLG","Merchtem",50.95129,4.23197,25
-"VLG","Mere",50.92306,3.97134,27
-"VLG","Merelbeke",50.99447,3.74621,12
-"VLG","Merendree",51.0766,3.576,8
-"VLG","Merkem",50.95284,2.85225,6
-"VLG","Merksem",51.24623,4.44903,5
-"VLG","Merksplas",51.35851,4.86513,26
-"VLG","Mespelare",50.99613,4.06883,6
-"VLG","Messelbroek",50.9955,4.93664,15
-"VLG","Messines",50.76581,2.89764,64
-"VLG","Meulebeke",50.95136,3.28804,19
-"VLG","Michelbeke",50.8355,3.76249,43
-"VLG","Middelburg",51.25608,3.41595,0
-"VLG","Middelkerke",51.18532,2.82077,4
-"VLG","Mielen-boven-Aalst",50.75644,5.21421,95
-"VLG","Millen",50.78619,5.55616,109
-"VLG","Minderhout",51.41709,4.76292,17
-"VLG","Moelingen",50.75693,5.71375,60
-"VLG","Moen",50.77013,3.39485,20
-"VLG","Moerbeke",50.75254,3.91724,26
-"VLG","Moerbeke",51.17409,3.93001,1
-"VLG","Moere",51.12263,2.95582,1
-"VLG","Moerkerke",51.24547,3.34251,2
-"VLG","Moerzeke",51.06914,4.16137,1
-"VLG","Mol",51.19188,5.11662,27
-"VLG","Molenbeek-Wersbeek",50.91947,4.9476,53
-"VLG","Molenbeersel",51.17041,5.73761,32
-"VLG","Molenstede",51.00401,5.01298,19
-"VLG","Mollem",50.93118,4.22627,37
-"VLG","Montenaken",50.72092,5.12941,112
-"VLG","Moorsel",50.94743,4.09825,31
-"VLG","Moorsele",50.8409,3.15971,20
-"VLG","Moorslede",50.8919,3.06117,43
-"VLG","Moortsele",50.95862,3.77753,24
-"VLG","Mopertingen",50.86123,5.5759,93
-"VLG","Morkhoven",51.11888,4.81877,13
-"VLG","Mortsel",51.16697,4.45127,19
-"VLG","Muizen",51.01111,4.51427,13
-"VLG","Mullem",50.89673,3.60535,24
-"VLG","Munkzwalm",50.87676,3.73503,17
-"VLG","Munsterbilzen",50.88939,5.52647,50
-"VLG","Munte",50.94443,3.74273,47
-"VLG","Nazareth",50.95686,3.59425,12
-"VLG","Nederboelare",50.77596,3.87148,22
-"VLG","Nederhasselt",50.84646,3.97497,27
-"VLG","Nederokkerzeel",50.91943,4.56388,24
-"VLG","Nederzwalm-Hermelgem",50.88333,3.68333,12
-"VLG","Neerglabbeek",51.08911,5.61606,65
-"VLG","Neerharen",50.90964,5.68027,46
-"VLG","Neerijse",50.81722,4.62361,54
-"VLG","Neerlinter",50.83971,5.02287,46
-"VLG","Neeroeteren",51.09156,5.69933,38
-"VLG","Neerpelt",51.22807,5.4427,39
-"VLG","Neerwinden",50.76756,5.04021,65
-"VLG","Neigem",50.80271,4.0599,25
-"VLG","Nerem",50.76347,5.50993,89
-"VLG","Nevele",51.03531,3.54574,7
-"VLG","Niel",51.11096,4.33428,8
-"VLG","Niel-bij-As",51.01851,5.60526,75
-"VLG","Niel-bij-Sint-Truiden",50.7404,5.14204,86
-"VLG","Nieuwenrode",50.97961,4.35282,14
-"VLG","Nieuwerkerken",50.8638,5.19467,44
-"VLG","Nieuwerkerken",50.92386,4.00433,26
-"VLG","Nieuwkerke",50.74709,2.8286,57
-"VLG","Nieuwkerken-Waas",51.19358,4.17776,13
-"VLG","Nieuwpoort",51.13008,2.75135,9
-"VLG","Nieuwrode",50.95,4.83333,26
-"VLG","Nijlen",51.16096,4.67008,7
-"VLG","Ninove",50.82776,4.02657,17
-"VLG","Nokere",50.88541,3.5101,49
-"VLG","Noorderwijk",51.14122,4.84061,19
-"VLG","Nossegem",50.88181,4.50817,54
-"VLG","Nukerke",50.79564,3.59492,90
-"VLG","Oedelem",51.17033,3.33762,17
-"VLG","Oekene",50.91794,3.15676,18
-"VLG","Oelegem",51.2131,4.59832,9
-"VLG","Oeselgem",50.93789,3.43185,10
-"VLG","Oetingen",50.77318,4.0635,60
-"VLG","Oevel",51.13789,4.90471,22
-"VLG","Okegem",50.85559,4.05516,15
-"VLG","Olen",51.14391,4.8598,25
-"VLG","Olmen",51.14228,5.14999,30
-"VLG","Olsene",50.93422,3.46389,13
-"VLG","Onkerzele",50.78212,3.91145,45
-"VLG","Onze-Lieve-Vrouw-Lombeek",50.82004,4.11035,45
-"VLG","Onze-Lieve-Vrouw-Waver",51.06265,4.57941,21
-"VLG","Ooigem",50.89334,3.3363,17
-"VLG","Oorbeek",50.7991,4.89235,54
-"VLG","Oordegem",50.95727,3.90201,34
-"VLG","Oostakker",51.10124,3.76945,6
-"VLG","Oostduinkerke",51.11565,2.68217,5
-"VLG","Oosteeklo",51.19302,3.68928,7
-"VLG","Oosterzele",50.95261,3.79826,45
-"VLG","Oostham",51.10374,5.17877,41
-"VLG","Oostkamp",51.15432,3.23128,10
-"VLG","Oostkerke",51.27725,3.29608,4
-"VLG","Oostmalle",51.3,4.73333,23
-"VLG","Oostnieuwkerke",50.93959,3.05742,23
-"VLG","Oostrozebeke",50.92093,3.33799,14
-"VLG","Oostvleteren",50.93319,2.74119,6
-"VLG","Oostwinkel",51.15155,3.53204,7
-"VLG","Opbrakel",50.79201,3.74862,56
-"VLG","Opdorp",51.02806,4.21801,7
-"VLG","Opglabbeek",51.04258,5.58346,72
-"VLG","Opgrimbie",50.94188,5.67967,43
-"VLG","Ophasselt",50.81729,3.89293,28
-"VLG","Ophoven",51.12571,5.80155,31
-"VLG","Opitter",51.11705,5.64749,43
-"VLG","Oplinter",50.83023,4.99002,42
-"VLG","Opoeteren",51.06923,5.65556,51
-"VLG","Oppuurs",51.06629,4.24222,5
-"VLG","Opvelp",50.81017,4.79347,76
-"VLG","Opwijk",50.96724,4.18442,22
-"VLG","Ordingen",50.8132,5.23499,53
-"VLG","Orsmaal-Gussenhoven",50.80528,5.06178,40
-"VLG","Ostend",51.21551,2.927,6
-"VLG","Otegem",50.80693,3.42043,36
-"VLG","Ottenburg",50.75161,4.6164,96
-"VLG","Ottergem",50.93418,3.94706,28
-"VLG","Oudegem",51.01017,4.06195,5
-"VLG","Oudenaarde",50.85168,3.60891,11
-"VLG","Oudenburg",51.18489,3.00035,3
-"VLG","Oud-Heverlee",50.83522,4.66421,56
-"VLG","Oud-Turnhout",51.31978,4.9841,25
-"VLG","Outer",50.84189,3.9987,22
-"VLG","Outgaarden",50.76672,4.91929,58
-"VLG","Outrijve",50.75773,3.42964,14
-"VLG","Ouwegem",50.91231,3.59978,12
-"VLG","Overboelare",50.76382,3.86369,26
-"VLG","Overhespen",50.79599,5.03563,42
-"VLG","Overijse",50.77436,4.53461,88
-"VLG","Overmere",51.04691,3.9466,7
-"VLG","Overpelt",51.21038,5.41557,44
-"VLG","Overrepen",50.80802,5.43108,85
-"VLG","Overwinden",50.75504,5.048,81
-"VLG","Paal",51.03988,5.17233,39
-"VLG","Pamel",50.8453,4.07129,35
-"VLG","Parike",50.78487,3.79754,46
-"VLG","Passendale",50.89979,3.02133,51
-"VLG","Peer",51.1303,5.45952,64
-"VLG","Pellenberg",50.87245,4.79394,100
-"VLG","Pepingen",50.75922,4.15983,52
-"VLG","Perk",50.93571,4.49615,14
-"VLG","Perre",50.88914,3.86098,54
-"VLG","Pervijze",51.07322,2.79403,2
-"VLG","Petegem",50.83333,3.55,15
-"VLG","Petegem-aan-de-Leie",50.96667,3.53333,11
-"VLG","Petegem-aan-de-Schelde",50.83344,3.55609,21
-"VLG","Peutie",50.92998,4.45187,17
-"VLG","Piringen",50.78666,5.41822,82
-"VLG","Pittem",50.99279,3.26317,32
-"VLG","Poederlee",51.22769,4.84034,14
-"VLG","Poeke",51.0394,3.44542,12
-"VLG","Poelkapelle",50.9179,2.95677,21
-"VLG","Pollare",50.81713,4.006,55
-"VLG","Pollinkhove",50.97118,2.7326,8
-"VLG","Poperinge",50.85386,2.72659,19
-"VLG","Poppel",51.44565,5.0433,26
-"VLG","Proven",50.88976,2.65721,12
-"VLG","Pulderbos",51.2171,4.69357,8
-"VLG","Pulle",51.20317,4.71434,9
-"VLG","Putte",51.05337,4.63263,22
-"VLG","Puurs",51.07409,4.28844,4
-"VLG","Ramsdonk",51.015,4.33522,10
-"VLG","Ramsel",51.0324,4.83242,13
-"VLG","Ramskapelle",51.10974,2.76403,1
-"VLG","Ramskapelle",51.31511,3.25057,2
-"VLG","Ransberg",50.87493,5.03955,75
-"VLG","Ranst",51.18983,4.56533,12
-"VLG","Ravels",51.37274,4.9921,32
-"VLG","Reet",51.10201,4.41264,25
-"VLG","Rekem",50.92244,5.6938,44
-"VLG","Rekkem",50.7837,3.16346,20
-"VLG","Relegem",50.89908,4.27694,57
-"VLG","Reninge",50.94781,2.78892,5
-"VLG","Reningelst",50.81514,2.77066,34
-"VLG","Reppel",51.15405,5.5624,45
-"VLG","Ressegem",50.89115,3.91129,57
-"VLG","Retie",51.26652,5.08242,24
-"VLG","Riemst",50.80995,5.60131,105
-"VLG","Rijkel",50.80935,5.26136,66
-"VLG","Rijkevorsel",51.34795,4.76053,24
-"VLG","Rijkhoven",50.83294,5.51497,74
-"VLG","Rijmenam",51.0016,4.58405,5
-"VLG","Riksingen",50.80433,5.46263,109
-"VLG","Rillaar",50.97376,4.89177,22
-"VLG","Roborst",50.86655,3.75302,38
-"VLG","Roesbrugge-Haringe",50.9181,2.62538,4
-"VLG","Roeselare",50.94653,3.12269,22
-"VLG","Roksem",51.16885,3.0329,8
-"VLG","Rollegem",50.76565,3.26317,26
-"VLG","Rollegem-Kapelle",50.8687,3.14635,23
-"VLG","Romershoven",50.85635,5.45986,63
-"VLG","Ronse",50.74574,3.6005,42
-"VLG","Ronsele",51.13056,3.55178,12
-"VLG","Roosbeek",50.83608,4.86282,56
-"VLG","Rosmeer",50.84595,5.57805,101
-"VLG","Rotem",51.05289,5.74096,35
-"VLG","Rotselaar",50.95302,4.71665,12
-"VLG","Ruddervoorde",51.09589,3.20743,14
-"VLG","Ruien",50.76865,3.48581,27
-"VLG","Ruisbroek",50.79015,4.29771,25
-"VLG","Ruisbroek",51.08832,4.33127,1
-"VLG","Ruiselede",51.04039,3.39416,15
-"VLG","Rumbeke",50.93248,3.16716,14
-"VLG","Rummen",50.88912,5.16521,33
-"VLG","Rumst",51.08153,4.42217,6
-"VLG","Rupelmonde",51.12931,4.29434,7
-"VLG","Rutten",50.74764,5.44354,107
-"VLG","Schaffen",50.99993,5.08667,29
-"VLG","Schelderode",50.96922,3.7133,18
-"VLG","Scheldewindeke",50.93436,3.78663,36
-"VLG","Schelle",51.12615,4.34114,7
-"VLG","Schellebelle",51.01136,3.92843,10
-"VLG","Schendelbeke",50.79872,3.89882,26
-"VLG","Schepdaal",50.83836,4.19609,76
-"VLG","Scherpenheuvel",50.98075,4.97552,63
-"VLG","Scherpenheuvel-Zichem",51.01041,4.97492,14
-"VLG","Schilde",51.24107,4.58336,9
-"VLG","Schoonaarde",51.00387,4.0152,8
-"VLG","Schorisse",50.80309,3.67632,43
-"VLG","Schoten",51.25251,4.50268,8
-"VLG","Schriek",51.02844,4.69357,10
-"VLG","Schuiferskapelle",51.03244,3.33799,25
-"VLG","Schulen",50.95972,5.1901,28
-"VLG","Semmerzake",50.94369,3.66318,29
-"VLG","Serskamp",50.98849,3.92657,17
-"VLG","'s-Gravenvoeren",50.75872,5.76113,89
-"VLG","'s-Gravenwezel",51.26267,4.56113,12
-"VLG","'s Herenelderen",50.80882,5.50067,77
-"VLG","Sijsele",51.20846,3.31714,5
-"VLG","Sinaai",51.15789,4.04087,6
-"VLG","Sint-Agatha-Rode",50.78597,4.63099,40
-"VLG","Sint-Amands",51.05645,4.20957,5
-"VLG","Sint-Amandsberg",51.05947,3.74943,9
-"VLG","Sint-Andries",51.19696,3.17891,13
-"VLG","Sint-Antelinks",50.84979,3.92647,76
-"VLG","Sint-Antonius",51.26667,4.63861,15
-"VLG","Sint-Baafs-Vijve",50.9,3.38333,9
-"VLG","Sint-Blasius-Boekel",50.85232,3.72239,60
-"VLG","Sint-Denijs",50.75198,3.36627,35
-"VLG","Sint-Denijs-Boekel",50.8651,3.71156,60
-"VLG","Sint-Denijs-Westrem",51.02135,3.67202,9
-"VLG","Sint-Eloois-Vijve",50.90911,3.41545,9
-"VLG","Sint-Eloois-Winkel",50.87591,3.18144,20
-"VLG","Sint-Genesius-Rode",50.74645,4.35754,83
-"VLG","Sint-Gillis-bij-Dendermonde",51.01905,4.11146,7
-"VLG","Sint-Gillis-Waas",51.21914,4.12374,5
-"VLG","Sint-Goriks-Oudenhove",50.85278,3.78612,67
-"VLG","Sint-Huibrechts-Hern",50.82985,5.4493,94
-"VLG","Sint-Huibrechts-Lille",51.22266,5.49437,40
-"VLG","Sint-Jan",50.86503,2.90478,27
-"VLG","Sint-Jan-in-Eremo",51.27161,3.58062,-1
-"VLG","Sint-Job-in-'t-Goor",51.29907,4.57289,18
-"VLG","Sint-Joris",50.87117,5.272,48
-"VLG","Sint-Joris",51.12663,3.36524,10
-"VLG","Sint-Joris-Weert",50.80235,4.6526,39
-"VLG","Sint-Joris-Winge",50.90446,4.8749,47
-"VLG","Sint-Katelijne-Waver",51.06691,4.53469,6
-"VLG","Sint-Katherina-Lombeek",50.87314,4.1536,19
-"VLG","Sint-Kornelis-Horebeke",50.83449,3.6983,81
-"VLG","Sint-Kruis",51.21399,3.24949,7
-"VLG","Sint-Kwintens-Lennik",50.80377,4.15489,55
-"VLG","Sint-Lambrechts-Herk",50.89914,5.30786,43
-"VLG","Sint-Laureins",51.24202,3.52441,2
-"VLG","Sint-Lenaarts",51.34868,4.68009,24
-"VLG","Sint-Lievens-Esse",50.8566,3.88792,79
-"VLG","Sint-Lievens-Houtem",50.9197,3.86225,38
-"VLG","Sint-Margriete",51.28216,3.54644,2
-"VLG","Sint-Margriete-Houtem",50.82877,4.95796,56
-"VLG","Sint-Maria-Horebeke",50.83885,3.68754,81
-"VLG","Sint-Maria-Latem",50.89014,3.7064,39
-"VLG","Sint-Maria-Lierde",50.81867,3.84436,33
-"VLG","Sint-Maria-Oudenhove",50.83364,3.79556,95
-"VLG","Sint-Martens",50.83889,4.92436,61
-"VLG","Sint-Martens-Bodegem",50.86185,4.21317,32
-"VLG","Sint-Martens-Latem",51.01459,3.63779,8
-"VLG","Sint-Martens-Leerne",51.01605,3.5813,10
-"VLG","Sint-Martens-Lennik",50.81158,4.16965,57
-"VLG","Sint-Martens-Lierde",50.80371,3.82541,45
-"VLG","Sint-Martens-Voeren",50.74846,5.81288,129
-"VLG","Sint-Michiels",51.18806,3.21142,7
-"VLG","Sint-Niklaas",51.16509,4.1437,21
-"VLG","Sint-Pauwels",51.19391,4.09649,9
-"VLG","Sint-Pieters-Kapelle",50.70758,3.98999,72
-"VLG","Sint-Pieters-Leeuw",50.77926,4.24355,45
-"VLG","Sint-Pieters-Rode",50.93247,4.82245,30
-"VLG","Sint-Pieters-Voeren",50.73863,5.82224,153
-"VLG","Sint-Stevens-Woluwe",50.86838,4.45195,36
-"VLG","Sint-Truiden",50.81679,5.18647,54
-"VLG","Sint-Ulriks-Kapelle",50.87899,4.21884,57
-"VLG","Sleidinge",51.13363,3.67405,6
-"VLG","Slijpe",51.1551,2.8483,3
-"VLG","Sluizen",50.76524,5.53136,94
-"VLG","Smeerebbe-Vloerzegem",50.81703,3.92768,36
-"VLG","Smetlede",50.9662,3.92796,27
-"VLG","Snaaskerke",51.17737,2.93901,3
-"VLG","Snellegem",51.16776,3.11921,11
-"VLG","Spalbeek",50.94918,5.22391,27
-"VLG","Spiere",50.7189,3.35626,16
-"VLG","Stabroek",51.33189,4.37127,3
-"VLG","Staden",50.97456,3.01469,21
-"VLG","Stalhille",51.21412,3.07198,2
-"VLG","Stavele",50.94068,2.67241,3
-"VLG","Steendorp",51.12681,4.27031,11
-"VLG","Steenhuffel",50.99539,4.26788,10
-"VLG","Steenhuize-Wijnhuize",50.83968,3.88805,49
-"VLG","Steenokkerzeel",50.91851,4.50989,23
-"VLG","Stekene",51.2099,4.03651,7
-"VLG","Stene",51.20437,2.91259,3
-"VLG","Sterrebeek",50.86171,4.49375,56
-"VLG","Stevoort",50.91862,5.25327,30
-"VLG","Stokkem",51.02326,5.74499,34
-"VLG","Stokrooie",50.96637,5.28142,28
-"VLG","Strijpen",50.86801,3.78797,47
-"VLG","Strijtem",50.84155,4.11696,37
-"VLG","Strombeek-Bever",50.91039,4.35582,48
-"VLG","Temse",51.12794,4.21372,15
-"VLG","Teralfene",50.89195,4.09895,13
-"VLG","Terhagen",51.07966,4.39907,5
-"VLG","Terkoest",50.89832,5.27623,37
-"VLG","Ternat",50.86654,4.16682,21
-"VLG","Tervuren",50.82372,4.51418,79
-"VLG","Tessenderlo",51.06513,5.08856,27
-"VLG","Testelt",51.01084,4.95312,27
-"VLG","Tiegem",50.80901,3.47479,50
-"VLG","Tielen",51.24295,4.89956,17
-"VLG","Tielrode",51.11303,4.17707,11
-"VLG","Tielt",50.9421,4.90505,28
-"VLG","Tielt",50.99931,3.32707,46
-"VLG","Tienen",50.80745,4.9378,46
-"VLG","Tildonk",50.94383,4.64481,16
-"VLG","Tisselt",51.03398,4.35947,5
-"VLG","Tollembeek",50.74096,4.00666,32
-"VLG","Tongeren",50.78054,5.46484,107
-"VLG","Tongerlo",51.10622,4.91638,18
-"VLG","Tongerlo",51.12756,5.6609,38
-"VLG","Torhout",51.0656,3.10085,22
-"VLG","Tremelo",50.99231,4.70807,10
-"VLG","Turnhout",51.32254,4.94471,29
-"VLG","Uikhoven",50.92386,5.71921,41
-"VLG","Uitbergen",51.02152,3.95505,6
-"VLG","Uitkerke",51.30684,3.13712,2
-"VLG","Ulbeek",50.84367,5.30502,47
-"VLG","Ursel",51.12895,3.48655,16
-"VLG","Val-Meer",50.78715,5.59557,100
-"VLG","Varsenare",51.18981,3.13916,10
-"VLG","Vechmaal",50.76171,5.37455,89
-"VLG","Veerle",51.06989,4.98761,20
-"VLG","Veldegem",51.1048,3.1591,19
-"VLG","Veldwezelt",50.86805,5.63101,78
-"VLG","Velm",50.7787,5.13096,56
-"VLG","Veltem-Beisem",50.90807,4.61906,23
-"VLG","Velzeke-Ruddershove",50.88288,3.78292,47
-"VLG","Verrebroek",51.25537,4.18882,3
-"VLG","Vertrijk",50.82925,4.8345,68
-"VLG","Veurne",51.07316,2.66803,3
-"VLG","Viane",50.74232,3.92478,21
-"VLG","Vichte",50.83868,3.40129,19
-"VLG","Viersel",51.18769,4.64918,7
-"VLG","Vilvoorde",50.92814,4.42938,19
-"VLG","Vinderhoute",51.08764,3.64158,11
-"VLG","Vinkt",51.00864,3.47878,21
-"VLG","Vissenaken",50.83846,4.90489,54
-"VLG","Vladslo",51.04644,2.91601,1
-"VLG","Vlamertinge",50.85485,2.82024,17
-"VLG","Vlezenbeek",50.80778,4.23197,49
-"VLG","Vliermaal",50.84069,5.42862,81
-"VLG","Vliermaalroot",50.86512,5.42622,48
-"VLG","Vlierzele",50.93171,3.8959,48
-"VLG","Vlijtingen",50.83202,5.58432,82
-"VLG","Vlimmeren",51.2952,4.78128,21
-"VLG","Vlissegem",51.25531,3.05604,3
-"VLG","Vollezele",50.76121,4.02435,55
-"VLG","Voorde",50.82306,3.94928,34
-"VLG","Voormezele",50.81681,2.87616,26
-"VLG","Vorselaar",51.20243,4.77259,14
-"VLG","Vorst",51.08029,5.01998,19
-"VLG","Vosselaar",51.30856,4.8896,22
-"VLG","Vosselare",51.02888,3.55664,11
-"VLG","Vossem",50.8363,4.56036,59
-"VLG","Vrasene",51.22098,4.19094,4
-"VLG","Vremde",51.17535,4.52321,12
-"VLG","Vreren",50.75168,5.49588,105
-"VLG","Vroenhoven",50.82614,5.63995,90
-"VLG","Vucht",50.97832,5.711,38
-"VLG","Vurste",50.94321,3.68307,32
-"VLG","Waanrode",50.91624,5.00479,66
-"VLG","Waardamme",51.11136,3.22288,12
-"VLG","Waarloos",51.10597,4.45482,25
-"VLG","Waarmaarde",50.78997,3.4866,15
-"VLG","Waarschoot",51.1525,3.605,6
-"VLG","Waasmont",50.72833,5.06327,90
-"VLG","Waasmunster",51.10572,4.08573,5
-"VLG","Wachtebeke",51.16852,3.87183,7
-"VLG","Wakken",50.93304,3.39743,16
-"VLG","Walem",51.06705,4.45842,5
-"VLG","Walsbets",50.73762,5.08409,77
-"VLG","Waltwilder",50.86641,5.54425,83
-"VLG","Wambeek",50.85281,4.16169,34
-"VLG","Wannegem-Lede",50.89037,3.55139,52
-"VLG","Wanzele",50.97425,3.95642,16
-"VLG","Waregem",50.88898,3.42756,13
-"VLG","Watervliet",51.27494,3.62598,2
-"VLG","Watou",50.85864,2.62074,16
-"VLG","Webbekom",50.9741,5.04032,26
-"VLG","Wechelderzande",51.26304,4.78652,18
-"VLG","Weelde",51.40777,4.99251,31
-"VLG","Weerde",50.97345,4.47487,9
-"VLG","Welden",50.87684,3.65453,10
-"VLG","Welle",50.89876,4.05602,14
-"VLG","Wellen",50.84096,5.33867,47
-"VLG","Wemmel",50.90812,4.30613,39
-"VLG","Wenduine",51.2983,3.08213,5
-"VLG","Werchter",50.97308,4.7012,9
-"VLG","Werken",51.0294,2.96448,4
-"VLG","Werm",50.83261,5.4796,89
-"VLG","Wervik",50.78069,3.03854,18
-"VLG","Wespelaar",50.96081,4.63984,8
-"VLG","Westende",51.15961,2.7687,4
-"VLG","Westerlo",51.09049,4.91544,14
-"VLG","Westkapelle",51.31511,3.3017,4
-"VLG","Westkerke",51.16448,3.01084,7
-"VLG","Westmalle",51.29767,4.69013,23
-"VLG","Westmeerbeek",51.06127,4.83835,13
-"VLG","Westouter",50.79722,2.74647,47
-"VLG","Westrem",50.9691,3.86203,20
-"VLG","Westrozebeke",50.93178,3.01001,47
-"VLG","Westvleteren",50.92744,2.71688,6
-"VLG","Wetteren",51.00526,3.88341,16
-"VLG","Wevelgem",50.8,3.16667,15
-"VLG","Wezemaal",50.94848,4.75536,16
-"VLG","Wezembeek-Oppem",50.8395,4.49427,67
-"VLG","Wichelen",51.00526,3.97683,8
-"VLG","Wiekevorst",51.10796,4.7924,10
-"VLG","Wielsbeke",50.9,3.36667,9
-"VLG","Wieze",50.97691,4.07876,8
-"VLG","Wijchmaal",51.13515,5.41334,63
-"VLG","Wijer",50.89863,5.22446,41
-"VLG","Wijnegem",51.22787,4.51895,8
-"VLG","Wijshagen",51.10492,5.55788,71
-"VLG","Wijtschate",50.78632,2.88369,79
-"VLG","Wilderen",50.81548,5.14229,46
-"VLG","Willebroek",51.06041,4.36019,4
-"VLG","Wilrijk",51.16734,4.39513,16
-"VLG","Wilsele",50.89188,4.69769,49
-"VLG","Wilskerke",51.18115,2.83995,2
-"VLG","Wingene",51.05782,3.27359,26
-"VLG","Winksele",50.8986,4.64607,33
-"VLG","Wintershoven",50.85157,5.41965,48
-"VLG","Woesten",50.89971,2.78959,18
-"VLG","Wolvertem",50.95172,4.30964,33
-"VLG","Wommelgem",51.20452,4.5225,9
-"VLG","Wommersom",50.81266,5.01771,39
-"VLG","Wondelgem",51.08705,3.70909,6
-"VLG","Wontergem",50.97907,3.44027,10
-"VLG","Wortegem",50.85357,3.51,66
-"VLG","Wortel",51.39827,4.7946,20
-"VLG","Woubrechtegem",50.87355,3.91578,60
-"VLG","Woumen",51.00145,2.86965,5
-"VLG","Wuustwezel",51.39214,4.59546,18
-"VLG","Zaffelare",51.13385,3.86357,7
-"VLG","Zandbergen",50.80279,3.96636,14
-"VLG","Zandhoven",51.21488,4.66164,11
-"VLG","Zandvoorde",51.19942,2.9722,1
-"VLG","Zarlardinge",50.76214,3.8285,40
-"VLG","Zarren",51.01844,2.95814,8
-"VLG","Zaventem",50.88365,4.47298,46
-"VLG","Zedelgem",51.14236,3.1368,9
-"VLG","Zeebrugge",51.32901,3.18188,10
-"VLG","Zegelsem",50.81891,3.71775,67
-"VLG","Zele",51.06566,4.0403,6
-"VLG","Zelem",50.97739,5.10687,32
-"VLG","Zellik",50.88408,4.27325,59
-"VLG","Zelzate",51.18963,3.80777,7
-"VLG","Zemst",50.98318,4.46079,11
-"VLG","Zepperen",50.82139,5.24769,46
-"VLG","Zerkegem",51.16645,3.06994,11
-"VLG","Zevekote",51.13772,2.92056,3
-"VLG","Zeveneken",51.10781,3.89048,7
-"VLG","Zeveren",50.99643,3.49904,10
-"VLG","Zevergem",50.97931,3.69319,7
-"VLG","Zichem",51.00187,4.98316,18
-"VLG","Zichen-Zussen-Bolder",50.79422,5.62483,95
-"VLG","Zillebeke",50.83464,2.92249,27
-"VLG","Zingem",50.90409,3.65305,16
-"VLG","Zoerle-Parwijs",51.08969,4.87108,13
-"VLG","Zoersel",51.26825,4.71296,17
-"VLG","Zolder",51.02455,5.30983,39
-"VLG","Zomergem",51.11994,3.56496,9
-"VLG","Zonhoven",50.99064,5.36819,44
-"VLG","Zonnebeke",50.8726,2.98725,34
-"VLG","Zonnegem",50.92683,3.9087,43
-"VLG","Zottegem",50.86955,3.81052,63
-"VLG","Zoutleeuw",50.83316,5.10376,30
-"VLG","Zuienkerke",51.26511,3.15506,3
-"VLG","Zulte",50.91954,3.44859,11
-"VLG","Zulzeke",50.79165,3.57053,22
-"VLG","Zutendaal",50.93306,5.5753,84
-"VLG","Zwevegem",50.81268,3.33848,30
-"VLG","Zwevezele",51.03683,3.21186,38
-"VLG","Zwijnaarde",51.00077,3.70746,6
-"VLG","Zwijndrecht",51.21979,4.32664,7
-"WAL","Abée",50.47328,5.3555,274
-"WAL","Achêne",50.26701,5.04539,297
-"WAL","Achet",50.33346,5.17516,255
-"WAL","Acoz",50.35904,4.53263,170
-"WAL","Agimont",50.1659,4.79579,179
-"WAL","Aische-en-Refail",50.60009,4.83775,153
-"WAL","Aiseau",50.41158,4.58671,117
-"WAL","Aisemont",50.40491,4.65185,199
-"WAL","Alle",49.84119,4.97011,201
-"WAL","Alleur",50.67465,5.51316,165
-"WAL","Amay",50.54829,5.30974,131
-"WAL","Amberloup",50.03123,5.52981,391
-"WAL","Amblève",50.35357,6.17002,467
-"WAL","Ambresin",50.63068,5.03097,138
-"WAL","Amougies",50.74446,3.50675,20
-"WAL","Ampsin",50.54153,5.2779,137
-"WAL","Andenne",50.48941,5.09513,78
-"WAL","Anderlues",50.40704,4.27136,181
-"WAL","Andrimont",50.61298,5.88294,290
-"WAL","Angleur",50.6113,5.59942,64
-"WAL","Angre",50.36583,3.69535,43
-"WAL","Anhée",50.31039,4.87827,91
-"WAL","Annevoie-Rouillon",50.34776,4.84961,114
-"WAL","Ans",50.6623,5.52029,181
-"WAL","Anseremme",50.23996,4.89904,96
-"WAL","Anseroeul",50.72739,3.5237,36
-"WAL","Antheit",50.54927,5.24022,104
-"WAL","Anthisnes",50.48323,5.519,275
-"WAL","Antoing",50.56765,3.4492,31
-"WAL","Anvaing",50.68318,3.56144,29
-"WAL","Arbre",50.36611,4.82137,155
-"WAL","Arbre",50.61037,3.81517,38
-"WAL","Arc-Ainières",50.70151,3.55433,27
-"WAL","Archennes",50.75261,4.66962,43
-"WAL","Argenteau",50.70211,5.68448,106
-"WAL","Arlon",49.68333,5.81667,421
-"WAL","Arquennes",50.56765,4.27341,97
-"WAL","Arsimont",50.42859,4.63872,125
-"WAL","Arville",50.03203,5.31665,369
-"WAL","Assenois",49.80244,5.46371,443
-"WAL","Assesse",50.36934,5.02204,247
-"WAL","Ath",50.62937,3.77801,32
-"WAL","Athus",49.56475,5.83736,281
-"WAL","Attert",49.75035,5.78634,298
-"WAL","Attre",50.60732,3.83921,42
-"WAL","Aubange",49.56652,5.80492,278
-"WAL","Aubel",50.70189,5.85812,226
-"WAL","Audregnies",50.38324,3.72128,60
-"WAL","Aulnois",50.34009,3.90409,143
-"WAL","Autelbas",49.64813,5.86799,320
-"WAL","Autre-Église",50.66921,4.90381,126
-"WAL","Auvelais",50.4504,4.63228,96
-"WAL","Avennes",50.6287,5.11687,129
-"WAL","Avernas-le-Bauduin",50.69438,5.07859,115
-"WAL","Avin",50.62235,5.06925,133
-"WAL","Awans",50.66774,5.46329,152
-"WAL","Awirs",50.60014,5.40627,89
-"WAL","Aye",50.22471,5.30064,240
-"WAL","Ayeneux",50.60797,5.71589,244
-"WAL","Aywaille",50.47411,5.67684,124
-"WAL","Baelen",50.63131,5.97433,257
-"WAL","Baileux",50.02877,4.37533,260
-"WAL","Bailleul",50.66909,3.31927,18
-"WAL","Baillonville",50.29042,5.33875,198
-"WAL","Baisieux",50.3874,3.69553,33
-"WAL","Baisy-Thy",50.59708,4.47598,122
-"WAL","Balâtre",50.49967,4.64353,129
-"WAL","Bande",50.16636,5.41442,323
-"WAL","Barbençon",50.22316,4.28338,213
-"WAL","Barchon",50.66894,5.7001,179
-"WAL","Barry",50.58771,3.54272,52
-"WAL","Barvaux",50.34832,5.49058,140
-"WAL","Basècles",50.52549,3.64944,51
-"WAL","Bas-Oha",50.52652,5.19216,112
-"WAL","Basse Lasne",50.69503,4.49218,65
-"WAL","Bassenge",50.75883,5.60989,75
-"WAL","Bassilly",50.67634,3.93388,49
-"WAL","Bastogne",50.00347,5.71844,502
-"WAL","Bas-Warneton",50.75937,2.95996,18
-"WAL","Battice",50.64734,5.82104,326
-"WAL","Baudour",50.48296,3.8332,50
-"WAL","Baugnies",50.56034,3.55202,46
-"WAL","Beaufays",50.55884,5.63881,287
-"WAL","Beaumont",50.23699,4.23926,222
-"WAL","Beauraing",50.11042,4.95554,184
-"WAL","Beausaint",50.16807,5.5486,379
-"WAL","Beauvechain",50.78195,4.7718,86
-"WAL","Beclers",50.62123,3.5042,40
-"WAL","Beez",50.4686,4.91175,113
-"WAL","Beho",50.22056,5.99806,508
-"WAL","Belgrade",50.47138,4.82935,122
-"WAL","Bellaire",50.64453,5.66585,176
-"WAL","Bellecourt",50.48067,4.26793,145
-"WAL","Bellefontaine",49.66429,5.49608,360
-"WAL","Bellevaux-Ligneuville",50.38948,6.01093,325
-"WAL","Beloeil",50.55047,3.73484,59
-"WAL","Ben-Ahin",50.50415,5.18683,172
-"WAL","Berloz",50.69829,5.21236,123
-"WAL","Berneau",50.74235,5.73063,84
-"WAL","Bernissart",50.4746,3.64961,20
-"WAL","Bersillies-l'Abbaye",50.26186,4.14845,145
-"WAL","Bertogne",50.08364,5.66689,429
-"WAL","Bertrée",50.69533,5.09077,117
-"WAL","Bertrix",49.85596,5.25539,438
-"WAL","Berzée",50.28923,4.40097,154
-"WAL","Beuzet",50.53364,4.7452,173
-"WAL","Bévercé",50.44101,6.03535,355
-"WAL","Beyne-Heusay",50.62251,5.66508,231
-"WAL","Biercée",50.3242,4.25943,171
-"WAL","Bierges",50.71143,4.58658,100
-"WAL","Bierghes",50.69578,4.1192,57
-"WAL","Bierset",50.65496,5.45102,168
-"WAL","Biesme",50.34015,4.61048,206
-"WAL","Biesmerée",50.29777,4.68039,227
-"WAL","Biesme-sous-Thuin",50.32207,4.30896,151
-"WAL","Bièvre",49.94085,5.01591,368
-"WAL","Biez",50.72369,4.71356,100
-"WAL","Bihain",50.23946,5.80849,558
-"WAL","Bilstain",50.62208,5.92086,260
-"WAL","Binche",50.41155,4.16469,92
-"WAL","Bioul",50.33146,4.79618,215
-"WAL","Blandain",50.62095,3.30521,34
-"WAL","Blaregnies",50.35784,3.89156,135
-"WAL","Blaton",50.50038,3.66008,40
-"WAL","Blaugies",50.37218,3.80582,132
-"WAL","Blégny",50.67255,5.72508,218
-"WAL","Bléharies",50.51256,3.41251,24
-"WAL","Bleid",49.56871,5.62682,242
-"WAL","Bleret",50.68955,5.28786,128
-"WAL","Blicquy",50.58814,3.68557,50
-"WAL","Boignée",50.50082,4.60902,142
-"WAL","Boirs",50.7528,5.57942,75
-"WAL","Bois-de-Lessines",50.69662,3.89613,49
-"WAL","Bois-de-Villers",50.39033,4.82407,257
-"WAL","Bois-d'Haine",50.5018,4.21555,129
-"WAL","Bois-et-Borsu",50.39804,5.33622,311
-"WAL","Bolinne",50.60074,4.92893,144
-"WAL","Bolland",50.66159,5.76038,204
-"WAL","Bomal",50.37634,5.52382,133
-"WAL","Bombaye",50.73015,5.74533,131
-"WAL","Boncelles",50.57108,5.53625,241
-"WAL","Boninne",50.49443,4.93235,203
-"WAL","Bonlez",50.70211,4.68859,85
-"WAL","Bonnert",49.71131,5.81865,377
-"WAL","Bonneville",50.4728,5.03869,172
-"WAL","Bon-Secours",50.49803,3.60815,60
-"WAL","Bonsin",50.37345,5.38089,256
-"WAL","Bossière",50.5185,4.69605,155
-"WAL","Bossut-Gottechain",50.75823,4.69511,89
-"WAL","Bouffioulx",50.39116,4.5155,112
-"WAL","Bouge",50.47193,4.89218,153
-"WAL","Bouillon",49.79324,5.06703,226
-"WAL","Bourlers",50.02748,4.34123,253
-"WAL","Boussoit",50.45947,4.08245,58
-"WAL","Boussu",50.43417,3.7944,32
-"WAL","Boussu-lez-Walcourt",50.22848,4.37754,243
-"WAL","Bousval",50.61663,4.508,90
-"WAL","Bouvignes-sur-Meuse",50.27382,4.89793,92
-"WAL","Bouvignies",50.6463,3.76574,41
-"WAL","Bovenistier",50.66781,5.28398,140
-"WAL","Bovesse",50.51938,4.78086,176
-"WAL","Bovigny",50.22417,5.91694,450
-"WAL","Bra",50.32412,5.73203,389
-"WAL","Bracquegnies",50.47094,4.1197,84
-"WAL","Braibant",50.31319,5.06135,249
-"WAL","Braine-l'Alleud",50.68363,4.36784,93
-"WAL","Braine-le-Château",50.6799,4.27385,78
-"WAL","Braine-le-Comte",50.60979,4.14658,96
-"WAL","Braives",50.62848,5.14798,136
-"WAL","Branchon",50.62899,4.97337,139
-"WAL","Bras",49.97089,5.39485,449
-"WAL","Brasmenil",50.54114,3.54532,48
-"WAL","Bray",50.43242,4.10588,58
-"WAL","Bressoux",50.63988,5.60629,89
-"WAL","Brugelette",50.59577,3.85363,51
-"WAL","Brunehault",50.50524,4.43209,147
-"WAL","Bruyelle",50.558,3.42791,19
-"WAL","Buissenal",50.66479,3.65608,52
-"WAL","Buissonville",50.21667,5.2,191
-"WAL","Bullange",50.40731,6.25749,582
-"WAL","Burdinne",50.58454,5.07663,167
-"WAL","Bure",50.08895,5.26008,280
-"WAL","Bury",50.54278,3.5939,43
-"WAL","Butgenbach",50.42689,6.20504,579
-"WAL","Buvrinnes",50.38873,4.2054,159
-"WAL","Buzet",50.54038,4.36998,143
-"WAL","Callenelle",50.5304,3.52266,33
-"WAL","Calonne",50.57766,3.43512,31
-"WAL","Cambron-Saint-Vincent",50.58493,3.92186,64
-"WAL","Carlsbourg",49.89499,5.081,405
-"WAL","Carnières",50.44428,4.25509,110
-"WAL","Casteau",50.51233,4.01121,84
-"WAL","Celles",50.23046,5.00659,217
-"WAL","Celles",50.65441,5.24666,140
-"WAL","Celles",50.71229,3.45733,19
-"WAL","Cerexhe-Heuseux",50.65409,5.72602,225
-"WAL","Cerfontaine",50.17047,4.41028,218
-"WAL","Céroux-Mousty",50.66089,4.5207,133
-"WAL","Chaineux",50.63183,5.83478,257
-"WAL","Champion",50.4953,4.90385,196
-"WAL","Champlon",50.10819,5.50192,441
-"WAL","Chanly",50.0797,5.15294,189
-"WAL","Chapelle-à-Wattines",50.61255,3.65476,46
-"WAL","Chapelle-lez-Herlaimont",50.4713,4.28227,165
-"WAL","Chapon-Seraing",50.60884,5.26915,184
-"WAL","Charleroi",50.41136,4.44448,136
-"WAL","Charneux",50.66938,5.80493,233
-"WAL","Chasse Royale",50.42842,3.95001,42
-"WAL","Chastre",50.60067,4.634,135
-"WAL","Chastrès",50.26696,4.45478,193
-"WAL","Chastre-Villeroux-Blanmont",50.60857,4.64198,133
-"WAL","Châtelet",50.40338,4.52826,118
-"WAL","Châtelineau",50.41499,4.52016,111
-"WAL","Châtillon",49.62364,5.69837,309
-"WAL","Chaudfontaine",50.5828,5.6341,218
-"WAL","Chaumont-Gistoux",50.67753,4.7212,121
-"WAL","Chaussée-Notre-Dame-Louvignies",50.59185,3.99799,86
-"WAL","Chênée",50.612,5.6141,69
-"WAL","Cherain",50.17996,5.86521,415
-"WAL","Cheratte",50.68237,5.66955,58
-"WAL","Chercq",50.58843,3.42118,30
-"WAL","Chevetogne",50.224,5.12064,240
-"WAL","Chevron",50.38072,5.73143,337
-"WAL","Chièvres",50.58787,3.80711,52
-"WAL","Chimay",50.04856,4.31712,240
-"WAL","Chiny",49.73833,5.34104,375
-"WAL","Ciney",50.29449,5.10015,261
-"WAL","Ciplet",50.61756,5.09027,145
-"WAL","Ciply",50.41875,3.94418,50
-"WAL","Clabecq",50.69245,4.2215,47
-"WAL","Clavier",50.40069,5.35154,295
-"WAL","Clermont",50.26079,4.31717,177
-"WAL","Clermont",50.65926,5.88455,301
-"WAL","Clermont-sous-Huy",50.56961,5.39231,73
-"WAL","Cognelée",50.51452,4.90746,182
-"WAL","Colfontaine",50.4141,3.85569,79
-"WAL","Comblain-au-Pont",50.47488,5.57711,103
-"WAL","Comblain-Fairon",50.4462,5.5449,121
-"WAL","Comines",50.7754,3.00119,20
-"WAL","Corbais",50.64609,4.65589,129
-"WAL","Corbion",49.79767,5.00745,364
-"WAL","Cornesse",50.57272,5.79615,204
-"WAL","Corroy-le-Château",50.53896,4.66284,163
-"WAL","Corroy-le-Grand",50.66306,4.674,121
-"WAL","Corswarem",50.71097,5.2137,124
-"WAL","Cortil-Noirmont",50.58111,4.64344,145
-"WAL","Cortil-Wodon",50.56804,4.95712,150
-"WAL","Couillet",50.39139,4.45908,111
-"WAL","Courcelles",50.46379,4.3747,160
-"WAL","Courrière",50.38023,4.98608,277
-"WAL","Cour-sur-Heure",50.30124,4.38921,150
-"WAL","Court-Saint-Étienne",50.63378,4.56851,85
-"WAL","Couthuin",50.5316,5.12323,170
-"WAL","Coutisse",50.46297,5.1168,222
-"WAL","Couture-Saint-Germain",50.67484,4.47255,78
-"WAL","Couvin",50.05284,4.49495,185
-"WAL","Cras-Avernas",50.69678,5.12392,131
-"WAL","Crehen",50.65978,5.06329,130
-"WAL","Crisnée",50.71703,5.39802,113
-"WAL","Crombach",50.26,6.0675,467
-"WAL","Crupet",50.34957,4.96127,190
-"WAL","Cuesmes",50.43624,3.92323,32
-"WAL","Cul-des-Sarts",49.96248,4.45427,364
-"WAL","Dalhem",50.71315,5.72774,98
-"WAL","Dampicourt",49.55426,5.4983,205
-"WAL","Dampremy",50.41705,4.43092,118
-"WAL","Daussois",50.2192,4.45684,246
-"WAL","Dave",50.4147,4.88789,86
-"WAL","Daverdisse",50.02161,5.11811,299
-"WAL","Denée",50.31889,4.75202,262
-"WAL","Dergneau",50.71399,3.58004,44
-"WAL","Deux-Acren",50.73026,3.85315,21
-"WAL","Dhuy",50.55936,4.85922,163
-"WAL","Dinant",50.25807,4.91166,96
-"WAL","Dion-le-Mont",50.69653,4.66657,86
-"WAL","Dion-le-Val",50.71646,4.66155,50
-"WAL","Dison",50.61004,5.8534,197
-"WAL","Dochamps",50.23437,5.62287,481
-"WAL","Doische",50.13356,4.73545,167
-"WAL","Dolembreux",50.53763,5.62556,229
-"WAL","Donceel",50.64827,5.32,146
-"WAL","Dongelberg",50.70342,4.81995,116
-"WAL","Dorinne",50.31533,4.97603,238
-"WAL","Dottignies",50.73333,3.3,21
-"WAL","Dour",50.39583,3.77792,93
-"WAL","Driesch",50.67574,6.11075,287
-"WAL","Durbuy",50.35291,5.45631,152
-"WAL","Durnal",50.33653,4.98616,275
-"WAL","Eben-Emael",50.794,5.66689,76
-"WAL","Ebly",49.8529,5.54068,479
-"WAL","Écaussinnes-d'Enghien",50.56822,4.1658,104
-"WAL","Écaussinnes-Lalaing",50.56865,4.18398,103
-"WAL","Éghezée",50.59076,4.91175,147
-"WAL","Ellezelles",50.73512,3.67985,56
-"WAL","Ellignies-Sainte-Anne",50.56176,3.6727,57
-"WAL","Élouges",50.40245,3.75175,46
-"WAL","Elsenborn",50.45798,6.21918,631
-"WAL","Embourg",50.59043,5.6068,148
-"WAL","Émines",50.51304,4.84411,168
-"WAL","Emptinne",50.32519,5.12135,238
-"WAL","Enghien",50.69375,4.03788,55
-"WAL","Engis",50.58156,5.39916,80
-"WAL","Énines",50.69428,4.92685,120
-"WAL","Ensival",50.58053,5.84927,194
-"WAL","Épinois",50.406,4.20666,139
-"WAL","Erbisoeul",50.51523,3.89568,71
-"WAL","Érezée",50.29292,5.55815,332
-"WAL","Ermeton-sur-Biert",50.29756,4.7194,212
-"WAL","Ernage",50.59484,4.67588,151
-"WAL","Erpent",50.45116,4.90557,145
-"WAL","Erquelinnes",50.30688,4.11129,137
-"WAL","Escanaffles",50.75743,3.45294,19
-"WAL","Esneux",50.53596,5.56775,115
-"WAL","Esplechin",50.57358,3.30429,47
-"WAL","Estaimbourg",50.67998,3.30785,17
-"WAL","Estaimpuis",50.70485,3.26785,27
-"WAL","Estinnes-au-Mont",50.39692,4.09653,86
-"WAL","Estinnes-au-Val",50.41016,4.10477,60
-"WAL","Étalle",49.67385,5.60019,334
-"WAL","Éthe",49.58,5.58208,227
-"WAL","Eugies",50.38893,3.88513,132
-"WAL","Eupen",50.6279,6.03647,298
-"WAL","Évegnée-Tignée",50.64647,5.70783,233
-"WAL","Evelette",50.41166,5.17436,254
-"WAL","Evregnies",50.7126,3.28654,23
-"WAL","Evrehailles",50.32037,4.91261,243
-"WAL","Eynatten",50.69243,6.08351,273
-"WAL","Faimes",50.66252,5.26005,140
-"WAL","Falaën",50.27884,4.79382,198
-"WAL","Falisolle",50.41814,4.62104,117
-"WAL","Fallais",50.61003,5.17123,116
-"WAL","Falmignoul",50.2058,4.89295,195
-"WAL","Familleureux",50.52389,4.21033,117
-"WAL","Farciennes",50.43006,4.54152,128
-"WAL","Faulx-Les Tombes",50.42708,5.02075,163
-"WAL","Fauvillers",49.85116,5.66405,463
-"WAL","Faymonville",50.40316,6.14058,533
-"WAL","Fays-les-Veneurs",49.86615,5.16123,384
-"WAL","Fayt-le-Franc",50.35652,3.77501,119
-"WAL","Fayt-lez-Manage",50.48698,4.22959,161
-"WAL","Feluy",50.56258,4.25098,106
-"WAL","Feneur",50.70445,5.71482,129
-"WAL","Ferrières",50.40157,5.61092,225
-"WAL","Fexhe-le-Haut-Clocher",50.6654,5.39978,156
-"WAL","Fexhe-Slins",50.72026,5.56973,149
-"WAL","Fize-Fontaine",50.5852,5.28403,174
-"WAL","Flamierge",50.03324,5.60294,476
-"WAL","Flavion",50.2494,4.71683,242
-"WAL","Flawinne",50.45794,4.81047,114
-"WAL","Flémalle-Grande",50.60906,5.47668,89
-"WAL","Flémalle-Haute",50.59994,5.44471,175
-"WAL","Flénu",50.43673,3.88573,67
-"WAL","Fléron",50.61516,5.68062,258
-"WAL","Fleurus",50.48351,4.55006,158
-"WAL","Flobecq",50.73733,3.73876,43
-"WAL","Floreffe",50.43452,4.7596,92
-"WAL","Florennes",50.25127,4.60636,262
-"WAL","Florenville",49.69983,5.3074,342
-"WAL","Floriffoux",50.45242,4.77004,96
-"WAL","Folx-les-Caves",50.66118,4.93783,119
-"WAL","Fontaine-l'Évêque",50.40907,4.32427,145
-"WAL","Fontaine-Valmont",50.31994,4.21467,124
-"WAL","Fontenoy",50.56756,3.47355,43
-"WAL","Fooz",50.67536,5.43617,155
-"WAL","Forchies-la-Marche",50.4369,4.32115,166
-"WAL","Forêt",50.58387,5.7,254
-"WAL","Forges",50.02569,4.32765,260
-"WAL","Forrières",50.13132,5.28268,210
-"WAL","Forville",50.57424,4.99861,171
-"WAL","Fosse",50.34001,5.84083,438
-"WAL","Fosses-la-Ville",50.39517,4.69623,176
-"WAL","Fraipont",50.56519,5.72225,126
-"WAL","Fraire",50.26127,4.5076,238
-"WAL","Fraiture",50.47914,5.41875,282
-"WAL","Frameries",50.40578,3.89603,113
-"WAL","Francorchamps",50.45353,5.95276,482
-"WAL","Franière",50.43657,4.73219,100
-"WAL","Frasnes",50.08022,4.51384,170
-"WAL","Frasnes-lez-Anvaing",50.69211,3.63562,53
-"WAL","Frasnes-lez-Buissenal",50.66783,3.62047,38
-"WAL","Frasnes-lez-Gosselies",50.53838,4.45232,148
-"WAL","Freux",49.97111,5.44944,460
-"WAL","Froidchapelle",50.15106,4.32742,241
-"WAL","Fronville",50.29423,5.42214,171
-"WAL","Froyennes",50.62185,3.35456,21
-"WAL","Fumal",50.58672,5.18314,104
-"WAL","Gaurain-Ramecroix",50.58923,3.48798,46
-"WAL","Gedinne",49.98037,4.93674,310
-"WAL","Geer",50.6699,5.17364,129
-"WAL","Geest-Gérompont-Petit-Rosière",50.64043,4.8587,130
-"WAL","Gelbressée",50.50611,4.95552,140
-"WAL","Gembloux",50.56149,4.69889,158
-"WAL","Gemmenich",50.74608,5.99507,208
-"WAL","Genappe",50.61173,4.45152,112
-"WAL","Genly",50.38953,3.91242,94
-"WAL","Gentinnes",50.57839,4.60705,142
-"WAL","Genval",50.72162,4.49375,101
-"WAL","Gérouville",49.61904,5.42654,284
-"WAL","Gerpinnes",50.33789,4.52731,185
-"WAL","Gesves",50.40146,5.07457,246
-"WAL","Ghislenghien",50.65653,3.87826,41
-"WAL","Ghlin",50.47313,3.90289,32
-"WAL","Ghoy",50.72834,3.80983,33
-"WAL","Gilly",50.42449,4.4789,152
-"WAL","Gimnée",50.13131,4.71193,195
-"WAL","Givry",50.37826,4.02932,59
-"WAL","Glabais",50.63074,4.45333,139
-"WAL","Glain",50.64772,5.5438,148
-"WAL","Gleixhe",50.61391,5.39008,122
-"WAL","Glimes",50.68003,4.83708,122
-"WAL","Glons",50.75307,5.54578,81
-"WAL","Godarville",50.49496,4.28698,135
-"WAL","Godinne",50.34809,4.87364,103
-"WAL","Goé",50.60657,5.95614,226
-"WAL","Gomzé-Andoumont",50.54434,5.68938,189
-"WAL","Gonrieux",50.03664,4.42637,252
-"WAL","Gosselies",50.46936,4.43324,172
-"WAL","Gottignies",50.4953,4.05996,98
-"WAL","Gougnies",50.35543,4.57615,217
-"WAL","Gourdinne",50.29146,4.45431,194
-"WAL","Goutroux",50.41333,4.36226,162
-"WAL","Gouvy",50.186,5.93917,443
-"WAL","Gouy-lez-Piéton",50.4907,4.3289,145
-"WAL","Gozée",50.33461,4.35273,189
-"WAL","Grâce-Berleur",50.64032,5.50329,166
-"WAL","Graide",49.95038,5.06723,359
-"WAL","Grand-Hallet",50.6953,5.03587,95
-"WAL","Grand-Halleux",50.32583,5.90722,316
-"WAL","Grandhan",50.32944,5.40996,187
-"WAL","Grand-Leez",50.58389,4.7751,159
-"WAL","Grand-Manil",50.55696,4.67528,153
-"WAL","Grandmenil",50.29165,5.65909,435
-"WAL","Grandmetz",50.62552,3.63141,51
-"WAL","Grand-Rechain",50.60765,5.81108,273
-"WAL","Grand-Reng",50.33083,4.0755,130
-"WAL","Grandrieu",50.20014,4.1742,190
-"WAL","Grand-Rosière-Hottomont",50.63193,4.86557,137
-"WAL","Grapfontaine",49.82155,5.40752,419
-"WAL","Graty",50.63172,3.99624,75
-"WAL","Grez-Doiceau",50.73901,4.69829,46
-"WAL","Grivegnée",50.62148,5.61101,99
-"WAL","Guignies",50.54785,3.37024,40
-"WAL","Habay-la-Neuve",49.7282,5.6474,402
-"WAL","Habay-la-Vieille",49.72329,5.61999,370
-"WAL","Habergy",49.61466,5.76015,319
-"WAL","Haccourt",50.73091,5.66963,60
-"WAL","Hachy",49.70159,5.68034,366
-"WAL","Haillot",50.44247,5.15413,245
-"WAL","Haine-Saint-Paul",50.46185,4.1767,96
-"WAL","Haine-Saint-Pierre",50.45747,4.20659,104
-"WAL","Hainin",50.42952,3.76659,36
-"WAL","Halanzy",49.56052,5.74433,269
-"WAL","Haltinne",50.45119,5.07731,182
-"WAL","Hamipré",49.83734,5.45686,446
-"WAL","Hamme-Mille",50.78022,4.71734,55
-"WAL","Hamoir",50.42675,5.53304,116
-"WAL","Hamois",50.3402,5.15619,250
-"WAL","Hampteau",50.25828,5.47197,180
-"WAL","Ham-sur-Heure",50.323,4.38844,144
-"WAL","Ham-sur-Sambre",50.44368,4.67425,109
-"WAL","Haneffe",50.63835,5.32013,146
-"WAL","Hannut",50.67142,5.07898,140
-"WAL","Hanret",50.58155,4.9484,154
-"WAL","Han-sur-Lesse",50.12674,5.18623,152
-"WAL","Hantes-Wihéries",50.30647,4.17699,139
-"WAL","Hanzinelle",50.29615,4.55633,253
-"WAL","Hanzinne",50.31097,4.54435,219
-"WAL","Harchies",50.47963,3.69347,29
-"WAL","Hargimont",50.18771,5.30827,217
-"WAL","Harmignies",50.40611,4.01731,45
-"WAL","Harre",50.35165,5.65744,424
-"WAL","Harsin",50.17339,5.34771,250
-"WAL","Harzé",50.44133,5.66706,227
-"WAL","Hastière-Lavaux",50.21849,4.82446,129
-"WAL","Hastière-par-delà",50.21495,4.82948,101
-"WAL","Hatrival",50.006,5.3482,422
-"WAL","Haulchin",50.38406,4.08297,110
-"WAL","Hauset",50.7107,6.06969,257
-"WAL","Haut-Fays",50.0016,5.01755,434
-"WAL","Haut-Ittre",50.65305,4.2978,116
-"WAL","Hautrage",50.48192,3.76522,36
-"WAL","Havay",50.36118,3.98366,87
-"WAL","Havelange",50.38931,5.23816,303
-"WAL","Havinnes",50.61658,3.46341,30
-"WAL","Havré",50.46401,4.04675,50
-"WAL","Heer",50.16368,4.83205,128
-"WAL","Heinsch",49.69986,5.7467,406
-"WAL","Hellebecq",50.66426,3.88839,36
-"WAL","Hemptinne",50.60291,4.98848,138
-"WAL","Hennuyères",50.6386,4.16935,86
-"WAL","Henri-Chapelle",50.67688,5.93009,338
-"WAL","Hensies",50.43263,3.68411,19
-"WAL","Heppenbach",50.3626,6.21826,508
-"WAL","Heppignies",50.4846,4.4953,166
-"WAL","Herbeumont",49.78086,5.2358,310
-"WAL","Herchies",50.52794,3.85689,69
-"WAL","Hergenrath",50.70912,6.03089,226
-"WAL","Hérinnes",50.70063,3.36323,17
-"WAL","Hermalle-sous-Argenteau",50.71231,5.67753,56
-"WAL","Hermalle-sous-Huy",50.5592,5.3639,79
-"WAL","Hermée",50.70883,5.61831,129
-"WAL","Hermeton-sur-Meuse",50.19751,4.8169,109
-"WAL","Héron",50.54731,5.09774,165
-"WAL","Herseaux",50.71667,3.21667,23
-"WAL","Herstal",50.66415,5.62346,81
-"WAL","Hertain",50.61346,3.28883,31
-"WAL","Herve",50.64083,5.79353,300
-"WAL","Heure",50.294,5.29704,193
-"WAL","Heure-le-Romain",50.73162,5.6329,96
-"WAL","Heusy",50.57457,5.86618,273
-"WAL","Hévillers",50.62328,4.61735,117
-"WAL","Heyd",50.34623,5.5625,277
-"WAL","Hingeon",50.52576,5.00719,205
-"WAL","Hodeige",50.69635,5.34159,120
-"WAL","Hodister",50.20076,5.49478,395
-"WAL","Hogne",50.24915,5.28043,220
-"WAL","Hognoul",50.68178,5.45385,156
-"WAL","Hollain",50.54165,3.42605,19
-"WAL","Hollange",49.90649,5.68834,434
-"WAL","Hollogne-aux-Pierres",50.64059,5.47179,157
-"WAL","Hollogne-sur-Geer",50.67654,5.20428,127
-"WAL","Hombourg",50.72257,5.92051,241
-"WAL","Hompré",49.94432,5.68693,459
-"WAL","Hondelange",49.63333,5.83333,314
-"WAL","Horion-Hozémont",50.62578,5.38819,155
-"WAL","Hornu",50.4328,3.82736,30
-"WAL","Horrues",50.60845,4.04278,69
-"WAL","Hotton",50.26742,5.44609,177
-"WAL","Houdemont",49.71872,5.58376,353
-"WAL","Houdeng-Aimeries",50.48132,4.14545,96
-"WAL","Houdeng-Goegnies",50.49032,4.17513,132
-"WAL","Houffalize",50.13235,5.78962,329
-"WAL","Hour",50.16131,5.03878,171
-"WAL","Housse",50.67846,5.69109,164
-"WAL","Houtaing",50.63792,3.68231,61
-"WAL","Houtain-le-Val",50.58242,4.41264,134
-"WAL","Houtain-l'Évêque",50.71667,5.08333,103
-"WAL","Houtain-Saint-Siméon",50.74026,5.6123,143
-"WAL","Houthem",50.7869,2.96382,22
-"WAL","Houyet",50.18619,5.00762,130
-"WAL","Hoves",50.67117,4.03651,57
-"WAL","Huccorgne",50.56705,5.16048,128
-"WAL","Huissignies",50.56579,3.75561,48
-"WAL","Huppaye",50.69363,4.89415,109
-"WAL","Huy",50.51894,5.23284,75
-"WAL","Hyon",50.43805,3.96031,43
-"WAL","Incourt",50.69151,4.79816,125
-"WAL","Irchonwelz",50.62066,3.7508,37
-"WAL","Isières",50.66317,3.81929,27
-"WAL","Isnes",50.50611,4.72833,175
-"WAL","Ittre",50.64396,4.26476,111
-"WAL","Ivoz-Ramet",50.58798,5.4657,79
-"WAL","Izel",49.69371,5.37382,348
-"WAL","Izier",50.38401,5.57898,289
-"WAL","Jalhay",50.55876,5.96764,386
-"WAL","Jambes",50.45636,4.87166,84
-"WAL","Jamioulx",50.35296,4.41281,133
-"WAL","Jamoigne",49.69328,5.40906,314
-"WAL","Jandrain",50.67438,4.98024,102
-"WAL","Jandrain-Jandrenouille",50.67177,4.97801,107
-"WAL","Jauche",50.68136,4.95563,94
-"WAL","Jehay",50.5731,5.32382,191
-"WAL","Jehonville",49.9066,5.20035,414
-"WAL","Jemappes",50.44914,3.89096,31
-"WAL","Jemelle",50.16315,5.26709,195
-"WAL","Jemeppe-sur-Meuse",50.61701,5.49849,65
-"WAL","Jemeppe-sur-Sambre",50.46543,4.6655,95
-"WAL","Jeneffe",50.65142,5.35446,162
-"WAL","Jodoigne",50.72357,4.86914,74
-"WAL","Jodoigne-Souveraine",50.7094,4.83759,103
-"WAL","Jollain-Merlin",50.53905,3.40402,26
-"WAL","Joncret",50.35373,4.51349,206
-"WAL","Jumet",50.4422,4.43745,172
-"WAL","Jupille-sur-Meuse",50.64587,5.63307,73
-"WAL","Juprelle",50.7076,5.53127,147
-"WAL","Jurbise",50.531,3.90942,70
-"WAL","Juseret",49.88025,5.54932,448
-"WAL","Kain",50.63869,3.39688,22
-"WAL","Kemexhe",50.69785,5.40901,140
-"WAL","Kettenis",50.64761,6.04686,299
-"WAL","Keumiée",50.46177,4.58233,176
-"WAL","La Bouverie",50.40524,3.8744,100
-"WAL","La Bruyère",50.39478,4.61444,194
-"WAL","Labuissière",50.31944,4.1809,132
-"WAL","La Calamine",50.71809,6.01107,220
-"WAL","Lacuisine",49.71589,5.31771,320
-"WAL","La Glanerie",50.52991,3.30094,38
-"WAL","La Gleize",50.41074,5.84699,302
-"WAL","La Hestre",50.47556,4.24739,167
-"WAL","La Hulpe",50.73091,4.48577,86
-"WAL","La Louvière",50.48657,4.18785,133
-"WAL","Lambermont",50.59038,5.83245,227
-"WAL","Lambusart",50.45433,4.55263,180
-"WAL","Lamine",50.68898,5.33451,124
-"WAL","Lamorteau",49.52612,5.48177,195
-"WAL","Lanaye",50.77913,5.69624,50
-"WAL","Landelies",50.38001,4.35076,127
-"WAL","Landenne",50.51534,5.06684,171
-"WAL","Laneffe",50.27936,4.49344,180
-"WAL","Lantin",50.68874,5.52458,161
-"WAL","Lantremange",50.71173,5.29584,109
-"WAL","Laplaigne",50.52194,3.4473,17
-"WAL","La Reid",50.48914,5.79098,287
-"WAL","La Roche-en-Ardenne",50.18361,5.57547,225
-"WAL","Lasne-Chapelle-Saint-Lambert",50.69298,4.50105,104
-"WAL","Lathuy",50.72461,4.82617,101
-"WAL","Latinne",50.62518,5.1646,132
-"WAL","Latour",49.55736,5.57065,217
-"WAL","Lavacherie",50.05285,5.51091,382
-"WAL","Leernes",50.39812,4.33239,142
-"WAL","Leers-Nord",50.68748,3.27023,20
-"WAL","Léglise",49.79985,5.53652,395
-"WAL","Leignon",50.26861,5.11045,260
-"WAL","Lens",50.55696,3.89946,64
-"WAL","Lens-Saint-Remy",50.65077,5.1319,137
-"WAL","Lens-sur-Geer",50.72162,5.35086,98
-"WAL","Le Roeulx",50.50365,4.11163,132
-"WAL","Le Roux",50.38877,4.62404,189
-"WAL","Les Avins",50.41555,5.30015,231
-"WAL","Les Bulles",49.70457,5.4238,319
-"WAL","Lessines",50.71104,3.83579,23
-"WAL","Lesve",50.37705,4.77785,259
-"WAL","Les Waleffes",50.63749,5.22357,156
-"WAL","Lettelingen",50.68333,4.08333,63
-"WAL","Leuze",50.54635,4.9063,181
-"WAL","Leuze",50.6,3.6,57
-"WAL","Leval-Trahegnies",50.4213,4.22556,131
-"WAL","Liberchies",50.51421,4.42123,151
-"WAL","Libin",49.98107,5.25612,401
-"WAL","Libramont",49.91741,5.37318,501
-"WAL","Liège",50.63373,5.56749,66
-"WAL","Lierneux",50.28477,5.79236,418
-"WAL","Liernu",50.58318,4.831,158
-"WAL","Liers",50.69396,5.56458,165
-"WAL","Ligne",50.62181,3.70591,37
-"WAL","Ligney",50.66181,5.18237,128
-"WAL","Ligny",50.51244,4.57735,136
-"WAL","Lillois-Witterzée",50.64549,4.36681,129
-"WAL","Limal",50.69477,4.57538,60
-"WAL","Limbourg",50.61222,5.9412,262
-"WAL","Limelette",50.68428,4.57186,56
-"WAL","Limerlé",50.15804,5.92395,466
-"WAL","Limont",50.66189,5.3124,141
-"WAL","Lincent",50.71222,5.03654,97
-"WAL","Linsmeau",50.73562,4.99977,66
-"WAL","Lisogne",50.28095,4.9708,257
-"WAL","Lixhe",50.7544,5.68028,55
-"WAL","Lobbes",50.35258,4.26716,170
-"WAL","Lodelinsart",50.43138,4.44886,126
-"WAL","Lommersweiler",50.24,6.165,472
-"WAL","Loncin",50.66655,5.50509,170
-"WAL","Longchamps",50.0534,5.69032,455
-"WAL","Longchamps",50.57713,4.89544,160
-"WAL","Longlier",49.85384,5.45009,433
-"WAL","Longueville",50.70238,4.74009,140
-"WAL","Longvilly",50.02633,5.83829,438
-"WAL","Lontzen",50.68126,6.00712,223
-"WAL","Lonzée",50.55371,4.7272,151
-"WAL","Loupoigne",50.59806,4.44448,111
-"WAL","Louvain-la-Neuve",50.66829,4.61443,117
-"WAL","Louveigné",50.53015,5.71547,253
-"WAL","Loverval",50.37519,4.47332,145
-"WAL","Loyers",50.46324,4.95136,171
-"WAL","Luingne",50.73952,3.23603,45
-"WAL","Lustin",50.37876,4.89871,254
-"WAL","Luttre",50.51006,4.39709,141
-"WAL","Mabompré",50.09897,5.73984,442
-"WAL","Macon",50.05072,4.20918,211
-"WAL","Maffle",50.61789,3.80324,36
-"WAL","Magnée",50.5998,5.68834,228
-"WAL","Maillen",50.37782,4.97097,276
-"WAL","Mainvault",50.64908,3.71751,54
-"WAL","Maisières",50.4882,3.96564,38
-"WAL","Maissin",49.96479,5.17821,371
-"WAL","Malèves-Sainte-Marie-Wastines",50.65736,4.77998,139
-"WAL","Malmédy",50.42686,6.02794,344
-"WAL","Malonne",50.43969,4.79562,91
-"WAL","Manage",50.50312,4.23589,134
-"WAL","Manderfeld",50.3312,6.33919,544
-"WAL","Manhay",50.29219,5.67562,440
-"WAL","Maransart",50.65969,4.46689,108
-"WAL","Marbais",50.54652,4.53499,146
-"WAL","Marbaix",50.32624,4.37092,175
-"WAL","Marche-en-Famenne",50.22678,5.34416,214
-"WAL","Marche-les-Dames",50.48585,4.95967,103
-"WAL","Marche-lez-Écaussinnes",50.54601,4.1818,105
-"WAL","Marchienne-au-Pont",50.40573,4.3953,109
-"WAL","Marchin",50.46707,5.2428,264
-"WAL","Marchovelette",50.52303,4.94059,183
-"WAL","Marcinelle",50.39216,4.44388,121
-"WAL","Marenne",50.24129,5.41498,278
-"WAL","Mariembourg",50.09489,4.52161,159
-"WAL","Marilles",50.70717,4.95274,88
-"WAL","Mark",50.6914,4.01559,38
-"WAL","Marneffe",50.58051,5.14486,166
-"WAL","Marquain",50.60679,3.32087,39
-"WAL","Martelange",49.83195,5.73655,364
-"WAL","Masnuy-Saint-Jean",50.53209,3.94032,77
-"WAL","Maubray",50.55085,3.50395,37
-"WAL","Maulde",50.61676,3.5488,62
-"WAL","Maurage",50.45652,4.09704,48
-"WAL","Mazée",50.10086,4.69653,162
-"WAL","Mazy",50.51097,4.67374,111
-"WAL","Meeffe",50.60681,5.01765,137
-"WAL","Mehaigne",50.59479,4.87587,144
-"WAL","Meix-devant-Virton",49.60581,5.48045,249
-"WAL","Meix-le-Tige",49.6162,5.71806,366
-"WAL","Melen",50.6462,5.73589,222
-"WAL","Mélin",50.74004,4.82883,100
-"WAL","Mellery",50.58187,4.56903,136
-"WAL","Melles",50.64669,3.48159,65
-"WAL","Mellet",50.50573,4.47856,138
-"WAL","Mellier",49.76602,5.51752,376
-"WAL","Membach",50.61908,5.99506,244
-"WAL","Merbes-le-Château",50.32449,4.16489,131
-"WAL","Merbes-Sainte-Marie",50.3528,4.17781,171
-"WAL","Merdorp",50.64881,4.99964,143
-"WAL","Meslin-l'Évêque",50.64859,3.84736,44
-"WAL","Mesnil-Saint-Blaise",50.16756,4.88494,282
-"WAL","Messancy",49.59201,5.81879,277
-"WAL","Mesvin",50.4258,3.95928,41
-"WAL","Mettet",50.32119,4.66232,241
-"WAL","Meux",50.55222,4.80103,168
-"WAL","Mévergnies",50.60492,3.84848,44
-"WAL","Meyerode",50.32818,6.18776,502
-"WAL","Micheroux",50.62475,5.71847,249
-"WAL","Miécret",50.36663,5.25155,269
-"WAL","Mignault",50.53016,4.15758,115
-"WAL","Milmort",50.69037,5.59323,152
-"WAL","Modave",50.44614,5.29532,229
-"WAL","Moha",50.54802,5.18641,89
-"WAL","Moignelée",50.44581,4.5837,141
-"WAL","Molenbaix",50.69379,3.43052,22
-"WAL","Momalle",50.68585,5.37592,137
-"WAL","Momignies",50.0271,4.16519,262
-"WAL","Monceau-en-Ardenne",49.90532,4.98767,375
-"WAL","Monceau-sur-Sambre",50.41694,4.37668,138
-"WAL","Mons",50.45413,3.95229,56
-"WAL","Mons-lez-Liège",50.62306,5.45626,184
-"WAL","Mont",50.15348,5.76902,444
-"WAL","Montegnée",50.64576,5.51411,184
-"WAL","Mont-Gauthier",50.20968,5.12128,307
-"WAL","Montignies-lez-Lens",50.56421,3.94268,77
-"WAL","Montignies-sur-Sambre",50.41081,4.49109,125
-"WAL","Montigny-le-Tilleul",50.38056,4.37582,156
-"WAL","Montleban",50.18955,5.83544,458
-"WAL","Montroeul-sur-Haine",50.43821,3.70591,21
-"WAL","Mont-Saint-André",50.65632,4.86609,126
-"WAL","Mont-Sainte-Aldegonde",50.43006,4.23263,158
-"WAL","Mont-Sainte-Geneviève",50.37457,4.23658,201
-"WAL","Mont-Saint-Guibert",50.63427,4.61061,85
-"WAL","Mont-sur-Marchienne",50.38997,4.40732,154
-"WAL","Montzen",50.70793,5.96223,214
-"WAL","Moresnet",50.72146,5.98987,174
-"WAL","Morhet",49.96241,5.58448,479
-"WAL","Morialmé",50.27557,4.56576,241
-"WAL","Morlanwelz-Mariemont",50.45502,4.24519,106
-"WAL","Mornimont",50.45903,4.70447,93
-"WAL","Mortier",50.68428,5.74327,199
-"WAL","Mortroux",50.7116,5.75289,114
-"WAL","Morville",50.23425,4.74129,263
-"WAL","Moulbaix",50.60084,3.71621,44
-"WAL","Mourcourt",50.65322,3.44468,39
-"WAL","Mouscron",50.74497,3.20639,53
-"WAL","Moustier",50.65599,3.61966,42
-"WAL","Moustier-sur-Sambre",50.46668,4.69614,93
-"WAL","Moxhe",50.63079,5.08341,137
-"WAL","Mozet",50.44461,4.98539,160
-"WAL","Muno",49.71637,5.17205,225
-"WAL","Musson",49.55835,5.70525,242
-"WAL","Mussy-la-Ville",49.57009,5.66191,247
-"WAL","Naast",50.55413,4.10082,97
-"WAL","Nadrin",50.16387,5.67761,422
-"WAL","Nalinnes",50.32434,4.44572,202
-"WAL","Namêche",50.47239,4.99756,115
-"WAL","Namur",50.4669,4.86746,88
-"WAL","Nandrin",50.50675,5.41905,218
-"WAL","Naninne",50.41888,4.92634,188
-"WAL","Nassogne",50.12849,5.34274,385
-"WAL","Natoye",50.34294,5.058,249
-"WAL","Néchin",50.66702,3.26649,28
-"WAL","Neerheylissem",50.75839,4.9883,49
-"WAL","Nessonvaux",50.57337,5.73641,108
-"WAL","Nethen",50.7832,4.67503,45
-"WAL","Neufchâteau",49.84074,5.43535,424
-"WAL","Neufchâteau",50.71961,5.77555,176
-"WAL","Neufmaison",50.52914,3.79406,73
-"WAL","Neufvilles",50.57107,4.00041,80
-"WAL","Neu-Moresnet",50.71575,6.02119,196
-"WAL","Neuville",50.17327,4.51598,243
-"WAL","Neuville-en-Condroz",50.55293,5.45076,233
-"WAL","Nil-Saint-Vincent-Saint-Martin",50.64331,4.68172,148
-"WAL","Nimy",50.47668,3.95516,35
-"WAL","Nismes",50.07523,4.54767,159
-"WAL","Nivelles",50.59833,4.32848,101
-"WAL","Nives",49.91276,5.60141,448
-"WAL","Nobressart",49.73895,5.72012,342
-"WAL","Nodebais",50.77278,4.73691,72
-"WAL","Noduwez",50.72863,4.96779,64
-"WAL","Noiseux",50.29976,5.37506,188
-"WAL","Nothomb",49.77156,5.78773,318
-"WAL","Noville",50.06386,5.76104,468
-"WAL","Noville",50.65984,5.38197,161
-"WAL","Noville-les-Bois",50.55702,4.98466,174
-"WAL","Noville-sur-Méhaigne",50.60868,4.89213,142
-"WAL","Obaix",50.52996,4.36089,144
-"WAL","Obigies",50.66184,3.36412,16
-"WAL","Obourg",50.47384,4.00881,46
-"WAL","Ochamps",49.92453,5.27679,430
-"WAL","Ocquier",50.39577,5.39409,249
-"WAL","Odeur",50.70642,5.41578,131
-"WAL","Oeudeghien",50.67813,3.71235,46
-"WAL","Offagne",49.88501,5.17378,398
-"WAL","Ogy",50.7207,3.78049,34
-"WAL","Ohain",50.69885,4.4698,109
-"WAL","Ohey",50.4357,5.12375,269
-"WAL","Oignies-en-Thiérache",50.02285,4.63941,305
-"WAL","Oisquercq",50.67015,4.21984,57
-"WAL","Oizy",49.89259,5.00741,371
-"WAL","Oleye",50.71396,5.28133,120
-"WAL","Ollignies",50.68794,3.86229,27
-"WAL","Olloy-sur-Viroin",50.07295,4.60811,140
-"WAL","Olne",50.58994,5.74662,226
-"WAL","Omal",50.65605,5.19979,131
-"WAL","Ombret",50.54224,5.33378,72
-"WAL","On",50.17176,5.28936,215
-"WAL","Onhaye",50.24148,4.84069,253
-"WAL","Ophain-Bois-Seigneur-Isaac",50.66646,4.34865,106
-"WAL","Opheylissem",50.7471,4.97689,62
-"WAL","Opprebais",50.67998,4.79785,118
-"WAL","Orbais",50.63798,4.76352,143
-"WAL","Orcq",50.60322,3.34924,48
-"WAL","Oreye",50.73187,5.35818,112
-"WAL","Orgeo",49.8339,5.30646,385
-"WAL","Ormeignies",50.59501,3.75183,62
-"WAL","Orp-le-Grand",50.70331,4.9891,75
-"WAL","Orroir",50.74973,3.48097,29
-"WAL","Ortho",50.12484,5.61316,413
-"WAL","Ostiches",50.67857,3.75904,40
-"WAL","Oteppe",50.58008,5.12632,114
-"WAL","Othée",50.71592,5.46724,146
-"WAL","Ottignies",50.66535,4.56679,65
-"WAL","Ouffet",50.4387,5.4657,272
-"WAL","Ougrée",50.60149,5.5444,89
-"WAL","Oupeye",50.71184,5.6468,125
-"WAL","Paifve",50.7282,5.5234,147
-"WAL","Paliseul",49.90395,5.13537,409
-"WAL","Papignies",50.68596,3.81783,28
-"WAL","Pâturages",50.4072,3.855,73
-"WAL","Pecq",50.68619,3.33789,23
-"WAL","Peissant",50.35137,4.11963,139
-"WAL","Pellaines",50.72673,5.0071,66
-"WAL","Pepinster",50.56568,5.80386,147
-"WAL","Péronnes",50.43782,4.14906,59
-"WAL","Péronnes",50.55156,3.45374,22
-"WAL","Péruwelz",50.50819,3.59373,34
-"WAL","Perwez",50.62426,4.81354,147
-"WAL","Pesche",50.0427,4.45897,246
-"WAL","Pessoux",50.28333,5.17033,309
-"WAL","Petigny",50.05739,4.53307,174
-"WAL","Petit-Rechain",50.61489,5.83417,266
-"WAL","Petit-Roeulx-lez-Braine",50.62565,4.09385,78
-"WAL","Petit-Roeulx-lez-Nivelles",50.55419,4.31351,126
-"WAL","Petit-Thier",50.30709,5.96782,442
-"WAL","Philippeville",50.19612,4.54374,290
-"WAL","Piéton",50.43972,4.29752,171
-"WAL","Piétrain",50.72532,4.92033,84
-"WAL","Piétrebais",50.72776,4.76455,100
-"WAL","Pipaix",50.58297,3.57956,55
-"WAL","Pironchamps",50.43181,4.52019,178
-"WAL","Plainevaux",50.54562,5.52329,234
-"WAL","Plancenoit",50.66228,4.42835,132
-"WAL","Ploegsteert",50.72659,2.88019,19
-"WAL","Plombières",50.73656,5.95922,167
-"WAL","Polleur",50.5394,5.88078,224
-"WAL","Pommeroeul",50.46188,3.71252,27
-"WAL","Pondrôme",50.09922,5.00959,235
-"WAL","Pont-à-Celles",50.50518,4.36887,137
-"WAL","Pont-de-Loup",50.41656,4.54594,103
-"WAL","Pontillas",50.54916,5.02101,186
-"WAL","Pottes",50.73294,3.40703,11
-"WAL","Poulseur",50.50907,5.57864,94
-"WAL","Pousset",50.69504,5.30399,128
-"WAL","Prayon",50.57795,5.6753,89
-"WAL","Presgaux",50.02522,4.42002,302
-"WAL","Presles",50.38417,4.57838,139
-"WAL","Profondeville",50.37581,4.86506,93
-"WAL","Pry",50.27212,4.43908,167
-"WAL","Purnode",50.31201,4.94411,235
-"WAL","Quaregnon",50.44067,3.8653,35
-"WAL","Quartes",50.65054,3.51153,37
-"WAL","Quenast",50.66959,4.15661,43
-"WAL","Queue-du-Bois",50.63759,5.67993,232
-"WAL","Quevaucamps",50.51888,3.68128,55
-"WAL","Quévy-le-Grand",50.36074,3.9489,102
-"WAL","Quévy-le-Petit",50.36879,3.93602,98
-"WAL","Quiévrain",50.40737,3.68351,35
-"WAL","Rachecourt",49.59195,5.72528,267
-"WAL","Racour",50.73924,5.02806,81
-"WAL","Raeren",50.6672,6.11535,318
-"WAL","Ramegnies-Chin",50.65161,3.33704,25
-"WAL","Ramillies",50.63395,4.90119,150
-"WAL","Ramillies-Offus",50.63651,4.91535,142
-"WAL","Rance",50.14248,4.27917,239
-"WAL","Ransart",50.46166,4.47616,181
-"WAL","Rebaix",50.65996,3.78307,40
-"WAL","Rebecq-Rognon",50.65147,4.10683,65
-"WAL","Recht",50.33801,6.04883,431
-"WAL","Recogne",49.91232,5.3537,484
-"WAL","Remicourt",50.68069,5.32785,126
-"WAL","Rendeux",50.23423,5.50414,194
-"WAL","Renlies",50.1908,4.26682,190
-"WAL","Ressaix",50.42285,4.19442,92
-"WAL","Resteigne",50.08304,5.17692,207
-"WAL","Retinne",50.63084,5.69821,236
-"WAL","Reuland",50.19553,6.13548,375
-"WAL","Rèves",50.53809,4.41075,143
-"WAL","Rhisnes",50.50682,4.80592,146
-"WAL","Richelle",50.71396,5.69564,128
-"WAL","Rienne",49.99277,4.8847,373
-"WAL","Rivière",50.35696,4.8739,96
-"WAL","Rixensart",50.71229,4.52529,101
-"WAL","Robertville",50.45406,6.12205,524
-"WAL","Rochefort",50.1631,5.2216,170
-"WAL","Rocherath",50.43706,6.30049,645
-"WAL","Roclenge-sur-Geer",50.75688,5.59444,79
-"WAL","Rocourt",50.67579,5.54621,174
-"WAL","Roisin",50.33237,3.69553,92
-"WAL","Roly",50.13554,4.53727,199
-"WAL","Romedenne",50.17133,4.69686,220
-"WAL","Romsée",50.61091,5.66457,245
-"WAL","Rongy",50.50724,3.3895,34
-"WAL","Ronquières",50.60853,4.22081,61
-"WAL","Rosée",50.23293,4.68688,275
-"WAL","Roselies",50.43028,4.57203,115
-"WAL","Rosières",50.73097,4.54473,84
-"WAL","Rosoux-Crenwick",50.70724,5.18951,126
-"WAL","Rossignol",49.71791,5.4859,342
-"WAL","Rotheux-Rimière",50.53356,5.48063,262
-"WAL","Roucourt",50.52882,3.58635,45
-"WAL","Rouvreux",50.48984,5.65006,259
-"WAL","Rouvroy",49.53771,5.49031,199
-"WAL","Roux",50.44111,4.3917,118
-"WAL","Roux-Miroir",50.70863,4.78266,136
-"WAL","Roy",50.18489,5.40584,379
-"WAL","Ruette",49.53668,5.59582,234
-"WAL","Rulles",49.71805,5.55959,343
-"WAL","Rumes",50.5545,3.30535,58
-"WAL","Rumillies",50.62105,3.44325,24
-"WAL","Russeignies",50.74453,3.53155,27
-"WAL","Saint-Amand",50.50611,4.54988,137
-"WAL","Saint-André",50.69541,5.75343,196
-"WAL","Saint-Aubin",50.24767,4.57735,240
-"WAL","Saint-Denis",50.4905,4.02048,58
-"WAL","Saint-Denis",50.53567,4.78278,186
-"WAL","Sainte-Marie-sur-Semois",49.67124,5.5638,344
-"WAL","Sainte-Ode",50.01723,5.51926,428
-"WAL","Saintes",50.70499,4.16006,64
-"WAL","Saint-Georges-sur-Meuse",50.60007,5.3574,187
-"WAL","Saint-Gérard",50.34645,4.74098,232
-"WAL","Saint-Germain",50.5731,4.84205,153
-"WAL","Saint-Géry",50.58127,4.61357,147
-"WAL","Saint-Ghislain",50.44816,3.81886,27
-"WAL","Saint-Hubert",50.02668,5.37401,432
-"WAL","Saint-Jean-Geest",50.74015,4.89647,79
-"WAL","Saint-Léger",49.61196,5.65688,268
-"WAL","Saint-Léger",50.70589,3.3144,17
-"WAL","Saint-Marc",50.49218,4.84749,182
-"WAL","Saint-Mard",49.55403,5.53427,206
-"WAL","Saint-Martin",50.5012,4.64782,137
-"WAL","Saint-Médard",49.81538,5.32795,409
-"WAL","Saint-Nicolas",50.62837,5.53243,96
-"WAL","Saint-Pierre",49.90376,5.3875,460
-"WAL","Saint-Remy",50.69564,5.70405,124
-"WAL","Saint-Remy-Geest",50.74692,4.85845,88
-"WAL","Saint-Sauveur",50.70604,3.59782,43
-"WAL","Saint-Servais",50.4763,4.83656,133
-"WAL","Saint-Séverin",50.53012,5.41137,235
-"WAL","Saint-Symphorien",50.43903,4.00726,44
-"WAL","Saint-Vaast",50.45426,4.16041,53
-"WAL","Saint-Vincent",49.67698,5.47516,370
-"WAL","Saint-Vith",50.28146,6.12724,474
-"WAL","Saint-Yvon",50.74335,2.90992,27
-"WAL","Saive",50.65316,5.68517,159
-"WAL","Samrée",50.21043,5.63445,548
-"WAL","Sars-la-Bruyère",50.37163,3.8744,140
-"WAL","Sars-la-Buissière",50.33983,4.20936,168
-"WAL","Sart-Bernard",50.40206,4.9593,253
-"WAL","Sart-Dames-Avelines",50.56863,4.49221,128
-"WAL","Sart-Eustache",50.37547,4.60482,166
-"WAL","Sart-Saint-Laurent",50.40236,4.74217,215
-"WAL","Sautin",50.1634,4.22649,270
-"WAL","Sauvenière",50.58157,4.72466,151
-"WAL","Schaltin",50.35952,5.12535,269
-"WAL","Schoenberg",50.28917,6.265,426
-"WAL","Sclayn",50.48979,5.02831,79
-"WAL","Seilles",50.50065,5.09268,93
-"WAL","Sélange",49.60929,5.85055,347
-"WAL","Seloignes",50.01515,4.25517,280
-"WAL","Seneffe",50.53135,4.26301,112
-"WAL","Sensenruth",49.82489,5.07458,379
-"WAL","Senzeille",50.17672,4.46477,248
-"WAL","Septon",50.3561,5.42257,211
-"WAL","Seraing",50.58362,5.50115,185
-"WAL","Serinchamps",50.23134,5.23018,216
-"WAL","Sibret",49.97073,5.63453,503
-"WAL","Silenrieux",50.22585,4.4165,185
-"WAL","Silly",50.64877,3.92363,59
-"WAL","Sinsin",50.27502,5.25464,223
-"WAL","Sirault",50.50546,3.78908,67
-"WAL","Sivry",50.1664,4.18416,214
-"WAL","Slins",50.72795,5.56263,151
-"WAL","Soheit-Tinlot",50.48378,5.38862,281
-"WAL","Soignies",50.57904,4.07129,89
-"WAL","Soiron",50.59128,5.79089,202
-"WAL","Solre-Saint-Géry",50.2164,4.24828,192
-"WAL","Solre-sur-Sambre",50.30809,4.15429,131
-"WAL","Sombreffe",50.52865,4.60087,146
-"WAL","Somme-Leuze",50.33699,5.36705,191
-"WAL","Sommière",50.27538,4.84926,226
-"WAL","Somzée",50.29514,4.48209,216
-"WAL","Sorée",50.39917,5.12398,272
-"WAL","Sorinnes",50.25921,4.98128,266
-"WAL","Sougné-Remouchamps",50.48242,5.70757,137
-"WAL","Soumagne",50.61385,5.74679,200
-"WAL","Souvret",50.4486,4.34569,158
-"WAL","Sovet",50.29691,5.03526,297
-"WAL","Soy",50.286,5.51153,310
-"WAL","Soye",50.44958,4.7303,96
-"WAL","Spa",50.48375,5.86674,312
-"WAL","Spiennes",50.42503,3.98735,44
-"WAL","Spontin",50.32256,5.0059,184
-"WAL","Sprimont",50.50922,5.6595,224
-"WAL","Spy",50.48143,4.70944,190
-"WAL","Stambruges",50.50939,3.71621,58
-"WAL","Stave",50.28007,4.65906,254
-"WAL","Stavelot",50.395,5.93124,297
-"WAL","Stembert",50.59107,5.89404,272
-"WAL","Stoumont",50.40667,5.80838,335
-"WAL","Strée",50.28078,4.29394,173
-"WAL","Strée-lez-Huy",50.49039,5.32348,269
-"WAL","Strépy-Bracquegnies",50.4728,4.12022,82
-"WAL","Suarlée",50.48137,4.7792,177
-"WAL","Sugny",49.81495,4.90222,357
-"WAL","Taintignies",50.55277,3.34224,58
-"WAL","Tamines",50.43378,4.60713,111
-"WAL","Tarcienne",50.31204,4.49676,217
-"WAL","Tavier",50.49634,5.47063,206
-"WAL","Taviers",50.61726,4.93072,139
-"WAL","Tavigny",50.10847,5.83786,429
-"WAL","Tellin",50.08038,5.21638,263
-"WAL","Templeuve",50.6441,3.28013,30
-"WAL","Temploux",50.48558,4.75468,172
-"WAL","Tenneville",50.09501,5.52895,380
-"WAL","Tertre",50.4692,3.81243,28
-"WAL","Theux",50.53323,5.81245,168
-"WAL","Thiaumont",49.71523,5.73056,373
-"WAL","Thieu",50.47428,4.09258,59
-"WAL","Thieulain",50.6181,3.60514,51
-"WAL","Thieusies",50.51525,4.04931,105
-"WAL","Thiméon",50.48951,4.42878,133
-"WAL","Thimister",50.65539,5.86421,261
-"WAL","Thines",50.59675,4.36895,133
-"WAL","Thirimont",50.25955,4.23609,192
-"WAL","Thisnes",50.66578,5.04375,121
-"WAL","Thommen",50.21917,6.07417,489
-"WAL","Thon",50.46357,5.01449,149
-"WAL","Thorembais-les-Béguines",50.65819,4.81755,128
-"WAL","Thorembais-Saint-Trond",50.63485,4.78406,147
-"WAL","Thoricourt",50.61102,3.95044,91
-"WAL","Thuillies",50.29899,4.33269,153
-"WAL","Thuin",50.33933,4.28604,156
-"WAL","Thulin",50.43006,3.74007,28
-"WAL","Thy-le-Château",50.28205,4.42955,181
-"WAL","Tihange",50.52974,5.26176,72
-"WAL","Tilff",50.56432,5.57642,80
-"WAL","Tillet",50.01008,5.52861,420
-"WAL","Tilleur",50.61805,5.54277,69
-"WAL","Tilly",50.56078,4.55495,132
-"WAL","Tinlot",50.47493,5.37755,271
-"WAL","Tintigny",49.68326,5.51349,336
-"WAL","Toernich",49.65178,5.77741,339
-"WAL","Tohogne",50.38006,5.479,240
-"WAL","Tongre-Notre-Dame",50.58204,3.77621,48
-"WAL","Tongrinne",50.51561,4.6243,147
-"WAL","Tontelange",49.72653,5.81118,335
-"WAL","Tourinnes-la-Grosse",50.78299,4.74438,71
-"WAL","Tourinnes-Saint-Lambert",50.64021,4.72361,150
-"WAL","Tournai",50.60715,3.38932,24
-"WAL","Tournay",49.85463,5.39829,412
-"WAL","Tourpes",50.57332,3.65089,55
-"WAL","Trazegnies",50.46379,4.3329,161
-"WAL","Treignes",50.09237,4.67026,136
-"WAL","Trembleur",50.69544,5.72604,162
-"WAL","Trivières",50.44827,4.14511,54
-"WAL","Trois-Ponts",50.37128,5.87146,253
-"WAL","Trooz",50.57026,5.69521,98
-"WAL","Tubize",50.69059,4.2009,39
-"WAL","Vance",49.67163,5.66571,344
-"WAL","Vaulx-lez-Tournai",50.59406,3.42954,24
-"WAL","Vaux-Chavanne",50.30464,5.69245,380
-"WAL","Vaux-et-Borset",50.61385,5.23438,162
-"WAL","Vaux-lez-Rosières",49.91299,5.56784,446
-"WAL","Vaux-sous-Chèvremont",50.60302,5.6335,72
-"WAL","Vaux-sur-Sûre",49.911,5.57848,433
-"WAL","Vedrin",50.50273,4.87604,161
-"WAL","Velaine",50.47805,4.61031,149
-"WAL","Velaines",50.66801,3.4866,47
-"WAL","Vellereille-les-Brayeux",50.37952,4.15112,152
-"WAL","Vergnies",50.19924,4.30325,229
-"WAL","Verlaine",50.60743,5.3174,171
-"WAL","Verviers",50.58907,5.86241,201
-"WAL","Vesqueville",50.00573,5.39682,479
-"WAL","Vezin",50.49623,5.00899,171
-"WAL","Vezon",50.56917,3.50469,53
-"WAL","Vielsalm",50.28407,5.91502,367
-"WAL","Viemme",50.64707,5.27215,156
-"WAL","Vierset-Barse",50.48373,5.29816,264
-"WAL","Vierves-sur-Viroin",50.0811,4.63443,157
-"WAL","Viesville",50.49088,4.40852,122
-"WAL","Vieux-Genappe",50.60846,4.44097,114
-"WAL","Villance",49.9717,5.22136,363
-"WAL","Ville-en-Hesbaye",50.61745,5.11662,130
-"WAL","Villerot",50.48629,3.79054,60
-"WAL","Villers-aux-Tours",50.49825,5.51625,246
-"WAL","Villers-devant-Orval",49.61948,5.33048,191
-"WAL","Villers-la-Tour",50.03636,4.26132,238
-"WAL","Villers-la-Ville",50.57953,4.53398,102
-"WAL","Villers-le-Bouillet",50.57708,5.25945,194
-"WAL","Villers-le-Gambon",50.19048,4.60704,257
-"WAL","Villers-le-Peuplier",50.65673,5.09415,143
-"WAL","Villers-le-Temple",50.5086,5.37077,233
-"WAL","Villers-l'Évêque",50.70454,5.4396,142
-"WAL","Villers-Perwin",50.52783,4.47968,152
-"WAL","Villers-Poterie",50.35379,4.54885,192
-"WAL","Villers-Saint-Amand",50.62251,3.73149,43
-"WAL","Villers-Saint-Ghislain",50.43028,4.03988,76
-"WAL","Villers-Saint-Siméon",50.71124,5.53891,152
-"WAL","Ville-sur-Haine",50.47657,4.06425,48
-"WAL","Vinalmont",50.56329,5.23155,191
-"WAL","Virelles",50.06386,4.33505,205
-"WAL","Virginal-Samme",50.64037,4.20579,136
-"WAL","Virton",49.56824,5.53259,226
-"WAL","Visé",50.7376,5.69907,86
-"WAL","Vitrival",50.39282,4.65769,161
-"WAL","Vivegnis",50.69243,5.64757,70
-"WAL","Voroux-Goreux",50.65473,5.42919,164
-"WAL","Voroux-lez-Liers",50.68745,5.5544,167
-"WAL","Vottem",50.67155,5.57693,183
-"WAL","Vyle-et-Tharoul",50.44525,5.26246,206
-"WAL","Wagnelée",50.5233,4.53332,142
-"WAL","Waha",50.20915,5.34174,294
-"WAL","Waimes",50.41488,6.11207,492
-"WAL","Walcourt",50.25401,4.43796,187
-"WAL","Walhain-Saint-Paul",50.62627,4.69837,147
-"WAL","Walhorn",50.67496,6.04608,267
-"WAL","Wandre",50.66774,5.65959,59
-"WAL","Wanfercée-Baulet",50.47291,4.58748,154
-"WAL","Wangenies",50.48023,4.52019,151
-"WAL","Wanlin",50.15991,5.06204,137
-"WAL","Wanne",50.355,5.92083,475
-"WAL","Wansin",50.67846,5.01912,106
-"WAL","Wanze",50.53907,5.20846,96
-"WAL","Warchin",50.60925,3.424,18
-"WAL","Warcoing",50.70447,3.3462,20
-"WAL","Wardin",49.99213,5.79117,435
-"WAL","Waremme",50.6976,5.25524,117
-"WAL","Waret-la-Chaussée",50.54294,4.92445,176
-"WAL","Waret-l'Évêque",50.55672,5.06755,186
-"WAL","Warisoulx",50.53689,4.86703,181
-"WAL","Warnant",50.32327,4.84274,116
-"WAL","Warnant-Dreye",50.59512,5.2256,162
-"WAL","Warneton",50.75158,2.94635,22
-"WAL","Warquignies",50.40152,3.82238,107
-"WAL","Warsage",50.73517,5.7688,119
-"WAL","Warzée",50.45,5.42619,281
-"WAL","Wasmes",50.41464,3.8471,80
-"WAL","Wasmuel",50.44493,3.84813,30
-"WAL","Wasseiges",50.62186,5.00528,133
-"WAL","Waterloo",50.71469,4.3991,119
-"WAL","Waudrez",50.4135,4.15051,76
-"WAL","Wauthier-Braine",50.68183,4.29849,62
-"WAL","Wavre",50.71717,4.60138,72
-"WAL","Wavreille",50.12119,5.24831,253
-"WAL","Ways",50.61108,4.46448,96
-"WAL","Wegnez",50.57895,5.81705,205
-"WAL","Welkenraedt",50.6605,5.97034,256
-"WAL","Wellin",50.08133,5.11413,250
-"WAL","Wépion",50.42153,4.86403,135
-"WAL","Werbomont",50.38072,5.68216,439
-"WAL","Weris",50.32641,5.53113,278
-"WAL","Wez-Velvain",50.54607,3.38878,34
-"WAL","Wierde",50.42607,4.95097,160
-"WAL","Wiers",50.50862,3.53468,24
-"WAL","Wihéries",50.38543,3.75372,91
-"WAL","Wihogne",50.72918,5.50484,141
-"WAL","Willaupuis",50.56774,3.60274,51
-"WAL","Willemeau",50.57435,3.35031,35
-"WAL","Winenne",50.09751,4.89492,304
-"WAL","Witry",49.8594,5.61279,462
-"WAL","Wodecq",50.71805,3.74649,33
-"WAL","Wolkrange",49.62882,5.79877,301
-"WAL","Wonck",50.76687,5.6362,70
-"WAL","Xhendelesse",50.60492,5.77804,270
-"WAL","Xhendremael",50.70454,5.47984,148
-"WAL","Xhoris",50.44586,5.60431,236
-"WAL","Yernée-Fraineux",50.52836,5.38163,231
-"WAL","Yves-Gomezée",50.23926,4.49344,206
-"WAL","Yvoir",50.3279,4.88059,96
-"WAL","Zétrud-Lumay",50.75715,4.88711,62
+BRU	Anderlecht	50.83619	4.31454	27	50
+BRU	Auderghem	50.81667	4.43333	75	50
+BRU	Berchem-Sainte-Agathe	50.86567	4.29557	63	50
+BRU	Brussels	50.85045	4.34878	28	50
+BRU	Etterbeek	50.83272	4.38835	71	50
+BRU	Evere	50.87441	4.39905	50	50
+BRU	Forest	50.81678	4.32775	52	50
+BRU	Ganshoren	50.87065	4.31531	49	50
+BRU	Ixelles	50.83333	4.36667	84	50
+BRU	Jette	50.87309	4.33419	41	50
+BRU	Koekelberg	50.86117	4.33136	35	50
+BRU	Molenbeek-Saint-Jean	50.8499	4.31248	39	50
+BRU	Saint-Gilles	50.82763	4.34389	59	50
+BRU	Saint-Josse-ten-Noode	50.8538	4.37282	46	50
+BRU	Schaerbeek	50.86935	4.37737	29	50
+BRU	Uccle	50.80225	4.33943	48	50
+BRU	Watermael-Boitsfort	50.80154	4.41436	96	50
+BRU	Woluwe-Saint-Lambert	50.84389	4.42912	72	50
+VLG	Aaigem	50.88921	3.93674	50	50
+VLG	Aalbeke	50.77848	3.22952	39	50
+VLG	Aalst	50.78195	5.20915	72	50
+VLG	Aalst	50.93604	4.0355	12	50
+VLG	Aalter	51.09017	3.44693	17	50
+VLG	Aalterbrug	51.1093	3.43378	9	50
+VLG	Aarschot	50.98715	4.83695	14	50
+VLG	Aarsele	50.99663	3.41954	35	50
+VLG	Aartrijke	51.11915	3.09076	36	50
+VLG	Aartselaar	51.13412	4.38678	12	50
+VLG	Achel	51.253	5.47977	34	50
+VLG	Adegem	51.20509	3.4954	8	50
+VLG	Adinkerke	51.07409	2.59914	3	50
+VLG	Alken	50.87553	5.30558	39	50
+VLG	Alsemberg	50.74134	4.33754	65	50
+VLG	Alveringem	51.01238	2.71117	8	50
+VLG	Antwerpen	51.22047	4.40026	13	50
+VLG	Anzegem	50.837	3.47786	51	50
+VLG	Appels	51.03225	4.06141	2	50
+VLG	Appelterre-Eichem	50.81597	3.97808	16	50
+VLG	Ardooie	50.9757	3.19736	21	50
+VLG	Arendonk	51.32267	5.08289	25	50
+VLG	As	51.00755	5.58453	81	50
+VLG	Aspelare	50.84189	3.95743	26	50
+VLG	Asper	50.9137	3.65126	14	50
+VLG	Asse	50.91011	4.19836	81	50
+VLG	Assebroek	51.19367	3.2623	5	50
+VLG	Assenede	51.22598	3.75085	3	50
+VLG	Assent	50.95187	5.01473	36	50
+VLG	Astene	50.98512	3.56654	8	50
+VLG	Attenhoven	50.76591	5.09296	63	50
+VLG	Attenrode	50.87782	4.92438	62	50
+VLG	Avelgem	50.77618	3.44502	17	50
+VLG	Averbode	51.02887	4.98067	27	50
+VLG	Baaigem	50.932	3.72026	39	50
+VLG	Baal	50.9955	4.75317	14	50
+VLG	Baardegem	50.9548	4.14203	45	50
+VLG	Baarle-Hertog	51.40504	4.89226	24	50
+VLG	Baasrode	51.03805	4.1546	5	50
+VLG	Bachte-Maria-Leerne	51.01132	3.58145	8	50
+VLG	Balegem	50.9257	3.79076	43	50
+VLG	Balen	51.16837	5.17027	34	50
+VLG	Bambrugge	50.92115	3.92993	30	50
+VLG	Bassevelde	51.23103	3.67798	5	50
+VLG	Bavegem	50.94435	3.86497	26	50
+VLG	Bavikhove	50.87532	3.31062	16	50
+VLG	Bazel	51.14741	4.30129	14	50
+VLG	Beek	51.15517	5.60302	41	50
+VLG	Beernem	51.13981	3.33896	10	50
+VLG	Beerse	51.31927	4.85304	27	50
+VLG	Beersel	50.76589	4.3002	43	50
+VLG	Beerst	51.05983	2.88501	5	50
+VLG	Beervelde	51.08302	3.88635	5	50
+VLG	Beerzel	51.05753	4.67127	27	50
+VLG	Begijnendijk	51.01942	4.78377	13	50
+VLG	Beigem	50.94911	4.36908	37	50
+VLG	Bekegem	51.15976	3.0457	14	50
+VLG	Bekkerzeel	50.88541	4.23785	60	50
+VLG	Bekkevoort	50.94074	4.969	44	50
+VLG	Bellegem	50.77686	3.27933	57	50
+VLG	Bellem	51.09403	3.49277	7	50
+VLG	Bellingen	50.74085	4.15369	49	50
+VLG	Belsele	51.14598	4.08859	18	50
+VLG	Berbroek	50.95031	5.20904	29	50
+VLG	Berchem	50.79017	3.51317	16	50
+VLG	Berchem	51.19021	4.43264	12	50
+VLG	Berg	50.79059	5.49312	120	50
+VLG	Berg	50.93063	4.54336	20	50
+VLG	Beringen	51.04954	5.22606	39	50
+VLG	Berlaar	51.1176	4.65835	8	50
+VLG	Berlare	51.03333	4	9	50
+VLG	Bertem	50.86403	4.62918	39	50
+VLG	Beselare	50.84812	3.02449	45	50
+VLG	Betekom	50.98683	4.78185	19	50
+VLG	Bevel	51.13783	4.68026	8	50
+VLG	Bever	50.71635	3.94117	34	50
+VLG	Bever	50.91667	4.31667	49	50
+VLG	Bevere	50.8496	3.5873	21	50
+VLG	Beveren	50.93912	2.63997	8	50
+VLG	Beveren	50.97256	3.14389	20	50
+VLG	Beveren	51.21187	4.25633	12	50
+VLG	Beveren-Leie	50.87538	3.34034	15	50
+VLG	Beverlo	51.08646	5.21855	39	50
+VLG	Beverst	50.89091	5.47548	40	50
+VLG	Bierbeek	50.82876	4.75949	59	50
+VLG	Bikschote	50.92795	2.86267	6	50
+VLG	Bilzen	50.87325	5.5184	53	50
+VLG	Binderveld	50.86077	5.16492	30	50
+VLG	Binkom	50.87163	4.88414	80	50
+VLG	Bissegem	50.82378	3.22844	15	50
+VLG	Blaasveld	51.05585	4.37668	4	50
+VLG	Blanden	50.82622	4.71022	62	50
+VLG	Blankenberge	51.31306	3.13227	6	50
+VLG	Blauwput	50.88587	4.72415	25	50
+VLG	Bocholt	51.17337	5.57994	42	50
+VLG	Boechout	51.15959	4.49195	18	50
+VLG	Boekhoute	51.25859	3.71783	4	50
+VLG	Boezinge	50.89672	2.85421	9	50
+VLG	Bommershoven	50.7873	5.37899	81	50
+VLG	Bonheiden	51.02261	4.54714	7	50
+VLG	Booischot	51.05219	4.7751	12	50
+VLG	Boom	51.09242	4.3717	10	50
+VLG	Boorsem	50.94206	5.71898	43	50
+VLG	Boortmeerbeek	50.97929	4.57443	10	50
+VLG	Borchtlombeek	50.8479	4.13884	50	50
+VLG	Borgerhout	51.20957	4.43539	7	50
+VLG	Borgloon	50.80505	5.34366	98	50
+VLG	Borlo	50.74229	5.18087	86	50
+VLG	Bornem	51.09716	4.24364	6	50
+VLG	Borsbeek	51.19661	4.48543	10	50
+VLG	Borsbeke	50.90633	3.88996	53	50
+VLG	Bossuit	50.74851	3.40822	17	50
+VLG	Bost	50.78879	4.94076	61	50
+VLG	Bottelare	50.96411	3.75487	34	50
+VLG	Boutersem	50.84105	4.83367	63	50
+VLG	Bouwel	51.17289	4.7418	10	50
+VLG	Bovekerke	51.05429	2.96324	12	50
+VLG	Brakel	50.80101	3.76264	42	50
+VLG	Brasschaat	51.2912	4.49182	10	50
+VLG	Brecht	51.35024	4.63829	23	50
+VLG	Bredene	51.23489	2.97559	3	50
+VLG	Bree	51.14152	5.5969	48	50
+VLG	Breendonk	51.04301	4.32364	6	50
+VLG	Brielen	50.86776	2.84796	19	50
+VLG	Broechem	51.18133	4.60181	12	50
+VLG	Brugge	51.20892	3.22424	13	50
+VLG	Brussegem	50.9256	4.26682	71	50
+VLG	Brustem	50.80485	5.22263	57	50
+VLG	Budingen	50.86509	5.09847	28	50
+VLG	Buggenhout	51.0159	4.20173	9	50
+VLG	Buizingen	50.74227	4.25278	38	50
+VLG	Buken	50.93966	4.61692	16	50
+VLG	Bulskamp	51.04229	2.64943	2	50
+VLG	Bunsbeek	50.84172	4.94522	52	50
+VLG	Burcht	51.20393	4.34286	8	50
+VLG	Burst	50.91497	3.91636	43	50
+VLG	Dadizele	50.85138	3.09468	22	50
+VLG	Daknam	51.12583	3.9824	4	50
+VLG	Damme	51.25147	3.28144	4	50
+VLG	Deerlijk	50.85337	3.35416	18	50
+VLG	Deftinge	50.78656	3.83978	40	50
+VLG	De Haan	51.27261	3.03446	7	50
+VLG	Deinze	50.98175	3.53096	10	50
+VLG	De Klinge	51.25627	4.09041	6	50
+VLG	Denderbelle	51.00139	4.09069	4	50
+VLG	Denderhoutem	50.87234	4.01821	32	50
+VLG	Denderleeuw	50.88506	4.07601	17	50
+VLG	Dendermonde	51.02869	4.10106	6	50
+VLG	Denderwindeke	50.79731	4.02512	37	50
+VLG	Dentergem	50.96429	3.41617	11	50
+VLG	De Panne	51.09793	2.59368	11	50
+VLG	De Pinte	50.99339	3.64747	7	50
+VLG	Dessel	51.23855	5.11448	25	50
+VLG	Desselgem	50.88611	3.35958	16	50
+VLG	Destelbergen	51.05952	3.79899	6	50
+VLG	Desteldonk	51.12193	3.78705	5	50
+VLG	Deurle	51.00411	3.61475	12	50
+VLG	Deurne	51.03907	5.09654	31	50
+VLG	Deurne	51.22134	4.46595	8	50
+VLG	Diegem	50.89727	4.43354	19	50
+VLG	Diepenbeek	50.90769	5.41875	50	50
+VLG	Diest	50.98923	5.05062	22	50
+VLG	Dikkebus	50.82131	2.82873	29	50
+VLG	Dikkelvenne	50.91927	3.69507	24	50
+VLG	Diksmuide	51.03248	2.86384	9	50
+VLG	Dilbeek	50.84799	4.25972	84	50
+VLG	Dilsen	51.03718	5.72096	37	50
+VLG	Donk	50.93882	5.13719	24	50
+VLG	Dormaal	50.80778	5.09903	41	50
+VLG	Dranouter	50.76602	2.7839	56	50
+VLG	Drieslinter	50.84573	5.05045	30	50
+VLG	Drogenbos	50.78733	4.31471	31	50
+VLG	Drongen	51.05067	3.65649	5	50
+VLG	Dudzele	51.2737	3.22533	3	50
+VLG	Duffel	51.09554	4.50903	5	50
+VLG	Duisburg	50.81584	4.55533	91	50
+VLG	Dworp	50.72983	4.30106	48	50
+VLG	Edegem	51.15662	4.44504	17	50
+VLG	Eeklo	51.18703	3.55654	6	50
+VLG	Eernegem	51.1326	3.02562	7	50
+VLG	Egem	51.01531	3.25853	38	50
+VLG	Eigenbilzen	50.87491	5.57582	85	50
+VLG	Eindhout	51.10385	4.9999	17	50
+VLG	Eine	50.86726	3.61815	10	50
+VLG	Eisden	50.98463	5.71433	38	50
+VLG	Eke	50.95929	3.6396	7	50
+VLG	Ekeren	51.28087	4.41813	3	50
+VLG	Eksaarde	51.14876	3.96814	5	50
+VLG	Eksel	51.15184	5.3906	60	50
+VLG	Elen	51.06643	5.75126	35	50
+VLG	Elene	50.89004	3.81001	48	50
+VLG	Elewijt	50.96043	4.49684	10	50
+VLG	Ellikom	51.12766	5.52389	58	50
+VLG	Elsegem	50.8236	3.53601	17	50
+VLG	Elst	50.83024	3.73921	96	50
+VLG	Elverdinge	50.88476	2.8171	13	50
+VLG	Elversele	51.11806	4.14904	25	50
+VLG	Emblem	51.16238	4.60485	8	50
+VLG	Ename	50.85847	3.6366	12	50
+VLG	Eppegem	50.96237	4.45513	11	50
+VLG	Erembodegem	50.91905	4.05041	15	50
+VLG	Erondegem	50.94118	3.95611	35	50
+VLG	Erpe	50.93565	3.97219	16	50
+VLG	Erps-Kwerps	50.90119	4.55984	35	50
+VLG	Ertvelde	51.17921	3.74722	11	50
+VLG	Erwetegem	50.85547	3.81444	81	50
+VLG	Esen	51.0294	2.90189	5	50
+VLG	Essen	51.46791	4.46901	13	50
+VLG	Essene	50.90163	4.13743	41	50
+VLG	Etikhove	50.81162	3.62489	31	50
+VLG	Ettelgem	51.17984	3.02919	5	50
+VLG	Everbeek	50.7626	3.80852	36	50
+VLG	Everberg	50.87685	4.56983	55	50
+VLG	Evergem	51.11306	3.70976	9	50
+VLG	Galmaarden	50.75389	3.97121	32	50
+VLG	Gavere	50.92917	3.66184	25	50
+VLG	Geel	51.16557	4.98917	22	50
+VLG	Geetbets	50.89431	5.11199	30	50
+VLG	Gelinden	50.7656	5.26121	75	50
+VLG	Gellik	50.88473	5.61007	95	50
+VLG	Gelrode	50.96632	4.80412	19	50
+VLG	Geluveld	50.83511	2.99343	53	50
+VLG	Geluwe	50.80978	3.07695	22	50
+VLG	Genk	50.965	5.50082	66	50
+VLG	Genoelselderen	50.80206	5.53737	92	50
+VLG	Gent	51.05	3.71667	10	50
+VLG	Gentbrugge	51.03692	3.76509	10	50
+VLG	Geraardsbergen	50.77343	3.88223	32	50
+VLG	Gierle	51.26852	4.86733	20	50
+VLG	Gijzegem	50.98602	4.04938	6	50
+VLG	Gijzenzele	50.971	3.81698	33	50
+VLG	Gingelom	50.74792	5.13422	83	50
+VLG	Gistel	51.15612	2.96387	7	50
+VLG	Gits	50.99687	3.09564	24	50
+VLG	Glabbeek	50.87267	4.95615	51	50
+VLG	Godveerdegem	50.85932	3.82092	82	50
+VLG	Goeferdinge	50.76605	3.83978	33	50
+VLG	Goetsenhoven	50.76882	4.95157	81	50
+VLG	Gontrode	50.9838	3.79756	19	50
+VLG	Gooik	50.79443	4.11378	39	50
+VLG	Gottem	50.96419	3.46389	11	50
+VLG	Grammene	50.97779	3.46706	10	50
+VLG	Grazen	50.87448	5.13141	26	50
+VLG	Grembergen	51.05406	4.10458	2	50
+VLG	Grimbergen	50.93409	4.37213	29	50
+VLG	Grimminge	50.79433	3.95196	19	50
+VLG	Grobbendonk	51.19043	4.73562	10	50
+VLG	Groot-Bijgaarden	50.87174	4.24973	54	50
+VLG	Groot-Gelmen	50.78355	5.26381	86	50
+VLG	Grote-Brogel	51.15281	5.5059	56	50
+VLG	Grotenberge	50.87332	3.82278	56	50
+VLG	Grote-Spouwen	50.83283	5.55428	111	50
+VLG	Gruitrode	51.08936	5.58824	67	50
+VLG	Guigoven	50.83925	5.40039	66	50
+VLG	Gullegem	50.84301	3.20466	19	50
+VLG	Haacht	50.97737	4.63777	10	50
+VLG	Haaltert	50.90634	4.00093	43	50
+VLG	Haasdonk	51.18151	4.24137	19	50
+VLG	Haasrode	50.83169	4.72953	74	50
+VLG	Hakendover	50.7959	4.98231	48	50
+VLG	Halen	50.94837	5.11096	24	50
+VLG	Hallaar	51.0842	4.72918	15	50
+VLG	Halle	50.73385	4.23454	34	50
+VLG	Halle	51.24075	4.64327	11	50
+VLG	Halle-Booienhoven	50.80534	5.11173	49	50
+VLG	Hamme	50.92089	4.28295	52	50
+VLG	Hamme	51.09822	4.13705	6	50
+VLG	Hamont	51.25332	5.54732	36	50
+VLG	Handzame	51.0254	3.0032	5	50
+VLG	Hansbeke	51.07442	3.53571	10	50
+VLG	Harelbeke	50.85343	3.30935	16	50
+VLG	Hasselt	50.93106	5.33781	42	50
+VLG	Hechtel	51.12518	5.36768	64	50
+VLG	Heers	50.75383	5.3021	75	50
+VLG	Hees	50.84681	5.60766	84	50
+VLG	Heestert	50.78204	3.41218	24	50
+VLG	Heffen	51.04722	4.41599	4	50
+VLG	Heikruis	50.73506	4.1116	86	50
+VLG	Heindonk	51.06703	4.40806	2	50
+VLG	Heist	51.33867	3.23882	5	50
+VLG	Heist-op-den-Berg	51.07537	4.72827	36	50
+VLG	Hekelgem	50.90569	4.10769	49	50
+VLG	Helchteren	51.05591	5.38244	72	50
+VLG	Heldergem	50.87799	3.95789	58	50
+VLG	Helen-Bos	50.81851	5.08285	32	50
+VLG	Helkijn	50.73214	3.38408	16	50
+VLG	Hemiksem	51.14484	4.33874	18	50
+VLG	Henis	50.79986	5.47033	84	50
+VLG	Heppen	51.10934	5.22898	44	50
+VLG	Herderen	50.80734	5.5735	124	50
+VLG	Herdersem	50.97193	4.06667	10	50
+VLG	Herent	50.90861	4.67056	27	50
+VLG	Herentals	51.17655	4.83248	16	50
+VLG	Herenthout	51.1401	4.75572	12	50
+VLG	Herfelingen	50.74816	4.09754	62	50
+VLG	Herk-de-Stad	50.94013	5.16636	31	50
+VLG	Herne	50.72423	4.03481	43	50
+VLG	Herselt	51.05159	4.88231	18	50
+VLG	Hertsberge	51.10728	3.26936	12	50
+VLG	Herzele	50.88681	3.89014	58	50
+VLG	Heule	50.83752	3.23818	16	50
+VLG	Heurne	50.88096	3.62598	18	50
+VLG	Heusden	51.02815	3.80425	9	50
+VLG	Heusden	51.03664	5.28013	39	50
+VLG	Hever	50.99545	4.55126	7	50
+VLG	Heverlee	50.86426	4.69597	31	50
+VLG	Hillegem	50.89567	3.8531	60	50
+VLG	Hingene	51.10345	4.26904	6	50
+VLG	Hoboken	51.17611	4.34844	12	50
+VLG	Hoegaarden	50.7756	4.88952	54	50
+VLG	Hoeilaart	50.7673	4.46835	84	50
+VLG	Hoelbeek	50.87209	5.55911	76	50
+VLG	Hoeleden	50.86662	4.98538	39	50
+VLG	Hoepertingen	50.81217	5.28442	58	50
+VLG	Hoeselt	50.84714	5.48767	77	50
+VLG	Hoevenen	51.30604	4.40203	3	50
+VLG	Hofstade	50.9613	4.02663	8	50
+VLG	Hofstade	50.99134	4.49229	7	50
+VLG	Hollebeke	50.80509	2.93661	39	50
+VLG	Holsbeek	50.92097	4.75747	21	50
+VLG	Hombeek	51.01753	4.43891	7	50
+VLG	Hooglede	50.98333	3.08333	41	50
+VLG	Hoogstraten	51.40029	4.76034	21	50
+VLG	Horpmaal	50.75958	5.33518	75	50
+VLG	Houtem	51.01077	2.60946	5	50
+VLG	Houthalen	51.03427	5.37429	64	50
+VLG	Houthulst	50.97824	2.9505	18	50
+VLG	Houtvenne	51.0418	4.80863	11	50
+VLG	Houwaart	50.93368	4.85991	26	50
+VLG	Hove	51.15446	4.4707	22	50
+VLG	Huise	50.90059	3.59096	46	50
+VLG	Huizingen	50.7465	4.27377	38	50
+VLG	Huldenberg	50.78939	4.5831	48	50
+VLG	Hulshout	51.07451	4.79081	13	50
+VLG	Hulste	50.88217	3.29497	18	50
+VLG	Humbeek	50.96799	4.3796	17	50
+VLG	Hundelgem	50.8889	3.75124	49	50
+VLG	Ichtegem	51.09572	3.01549	16	50
+VLG	Iddergem	50.87634	4.04434	28	50
+VLG	Idegem	50.80178	3.92595	20	50
+VLG	Ieper	50.85114	2.88569	24	50
+VLG	Impe	50.96048	3.9501	21	50
+VLG	Ingelmunster	50.92081	3.25571	15	50
+VLG	Ingooigem	50.82013	3.43373	42	50
+VLG	Itegem	51.10328	4.72855	9	50
+VLG	Itterbeek	50.83803	4.24948	71	50
+VLG	Izegem	50.91396	3.21378	18	50
+VLG	Jabbeke	51.18185	3.08935	7	50
+VLG	Jesseren	50.80583	5.39208	76	50
+VLG	Jeuk	50.73499	5.20992	111	50
+VLG	Kachtem	50.93341	3.19425	18	50
+VLG	Kaggevinne	50.98037	5.01886	49	50
+VLG	Kalken	51.03836	3.9186	5	50
+VLG	Kallo	51.2525	4.27546	4	50
+VLG	Kalmthout	51.38442	4.47556	21	50
+VLG	Kampenhout	50.9421	4.55103	14	50
+VLG	Kanegem	51.0129	3.40188	31	50
+VLG	Kanne	50.81331	5.66946	62	50
+VLG	Kapellen	50.88593	4.95174	72	50
+VLG	Kapellen	51.31377	4.43539	8	50
+VLG	Kapelle-op-den-Bos	51.0097	4.36303	12	50
+VLG	Kaprijke	51.2172	3.61519	4	50
+VLG	Kaster	50.8133	3.49591	32	50
+VLG	Kasterlee	51.24118	4.96651	22	50
+VLG	Kaulille	51.18763	5.52372	45	50
+VLG	Keerbergen	51.00295	4.63434	10	50
+VLG	Keiem	51.08144	2.88217	2	50
+VLG	Kemmel	50.78333	2.82714	57	50
+VLG	Kemzeke	51.20981	4.07428	8	50
+VLG	Kerkhove	50.79851	3.50267	14	50
+VLG	Kerkom	50.85568	4.87422	66	50
+VLG	Kerkom-bij-Sint-Truiden	50.7737	5.17842	75	50
+VLG	Kerksken	50.89068	3.99478	46	50
+VLG	Kermt	50.94757	5.24832	32	50
+VLG	Kerniel	50.81667	5.36509	101	50
+VLG	Kersbeek-Miskom	50.88544	4.99578	38	50
+VLG	Kessel	51.13892	4.62962	9	50
+VLG	Kessel-Lo	50.88549	4.73717	35	50
+VLG	Kessenich	51.15086	5.8233	29	50
+VLG	Kester	50.76398	4.12058	65	50
+VLG	Kieldrecht	51.28914	4.17587	3	50
+VLG	Kinrooi	51.14543	5.74207	33	50
+VLG	Kleine-Brogel	51.17267	5.45059	53	50
+VLG	Kleine-Spouwen	50.83837	5.55007	110	50
+VLG	Klein-Gelmen	50.77109	5.27588	72	50
+VLG	Klemskerke	51.24222	3.02401	2	50
+VLG	Klerken	50.99643	2.90771	33	50
+VLG	Kluizen	51.1582	3.73194	4	50
+VLG	Knesselare	51.13932	3.41282	16	50
+VLG	Knokke	51.35113	3.28744	13	50
+VLG	Knokke-Heist	51.35	3.26667	5	50
+VLG	Kobbegem	50.90822	4.25253	60	50
+VLG	Koekelare	51.09047	2.9783	15	50
+VLG	Koersel	51.05909	5.27121	44	50
+VLG	Koksijde	51.11642	2.63772	8	50
+VLG	Koningshooikt	51.09607	4.60992	10	50
+VLG	Koninksem	50.76535	5.43892	91	50
+VLG	Kontich	51.13213	4.44706	20	50
+VLG	Kooigem	50.74007	3.33159	19	50
+VLG	Koolkerke	51.23931	3.24745	2	50
+VLG	Koolskamp	51.00233	3.2104	42	50
+VLG	Korbeek-Dijle	50.83813	4.63794	41	50
+VLG	Korbeek-Lo	50.86028	4.76274	40	50
+VLG	Kortemark	51.02951	3.04112	11	50
+VLG	Kortenaken	50.90862	5.05968	35	50
+VLG	Kortenberg	50.88982	4.54353	47	50
+VLG	Kortessem	50.8589	5.38974	55	50
+VLG	Kortrijk	50.82803	3.26487	22	50
+VLG	Kortrijk-Dutsel	50.92676	4.80799	27	50
+VLG	Kozen	50.8752	5.24005	60	50
+VLG	Kraainem	50.86155	4.46946	51	50
+VLG	Krombeke	50.91488	2.68826	9	50
+VLG	Kruibeke	51.17048	4.31444	6	50
+VLG	Kruishoutem	50.90168	3.52588	45	50
+VLG	Kumtich	50.82101	4.88723	73	50
+VLG	Kuringen	50.94426	5.29902	33	50
+VLG	Kuurne	50.85143	3.2824	16	50
+VLG	Kwaadmechelen	51.10099	5.14478	32	50
+VLG	Kwaremont	50.77677	3.5238	77	50
+VLG	Laakdal	51.08067	5.00556	18	50
+VLG	Laarne	51.03078	3.85077	8	50
+VLG	Lanaken	50.89318	5.6468	63	50
+VLG	Landegem	51.05518	3.57667	8	50
+VLG	Landen	50.75267	5.082	72	50
+VLG	Landskouter	50.96953	3.79339	19	50
+VLG	Langdorp	50.99561	4.87175	23	50
+VLG	Langemark	50.9131	2.91965	14	50
+VLG	Lanklaar	51.01937	5.72508	37	50
+VLG	Lauw	50.73881	5.41333	95	50
+VLG	Lauwe	50.79479	3.1869	21	50
+VLG	Lebbeke	51.00464	4.13457	6	50
+VLG	Lede	50.96626	3.98594	25	50
+VLG	Ledeberg	50.84356	4.09112	61	50
+VLG	Ledeberg	51.03859	3.74458	10	50
+VLG	Ledegem	50.85785	3.12409	20	50
+VLG	Leefdaal	50.84759	4.58936	51	50
+VLG	Leerbeek	50.77788	4.11936	62	50
+VLG	Leest	51.03319	4.4153	8	50
+VLG	Leeuwergem	50.888	3.831	73	50
+VLG	Leffinge	51.17576	2.87576	3	50
+VLG	Leisele	50.98435	2.62001	7	50
+VLG	Leke	51.10022	2.89098	2	50
+VLG	Lembeek	50.7157	4.21832	45	50
+VLG	Lembeke	51.19487	3.63333	8	50
+VLG	Lemberge	50.97629	3.77054	30	50
+VLG	Lendelede	50.88626	3.23747	38	50
+VLG	Lennik	50.80903	4.16219	42	50
+VLG	Leopoldsburg	51.11667	5.25	48	50
+VLG	Letterhoutem	50.92768	3.8797	50	50
+VLG	Leut	50.99107	5.73624	36	50
+VLG	Leuven	50.87959	4.70093	28	50
+VLG	Lichtaart	51.22495	4.91681	19	50
+VLG	Lichtervelde	51.03333	3.15	24	50
+VLG	Liedekerke	50.86892	4.08743	24	50
+VLG	Lier	51.13128	4.57041	9	50
+VLG	Liezele	51.05998	4.28038	6	50
+VLG	Lille	51.24197	4.82313	17	50
+VLG	Linden	50.89494	4.77027	36	50
+VLG	Linkebeek	50.76781	4.33688	85	50
+VLG	Linkhout	50.96778	5.1374	30	50
+VLG	Lint	51.12707	4.49669	11	50
+VLG	Lippelo	51.04258	4.259	10	50
+VLG	Lissewege	51.29427	3.19331	4	50
+VLG	Lo	50.98036	2.74965	6	50
+VLG	Lochristi	51.09644	3.83194	8	50
+VLG	Loenhout	51.39947	4.64404	18	50
+VLG	Loker	50.78166	2.77234	86	50
+VLG	Lokeren	51.10364	3.99339	6	50
+VLG	Loksbergen	50.93408	5.06983	43	50
+VLG	Lombardsijde	51.15	2.75	0	50
+VLG	Lommel	51.23074	5.31349	48	50
+VLG	Londerzeel	51.00468	4.30304	12	50
+VLG	Loonbeek	50.80941	4.60971	49	50
+VLG	Loppem	51.15662	3.19599	6	50
+VLG	Lot	50.7679	4.27711	26	50
+VLG	Lotenhulle	51.0502	3.46162	21	50
+VLG	Lovendegem	51.10168	3.61298	6	50
+VLG	Lovenjoel	50.85852	4.78094	49	50
+VLG	Lubbeek	50.88278	4.83896	59	50
+VLG	Lummen	50.98772	5.19121	41	50
+VLG	Maarke-Kerkem	50.82038	3.66528	32	50
+VLG	Maaseik	51.09802	5.78379	30	50
+VLG	Maasmechelen	50.96545	5.69452	39	50
+VLG	Machelen	50.91061	4.44174	30	50
+VLG	Machelen-aan-de-Leie	50.95973	3.49046	9	50
+VLG	Mal	50.76869	5.5197	85	50
+VLG	Maldegem	51.20737	3.44511	9	50
+VLG	Malderen	51.02077	4.24639	10	50
+VLG	Maria Aalter	51.09455	3.36917	21	50
+VLG	Mariakerke	51.07476	3.68289	10	50
+VLG	Mariekerke	51.06503	4.19249	4	50
+VLG	Marke	50.80678	3.23344	23	50
+VLG	Markegem	50.94633	3.4003	12	50
+VLG	Martenslinde	50.85597	5.53385	76	50
+VLG	Massemen	50.98086	3.87394	16	50
+VLG	Massenhoven	51.20021	4.63572	7	50
+VLG	Mater	50.84321	3.66258	65	50
+VLG	Mazenzele	50.94247	4.17224	45	50
+VLG	Mechelen	51.02574	4.47762	8	50
+VLG	Mechelen-aan-de-Maas	50.96589	5.69144	39	50
+VLG	Mechelen-Bovelingen	50.74081	5.26278	79	50
+VLG	Meensel-Kiezegem	50.89621	4.92496	73	50
+VLG	Meer	51.44641	4.73906	13	50
+VLG	Meerbeek	50.88213	4.58972	41	50
+VLG	Meerbeke	50.82444	4.03674	18	50
+VLG	Meerdonk	51.26667	4.15	-1	50
+VLG	Meerhout	51.1321	5.07842	30	50
+VLG	Meerle	51.47235	4.80316	14	50
+VLG	Meeswijk	50.99998	5.74808	32	50
+VLG	Meeuwen	51.0991	5.52106	67	50
+VLG	Meigem	51.01746	3.54106	9	50
+VLG	Meise	50.93934	4.32655	58	50
+VLG	Melden	50.81449	3.56538	15	50
+VLG	Meldert	50.78814	4.83776	66	50
+VLG	Meldert	50.93449	4.13504	35	50
+VLG	Meldert	51.00007	5.14215	30	50
+VLG	Melle	51.00232	3.80526	8	50
+VLG	Melsbroek	50.91559	4.47985	23	50
+VLG	Melsele	51.22285	4.28201	6	50
+VLG	Melsen	50.95622	3.69567	22	50
+VLG	Membruggen	50.81526	5.53368	85	50
+VLG	Mendonk	51.14701	3.82121	5	50
+VLG	Menen	50.79722	3.12245	18	50
+VLG	Merchtem	50.95129	4.23197	25	50
+VLG	Mere	50.92306	3.97134	27	50
+VLG	Merelbeke	50.99447	3.74621	12	50
+VLG	Merendree	51.0766	3.576	8	50
+VLG	Merkem	50.95284	2.85225	6	50
+VLG	Merksem	51.24623	4.44903	5	50
+VLG	Merksplas	51.35851	4.86513	26	50
+VLG	Mespelare	50.99613	4.06883	6	50
+VLG	Messelbroek	50.9955	4.93664	15	50
+VLG	Messines	50.76581	2.89764	64	50
+VLG	Meulebeke	50.95136	3.28804	19	50
+VLG	Michelbeke	50.8355	3.76249	43	50
+VLG	Middelburg	51.25608	3.41595	0	50
+VLG	Middelkerke	51.18532	2.82077	4	50
+VLG	Mielen-boven-Aalst	50.75644	5.21421	95	50
+VLG	Millen	50.78619	5.55616	109	50
+VLG	Minderhout	51.41709	4.76292	17	50
+VLG	Moelingen	50.75693	5.71375	60	50
+VLG	Moen	50.77013	3.39485	20	50
+VLG	Moerbeke	50.75254	3.91724	26	50
+VLG	Moerbeke	51.17409	3.93001	1	50
+VLG	Moere	51.12263	2.95582	1	50
+VLG	Moerkerke	51.24547	3.34251	2	50
+VLG	Moerzeke	51.06914	4.16137	1	50
+VLG	Mol	51.19188	5.11662	27	50
+VLG	Molenbeek-Wersbeek	50.91947	4.9476	53	50
+VLG	Molenbeersel	51.17041	5.73761	32	50
+VLG	Molenstede	51.00401	5.01298	19	50
+VLG	Mollem	50.93118	4.22627	37	50
+VLG	Montenaken	50.72092	5.12941	112	50
+VLG	Moorsel	50.94743	4.09825	31	50
+VLG	Moorsele	50.8409	3.15971	20	50
+VLG	Moorslede	50.8919	3.06117	43	50
+VLG	Moortsele	50.95862	3.77753	24	50
+VLG	Mopertingen	50.86123	5.5759	93	50
+VLG	Morkhoven	51.11888	4.81877	13	50
+VLG	Mortsel	51.16697	4.45127	19	50
+VLG	Muizen	51.01111	4.51427	13	50
+VLG	Mullem	50.89673	3.60535	24	50
+VLG	Munkzwalm	50.87676	3.73503	17	50
+VLG	Munsterbilzen	50.88939	5.52647	50	50
+VLG	Munte	50.94443	3.74273	47	50
+VLG	Nazareth	50.95686	3.59425	12	50
+VLG	Nederboelare	50.77596	3.87148	22	50
+VLG	Nederhasselt	50.84646	3.97497	27	50
+VLG	Nederokkerzeel	50.91943	4.56388	24	50
+VLG	Nederzwalm-Hermelgem	50.88333	3.68333	12	50
+VLG	Neerglabbeek	51.08911	5.61606	65	50
+VLG	Neerharen	50.90964	5.68027	46	50
+VLG	Neerijse	50.81722	4.62361	54	50
+VLG	Neerlinter	50.83971	5.02287	46	50
+VLG	Neeroeteren	51.09156	5.69933	38	50
+VLG	Neerpelt	51.22807	5.4427	39	50
+VLG	Neerwinden	50.76756	5.04021	65	50
+VLG	Neigem	50.80271	4.0599	25	50
+VLG	Nerem	50.76347	5.50993	89	50
+VLG	Nevele	51.03531	3.54574	7	50
+VLG	Niel	51.11096	4.33428	8	50
+VLG	Niel-bij-As	51.01851	5.60526	75	50
+VLG	Niel-bij-Sint-Truiden	50.7404	5.14204	86	50
+VLG	Nieuwenrode	50.97961	4.35282	14	50
+VLG	Nieuwerkerken	50.8638	5.19467	44	50
+VLG	Nieuwerkerken	50.92386	4.00433	26	50
+VLG	Nieuwkerke	50.74709	2.8286	57	50
+VLG	Nieuwkerken-Waas	51.19358	4.17776	13	50
+VLG	Nieuwpoort	51.13008	2.75135	9	50
+VLG	Nieuwrode	50.95	4.83333	26	50
+VLG	Nijlen	51.16096	4.67008	7	50
+VLG	Ninove	50.82776	4.02657	17	50
+VLG	Nokere	50.88541	3.5101	49	50
+VLG	Noorderwijk	51.14122	4.84061	19	50
+VLG	Nossegem	50.88181	4.50817	54	50
+VLG	Nukerke	50.79564	3.59492	90	50
+VLG	Oedelem	51.17033	3.33762	17	50
+VLG	Oekene	50.91794	3.15676	18	50
+VLG	Oelegem	51.2131	4.59832	9	50
+VLG	Oeselgem	50.93789	3.43185	10	50
+VLG	Oetingen	50.77318	4.0635	60	50
+VLG	Oevel	51.13789	4.90471	22	50
+VLG	Okegem	50.85559	4.05516	15	50
+VLG	Olen	51.14391	4.8598	25	50
+VLG	Olmen	51.14228	5.14999	30	50
+VLG	Olsene	50.93422	3.46389	13	50
+VLG	Onkerzele	50.78212	3.91145	45	50
+VLG	Onze-Lieve-Vrouw-Lombeek	50.82004	4.11035	45	50
+VLG	Onze-Lieve-Vrouw-Waver	51.06265	4.57941	21	50
+VLG	Ooigem	50.89334	3.3363	17	50
+VLG	Oorbeek	50.7991	4.89235	54	50
+VLG	Oordegem	50.95727	3.90201	34	50
+VLG	Oostakker	51.10124	3.76945	6	50
+VLG	Oostduinkerke	51.11565	2.68217	5	50
+VLG	Oosteeklo	51.19302	3.68928	7	50
+VLG	Oosterzele	50.95261	3.79826	45	50
+VLG	Oostham	51.10374	5.17877	41	50
+VLG	Oostkamp	51.15432	3.23128	10	50
+VLG	Oostkerke	51.27725	3.29608	4	50
+VLG	Oostmalle	51.3	4.73333	23	50
+VLG	Oostnieuwkerke	50.93959	3.05742	23	50
+VLG	Oostrozebeke	50.92093	3.33799	14	50
+VLG	Oostvleteren	50.93319	2.74119	6	50
+VLG	Oostwinkel	51.15155	3.53204	7	50
+VLG	Opbrakel	50.79201	3.74862	56	50
+VLG	Opdorp	51.02806	4.21801	7	50
+VLG	Opglabbeek	51.04258	5.58346	72	50
+VLG	Opgrimbie	50.94188	5.67967	43	50
+VLG	Ophasselt	50.81729	3.89293	28	50
+VLG	Ophoven	51.12571	5.80155	31	50
+VLG	Opitter	51.11705	5.64749	43	50
+VLG	Oplinter	50.83023	4.99002	42	50
+VLG	Opoeteren	51.06923	5.65556	51	50
+VLG	Oppuurs	51.06629	4.24222	5	50
+VLG	Opvelp	50.81017	4.79347	76	50
+VLG	Opwijk	50.96724	4.18442	22	50
+VLG	Ordingen	50.8132	5.23499	53	50
+VLG	Orsmaal-Gussenhoven	50.80528	5.06178	40	50
+VLG	Ostend	51.21551	2.927	6	50
+VLG	Otegem	50.80693	3.42043	36	50
+VLG	Ottenburg	50.75161	4.6164	96	50
+VLG	Ottergem	50.93418	3.94706	28	50
+VLG	Oudegem	51.01017	4.06195	5	50
+VLG	Oudenaarde	50.85168	3.60891	11	50
+VLG	Oudenburg	51.18489	3.00035	3	50
+VLG	Oud-Heverlee	50.83522	4.66421	56	50
+VLG	Oud-Turnhout	51.31978	4.9841	25	50
+VLG	Outer	50.84189	3.9987	22	50
+VLG	Outgaarden	50.76672	4.91929	58	50
+VLG	Outrijve	50.75773	3.42964	14	50
+VLG	Ouwegem	50.91231	3.59978	12	50
+VLG	Overboelare	50.76382	3.86369	26	50
+VLG	Overhespen	50.79599	5.03563	42	50
+VLG	Overijse	50.77436	4.53461	88	50
+VLG	Overmere	51.04691	3.9466	7	50
+VLG	Overpelt	51.21038	5.41557	44	50
+VLG	Overrepen	50.80802	5.43108	85	50
+VLG	Overwinden	50.75504	5.048	81	50
+VLG	Paal	51.03988	5.17233	39	50
+VLG	Pamel	50.8453	4.07129	35	50
+VLG	Parike	50.78487	3.79754	46	50
+VLG	Passendale	50.89979	3.02133	51	50
+VLG	Peer	51.1303	5.45952	64	50
+VLG	Pellenberg	50.87245	4.79394	100	50
+VLG	Pepingen	50.75922	4.15983	52	50
+VLG	Perk	50.93571	4.49615	14	50
+VLG	Perre	50.88914	3.86098	54	50
+VLG	Pervijze	51.07322	2.79403	2	50
+VLG	Petegem	50.83333	3.55	15	50
+VLG	Petegem-aan-de-Leie	50.96667	3.53333	11	50
+VLG	Petegem-aan-de-Schelde	50.83344	3.55609	21	50
+VLG	Peutie	50.92998	4.45187	17	50
+VLG	Piringen	50.78666	5.41822	82	50
+VLG	Pittem	50.99279	3.26317	32	50
+VLG	Poederlee	51.22769	4.84034	14	50
+VLG	Poeke	51.0394	3.44542	12	50
+VLG	Poelkapelle	50.9179	2.95677	21	50
+VLG	Pollare	50.81713	4.006	55	50
+VLG	Pollinkhove	50.97118	2.7326	8	50
+VLG	Poperinge	50.85386	2.72659	19	50
+VLG	Poppel	51.44565	5.0433	26	50
+VLG	Proven	50.88976	2.65721	12	50
+VLG	Pulderbos	51.2171	4.69357	8	50
+VLG	Pulle	51.20317	4.71434	9	50
+VLG	Putte	51.05337	4.63263	22	50
+VLG	Puurs	51.07409	4.28844	4	50
+VLG	Ramsdonk	51.015	4.33522	10	50
+VLG	Ramsel	51.0324	4.83242	13	50
+VLG	Ramskapelle	51.10974	2.76403	1	50
+VLG	Ramskapelle	51.31511	3.25057	2	50
+VLG	Ransberg	50.87493	5.03955	75	50
+VLG	Ranst	51.18983	4.56533	12	50
+VLG	Ravels	51.37274	4.9921	32	50
+VLG	Reet	51.10201	4.41264	25	50
+VLG	Rekem	50.92244	5.6938	44	50
+VLG	Rekkem	50.7837	3.16346	20	50
+VLG	Relegem	50.89908	4.27694	57	50
+VLG	Reninge	50.94781	2.78892	5	50
+VLG	Reningelst	50.81514	2.77066	34	50
+VLG	Reppel	51.15405	5.5624	45	50
+VLG	Ressegem	50.89115	3.91129	57	50
+VLG	Retie	51.26652	5.08242	24	50
+VLG	Riemst	50.80995	5.60131	105	50
+VLG	Rijkel	50.80935	5.26136	66	50
+VLG	Rijkevorsel	51.34795	4.76053	24	50
+VLG	Rijkhoven	50.83294	5.51497	74	50
+VLG	Rijmenam	51.0016	4.58405	5	50
+VLG	Riksingen	50.80433	5.46263	109	50
+VLG	Rillaar	50.97376	4.89177	22	50
+VLG	Roborst	50.86655	3.75302	38	50
+VLG	Roesbrugge-Haringe	50.9181	2.62538	4	50
+VLG	Roeselare	50.94653	3.12269	22	50
+VLG	Roksem	51.16885	3.0329	8	50
+VLG	Rollegem	50.76565	3.26317	26	50
+VLG	Rollegem-Kapelle	50.8687	3.14635	23	50
+VLG	Romershoven	50.85635	5.45986	63	50
+VLG	Ronse	50.74574	3.6005	42	50
+VLG	Ronsele	51.13056	3.55178	12	50
+VLG	Roosbeek	50.83608	4.86282	56	50
+VLG	Rosmeer	50.84595	5.57805	101	50
+VLG	Rotem	51.05289	5.74096	35	50
+VLG	Rotselaar	50.95302	4.71665	12	50
+VLG	Ruddervoorde	51.09589	3.20743	14	50
+VLG	Ruien	50.76865	3.48581	27	50
+VLG	Ruisbroek	50.79015	4.29771	25	50
+VLG	Ruisbroek	51.08832	4.33127	1	50
+VLG	Ruiselede	51.04039	3.39416	15	50
+VLG	Rumbeke	50.93248	3.16716	14	50
+VLG	Rummen	50.88912	5.16521	33	50
+VLG	Rumst	51.08153	4.42217	6	50
+VLG	Rupelmonde	51.12931	4.29434	7	50
+VLG	Rutten	50.74764	5.44354	107	50
+VLG	Schaffen	50.99993	5.08667	29	50
+VLG	Schelderode	50.96922	3.7133	18	50
+VLG	Scheldewindeke	50.93436	3.78663	36	50
+VLG	Schelle	51.12615	4.34114	7	50
+VLG	Schellebelle	51.01136	3.92843	10	50
+VLG	Schendelbeke	50.79872	3.89882	26	50
+VLG	Schepdaal	50.83836	4.19609	76	50
+VLG	Scherpenheuvel	50.98075	4.97552	63	50
+VLG	Scherpenheuvel-Zichem	51.01041	4.97492	14	50
+VLG	Schilde	51.24107	4.58336	9	50
+VLG	Schoonaarde	51.00387	4.0152	8	50
+VLG	Schorisse	50.80309	3.67632	43	50
+VLG	Schoten	51.25251	4.50268	8	50
+VLG	Schriek	51.02844	4.69357	10	50
+VLG	Schuiferskapelle	51.03244	3.33799	25	50
+VLG	Schulen	50.95972	5.1901	28	50
+VLG	Semmerzake	50.94369	3.66318	29	50
+VLG	Serskamp	50.98849	3.92657	17	50
+VLG	's-Gravenvoeren	50.75872	5.76113	89	50
+VLG	's-Gravenwezel	51.26267	4.56113	12	50
+VLG	's Herenelderen	50.80882	5.50067	77	50
+VLG	Sijsele	51.20846	3.31714	5	50
+VLG	Sinaai	51.15789	4.04087	6	50
+VLG	Sint-Agatha-Rode	50.78597	4.63099	40	50
+VLG	Sint-Amands	51.05645	4.20957	5	50
+VLG	Sint-Amandsberg	51.05947	3.74943	9	50
+VLG	Sint-Andries	51.19696	3.17891	13	50
+VLG	Sint-Antelinks	50.84979	3.92647	76	50
+VLG	Sint-Antonius	51.26667	4.63861	15	50
+VLG	Sint-Baafs-Vijve	50.9	3.38333	9	50
+VLG	Sint-Blasius-Boekel	50.85232	3.72239	60	50
+VLG	Sint-Denijs	50.75198	3.36627	35	50
+VLG	Sint-Denijs-Boekel	50.8651	3.71156	60	50
+VLG	Sint-Denijs-Westrem	51.02135	3.67202	9	50
+VLG	Sint-Eloois-Vijve	50.90911	3.41545	9	50
+VLG	Sint-Eloois-Winkel	50.87591	3.18144	20	50
+VLG	Sint-Genesius-Rode	50.74645	4.35754	83	50
+VLG	Sint-Gillis-bij-Dendermonde	51.01905	4.11146	7	50
+VLG	Sint-Gillis-Waas	51.21914	4.12374	5	50
+VLG	Sint-Goriks-Oudenhove	50.85278	3.78612	67	50
+VLG	Sint-Huibrechts-Hern	50.82985	5.4493	94	50
+VLG	Sint-Huibrechts-Lille	51.22266	5.49437	40	50
+VLG	Sint-Jan	50.86503	2.90478	27	50
+VLG	Sint-Jan-in-Eremo	51.27161	3.58062	-1	50
+VLG	Sint-Job-in-'t-Goor	51.29907	4.57289	18	50
+VLG	Sint-Joris	50.87117	5.272	48	50
+VLG	Sint-Joris	51.12663	3.36524	10	50
+VLG	Sint-Joris-Weert	50.80235	4.6526	39	50
+VLG	Sint-Joris-Winge	50.90446	4.8749	47	50
+VLG	Sint-Katelijne-Waver	51.06691	4.53469	6	50
+VLG	Sint-Katherina-Lombeek	50.87314	4.1536	19	50
+VLG	Sint-Kornelis-Horebeke	50.83449	3.6983	81	50
+VLG	Sint-Kruis	51.21399	3.24949	7	50
+VLG	Sint-Kwintens-Lennik	50.80377	4.15489	55	50
+VLG	Sint-Lambrechts-Herk	50.89914	5.30786	43	50
+VLG	Sint-Laureins	51.24202	3.52441	2	50
+VLG	Sint-Lenaarts	51.34868	4.68009	24	50
+VLG	Sint-Lievens-Esse	50.8566	3.88792	79	50
+VLG	Sint-Lievens-Houtem	50.9197	3.86225	38	50
+VLG	Sint-Margriete	51.28216	3.54644	2	50
+VLG	Sint-Margriete-Houtem	50.82877	4.95796	56	50
+VLG	Sint-Maria-Horebeke	50.83885	3.68754	81	50
+VLG	Sint-Maria-Latem	50.89014	3.7064	39	50
+VLG	Sint-Maria-Lierde	50.81867	3.84436	33	50
+VLG	Sint-Maria-Oudenhove	50.83364	3.79556	95	50
+VLG	Sint-Martens	50.83889	4.92436	61	50
+VLG	Sint-Martens-Bodegem	50.86185	4.21317	32	50
+VLG	Sint-Martens-Latem	51.01459	3.63779	8	50
+VLG	Sint-Martens-Leerne	51.01605	3.5813	10	50
+VLG	Sint-Martens-Lennik	50.81158	4.16965	57	50
+VLG	Sint-Martens-Lierde	50.80371	3.82541	45	50
+VLG	Sint-Martens-Voeren	50.74846	5.81288	129	50
+VLG	Sint-Michiels	51.18806	3.21142	7	50
+VLG	Sint-Niklaas	51.16509	4.1437	21	50
+VLG	Sint-Pauwels	51.19391	4.09649	9	50
+VLG	Sint-Pieters-Kapelle	50.70758	3.98999	72	50
+VLG	Sint-Pieters-Leeuw	50.77926	4.24355	45	50
+VLG	Sint-Pieters-Rode	50.93247	4.82245	30	50
+VLG	Sint-Pieters-Voeren	50.73863	5.82224	153	50
+VLG	Sint-Stevens-Woluwe	50.86838	4.45195	36	50
+VLG	Sint-Truiden	50.81679	5.18647	54	50
+VLG	Sint-Ulriks-Kapelle	50.87899	4.21884	57	50
+VLG	Sleidinge	51.13363	3.67405	6	50
+VLG	Slijpe	51.1551	2.8483	3	50
+VLG	Sluizen	50.76524	5.53136	94	50
+VLG	Smeerebbe-Vloerzegem	50.81703	3.92768	36	50
+VLG	Smetlede	50.9662	3.92796	27	50
+VLG	Snaaskerke	51.17737	2.93901	3	50
+VLG	Snellegem	51.16776	3.11921	11	50
+VLG	Spalbeek	50.94918	5.22391	27	50
+VLG	Spiere	50.7189	3.35626	16	50
+VLG	Stabroek	51.33189	4.37127	3	50
+VLG	Staden	50.97456	3.01469	21	50
+VLG	Stalhille	51.21412	3.07198	2	50
+VLG	Stavele	50.94068	2.67241	3	50
+VLG	Steendorp	51.12681	4.27031	11	50
+VLG	Steenhuffel	50.99539	4.26788	10	50
+VLG	Steenhuize-Wijnhuize	50.83968	3.88805	49	50
+VLG	Steenokkerzeel	50.91851	4.50989	23	50
+VLG	Stekene	51.2099	4.03651	7	50
+VLG	Stene	51.20437	2.91259	3	50
+VLG	Sterrebeek	50.86171	4.49375	56	50
+VLG	Stevoort	50.91862	5.25327	30	50
+VLG	Stokkem	51.02326	5.74499	34	50
+VLG	Stokrooie	50.96637	5.28142	28	50
+VLG	Strijpen	50.86801	3.78797	47	50
+VLG	Strijtem	50.84155	4.11696	37	50
+VLG	Strombeek-Bever	50.91039	4.35582	48	50
+VLG	Temse	51.12794	4.21372	15	50
+VLG	Teralfene	50.89195	4.09895	13	50
+VLG	Terhagen	51.07966	4.39907	5	50
+VLG	Terkoest	50.89832	5.27623	37	50
+VLG	Ternat	50.86654	4.16682	21	50
+VLG	Tervuren	50.82372	4.51418	79	50
+VLG	Tessenderlo	51.06513	5.08856	27	50
+VLG	Testelt	51.01084	4.95312	27	50
+VLG	Tiegem	50.80901	3.47479	50	50
+VLG	Tielen	51.24295	4.89956	17	50
+VLG	Tielrode	51.11303	4.17707	11	50
+VLG	Tielt	50.9421	4.90505	28	50
+VLG	Tielt	50.99931	3.32707	46	50
+VLG	Tienen	50.80745	4.9378	46	50
+VLG	Tildonk	50.94383	4.64481	16	50
+VLG	Tisselt	51.03398	4.35947	5	50
+VLG	Tollembeek	50.74096	4.00666	32	50
+VLG	Tongeren	50.78054	5.46484	107	50
+VLG	Tongerlo	51.10622	4.91638	18	50
+VLG	Tongerlo	51.12756	5.6609	38	50
+VLG	Torhout	51.0656	3.10085	22	50
+VLG	Tremelo	50.99231	4.70807	10	50
+VLG	Turnhout	51.32254	4.94471	29	50
+VLG	Uikhoven	50.92386	5.71921	41	50
+VLG	Uitbergen	51.02152	3.95505	6	50
+VLG	Uitkerke	51.30684	3.13712	2	50
+VLG	Ulbeek	50.84367	5.30502	47	50
+VLG	Ursel	51.12895	3.48655	16	50
+VLG	Val-Meer	50.78715	5.59557	100	50
+VLG	Varsenare	51.18981	3.13916	10	50
+VLG	Vechmaal	50.76171	5.37455	89	50
+VLG	Veerle	51.06989	4.98761	20	50
+VLG	Veldegem	51.1048	3.1591	19	50
+VLG	Veldwezelt	50.86805	5.63101	78	50
+VLG	Velm	50.7787	5.13096	56	50
+VLG	Veltem-Beisem	50.90807	4.61906	23	50
+VLG	Velzeke-Ruddershove	50.88288	3.78292	47	50
+VLG	Verrebroek	51.25537	4.18882	3	50
+VLG	Vertrijk	50.82925	4.8345	68	50
+VLG	Veurne	51.07316	2.66803	3	50
+VLG	Viane	50.74232	3.92478	21	50
+VLG	Vichte	50.83868	3.40129	19	50
+VLG	Viersel	51.18769	4.64918	7	50
+VLG	Vilvoorde	50.92814	4.42938	19	50
+VLG	Vinderhoute	51.08764	3.64158	11	50
+VLG	Vinkt	51.00864	3.47878	21	50
+VLG	Vissenaken	50.83846	4.90489	54	50
+VLG	Vladslo	51.04644	2.91601	1	50
+VLG	Vlamertinge	50.85485	2.82024	17	50
+VLG	Vlezenbeek	50.80778	4.23197	49	50
+VLG	Vliermaal	50.84069	5.42862	81	50
+VLG	Vliermaalroot	50.86512	5.42622	48	50
+VLG	Vlierzele	50.93171	3.8959	48	50
+VLG	Vlijtingen	50.83202	5.58432	82	50
+VLG	Vlimmeren	51.2952	4.78128	21	50
+VLG	Vlissegem	51.25531	3.05604	3	50
+VLG	Vollezele	50.76121	4.02435	55	50
+VLG	Voorde	50.82306	3.94928	34	50
+VLG	Voormezele	50.81681	2.87616	26	50
+VLG	Vorselaar	51.20243	4.77259	14	50
+VLG	Vorst	51.08029	5.01998	19	50
+VLG	Vosselaar	51.30856	4.8896	22	50
+VLG	Vosselare	51.02888	3.55664	11	50
+VLG	Vossem	50.8363	4.56036	59	50
+VLG	Vrasene	51.22098	4.19094	4	50
+VLG	Vremde	51.17535	4.52321	12	50
+VLG	Vreren	50.75168	5.49588	105	50
+VLG	Vroenhoven	50.82614	5.63995	90	50
+VLG	Vucht	50.97832	5.711	38	50
+VLG	Vurste	50.94321	3.68307	32	50
+VLG	Waanrode	50.91624	5.00479	66	50
+VLG	Waardamme	51.11136	3.22288	12	50
+VLG	Waarloos	51.10597	4.45482	25	50
+VLG	Waarmaarde	50.78997	3.4866	15	50
+VLG	Waarschoot	51.1525	3.605	6	50
+VLG	Waasmont	50.72833	5.06327	90	50
+VLG	Waasmunster	51.10572	4.08573	5	50
+VLG	Wachtebeke	51.16852	3.87183	7	50
+VLG	Wakken	50.93304	3.39743	16	50
+VLG	Walem	51.06705	4.45842	5	50
+VLG	Walsbets	50.73762	5.08409	77	50
+VLG	Waltwilder	50.86641	5.54425	83	50
+VLG	Wambeek	50.85281	4.16169	34	50
+VLG	Wannegem-Lede	50.89037	3.55139	52	50
+VLG	Wanzele	50.97425	3.95642	16	50
+VLG	Waregem	50.88898	3.42756	13	50
+VLG	Watervliet	51.27494	3.62598	2	50
+VLG	Watou	50.85864	2.62074	16	50
+VLG	Webbekom	50.9741	5.04032	26	50
+VLG	Wechelderzande	51.26304	4.78652	18	50
+VLG	Weelde	51.40777	4.99251	31	50
+VLG	Weerde	50.97345	4.47487	9	50
+VLG	Welden	50.87684	3.65453	10	50
+VLG	Welle	50.89876	4.05602	14	50
+VLG	Wellen	50.84096	5.33867	47	50
+VLG	Wemmel	50.90812	4.30613	39	50
+VLG	Wenduine	51.2983	3.08213	5	50
+VLG	Werchter	50.97308	4.7012	9	50
+VLG	Werken	51.0294	2.96448	4	50
+VLG	Werm	50.83261	5.4796	89	50
+VLG	Wervik	50.78069	3.03854	18	50
+VLG	Wespelaar	50.96081	4.63984	8	50
+VLG	Westende	51.15961	2.7687	4	50
+VLG	Westerlo	51.09049	4.91544	14	50
+VLG	Westkapelle	51.31511	3.3017	4	50
+VLG	Westkerke	51.16448	3.01084	7	50
+VLG	Westmalle	51.29767	4.69013	23	50
+VLG	Westmeerbeek	51.06127	4.83835	13	50
+VLG	Westouter	50.79722	2.74647	47	50
+VLG	Westrem	50.9691	3.86203	20	50
+VLG	Westrozebeke	50.93178	3.01001	47	50
+VLG	Westvleteren	50.92744	2.71688	6	50
+VLG	Wetteren	51.00526	3.88341	16	50
+VLG	Wevelgem	50.8	3.16667	15	50
+VLG	Wezemaal	50.94848	4.75536	16	50
+VLG	Wezembeek-Oppem	50.8395	4.49427	67	50
+VLG	Wichelen	51.00526	3.97683	8	50
+VLG	Wiekevorst	51.10796	4.7924	10	50
+VLG	Wielsbeke	50.9	3.36667	9	50
+VLG	Wieze	50.97691	4.07876	8	50
+VLG	Wijchmaal	51.13515	5.41334	63	50
+VLG	Wijer	50.89863	5.22446	41	50
+VLG	Wijnegem	51.22787	4.51895	8	50
+VLG	Wijshagen	51.10492	5.55788	71	50
+VLG	Wijtschate	50.78632	2.88369	79	50
+VLG	Wilderen	50.81548	5.14229	46	50
+VLG	Willebroek	51.06041	4.36019	4	50
+VLG	Wilrijk	51.16734	4.39513	16	50
+VLG	Wilsele	50.89188	4.69769	49	50
+VLG	Wilskerke	51.18115	2.83995	2	50
+VLG	Wingene	51.05782	3.27359	26	50
+VLG	Winksele	50.8986	4.64607	33	50
+VLG	Wintershoven	50.85157	5.41965	48	50
+VLG	Woesten	50.89971	2.78959	18	50
+VLG	Wolvertem	50.95172	4.30964	33	50
+VLG	Wommelgem	51.20452	4.5225	9	50
+VLG	Wommersom	50.81266	5.01771	39	50
+VLG	Wondelgem	51.08705	3.70909	6	50
+VLG	Wontergem	50.97907	3.44027	10	50
+VLG	Wortegem	50.85357	3.51	66	50
+VLG	Wortel	51.39827	4.7946	20	50
+VLG	Woubrechtegem	50.87355	3.91578	60	50
+VLG	Woumen	51.00145	2.86965	5	50
+VLG	Wuustwezel	51.39214	4.59546	18	50
+VLG	Zaffelare	51.13385	3.86357	7	50
+VLG	Zandbergen	50.80279	3.96636	14	50
+VLG	Zandhoven	51.21488	4.66164	11	50
+VLG	Zandvoorde	51.19942	2.9722	1	50
+VLG	Zarlardinge	50.76214	3.8285	40	50
+VLG	Zarren	51.01844	2.95814	8	50
+VLG	Zaventem	50.88365	4.47298	46	50
+VLG	Zedelgem	51.14236	3.1368	9	50
+VLG	Zeebrugge	51.32901	3.18188	10	50
+VLG	Zegelsem	50.81891	3.71775	67	50
+VLG	Zele	51.06566	4.0403	6	50
+VLG	Zelem	50.97739	5.10687	32	50
+VLG	Zellik	50.88408	4.27325	59	50
+VLG	Zelzate	51.18963	3.80777	7	50
+VLG	Zemst	50.98318	4.46079	11	50
+VLG	Zepperen	50.82139	5.24769	46	50
+VLG	Zerkegem	51.16645	3.06994	11	50
+VLG	Zevekote	51.13772	2.92056	3	50
+VLG	Zeveneken	51.10781	3.89048	7	50
+VLG	Zeveren	50.99643	3.49904	10	50
+VLG	Zevergem	50.97931	3.69319	7	50
+VLG	Zichem	51.00187	4.98316	18	50
+VLG	Zichen-Zussen-Bolder	50.79422	5.62483	95	50
+VLG	Zillebeke	50.83464	2.92249	27	50
+VLG	Zingem	50.90409	3.65305	16	50
+VLG	Zoerle-Parwijs	51.08969	4.87108	13	50
+VLG	Zoersel	51.26825	4.71296	17	50
+VLG	Zolder	51.02455	5.30983	39	50
+VLG	Zomergem	51.11994	3.56496	9	50
+VLG	Zonhoven	50.99064	5.36819	44	50
+VLG	Zonnebeke	50.8726	2.98725	34	50
+VLG	Zonnegem	50.92683	3.9087	43	50
+VLG	Zottegem	50.86955	3.81052	63	50
+VLG	Zoutleeuw	50.83316	5.10376	30	50
+VLG	Zuienkerke	51.26511	3.15506	3	50
+VLG	Zulte	50.91954	3.44859	11	50
+VLG	Zulzeke	50.79165	3.57053	22	50
+VLG	Zutendaal	50.93306	5.5753	84	50
+VLG	Zwevegem	50.81268	3.33848	30	50
+VLG	Zwevezele	51.03683	3.21186	38	50
+VLG	Zwijnaarde	51.00077	3.70746	6	50
+VLG	Zwijndrecht	51.21979	4.32664	7	50
+WAL	Abée	50.47328	5.3555	274	50
+WAL	Achêne	50.26701	5.04539	297	50
+WAL	Achet	50.33346	5.17516	255	50
+WAL	Acoz	50.35904	4.53263	170	50
+WAL	Agimont	50.1659	4.79579	179	50
+WAL	Aische-en-Refail	50.60009	4.83775	153	50
+WAL	Aiseau	50.41158	4.58671	117	50
+WAL	Aisemont	50.40491	4.65185	199	50
+WAL	Alle	49.84119	4.97011	201	50
+WAL	Alleur	50.67465	5.51316	165	50
+WAL	Amay	50.54829	5.30974	131	50
+WAL	Amberloup	50.03123	5.52981	391	50
+WAL	Amblève	50.35357	6.17002	467	50
+WAL	Ambresin	50.63068	5.03097	138	50
+WAL	Amougies	50.74446	3.50675	20	50
+WAL	Ampsin	50.54153	5.2779	137	50
+WAL	Andenne	50.48941	5.09513	78	50
+WAL	Anderlues	50.40704	4.27136	181	50
+WAL	Andrimont	50.61298	5.88294	290	50
+WAL	Angleur	50.6113	5.59942	64	50
+WAL	Angre	50.36583	3.69535	43	50
+WAL	Anhée	50.31039	4.87827	91	50
+WAL	Annevoie-Rouillon	50.34776	4.84961	114	50
+WAL	Ans	50.6623	5.52029	181	50
+WAL	Anseremme	50.23996	4.89904	96	50
+WAL	Anseroeul	50.72739	3.5237	36	50
+WAL	Antheit	50.54927	5.24022	104	50
+WAL	Anthisnes	50.48323	5.519	275	50
+WAL	Antoing	50.56765	3.4492	31	50
+WAL	Anvaing	50.68318	3.56144	29	50
+WAL	Arbre	50.36611	4.82137	155	50
+WAL	Arbre	50.61037	3.81517	38	50
+WAL	Arc-Ainières	50.70151	3.55433	27	50
+WAL	Archennes	50.75261	4.66962	43	50
+WAL	Argenteau	50.70211	5.68448	106	50
+WAL	Arlon	49.68333	5.81667	421	50
+WAL	Arquennes	50.56765	4.27341	97	50
+WAL	Arsimont	50.42859	4.63872	125	50
+WAL	Arville	50.03203	5.31665	369	50
+WAL	Assenois	49.80244	5.46371	443	50
+WAL	Assesse	50.36934	5.02204	247	50
+WAL	Ath	50.62937	3.77801	32	50
+WAL	Athus	49.56475	5.83736	281	50
+WAL	Attert	49.75035	5.78634	298	50
+WAL	Attre	50.60732	3.83921	42	50
+WAL	Aubange	49.56652	5.80492	278	50
+WAL	Aubel	50.70189	5.85812	226	50
+WAL	Audregnies	50.38324	3.72128	60	50
+WAL	Aulnois	50.34009	3.90409	143	50
+WAL	Autelbas	49.64813	5.86799	320	50
+WAL	Autre-Église	50.66921	4.90381	126	50
+WAL	Auvelais	50.4504	4.63228	96	50
+WAL	Avennes	50.6287	5.11687	129	50
+WAL	Avernas-le-Bauduin	50.69438	5.07859	115	50
+WAL	Avin	50.62235	5.06925	133	50
+WAL	Awans	50.66774	5.46329	152	50
+WAL	Awirs	50.60014	5.40627	89	50
+WAL	Aye	50.22471	5.30064	240	50
+WAL	Ayeneux	50.60797	5.71589	244	50
+WAL	Aywaille	50.47411	5.67684	124	50
+WAL	Baelen	50.63131	5.97433	257	50
+WAL	Baileux	50.02877	4.37533	260	50
+WAL	Bailleul	50.66909	3.31927	18	50
+WAL	Baillonville	50.29042	5.33875	198	50
+WAL	Baisieux	50.3874	3.69553	33	50
+WAL	Baisy-Thy	50.59708	4.47598	122	50
+WAL	Balâtre	50.49967	4.64353	129	50
+WAL	Bande	50.16636	5.41442	323	50
+WAL	Barbençon	50.22316	4.28338	213	50
+WAL	Barchon	50.66894	5.7001	179	50
+WAL	Barry	50.58771	3.54272	52	50
+WAL	Barvaux	50.34832	5.49058	140	50
+WAL	Basècles	50.52549	3.64944	51	50
+WAL	Bas-Oha	50.52652	5.19216	112	50
+WAL	Basse Lasne	50.69503	4.49218	65	50
+WAL	Bassenge	50.75883	5.60989	75	50
+WAL	Bassilly	50.67634	3.93388	49	50
+WAL	Bastogne	50.00347	5.71844	502	50
+WAL	Bas-Warneton	50.75937	2.95996	18	50
+WAL	Battice	50.64734	5.82104	326	50
+WAL	Baudour	50.48296	3.8332	50	50
+WAL	Baugnies	50.56034	3.55202	46	50
+WAL	Beaufays	50.55884	5.63881	287	50
+WAL	Beaumont	50.23699	4.23926	222	50
+WAL	Beauraing	50.11042	4.95554	184	50
+WAL	Beausaint	50.16807	5.5486	379	50
+WAL	Beauvechain	50.78195	4.7718	86	50
+WAL	Beclers	50.62123	3.5042	40	50
+WAL	Beez	50.4686	4.91175	113	50
+WAL	Beho	50.22056	5.99806	508	50
+WAL	Belgrade	50.47138	4.82935	122	50
+WAL	Bellaire	50.64453	5.66585	176	50
+WAL	Bellecourt	50.48067	4.26793	145	50
+WAL	Bellefontaine	49.66429	5.49608	360	50
+WAL	Bellevaux-Ligneuville	50.38948	6.01093	325	50
+WAL	Beloeil	50.55047	3.73484	59	50
+WAL	Ben-Ahin	50.50415	5.18683	172	50
+WAL	Berloz	50.69829	5.21236	123	50
+WAL	Berneau	50.74235	5.73063	84	50
+WAL	Bernissart	50.4746	3.64961	20	50
+WAL	Bersillies-l'Abbaye	50.26186	4.14845	145	50
+WAL	Bertogne	50.08364	5.66689	429	50
+WAL	Bertrée	50.69533	5.09077	117	50
+WAL	Bertrix	49.85596	5.25539	438	50
+WAL	Berzée	50.28923	4.40097	154	50
+WAL	Beuzet	50.53364	4.7452	173	50
+WAL	Bévercé	50.44101	6.03535	355	50
+WAL	Beyne-Heusay	50.62251	5.66508	231	50
+WAL	Biercée	50.3242	4.25943	171	50
+WAL	Bierges	50.71143	4.58658	100	50
+WAL	Bierghes	50.69578	4.1192	57	50
+WAL	Bierset	50.65496	5.45102	168	50
+WAL	Biesme	50.34015	4.61048	206	50
+WAL	Biesmerée	50.29777	4.68039	227	50
+WAL	Biesme-sous-Thuin	50.32207	4.30896	151	50
+WAL	Bièvre	49.94085	5.01591	368	50
+WAL	Biez	50.72369	4.71356	100	50
+WAL	Bihain	50.23946	5.80849	558	50
+WAL	Bilstain	50.62208	5.92086	260	50
+WAL	Binche	50.41155	4.16469	92	50
+WAL	Bioul	50.33146	4.79618	215	50
+WAL	Blandain	50.62095	3.30521	34	50
+WAL	Blaregnies	50.35784	3.89156	135	50
+WAL	Blaton	50.50038	3.66008	40	50
+WAL	Blaugies	50.37218	3.80582	132	50
+WAL	Blégny	50.67255	5.72508	218	50
+WAL	Bléharies	50.51256	3.41251	24	50
+WAL	Bleid	49.56871	5.62682	242	50
+WAL	Bleret	50.68955	5.28786	128	50
+WAL	Blicquy	50.58814	3.68557	50	50
+WAL	Boignée	50.50082	4.60902	142	50
+WAL	Boirs	50.7528	5.57942	75	50
+WAL	Bois-de-Lessines	50.69662	3.89613	49	50
+WAL	Bois-de-Villers	50.39033	4.82407	257	50
+WAL	Bois-d'Haine	50.5018	4.21555	129	50
+WAL	Bois-et-Borsu	50.39804	5.33622	311	50
+WAL	Bolinne	50.60074	4.92893	144	50
+WAL	Bolland	50.66159	5.76038	204	50
+WAL	Bomal	50.37634	5.52382	133	50
+WAL	Bombaye	50.73015	5.74533	131	50
+WAL	Boncelles	50.57108	5.53625	241	50
+WAL	Boninne	50.49443	4.93235	203	50
+WAL	Bonlez	50.70211	4.68859	85	50
+WAL	Bonnert	49.71131	5.81865	377	50
+WAL	Bonneville	50.4728	5.03869	172	50
+WAL	Bon-Secours	50.49803	3.60815	60	50
+WAL	Bonsin	50.37345	5.38089	256	50
+WAL	Bossière	50.5185	4.69605	155	50
+WAL	Bossut-Gottechain	50.75823	4.69511	89	50
+WAL	Bouffioulx	50.39116	4.5155	112	50
+WAL	Bouge	50.47193	4.89218	153	50
+WAL	Bouillon	49.79324	5.06703	226	50
+WAL	Bourlers	50.02748	4.34123	253	50
+WAL	Boussoit	50.45947	4.08245	58	50
+WAL	Boussu	50.43417	3.7944	32	50
+WAL	Boussu-lez-Walcourt	50.22848	4.37754	243	50
+WAL	Bousval	50.61663	4.508	90	50
+WAL	Bouvignes-sur-Meuse	50.27382	4.89793	92	50
+WAL	Bouvignies	50.6463	3.76574	41	50
+WAL	Bovenistier	50.66781	5.28398	140	50
+WAL	Bovesse	50.51938	4.78086	176	50
+WAL	Bovigny	50.22417	5.91694	450	50
+WAL	Bra	50.32412	5.73203	389	50
+WAL	Bracquegnies	50.47094	4.1197	84	50
+WAL	Braibant	50.31319	5.06135	249	50
+WAL	Braine-l'Alleud	50.68363	4.36784	93	50
+WAL	Braine-le-Château	50.6799	4.27385	78	50
+WAL	Braine-le-Comte	50.60979	4.14658	96	50
+WAL	Braives	50.62848	5.14798	136	50
+WAL	Branchon	50.62899	4.97337	139	50
+WAL	Bras	49.97089	5.39485	449	50
+WAL	Brasmenil	50.54114	3.54532	48	50
+WAL	Bray	50.43242	4.10588	58	50
+WAL	Bressoux	50.63988	5.60629	89	50
+WAL	Brugelette	50.59577	3.85363	51	50
+WAL	Brunehault	50.50524	4.43209	147	50
+WAL	Bruyelle	50.558	3.42791	19	50
+WAL	Buissenal	50.66479	3.65608	52	50
+WAL	Buissonville	50.21667	5.2	191	50
+WAL	Bullange	50.40731	6.25749	582	50
+WAL	Burdinne	50.58454	5.07663	167	50
+WAL	Bure	50.08895	5.26008	280	50
+WAL	Bury	50.54278	3.5939	43	50
+WAL	Butgenbach	50.42689	6.20504	579	50
+WAL	Buvrinnes	50.38873	4.2054	159	50
+WAL	Buzet	50.54038	4.36998	143	50
+WAL	Callenelle	50.5304	3.52266	33	50
+WAL	Calonne	50.57766	3.43512	31	50
+WAL	Cambron-Saint-Vincent	50.58493	3.92186	64	50
+WAL	Carlsbourg	49.89499	5.081	405	50
+WAL	Carnières	50.44428	4.25509	110	50
+WAL	Casteau	50.51233	4.01121	84	50
+WAL	Celles	50.23046	5.00659	217	50
+WAL	Celles	50.65441	5.24666	140	50
+WAL	Celles	50.71229	3.45733	19	50
+WAL	Cerexhe-Heuseux	50.65409	5.72602	225	50
+WAL	Cerfontaine	50.17047	4.41028	218	50
+WAL	Céroux-Mousty	50.66089	4.5207	133	50
+WAL	Chaineux	50.63183	5.83478	257	50
+WAL	Champion	50.4953	4.90385	196	50
+WAL	Champlon	50.10819	5.50192	441	50
+WAL	Chanly	50.0797	5.15294	189	50
+WAL	Chapelle-à-Wattines	50.61255	3.65476	46	50
+WAL	Chapelle-lez-Herlaimont	50.4713	4.28227	165	50
+WAL	Chapon-Seraing	50.60884	5.26915	184	50
+WAL	Charleroi	50.41136	4.44448	136	50
+WAL	Charneux	50.66938	5.80493	233	50
+WAL	Chasse Royale	50.42842	3.95001	42	50
+WAL	Chastre	50.60067	4.634	135	50
+WAL	Chastrès	50.26696	4.45478	193	50
+WAL	Chastre-Villeroux-Blanmont	50.60857	4.64198	133	50
+WAL	Châtelet	50.40338	4.52826	118	50
+WAL	Châtelineau	50.41499	4.52016	111	50
+WAL	Châtillon	49.62364	5.69837	309	50
+WAL	Chaudfontaine	50.5828	5.6341	218	50
+WAL	Chaumont-Gistoux	50.67753	4.7212	121	50
+WAL	Chaussée-Notre-Dame-Louvignies	50.59185	3.99799	86	50
+WAL	Chênée	50.612	5.6141	69	50
+WAL	Cherain	50.17996	5.86521	415	50
+WAL	Cheratte	50.68237	5.66955	58	50
+WAL	Chercq	50.58843	3.42118	30	50
+WAL	Chevetogne	50.224	5.12064	240	50
+WAL	Chevron	50.38072	5.73143	337	50
+WAL	Chièvres	50.58787	3.80711	52	50
+WAL	Chimay	50.04856	4.31712	240	50
+WAL	Chiny	49.73833	5.34104	375	50
+WAL	Ciney	50.29449	5.10015	261	50
+WAL	Ciplet	50.61756	5.09027	145	50
+WAL	Ciply	50.41875	3.94418	50	50
+WAL	Clabecq	50.69245	4.2215	47	50
+WAL	Clavier	50.40069	5.35154	295	50
+WAL	Clermont	50.26079	4.31717	177	50
+WAL	Clermont	50.65926	5.88455	301	50
+WAL	Clermont-sous-Huy	50.56961	5.39231	73	50
+WAL	Cognelée	50.51452	4.90746	182	50
+WAL	Colfontaine	50.4141	3.85569	79	50
+WAL	Comblain-au-Pont	50.47488	5.57711	103	50
+WAL	Comblain-Fairon	50.4462	5.5449	121	50
+WAL	Comines	50.7754	3.00119	20	50
+WAL	Corbais	50.64609	4.65589	129	50
+WAL	Corbion	49.79767	5.00745	364	50
+WAL	Cornesse	50.57272	5.79615	204	50
+WAL	Corroy-le-Château	50.53896	4.66284	163	50
+WAL	Corroy-le-Grand	50.66306	4.674	121	50
+WAL	Corswarem	50.71097	5.2137	124	50
+WAL	Cortil-Noirmont	50.58111	4.64344	145	50
+WAL	Cortil-Wodon	50.56804	4.95712	150	50
+WAL	Couillet	50.39139	4.45908	111	50
+WAL	Courcelles	50.46379	4.3747	160	50
+WAL	Courrière	50.38023	4.98608	277	50
+WAL	Cour-sur-Heure	50.30124	4.38921	150	50
+WAL	Court-Saint-Étienne	50.63378	4.56851	85	50
+WAL	Couthuin	50.5316	5.12323	170	50
+WAL	Coutisse	50.46297	5.1168	222	50
+WAL	Couture-Saint-Germain	50.67484	4.47255	78	50
+WAL	Couvin	50.05284	4.49495	185	50
+WAL	Cras-Avernas	50.69678	5.12392	131	50
+WAL	Crehen	50.65978	5.06329	130	50
+WAL	Crisnée	50.71703	5.39802	113	50
+WAL	Crombach	50.26	6.0675	467	50
+WAL	Crupet	50.34957	4.96127	190	50
+WAL	Cuesmes	50.43624	3.92323	32	50
+WAL	Cul-des-Sarts	49.96248	4.45427	364	50
+WAL	Dalhem	50.71315	5.72774	98	50
+WAL	Dampicourt	49.55426	5.4983	205	50
+WAL	Dampremy	50.41705	4.43092	118	50
+WAL	Daussois	50.2192	4.45684	246	50
+WAL	Dave	50.4147	4.88789	86	50
+WAL	Daverdisse	50.02161	5.11811	299	50
+WAL	Denée	50.31889	4.75202	262	50
+WAL	Dergneau	50.71399	3.58004	44	50
+WAL	Deux-Acren	50.73026	3.85315	21	50
+WAL	Dhuy	50.55936	4.85922	163	50
+WAL	Dinant	50.25807	4.91166	96	50
+WAL	Dion-le-Mont	50.69653	4.66657	86	50
+WAL	Dion-le-Val	50.71646	4.66155	50	50
+WAL	Dison	50.61004	5.8534	197	50
+WAL	Dochamps	50.23437	5.62287	481	50
+WAL	Doische	50.13356	4.73545	167	50
+WAL	Dolembreux	50.53763	5.62556	229	50
+WAL	Donceel	50.64827	5.32	146	50
+WAL	Dongelberg	50.70342	4.81995	116	50
+WAL	Dorinne	50.31533	4.97603	238	50
+WAL	Dottignies	50.73333	3.3	21	50
+WAL	Dour	50.39583	3.77792	93	50
+WAL	Driesch	50.67574	6.11075	287	50
+WAL	Durbuy	50.35291	5.45631	152	50
+WAL	Durnal	50.33653	4.98616	275	50
+WAL	Eben-Emael	50.794	5.66689	76	50
+WAL	Ebly	49.8529	5.54068	479	50
+WAL	Écaussinnes-d'Enghien	50.56822	4.1658	104	50
+WAL	Écaussinnes-Lalaing	50.56865	4.18398	103	50
+WAL	Éghezée	50.59076	4.91175	147	50
+WAL	Ellezelles	50.73512	3.67985	56	50
+WAL	Ellignies-Sainte-Anne	50.56176	3.6727	57	50
+WAL	Élouges	50.40245	3.75175	46	50
+WAL	Elsenborn	50.45798	6.21918	631	50
+WAL	Embourg	50.59043	5.6068	148	50
+WAL	Émines	50.51304	4.84411	168	50
+WAL	Emptinne	50.32519	5.12135	238	50
+WAL	Enghien	50.69375	4.03788	55	50
+WAL	Engis	50.58156	5.39916	80	50
+WAL	Énines	50.69428	4.92685	120	50
+WAL	Ensival	50.58053	5.84927	194	50
+WAL	Épinois	50.406	4.20666	139	50
+WAL	Erbisoeul	50.51523	3.89568	71	50
+WAL	Érezée	50.29292	5.55815	332	50
+WAL	Ermeton-sur-Biert	50.29756	4.7194	212	50
+WAL	Ernage	50.59484	4.67588	151	50
+WAL	Erpent	50.45116	4.90557	145	50
+WAL	Erquelinnes	50.30688	4.11129	137	50
+WAL	Escanaffles	50.75743	3.45294	19	50
+WAL	Esneux	50.53596	5.56775	115	50
+WAL	Esplechin	50.57358	3.30429	47	50
+WAL	Estaimbourg	50.67998	3.30785	17	50
+WAL	Estaimpuis	50.70485	3.26785	27	50
+WAL	Estinnes-au-Mont	50.39692	4.09653	86	50
+WAL	Estinnes-au-Val	50.41016	4.10477	60	50
+WAL	Étalle	49.67385	5.60019	334	50
+WAL	Éthe	49.58	5.58208	227	50
+WAL	Eugies	50.38893	3.88513	132	50
+WAL	Eupen	50.6279	6.03647	298	50
+WAL	Évegnée-Tignée	50.64647	5.70783	233	50
+WAL	Evelette	50.41166	5.17436	254	50
+WAL	Evregnies	50.7126	3.28654	23	50
+WAL	Evrehailles	50.32037	4.91261	243	50
+WAL	Eynatten	50.69243	6.08351	273	50
+WAL	Faimes	50.66252	5.26005	140	50
+WAL	Falaën	50.27884	4.79382	198	50
+WAL	Falisolle	50.41814	4.62104	117	50
+WAL	Fallais	50.61003	5.17123	116	50
+WAL	Falmignoul	50.2058	4.89295	195	50
+WAL	Familleureux	50.52389	4.21033	117	50
+WAL	Farciennes	50.43006	4.54152	128	50
+WAL	Faulx-Les Tombes	50.42708	5.02075	163	50
+WAL	Fauvillers	49.85116	5.66405	463	50
+WAL	Faymonville	50.40316	6.14058	533	50
+WAL	Fays-les-Veneurs	49.86615	5.16123	384	50
+WAL	Fayt-le-Franc	50.35652	3.77501	119	50
+WAL	Fayt-lez-Manage	50.48698	4.22959	161	50
+WAL	Feluy	50.56258	4.25098	106	50
+WAL	Feneur	50.70445	5.71482	129	50
+WAL	Ferrières	50.40157	5.61092	225	50
+WAL	Fexhe-le-Haut-Clocher	50.6654	5.39978	156	50
+WAL	Fexhe-Slins	50.72026	5.56973	149	50
+WAL	Fize-Fontaine	50.5852	5.28403	174	50
+WAL	Flamierge	50.03324	5.60294	476	50
+WAL	Flavion	50.2494	4.71683	242	50
+WAL	Flawinne	50.45794	4.81047	114	50
+WAL	Flémalle-Grande	50.60906	5.47668	89	50
+WAL	Flémalle-Haute	50.59994	5.44471	175	50
+WAL	Flénu	50.43673	3.88573	67	50
+WAL	Fléron	50.61516	5.68062	258	50
+WAL	Fleurus	50.48351	4.55006	158	50
+WAL	Flobecq	50.73733	3.73876	43	50
+WAL	Floreffe	50.43452	4.7596	92	50
+WAL	Florennes	50.25127	4.60636	262	50
+WAL	Florenville	49.69983	5.3074	342	50
+WAL	Floriffoux	50.45242	4.77004	96	50
+WAL	Folx-les-Caves	50.66118	4.93783	119	50
+WAL	Fontaine-l'Évêque	50.40907	4.32427	145	50
+WAL	Fontaine-Valmont	50.31994	4.21467	124	50
+WAL	Fontenoy	50.56756	3.47355	43	50
+WAL	Fooz	50.67536	5.43617	155	50
+WAL	Forchies-la-Marche	50.4369	4.32115	166	50
+WAL	Forêt	50.58387	5.7	254	50
+WAL	Forges	50.02569	4.32765	260	50
+WAL	Forrières	50.13132	5.28268	210	50
+WAL	Forville	50.57424	4.99861	171	50
+WAL	Fosse	50.34001	5.84083	438	50
+WAL	Fosses-la-Ville	50.39517	4.69623	176	50
+WAL	Fraipont	50.56519	5.72225	126	50
+WAL	Fraire	50.26127	4.5076	238	50
+WAL	Fraiture	50.47914	5.41875	282	50
+WAL	Frameries	50.40578	3.89603	113	50
+WAL	Francorchamps	50.45353	5.95276	482	50
+WAL	Franière	50.43657	4.73219	100	50
+WAL	Frasnes	50.08022	4.51384	170	50
+WAL	Frasnes-lez-Anvaing	50.69211	3.63562	53	50
+WAL	Frasnes-lez-Buissenal	50.66783	3.62047	38	50
+WAL	Frasnes-lez-Gosselies	50.53838	4.45232	148	50
+WAL	Freux	49.97111	5.44944	460	50
+WAL	Froidchapelle	50.15106	4.32742	241	50
+WAL	Fronville	50.29423	5.42214	171	50
+WAL	Froyennes	50.62185	3.35456	21	50
+WAL	Fumal	50.58672	5.18314	104	50
+WAL	Gaurain-Ramecroix	50.58923	3.48798	46	50
+WAL	Gedinne	49.98037	4.93674	310	50
+WAL	Geer	50.6699	5.17364	129	50
+WAL	Geest-Gérompont-Petit-Rosière	50.64043	4.8587	130	50
+WAL	Gelbressée	50.50611	4.95552	140	50
+WAL	Gembloux	50.56149	4.69889	158	50
+WAL	Gemmenich	50.74608	5.99507	208	50
+WAL	Genappe	50.61173	4.45152	112	50
+WAL	Genly	50.38953	3.91242	94	50
+WAL	Gentinnes	50.57839	4.60705	142	50
+WAL	Genval	50.72162	4.49375	101	50
+WAL	Gérouville	49.61904	5.42654	284	50
+WAL	Gerpinnes	50.33789	4.52731	185	50
+WAL	Gesves	50.40146	5.07457	246	50
+WAL	Ghislenghien	50.65653	3.87826	41	50
+WAL	Ghlin	50.47313	3.90289	32	50
+WAL	Ghoy	50.72834	3.80983	33	50
+WAL	Gilly	50.42449	4.4789	152	50
+WAL	Gimnée	50.13131	4.71193	195	50
+WAL	Givry	50.37826	4.02932	59	50
+WAL	Glabais	50.63074	4.45333	139	50
+WAL	Glain	50.64772	5.5438	148	50
+WAL	Gleixhe	50.61391	5.39008	122	50
+WAL	Glimes	50.68003	4.83708	122	50
+WAL	Glons	50.75307	5.54578	81	50
+WAL	Godarville	50.49496	4.28698	135	50
+WAL	Godinne	50.34809	4.87364	103	50
+WAL	Goé	50.60657	5.95614	226	50
+WAL	Gomzé-Andoumont	50.54434	5.68938	189	50
+WAL	Gonrieux	50.03664	4.42637	252	50
+WAL	Gosselies	50.46936	4.43324	172	50
+WAL	Gottignies	50.4953	4.05996	98	50
+WAL	Gougnies	50.35543	4.57615	217	50
+WAL	Gourdinne	50.29146	4.45431	194	50
+WAL	Goutroux	50.41333	4.36226	162	50
+WAL	Gouvy	50.186	5.93917	443	50
+WAL	Gouy-lez-Piéton	50.4907	4.3289	145	50
+WAL	Gozée	50.33461	4.35273	189	50
+WAL	Grâce-Berleur	50.64032	5.50329	166	50
+WAL	Graide	49.95038	5.06723	359	50
+WAL	Grand-Hallet	50.6953	5.03587	95	50
+WAL	Grand-Halleux	50.32583	5.90722	316	50
+WAL	Grandhan	50.32944	5.40996	187	50
+WAL	Grand-Leez	50.58389	4.7751	159	50
+WAL	Grand-Manil	50.55696	4.67528	153	50
+WAL	Grandmenil	50.29165	5.65909	435	50
+WAL	Grandmetz	50.62552	3.63141	51	50
+WAL	Grand-Rechain	50.60765	5.81108	273	50
+WAL	Grand-Reng	50.33083	4.0755	130	50
+WAL	Grandrieu	50.20014	4.1742	190	50
+WAL	Grand-Rosière-Hottomont	50.63193	4.86557	137	50
+WAL	Grapfontaine	49.82155	5.40752	419	50
+WAL	Graty	50.63172	3.99624	75	50
+WAL	Grez-Doiceau	50.73901	4.69829	46	50
+WAL	Grivegnée	50.62148	5.61101	99	50
+WAL	Guignies	50.54785	3.37024	40	50
+WAL	Habay-la-Neuve	49.7282	5.6474	402	50
+WAL	Habay-la-Vieille	49.72329	5.61999	370	50
+WAL	Habergy	49.61466	5.76015	319	50
+WAL	Haccourt	50.73091	5.66963	60	50
+WAL	Hachy	49.70159	5.68034	366	50
+WAL	Haillot	50.44247	5.15413	245	50
+WAL	Haine-Saint-Paul	50.46185	4.1767	96	50
+WAL	Haine-Saint-Pierre	50.45747	4.20659	104	50
+WAL	Hainin	50.42952	3.76659	36	50
+WAL	Halanzy	49.56052	5.74433	269	50
+WAL	Haltinne	50.45119	5.07731	182	50
+WAL	Hamipré	49.83734	5.45686	446	50
+WAL	Hamme-Mille	50.78022	4.71734	55	50
+WAL	Hamoir	50.42675	5.53304	116	50
+WAL	Hamois	50.3402	5.15619	250	50
+WAL	Hampteau	50.25828	5.47197	180	50
+WAL	Ham-sur-Heure	50.323	4.38844	144	50
+WAL	Ham-sur-Sambre	50.44368	4.67425	109	50
+WAL	Haneffe	50.63835	5.32013	146	50
+WAL	Hannut	50.67142	5.07898	140	50
+WAL	Hanret	50.58155	4.9484	154	50
+WAL	Han-sur-Lesse	50.12674	5.18623	152	50
+WAL	Hantes-Wihéries	50.30647	4.17699	139	50
+WAL	Hanzinelle	50.29615	4.55633	253	50
+WAL	Hanzinne	50.31097	4.54435	219	50
+WAL	Harchies	50.47963	3.69347	29	50
+WAL	Hargimont	50.18771	5.30827	217	50
+WAL	Harmignies	50.40611	4.01731	45	50
+WAL	Harre	50.35165	5.65744	424	50
+WAL	Harsin	50.17339	5.34771	250	50
+WAL	Harzé	50.44133	5.66706	227	50
+WAL	Hastière-Lavaux	50.21849	4.82446	129	50
+WAL	Hastière-par-delà	50.21495	4.82948	101	50
+WAL	Hatrival	50.006	5.3482	422	50
+WAL	Haulchin	50.38406	4.08297	110	50
+WAL	Hauset	50.7107	6.06969	257	50
+WAL	Haut-Fays	50.0016	5.01755	434	50
+WAL	Haut-Ittre	50.65305	4.2978	116	50
+WAL	Hautrage	50.48192	3.76522	36	50
+WAL	Havay	50.36118	3.98366	87	50
+WAL	Havelange	50.38931	5.23816	303	50
+WAL	Havinnes	50.61658	3.46341	30	50
+WAL	Havré	50.46401	4.04675	50	50
+WAL	Heer	50.16368	4.83205	128	50
+WAL	Heinsch	49.69986	5.7467	406	50
+WAL	Hellebecq	50.66426	3.88839	36	50
+WAL	Hemptinne	50.60291	4.98848	138	50
+WAL	Hennuyères	50.6386	4.16935	86	50
+WAL	Henri-Chapelle	50.67688	5.93009	338	50
+WAL	Hensies	50.43263	3.68411	19	50
+WAL	Heppenbach	50.3626	6.21826	508	50
+WAL	Heppignies	50.4846	4.4953	166	50
+WAL	Herbeumont	49.78086	5.2358	310	50
+WAL	Herchies	50.52794	3.85689	69	50
+WAL	Hergenrath	50.70912	6.03089	226	50
+WAL	Hérinnes	50.70063	3.36323	17	50
+WAL	Hermalle-sous-Argenteau	50.71231	5.67753	56	50
+WAL	Hermalle-sous-Huy	50.5592	5.3639	79	50
+WAL	Hermée	50.70883	5.61831	129	50
+WAL	Hermeton-sur-Meuse	50.19751	4.8169	109	50
+WAL	Héron	50.54731	5.09774	165	50
+WAL	Herseaux	50.71667	3.21667	23	50
+WAL	Herstal	50.66415	5.62346	81	50
+WAL	Hertain	50.61346	3.28883	31	50
+WAL	Herve	50.64083	5.79353	300	50
+WAL	Heure	50.294	5.29704	193	50
+WAL	Heure-le-Romain	50.73162	5.6329	96	50
+WAL	Heusy	50.57457	5.86618	273	50
+WAL	Hévillers	50.62328	4.61735	117	50
+WAL	Heyd	50.34623	5.5625	277	50
+WAL	Hingeon	50.52576	5.00719	205	50
+WAL	Hodeige	50.69635	5.34159	120	50
+WAL	Hodister	50.20076	5.49478	395	50
+WAL	Hogne	50.24915	5.28043	220	50
+WAL	Hognoul	50.68178	5.45385	156	50
+WAL	Hollain	50.54165	3.42605	19	50
+WAL	Hollange	49.90649	5.68834	434	50
+WAL	Hollogne-aux-Pierres	50.64059	5.47179	157	50
+WAL	Hollogne-sur-Geer	50.67654	5.20428	127	50
+WAL	Hombourg	50.72257	5.92051	241	50
+WAL	Hompré	49.94432	5.68693	459	50
+WAL	Hondelange	49.63333	5.83333	314	50
+WAL	Horion-Hozémont	50.62578	5.38819	155	50
+WAL	Hornu	50.4328	3.82736	30	50
+WAL	Horrues	50.60845	4.04278	69	50
+WAL	Hotton	50.26742	5.44609	177	50
+WAL	Houdemont	49.71872	5.58376	353	50
+WAL	Houdeng-Aimeries	50.48132	4.14545	96	50
+WAL	Houdeng-Goegnies	50.49032	4.17513	132	50
+WAL	Houffalize	50.13235	5.78962	329	50
+WAL	Hour	50.16131	5.03878	171	50
+WAL	Housse	50.67846	5.69109	164	50
+WAL	Houtaing	50.63792	3.68231	61	50
+WAL	Houtain-le-Val	50.58242	4.41264	134	50
+WAL	Houtain-l'Évêque	50.71667	5.08333	103	50
+WAL	Houtain-Saint-Siméon	50.74026	5.6123	143	50
+WAL	Houthem	50.7869	2.96382	22	50
+WAL	Houyet	50.18619	5.00762	130	50
+WAL	Hoves	50.67117	4.03651	57	50
+WAL	Huccorgne	50.56705	5.16048	128	50
+WAL	Huissignies	50.56579	3.75561	48	50
+WAL	Huppaye	50.69363	4.89415	109	50
+WAL	Huy	50.51894	5.23284	75	50
+WAL	Hyon	50.43805	3.96031	43	50
+WAL	Incourt	50.69151	4.79816	125	50
+WAL	Irchonwelz	50.62066	3.7508	37	50
+WAL	Isières	50.66317	3.81929	27	50
+WAL	Isnes	50.50611	4.72833	175	50
+WAL	Ittre	50.64396	4.26476	111	50
+WAL	Ivoz-Ramet	50.58798	5.4657	79	50
+WAL	Izel	49.69371	5.37382	348	50
+WAL	Izier	50.38401	5.57898	289	50
+WAL	Jalhay	50.55876	5.96764	386	50
+WAL	Jambes	50.45636	4.87166	84	50
+WAL	Jamioulx	50.35296	4.41281	133	50
+WAL	Jamoigne	49.69328	5.40906	314	50
+WAL	Jandrain	50.67438	4.98024	102	50
+WAL	Jandrain-Jandrenouille	50.67177	4.97801	107	50
+WAL	Jauche	50.68136	4.95563	94	50
+WAL	Jehay	50.5731	5.32382	191	50
+WAL	Jehonville	49.9066	5.20035	414	50
+WAL	Jemappes	50.44914	3.89096	31	50
+WAL	Jemelle	50.16315	5.26709	195	50
+WAL	Jemeppe-sur-Meuse	50.61701	5.49849	65	50
+WAL	Jemeppe-sur-Sambre	50.46543	4.6655	95	50
+WAL	Jeneffe	50.65142	5.35446	162	50
+WAL	Jodoigne	50.72357	4.86914	74	50
+WAL	Jodoigne-Souveraine	50.7094	4.83759	103	50
+WAL	Jollain-Merlin	50.53905	3.40402	26	50
+WAL	Joncret	50.35373	4.51349	206	50
+WAL	Jumet	50.4422	4.43745	172	50
+WAL	Jupille-sur-Meuse	50.64587	5.63307	73	50
+WAL	Juprelle	50.7076	5.53127	147	50
+WAL	Jurbise	50.531	3.90942	70	50
+WAL	Juseret	49.88025	5.54932	448	50
+WAL	Kain	50.63869	3.39688	22	50
+WAL	Kemexhe	50.69785	5.40901	140	50
+WAL	Kettenis	50.64761	6.04686	299	50
+WAL	Keumiée	50.46177	4.58233	176	50
+WAL	La Bouverie	50.40524	3.8744	100	50
+WAL	La Bruyère	50.39478	4.61444	194	50
+WAL	Labuissière	50.31944	4.1809	132	50
+WAL	La Calamine	50.71809	6.01107	220	50
+WAL	Lacuisine	49.71589	5.31771	320	50
+WAL	La Glanerie	50.52991	3.30094	38	50
+WAL	La Gleize	50.41074	5.84699	302	50
+WAL	La Hestre	50.47556	4.24739	167	50
+WAL	La Hulpe	50.73091	4.48577	86	50
+WAL	La Louvière	50.48657	4.18785	133	50
+WAL	Lambermont	50.59038	5.83245	227	50
+WAL	Lambusart	50.45433	4.55263	180	50
+WAL	Lamine	50.68898	5.33451	124	50
+WAL	Lamorteau	49.52612	5.48177	195	50
+WAL	Lanaye	50.77913	5.69624	50	50
+WAL	Landelies	50.38001	4.35076	127	50
+WAL	Landenne	50.51534	5.06684	171	50
+WAL	Laneffe	50.27936	4.49344	180	50
+WAL	Lantin	50.68874	5.52458	161	50
+WAL	Lantremange	50.71173	5.29584	109	50
+WAL	Laplaigne	50.52194	3.4473	17	50
+WAL	La Reid	50.48914	5.79098	287	50
+WAL	La Roche-en-Ardenne	50.18361	5.57547	225	50
+WAL	Lasne-Chapelle-Saint-Lambert	50.69298	4.50105	104	50
+WAL	Lathuy	50.72461	4.82617	101	50
+WAL	Latinne	50.62518	5.1646	132	50
+WAL	Latour	49.55736	5.57065	217	50
+WAL	Lavacherie	50.05285	5.51091	382	50
+WAL	Leernes	50.39812	4.33239	142	50
+WAL	Leers-Nord	50.68748	3.27023	20	50
+WAL	Léglise	49.79985	5.53652	395	50
+WAL	Leignon	50.26861	5.11045	260	50
+WAL	Lens	50.55696	3.89946	64	50
+WAL	Lens-Saint-Remy	50.65077	5.1319	137	50
+WAL	Lens-sur-Geer	50.72162	5.35086	98	50
+WAL	Le Roeulx	50.50365	4.11163	132	50
+WAL	Le Roux	50.38877	4.62404	189	50
+WAL	Les Avins	50.41555	5.30015	231	50
+WAL	Les Bulles	49.70457	5.4238	319	50
+WAL	Lessines	50.71104	3.83579	23	50
+WAL	Lesve	50.37705	4.77785	259	50
+WAL	Les Waleffes	50.63749	5.22357	156	50
+WAL	Lettelingen	50.68333	4.08333	63	50
+WAL	Leuze	50.54635	4.9063	181	50
+WAL	Leuze	50.6	3.6	57	50
+WAL	Leval-Trahegnies	50.4213	4.22556	131	50
+WAL	Liberchies	50.51421	4.42123	151	50
+WAL	Libin	49.98107	5.25612	401	50
+WAL	Libramont	49.91741	5.37318	501	50
+WAL	Liège	50.63373	5.56749	66	50
+WAL	Lierneux	50.28477	5.79236	418	50
+WAL	Liernu	50.58318	4.831	158	50
+WAL	Liers	50.69396	5.56458	165	50
+WAL	Ligne	50.62181	3.70591	37	50
+WAL	Ligney	50.66181	5.18237	128	50
+WAL	Ligny	50.51244	4.57735	136	50
+WAL	Lillois-Witterzée	50.64549	4.36681	129	50
+WAL	Limal	50.69477	4.57538	60	50
+WAL	Limbourg	50.61222	5.9412	262	50
+WAL	Limelette	50.68428	4.57186	56	50
+WAL	Limerlé	50.15804	5.92395	466	50
+WAL	Limont	50.66189	5.3124	141	50
+WAL	Lincent	50.71222	5.03654	97	50
+WAL	Linsmeau	50.73562	4.99977	66	50
+WAL	Lisogne	50.28095	4.9708	257	50
+WAL	Lixhe	50.7544	5.68028	55	50
+WAL	Lobbes	50.35258	4.26716	170	50
+WAL	Lodelinsart	50.43138	4.44886	126	50
+WAL	Lommersweiler	50.24	6.165	472	50
+WAL	Loncin	50.66655	5.50509	170	50
+WAL	Longchamps	50.0534	5.69032	455	50
+WAL	Longchamps	50.57713	4.89544	160	50
+WAL	Longlier	49.85384	5.45009	433	50
+WAL	Longueville	50.70238	4.74009	140	50
+WAL	Longvilly	50.02633	5.83829	438	50
+WAL	Lontzen	50.68126	6.00712	223	50
+WAL	Lonzée	50.55371	4.7272	151	50
+WAL	Loupoigne	50.59806	4.44448	111	50
+WAL	Louvain-la-Neuve	50.66829	4.61443	117	50
+WAL	Louveigné	50.53015	5.71547	253	50
+WAL	Loverval	50.37519	4.47332	145	50
+WAL	Loyers	50.46324	4.95136	171	50
+WAL	Luingne	50.73952	3.23603	45	50
+WAL	Lustin	50.37876	4.89871	254	50
+WAL	Luttre	50.51006	4.39709	141	50
+WAL	Mabompré	50.09897	5.73984	442	50
+WAL	Macon	50.05072	4.20918	211	50
+WAL	Maffle	50.61789	3.80324	36	50
+WAL	Magnée	50.5998	5.68834	228	50
+WAL	Maillen	50.37782	4.97097	276	50
+WAL	Mainvault	50.64908	3.71751	54	50
+WAL	Maisières	50.4882	3.96564	38	50
+WAL	Maissin	49.96479	5.17821	371	50
+WAL	Malèves-Sainte-Marie-Wastines	50.65736	4.77998	139	50
+WAL	Malmédy	50.42686	6.02794	344	50
+WAL	Malonne	50.43969	4.79562	91	50
+WAL	Manage	50.50312	4.23589	134	50
+WAL	Manderfeld	50.3312	6.33919	544	50
+WAL	Manhay	50.29219	5.67562	440	50
+WAL	Maransart	50.65969	4.46689	108	50
+WAL	Marbais	50.54652	4.53499	146	50
+WAL	Marbaix	50.32624	4.37092	175	50
+WAL	Marche-en-Famenne	50.22678	5.34416	214	50
+WAL	Marche-les-Dames	50.48585	4.95967	103	50
+WAL	Marche-lez-Écaussinnes	50.54601	4.1818	105	50
+WAL	Marchienne-au-Pont	50.40573	4.3953	109	50
+WAL	Marchin	50.46707	5.2428	264	50
+WAL	Marchovelette	50.52303	4.94059	183	50
+WAL	Marcinelle	50.39216	4.44388	121	50
+WAL	Marenne	50.24129	5.41498	278	50
+WAL	Mariembourg	50.09489	4.52161	159	50
+WAL	Marilles	50.70717	4.95274	88	50
+WAL	Mark	50.6914	4.01559	38	50
+WAL	Marneffe	50.58051	5.14486	166	50
+WAL	Marquain	50.60679	3.32087	39	50
+WAL	Martelange	49.83195	5.73655	364	50
+WAL	Masnuy-Saint-Jean	50.53209	3.94032	77	50
+WAL	Maubray	50.55085	3.50395	37	50
+WAL	Maulde	50.61676	3.5488	62	50
+WAL	Maurage	50.45652	4.09704	48	50
+WAL	Mazée	50.10086	4.69653	162	50
+WAL	Mazy	50.51097	4.67374	111	50
+WAL	Meeffe	50.60681	5.01765	137	50
+WAL	Mehaigne	50.59479	4.87587	144	50
+WAL	Meix-devant-Virton	49.60581	5.48045	249	50
+WAL	Meix-le-Tige	49.6162	5.71806	366	50
+WAL	Melen	50.6462	5.73589	222	50
+WAL	Mélin	50.74004	4.82883	100	50
+WAL	Mellery	50.58187	4.56903	136	50
+WAL	Melles	50.64669	3.48159	65	50
+WAL	Mellet	50.50573	4.47856	138	50
+WAL	Mellier	49.76602	5.51752	376	50
+WAL	Membach	50.61908	5.99506	244	50
+WAL	Merbes-le-Château	50.32449	4.16489	131	50
+WAL	Merbes-Sainte-Marie	50.3528	4.17781	171	50
+WAL	Merdorp	50.64881	4.99964	143	50
+WAL	Meslin-l'Évêque	50.64859	3.84736	44	50
+WAL	Mesnil-Saint-Blaise	50.16756	4.88494	282	50
+WAL	Messancy	49.59201	5.81879	277	50
+WAL	Mesvin	50.4258	3.95928	41	50
+WAL	Mettet	50.32119	4.66232	241	50
+WAL	Meux	50.55222	4.80103	168	50
+WAL	Mévergnies	50.60492	3.84848	44	50
+WAL	Meyerode	50.32818	6.18776	502	50
+WAL	Micheroux	50.62475	5.71847	249	50
+WAL	Miécret	50.36663	5.25155	269	50
+WAL	Mignault	50.53016	4.15758	115	50
+WAL	Milmort	50.69037	5.59323	152	50
+WAL	Modave	50.44614	5.29532	229	50
+WAL	Moha	50.54802	5.18641	89	50
+WAL	Moignelée	50.44581	4.5837	141	50
+WAL	Molenbaix	50.69379	3.43052	22	50
+WAL	Momalle	50.68585	5.37592	137	50
+WAL	Momignies	50.0271	4.16519	262	50
+WAL	Monceau-en-Ardenne	49.90532	4.98767	375	50
+WAL	Monceau-sur-Sambre	50.41694	4.37668	138	50
+WAL	Mons	50.45413	3.95229	56	50
+WAL	Mons-lez-Liège	50.62306	5.45626	184	50
+WAL	Mont	50.15348	5.76902	444	50
+WAL	Montegnée	50.64576	5.51411	184	50
+WAL	Mont-Gauthier	50.20968	5.12128	307	50
+WAL	Montignies-lez-Lens	50.56421	3.94268	77	50
+WAL	Montignies-sur-Sambre	50.41081	4.49109	125	50
+WAL	Montigny-le-Tilleul	50.38056	4.37582	156	50
+WAL	Montleban	50.18955	5.83544	458	50
+WAL	Montroeul-sur-Haine	50.43821	3.70591	21	50
+WAL	Mont-Saint-André	50.65632	4.86609	126	50
+WAL	Mont-Sainte-Aldegonde	50.43006	4.23263	158	50
+WAL	Mont-Sainte-Geneviève	50.37457	4.23658	201	50
+WAL	Mont-Saint-Guibert	50.63427	4.61061	85	50
+WAL	Mont-sur-Marchienne	50.38997	4.40732	154	50
+WAL	Montzen	50.70793	5.96223	214	50
+WAL	Moresnet	50.72146	5.98987	174	50
+WAL	Morhet	49.96241	5.58448	479	50
+WAL	Morialmé	50.27557	4.56576	241	50
+WAL	Morlanwelz-Mariemont	50.45502	4.24519	106	50
+WAL	Mornimont	50.45903	4.70447	93	50
+WAL	Mortier	50.68428	5.74327	199	50
+WAL	Mortroux	50.7116	5.75289	114	50
+WAL	Morville	50.23425	4.74129	263	50
+WAL	Moulbaix	50.60084	3.71621	44	50
+WAL	Mourcourt	50.65322	3.44468	39	50
+WAL	Mouscron	50.74497	3.20639	53	50
+WAL	Moustier	50.65599	3.61966	42	50
+WAL	Moustier-sur-Sambre	50.46668	4.69614	93	50
+WAL	Moxhe	50.63079	5.08341	137	50
+WAL	Mozet	50.44461	4.98539	160	50
+WAL	Muno	49.71637	5.17205	225	50
+WAL	Musson	49.55835	5.70525	242	50
+WAL	Mussy-la-Ville	49.57009	5.66191	247	50
+WAL	Naast	50.55413	4.10082	97	50
+WAL	Nadrin	50.16387	5.67761	422	50
+WAL	Nalinnes	50.32434	4.44572	202	50
+WAL	Namêche	50.47239	4.99756	115	50
+WAL	Namur	50.4669	4.86746	88	50
+WAL	Nandrin	50.50675	5.41905	218	50
+WAL	Naninne	50.41888	4.92634	188	50
+WAL	Nassogne	50.12849	5.34274	385	50
+WAL	Natoye	50.34294	5.058	249	50
+WAL	Néchin	50.66702	3.26649	28	50
+WAL	Neerheylissem	50.75839	4.9883	49	50
+WAL	Nessonvaux	50.57337	5.73641	108	50
+WAL	Nethen	50.7832	4.67503	45	50
+WAL	Neufchâteau	49.84074	5.43535	424	50
+WAL	Neufchâteau	50.71961	5.77555	176	50
+WAL	Neufmaison	50.52914	3.79406	73	50
+WAL	Neufvilles	50.57107	4.00041	80	50
+WAL	Neu-Moresnet	50.71575	6.02119	196	50
+WAL	Neuville	50.17327	4.51598	243	50
+WAL	Neuville-en-Condroz	50.55293	5.45076	233	50
+WAL	Nil-Saint-Vincent-Saint-Martin	50.64331	4.68172	148	50
+WAL	Nimy	50.47668	3.95516	35	50
+WAL	Nismes	50.07523	4.54767	159	50
+WAL	Nivelles	50.59833	4.32848	101	50
+WAL	Nives	49.91276	5.60141	448	50
+WAL	Nobressart	49.73895	5.72012	342	50
+WAL	Nodebais	50.77278	4.73691	72	50
+WAL	Noduwez	50.72863	4.96779	64	50
+WAL	Noiseux	50.29976	5.37506	188	50
+WAL	Nothomb	49.77156	5.78773	318	50
+WAL	Noville	50.06386	5.76104	468	50
+WAL	Noville	50.65984	5.38197	161	50
+WAL	Noville-les-Bois	50.55702	4.98466	174	50
+WAL	Noville-sur-Méhaigne	50.60868	4.89213	142	50
+WAL	Obaix	50.52996	4.36089	144	50
+WAL	Obigies	50.66184	3.36412	16	50
+WAL	Obourg	50.47384	4.00881	46	50
+WAL	Ochamps	49.92453	5.27679	430	50
+WAL	Ocquier	50.39577	5.39409	249	50
+WAL	Odeur	50.70642	5.41578	131	50
+WAL	Oeudeghien	50.67813	3.71235	46	50
+WAL	Offagne	49.88501	5.17378	398	50
+WAL	Ogy	50.7207	3.78049	34	50
+WAL	Ohain	50.69885	4.4698	109	50
+WAL	Ohey	50.4357	5.12375	269	50
+WAL	Oignies-en-Thiérache	50.02285	4.63941	305	50
+WAL	Oisquercq	50.67015	4.21984	57	50
+WAL	Oizy	49.89259	5.00741	371	50
+WAL	Oleye	50.71396	5.28133	120	50
+WAL	Ollignies	50.68794	3.86229	27	50
+WAL	Olloy-sur-Viroin	50.07295	4.60811	140	50
+WAL	Olne	50.58994	5.74662	226	50
+WAL	Omal	50.65605	5.19979	131	50
+WAL	Ombret	50.54224	5.33378	72	50
+WAL	On	50.17176	5.28936	215	50
+WAL	Onhaye	50.24148	4.84069	253	50
+WAL	Ophain-Bois-Seigneur-Isaac	50.66646	4.34865	106	50
+WAL	Opheylissem	50.7471	4.97689	62	50
+WAL	Opprebais	50.67998	4.79785	118	50
+WAL	Orbais	50.63798	4.76352	143	50
+WAL	Orcq	50.60322	3.34924	48	50
+WAL	Oreye	50.73187	5.35818	112	50
+WAL	Orgeo	49.8339	5.30646	385	50
+WAL	Ormeignies	50.59501	3.75183	62	50
+WAL	Orp-le-Grand	50.70331	4.9891	75	50
+WAL	Orroir	50.74973	3.48097	29	50
+WAL	Ortho	50.12484	5.61316	413	50
+WAL	Ostiches	50.67857	3.75904	40	50
+WAL	Oteppe	50.58008	5.12632	114	50
+WAL	Othée	50.71592	5.46724	146	50
+WAL	Ottignies	50.66535	4.56679	65	50
+WAL	Ouffet	50.4387	5.4657	272	50
+WAL	Ougrée	50.60149	5.5444	89	50
+WAL	Oupeye	50.71184	5.6468	125	50
+WAL	Paifve	50.7282	5.5234	147	50
+WAL	Paliseul	49.90395	5.13537	409	50
+WAL	Papignies	50.68596	3.81783	28	50
+WAL	Pâturages	50.4072	3.855	73	50
+WAL	Pecq	50.68619	3.33789	23	50
+WAL	Peissant	50.35137	4.11963	139	50
+WAL	Pellaines	50.72673	5.0071	66	50
+WAL	Pepinster	50.56568	5.80386	147	50
+WAL	Péronnes	50.43782	4.14906	59	50
+WAL	Péronnes	50.55156	3.45374	22	50
+WAL	Péruwelz	50.50819	3.59373	34	50
+WAL	Perwez	50.62426	4.81354	147	50
+WAL	Pesche	50.0427	4.45897	246	50
+WAL	Pessoux	50.28333	5.17033	309	50
+WAL	Petigny	50.05739	4.53307	174	50
+WAL	Petit-Rechain	50.61489	5.83417	266	50
+WAL	Petit-Roeulx-lez-Braine	50.62565	4.09385	78	50
+WAL	Petit-Roeulx-lez-Nivelles	50.55419	4.31351	126	50
+WAL	Petit-Thier	50.30709	5.96782	442	50
+WAL	Philippeville	50.19612	4.54374	290	50
+WAL	Piéton	50.43972	4.29752	171	50
+WAL	Piétrain	50.72532	4.92033	84	50
+WAL	Piétrebais	50.72776	4.76455	100	50
+WAL	Pipaix	50.58297	3.57956	55	50
+WAL	Pironchamps	50.43181	4.52019	178	50
+WAL	Plainevaux	50.54562	5.52329	234	50
+WAL	Plancenoit	50.66228	4.42835	132	50
+WAL	Ploegsteert	50.72659	2.88019	19	50
+WAL	Plombières	50.73656	5.95922	167	50
+WAL	Polleur	50.5394	5.88078	224	50
+WAL	Pommeroeul	50.46188	3.71252	27	50
+WAL	Pondrôme	50.09922	5.00959	235	50
+WAL	Pont-à-Celles	50.50518	4.36887	137	50
+WAL	Pont-de-Loup	50.41656	4.54594	103	50
+WAL	Pontillas	50.54916	5.02101	186	50
+WAL	Pottes	50.73294	3.40703	11	50
+WAL	Poulseur	50.50907	5.57864	94	50
+WAL	Pousset	50.69504	5.30399	128	50
+WAL	Prayon	50.57795	5.6753	89	50
+WAL	Presgaux	50.02522	4.42002	302	50
+WAL	Presles	50.38417	4.57838	139	50
+WAL	Profondeville	50.37581	4.86506	93	50
+WAL	Pry	50.27212	4.43908	167	50
+WAL	Purnode	50.31201	4.94411	235	50
+WAL	Quaregnon	50.44067	3.8653	35	50
+WAL	Quartes	50.65054	3.51153	37	50
+WAL	Quenast	50.66959	4.15661	43	50
+WAL	Queue-du-Bois	50.63759	5.67993	232	50
+WAL	Quevaucamps	50.51888	3.68128	55	50
+WAL	Quévy-le-Grand	50.36074	3.9489	102	50
+WAL	Quévy-le-Petit	50.36879	3.93602	98	50
+WAL	Quiévrain	50.40737	3.68351	35	50
+WAL	Rachecourt	49.59195	5.72528	267	50
+WAL	Racour	50.73924	5.02806	81	50
+WAL	Raeren	50.6672	6.11535	318	50
+WAL	Ramegnies-Chin	50.65161	3.33704	25	50
+WAL	Ramillies	50.63395	4.90119	150	50
+WAL	Ramillies-Offus	50.63651	4.91535	142	50
+WAL	Rance	50.14248	4.27917	239	50
+WAL	Ransart	50.46166	4.47616	181	50
+WAL	Rebaix	50.65996	3.78307	40	50
+WAL	Rebecq-Rognon	50.65147	4.10683	65	50
+WAL	Recht	50.33801	6.04883	431	50
+WAL	Recogne	49.91232	5.3537	484	50
+WAL	Remicourt	50.68069	5.32785	126	50
+WAL	Rendeux	50.23423	5.50414	194	50
+WAL	Renlies	50.1908	4.26682	190	50
+WAL	Ressaix	50.42285	4.19442	92	50
+WAL	Resteigne	50.08304	5.17692	207	50
+WAL	Retinne	50.63084	5.69821	236	50
+WAL	Reuland	50.19553	6.13548	375	50
+WAL	Rèves	50.53809	4.41075	143	50
+WAL	Rhisnes	50.50682	4.80592	146	50
+WAL	Richelle	50.71396	5.69564	128	50
+WAL	Rienne	49.99277	4.8847	373	50
+WAL	Rivière	50.35696	4.8739	96	50
+WAL	Rixensart	50.71229	4.52529	101	50
+WAL	Robertville	50.45406	6.12205	524	50
+WAL	Rochefort	50.1631	5.2216	170	50
+WAL	Rocherath	50.43706	6.30049	645	50
+WAL	Roclenge-sur-Geer	50.75688	5.59444	79	50
+WAL	Rocourt	50.67579	5.54621	174	50
+WAL	Roisin	50.33237	3.69553	92	50
+WAL	Roly	50.13554	4.53727	199	50
+WAL	Romedenne	50.17133	4.69686	220	50
+WAL	Romsée	50.61091	5.66457	245	50
+WAL	Rongy	50.50724	3.3895	34	50
+WAL	Ronquières	50.60853	4.22081	61	50
+WAL	Rosée	50.23293	4.68688	275	50
+WAL	Roselies	50.43028	4.57203	115	50
+WAL	Rosières	50.73097	4.54473	84	50
+WAL	Rosoux-Crenwick	50.70724	5.18951	126	50
+WAL	Rossignol	49.71791	5.4859	342	50
+WAL	Rotheux-Rimière	50.53356	5.48063	262	50
+WAL	Roucourt	50.52882	3.58635	45	50
+WAL	Rouvreux	50.48984	5.65006	259	50
+WAL	Rouvroy	49.53771	5.49031	199	50
+WAL	Roux	50.44111	4.3917	118	50
+WAL	Roux-Miroir	50.70863	4.78266	136	50
+WAL	Roy	50.18489	5.40584	379	50
+WAL	Ruette	49.53668	5.59582	234	50
+WAL	Rulles	49.71805	5.55959	343	50
+WAL	Rumes	50.5545	3.30535	58	50
+WAL	Rumillies	50.62105	3.44325	24	50
+WAL	Russeignies	50.74453	3.53155	27	50
+WAL	Saint-Amand	50.50611	4.54988	137	50
+WAL	Saint-André	50.69541	5.75343	196	50
+WAL	Saint-Aubin	50.24767	4.57735	240	50
+WAL	Saint-Denis	50.4905	4.02048	58	50
+WAL	Saint-Denis	50.53567	4.78278	186	50
+WAL	Sainte-Marie-sur-Semois	49.67124	5.5638	344	50
+WAL	Sainte-Ode	50.01723	5.51926	428	50
+WAL	Saintes	50.70499	4.16006	64	50
+WAL	Saint-Georges-sur-Meuse	50.60007	5.3574	187	50
+WAL	Saint-Gérard	50.34645	4.74098	232	50
+WAL	Saint-Germain	50.5731	4.84205	153	50
+WAL	Saint-Géry	50.58127	4.61357	147	50
+WAL	Saint-Ghislain	50.44816	3.81886	27	50
+WAL	Saint-Hubert	50.02668	5.37401	432	50
+WAL	Saint-Jean-Geest	50.74015	4.89647	79	50
+WAL	Saint-Léger	49.61196	5.65688	268	50
+WAL	Saint-Léger	50.70589	3.3144	17	50
+WAL	Saint-Marc	50.49218	4.84749	182	50
+WAL	Saint-Mard	49.55403	5.53427	206	50
+WAL	Saint-Martin	50.5012	4.64782	137	50
+WAL	Saint-Médard	49.81538	5.32795	409	50
+WAL	Saint-Nicolas	50.62837	5.53243	96	50
+WAL	Saint-Pierre	49.90376	5.3875	460	50
+WAL	Saint-Remy	50.69564	5.70405	124	50
+WAL	Saint-Remy-Geest	50.74692	4.85845	88	50
+WAL	Saint-Sauveur	50.70604	3.59782	43	50
+WAL	Saint-Servais	50.4763	4.83656	133	50
+WAL	Saint-Séverin	50.53012	5.41137	235	50
+WAL	Saint-Symphorien	50.43903	4.00726	44	50
+WAL	Saint-Vaast	50.45426	4.16041	53	50
+WAL	Saint-Vincent	49.67698	5.47516	370	50
+WAL	Saint-Vith	50.28146	6.12724	474	50
+WAL	Saint-Yvon	50.74335	2.90992	27	50
+WAL	Saive	50.65316	5.68517	159	50
+WAL	Samrée	50.21043	5.63445	548	50
+WAL	Sars-la-Bruyère	50.37163	3.8744	140	50
+WAL	Sars-la-Buissière	50.33983	4.20936	168	50
+WAL	Sart-Bernard	50.40206	4.9593	253	50
+WAL	Sart-Dames-Avelines	50.56863	4.49221	128	50
+WAL	Sart-Eustache	50.37547	4.60482	166	50
+WAL	Sart-Saint-Laurent	50.40236	4.74217	215	50
+WAL	Sautin	50.1634	4.22649	270	50
+WAL	Sauvenière	50.58157	4.72466	151	50
+WAL	Schaltin	50.35952	5.12535	269	50
+WAL	Schoenberg	50.28917	6.265	426	50
+WAL	Sclayn	50.48979	5.02831	79	50
+WAL	Seilles	50.50065	5.09268	93	50
+WAL	Sélange	49.60929	5.85055	347	50
+WAL	Seloignes	50.01515	4.25517	280	50
+WAL	Seneffe	50.53135	4.26301	112	50
+WAL	Sensenruth	49.82489	5.07458	379	50
+WAL	Senzeille	50.17672	4.46477	248	50
+WAL	Septon	50.3561	5.42257	211	50
+WAL	Seraing	50.58362	5.50115	185	50
+WAL	Serinchamps	50.23134	5.23018	216	50
+WAL	Sibret	49.97073	5.63453	503	50
+WAL	Silenrieux	50.22585	4.4165	185	50
+WAL	Silly	50.64877	3.92363	59	50
+WAL	Sinsin	50.27502	5.25464	223	50
+WAL	Sirault	50.50546	3.78908	67	50
+WAL	Sivry	50.1664	4.18416	214	50
+WAL	Slins	50.72795	5.56263	151	50
+WAL	Soheit-Tinlot	50.48378	5.38862	281	50
+WAL	Soignies	50.57904	4.07129	89	50
+WAL	Soiron	50.59128	5.79089	202	50
+WAL	Solre-Saint-Géry	50.2164	4.24828	192	50
+WAL	Solre-sur-Sambre	50.30809	4.15429	131	50
+WAL	Sombreffe	50.52865	4.60087	146	50
+WAL	Somme-Leuze	50.33699	5.36705	191	50
+WAL	Sommière	50.27538	4.84926	226	50
+WAL	Somzée	50.29514	4.48209	216	50
+WAL	Sorée	50.39917	5.12398	272	50
+WAL	Sorinnes	50.25921	4.98128	266	50
+WAL	Sougné-Remouchamps	50.48242	5.70757	137	50
+WAL	Soumagne	50.61385	5.74679	200	50
+WAL	Souvret	50.4486	4.34569	158	50
+WAL	Sovet	50.29691	5.03526	297	50
+WAL	Soy	50.286	5.51153	310	50
+WAL	Soye	50.44958	4.7303	96	50
+WAL	Spa	50.48375	5.86674	312	50
+WAL	Spiennes	50.42503	3.98735	44	50
+WAL	Spontin	50.32256	5.0059	184	50
+WAL	Sprimont	50.50922	5.6595	224	50
+WAL	Spy	50.48143	4.70944	190	50
+WAL	Stambruges	50.50939	3.71621	58	50
+WAL	Stave	50.28007	4.65906	254	50
+WAL	Stavelot	50.395	5.93124	297	50
+WAL	Stembert	50.59107	5.89404	272	50
+WAL	Stoumont	50.40667	5.80838	335	50
+WAL	Strée	50.28078	4.29394	173	50
+WAL	Strée-lez-Huy	50.49039	5.32348	269	50
+WAL	Strépy-Bracquegnies	50.4728	4.12022	82	50
+WAL	Suarlée	50.48137	4.7792	177	50
+WAL	Sugny	49.81495	4.90222	357	50
+WAL	Taintignies	50.55277	3.34224	58	50
+WAL	Tamines	50.43378	4.60713	111	50
+WAL	Tarcienne	50.31204	4.49676	217	50
+WAL	Tavier	50.49634	5.47063	206	50
+WAL	Taviers	50.61726	4.93072	139	50
+WAL	Tavigny	50.10847	5.83786	429	50
+WAL	Tellin	50.08038	5.21638	263	50
+WAL	Templeuve	50.6441	3.28013	30	50
+WAL	Temploux	50.48558	4.75468	172	50
+WAL	Tenneville	50.09501	5.52895	380	50
+WAL	Tertre	50.4692	3.81243	28	50
+WAL	Theux	50.53323	5.81245	168	50
+WAL	Thiaumont	49.71523	5.73056	373	50
+WAL	Thieu	50.47428	4.09258	59	50
+WAL	Thieulain	50.6181	3.60514	51	50
+WAL	Thieusies	50.51525	4.04931	105	50
+WAL	Thiméon	50.48951	4.42878	133	50
+WAL	Thimister	50.65539	5.86421	261	50
+WAL	Thines	50.59675	4.36895	133	50
+WAL	Thirimont	50.25955	4.23609	192	50
+WAL	Thisnes	50.66578	5.04375	121	50
+WAL	Thommen	50.21917	6.07417	489	50
+WAL	Thon	50.46357	5.01449	149	50
+WAL	Thorembais-les-Béguines	50.65819	4.81755	128	50
+WAL	Thorembais-Saint-Trond	50.63485	4.78406	147	50
+WAL	Thoricourt	50.61102	3.95044	91	50
+WAL	Thuillies	50.29899	4.33269	153	50
+WAL	Thuin	50.33933	4.28604	156	50
+WAL	Thulin	50.43006	3.74007	28	50
+WAL	Thy-le-Château	50.28205	4.42955	181	50
+WAL	Tihange	50.52974	5.26176	72	50
+WAL	Tilff	50.56432	5.57642	80	50
+WAL	Tillet	50.01008	5.52861	420	50
+WAL	Tilleur	50.61805	5.54277	69	50
+WAL	Tilly	50.56078	4.55495	132	50
+WAL	Tinlot	50.47493	5.37755	271	50
+WAL	Tintigny	49.68326	5.51349	336	50
+WAL	Toernich	49.65178	5.77741	339	50
+WAL	Tohogne	50.38006	5.479	240	50
+WAL	Tongre-Notre-Dame	50.58204	3.77621	48	50
+WAL	Tongrinne	50.51561	4.6243	147	50
+WAL	Tontelange	49.72653	5.81118	335	50
+WAL	Tourinnes-la-Grosse	50.78299	4.74438	71	50
+WAL	Tourinnes-Saint-Lambert	50.64021	4.72361	150	50
+WAL	Tournai	50.60715	3.38932	24	50
+WAL	Tournay	49.85463	5.39829	412	50
+WAL	Tourpes	50.57332	3.65089	55	50
+WAL	Trazegnies	50.46379	4.3329	161	50
+WAL	Treignes	50.09237	4.67026	136	50
+WAL	Trembleur	50.69544	5.72604	162	50
+WAL	Trivières	50.44827	4.14511	54	50
+WAL	Trois-Ponts	50.37128	5.87146	253	50
+WAL	Trooz	50.57026	5.69521	98	50
+WAL	Tubize	50.69059	4.2009	39	50
+WAL	Vance	49.67163	5.66571	344	50
+WAL	Vaulx-lez-Tournai	50.59406	3.42954	24	50
+WAL	Vaux-Chavanne	50.30464	5.69245	380	50
+WAL	Vaux-et-Borset	50.61385	5.23438	162	50
+WAL	Vaux-lez-Rosières	49.91299	5.56784	446	50
+WAL	Vaux-sous-Chèvremont	50.60302	5.6335	72	50
+WAL	Vaux-sur-Sûre	49.911	5.57848	433	50
+WAL	Vedrin	50.50273	4.87604	161	50
+WAL	Velaine	50.47805	4.61031	149	50
+WAL	Velaines	50.66801	3.4866	47	50
+WAL	Vellereille-les-Brayeux	50.37952	4.15112	152	50
+WAL	Vergnies	50.19924	4.30325	229	50
+WAL	Verlaine	50.60743	5.3174	171	50
+WAL	Verviers	50.58907	5.86241	201	50
+WAL	Vesqueville	50.00573	5.39682	479	50
+WAL	Vezin	50.49623	5.00899	171	50
+WAL	Vezon	50.56917	3.50469	53	50
+WAL	Vielsalm	50.28407	5.91502	367	50
+WAL	Viemme	50.64707	5.27215	156	50
+WAL	Vierset-Barse	50.48373	5.29816	264	50
+WAL	Vierves-sur-Viroin	50.0811	4.63443	157	50
+WAL	Viesville	50.49088	4.40852	122	50
+WAL	Vieux-Genappe	50.60846	4.44097	114	50
+WAL	Villance	49.9717	5.22136	363	50
+WAL	Ville-en-Hesbaye	50.61745	5.11662	130	50
+WAL	Villerot	50.48629	3.79054	60	50
+WAL	Villers-aux-Tours	50.49825	5.51625	246	50
+WAL	Villers-devant-Orval	49.61948	5.33048	191	50
+WAL	Villers-la-Tour	50.03636	4.26132	238	50
+WAL	Villers-la-Ville	50.57953	4.53398	102	50
+WAL	Villers-le-Bouillet	50.57708	5.25945	194	50
+WAL	Villers-le-Gambon	50.19048	4.60704	257	50
+WAL	Villers-le-Peuplier	50.65673	5.09415	143	50
+WAL	Villers-le-Temple	50.5086	5.37077	233	50
+WAL	Villers-l'Évêque	50.70454	5.4396	142	50
+WAL	Villers-Perwin	50.52783	4.47968	152	50
+WAL	Villers-Poterie	50.35379	4.54885	192	50
+WAL	Villers-Saint-Amand	50.62251	3.73149	43	50
+WAL	Villers-Saint-Ghislain	50.43028	4.03988	76	50
+WAL	Villers-Saint-Siméon	50.71124	5.53891	152	50
+WAL	Ville-sur-Haine	50.47657	4.06425	48	50
+WAL	Vinalmont	50.56329	5.23155	191	50
+WAL	Virelles	50.06386	4.33505	205	50
+WAL	Virginal-Samme	50.64037	4.20579	136	50
+WAL	Virton	49.56824	5.53259	226	50
+WAL	Visé	50.7376	5.69907	86	50
+WAL	Vitrival	50.39282	4.65769	161	50
+WAL	Vivegnis	50.69243	5.64757	70	50
+WAL	Voroux-Goreux	50.65473	5.42919	164	50
+WAL	Voroux-lez-Liers	50.68745	5.5544	167	50
+WAL	Vottem	50.67155	5.57693	183	50
+WAL	Vyle-et-Tharoul	50.44525	5.26246	206	50
+WAL	Wagnelée	50.5233	4.53332	142	50
+WAL	Waha	50.20915	5.34174	294	50
+WAL	Waimes	50.41488	6.11207	492	50
+WAL	Walcourt	50.25401	4.43796	187	50
+WAL	Walhain-Saint-Paul	50.62627	4.69837	147	50
+WAL	Walhorn	50.67496	6.04608	267	50
+WAL	Wandre	50.66774	5.65959	59	50
+WAL	Wanfercée-Baulet	50.47291	4.58748	154	50
+WAL	Wangenies	50.48023	4.52019	151	50
+WAL	Wanlin	50.15991	5.06204	137	50
+WAL	Wanne	50.355	5.92083	475	50
+WAL	Wansin	50.67846	5.01912	106	50
+WAL	Wanze	50.53907	5.20846	96	50
+WAL	Warchin	50.60925	3.424	18	50
+WAL	Warcoing	50.70447	3.3462	20	50
+WAL	Wardin	49.99213	5.79117	435	50
+WAL	Waremme	50.6976	5.25524	117	50
+WAL	Waret-la-Chaussée	50.54294	4.92445	176	50
+WAL	Waret-l'Évêque	50.55672	5.06755	186	50
+WAL	Warisoulx	50.53689	4.86703	181	50
+WAL	Warnant	50.32327	4.84274	116	50
+WAL	Warnant-Dreye	50.59512	5.2256	162	50
+WAL	Warneton	50.75158	2.94635	22	50
+WAL	Warquignies	50.40152	3.82238	107	50
+WAL	Warsage	50.73517	5.7688	119	50
+WAL	Warzée	50.45	5.42619	281	50
+WAL	Wasmes	50.41464	3.8471	80	50
+WAL	Wasmuel	50.44493	3.84813	30	50
+WAL	Wasseiges	50.62186	5.00528	133	50
+WAL	Waterloo	50.71469	4.3991	119	50
+WAL	Waudrez	50.4135	4.15051	76	50
+WAL	Wauthier-Braine	50.68183	4.29849	62	50
+WAL	Wavre	50.71717	4.60138	72	50
+WAL	Wavreille	50.12119	5.24831	253	50
+WAL	Ways	50.61108	4.46448	96	50
+WAL	Wegnez	50.57895	5.81705	205	50
+WAL	Welkenraedt	50.6605	5.97034	256	50
+WAL	Wellin	50.08133	5.11413	250	50
+WAL	Wépion	50.42153	4.86403	135	50
+WAL	Werbomont	50.38072	5.68216	439	50
+WAL	Weris	50.32641	5.53113	278	50
+WAL	Wez-Velvain	50.54607	3.38878	34	50
+WAL	Wierde	50.42607	4.95097	160	50
+WAL	Wiers	50.50862	3.53468	24	50
+WAL	Wihéries	50.38543	3.75372	91	50
+WAL	Wihogne	50.72918	5.50484	141	50
+WAL	Willaupuis	50.56774	3.60274	51	50
+WAL	Willemeau	50.57435	3.35031	35	50
+WAL	Winenne	50.09751	4.89492	304	50
+WAL	Witry	49.8594	5.61279	462	50
+WAL	Wodecq	50.71805	3.74649	33	50
+WAL	Wolkrange	49.62882	5.79877	301	50
+WAL	Wonck	50.76687	5.6362	70	50
+WAL	Xhendelesse	50.60492	5.77804	270	50
+WAL	Xhendremael	50.70454	5.47984	148	50
+WAL	Xhoris	50.44586	5.60431	236	50
+WAL	Yernée-Fraineux	50.52836	5.38163	231	50
+WAL	Yves-Gomezée	50.23926	4.49344	206	50
+WAL	Yvoir	50.3279	4.88059	96	50
+WAL	Zétrud-Lumay	50.75715	4.88711	62	50
