@@ -12,5 +12,6 @@ cd package
 VERSION="$( grep -i PluginInfo-Version ./metadata.desktop | cut -d'=' -f 2 )"
 echo $VERSION
 
-zip  -r "../buildWidget/weather-widget-$VERSION.plasmoid" * --exclude \.git\*
+zip  -r "../buildWidget/weather-widget-$VERSION.plasmoid" * --exclude \.git\* --exclude *.bak
+
 
