@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-01-28 11:38+0000\n"
-"PO-Revision-Date: 2022-01-15 13:18+0100\n"
+"PO-Revision-Date: 2022-02-07 17:47+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -64,15 +64,15 @@ msgstr "m/s"
 
 #: ../contents/config/config.qml
 msgid "General"
-msgstr ""
+msgstr "Algemeen"
 
 #: ../contents/config/config.qml
 msgid "Appearance"
-msgstr ""
+msgstr "Vormgeving"
 
 #: ../contents/config/config.qml
 msgid "Units"
-msgstr ""
+msgstr "Eenheden"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -153,11 +153,11 @@ msgstr "Foutmelding!"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Confirmation"
-msgstr ""
+msgstr "Bevestigen"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Do you want to select this place?"
-msgstr ""
+msgstr "Wil je deze locatie toevoegen?"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
@@ -199,11 +199,11 @@ msgstr "Lengtegraad"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Altitude"
-msgstr ""
+msgstr "Hoogte"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
@@ -211,7 +211,7 @@ msgstr "Locatie-id"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -223,7 +223,7 @@ msgstr "Voer een locatie-alias in"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
-msgstr ""
+msgstr "Locatie zoeken"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
@@ -313,4 +313,4 @@ msgstr "Bezig met laden van afbeelding…"
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
-msgstr ""
+msgstr "vandaag"
