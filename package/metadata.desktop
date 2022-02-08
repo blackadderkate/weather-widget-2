@@ -8,7 +8,8 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-NotificationArea=true
 X-KDE-PluginInfo-Category=Environment and Weather
-X-KDE-ParentApp=X-KDE-PluginInfo-Author=Kate
+X-KDE-ParentApp=
+X-KDE-PluginInfo-Author=Kate Buckley
 X-KDE-PluginInfo-Email=kate.buckley@gmail.com
 X-KDE-PluginInfo-Name=org.kde.weatherWidget-2
 X-KDE-PluginInfo-Version=2.2.0
@@ -19,5 +20,9 @@ X-KDE-PluginInfo-EnabledByDefault=false
 X-Plasma-RemoteLocation=
 
 Name[nl]=Weerwidget 2
+Name[ru]=Виджет погоды 2
+Name[sv]=Weather Widget 2
 Comment[nl]=Een plasmoid die weerinformatie toont van de met.no-server
+Comment[ru]=Плазмоид, показывающий информацию о погоде с сервера met.no
+Comment[sv]=Plasmoid som visar väderinformation från met.no (yr.no)
 Comment[zh_CN]=添加 Open Weather Map
