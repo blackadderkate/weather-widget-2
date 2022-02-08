@@ -454,12 +454,12 @@ Item {
             anchors.top: parent.top
             anchors.bottomMargin: 10
             model: filteredCSVData
-            TableViewColumn { role: "locationName"; title: "Location" }
-            TableViewColumn { role: "region"; title: "Area"; width :75 }
-            TableViewColumn { role: "latitude"; title: "Latitude"; width :75 }
-            TableViewColumn { role: "longtitude"; title: "Longtitude"; width :75 }
-            TableViewColumn { role: "altitude"; title: "Altitude"; width :75}
-            TableViewColumn { role: "timezoneName"; title: "Timezone"; width :100}
+            TableViewColumn { role: "locationName"; title: i18n("Location") }
+            TableViewColumn { role: "region"; title: i18n("Area"); width :75 }
+            TableViewColumn { role: "latitude"; title: i18n("Latitude"); width :75 }
+            TableViewColumn { role: "longtitude"; title: i18n("Longtitude"); width :75 }
+            TableViewColumn { role: "altitude"; title: i18n("Altitude"); width :75}
+            TableViewColumn { role: "timezoneName"; title: i18n("Timezone"); width :100}
             onDoubleClicked: {
                 saveSearchedData.open()
             }
@@ -471,7 +471,7 @@ Item {
             width: parent.width
             Label {
                 id:locationDataCredit
-                text: "Search data extracted from data provided by Geonames.org."
+                text: i18n("Search data extracted from data provided by Geonames.org.")
                 anchors.horizontalCenter: parent.horizontalCenter
             }
         }
@@ -507,7 +507,7 @@ Item {
             anchors.bottomMargin: 0
             Label {
                 id: countryLabel
-                text: qsTr("Country:")
+                text: i18n("Country:")
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
@@ -533,7 +533,7 @@ Item {
                 anchors.right: locationEdit.left
                 anchors.rightMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
-                text: qsTr("Filter:")
+                text: i18n("Filter:")
             }
             TextField {
                 id: locationEdit
@@ -542,7 +542,7 @@ Item {
                 verticalAlignment: Text.AlignVCenter
                 width: 160
                 height: 31
-                text: qsTr("")
+                text: i18n("")
                 focus: true
                 font.capitalization: Font.Capitalize
                 selectByMouse: true
@@ -816,28 +816,28 @@ Item {
             anchors.bottom: attribution2.top
             anchors.bottomMargin: 2
             font.pointSize: 8
-            text: 'Met.no weather forecast data provided by The Norwegian Meteorological Institute.'
+            text: i18n("Met.no weather forecast data provided by The Norwegian Meteorological Institute.")
         }
         Label {
             id: attribution2
             anchors.bottom: attribution3.top
             anchors.bottomMargin: 2
             font.pointSize: 8
-            text: 'Sunrise/sunset data provided by Sunrise - Sunset.'
+            text: i18n("Sunrise/sunset data provided by Sunrise - Sunset.")
         }
         Label {
             id: attribution3
             anchors.bottom: attribution4.top
             anchors.bottomMargin: 2
             font.pointSize: 8
-            text: 'OWM weather forecast data provided by OpenWeather.'
+            text: i18n("OWM weather forecast data provided by OpenWeather.")
         }
         Label {
             id: attribution4
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 2
             font.pointSize: 8
-            text: 'Weather icons created by Erik Flowers.'
+            text: i18n("Weather icons created by Erik Flowers.")
         }
         MouseArea {
             cursorShape: Qt.PointingHandCursor
