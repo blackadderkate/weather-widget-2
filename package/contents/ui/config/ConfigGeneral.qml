@@ -53,6 +53,9 @@ Item {
         }
     }
 
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
 
 
     function placesModelChanged() {
@@ -212,9 +215,6 @@ Item {
 
         standardButtons: StandardButton.Ok | StandardButton.Cancel
         onActionChosen: {
-            function isNumeric(n) {
-                return !isNaN(parseFloat(n)) && isFinite(n);
-            }
 
             function between(x, min, max) {
                 return x >= min && x <= max;
@@ -302,6 +302,11 @@ Item {
             TextField {
                 id: newMetnoCityLatitudeField
                 Layout.fillWidth: true
+                onEditingFinished: {
+                    if (isNumeric(newMetnoCityLatitudeField.text)) {
+                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                    }
+                }
             }
 
             Item {
@@ -316,6 +321,11 @@ Item {
             TextField {
                 id: newMetnoCityLongtitudeField
                 Layout.fillWidth: true
+                onEditingFinished: {
+                    if (isNumeric(newMetnoCityLongtitudeField.text)) {
+                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                    }
+                }
             }
 
             Item {
@@ -330,6 +340,11 @@ Item {
             TextField {
                 id: newMetnoCityAltitudeField
                 Layout.fillWidth: true
+                onEditingFinished: {
+                    if (isNumeric(newMetnoCityAltitudeField.text)) {
+                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                    }
+                }
             }
 
             Label {
