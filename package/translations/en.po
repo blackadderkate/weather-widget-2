@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-08 23:00+0700\n"
+"POT-Creation-Date: 2022-02-08 23:20+0700\n"
 "PO-Revision-Date: 2016-03-26 21:59+0100\n"
 "Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
@@ -336,7 +336,7 @@ msgid "Loading image..."
 msgstr ""
 
 #: ../contents/ui/providers/MetNo.qml
-msgid "Weather forecast data provided by The Norwegian Meteorological Institute,"
+msgid "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
