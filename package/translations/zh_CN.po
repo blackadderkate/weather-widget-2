@@ -1,0 +1,378 @@
+# Translation of weatherWidget-2 in plasma_applet_org.kde.weatherWidget_zh_CN
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# 吴相东 <wuxiangdong156@gmail.com>, 2016.
+#
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
+"POT-Creation-Date: 2022-02-08 23:20+0700\n"
+"PO-Revision-Date: 2022-01-03 22:17+0000\n"
+"Last-Translator: 吴相东 <wuxiangdong156@gmail.com>\n"
+"Language-Team: 吴相东 <wuxiangdong156@gmail.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: ../metadata.desktop
+msgid "Weather Widget 2"
+msgstr ""
+
+#: ../metadata.desktop
+msgid "Plasmoid showing weather information from met.no server"
+msgstr "添加 Open Weather Map"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "摄氏度"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "华氏度"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr ""
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "英寸汞柱"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "毫米汞柱"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "百帕"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "英里/时"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "公里/时"
+
+#: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "米/秒"
+
+#: ../contents/config/config.qml
+msgid "General"
+msgstr "常规"
+
+#: ../contents/config/config.qml
+msgid "Appearance"
+msgstr "外观"
+
+#: ../contents/config/config.qml
+msgid "Units"
+msgstr "单位"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Layout"
+msgstr "布局"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Layout type:"
+msgstr "布局类型:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Horizontal"
+msgstr "水平"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
+msgstr "注意:设置布局类型对系统托盘里的部件无效."
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Vertical"
+msgstr "垂直"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Compact"
+msgstr "紧凑"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "In-Tray Settings"
+msgstr "托盘部件设置"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid "Active timeout:"
+msgstr "显示时间:"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgctxt "Abbreviation for seconds"
+msgid "sec"
+msgstr "秒"
+
+#: ../contents/ui/config/ConfigAppearance.qml
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"注意: 过了此时间后部件将会被隐藏至托盘中,直到天气更新后重新显示.你可以通过系"
+"统托盘 \"项目\"设置中将其设置为总是显示."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "添加 Open Weather Map"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "在此粘贴网址"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "城市名称"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here:"
+msgstr "搜索这里找到你的城市ID:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"在此粘贴网址\n"
+"例如: http://openweathermap.org/city/2946447 德国,波恩."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "添加 Met.no"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not numeric."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Latitude"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "长身材"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "地区ID"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "显示名称"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "输入城市名称"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "位置"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "部件版本:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Source"
+msgstr "来源"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Displayed as"
+msgstr "显示名称"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Action"
+msgstr "动作"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Miscellaneous"
+msgstr "杂项"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Reload interval:"
+msgstr "载入间隔:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgctxt "Abbreviation for minutes"
+msgid "min"
+msgstr "分钟"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
+
+#: ../contents/ui/config/ConfigUnits.qml
+msgid "Temperature:"
+msgstr "温度:"
+
+#: ../contents/ui/config/ConfigUnits.qml
+msgid "Pressure:"
+msgstr "气压:"
+
+#: ../contents/ui/config/ConfigUnits.qml
+msgid "Wind speed:"
+msgstr "风速"
+
+#: ../contents/ui/config/ConfigUnits.qml
+msgid "Timezone:"
+msgstr "时区:"
+
+#: ../contents/ui/config/ConfigUnits.qml
+msgid "My local-time"
+msgstr "本地时间"
+
+#: ../contents/ui/config/ConfigUnits.qml
+msgid "UTC"
+msgstr "UTC"
+
+#: ../contents/ui/FullRepresentationInTray.qml
+#: ../contents/ui/FullRepresentation.qml
+msgid "Next Location"
+msgstr "下一个位置"
+
+#: ../contents/ui/main.qml
+msgid "Resume Updating"
+msgstr "恢复"
+
+#: ../contents/ui/main.qml
+msgid "Pause Updating"
+msgstr "暂停"
+
+#: ../contents/ui/main.qml
+msgid "%1 ago"
+msgstr "%1 前"
+
+#: ../contents/ui/main.qml
+msgid "near future"
+msgstr "不久后"
+
+#: ../contents/ui/Meteogram.qml
+msgid "Offline mode"
+msgstr "离线模式"
+
+#: ../contents/ui/Meteogram.qml
+msgid "Loading image..."
+msgstr "载入图片中..."
+
+#: ../contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute."
+msgstr ""
+
+#: ../contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "今天"
+
+#~ msgid "Render meteogram for yr.no"
+#~ msgstr "绘制 yr.no 天气图表"
+
+#~ msgid "Add yr.no Place"
+#~ msgstr "添加 yr.no"
+
+#~ msgid ""
+#~ "Find your town string in yr.no (english version)\n"
+#~ "and use the URL from your browser to add a new location. E.g. paste "
+#~ "this:\n"
+#~ "http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
+#~ msgstr ""
+#~ "在 yr.no 中找到您城市的英文字串\n"
+#~ "并从您的浏览器中使用该 URL 加入新位置。例如:\n"
+#~ "http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
+
+#~ msgid "humidity"
+#~ msgstr "湿度"
+
+#~ msgid "clouds"
+#~ msgstr "云"
