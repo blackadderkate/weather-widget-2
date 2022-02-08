@@ -7,7 +7,7 @@ rm -r buildWidget
 mkdir buildWidget
 
 #compile translations used inside the plasmoid
-pushd package/translations/po
+pushd translations/po
 ./build.sh
 popd
 
