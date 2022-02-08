@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Jacobtey <jacobtey@gmail.com>, 2016.
 #
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-28 11:38+0000\n"
+"POT-Creation-Date: 2022-02-08 23:00+0700\n"
 "PO-Revision-Date: 2022-01-03 22:15+0000\n"
 "Last-Translator: Jacobtey <jacobtey@gmail.com>\n"
 "Language-Team: Jacobtey <jacobtey@gmail.com>\n"
@@ -16,30 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
-msgstr ""
+msgstr "Виджет погоды 2"
 
 #: ../metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
+msgstr "Плазмоид, показывающий информацию о погоде с сервера met.no"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "inHg"
-msgstr ""
+msgstr "дюйм рт. ст."
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "mmHg"
@@ -51,7 +54,7 @@ msgstr "гПа"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "mph"
-msgstr ""
+msgstr "миль/ч"
 
 #: ../contents/code/unit-utils.js ../contents/ui/config/ConfigUnits.qml
 msgid "km/h"
@@ -87,7 +90,7 @@ msgstr "Горизонтально"
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
-msgstr "ВНИМАНИЕ: Настройка типа размещения не работает для плазмоида в лотке"
+msgstr "ВНИМАНИЕ: Настройка типа размещения не работает для плазмоида в лотке."
 
 #: ../contents/ui/config/ConfigAppearance.qml
 msgid "Vertical"
@@ -126,7 +129,7 @@ msgstr "Добавить место Open Weather Map"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Paste URL here"
-msgstr "Вставьте URL сюда"
+msgstr "Вставьте URL-адрес сюда"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "City alias"
@@ -146,45 +149,47 @@ msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Error!"
-msgstr ""
+msgstr "Ошибка!"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Confirmation"
-msgstr ""
+msgstr "Подтверждение"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Do you want to select this place?"
-msgstr ""
+msgstr "Хотите выбрать это место?"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
-msgstr "Добавить место  Met.no"
+msgstr "Добавить место Met.no"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not numeric."
-msgstr ""
+msgstr "Значение широта не числовое."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
-msgstr ""
+msgstr "Широта не находится между -90 и 90."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "The Longtitude is not numeric."
-msgstr ""
+msgstr "Значение долготы не числовое."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "The Longtitude is not between -180 and 180."
-msgstr ""
+msgstr "Долгота не находится между -180 и 180."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
-msgstr ""
+msgstr "Название места пусто."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ошибка!"
+msgstr[1] "%1 ошибки!"
+msgstr[2] "%1 ошибок!"
+msgstr[3] "Ошибка!"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -196,11 +201,11 @@ msgstr "Долгота"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Altitude"
-msgstr ""
+msgstr "Высота"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "URL"
-msgstr ""
+msgstr "URL-адрес"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
@@ -208,7 +213,7 @@ msgstr "Идентификатор места"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -220,15 +225,35 @@ msgstr "Введите название места"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
-msgstr ""
-
-#: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Версия плазмоида:"
+msgstr "Поиск местоположения"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
 msgstr "Местоположение"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr "Зона"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr "Часовой пояс"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr "Данные для поиска извлечены из данных, предоставленных Geonames.org."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr "Страна:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr "Фильтр:"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Версия плазмоида:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -255,6 +280,26 @@ msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "мин"
 
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+"Данные прогноза погоды Met.no предоставлены Норвежским метеорологическим "
+"институтом."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr "Данные о восходе/закате предоставлены Sunrise - Sunset."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr "Данные прогноза погоды OWM предоставлены OpenWeather."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr "Иконки погоды созданы Эриком Флауэрсом."
+
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
 msgstr "Температура:"
@@ -277,7 +322,7 @@ msgstr "Местное время"
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "UTC"
-msgstr ""
+msgstr "UTC"
 
 #: ../contents/ui/FullRepresentationInTray.qml
 #: ../contents/ui/FullRepresentation.qml
@@ -307,6 +352,12 @@ msgstr "Режим оффлайн"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Загрузка..."
+
+#: ../contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute,"
+msgstr ""
+"Данные прогноза погоды предоставлены Норвежским метеорологическим институтом,"
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"

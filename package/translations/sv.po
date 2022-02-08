@@ -1,22 +1,23 @@
-# Translation of weatherWidget-2 in LANGUAGE
+# Translation of weatherWidget-2 in sv
 # Copyright (C) 2022
 # This file is distributed under the same license as the weatherWidget-2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-28 11:38+0000\n"
+"POT-Creation-Date: 2022-02-08 23:00+0700\n"
 "PO-Revision-Date: 2022-02-06 18:11+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
-"Last-Translator: \n"
-"Language: sv\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -120,8 +121,7 @@ msgid ""
 "tray \"Entries\" settings."
 msgstr ""
 "OBS: Efter att tidsgränsen har uppnåtts kommer plasmoiden att döljas till "
-"den uppdateras. Du kan ställa in så att den alltid visas i "
-"inställningarna."
+"den uppdateras. Du kan ställa in så att den alltid visas i inställningarna."
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -226,12 +226,32 @@ msgid "Location Search"
 msgstr "Platssök"
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Plasmoidversion:"
-
-#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
 msgstr "Plats"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Plasmoidversion:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -257,6 +277,24 @@ msgstr "Uppdateringsintervall:"
 msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "min"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -310,6 +348,11 @@ msgstr "Nedkopplat läge"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Laddar bild..."
+
+#: ../contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute,"
+msgstr ""
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"

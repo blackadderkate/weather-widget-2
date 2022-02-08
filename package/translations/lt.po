@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Moo, 2017.
 #
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-28 11:38+0000\n"
+"POT-Creation-Date: 2022-02-08 23:00+0700\n"
 "PO-Revision-Date: 2022-01-03 22:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -16,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../metadata.desktop
 msgid "Weather Widget 2"
@@ -229,12 +230,32 @@ msgid "Location Search"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Plasma valdiklio versija:"
-
-#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
 msgstr "Vieta"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Plasma valdiklio versija:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -260,6 +281,24 @@ msgstr "Įkėlimo iš naujo intervalas:"
 msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "min."
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -313,6 +352,11 @@ msgstr "Autonominė veiksena"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Įkeliamas paveikslas..."
+
+#: ../contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute,"
+msgstr ""
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"

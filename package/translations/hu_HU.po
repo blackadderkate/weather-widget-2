@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Laszlo Espadas <kardiweb@protonmail.ch>, 2017.
 #
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-applet-weather-widget\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-28 11:38+0000\n"
+"POT-Creation-Date: 2022-02-08 23:00+0700\n"
 "PO-Revision-Date: 2022-01-03 22:07+0000\n"
 "Last-Translator: Laszlo Espadas <kardiweb@protonmail.ch>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -225,12 +226,32 @@ msgid "Location Search"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Plasmoid verzió:"
-
-#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
 msgstr "Hely"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Plasmoid verzió:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -256,6 +277,24 @@ msgstr "Intervallum újratöltés:"
 msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "perccel"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -309,6 +348,11 @@ msgstr "Offline mód"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Kép betöltés..."
+
+#: ../contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute,"
+msgstr ""
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"

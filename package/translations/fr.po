@@ -6,11 +6,12 @@
 # David Geiger <david.david@mageialinux-online.org>, 2017
 # Adrien Daugabel <adrien.d@mageialinux-online.org>, 2017
 # Papoteur <papoteur@mageialinux-online.org>, 2017
+#: ../contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-01-28 11:38+0000\n"
+"POT-Creation-Date: 2022-02-08 23:00+0700\n"
 "PO-Revision-Date: 2022-01-03 22:37+0000\n"
 "Last-Translator: David Geiger <david.david@mageialinux-online.org>\n"
 "Language-Team: French (http://www.mageialinux-online.org/)\n"
@@ -229,12 +230,32 @@ msgid "Location Search"
 msgstr ""
 
 #: ../contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Version du plasmoïde:"
-
-#: ../contents/ui/config/ConfigGeneral.qml
 msgid "Location"
 msgstr "Emplacement"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Version du plasmoïde:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -260,6 +281,24 @@ msgstr "Intervalle de rechargement :"
 msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "min"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
 
 #: ../contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -313,6 +352,11 @@ msgstr "Mode hors-ligne"
 #: ../contents/ui/Meteogram.qml
 msgid "Loading image..."
 msgstr "Chargement de l'image..."
+
+#: ../contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute,"
+msgstr ""
 
 #: ../contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
