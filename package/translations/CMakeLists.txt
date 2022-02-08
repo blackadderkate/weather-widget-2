@@ -7,11 +7,11 @@ IF(NOT GETTEXT_MSGFMT_EXECUTABLE)
 ------")
 ELSE(NOT GETTEXT_MSGFMT_EXECUTABLE)
 
-        SET(catalogname plasma_applet_org.kde.weatherWidget)
+        SET(catalogname plasma_applet_org.kde.weatherWidget-2)
 
         FILE(GLOB PO_FILES po/*.po)
         SET(GMO_FILES)
-        
+
         ADD_CUSTOM_TARGET(translations ALL DEPENDS ${GMO_FILES})
 
         FOREACH(_poFile ${PO_FILES})
