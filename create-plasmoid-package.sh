@@ -6,6 +6,11 @@ cd $DIR
 rm -r buildWidget
 mkdir buildWidget
 
+#compile translations used inside the plasmoid
+pushd package/translations/po
+./build.sh
+popd
+
 cd package
 
 
