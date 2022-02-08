@@ -5,11 +5,11 @@
 # https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems/Outside_KDE_repositories
 # https://invent.kde.org/sysadmin/l10n-scripty/-/blob/master/extract-messages.sh
 DIR=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
-plasmoidName=`kreadconfig5 --file="$DIR/../metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
+plasmoidName=`kreadconfig5 --file="$DIR/../../metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
 widgetName="${plasmoidName##*.}" # Strip namespace
-website=`kreadconfig5 --file="$DIR/../metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Website"`
+website=`kreadconfig5 --file="$DIR/../../metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Website"`
 bugAddress="$website"
-packageRoot=".." # Root of translatable sources
+packageRoot="../.." # Root of translatable sources
 projectName="plasma_applet_${plasmoidName}" # project name
 
 #---
@@ -186,9 +186,9 @@ for cat in $catalogs; do
 	catLocale=`basename ${cat%.*}`
 	echo "${catLocale}" >> "$DIR/LINGUAS"
 done
-echo "cp -f $DIR/../metadata.desktop $DIR/template.desktop"
+echo "cp -f $DIR/../../metadata.desktop $DIR/template.desktop"
 
-cp -f "$DIR/../metadata.desktop" "$DIR/template.desktop"
+cp -f "$DIR/../../metadata.desktop" "$DIR/template.desktop"
 sed -i '/^Name\[/ d; /^GenericName\[/ d; /^Comment\[/ d; /^Keywords\[/ d' "$DIR/template.desktop"
 
 echo "msgfmt --desktop --template=\"$DIR/template.desktop\" -d \"$DIR/\" -o \"$DIR/new.desktop\""
@@ -227,19 +227,19 @@ if [ ! -z "${translatedLines}" ]; then
 fi
 
 # Cleanup
-mv "$DIR/new.desktop" "$DIR/../metadata.desktop"
+mv "$DIR/new.desktop" "$DIR/../../metadata.desktop"
 rm "$DIR/template.desktop"
 rm "$DIR/LINGUAS"
 
 #---
 # Populate ReadMe.md
 echo "[merge] Updating translate/ReadMe.md"
-sed -i -E 's`share\/plasma\/plasmoids\/(.+)\/translate`share/plasma/plasmoids/'"${plasmoidName}"'/translate`' ./ReadMe.md
+sed -i -E 's`share\/plasma\/plasmoids\/(.+)\/translate`share/plasma/plasmoids/'"${plasmoidName}"'/translate`' ../ReadMe.md
 if [[ "$website" == *"github.com"* ]]; then
-	sed -i -E 's`\[new issue\]\(https:\/\/github\.com\/(.+)\/(.+)\/issues\/new\)`[new issue]('"${website}"'/issues/new)`' ./ReadMe.md
+	sed -i -E 's`\[new issue\]\(https:\/\/github\.com\/(.+)\/(.+)\/issues\/new\)`[new issue]('"${website}"'/issues/new)`' ../ReadMe.md
 fi
-sed -i '/^|/ d' ./ReadMe.md # Remove status table from ReadMe
-cat ./Status.md >> ./ReadMe.md
+sed -i '/^|/ d' ../ReadMe.md # Remove status table from ReadMe
+cat ./Status.md >> ../ReadMe.md
 rm ./Status.md
 
 echo "[merge] Done"
