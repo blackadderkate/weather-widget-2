@@ -3,12 +3,14 @@
 DIR="$( dirname "${BASH_SOURCE[0]}" )"
 cd $DIR
 
-sudo rm -fr build/*
+if [ ! -d build ]; then
+  mkdir build
+fi
 
-#mkdir build
+sudo rm -fr build/*
 
 cd build
 
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
 make
-#sudo make install
+sudo make install
