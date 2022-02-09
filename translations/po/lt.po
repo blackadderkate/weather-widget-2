@@ -3,20 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Moo, 2017.
 #
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigGeneral.qml
-=======
 #: ../../package/contents/ui/config/ConfigGeneral.qml
->>>>>>> upstream/placeSearch
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2022-02-09 00:14+0700\n"
-=======
 "POT-Creation-Date: 2022-02-08 23:37+0100\n"
->>>>>>> upstream/placeSearch
 "PO-Revision-Date: 2022-01-03 22:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -25,89 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-<<<<<<< HEAD
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: ../package/metadata.desktop
-msgid "Weather Widget 2"
-msgstr ""
-
-#: ../package/metadata.desktop
-msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "°C"
-msgstr "°C"
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "°F"
-msgstr "°F"
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "K"
-msgstr ""
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "inHg"
-msgstr "inHg"
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "mmHg"
-msgstr "mmHg"
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "hPa"
-msgstr "hPa"
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "mph"
-msgstr "mph"
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "km/h"
-msgstr "km/val."
-
-#: ../package/contents/code/unit-utils.js
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "m/s"
-msgstr "m/s"
-
-#: ../package/contents/config/config.qml
-msgid "General"
-msgstr "Bendra"
-
-#: ../package/contents/config/config.qml
-msgid "Appearance"
-msgstr "Išvaizda"
-
-#: ../package/contents/config/config.qml
-msgid "Units"
-msgstr "Vienetai"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "Layout"
-msgstr "Išdėstymas"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "Layout type:"
-msgstr "Išdėstymo tipas:"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "Horizontal"
-msgstr "Horizontalus"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-=======
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -189,31 +98,11 @@ msgid "Horizontal"
 msgstr "Horizontalus"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
->>>>>>> upstream/placeSearch
 msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
 msgstr ""
 "PASTABA: Išdėstymo nustatymas dėkle esančiam Plasma valdikliui nedaro jokios "
 "įtakos."
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "Vertical"
-msgstr "Vertikalus"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "Compact"
-msgstr "Kompaktiškas"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "In-Tray Settings"
-msgstr "Nustatymai dėkle"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-msgid "Active timeout:"
-msgstr "Aktyvumo laiko limitas:"
-
-#: ../package/contents/ui/config/ConfigAppearance.qml
-=======
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Vertical"
 msgstr "Vertikalus"
@@ -231,16 +120,11 @@ msgid "Active timeout:"
 msgstr "Aktyvumo laiko limitas:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
->>>>>>> upstream/placeSearch
 msgctxt "Abbreviation for seconds"
 msgid "sec"
 msgstr "sek."
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigAppearance.qml
-=======
 #: ../../package/contents/ui/config/ConfigAppearance.qml
->>>>>>> upstream/placeSearch
 msgid ""
 "NOTE: After this timeout widget will be hidden in system tray until "
 "refreshed. You can always set the widget to be always \"Shown\" in system "
@@ -250,25 +134,6 @@ msgstr ""
 "įkeltas iš naujo. Jūs visada galite sistemos dėklo \"Elementų\" nustatymuose "
 "nustatyti, kad valdiklis visuomet būtų \"Rodomas\"."
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Open Weather Map Place"
-msgstr "Pridėti Open Weather Map vietą"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Paste URL here"
-msgstr "Čia įdėkite URL"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "City alias"
-msgstr "Miesto alternatyvusis pavadinimas"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Find your city ID by searching here:"
-msgstr "Raskite savo miesto ID, atlikdami paiešką čia:"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-=======
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
 msgstr "Pridėti Open Weather Map vietą"
@@ -286,7 +151,6 @@ msgid "Find your city ID by searching here:"
 msgstr "Raskite savo miesto ID, atlikdami paiešką čia:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
->>>>>>> upstream/placeSearch
 msgid ""
 "...and paste here the whole URL\n"
 "e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
@@ -295,45 +159,6 @@ msgstr ""
 "pvz., http://openweathermap.org/city/601084 bus skirta miestui Alytus, "
 "Lietuva."
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Error!"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Confirmation"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Do you want to select this place?"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Met.no Map Place"
-msgstr "Pridėti Met.no Map vietą"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longtitude is not numeric."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longtitude is not between -180 and 180."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-=======
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Error!"
 msgstr ""
@@ -371,100 +196,12 @@ msgid "The Place Name is empty."
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
->>>>>>> upstream/placeSearch
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Latitude"
-msgstr "Platuma"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude"
-msgstr "Ilguma"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Altitude"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "URL"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Vietos identifikatorius"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Change Displayed As"
-msgstr "Keisti rodoma kaip"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Enter place alias"
-msgstr "Įveskite alternatyvųjį miesto pavadinimą"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location Search"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Vieta"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Timezone"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search data extracted from data provided by Geonames.org."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Country:"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Filter:"
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Plasma valdiklio versija:"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Source"
-msgstr "Šaltinis"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Displayed as"
-msgstr "Rodoma kaip"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Action"
-msgstr "Veiksmas"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Miscellaneous"
-msgstr "Įvairūs"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Reload interval:"
-msgstr "Įkėlimo iš naujo intervalas:"
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-=======
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Platuma"
@@ -550,89 +287,16 @@ msgid "Reload interval:"
 msgstr "Įkėlimo iš naujo intervalas:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
->>>>>>> upstream/placeSearch
 msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "min."
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigGeneral.qml
-=======
 #: ../../package/contents/ui/config/ConfigGeneral.qml
->>>>>>> upstream/placeSearch
 msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
 
-<<<<<<< HEAD
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Sunrise/sunset data provided by Sunrise - Sunset."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "OWM weather forecast data provided by OpenWeather."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigGeneral.qml
-msgid "Weather icons created by Erik Flowers."
-msgstr ""
-
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "Temperature:"
-msgstr "Temperatūra:"
-
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "Pressure:"
-msgstr "Slėgis:"
-
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "Wind speed:"
-msgstr "Vėjo greitis:"
-
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone:"
-msgstr "Laiko juosta:"
-
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "My local-time"
-msgstr "Mano vietinis laikas"
-
-#: ../package/contents/ui/config/ConfigUnits.qml
-msgid "UTC"
-msgstr "Suderintasis pasaulinis laikas (UTC)"
-
-#: ../package/contents/ui/FullRepresentationInTray.qml
-#: ../package/contents/ui/FullRepresentation.qml
-msgid "Next Location"
-msgstr "Kita vieta"
-
-#: ../package/contents/ui/main.qml
-msgid "Resume Updating"
-msgstr "Pratęsti atnaujinimą"
-
-#: ../package/contents/ui/main.qml
-msgid "Pause Updating"
-msgstr "Pristabdyti atnaujinimą"
-
-#: ../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "Prieš %1"
-
-#: ../package/contents/ui/main.qml
-msgid "near future"
-msgstr "netolimoje ateityje"
-
-#: ../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Autonominė veiksena"
-
-#: ../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Įkeliamas paveikslas..."
-
-#: ../package/contents/ui/providers/MetNo.qml
-=======
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
 msgstr ""
@@ -699,16 +363,11 @@ msgid "Loading image..."
 msgstr "Įkeliamas paveikslas..."
 
 #: ../../package/contents/ui/providers/MetNo.qml
->>>>>>> upstream/placeSearch
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
 
-<<<<<<< HEAD
-#: ../package/contents/ui/providers/OpenWeatherMap.qml
-=======
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
->>>>>>> upstream/placeSearch
 msgid "today"
 msgstr "šiandien"
 
