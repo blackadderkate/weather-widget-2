@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.14.0 FATAL_ERROR)
 project(org.kde.weatherWidget-2)
 
 set(QT_MIN_VERSION "5.4.0")
@@ -15,6 +15,6 @@ find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Quick)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Plasma)
 
 add_subdirectory(plugin)
-add_subdirectory(package/translations)
+add_subdirectory(translations)
 
 plasma_install_package(package org.kde.weatherWidget-2)
