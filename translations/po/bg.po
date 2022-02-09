@@ -3,12 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # bvbfan, 2016.
 #
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigGeneral.qml
+=======
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+>>>>>>> upstream/placeSearch
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2022-02-09 00:14+0700\n"
+=======
+"POT-Creation-Date: 2022-02-08 23:37+0100\n"
+>>>>>>> upstream/placeSearch
 "PO-Revision-Date: 2022-01-03 22:02+0000\n"
 "Last-Translator: bvbfan\n"
 "Language-Team: bvbfan\n"
@@ -18,6 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
 
+<<<<<<< HEAD
 #: ../package/metadata.desktop
 msgid "Weather Widget 2"
 msgstr ""
@@ -116,11 +125,115 @@ msgid "Active timeout:"
 msgstr "Активен за:"
 
 #: ../package/contents/ui/config/ConfigAppearance.qml
+=======
+#: ../../package/metadata.desktop
+msgid "Weather Widget 2"
+msgstr ""
+
+#: ../../package/metadata.desktop
+msgid "Plasmoid showing weather information from met.no server"
+msgstr ""
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "°C"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr ""
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "инча на живак"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "мм живачен стълб"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "хектопаскала"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "мили/час"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "км/час"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "м/сек"
+
+#: ../../package/contents/config/config.qml
+msgid "General"
+msgstr "Освновни"
+
+#: ../../package/contents/config/config.qml
+msgid "Appearance"
+msgstr "Външност"
+
+#: ../../package/contents/config/config.qml
+msgid "Units"
+msgstr "Мерни единици"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout"
+msgstr "Оформление"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout type:"
+msgstr "Тип оформление:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Horizontal"
+msgstr "Хоризонтално"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
+msgstr "Забележка: Оформлението няма ефект в системният панел."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Vertical"
+msgstr "Вертикално"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Compact"
+msgstr "Компактно"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "In-Tray Settings"
+msgstr "Настройки за системният панел"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Active timeout:"
+msgstr "Активен за:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+>>>>>>> upstream/placeSearch
 msgctxt "Abbreviation for seconds"
 msgid "sec"
 msgstr "сек"
 
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigAppearance.qml
+=======
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+>>>>>>> upstream/placeSearch
 msgid ""
 "NOTE: After this timeout widget will be hidden in system tray until "
 "refreshed. You can always set the widget to be always \"Shown\" in system "
@@ -130,6 +243,7 @@ msgstr ""
 "сркита. Може да я направите да стои перманентно от настройките на системният "
 "панел."
 
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
 msgstr "Добави Open Weather Map място"
@@ -147,6 +261,25 @@ msgid "Find your city ID by searching here:"
 msgstr "Намери ID-то на своят град тук:"
 
 #: ../package/contents/ui/config/ConfigGeneral.qml
+=======
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Добави Open Weather Map място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "Постави URL тук"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "Град"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here:"
+msgstr "Намери ID-то на своят град тук:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+>>>>>>> upstream/placeSearch
 msgid ""
 "...and paste here the whole URL\n"
 "e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
@@ -154,6 +287,7 @@ msgstr ""
 "... и Копирай тук цялото URL\n"
 "http://openweathermap.org/city/2946447 for Bonn, Germany."
 
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigGeneral.qml
 msgid "Error!"
 msgstr ""
@@ -191,11 +325,51 @@ msgid "The Place Name is empty."
 msgstr ""
 
 #: ../package/contents/ui/config/ConfigGeneral.qml
+=======
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Добави Met.no Map място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longtitude is not between -180 and 180."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+>>>>>>> upstream/placeSearch
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
 msgstr[0] ""
 msgstr[1] ""
 
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Ширина"
@@ -281,16 +455,108 @@ msgid "Reload interval:"
 msgstr "Интервал на обновяване:"
 
 #: ../package/contents/ui/config/ConfigGeneral.qml
+=======
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Ширина"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longtitude"
+msgstr "Географска ширина"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Идентификатор за място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Промени Покажи като"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Добави място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "Местоположение"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Джаджа версия:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Source"
+msgstr "Ресурс"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Displayed as"
+msgstr "Покажи като"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Action"
+msgstr "Действие"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Miscellaneous"
+msgstr "Други"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Reload interval:"
+msgstr "Интервал на обновяване:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+>>>>>>> upstream/placeSearch
 msgctxt "Abbreviation for minutes"
 msgid "min"
 msgstr "мин"
 
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigGeneral.qml
+=======
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+>>>>>>> upstream/placeSearch
 msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
 msgstr ""
@@ -357,11 +623,83 @@ msgid "Loading image..."
 msgstr "Заредане на изображение..."
 
 #: ../package/contents/ui/providers/MetNo.qml
+=======
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Temperature:"
+msgstr "Температура:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Pressure:"
+msgstr "Налягане:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Wind speed:"
+msgstr "Скоростта на вятъра:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone:"
+msgstr "Времева зона:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "My local-time"
+msgstr "Локално време"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "UTC"
+msgstr "UTC"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Next Location"
+msgstr "Следващо местоположение"
+
+#: ../../package/contents/ui/main.qml
+msgid "Resume Updating"
+msgstr "Поднови Обновяването"
+
+#: ../../package/contents/ui/main.qml
+msgid "Pause Updating"
+msgstr "Спри Обновяването"
+
+#: ../../package/contents/ui/main.qml
+msgid "%1 ago"
+msgstr "преди %1"
+
+#: ../../package/contents/ui/main.qml
+msgid "near future"
+msgstr "близко бъдеще"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "Offline mode"
+msgstr "Работа без интернет"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "Loading image..."
+msgstr "Заредане на изображение..."
+
+#: ../../package/contents/ui/providers/MetNo.qml
+>>>>>>> upstream/placeSearch
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../package/contents/ui/providers/OpenWeatherMap.qml
+=======
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+>>>>>>> upstream/placeSearch
 msgid "today"
 msgstr "днес"
 
