@@ -1,15 +1,14 @@
-# Norwegian translation of weatherWidget-2
+# Norwegian bokmål translation of weatherWidget-2
 # Copyright (C) 2022
 # This file is distributed under the same license as the weatherWidget-2 package.
 # Johnny A. Solbu <johnny@solbu.net>, 2022.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-02-09 20:04+0000\n"
-"PO-Revision-Date: 2022-02-09 00:27+0100\n"
+"PO-Revision-Date: 2022-02-09 21:52+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
@@ -29,19 +28,19 @@ msgstr "Plasmoid som viser værinformasjon fra met.no"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m"
-msgstr ""
+msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h"
-msgstr ""
+msgstr "%1 t"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d"
-msgstr ""
+msgstr "%1 d"
 
 #: ../../package/contents/code/data-loader.js
 msgid "hours"
-msgstr ""
+msgstr "timer"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -354,7 +353,7 @@ msgstr "Neste plassering"
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
-msgstr ""
+msgstr "Oppdater"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
