@@ -189,7 +189,7 @@ Item {
             anchors.bottom: parent.bottom
             verticalAlignment: Text.AlignBottom
 
-            text: '\u21bb Reload'
+            text: '\u21bb '+ i18n("Reload")
             visible: false
         }
 
