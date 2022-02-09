@@ -255,7 +255,7 @@ Item {
 
             verticalAlignment: Text.AlignTop
 
-            text: '\u21bb Reload'
+            text: '\u21bb '+ i18n("Reload")
             visible: false
         }
 

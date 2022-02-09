@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-applet-weather-widget\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-08 23:37+0100\n"
+"POT-Creation-Date: 2022-02-09 22:34+0700\n"
 "PO-Revision-Date: 2022-01-03 22:07+0000\n"
 "Last-Translator: Laszlo Espadas <kardiweb@protonmail.ch>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -27,6 +27,22 @@ msgstr ""
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 m"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 h"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 d"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "long"
 msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
@@ -333,6 +349,11 @@ msgstr "UTC"
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Következő hely"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr ""
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
