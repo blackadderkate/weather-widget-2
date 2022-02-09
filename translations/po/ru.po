@@ -67,7 +67,7 @@ msgstr "дюйм рт. ст."
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "mmHg"
-msgstr "Торр (мм рт.ст.)"
+msgstr "мм рт.ст."
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
