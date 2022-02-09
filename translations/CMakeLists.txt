@@ -11,11 +11,7 @@ ELSE(NOT GETTEXT_MSGFMT_EXECUTABLE)
 
         FILE(GLOB PO_FILES po/*.po)
         SET(GMO_FILES)
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> upstream/placeSearch
         ADD_CUSTOM_TARGET(translations ALL DEPENDS ${GMO_FILES})
 
         FOREACH(_poFile ${PO_FILES})
