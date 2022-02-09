@@ -15,7 +15,7 @@ function getLastReloadedTimeText(lastReloaded) {
         return i18n("%1 d", Math.round(days));
     }
 
-    return i18n("long")
+    return i18n("hours")
 }
 
 function scheduleDataReload() {

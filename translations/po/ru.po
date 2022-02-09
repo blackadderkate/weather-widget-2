@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-09 22:34+0700\n"
+"POT-Creation-Date: 2022-02-09 20:04+0000\n"
 "PO-Revision-Date: 2022-01-03 22:15+0000\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -41,8 +41,8 @@ msgid "%1 d"
 msgstr "%1 д"
 
 #: ../../package/contents/code/data-loader.js
-msgid "long"
-msgstr "давно"
+msgid "hours"
+msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -392,6 +392,9 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "сегодня"
+
+#~ msgid "long"
+#~ msgstr "давно"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Генерировать метеограмму для yr.no"
