@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-09 22:34+0700\n"
+"POT-Creation-Date: 2022-02-09 20:04+0000\n"
 "PO-Revision-Date: 2022-01-03 22:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -41,7 +41,7 @@ msgid "%1 d"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "long"
+msgid "hours"
 msgstr ""
 
 #: ../../package/contents/code/unit-utils.js

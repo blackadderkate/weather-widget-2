@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-09 22:34+0700\n"
+"POT-Creation-Date: 2022-02-09 20:04+0000\n"
 "PO-Revision-Date: 2022-01-03 22:18+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
@@ -39,7 +39,7 @@ msgid "%1 d"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "long"
+msgid "hours"
 msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
