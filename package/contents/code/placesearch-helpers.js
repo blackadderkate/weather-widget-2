@@ -307,7 +307,7 @@ function parseCSVLine(csvLine) {
                 region: stripquotes((items[0])),
                 locationName: stripquotes(items[1]),
                 latitude: parseFloat(items[2]),
-                longtitude: parseFloat(items[3]),
+                longitude: parseFloat(items[3]),
                 altitude: parseInt(items[4]),
                 timezoneId: parseInt(items[5]),
                 timezoneName: TZData.TZData[items[5]].displayName

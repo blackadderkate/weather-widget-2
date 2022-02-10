@@ -188,9 +188,9 @@ Item {
         onYes: {
             let data=filteredCSVData.get(tableView.currentRow)
             newMetnoCityLatitudeField.text=data["latitude"]
-            newMetnoCityLongtitudeField.text=data["longtitude"]
+            newMetnoCityLongitudeField.text=data["longitude"]
             newMetnoCityAltitudeField.text=data["altitude"]
-            newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longtitude"]+"&altitude="+data["altitude"]
+            newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longitude"]+"&altitude="+data["altitude"]
             let loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
             newMetnoCityAlias.text=loc
             addMetnoCityIdDialog.timezoneID=data["timezoneId"]
@@ -224,7 +224,7 @@ Item {
                 var reason=""
                 var reasoncount=0;
                 var latValid=isNumeric(newMetnoCityLatitudeField.text)
-                var longValid=isNumeric(newMetnoCityLongtitudeField.text)
+                var longValid=isNumeric(newMetnoCityLongitudeField.text)
 
                 action.accepted = false
 
@@ -240,12 +240,12 @@ Item {
                 }
 
                 if (!(longValid)) {
-                    reason+=i18n("The Longtitude is not numeric.")+"\n"
+                    reason+=i18n("The Longitude is not numeric.")+"\n"
                     reasoncount++
                 }
                 else {
-                    if (! between(newMetnoCityLongtitudeField.text,-180,180)) {
-                        reason+=i18n("The Longtitude is not between -180 and 180.")+"\n"
+                    if (! between(newMetnoCityLongitudeField.text,-180,180)) {
+                        reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
                         reasoncount++
                     }
                 }
@@ -269,7 +269,7 @@ Item {
         onAccepted: {
             var resultString = newMetnoUrl.text
             if (resultString.length === 0) {
-                resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
             }
             if (editEntryNumber === -1) {
                 placesModel.append({
@@ -304,7 +304,7 @@ Item {
                 Layout.fillWidth: true
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityLatitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
                     }
                 }
             }
@@ -314,16 +314,16 @@ Item {
             }
 
             Label {
-                id: newMetnoCityLongtitudeLabel
-                text: i18n("Longtitude")+":"
+                id: newMetnoCityLongitudeLabel
+                text: i18n("Longitude")+":"
             }
 
             TextField {
-                id: newMetnoCityLongtitudeField
+                id: newMetnoCityLongitudeField
                 Layout.fillWidth: true
                 onEditingFinished: {
-                    if (isNumeric(newMetnoCityLongtitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                    if (isNumeric(newMetnoCityLongitudeField.text)) {
+                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
                     }
                 }
             }
@@ -342,7 +342,7 @@ Item {
                 Layout.fillWidth: true
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityAltitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongtitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
                     }
                 }
             }
@@ -360,7 +360,7 @@ Item {
                   var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                   if (data.length === 3) {
                     newMetnoCityLatitudeField.text=data[0]
-                    newMetnoCityLongtitudeField.text=data[1]
+                    newMetnoCityLongitudeField.text=data[1]
                     newMetnoCityAltitudeField.text=data[2]
                   }
               }
@@ -457,7 +457,7 @@ Item {
             TableViewColumn { role: "locationName"; title: i18n("Location") }
             TableViewColumn { role: "region"; title: i18n("Area"); width :75 }
             TableViewColumn { role: "latitude"; title: i18n("Latitude"); width :75 }
-            TableViewColumn { role: "longtitude"; title: i18n("Longtitude"); width :75 }
+            TableViewColumn { role: "longitude"; title: i18n("Longitude"); width :75 }
             TableViewColumn { role: "altitude"; title: i18n("Altitude"); width :75}
             TableViewColumn { role: "timezoneName"; title: i18n("Timezone"); width :100}
             onDoubleClicked: {
@@ -713,7 +713,7 @@ Item {
                                     newMetnoUrl.text = url
                                     var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                                     newMetnoCityLatitudeField.text = data[0]
-                                    newMetnoCityLongtitudeField.text = data[1]
+                                    newMetnoCityLongitudeField.text = data[1]
                                     newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
                                     for (var i = 0; i < timezoneDataModel.count; i++) {
                                       if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
@@ -764,7 +764,7 @@ Item {
                     editEntryNumber = -1
                     newMetnoCityAlias.text = ''
                     newMetnoCityLatitudeField.text = ''
-                    newMetnoCityLongtitudeField.text = ''
+                    newMetnoCityLongitudeField.text = ''
                     newMetnoCityAltitudeField.text = ''
                     newMetnoUrl.text = ''
                     newMetnoCityLatitudeField.focus = true

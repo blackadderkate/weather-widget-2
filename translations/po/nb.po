@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # Johnny A. Solbu <johnny@solbu.net>, 2022.
 #
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-09 20:04+0000\n"
+"POT-Creation-Date: 2022-02-10 22:55+0000\n"
 "PO-Revision-Date: 2022-02-09 21:52+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -197,11 +198,11 @@ msgid "The Latitude is not between -90 and 90."
 msgstr "Breddegraden er ikke mellom -90 og 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longtitude is not numeric."
+msgid "The Longitude is not numeric."
 msgstr "Lengdegraden er ikke numerisk."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longtitude is not between -180 and 180."
+msgid "The Longitude is not between -180 and 180."
 msgstr "Lengdegraden er ikke mellom -180 og 180."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -219,7 +220,7 @@ msgid "Latitude"
 msgstr "Breddegrad"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude"
+msgid "Longitude"
 msgstr "Lengdegrad"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-09 20:04+0000\n"
+"POT-Creation-Date: 2022-02-10 22:55+0000\n"
 "PO-Revision-Date: 2022-01-03 22:19+0000\n"
 "Last-Translator: Tomasz Przybył <fademind@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -201,11 +201,11 @@ msgid "The Latitude is not between -90 and 90."
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longtitude is not numeric."
+msgid "The Longitude is not numeric."
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longtitude is not between -180 and 180."
+msgid "The Longitude is not between -180 and 180."
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -224,7 +224,7 @@ msgid "Latitude"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longtitude"
+msgid "Longitude"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
