@@ -42,7 +42,7 @@ msgstr "%1 д"
 
 #: ../../package/contents/code/data-loader.js
 msgid "long"
-msgstr "давно"
+msgstr "давно тому"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
