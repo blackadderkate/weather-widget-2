@@ -101,8 +101,7 @@ Item {
 
             horizontalAlignment: layoutType === 2 ? Text.AlignLeft : Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            fontSizeMode: layoutType === 2 ? Text.Fit : Text.FixedSize
-
+            fontSizeMode:  layoutType === 2 ? Text.FixedSize : Text.HorizontalFit
             font.family: 'weathericons'
             text: iconNameStr
 
@@ -126,6 +125,7 @@ Item {
             verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
 
             text: temperatureStr
+            fontSizeMode:  layoutType === 2 ? Text.Fit : Text.HorizontalFit
             font.pixelSize: fontPixelSize * (layoutType === 2 ? 0.5 : (temperatureType !== UnitUtils.TemperatureType.CELSIUS ? 6/7 : 1))
             font.pointSize: -1
         }
