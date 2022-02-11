@@ -298,7 +298,7 @@ Item {
                     text: UnitUtils.getPressureEnding(pressureType)
                     height: parent.height
                     width: graphLeftMargin - 2 * units.devicePixelRatio
-                    horizontalAlignment: Text.AlignLeft
+                    horizontalAlignment: (UnitUtils.getPressureEnding(pressureType).length > 4) ? Text.AlignRight : Text.AlignLeft
                     anchors.right: parent.right
                     anchors.rightMargin: -graphLeftMargin
                     font.pixelSize: 11 * units.devicePixelRatio
