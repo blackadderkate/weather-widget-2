@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-02-10 22:55+0000\n"
-"PO-Revision-Date: 2022-02-07 17:47+0100\n"
+"PO-Revision-Date: 2022-02-11 14:04+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -29,19 +28,19 @@ msgstr "Een plasmoid die weerinformatie toont van de met.no-server"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m"
-msgstr ""
+msgstr "%1 "
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h"
-msgstr ""
+msgstr "%1 u"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d"
-msgstr ""
+msgstr "%1 d"
 
 #: ../../package/contents/code/data-loader.js
 msgid "hours"
-msgstr ""
+msgstr "uur"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -257,23 +256,23 @@ msgstr "Locatie"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
-msgstr ""
+msgstr "Regio"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Timezone"
-msgstr ""
+msgstr "Tijdzone"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
-msgstr ""
+msgstr "De zoekinformatie is geëxtraheerd van Geonames.org."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Country:"
-msgstr ""
+msgstr "Land:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Filter:"
-msgstr ""
+msgstr "Filter:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
@@ -309,18 +308,20 @@ msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
+"De Met.no-weersvoorspelling wordt aangeleverd door het Noors Meteorologisch "
+"Instituut."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
-msgstr ""
+msgstr "De zonsopkomst/-ondergang wordt aangeleverd door Sunrise - Sunset."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "OWM weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "De OWM-weersvoorspelling wordt aangeleverd door OpenWeather."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Weather icons created by Erik Flowers."
-msgstr ""
+msgstr "De weerpictogrammen zijn gemaakt door Erik Flowers."
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -354,7 +355,7 @@ msgstr "Volgende locatie"
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
-msgstr ""
+msgstr "Herladen"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
@@ -384,6 +385,8 @@ msgstr "Bezig met laden van afbeelding…"
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
+"De weersvoorspelling wordt aangeleverd door het Noors Meteorologisch "
+"Instituut."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
