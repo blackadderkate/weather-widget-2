@@ -92,7 +92,7 @@ Item {
                 iconName: i === differenceHoursMid ? meteogramModelObj.iconName : '',
                 temperature: meteogramModelObj.temperature,
                 precipitationAvg: meteogramModelObj.precipitationAvg,
-                precipitationMin: meteogramModelObj.precipitationMin,
+                precipitationLabel: meteogramModelObj.precipitationLabel,
                 precipitationMax: meteogramModelObj.precipitationMax,
                 canShowDay: true,
                 canShowPrec: true,
@@ -486,7 +486,19 @@ Item {
                     }
 
                     PlasmaComponents.Label {
-                        text: precipitationMin
+                        function localisePrecipitationUnit(unitText) {
+                            switch (unitText) {
+                              case "mm":
+                                return i18n("mm")
+                              case "cm":
+                                return i18n("cm")
+                              case "in":
+                                return i18n("in")
+                              default:
+                                return ""
+                            }
+                        }
+                        text: localisePrecipitationUnit(precipitationLabel)
                         verticalAlignment: Text.AlignTop
                         horizontalAlignment: Text.AlignHCenter
                         anchors.top: parent.bottom
