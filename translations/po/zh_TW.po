@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-10 22:55+0000\n"
+"POT-Creation-Date: 2022-02-12 18:08+0700\n"
 "PO-Revision-Date: 2022-01-03 22:18+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
@@ -379,6 +379,14 @@ msgstr "正在載入圖片..."
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
+msgstr ""
+
+#: ../../package/contents/ui/providers/MetNo.qml
+msgid "mm"
+msgstr ""
+
+#: ../../package/contents/ui/providers/MetNo.qml
+msgid "cm"
 msgstr ""
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml

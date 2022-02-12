@@ -72,7 +72,16 @@ Item {
                 if (prec > 0) {
                     counter++
                     if (counter === 1) {
-                        unit=precipitation_unit
+                        switch (precipitation_unit) {
+                            case: "mm":
+                                unit=i18n("mm")
+                                break;
+                            case: "cm":
+                                unit=i18n("cm")
+                                break;
+                            default:
+                                unit=precipitation_unit
+                        }
                     }
                     else {
                         unit=''
