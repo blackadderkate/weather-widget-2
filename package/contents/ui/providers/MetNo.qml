@@ -73,10 +73,10 @@ Item {
                     counter++
                     if (counter === 1) {
                         switch (precipitation_unit) {
-                            case: "mm":
+                            case "mm":
                                 unit=i18n("mm")
                                 break;
-                            case: "cm":
+                            case "cm":
                                 unit=i18n("cm")
                                 break;
                             default:
