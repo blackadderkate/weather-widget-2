@@ -495,7 +495,7 @@ Item {
                               case "in":
                                 return i18n("in")
                               default:
-                                return ""
+                                return unitText
                             }
                         }
                         text: localisePrecipitationUnit(precipitationLabel)
