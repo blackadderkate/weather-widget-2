@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-10 22:55+0000\n"
+"POT-Creation-Date: 2022-02-12 16:29+0000\n"
 "PO-Revision-Date: 2022-02-09 21:52+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -371,6 +371,18 @@ msgstr "%1 siden"
 #: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "nær fremtid"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "mm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "cm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "in"
+msgstr ""
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "Offline mode"

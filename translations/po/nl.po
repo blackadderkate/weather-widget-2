@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-10 22:55+0000\n"
+"POT-Creation-Date: 2022-02-12 16:29+0000\n"
 "PO-Revision-Date: 2022-02-11 14:04+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -372,6 +373,18 @@ msgstr "%1 geleden"
 #: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "toekomstig"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "mm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "cm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "in"
+msgstr ""
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "Offline mode"

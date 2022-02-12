@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-10 22:55+0000\n"
+"POT-Creation-Date: 2022-02-12 16:29+0000\n"
 "PO-Revision-Date: 2022-01-03 22:04+0000\n"
 "Last-Translator: Kepa Badiola <badiol@yahoo.es>\n"
 "Language-Team: spanish <LL@li.org>\n"
@@ -371,6 +371,18 @@ msgstr "hace %1"
 #: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "futuro próximo"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "mm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "cm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "in"
+msgstr ""
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "Offline mode"
