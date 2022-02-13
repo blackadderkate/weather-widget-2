@@ -187,6 +187,8 @@ function getIconCode(iconName, providerId, partOfDay) {
         iconCodeParts = WeatherFont.iconNameByYrNoCode[iconName]
     } else if (providerId === 'owm') {
         iconCodeParts = WeatherFont.iconNameByOwmCode[iconName]
+    } else if (providerId === 'owm2022') {
+        iconCodeParts = WeatherFont.iconNameByOwmCode[iconName]
     } else if (providerId === 'metno') {
         iconCodeParts = WeatherFont.iconNameByYrNoCode[iconName]
     }

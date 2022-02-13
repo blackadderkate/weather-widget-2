@@ -89,7 +89,7 @@ Item {
             var preparedDate = new Date(dateFrom.getTime() + i * oneHourMs)
             hourGridModel.append({
                 dateFrom: UnitUtils.convertDate(preparedDate, timezoneType),
-                iconName: i === differenceHoursMid ? meteogramModelObj.iconName : '',
+                iconName: i === differenceHoursMid ? (meteogramModelObj.iconName).toString() : '',
                 temperature: meteogramModelObj.temperature,
                 precipitationAvg: meteogramModelObj.precipitationAvg,
                 precipitationLabel: meteogramModelObj.precipitationLabel,

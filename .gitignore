@@ -9,3 +9,4 @@
 /buildWidget/
 /tmp/
 /package/contents/locale/
+*.kate-swp
