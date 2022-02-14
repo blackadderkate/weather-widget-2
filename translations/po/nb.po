@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # Johnny A. Solbu <johnny@solbu.net>, 2022.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-02-12 16:29+0000\n"
-"PO-Revision-Date: 2022-02-09 21:52+0100\n"
+"PO-Revision-Date: 2022-02-14 15:54+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
@@ -374,15 +373,15 @@ msgstr "nær fremtid"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "in"
-msgstr ""
+msgstr "tommer"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "Offline mode"
