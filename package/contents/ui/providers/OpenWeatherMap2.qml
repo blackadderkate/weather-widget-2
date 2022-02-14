@@ -28,7 +28,8 @@ Item {
     property var locale: Qt.locale()
 
     property string urlPrefix: 'http://localhost'
-    property string appIdAndModeSuffix: '&units=metric&appid=ef8d2ddfd28e7a591d4cc9da28e78500'
+    property string tkn: 'ef8d2ddfd28e7a591d4cc9da28e78500'
+    property string appIdAndModeSuffix: '&units=metric&appid=' + tkn
 
     // DEBUGGING URLs
     //     property string urlPrefix: 'http://localhost/forecast'
