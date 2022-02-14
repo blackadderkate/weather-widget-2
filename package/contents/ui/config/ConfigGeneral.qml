@@ -542,7 +542,7 @@ Item {
                 verticalAlignment: Text.AlignVCenter
                 width: 160
                 height: 31
-                text: i18n("")
+                text: ""
                 focus: true
                 font.capitalization: Font.Capitalize
                 selectByMouse: true
