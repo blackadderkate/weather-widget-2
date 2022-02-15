@@ -27,14 +27,16 @@ Item {
 
     property var locale: Qt.locale()
 
-    property string urlPrefix: 'http://localhost'
+    property string urlPrefix: 'http://localhost/'
+//     property string urlPrefix: 'https://api.openweathermap.org/data/2.5/'
     property string tkn: 'ef8d2ddfd28e7a591d4cc9da28e78500'
     property string appIdAndModeSuffix: '&units=metric&appid=' + tkn
 
-    // DEBUGGING URLs
-    //     property string urlPrefix: 'http://localhost/forecast'
-    //     property string appIdAndModeSuffix: ''
-
+    function loadDataFromInternet(successCallback, failureCallback, locationObject) {
+        var loadedData = {
+            fiveDay: null,
+            oneShot: null
+        }
 
     function parseDate(dateString) {
         return new Date(dateString + '.000Z')
@@ -106,7 +108,9 @@ Item {
 
 
 
-    function loadDataFromInternet(successCallback, failureCallback, locationObject) {
+
+
+
         function formatTime(ISOdate) {
             return ISOdate.substr(11,5)
         }
@@ -132,73 +136,100 @@ Item {
             additionalWeatherInfo.sunSetTime=ss
             updateMeteogramModel(futureWeather)
             updateNextDaysModel()
-            weatherDataFlag = true
+//             weatherDataFlag = true
             updateAdditionalWeatherInfoText()
             refreshTooltipSubText()
             successCallback(readingsArray)
         }
 
         function updateMeteogramModel(weather) {
-            dbgprint("**************************************")
-            // dbgprint(JSON.stringify(weather))
             meteogramModel.clear()
 
             var firstFromMs = null
             var limitMsDifference = 1000 * 60 * 60 * 54 // 2.25 days
             var now = new Date()
             var counter=0
+
             for (var i = 0; i < weather.length; i++) {
                 var obj = weather[i]
-                dbgprint(JSON.stringify(obj.rain))
                 var dateFrom = new Date(obj.dt * 1000)
                 var dateTo = new Date((obj.dt + 3600)*1000)
                 //             dbgprint('meteo fill: i=' + i + ', from=' + obj.from + ', to=' + obj.to)
                 dbgprint('parsed: from=' + dateFrom + ', to=' + dateTo)
-                //             if (now > dateTo) {
-                //                 continue;
-                //             }
 
-                //             if (dateFrom <= now && now <= dateTo) {
-                //                 dbgprint('foundNow')
-                //                 dateFrom = now
-                //             }
                 var prec = (obj.rain === undefined) ? 0: obj.rain["1h"]
-                dbgprint("***" + prec)
                 if (typeof(prec)==="string"  && prec==="") {
                     prec = 0
                 }
 
                 counter = (prec > 0) ? counter+1 : 0
                 meteogramModel.append({
-                                          from: dateFrom,
-                                          to: dateTo,
-                                          temperature: (obj.temp),
-                                          precipitationAvg: prec,
-                                          precipitationLabel:  (counter === 1) ? "mm" : "",
-                                          precipitationMax: prec,
-                                          windDirection: obj.wind_deg,
-                                          windSpeedMps: parseFloat(obj.wind_speed),
-                                          pressureHpa: parseFloat(obj.pressure),
-                                          iconName: (obj.weather[0].id).toString()
-                                      })
-
-                //             if (firstFromMs === null) {
-                //                 firstFromMs = dateFrom.getTime()
-                //             }
-
-                //             if (dateTo.getTime() - firstFromMs > limitMsDifference) {
-                //                 dbgprint('breaking')
-                //                 break
-                //             }
+                    from: dateFrom,
+                    to: dateTo,
+                    temperature: (obj.temp),
+                    precipitationAvg: prec,
+                    precipitationLabel:  (counter === 1) ? "mm" : "",
+                    precipitationMax: prec,
+                    windDirection: obj.wind_deg,
+                    windSpeedMps: parseFloat(obj.wind_speed),
+                    pressureHpa: parseFloat(obj.pressure),
+                    iconName: (obj.weather[0].id).toString()
+                })
             }
 
-            dbgprint('meteogramModel.count = ' + meteogramModel.count)
+            var lastDate = weather[weather.length - 1].dt
+            var currDate = 0
+            var f = 0
+            do {
+              f++
+              currDate = loadedData.fiveDay.list[f].dt
+            } while (( currDate <= lastDate) && (f < weather.length))
 
+            obj = loadedData.fiveDay.list[f]
+
+            currDate = loadedData.fiveDay.list[f].dt
+            var nextDate = lastDate + 3600
+            counter = 0
+
+//             console.log("LAST METEOGRAM DATE: " + JSON.stringify(meteogramModel.get(meteogramModel.count -1).from))
+//             console.log("LAST DATE: " + new Date(lastDate * 1000).toISOString())
+//             console.log("NEXT 5-DAY DATE: " + new Date(currDate * 1000).toISOString())
+
+
+
+            while (meteogramModel.count < 60) {
+
+                if (nextDate < currDate) {
+                    obj = loadedData.fiveDay.list[f-1]
+                } else {
+                    obj = loadedData.fiveDay.list[f]
+                }
+                let prec = (obj.rain !== undefined) ? obj.rain["3h"] : 0
+                counter = (prec > 0) ? counter+1 : 0
+//                 console.log("\t\t" + f + "\t" + new Date(nextDate * 1000).toISOString() + "\t" + new Date(obj.dt * 1000).toISOString() + "\t" + obj.main.temp)
+                meteogramModel.append({
+                      from: new Date(nextDate * 1000),
+                      to: new Date((nextDate +3600) * 1000),
+                      precipitationAvg: prec,
+                      precipitationLabel:  (counter === 1) ? "mm" : "",
+                      precipitationMax: prec,
+                      temperature: obj.main.temp,
+                      windDirection: obj.wind.deg,
+                      windSpeedMps: parseFloat(obj.wind.speed),
+                      pressureHpa: parseFloat(obj.main.pressure),
+                      iconName: (obj.weather[0].id).toString()
+                })
+                nextDate = nextDate + 3600
+                if (nextDate === (currDate + 10800)) {
+                    f++
+                    currDate = loadedData.fiveDay.list[f].dt
+                }
+            }
+            dbgprint('meteogramModel.count = ' + meteogramModel.count)
             main.meteogramModelChanged = !main.meteogramModelChanged
         }
 
         function updateNextDaysModel() {
-
             function resetobj() {
                 var obj={}
                 obj.hidden0=true
@@ -288,22 +319,20 @@ Item {
         function successOneShot(jsonString) {
             var readingsArray = JSON.parse(jsonString)
             loadedData.oneShot = readingsArray
-            let URL=urlPrefix + '/fiveday.json?id=' + placeIdentifier + appIdAndModeSuffix
+//             let URL=urlPrefix + 'forecast?' + placeIdentifier + appIdAndModeSuffix
+            let URL=urlPrefix + 'fiveday.json?' + placeIdentifier + appIdAndModeSuffix
             DataLoader.fetchJsonFromInternet(URL, successFiveDay, failureCallback)
         }
-
         var placeIdentifier = locationObject.placeIdentifier
+        placeIdentifier = "lat=52.63333&lon=-1.13333"
         var loadedCounter = 0
-        var loadedData = {
-            fiveDay: null,
-            oneShot: null
-        }
-        let URL=urlPrefix + '/onecall.json?' + placeIdentifier + appIdAndModeSuffix
-        var xhr1 = DataLoader.fetchJsonFromInternet(URL, successOneShot, failureCallback)
+         let URL="http://localhost/onecall.json?" + placeIdentifier + appIdAndModeSuffix + '&exclude=minutely'
+//          let URL=urlPrefix + 'onecall?' + placeIdentifier + appIdAndModeSuffix + '&exclude=minutely'
+          console.log(URL)
+          var xhr1 = DataLoader.fetchJsonFromInternet(URL, successOneShot, failureCallback)
 
-        return [xhr1]
+          return [xhr1]
     }
-
     function setWeatherContents(cacheContent) {
         if (!cacheContent.longTerm || !cacheContent.hourByHour || !cacheContent.current) {
             return false

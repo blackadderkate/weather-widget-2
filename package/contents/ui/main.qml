@@ -104,6 +104,7 @@ Item {
     Plasmoid.fullRepresentation: fr
 
     property bool debugLogging: plasmoid.configuration.debugLogging
+//     property bool debugLogging: true
 
     FontLoader {
         source: '../fonts/weathericons-regular-webfont-2.0.10.ttf'
