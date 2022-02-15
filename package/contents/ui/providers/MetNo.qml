@@ -65,7 +65,7 @@ Item {
                 var wd=obj.data.instant.details["wind_from_direction"]
                 var ws=obj.data.instant.details["wind_speed"]
                 var ap=obj.data.instant.details["air_pressure_at_sea_level"]
-                var airtmp=parseInt(obj.data.instant.details["air_temperature"])
+                var airtmp=parseFloat(obj.data.instant.details["air_temperature"])
                 var icon=obj.data.next_1_hours.summary["symbol_code"]
                 var prec=obj.data.next_1_hours.details["precipitation_amount"]
                 counter = (prec > 0) ? counter+1 : 0
