@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-01-03 22:03+0000\n"
 "Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
@@ -27,19 +26,19 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
+msgid "%1 m ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
+msgid "%1 h ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
+msgid "%1 d ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
+msgid "long ago"
 msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
@@ -362,10 +361,6 @@ msgid "Pause Updating"
 msgstr "Zakázat obnovování"
 
 #: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "před %1"
-
-#: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "brzy bude"
 
@@ -397,6 +392,9 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "dnes"
+
+#~ msgid "%1 ago"
+#~ msgstr "před %1"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Použít renderovaný meteogram pro yr.no"

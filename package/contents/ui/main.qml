@@ -365,7 +365,7 @@ Item {
     function updateLastReloadedText() {
       dbgprint("updateLastReloadedText: " + lastloadingSuccessTime)
         if (lastloadingSuccessTime > 0) {
-            lastReloadedText = '⬇ ' + i18n("%1 ago", DataLoader.getLastReloadedTimeText(dateNow() - lastloadingSuccessTime))
+            lastReloadedText = '⬇ ' + DataLoader.getLastReloadedTimeText(dateNow() - lastloadingSuccessTime)
         }
         plasmoid.status = DataLoader.getPlasmoidStatus(lastloadingSuccessTime, inTrayActiveTimeoutSec)
     }

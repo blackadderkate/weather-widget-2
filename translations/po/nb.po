@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # Johnny A. Solbu <johnny@solbu.net>, 2022.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-02-09 21:52+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -28,20 +27,20 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr "Plasmoid som viser værinformasjon fra met.no"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
-msgstr "%1 m"
+msgid "%1 m ago"
+msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
-msgstr "%1 t"
+msgid "%1 h ago"
+msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
-msgstr "%1 d"
+msgid "%1 d ago"
+msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
-msgstr "timer"
+msgid "long ago"
+msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -365,10 +364,6 @@ msgid "Pause Updating"
 msgstr "Pause oppdatering"
 
 #: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "%1 siden"
-
-#: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "nær fremtid"
 
@@ -400,6 +395,21 @@ msgstr "Værmeldingsdata levert av Meteorologisk institutt."
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "i dag"
+
+#~ msgid "%1 m"
+#~ msgstr "%1 m"
+
+#~ msgid "%1 h"
+#~ msgstr "%1 t"
+
+#~ msgid "%1 d"
+#~ msgstr "%1 d"
+
+#~ msgid "hours"
+#~ msgstr "timer"
+
+#~ msgid "%1 ago"
+#~ msgstr "%1 siden"
 
 #~ msgid "weather-clouds"
 #~ msgstr "weather-clouds"

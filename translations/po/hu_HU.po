@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Laszlo Espadas <kardiweb@protonmail.ch>, 2017.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-applet-weather-widget\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-01-03 22:07+0000\n"
 "Last-Translator: Laszlo Espadas <kardiweb@protonmail.ch>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -30,19 +29,19 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
+msgid "%1 m ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
+msgid "%1 h ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
+msgid "%1 d ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
+msgid "long ago"
 msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
@@ -364,10 +363,6 @@ msgid "Pause Updating"
 msgstr "Frissítés megállítása"
 
 #: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "%1 ezelőtt"
-
-#: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "Jelenleg"
 
@@ -399,6 +394,9 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "ma"
+
+#~ msgid "%1 ago"
+#~ msgstr "%1 ezelőtt"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Meteorológia szolgáltató a yr.no"
