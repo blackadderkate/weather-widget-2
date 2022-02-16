@@ -30,19 +30,19 @@ msgstr ""
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m ago"
-msgstr ""
+msgstr "%1 m ezelőtt"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h ago"
-msgstr ""
+msgstr "%1 ó ezelőtt"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d ago"
-msgstr ""
+msgstr "%1 n ezelőtt"
 
 #: ../../package/contents/code/data-loader.js
 msgid "long ago"
-msgstr ""
+msgstr "hosszú ideje"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -394,9 +394,6 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "ma"
-
-#~ msgid "%1 ago"
-#~ msgstr "%1 ezelőtt"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Meteorológia szolgáltató a yr.no"

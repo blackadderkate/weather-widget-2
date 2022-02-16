@@ -27,19 +27,19 @@ msgstr ""
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m ago"
-msgstr ""
+msgstr "%1 m fa"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h ago"
-msgstr ""
+msgstr "%1 o fa"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d ago"
-msgstr ""
+msgstr "%1 g fa"
 
 #: ../../package/contents/code/data-loader.js
 msgid "long ago"
-msgstr ""
+msgstr "per molto tempo"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -393,9 +393,6 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "Oggi"
-
-#~ msgid "%1 ago"
-#~ msgstr "%1 fa"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Renderizza il meteogramma per yr.no"

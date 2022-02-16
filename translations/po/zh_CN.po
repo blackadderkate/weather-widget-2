@@ -27,19 +27,19 @@ msgstr "添加 Open Weather Map"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m ago"
-msgstr ""
+msgstr "%1 分钟前"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h ago"
-msgstr ""
+msgstr "%1 小时前"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d ago"
-msgstr ""
+msgstr "%1 天前"
 
 #: ../../package/contents/code/data-loader.js
 msgid "long ago"
-msgstr ""
+msgstr "许久"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -391,9 +391,6 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "今天"
-
-#~ msgid "%1 ago"
-#~ msgstr "%1 前"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "绘制 yr.no 天气图表"

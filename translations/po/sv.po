@@ -28,19 +28,19 @@ msgstr "Plasmoid som visar väderinformation från met.no (yr.no)"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m ago"
-msgstr ""
+msgstr "%1 m sedan"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h ago"
-msgstr ""
+msgstr "%1 t sedan"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d ago"
-msgstr ""
+msgstr "%1 d sedan"
 
 #: ../../package/contents/code/data-loader.js
 msgid "long ago"
-msgstr ""
+msgstr "under en lång tid"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -394,6 +394,3 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "idag"
-
-#~ msgid "%1 ago"
-#~ msgstr "%1 sedan"
