@@ -1,0 +1,11 @@
+# Ignore common temporary files
+*~
+*.mo
+*.swp
+*.bak
+
+# Ignore Build folders
+/build/
+/buildWidget/
+/tmp/
+/package/contents/locale/
