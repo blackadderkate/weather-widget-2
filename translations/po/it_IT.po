@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-01-03 22:09+0000\n"
 "Last-Translator: Armando Brandonisio <armando.bradonisio@gmail.com>\n"
 "Language-Team: Armando Brandonisio <armando.brandonisio@gmail.com>\n"
@@ -27,20 +26,20 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
-msgstr ""
+msgid "%1 m ago"
+msgstr "%1 m fa"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
-msgstr ""
+msgid "%1 h ago"
+msgstr "%1 o fa"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
-msgstr ""
+msgid "%1 d ago"
+msgstr "%1 g fa"
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
-msgstr ""
+msgid "long ago"
+msgstr "per molto tempo"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -361,10 +360,6 @@ msgstr "Riprendi l'aggiornamento"
 #: ../../package/contents/ui/main.qml
 msgid "Pause Updating"
 msgstr "Metti in pausa l'aggiornamento"
-
-#: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "%1 fa"
 
 #: ../../package/contents/ui/main.qml
 msgid "near future"

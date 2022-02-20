@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Jacobtey <jacobtey@gmail.com>, 2016.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-02-14 13:15+0700\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -29,20 +28,20 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr "Плазмоид, показывающий информацию о погоде с сервера met.no"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
-msgstr "%1 м"
+msgid "%1 m ago"
+msgstr "%1 м назад"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
-msgstr "%1 ч"
+msgid "%1 h ago"
+msgstr "%1 ч назад"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
-msgstr "%1 д"
+msgid "%1 d ago"
+msgstr "%1 д назад"
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
-msgstr "много часов"
+msgid "long ago"
+msgstr "давно"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -368,10 +367,6 @@ msgid "Pause Updating"
 msgstr "Приостановить обновление"
 
 #: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "%1 назад"
-
-#: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "ближайшее время"
 
@@ -404,9 +399,6 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "сегодня"
-
-#~ msgid "long"
-#~ msgstr "давно"
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Генерировать метеограмму для yr.no"

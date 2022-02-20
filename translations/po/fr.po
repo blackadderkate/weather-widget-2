@@ -6,12 +6,11 @@
 # David Geiger <david.david@mageialinux-online.org>, 2017
 # Adrien Daugabel <adrien.d@mageialinux-online.org>, 2017
 # Papoteur <papoteur@mageialinux-online.org>, 2017
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-01-03 22:37+0000\n"
 "Last-Translator: David Geiger <david.david@mageialinux-online.org>\n"
 "Language-Team: French (http://www.mageialinux-online.org/)\n"
@@ -31,20 +30,20 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
-msgstr ""
+msgid "%1 m ago"
+msgstr "il y a %1 m"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
-msgstr ""
+msgid "%1 h ago"
+msgstr "il y a %1 h"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
-msgstr ""
+msgid "%1 d ago"
+msgstr "il y a %1 j"
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
-msgstr ""
+msgid "long ago"
+msgstr "il y a longtemps"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -366,10 +365,6 @@ msgstr "Reprendre la mise à jour"
 #: ../../package/contents/ui/main.qml
 msgid "Pause Updating"
 msgstr "Suspendre la mise à jour"
-
-#: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "il y a %1"
 
 #: ../../package/contents/ui/main.qml
 msgid "near future"

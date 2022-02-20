@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Moo, 2017.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-01-03 22:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -17,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -29,20 +28,20 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
-msgstr ""
+msgid "%1 m ago"
+msgstr "Prieš %1 m"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
-msgstr ""
+msgid "%1 h ago"
+msgstr "Prieš %1 v"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
-msgstr ""
+msgid "%1 d ago"
+msgstr "Prieš %1 d"
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
-msgstr ""
+msgid "long ago"
+msgstr "ilgam laikui"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -366,10 +365,6 @@ msgstr "Pratęsti atnaujinimą"
 #: ../../package/contents/ui/main.qml
 msgid "Pause Updating"
 msgstr "Pristabdyti atnaujinimą"
-
-#: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "Prieš %1"
 
 #: ../../package/contents/ui/main.qml
 msgid "near future"

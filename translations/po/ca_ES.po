@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-15 00:30+0000\n"
+"POT-Creation-Date: 2022-02-16 22:06+0700\n"
 "PO-Revision-Date: 2022-02-13 14:00+0100\n"
 "Last-Translator: Eduard Selma <selma@tinet.cat>\n"
 "Language-Team: \n"
@@ -27,19 +27,19 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr "Plasmoid que mostra informació del temps del servidor de met.no"
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 m"
+msgid "%1 m ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 h"
+msgid "%1 h ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "%1 d"
+msgid "%1 d ago"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-msgid "hours"
+msgid "long ago"
 msgstr ""
 
 #: ../../package/contents/code/unit-utils.js
@@ -362,10 +362,6 @@ msgid "Pause Updating"
 msgstr "Atura l'actualització"
 
 #: ../../package/contents/ui/main.qml
-msgid "%1 ago"
-msgstr "Fa %1"
-
-#: ../../package/contents/ui/main.qml
 msgid "near future"
 msgstr "proper futur"
 
@@ -397,6 +393,9 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "avui"
+
+#~ msgid "%1 ago"
+#~ msgstr "Fa %1"
 
 #~ msgid "weather-clouds"
 #~ msgstr "temps-núvols"
