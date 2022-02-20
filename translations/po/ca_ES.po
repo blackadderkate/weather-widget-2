@@ -1,0 +1,411 @@
+# Translation of weatherWidget-2 in ca
+# Copyright (C) 2022
+# This file is distributed under the same license as the weatherWidget-2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: weatherWidget-2\n"
+"Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
+"POT-Creation-Date: 2022-02-15 00:30+0000\n"
+"PO-Revision-Date: 2022-02-13 14:00+0100\n"
+"Last-Translator: Eduard Selma <selma@tinet.cat>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: ../../package/metadata.desktop
+msgid "Weather Widget 2"
+msgstr ""
+
+#: ../../package/metadata.desktop
+msgid "Plasmoid showing weather information from met.no server"
+msgstr "Plasmoid que mostra informació del temps del servidor de met.no"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 m"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 h"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 d"
+msgstr ""
+
+#: ../../package/contents/code/data-loader.js
+msgid "hours"
+msgstr ""
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "ºC"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr "K"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "polzHg"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "mmHg"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "hPa"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "mph"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "km/h"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "m/s"
+
+#: ../../package/contents/config/config.qml
+msgid "General"
+msgstr "General"
+
+#: ../../package/contents/config/config.qml
+msgid "Appearance"
+msgstr "Aspecte"
+
+#: ../../package/contents/config/config.qml
+msgid "Units"
+msgstr "Unitats"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout"
+msgstr "Format"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout type:"
+msgstr "Tipus de format:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Horizontal"
+msgstr "Horitzontal"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
+msgstr "NOTA: El format no té efecte quan l'estri està a la safata."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Vertical"
+msgstr "Vertical"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Compact"
+msgstr "Compacte"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "In-Tray Settings"
+msgstr "Ajustos a la Safata"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Active timeout:"
+msgstr "Temps d'espera actiu:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Abbreviation for seconds"
+msgid "sec"
+msgstr "seg"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"NOTA: Després d'aquest temps l'estri s'amagarà a la safata del sistema fins "
+"que s'actualitzi. Sempre podeu definir que l'estri es mostri sempre a la "
+"safata d'entrada als paràmetres."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Afegeix un lloc de l'Open Weather Map"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "Enganxeu el URL aquí"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "Àlies de la població"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here:"
+msgstr "Trobeu l'ID de la vostra localitat cercant aquí:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"...i enganxeu el URL complet\n"
+"Ex:. http://openweathermap.org/city/2946447 per Bonn, Alemanya."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr "Error!"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr "Confirmació"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr "Voleu seleccionar aquest lloc?"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Afegeix un lloc de Met.no"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr "La Latitud no és numèrica."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr "La Latitud no està entre -90 i 90."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not between -180 and 180."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr "El Nom del Lloc està buit."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] "Hi ha un error!"
+msgstr[1] "Hi han %1 errors!"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Latitud"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr "Altura"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr "URL"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Identificador de lloc"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Cerca"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Canvia la visualització com"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Entreu l'àlies del lloc"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr "Cerca del Lloc"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "Ubicació"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Versió del plasmoid:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Source"
+msgstr "Origen"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Displayed as"
+msgstr "Visualitzat com"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Action"
+msgstr "Acció"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Miscellaneous"
+msgstr "Miscelània"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Reload interval:"
+msgstr "Interval d'actualització:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgctxt "Abbreviation for minutes"
+msgid "min"
+msgstr "min"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Temperature:"
+msgstr "Temperatura:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Pressure:"
+msgstr "Pressió:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Wind speed:"
+msgstr "Velocitat del vent:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone:"
+msgstr "Fus horari:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "My local-time"
+msgstr "Hora local"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "UTC"
+msgstr "UTC"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Next Location"
+msgstr "Propera ubicació"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr ""
+
+#: ../../package/contents/ui/main.qml
+msgid "Resume Updating"
+msgstr "Continua l'actualització"
+
+#: ../../package/contents/ui/main.qml
+msgid "Pause Updating"
+msgstr "Atura l'actualització"
+
+#: ../../package/contents/ui/main.qml
+msgid "%1 ago"
+msgstr "Fa %1"
+
+#: ../../package/contents/ui/main.qml
+msgid "near future"
+msgstr "proper futur"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "mm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "cm"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "in"
+msgstr ""
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "Offline mode"
+msgstr "Mode fora de línia"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "Loading image..."
+msgstr "Carregant imatge..."
+
+#: ../../package/contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute."
+msgstr ""
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "avui"
+
+#~ msgid "weather-clouds"
+#~ msgstr "temps-núvols"
+
+#~ msgid "The Longtitude is not numeric."
+#~ msgstr "La Longitud no és numèrica."
+
+#~ msgid "The Longtitude is not between -180 and 180."
+#~ msgstr "La Longitud no està entre -180 i 180."
+
+#~ msgid "Longtitude"
+#~ msgstr "Longitud"

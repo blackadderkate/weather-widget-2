@@ -2,6 +2,7 @@ import QtQuick 2.2
 import QtQuick.XmlListModel 2.0
 import "../../code/model-utils.js" as ModelUtils
 import "../../code/data-loader.js" as DataLoader
+import "../../code/db/timezoneData.js" as TZ
 
 
 
@@ -16,8 +17,8 @@ Item {
     property bool sunRiseSetFlag: false
 
     function getCreditLabel(placeIdentifier) {
-        return 'Weather forecast data provided by The Norwegian Meteorological Institute,'
-     }
+        return i18n("Weather forecast data provided by The Norwegian Meteorological Institute.")
+    }
 
     function getCreditLink(placeIdentifier) {
         return urlPrefix + placeIdentifier
@@ -64,29 +65,17 @@ Item {
                 var wd=obj.data.instant.details["wind_from_direction"]
                 var ws=obj.data.instant.details["wind_speed"]
                 var ap=obj.data.instant.details["air_pressure_at_sea_level"]
-                var airtmp=parseInt(obj.data.instant.details["air_temperature"])
+                var airtmp=parseFloat(obj.data.instant.details["air_temperature"])
                 var icon=obj.data.next_1_hours.summary["symbol_code"]
                 var prec=obj.data.next_1_hours.details["precipitation_amount"]
-                var unit=""
-                if (prec > 0) {
-                    counter++
-                    if (counter === 1) {
-                        unit=precipitation_unit
-                    }
-                    else {
-                        unit=''
-                    }
-                }
-                else {
-                    counter=0
-                }
+                counter = (prec > 0) ? counter+1 : 0
                 meteogramModel.append({
                     from: dateFrom,
                     to: dateTo,
                     temperature: airtmp,
                     precipitationAvg: prec,
-                    precipitationMin: unit,
                     precipitationMax: prec,
+                    precipitationLabel: (counter === 1) ? "mm" : "",
                     windDirection: parseFloat(wd),
                     windSpeedMps: parseFloat(ws),
                     pressureHpa: parseFloat(ap),
@@ -183,8 +172,14 @@ Item {
 
         function successSRAS(jsonString) {
             var readingsArray=JSON.parse(jsonString)
-            additionalWeatherInfo.sunRiseTime=formatTime(readingsArray.results.sunrise)
-            additionalWeatherInfo.sunSetTime=formatTime(readingsArray.results.sunset)
+            if ((readingsArray.location !== undefined)) {
+              additionalWeatherInfo.sunRiseTime=formatTime(readingsArray.location.time[0].sunrise.time)
+              additionalWeatherInfo.sunSetTime=formatTime(readingsArray.location.time[0].sunset.time)
+            }
+            if ((readingsArray.results !== undefined)) {
+              additionalWeatherInfo.sunRiseTime=formatTime(readingsArray.results.sunrise)
+              additionalWeatherInfo.sunSetTime=formatTime(readingsArray.results.sunset)
+            }
             sunRiseSetFlag=true
 
             if ((weatherDataFlag) && (sunRiseSetFlag)) {
@@ -200,10 +195,55 @@ Item {
             refreshTooltipSubText()
             successCallback()
         }
+
+        function calculateOffset(seconds) {
+          let hrs=String("0" +Math.floor(Math.abs(seconds) / 3600)).slice(-2)
+          let mins=String("0" + (seconds % 3600)).slice(-2)
+          let sign= (seconds >=0) ? "+" : "-"
+          return(sign+hrs+":"+mins)
+        }
+
+        function isDST(DSTPeriods) {
+          if(DSTPeriods===undefined)
+            return (false)
+
+          let now = new Date().getTime() / 1000
+          let isDSTflag=false
+          for(let f=0; f< DSTPeriods.length; f++) {
+            if ((now>=DSTPeriods[f].DSTStart) && (now <= DSTPeriods[f].DSTEnd)) {
+              isDSTflag=true
+            }
+          }
+          return(isDSTflag)
+        }
+
         weatherDataFlag=false
         sunRiseSetFlag=false
-        var xhr1 = DataLoader.fetchJsonFromInternet('https://api.sunrise-sunset.org/json?formatted=0&'+placeIdentifier, successSRAS, failureCallback)
-        var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
+        var TZURL=""
+
+        if (locationObject.timezoneID === -1) {
+          console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
+          TZURL="https://api.sunrise-sunset.org/json?formatted=0&"+placeIdentifier;
+        } else {
+          console.log("[weatherWidget] Timezone Data is available - using met.no API")
+          if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
+            timezoneShortName=TZ.TZData[locationObject.timezoneID].DSTName
+          } else {
+            timezoneShortName=TZ.TZData[locationObject.timezoneID].TZName
+          }
+          TZURL='https://api.met.no/weatherapi/sunrise/2.0/.json?'+placeIdentifier.replace("altitude","height") + "&date="+formatDate(new Date().toISOString())
+          if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
+            TZURL+="&offset="+calculateOffset(TZ.TZData[locationObject.timezoneID].DSTOffset)
+          } else {
+            TZURL+="&offset="+calculateOffset(TZ.TZData[locationObject.timezoneID].Offset)
+          }
+        }
+        console.log(TZURL);
+
+        var xhr1 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
+        var xhr2 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+//         var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
+//         var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?'+TZURL, successSRAS, failureCallback)
         return [xhr1, xhr2]
     }
 

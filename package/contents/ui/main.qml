@@ -31,6 +31,8 @@ Item {
     property string placeIdentifier
     property string placeAlias
     property string cacheKey
+    property int timezoneID
+    property string timezoneShortName
     property var cacheMap: {}
     property bool renderMeteogram: plasmoid.configuration.renderMeteogram
     property int temperatureType: plasmoid.configuration.temperatureType
@@ -140,6 +142,35 @@ Item {
 
 
     Component.onCompleted: {
+        if (plasmoid.configuration.firstRun) {
+            switch (Qt.locale().measurementSystem) {
+                case (Locale.MetricSystem):
+                  plasmoid.configuration.temperatureType = 0
+                  temperatureType = 0
+                  plasmoid.configuration.pressureType = 0
+                  pressureType = 0
+                  plasmoid.configuration.windSpeedType = 2
+                  windSpeedType = 2
+                  break;
+                case (Locale.ImperialUSSystem):
+                  plasmoid.configuration.temperatureType = 1
+                  temperatureType = 1
+                  plasmoid.configuration.pressureType = 1
+                  pressureType = 1
+                  plasmoid.configuration.windSpeedType = 1
+                  windSpeedType = 1
+                  break;
+                case (Locale.ImperialUKSystem):
+                  plasmoid.configuration.temperatureType = 0
+                  temperatureType = 0
+                  plasmoid.configuration.pressureType = 0
+                  pressureType = 0
+                  plasmoid.configuration.windSpeedType = 1
+                  windSpeedType = 1
+                  break;
+            }
+            plasmoid.configuration.firstRun = false
+        }
         inTray = (plasmoid.parent !== null && (plasmoid.parent.pluginName === 'org.kde.plasma.private.systemtray' || plasmoid.parent.objectName === 'taskItemContainer'))
         plasmoidCacheId = inTray ? plasmoid.parent.id : plasmoid.id
         dbgprint('inTray=' + inTray + ', plasmoidCacheId=' + plasmoidCacheId)
@@ -233,6 +264,10 @@ Item {
         var placeObject = places[placeIndex]
         placeIdentifier = placeObject.placeIdentifier
         placeAlias = placeObject.placeAlias
+        if (placeObject.timezoneID  === undefined ) {
+          placeObject.timezoneID = -1
+        }
+        timezoneID = parseInt(placeObject.timezoneID)
         dbgprint('next placeIdentifier is: ' + placeIdentifier)
         cacheKey = DataLoader.generateCacheKey(placeIdentifier)
         dbgprint('next cacheKey is: ' + cacheKey)
@@ -280,7 +315,7 @@ Item {
 
         loadingData = true
         lastloadingStartTime=dateNow()
-        loadingXhrs = currentProvider.loadDataFromInternet(dataLoadedFromInternet, reloadDataFailureCallback, { placeIdentifier: placeIdentifier })
+        loadingXhrs = currentProvider.loadDataFromInternet(dataLoadedFromInternet, reloadDataFailureCallback, { placeIdentifier: placeIdentifier, timezoneID: timezoneID })
 
     }
 
@@ -368,8 +403,8 @@ Item {
             subText += '<tr><td>&nbsp;</td><td></td></tr>'
         }
         subText += '<tr>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + additionalWeatherInfo.sunRiseTime + '&nbsp;&nbsp;&nbsp;</font></td>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + additionalWeatherInfo.sunSetTime + '</font></td>'
+        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + additionalWeatherInfo.sunRiseTime + ' '+timezoneShortName + '&nbsp;&nbsp;&nbsp;</font></td>'
+        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + additionalWeatherInfo.sunSetTime + ' '+timezoneShortName + '</font></td>'
         subText += '</tr>'
         subText += '</table>'
 

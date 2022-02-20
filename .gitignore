@@ -5,7 +5,7 @@
 *.bak
 
 # Ignore Build folders
-/build/
-/buildWidget/
-/tmp/
-/package/contents/locale/
+build/
+buildWidget/
+tmp/
+package/contents/locale/

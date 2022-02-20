@@ -92,7 +92,7 @@ Item {
                 iconName: i === differenceHoursMid ? meteogramModelObj.iconName : '',
                 temperature: meteogramModelObj.temperature,
                 precipitationAvg: meteogramModelObj.precipitationAvg,
-                precipitationMin: meteogramModelObj.precipitationMin,
+                precipitationLabel: meteogramModelObj.precipitationLabel,
                 precipitationMax: meteogramModelObj.precipitationMax,
                 canShowDay: true,
                 canShowPrec: true,
@@ -298,7 +298,7 @@ Item {
                     text: UnitUtils.getPressureEnding(pressureType)
                     height: parent.height
                     width: graphLeftMargin - 2 * units.devicePixelRatio
-                    horizontalAlignment: Text.AlignLeft
+                    horizontalAlignment: (UnitUtils.getPressureEnding(pressureType).length > 4) ? Text.AlignRight : Text.AlignLeft
                     anchors.right: parent.right
                     anchors.rightMargin: -graphLeftMargin
                     font.pixelSize: 11 * units.devicePixelRatio
@@ -486,7 +486,19 @@ Item {
                     }
 
                     PlasmaComponents.Label {
-                        text: precipitationMin
+                        function localisePrecipitationUnit(unitText) {
+                            switch (unitText) {
+                              case "mm":
+                                return i18n("mm")
+                              case "cm":
+                                return i18n("cm")
+                              case "in":
+                                return i18n("in")
+                              default:
+                                return unitText
+                            }
+                        }
+                        text: localisePrecipitationUnit(precipitationLabel)
                         verticalAlignment: Text.AlignTop
                         horizontalAlignment: Text.AlignHCenter
                         anchors.top: parent.bottom

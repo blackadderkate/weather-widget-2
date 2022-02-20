@@ -508,13 +508,12 @@ Item {
             if (typeof(prec)==="string"  && prec==="") {
               prec = 0
             }
-
             meteogramModel.append({
                 from: dateFrom,
                 to: dateTo,
                 temperature: parseInt(obj.temperature),
                 precipitationAvg: prec,
-                precipitationMin: '',
+                precipitationLabel: "",
                 precipitationMax: prec,
                 windDirection: obj.windDirection,
                 windSpeedMps: parseFloat(obj.windSpeedMps),

@@ -2,20 +2,20 @@
 function getLastReloadedTimeText(lastReloaded) {
     var mins = lastReloaded / 60000
     if (mins <= 180) {
-        return Math.round(mins) + 'm'
+        return i18n("%1 m", Math.round(mins));
     }
 
     var hours = mins / 60
     if (hours <= 48) {
-        return Math.round(hours) + 'h'
+        return i18n("%1 h", Math.round(hours));
     }
 
     var days = hours / 24
     if (days <= 14) {
-        return Math.round(days) + 'd'
+        return i18n("%1 d", Math.round(days));
     }
 
-    return 'long'
+    return i18n("hours")
 }
 
 function scheduleDataReload() {
