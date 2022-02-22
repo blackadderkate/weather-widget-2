@@ -48,6 +48,12 @@
         <entry name="inTrayActiveTimeoutSec" type="Int">
             <default>3600</default>
         </entry>
+        <entry name="widgetFontName" type="String">
+            <default></default>
+        </entry>
+        <entry name="widgetFontSize" type="Int">
+            <default>32</default>
+        </entry>
     </group>
 
     <group name="Units">

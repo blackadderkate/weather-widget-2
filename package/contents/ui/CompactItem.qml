@@ -28,6 +28,8 @@ Item {
 
     property bool inTray
     property int layoutType: inTray ? 2 : main.layoutType
+    property string widgetFontName: main.widgetFontName
+    property string widgetFontSize: main.widgetFontSize
 
     property double parentWidth: parent.width
     property double parentHeight: parent.height
@@ -125,8 +127,11 @@ Item {
             verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
 
             text: temperatureStr
+
+            font.family: plasmoid.configuration.widgetFontName === "" ? (theme.defaultFont) : plasmoid.configuration.widgetFontName
+
             fontSizeMode:  layoutType === 2 ? Text.Fit : Text.HorizontalFit
-            font.pixelSize: fontPixelSize * (layoutType === 2 ? 0.5 : (temperatureType !== UnitUtils.TemperatureType.CELSIUS ? 6/7 : 1))
+            font.pixelSize: plasmoid.configuration.widgetFontSize * (layoutType === 2 ? 0.7 : 1)
             font.pointSize: -1
         }
         DropShadow {

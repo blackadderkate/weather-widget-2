@@ -39,6 +39,9 @@ Item {
     property int pressureType: plasmoid.configuration.pressureType
     property int windSpeedType: plasmoid.configuration.windSpeedType
     property int timezoneType: plasmoid.configuration.timezoneType
+    property string widgetFontName: plasmoid.configuration.widgetFontName
+    property int widgetFontSize: plasmoid.configuration.widgetFontSize
+
     property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
     property string placesJsonStr: plasmoid.configuration.places
     property bool onlyOnePlace: true
@@ -143,6 +146,10 @@ Item {
 
     Component.onCompleted: {
         if (plasmoid.configuration.firstRun) {
+          if (plasmoid.configuration.widgetFontSize === undefined) {
+            plasmoid.configuration.widgetFontSize = 32
+            widgetFontSize = 32
+          }
             switch (Qt.locale().measurementSystem) {
                 case (Locale.MetricSystem):
                   plasmoid.configuration.temperatureType = 0
