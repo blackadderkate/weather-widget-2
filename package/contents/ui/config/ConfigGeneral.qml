@@ -23,11 +23,11 @@ Item {
         var places = ConfigUtils.getPlacesArray()
         ConfigUtils.getPlacesArray().forEach(function (placeObj) {
             placesModel.append({
-                providerId: placeObj.providerId,
-                placeIdentifier: placeObj.placeIdentifier,
-                placeAlias: placeObj.placeAlias,
-                timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
-            })
+                                   providerId: placeObj.providerId,
+                                   placeIdentifier: placeObj.placeIdentifier,
+                                   placeAlias: placeObj.placeAlias,
+                                   timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
+                               })
         })
         let timezoneArray = TZData.TZData.sort(dynamicSort("displayName"))
         timezoneArray.forEach(function (tz) {
@@ -63,12 +63,12 @@ Item {
         for (var i = 0; i < placesModel.count; i++) {
             var placeObj = placesModel.get(i)
             newPlacesArray.push({
-                providerId: placeObj.providerId,
-                placeIdentifier: placeObj.placeIdentifier,
-                placeAlias: placeObj.placeAlias,
-                timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
+                                    providerId: placeObj.providerId,
+                                    placeIdentifier: placeObj.placeIdentifier,
+                                    placeAlias: placeObj.placeAlias,
+                                    timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
 
-            })
+                                })
         }
         cfg_places = JSON.stringify(newPlacesArray)
         print('[weatherWidget] places: ' + cfg_places)
@@ -96,17 +96,17 @@ Item {
             }
 
             if (editEntryNumber === -1) {
-              placesModel.append({
-                  providerId: 'owm',
-                  placeIdentifier: resultString,
-                  placeAlias: newOwmCityAlias.text
-              })
+                placesModel.append({
+                                       providerId: 'owm',
+                                       placeIdentifier: resultString,
+                                       placeAlias: newOwmCityAlias.text
+                                   })
             } else {
-              placesModel.set(editEntryNumber,{
-                  providerId: 'owm',
-                  placeIdentifier: resultString,
-                  placeAlias: newOwmCityAlias.text
-              })
+                placesModel.set(editEntryNumber,{
+                                    providerId: 'owm',
+                                    placeIdentifier: resultString,
+                                    placeAlias: newOwmCityAlias.text
+                                })
             }
             placesModelChanged()
             close()
@@ -195,10 +195,10 @@ Item {
             newMetnoCityAlias.text=loc
             addMetnoCityIdDialog.timezoneID=data["timezoneId"]
             for (var i=0; i < timezoneDataModel.count; i++) {
-              if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
-                tzComboBox.currentIndex=i
-                break
-              }
+                if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
+                    tzComboBox.currentIndex=i
+                    break
+                }
             }
             searchWindow.close()
             addMetnoCityIdDialog.open()
@@ -273,18 +273,18 @@ Item {
             }
             if (editEntryNumber === -1) {
                 placesModel.append({
-                    providerId: 'metno',
-                    placeIdentifier: resultString,
-                    placeAlias: newMetnoCityAlias.text,
-                    timezoneID: addMetnoCityIdDialog.timezoneID
-                })
+                                       providerId: 'metno',
+                                       placeIdentifier: resultString,
+                                       placeAlias: newMetnoCityAlias.text,
+                                       timezoneID: addMetnoCityIdDialog.timezoneID
+                                   })
             } else {
                 placesModel.set(editEntryNumber,{
-                    providerId: 'metno',
-                    placeIdentifier: resultString,
-                    placeAlias: newMetnoCityAlias.text,
-                    timezoneID: addMetnoCityIdDialog.timezoneID
-              })
+                                    providerId: 'metno',
+                                    placeIdentifier: resultString,
+                                    placeAlias: newMetnoCityAlias.text,
+                                    timezoneID: addMetnoCityIdDialog.timezoneID
+                                })
             }
             placesModelChanged()
             close()
@@ -302,6 +302,12 @@ Item {
             TextField {
                 id: newMetnoCityLatitudeField
                 Layout.fillWidth: true
+                validator: IntValidator {bottom: -90; top: 90;}
+                onFocusChanged: {
+                    if ((newMetnoCityLatitudeField.text.length === 0) && (focus = true)) {
+                        newMetnoCityLatitudeField.text = "0"
+                    }
+                }
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityLatitudeField.text)) {
                         newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
@@ -310,7 +316,7 @@ Item {
             }
 
             Item {
-              width: 20
+                width: 20
             }
 
             Label {
@@ -321,6 +327,12 @@ Item {
             TextField {
                 id: newMetnoCityLongitudeField
                 Layout.fillWidth: true
+                validator: IntValidator {bottom: -180; top: 180;}
+                onFocusChanged: {
+                    if ((newMetnoCityLongitudeField.text.length === 0) && (focus = true)) {
+                        newMetnoCityLongitudeField.text = "0"
+                    }
+                }
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityLongitudeField.text)) {
                         newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
@@ -329,7 +341,7 @@ Item {
             }
 
             Item {
-              width: 20
+                width: 20
             }
 
             Label {
@@ -340,6 +352,13 @@ Item {
             TextField {
                 id: newMetnoCityAltitudeField
                 Layout.fillWidth: true
+                validator: IntValidator {bottom: -999; top: 5000;}
+                onFocusChanged: {
+                    if ((newMetnoCityAltitudeField.text.length === 0) && (focus = true)) {
+                        newMetnoCityAltitudeField.text = "0"
+                    }
+                }
+
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityAltitudeField.text)) {
                         newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
@@ -348,23 +367,23 @@ Item {
             }
 
             Label {
-              text: i18n("URL")+":"
+                text: i18n("URL")+":"
             }
-          TextField {
-              id: newMetnoUrl
-              placeholderText: i18n("URL")
-              Layout.columnSpan: 5
-              Layout.fillWidth: true
+            TextField {
+                id: newMetnoUrl
+                placeholderText: i18n("URL")
+                Layout.columnSpan: 5
+                Layout.fillWidth: true
 
-              onEditingFinished: {
-                  var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                  if (data.length === 3) {
-                    newMetnoCityLatitudeField.text=data[0]
-                    newMetnoCityLongitudeField.text=data[1]
-                    newMetnoCityAltitudeField.text=data[2]
-                  }
-              }
-          }
+                onEditingFinished: {
+                    var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                    if (data.length === 3) {
+                        newMetnoCityLatitudeField.text=data[0]
+                        newMetnoCityLongitudeField.text=data[1]
+                        newMetnoCityAltitudeField.text=data[2]
+                    }
+                }
+            }
             ComboBox {
                 id: tzComboBox
                 model: timezoneDataModel
@@ -374,29 +393,31 @@ Item {
                 Layout.fillWidth: true
                 onCurrentIndexChanged: {
                     if (tzComboBox.currentIndex > 0) {
-//                         console.log(tzComboBox.currentIndex)
-//                         console.log(JSON.stringify(timezoneDataModel.get(tzComboBox.currentIndex)))
                         addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
-
                     }
                 }
             }
-          Label {
-              text: i18n("Place Identifier")+":"
-          }
-          TextField {
-              id: newMetnoCityAlias
-              placeholderText: i18n("City alias")
-              Layout.columnSpan: 6
-              Layout.fillWidth: true
-          }
-          Button {
-              text: i18n("Search")
-              Layout.alignment: Qt.AlignRight
-              onClicked: {
-                  searchWindow.open()
-              }
-          }
+            Label {
+                text: i18n("Place Identifier")+":"
+            }
+            TextField {
+                id: newMetnoCityAlias
+                placeholderText: i18n("City alias")
+                Layout.columnSpan: 6
+                Layout.fillWidth: true
+                onFocusChanged: {
+                    if ((newMetnoCityAlias.text.length === 0) && (focus = true)) {
+                        newMetnoCityAlias.text = i18n("TBA")
+                    }
+                }
+            }
+            Button {
+                text: i18n("Search")
+                Layout.alignment: Qt.AlignRight
+                onClicked: {
+                    searchWindow.open()
+                }
+            }
         }
     }
 
@@ -428,9 +449,9 @@ Item {
         height: 400
         standardButtons: StandardButton.Ok | StandardButton.Cancel
         onAccepted: {
-           if(tableView.currentRow > -1) {
-               saveSearchedData.open()
-           }
+            if(tableView.currentRow > -1) {
+                saveSearchedData.open()
+            }
         }
         Component.onCompleted: {
             let locale=Qt.locale().name.substr(3,2)
@@ -582,9 +603,9 @@ Item {
         }
 
         Label {
-              text: i18n("Location")
-              font.bold: true
-              Layout.alignment: Qt.AlignLeft
+            text: i18n("Location")
+            font.bold: true
+            Layout.alignment: Qt.AlignLeft
         }
 
         TableView {
@@ -716,11 +737,11 @@ Item {
                                     newMetnoCityLongitudeField.text = data[1]
                                     newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
                                     for (var i = 0; i < timezoneDataModel.count; i++) {
-                                      if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
-                                        tzComboBox.currentIndex = i
-                                        addMetnoCityIdDialog.timezoneID = entry.timezoneID
-                                        break
-                                      }
+                                        if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
+                                            tzComboBox.currentIndex = i
+                                            addMetnoCityIdDialog.timezoneID = entry.timezoneID
+                                            break
+                                        }
                                     }
                                     newMetnoCityAlias.text = entry.placeAlias
                                     addMetnoCityIdDialog.open()
