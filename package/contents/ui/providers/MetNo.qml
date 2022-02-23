@@ -36,7 +36,9 @@ Item {
             var wd=currentWeather.data.instant.details["wind_from_direction"]
             var ws=currentWeather.data.instant.details["wind_speed"]
             var ap=currentWeather.data.instant.details["air_pressure_at_sea_level"]
-            actualWeatherModel.append({"temperature": currentWeather.data.instant.details["air_temperature"], "iconName": iconnumber, "windDirection": wd,"windSpeedMps": ws, "pressureHpa": ap})
+            var hm=currentWeather.data.instant.details["relative_humidity"]
+            var cld=currentWeather.data.instant.details["cloud_area_fraction"]
+            actualWeatherModel.append({"temperature": currentWeather.data.instant.details["air_temperature"], "iconName": iconnumber, "windDirection": wd,"windSpeedMps": ws, "pressureHpa": ap, "humidity": hm, "cloudiness": cld})
             additionalWeatherInfo.nearFutureWeather.temperature=futureWeather.data.instant.details["air_temperature"]
             additionalWeatherInfo.nearFutureWeather.iconName=geticonNumber(futureWeather.data.next_1_hours.summary.symbol_code)
             updateNextDaysModel(readingsArray)
