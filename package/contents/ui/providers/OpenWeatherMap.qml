@@ -142,7 +142,7 @@ Item {
         }
         XmlRole {
             name: 'cloudiness'
-            query: 'clouds/@value/string()'
+            query: 'clouds/@value/number()'
         }
         XmlRole {
             name: 'updated'

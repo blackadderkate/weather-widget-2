@@ -170,6 +170,7 @@ Item {
                     }
                 }
             }
+            main.nextDaysCount = nextDaysModel.count
         }
 
         function successSRAS(jsonString) {

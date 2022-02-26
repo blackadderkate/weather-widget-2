@@ -21,8 +21,8 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 Item {
     id: fullRepresentation
 
-    property int imageWidth: 828 * units.devicePixelRatio // Makes yr.no images grainy,
-    property int imageHeight: 302 * units.devicePixelRatio // prefer rendering meteograms
+    property int imageWidth: 800 * units.devicePixelRatio // Makes yr.no images grainy,
+    property int imageHeight: 320 * units.devicePixelRatio + defaultFontPixelSize// prefer rendering meteograms
 
     property double defaultFontPixelSize: theme.defaultFont.pixelSize
     property double footerHeight: defaultFontPixelSize
@@ -36,7 +36,9 @@ Item {
     property double hourLegendBottomMargin: defaultFontPixelSize * 0.2
 
     width: imageWidth
-    height: headingHeight + imageHeight + footerHeight + nextDaysHeight + nextDaysVerticalMargin * 2 + 14
+    height: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
+
+
 
     PlasmaComponents.Label {
         id: currentLocationText
@@ -80,14 +82,13 @@ Item {
     }
 
     Meteogram {
-        id: meteogram
+        id: meteogram2
         anchors.top: parent.top
         anchors.topMargin: headingHeight
         width: imageWidth
         height: imageHeight
-    }
-
-    /*
+     }
+  /*
      *
      * NEXT DAYS
      *
@@ -238,5 +239,4 @@ Item {
             creditText.font.underline = false
         }
     }
-
 }
