@@ -6,12 +6,11 @@
 # David Geiger <david.david@mageialinux-online.org>, 2017
 # Adrien Daugabel <adrien.d@mageialinux-online.org>, 2017
 # Papoteur <papoteur@mageialinux-online.org>, 2017
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-05 12:15+0000\n"
 "PO-Revision-Date: 2022-01-03 22:37+0000\n"
 "Last-Translator: David Geiger <david.david@mageialinux-online.org>\n"
 "Language-Team: French (http://www.mageialinux-online.org/)\n"
@@ -104,6 +103,11 @@ msgid "Units"
 msgstr "Unité"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Agencement"
 
@@ -152,6 +156,45 @@ msgstr ""
 "rafraichissement suivant. Vous pouvez toujours configurer le widget pour "
 "qu'il soit toujours \"Visible\" dans les paramètres \"Entrées\" de la barre."
 
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not between -180 and 180."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
 msgstr "Ajouter une place de carte météorologique ouverte"
@@ -193,32 +236,6 @@ msgid "Add Met.no Map Place"
 msgstr "Ajouter une place de Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Latitude"
 
@@ -237,6 +254,10 @@ msgstr ""
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
 msgstr "Identificateur de l'emplacement"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "TBA"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
@@ -281,6 +302,10 @@ msgstr ""
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
 msgstr "Version du plasmoïde:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "legacy"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -387,14 +412,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Mode hors-ligne"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Chargement de l'image..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -403,6 +420,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "aujourd'hui"
+
+#~ msgid "Offline mode"
+#~ msgstr "Mode hors-ligne"
+
+#~ msgid "Loading image..."
+#~ msgstr "Chargement de l'image..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Rendu de diagramme pour yr.no"

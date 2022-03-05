@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-05 12:15+0000\n"
 "PO-Revision-Date: 2022-01-03 22:04+0000\n"
 "Last-Translator: mfroeb\n"
 "Language-Team: mfroeb\n"
@@ -100,6 +99,11 @@ msgid "Units"
 msgstr "Einheiten"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Anordnung"
 
@@ -149,6 +153,45 @@ msgstr ""
 "der Symbole in den Einstellungen für den Systemabschnitt der Kontrollleiste "
 "verändern."
 
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not between -180 and 180."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
 msgstr "Ort von \"Open Weather Map\" hinzufügen"
@@ -190,32 +233,6 @@ msgid "Add Met.no Map Place"
 msgstr "Ort von \"Met.no Map\" hinzufügen"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Breite"
 
@@ -234,6 +251,10 @@ msgstr ""
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
 msgstr "Ortskennzeichnung"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "TBA"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
@@ -278,6 +299,10 @@ msgstr ""
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
 msgstr "Plasmoid-Version:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "legacy"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -384,14 +409,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Offline-Modus"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Lade Bild..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -400,6 +417,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "heute"
+
+#~ msgid "Offline mode"
+#~ msgstr "Offline-Modus"
+
+#~ msgid "Loading image..."
+#~ msgstr "Lade Bild..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Meteogram für yr.no erzeugen"

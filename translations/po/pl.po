@@ -2,12 +2,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Tomasz Przybył <fademind@gmail.com>, 2016.
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-05 12:15+0000\n"
 "PO-Revision-Date: 2022-01-03 22:19+0000\n"
 "Last-Translator: Tomasz Przybył <fademind@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -101,6 +100,11 @@ msgid "Units"
 msgstr "Jednostki"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Rozmieszczenie"
 
@@ -152,6 +156,46 @@ msgstr ""
 "Elementy\" we właściwościach Tacki Systemowej Plasma 5 i nie ma zastosowania "
 "dla samodzielnego plasmoidu dodanego jako osobny element Panelu."
 
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not numeric."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not between -180 and 180."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
 msgstr "Dodaj miejscowość z Open Weather"
@@ -193,33 +237,6 @@ msgid "Add Met.no Map Place"
 msgstr "Dodaj miejscowość z Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr ""
 
@@ -238,6 +255,10 @@ msgstr ""
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
 msgstr "ID miejsca"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "TBA"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
@@ -282,6 +303,10 @@ msgstr ""
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
 msgstr "Wersja plasmoidu:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "legacy"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -388,14 +413,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Tryb offline"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Wczytuję obraz..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -404,6 +421,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "dzisiaj"
+
+#~ msgid "Offline mode"
+#~ msgstr "Tryb offline"
+
+#~ msgid "Loading image..."
+#~ msgstr "Wczytuję obraz..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Generuj meteogram dla yr.no"
