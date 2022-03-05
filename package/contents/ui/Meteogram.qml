@@ -19,9 +19,9 @@ import QtQuick.Window 2.5
 import QtQml.Models 2.5
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import QtQuick.Controls 2.5
 import "../code/unit-utils.js" as UnitUtils
 import "../code/icons.js" as IconTools
+
 Item {
     visible: true
     width: imageWidth
@@ -272,15 +272,23 @@ Item {
                 anchors.top: hourText.bottom
                 anchors.left: hourText.left
 
-                ToolTip{
+                Rectangle {
                     id: windspeedhover
-                    text: (index % 2 == 1) ? UnitUtils.getWindSpeedText(windSpeedMps, windSpeedType) : ""
-                    padding: 4
-                    x: windspeedAnchor.width + 6
-                    y: (windspeedAnchor.height / 2)
-                    opacity: 1
+                    rotation: 0
+                    color: "red"
+                    x: -(childrenRect.width / 2)
+                    y: -20
                     visible: false
+                    Text {
+                        id: windspeedhovertext
+                        text: (index % 2 == 1) ? UnitUtils.getWindSpeedText(windSpeedMps, windSpeedType) : ""
+                        color: theme.textColor
+                        wrapMode: Text.Wrap
+                    }
+                    width: childrenRect.width
+                    height: childrenRect.height
                 }
+
                 Image {
                     id: wind
                     source: windStrength(windSpeedMps,textColorLight)
@@ -297,10 +305,10 @@ Item {
                 }
                 MouseArea {
                     anchors.fill: parent
-                    hoverEnabled: true
+                    hoverEnabled: wind.visible
 
                     onEntered: {
-                        windspeedhover.visible = (windspeedhover.text.length > 0)
+                        windspeedhover.visible = (windspeedhovertext.text.length > 0)
                     }
 
                     onExited: {

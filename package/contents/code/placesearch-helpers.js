@@ -249,7 +249,7 @@ var countries=Array(
 );
 function getDisplayNames() {
     let tmp=Array()
-    countries.forEach(country => {
+    countries.forEach(function(country) {
         tmp.push(country["displayName"])
     })
     return (tmp.sort());

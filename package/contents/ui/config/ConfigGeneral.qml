@@ -74,6 +74,51 @@ Item {
         print('[weatherWidget] places: ' + cfg_places)
     }
 
+    function between(x, min, max) {
+        return x >= min && x <= max;
+    }
+
+    function onActionChosen() {
+        var reason=""
+        var reasoncount=0
+        var latValid=isNumeric(newMetnoCityLatitudeField.text)
+        var longValid=isNumeric(newMetnoCityLongitudeField.text)
+
+
+        if (!(latValid)) {
+            reason+=i18n("The Latitude is not numeric.")+"\n"
+            reasoncount++
+        }
+        else {
+            if (! between(newMetnoCityLatitudeField.text,-90,90)) {
+                reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
+                reasoncount++
+            }
+        }
+
+        if (!(longValid)) {
+            reason+=i18n("The Longitude is not numeric.")+"\n"
+            reasoncount++
+        }
+        else {
+            if (! between(newMetnoCityLongitudeField.text,-180,180)) {
+                reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
+                reasoncount++
+            }
+        }
+
+        if (newMetnoCityAlias.text.length === 0) {
+            reason+=i18n("The Place Name is empty.")+"\n"
+            reasoncount++
+        }
+        if (reasoncount === 0 ) {
+            addMetnoCityIdDialog.standardButtons = StandardButton.Ok | StandardButton.Cancel
+        } else {
+            addMetnoCityIdDialog.standardButtons = StandardButton.Help | StandardButton.Cancel
+                    invalidData.text=i18np("There is an error!", "There are %1 errors!",reasoncount)
+                    invalidData.informativeText=reason
+            }
+        }
 
     Dialog {
         id: addOwmCityIdDialog
@@ -213,57 +258,10 @@ Item {
 
         width: 500
 
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
-        onActionChosen: {
+        standardButtons: StandardButton.Cancel
 
-            function between(x, min, max) {
-                return x >= min && x <= max;
-            }
-
-            if (action.button === Dialog.Ok) {
-                var reason=""
-                var reasoncount=0;
-                var latValid=isNumeric(newMetnoCityLatitudeField.text)
-                var longValid=isNumeric(newMetnoCityLongitudeField.text)
-
-                action.accepted = false
-
-                if (!(latValid)) {
-                    reason+=i18n("The Latitude is not numeric.")+"\n"
-                    reasoncount++
-                }
-                else {
-                    if (! between(newMetnoCityLatitudeField.text,-90,90)) {
-                        reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
-                        reasoncount++
-                    }
-                }
-
-                if (!(longValid)) {
-                    reason+=i18n("The Longitude is not numeric.")+"\n"
-                    reasoncount++
-                }
-                else {
-                    if (! between(newMetnoCityLongitudeField.text,-180,180)) {
-                        reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
-                        reasoncount++
-                    }
-                }
-
-                if (newMetnoCityAlias.text.length === 0) {
-                    reason+=i18n("The Place Name is empty.")+"\n"
-                    reasoncount++
-                }
-
-                if (reasoncount === 0 ) {
-                    action.accepted = true
-                } else {
-                    action.accepted = false
-                    invalidData.text=i18np("There is an error!", "There are %1 errors!",reasoncount)
-                    invalidData.informativeText=reason
-                    invalidData.open()
-                }
-            }
+        onHelp: {
+          invalidData.open()
         }
 
         onAccepted: {
@@ -307,6 +305,7 @@ Item {
                     if ((newMetnoCityLatitudeField.text.length === 0) && (focus = true)) {
                         newMetnoCityLatitudeField.text = "0"
                     }
+                    onActionChosen()
                 }
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityLatitudeField.text)) {
@@ -332,6 +331,7 @@ Item {
                     if ((newMetnoCityLongitudeField.text.length === 0) && (focus = true)) {
                         newMetnoCityLongitudeField.text = "0"
                     }
+                    onActionChosen()
                 }
                 onEditingFinished: {
                     if (isNumeric(newMetnoCityLongitudeField.text)) {
@@ -357,6 +357,7 @@ Item {
                     if ((newMetnoCityAltitudeField.text.length === 0) && (focus = true)) {
                         newMetnoCityAltitudeField.text = "0"
                     }
+                    onActionChosen()
                 }
 
                 onEditingFinished: {
@@ -374,6 +375,9 @@ Item {
                 placeholderText: i18n("URL")
                 Layout.columnSpan: 5
                 Layout.fillWidth: true
+                onFocusChanged: {
+                    onActionChosen()
+                }
 
                 onEditingFinished: {
                     var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
@@ -382,6 +386,7 @@ Item {
                         newMetnoCityLongitudeField.text=data[1]
                         newMetnoCityAltitudeField.text=data[2]
                     }
+                    onActionChosen()
                 }
             }
             ComboBox {
@@ -409,6 +414,7 @@ Item {
                     if ((newMetnoCityAlias.text.length === 0) && (focus = true)) {
                         newMetnoCityAlias.text = i18n("TBA")
                     }
+                    onActionChosen()
                 }
             }
             Button {
@@ -598,7 +604,7 @@ Item {
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.2.3'
+            text: i18n("Plasmoid version:") + ' 2.1.8 (' + i18n("legacy") + ")"
             Layout.alignment: Qt.AlignRight
         }
 
