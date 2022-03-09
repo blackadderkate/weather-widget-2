@@ -216,7 +216,7 @@ Item {
         dbgprint('sunRise: ' + additionalWeatherInfo.sunRise)
         dbgprint('sunSet:  ' + additionalWeatherInfo.sunSet)
         dbgprint('current: ' + currentTimeObj.temperature)
-        return currentTimeObj;
+        return currentTimeObj
     }
 
     function updateTodayModels(todayTimeObj) {
@@ -395,7 +395,7 @@ Item {
             var timeObj = xmlModelLongTerm.get(i)
             var dateFrom = Date.fromLocaleString(xmlLocale, timeObj.date, 'yyyy-MM-dd')
             var dateTo = new Date(dateFrom.getTime())
-            dateTo.setDate(dateTo.getDate() + 1);
+            dateTo.setDate(dateTo.getDate() + 1)
             dateTo = new Date(dateTo.getTime() - 1)
             dbgprint('LONG TERM: dateFrom=' + dateFrom + ', dateTo=' + dateTo + ', now=' + now + ', i=' + i)
 
@@ -496,7 +496,7 @@ Item {
 //             dbgprint('meteo fill: i=' + i + ', from=' + obj.from + ', to=' + obj.to)
 //             dbgprint('parsed: from=' + dateFrom + ', to=' + dateTo)
             if (now > dateTo) {
-                continue;
+                continue
             }
 
             if (dateFrom <= now && now <= dateTo) {
@@ -505,7 +505,7 @@ Item {
             }
 
             var prec = obj.precipitationAvg
-            if (typeof(prec)==="string"  && prec==="") {
+            if (typeof(prec) === "string"  && prec === "") {
               prec = 0
             }
             meteogramModel.append({

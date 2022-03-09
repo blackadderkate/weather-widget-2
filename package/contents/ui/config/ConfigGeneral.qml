@@ -31,30 +31,30 @@ Item {
         })
         let timezoneArray = TZData.TZData.sort(dynamicSort("displayName"))
         timezoneArray.forEach(function (tz) {
-            timezoneDataModel.append({displayName: tz.displayName.replace(/_/gi, " "), id: tz.id});
+            timezoneDataModel.append({displayName: tz.displayName.replace(/_/gi, " "), id: tz.id})
         })
 
     }
 
     function dynamicSort(property) {
-        var sortOrder = 1;
+        var sortOrder = 1
 
         if (property[0] === "-") {
-            sortOrder = -1;
-            property = property.substr(1);
+            sortOrder = -1
+            property = property.substr(1)
         }
 
         return function (a,b) {
             if (sortOrder == -1){
-                return b[property].localeCompare(a[property]);
+                return b[property].localeCompare(a[property])
             } else {
-                return a[property].localeCompare(b[property]);
+                return a[property].localeCompare(b[property])
             }
         }
     }
 
     function isNumeric(n) {
-        return !isNaN(parseFloat(n)) && isFinite(n);
+        return !isNaN(parseFloat(n)) && isFinite(n)
     }
 
 
@@ -75,48 +75,48 @@ Item {
     }
 
     function between(x, min, max) {
-        return x >= min && x <= max;
+        return x >= min && x <= max
     }
 
     function onActionChosen() {
-        var reason=""
-        var reasoncount=0
-        var latValid=isNumeric(newMetnoCityLatitudeField.text)
-        var longValid=isNumeric(newMetnoCityLongitudeField.text)
+        var reason = ""
+        var reasoncount = 0
+        var latValid = isNumeric(newMetnoCityLatitudeField.text)
+        var longValid = isNumeric(newMetnoCityLongitudeField.text)
 
 
         if (!(latValid)) {
-            reason+=i18n("The Latitude is not numeric.")+"\n"
+            reason += i18n("The Latitude is not numeric.") + "\n"
             reasoncount++
         }
         else {
-            if (! between(newMetnoCityLatitudeField.text,-90,90)) {
-                reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
+            if (! between(newMetnoCityLatitudeField.text, -90, 90)) {
+                reason += i18n("The Latitude is not between -90 and 90.") + "\n"
                 reasoncount++
             }
         }
 
         if (!(longValid)) {
-            reason+=i18n("The Longitude is not numeric.")+"\n"
+            reason += i18n("The Longitude is not numeric.") + "\n"
             reasoncount++
         }
         else {
-            if (! between(newMetnoCityLongitudeField.text,-180,180)) {
-                reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
+            if (! between(newMetnoCityLongitudeField.text, -180, 180)) {
+                reason += i18n("The Longitude is not between -180 and 180.") + "\n"
                 reasoncount++
             }
         }
 
         if (newMetnoCityAlias.text.length === 0) {
-            reason+=i18n("The Place Name is empty.")+"\n"
+            reason += i18n("The Place Name is empty.") + "\n"
             reasoncount++
         }
         if (reasoncount === 0 ) {
             addMetnoCityIdDialog.standardButtons = StandardButton.Ok | StandardButton.Cancel
         } else {
             addMetnoCityIdDialog.standardButtons = StandardButton.Help | StandardButton.Cancel
-                    invalidData.text=i18np("There is an error!", "There are %1 errors!",reasoncount)
-                    invalidData.informativeText=reason
+                    invalidData.text = i18np("There is an error!", "There are %1 errors!", reasoncount)
+                    invalidData.informativeText = reason
             }
         }
 

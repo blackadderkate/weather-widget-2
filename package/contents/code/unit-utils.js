@@ -8,7 +8,7 @@ var TemperatureType = {
 }
 
 function toFahrenheit(celsia) {
-    return celsia * (9/5) + 32
+    return celsia * (9 / 5) + 32
 }
 
 function toKelvin(celsia) {
@@ -16,7 +16,7 @@ function toKelvin(celsia) {
 }
 
 function getTemperatureNumberExt(temperatureStr, temperatureType) {
-    return getTemperatureNumber(temperatureStr, temperatureType) + (temperatureType === TemperatureType.CELSIUS || temperatureType === TemperatureType.FAHRENHEIT ? '°' : '');
+    return getTemperatureNumber(temperatureStr, temperatureType) + (temperatureType === TemperatureType.CELSIUS || temperatureType === TemperatureType.FAHRENHEIT ? '°' : '')
 }
 
 function getTemperatureNumber(temperatureStr, temperatureType) {

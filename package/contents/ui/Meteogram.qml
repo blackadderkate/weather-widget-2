@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
 import QtQuick 2.5
-import QtQuick.Window 2.5
-import QtQml.Models 2.5
+import QtQuick.Window 2.2
+import QtQml.Models 2.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import "../code/unit-utils.js" as UnitUtils
@@ -248,12 +248,12 @@ Item {
                 visible: textVisible
             }
             function windFrom(rotation) {
-                rotation=(Math.round( rotation / 22.5 ) * 22.5)
+                rotation = (Math.round( rotation / 22.5 ) * 22.5)
                 rotation = (rotation >= 180) ? rotation - 180 : rotation + 180
                 return rotation
             }
             function windStrength(windspeed,themecolor) {
-                var img="images/"
+                var img = "images/"
                 img += (themecolor) ? "light" : "dark"
                 img += Math.min(5,Math.trunc(windspeed / 5) + 1)
                 return img
@@ -523,38 +523,37 @@ Item {
         meteogramCanvasPressure.requestPaint()
     }
 
-
     function parseISOString(s) {
-        var b = s.split(/\D+/);
-        return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]));
+        var b = s.split(/\D+/)
+        return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]))
     }
+
     function buildMetogramData() {
-        var dateFrom=meteogramModel.get(0).from
-        var precipitation_unit=meteogramModel.get(0).precipitationLabel
-        var counter=0
-        var i=0
+        var precipitation_unit = meteogramModel.get(0).precipitationLabel
+        var counter = 0
+        var i = 0
         const oneHourMs = 3600000
         hourGridModel.clear()
 
         while (i < meteogramModel.count) {
-            var obj=meteogramModel.get(i)
-            var dateFrom=(obj.from)
-            var dateTo=(obj.to)
-                dateFrom.setMinutes(0)
-                dateFrom.setSeconds(0)
-                dateFrom.setMilliseconds(0)
+            var obj = meteogramModel.get(i)
+            var dateFrom = obj.from
+            var dateTo = obj.to
+            dateFrom.setMinutes(0)
+            dateFrom.setSeconds(0)
+            dateFrom.setMilliseconds(0)
             var differenceHours = Math.floor((dateTo.getTime() - dateFrom.getTime()) / oneHourMs)
             dbgprint(dateFrom + "\t" + dateTo + "\t" + differenceHours)
             var differenceHoursMid = Math.ceil(differenceHours / 2) - 1
-            var wd=obj.windDirection
-            var ws=obj.windSpeedMps
-            var ap=obj.pressureHpa
-            var airtmp=parseFloat(obj.temperature)
-            var icon=obj.iconName
-            var prec=obj.precipitationAvg
+            var wd = obj.windDirection
+            var ws = obj.windSpeedMps
+            var ap = obj.pressureHpa
+            var airtmp = parseFloat(obj.temperature)
+            var icon = obj.iconName
+            var prec = obj.precipitationAvg
 
             for (var j = 0; j < differenceHours; j++) {
-                counter = (prec > 0) ? counter+1 : 0
+                counter = (prec > 0) ? counter + 1 : 0
                 var preparedDate = new Date(dateFrom.getTime() + (j * oneHourMs))
 
                 hourGridModel.append({
