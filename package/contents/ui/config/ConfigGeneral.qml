@@ -300,7 +300,7 @@ Item {
             TextField {
                 id: newMetnoCityLatitudeField
                 Layout.fillWidth: true
-                validator: IntValidator {bottom: -90; top: 90;}
+                validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
                 onFocusChanged: {
                     if ((newMetnoCityLatitudeField.text.length === 0) && (focus = true)) {
                         newMetnoCityLatitudeField.text = "0"
@@ -326,7 +326,7 @@ Item {
             TextField {
                 id: newMetnoCityLongitudeField
                 Layout.fillWidth: true
-                validator: IntValidator {bottom: -180; top: 180;}
+                validator: DoubleValidator {bottom: -180; top: 180; decimals: 5 }
                 onFocusChanged: {
                     if ((newMetnoCityLongitudeField.text.length === 0) && (focus = true)) {
                         newMetnoCityLongitudeField.text = "0"
@@ -352,7 +352,7 @@ Item {
             TextField {
                 id: newMetnoCityAltitudeField
                 Layout.fillWidth: true
-                validator: IntValidator {bottom: -999; top: 5000;}
+                validator: IntValidator {bottom: -999; top: 5000 }
                 onFocusChanged: {
                     if ((newMetnoCityAltitudeField.text.length === 0) && (focus = true)) {
                         newMetnoCityAltitudeField.text = "0"
