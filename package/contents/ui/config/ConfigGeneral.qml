@@ -57,6 +57,26 @@ Item {
         return !isNaN(parseFloat(n)) && isFinite(n)
     }
 
+    function updateUrl() {
+        var Url=""
+        if (newMetnoCityLatitudeField.acceptableInput) {
+            Url += "lat=" + (Number.fromLocaleString(newMetnoCityLatitudeField.text))
+        }
+        if (newMetnoCityLongitudeField.acceptableInput) {
+            if (Url.length > 0) {
+                Url += "&"
+            }
+            Url += "lon=" + (Number.fromLocaleString(newMetnoCityLongitudeField.text))
+        }
+        if (newMetnoCityAltitudeField.acceptableInput) {
+            if (Url.length > 0) {
+                Url += "&"
+            }
+            Url += "altitude=" + (Number.fromLocaleString(newMetnoCityAltitudeField.text))
+        }
+        newMetnoUrl.text = Url
+        onActionChosen()
+    }
 
     function placesModelChanged() {
         var newPlacesArray = []
@@ -84,7 +104,6 @@ Item {
         var latValid = isNumeric(newMetnoCityLatitudeField.text)
         var longValid = isNumeric(newMetnoCityLongitudeField.text)
 
-
         if (!(latValid)) {
             reason += i18n("The Latitude is not numeric.") + "\n"
             reasoncount++
@@ -106,7 +125,7 @@ Item {
                 reasoncount++
             }
         }
-
+console.log(newMetnoCityAlias.text.length)
         if (newMetnoCityAlias.text.length === 0) {
             reason += i18n("The Place Name is empty.") + "\n"
             reasoncount++
@@ -301,17 +320,10 @@ Item {
                 id: newMetnoCityLatitudeField
                 Layout.fillWidth: true
                 validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
-                onFocusChanged: {
-                    if ((newMetnoCityLatitudeField.text.length === 0) && (focus = true)) {
-                        newMetnoCityLatitudeField.text = "0"
-                    }
-                    onActionChosen()
-                }
-                onEditingFinished: {
-                    if (isNumeric(newMetnoCityLatitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-                    }
-                }
+                textColor: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
+                onTextChanged: {
+                    updateUrl()
+                 }
             }
 
             Item {
@@ -327,17 +339,11 @@ Item {
                 id: newMetnoCityLongitudeField
                 Layout.fillWidth: true
                 validator: DoubleValidator {bottom: -180; top: 180; decimals: 5 }
-                onFocusChanged: {
-                    if ((newMetnoCityLongitudeField.text.length === 0) && (focus = true)) {
-                        newMetnoCityLongitudeField.text = "0"
-                    }
-                    onActionChosen()
-                }
-                onEditingFinished: {
-                    if (isNumeric(newMetnoCityLongitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-                    }
-                }
+                textColor: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
+                onTextChanged: {
+                    updateUrl()
+                 }
+
             }
 
             Item {
@@ -353,17 +359,9 @@ Item {
                 id: newMetnoCityAltitudeField
                 Layout.fillWidth: true
                 validator: IntValidator {bottom: -999; top: 5000 }
-                onFocusChanged: {
-                    if ((newMetnoCityAltitudeField.text.length === 0) && (focus = true)) {
-                        newMetnoCityAltitudeField.text = "0"
-                    }
-                    onActionChosen()
-                }
-
-                onEditingFinished: {
-                    if (isNumeric(newMetnoCityAltitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-                    }
+                textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+                onTextChanged: {
+                    updateUrl()
                 }
             }
 
@@ -411,9 +409,9 @@ Item {
                 Layout.columnSpan: 6
                 Layout.fillWidth: true
                 onFocusChanged: {
-                    if ((newMetnoCityAlias.text.length === 0) && (focus = true)) {
-                        newMetnoCityAlias.text = i18n("TBA")
-                    }
+                    onActionChosen()
+                }
+                onTextChanged: {
                     onActionChosen()
                 }
             }
