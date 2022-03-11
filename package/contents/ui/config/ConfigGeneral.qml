@@ -57,7 +57,6 @@ Item {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
 
-
     function placesModelChanged() {
         var newPlacesArray = []
         for (var i = 0; i < placesModel.count; i++) {
@@ -74,6 +73,25 @@ Item {
         print('[weatherWidget] places: ' + cfg_places)
     }
 
+    function updateUrl() {
+        var Url=""
+        if (newMetnoCityLatitudeField.acceptableInput) {
+            Url += "lat=" + (Number.fromLocaleString(newMetnoCityLatitudeField.text))
+        }
+        if (newMetnoCityLongitudeField.acceptableInput) {
+            if (Url.length > 0) {
+                Url += "&"
+            }
+            Url += "lon=" + (Number.fromLocaleString(newMetnoCityLongitudeField.text))
+        }
+        if (newMetnoCityAltitudeField.acceptableInput) {
+            if (Url.length > 0) {
+                Url += "&"
+            }
+            Url += "altitude=" + (Number.fromLocaleString(newMetnoCityAltitudeField.text))
+        }
+        newMetnoUrl.text = Url
+    }
 
     Dialog {
         id: addOwmCityIdDialog
@@ -302,16 +320,10 @@ Item {
             TextField {
                 id: newMetnoCityLatitudeField
                 Layout.fillWidth: true
-                validator: IntValidator {bottom: -90; top: 90;}
-                onFocusChanged: {
-                    if ((newMetnoCityLatitudeField.text.length === 0) && (focus = true)) {
-                        newMetnoCityLatitudeField.text = "0"
-                    }
-                }
-                onEditingFinished: {
-                    if (isNumeric(newMetnoCityLatitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-                    }
+                validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
+                textColor: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
+                onTextChanged: {
+                    updateUrl()
                 }
             }
 
@@ -327,17 +339,12 @@ Item {
             TextField {
                 id: newMetnoCityLongitudeField
                 Layout.fillWidth: true
-                validator: IntValidator {bottom: -180; top: 180;}
-                onFocusChanged: {
-                    if ((newMetnoCityLongitudeField.text.length === 0) && (focus = true)) {
-                        newMetnoCityLongitudeField.text = "0"
-                    }
+                validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
+                textColor: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
+                onTextChanged: {
+                    updateUrl()
                 }
-                onEditingFinished: {
-                    if (isNumeric(newMetnoCityLongitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-                    }
-                }
+
             }
 
             Item {
@@ -352,17 +359,10 @@ Item {
             TextField {
                 id: newMetnoCityAltitudeField
                 Layout.fillWidth: true
-                validator: IntValidator {bottom: -999; top: 5000;}
-                onFocusChanged: {
-                    if ((newMetnoCityAltitudeField.text.length === 0) && (focus = true)) {
-                        newMetnoCityAltitudeField.text = "0"
-                    }
-                }
-
-                onEditingFinished: {
-                    if (isNumeric(newMetnoCityAltitudeField.text)) {
-                        newMetnoUrl.text="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-                    }
+                validator: IntValidator { bottom: -999; top: 5000 }
+                textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+                onTextChanged: {
+                    updateUrl()
                 }
             }
 
