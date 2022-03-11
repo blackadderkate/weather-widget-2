@@ -248,7 +248,7 @@ var countries = Array(
             {shortCode: "ZW" , displayName: "Zimbabwe"}
 )
 function getDisplayNames() {
-    let tmp = Array()
+    var tmp = Array()
     countries.forEach(function(country) {
         tmp.push(country["displayName"])
     })
@@ -271,7 +271,7 @@ function getDisplayName(shortCode) {
 function updateListView(filter) {
     filteredCSVData.clear()
     for (var f = 0; f < myCSVData.rowCount(); f++) {
-        let lc = myCSVData.get(f).locationName.toLowerCase()
+        var lc = myCSVData.get(f).locationName.toLowerCase()
         if (myCSVData.get(f).locationName.toLowerCase().indexOf(filter.toLowerCase()) === 0) {
             filteredCSVData.append(myCSVData.get(f))
         }
@@ -282,7 +282,7 @@ function loadCSVDatabase(countryName) {
         return
     }
     myCSVData.clear()
-    let filename = Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")
+    var filename = Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")
     var xhr = new XMLHttpRequest
     xhr.open("GET", filename)
     xhr.onreadystatechange = function() {

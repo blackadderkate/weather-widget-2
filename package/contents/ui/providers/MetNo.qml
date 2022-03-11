@@ -200,9 +200,9 @@ Item {
         }
 
         function calculateOffset(seconds) {
-          let hrs = String("0" + Math.floor(Math.abs(seconds) / 3600)).slice(-2)
-          let mins = String("0" + (seconds % 3600)).slice(-2)
-          let sign = (seconds >= 0) ? "+" : "-"
+          var hrs = String("0" + Math.floor(Math.abs(seconds) / 3600)).slice(-2)
+          var mins = String("0" + (seconds % 3600)).slice(-2)
+          var sign = (seconds >= 0) ? "+" : "-"
           return(sign + hrs + ":" + mins)
         }
 
@@ -210,9 +210,9 @@ Item {
           if(DSTPeriods === undefined)
             return (false)
 
-          let now = new Date().getTime() / 1000
-          let isDSTflag = false
-          for(let f = 0; f < DSTPeriods.length; f++) {
+          var now = new Date().getTime() / 1000
+          var isDSTflag = false
+          for (var f = 0; f < DSTPeriods.length; f++) {
             if ((now >= DSTPeriods[f].DSTStart) && (now <= DSTPeriods[f].DSTEnd)) {
               isDSTflag = true
             }

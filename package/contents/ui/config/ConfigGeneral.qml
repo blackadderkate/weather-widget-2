@@ -29,7 +29,7 @@ Item {
                                    timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
                                })
         })
-        let timezoneArray = TZData.TZData.sort(dynamicSort("displayName"))
+        var timezoneArray = TZData.TZData.sort(dynamicSort("displayName"))
         timezoneArray.forEach(function (tz) {
             timezoneDataModel.append({displayName: tz.displayName.replace(/_/gi, " "), id: tz.id})
         })
@@ -231,12 +231,12 @@ Item {
         informativeText: ""
         visible: false
         onYes: {
-            let data=filteredCSVData.get(tableView.currentRow)
+            var data=filteredCSVData.get(tableView.currentRow)
             newMetnoCityLatitudeField.text=data["latitude"]
             newMetnoCityLongitudeField.text=data["longitude"]
             newMetnoCityAltitudeField.text=data["altitude"]
             newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longitude"]+"&altitude="+data["altitude"]
-            let loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+            var loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
             newMetnoCityAlias.text=loc
             addMetnoCityIdDialog.timezoneID=data["timezoneId"]
             for (var i=0; i < timezoneDataModel.count; i++) {
@@ -460,9 +460,9 @@ Item {
             }
         }
         Component.onCompleted: {
-            let locale=Qt.locale().name.substr(3,2)
-            let userCountry=Helper.getDisplayName(locale)
-            let tmpDB=Helper.getDisplayNames()
+            var locale=Qt.locale().name.substr(3,2)
+            var userCountry=Helper.getDisplayName(locale)
+            var tmpDB=Helper.getDisplayNames()
             for (var i=0; i < tmpDB.length - 1 ; i++) {
                 countryCodesModel.append({ id: tmpDB[i] })
                 if (tmpDB[i] === userCountry) {
@@ -734,9 +734,9 @@ Item {
                             Layout.fillHeight: true
                             onClicked: {
                                 editEntryNumber = styleData.row
-                                let entry = placesModel.get(styleData.row)
+                                var entry = placesModel.get(styleData.row)
                                 if (entry.providerId === "metno") {
-                                    let url=entry.placeIdentifier
+                                    var url=entry.placeIdentifier
                                     newMetnoUrl.text = url
                                     var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                                     newMetnoCityLatitudeField.text = data[0]
