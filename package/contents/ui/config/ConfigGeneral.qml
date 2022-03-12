@@ -101,15 +101,15 @@ Item {
     function onActionChosen() {
         var reason = ""
         var reasoncount = 0
-        var latValid = isNumeric(newMetnoCityLatitudeField.text)
-        var longValid = isNumeric(newMetnoCityLongitudeField.text)
+        var latValid = newMetnoCityLatitudeField.acceptableInput
+        var longValid = newMetnoCityLongitudeField.acceptableInput
 
         if (!(latValid)) {
             reason += i18n("The Latitude is not numeric.") + "\n"
             reasoncount++
         }
         else {
-            if (! between(newMetnoCityLatitudeField.text, -90, 90)) {
+            if (! between(Number.fromLocaleString(newMetnoCityLatitudeField.text), -90, 90)) {
                 reason += i18n("The Latitude is not between -90 and 90.") + "\n"
                 reasoncount++
             }
@@ -120,7 +120,7 @@ Item {
             reasoncount++
         }
         else {
-            if (! between(newMetnoCityLongitudeField.text, -180, 180)) {
+            if (! between(Number.fromLocaleString(newMetnoCityLongitudeField.text), -180, 180)) {
                 reason += i18n("The Longitude is not between -180 and 180.") + "\n"
                 reasoncount++
             }
