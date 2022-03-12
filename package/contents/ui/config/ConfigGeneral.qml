@@ -405,11 +405,6 @@ Item {
                 placeholderText: i18n("City alias")
                 Layout.columnSpan: 6
                 Layout.fillWidth: true
-                onFocusChanged: {
-                    if ((newMetnoCityAlias.text.length === 0) && (focus = true)) {
-                        newMetnoCityAlias.text = i18n("TBA")
-                    }
-                }
             }
             Button {
                 text: i18n("Search")
