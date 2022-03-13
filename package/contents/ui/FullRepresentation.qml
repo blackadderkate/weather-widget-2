@@ -58,7 +58,7 @@ Item {
         verticalAlignment: Text.AlignTop
         visible: !onlyOnePlace
         color: theme.textColor
-        text: i18n("Next Location")
+        text: i18n("Next Location") + " >>"
     }
 
     MouseArea {
@@ -69,7 +69,7 @@ Item {
 
         onClicked: {
             dbgprint('clicked next location')
-            main.setNextPlace()
+            main.setNextPlace(false,"+")
         }
 
         onEntered: {
@@ -78,6 +78,38 @@ Item {
 
         onExited: {
             nextLocationText.font.underline = false
+        }
+    }
+
+    PlasmaComponents.Label {
+        id: prevLocationText
+
+        anchors.right: nextLocationText.left
+        anchors.top: nextLocationText.top
+        anchors.rightMargin: 15
+        verticalAlignment: Text.AlignTop
+        visible: !onlyOnePlace
+        color: theme.textColor
+        text: "<< " + i18n("Previous Location")
+    }
+
+    MouseArea {
+        cursorShape: Qt.PointingHandCursor
+        anchors.fill: prevLocationText
+
+        hoverEnabled: true
+
+        onClicked: {
+            dbgprint('clicked previous location')
+            main.setNextPlace(false,"-")
+        }
+
+        onEntered: {
+            prevLocationText.font.underline = true
+        }
+
+        onExited: {
+            prevLocationText.font.underline = false
         }
     }
 

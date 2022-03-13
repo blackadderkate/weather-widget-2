@@ -242,20 +242,26 @@ Item {
         }
      }
 
-    function setNextPlace(initial) {
+    function setNextPlace(initial,direction) {
         actualWeatherModel.clear()
         nextDaysModel.clear()
         meteogramModel.clear()
+        if (direction === undefined) {
+          direction = "+"
+        }
 
         var places = ConfigUtils.getPlacesArray()
         onlyOnePlace = places.length === 1
         dbgprint('places count=' + places.length + ', placeIndex=' + plasmoid.configuration.placeIndex)
         var placeIndex = plasmoid.configuration.placeIndex
         if (!initial) {
-            placeIndex++
+            (direction === "+") ? placeIndex++ :placeIndex--
         }
         if (placeIndex > places.length - 1) {
             placeIndex = 0
+        }
+        if (placeIndex < 0 ) {
+            placeIndex = places.length - 1
         }
         plasmoid.configuration.placeIndex = placeIndex
         dbgprint('placeIndex now: ' + plasmoid.configuration.placeIndex)
