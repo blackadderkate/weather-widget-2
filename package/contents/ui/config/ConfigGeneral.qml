@@ -260,7 +260,7 @@ Item {
                 }
 
                 if (! altValid) {
-                    reason+=i18n("The Altitude is invalid.")+"\n"
+                    reason+=i18n("The Altitude is not valid.")+"\n"
                     reason+=i18n("The Altitude is not between -999 and 5000.")+"\n"
                     reasoncount++
                 }
