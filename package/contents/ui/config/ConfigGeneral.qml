@@ -241,31 +241,28 @@ Item {
             if (action.button === Dialog.Ok) {
                 var reason=""
                 var reasoncount=0;
-                var latValid=isNumeric(newMetnoCityLatitudeField.text)
-                var longValid=isNumeric(newMetnoCityLongitudeField.text)
+                var latValid = newMetnoCityLatitudeField.acceptableInput
+                var longValid = newMetnoCityLongitudeField.acceptableInput
+                var altValid = newMetnoCityAltitudeField.acceptableInput
 
                 action.accepted = false
 
                 if (!(latValid)) {
-                    reason+=i18n("The Latitude is not numeric.")+"\n"
+                    reason+=i18n("The Latitude is not valid.")+"\n"
+                    reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
                     reasoncount++
-                }
-                else {
-                    if (! between(newMetnoCityLatitudeField.text,-90,90)) {
-                        reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
-                        reasoncount++
-                    }
                 }
 
                 if (!(longValid)) {
-                    reason+=i18n("The Longitude is not numeric.")+"\n"
+                    reason+=i18n("The Longitude is not valid.")+"\n"
+                    reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
                     reasoncount++
                 }
-                else {
-                    if (! between(newMetnoCityLongitudeField.text,-180,180)) {
-                        reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
-                        reasoncount++
-                    }
+
+                if (! altValid) {
+                    reason+=i18n("The Altitude is invalid.")+"\n"
+                    reason+=i18n("The Altitude is not between -999 and 5000.")+"\n"
+                    reasoncount++
                 }
 
                 if (newMetnoCityAlias.text.length === 0) {
@@ -374,14 +371,42 @@ Item {
                 placeholderText: i18n("URL")
                 Layout.columnSpan: 5
                 Layout.fillWidth: true
+                textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+
+                function updateFields() {
+                    function localiseFloat(data) {
+                        return Number(data).toLocaleString(Qt.locale(),"f",5)
+                    }
+
+                    var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                    if (data === undefined)
+                        return
+                    if (data.length === 3) {
+                        var newlat = localiseFloat(data[0])
+                        var newlon = localiseFloat(data[1])
+                        var newalt = Number(data[2])
+                        if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
+                            newMetnoCityLatitudeField.text = newlat
+                        }
+                        if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
+                            newMetnoCityLongitudeField.text = newlon
+                        }
+                        if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
+//                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
+                                newMetnoCityAltitudeField.text = data[2]
+//                             }
+                        }
+                    }
+                }
+
+
+
+                onTextChanged: {
+                    updateFields()
+                }
 
                 onEditingFinished: {
-                    var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                    if (data.length === 3) {
-                        newMetnoCityLatitudeField.text=data[0]
-                        newMetnoCityLongitudeField.text=data[1]
-                        newMetnoCityAltitudeField.text=data[2]
-                    }
+                    updateFields()
                 }
             }
             ComboBox {
@@ -728,8 +753,8 @@ Item {
                                     let url=entry.placeIdentifier
                                     newMetnoUrl.text = url
                                     var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                                    newMetnoCityLatitudeField.text = data[0]
-                                    newMetnoCityLongitudeField.text = data[1]
+                                    newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
+                                    newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
                                     newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
                                     for (var i = 0; i < timezoneDataModel.count; i++) {
                                         if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
