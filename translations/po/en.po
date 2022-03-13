@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-05 12:15+0000\n"
+"POT-Creation-Date: 2022-03-13 16:02+0000\n"
 "PO-Revision-Date: 2016-03-26 21:59+0100\n"
 "Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
@@ -232,10 +232,6 @@ msgid "Place Identifier"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "TBA"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
 msgstr ""
 
@@ -354,6 +350,10 @@ msgstr ""
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
+msgstr ""
+
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
 msgstr ""
 
 #: ../../package/contents/ui/main.qml

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-05 12:15+0000\n"
+"POT-Creation-Date: 2022-03-13 16:02+0000\n"
 "PO-Revision-Date: 2022-01-25 10:35+0100\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -253,10 +253,6 @@ msgid "Place Identifier"
 msgstr "Stedsidentifikator"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "TBA"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
 msgstr ""
 
@@ -379,6 +375,10 @@ msgstr "Neste plassering"
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
+msgstr ""
+
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
 msgstr ""
 
 #: ../../package/contents/ui/main.qml
