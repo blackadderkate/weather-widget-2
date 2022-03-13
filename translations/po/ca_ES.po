@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-15 00:30+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: 2022-02-13 14:00+0100\n"
 "Last-Translator: Eduard Selma <selma@tinet.cat>\n"
 "Language-Team: \n"
@@ -100,6 +100,11 @@ msgid "Units"
 msgstr "Unitats"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Format"
 
@@ -145,6 +150,19 @@ msgstr ""
 "NOTA: Després d'aquest temps l'estri s'amagarà a la safata del sistema fins "
 "que s'actualitzi. Sempre podeu definir que l'estri es mostri sempre a la "
 "safata d'entrada als paràmetres."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -353,6 +371,10 @@ msgstr "Propera ubicació"
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr "Continua l'actualització"
@@ -381,14 +403,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Mode fora de línia"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Carregant imatge..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -397,6 +411,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "avui"
+
+#~ msgid "Offline mode"
+#~ msgstr "Mode fora de línia"
+
+#~ msgid "Loading image..."
+#~ msgstr "Carregant imatge..."
 
 #~ msgid "weather-clouds"
 #~ msgstr "temps-núvols"

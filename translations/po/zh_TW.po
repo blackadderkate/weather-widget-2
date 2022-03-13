@@ -2,12 +2,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Jeff Huang <s8321414@gmail.com>, 2016.
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: 2022-01-03 22:18+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
@@ -100,6 +99,11 @@ msgid "Units"
 msgstr "單位"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "佈局"
 
@@ -144,6 +148,19 @@ msgid ""
 msgstr ""
 "注意：過了此逾時時間後，這個小工具將會隱藏至系統匣中，直到重新整理為止。您還"
 "是可以在系統匣「項目」設定中將其設定為總是「顯示」。"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -352,6 +369,10 @@ msgstr "下一個位置"
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr "繼續更新"
@@ -380,14 +401,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "離線模式"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "正在載入圖片..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -396,6 +409,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "今天"
+
+#~ msgid "Offline mode"
+#~ msgstr "離線模式"
+
+#~ msgid "Loading image..."
+#~ msgstr "正在載入圖片..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "繪製 yr.no 天氣圖表"

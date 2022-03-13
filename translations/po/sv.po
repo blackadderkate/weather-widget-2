@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: 2022-02-06 18:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -101,6 +100,11 @@ msgid "Units"
 msgstr "Enheter"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Layout"
 
@@ -147,6 +151,19 @@ msgid ""
 msgstr ""
 "OBS: Efter att tidsgränsen har uppnåtts kommer plasmoiden att döljas till "
 "den uppdateras. Du kan ställa in så att den alltid visas i inställningarna."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -355,6 +372,10 @@ msgstr "Nästa plats"
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr "Återuppta uppdatering"
@@ -383,14 +404,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Nedkopplat läge"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Laddar bild..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -399,3 +412,9 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "idag"
+
+#~ msgid "Offline mode"
+#~ msgstr "Nedkopplat läge"
+
+#~ msgid "Loading image..."
+#~ msgstr "Laddar bild..."

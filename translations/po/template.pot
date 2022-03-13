@@ -3,13 +3,12 @@
 # This file is distributed under the same license as the weatherWidget-2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,6 +91,11 @@ msgid "Units"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr ""
 
@@ -130,6 +134,19 @@ msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -333,6 +350,10 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr ""
@@ -359,14 +380,6 @@ msgstr ""
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "in"
-msgstr ""
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr ""
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
 msgstr ""
 
 #: ../../package/contents/ui/providers/MetNo.qml

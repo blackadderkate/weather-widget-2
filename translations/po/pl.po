@@ -2,12 +2,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Tomasz Przybył <fademind@gmail.com>, 2016.
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: 2022-01-03 22:19+0000\n"
 "Last-Translator: Tomasz Przybył <fademind@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -101,6 +100,11 @@ msgid "Units"
 msgstr "Jednostki"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Rozmieszczenie"
 
@@ -151,6 +155,19 @@ msgstr ""
 "dla ikony \"Weather Widget\" wyświetlanej za pomocą ustawień \"Dodatkowe "
 "Elementy\" we właściwościach Tacki Systemowej Plasma 5 i nie ma zastosowania "
 "dla samodzielnego plasmoidu dodanego jako osobny element Panelu."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -360,6 +377,10 @@ msgstr "Następne miejsce"
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr "Wznów aktualizację"
@@ -388,14 +409,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Tryb offline"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Wczytuję obraz..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -404,6 +417,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "dzisiaj"
+
+#~ msgid "Offline mode"
+#~ msgstr "Tryb offline"
+
+#~ msgid "Loading image..."
+#~ msgstr "Wczytuję obraz..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Generuj meteogram dla yr.no"

@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # bvbfan, 2016.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: 2022-01-03 22:02+0000\n"
 "Last-Translator: bvbfan\n"
 "Language-Team: bvbfan\n"
@@ -100,6 +99,11 @@ msgid "Units"
 msgstr "Мерни единици"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Оформление"
 
@@ -145,6 +149,19 @@ msgstr ""
 "Забележка: След изтичане на времето за активност системната икона ще бъде "
 "сркита. Може да я направите да стои перманентно от настройките на системният "
 "панел."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -353,6 +370,10 @@ msgstr "Следващо местоположение"
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr "Поднови Обновяването"
@@ -381,14 +402,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Работа без интернет"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Заредане на изображение..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -397,6 +410,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "днес"
+
+#~ msgid "Offline mode"
+#~ msgstr "Работа без интернет"
+
+#~ msgid "Loading image..."
+#~ msgstr "Заредане на изображение..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Визуална метеограма за yr.no"

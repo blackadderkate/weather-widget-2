@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Moo, 2017.
 #
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-02-12 16:29+0000\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
 "PO-Revision-Date: 2022-01-03 22:11+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -102,6 +101,11 @@ msgid "Units"
 msgstr "Vienetai"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
 msgstr "Išdėstymas"
 
@@ -149,6 +153,19 @@ msgstr ""
 "PASTABA: Po šio laiko valdiklis bus paslėptas sisteme dėkle tol, kol nebus "
 "įkeltas iš naujo. Jūs visada galite sistemos dėklo \"Elementų\" nustatymuose "
 "nustatyti, kad valdiklis visuomet būtų \"Rodomas\"."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -359,6 +376,10 @@ msgstr "Kita vieta"
 msgid "Reload"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr ""
+
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
 msgstr "Pratęsti atnaujinimą"
@@ -387,14 +408,6 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Offline mode"
-msgstr "Autonominė veiksena"
-
-#: ../../package/contents/ui/Meteogram.qml
-msgid "Loading image..."
-msgstr "Įkeliamas paveikslas..."
-
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
@@ -403,6 +416,12 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "šiandien"
+
+#~ msgid "Offline mode"
+#~ msgstr "Autonominė veiksena"
+
+#~ msgid "Loading image..."
+#~ msgstr "Įkeliamas paveikslas..."
 
 #~ msgid "Render meteogram for yr.no"
 #~ msgstr "Atvaizduoti yr.no meteogramą"
