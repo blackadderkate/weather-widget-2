@@ -1,5 +1,4 @@
 import QtQuick 2.2
-import QtQuick.XmlListModel 2.0
 import "../../code/model-utils.js" as ModelUtils
 import "../../code/data-loader.js" as DataLoader
 import "../../code/db/timezoneData.js" as TZ
