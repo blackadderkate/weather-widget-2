@@ -602,7 +602,7 @@ console.log(newMetnoCityAlias.text.length)
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.1.8 (' + i18n("legacy") + ")"
+            text: i18n("Plasmoid version:") + ' 2.1.9 (' + i18n("legacy") + ")"
             Layout.alignment: Qt.AlignRight
         }
 
