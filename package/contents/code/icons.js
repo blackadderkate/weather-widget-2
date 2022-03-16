@@ -1,3 +1,13 @@
+function getWindDirectionIconCode(angle) {
+    const iconCodes = ['\uf060', '\uf05e', '\uf061', '\uf05b', '\uf05c', '\uf05a', '\uf059', '\uf05d']
+    let n = Math.round((angle + 22.5) / 45) - 1
+    var iconCode = iconCodes[n]
+    if (!iconCode) {
+        iconCode = '\uf073'
+    }
+    return iconCode
+}
+
 var WeatherFont = {
 
     // https://erikflowers.github.io/weather-icons/
@@ -51,15 +61,15 @@ var WeatherFont = {
     },
 
     iconNameByYrNoCode: {
-         '1': ['wi-day-sunny', 'wi-night-clear'],
-         '2': ['wi-day-sunny-overcast', 'wi-night-partly-cloudy'],
-         '3': ['wi-day-cloudy', 'wi-night-cloudy'],
-         '4': ['wi-cloudy', 'wi-cloudy'],
-         '5': ['wi-day-showers', 'wi-night-showers'],
-         '6': ['wi-day-storm-showers', 'wi-night-storm-showers'],
-         '7': ['wi-day-rain-mix', 'wi-night-rain-mix'],
-         '8': ['wi-day-snow', 'wi-night-snow'],
-         '9': ['wi-showers', 'wi-showers'],
+        '1':  ['wi-day-sunny', 'wi-night-clear'],
+        '2':  ['wi-day-sunny-overcast', 'wi-night-partly-cloudy'],
+        '3':  ['wi-day-cloudy', 'wi-night-cloudy'],
+        '4':  ['wi-cloudy', 'wi-cloudy'],
+        '5':  ['wi-day-showers', 'wi-night-showers'],
+        '6':  ['wi-day-storm-showers', 'wi-night-storm-showers'],
+        '7':  ['wi-day-rain-mix', 'wi-night-rain-mix'],
+        '8':  ['wi-day-snow', 'wi-night-snow'],
+        '9':  ['wi-showers', 'wi-showers'],
         '10': ['wi-rain', 'wi-rain'],
         '11': ['wi-thunderstorm', 'wi-thunderstorm'],
         '12': ['wi-rain-mix', 'wi-rain-mix'],
@@ -191,19 +201,9 @@ function getIconCode(iconName, providerId, partOfDay) {
         iconCodeParts = WeatherFont.iconNameByYrNoCode[iconName]
     }
     if (!iconCodeParts) {
-        return '\uf07b';
+        return '\uf07b'
     }
-    return WeatherFont.codeByName[iconCodeParts[partOfDay]];
-}
-
-function getWindDirectionIconCode(code) {
-    const iconCodes=[ "\uf060", "\uf05e", "\uf061", "\uf05b", "\uf05c","\uf05a", "\uf059", "\uf05d"]
-    let n=Math.round((code + 22.5) / 45 ) - 1
-    var iconCode=iconCodes[n]
-    if (!iconCode) {
-        return '\uf073'
-    }
-    return iconCode
+    return WeatherFont.codeByName[iconCodeParts[partOfDay]]
 }
 
 function getSunriseIcon() {

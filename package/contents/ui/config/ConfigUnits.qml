@@ -3,12 +3,12 @@ import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
 
 Item {
-    
+
     property int cfg_temperatureType
     property int cfg_pressureType
     property int cfg_windSpeedType
     property int cfg_timezoneType
-    
+
     onCfg_temperatureTypeChanged: {
         switch (cfg_temperatureType) {
         case 0:
@@ -23,7 +23,7 @@ Item {
         default:
         }
     }
-    
+
     onCfg_pressureTypeChanged: {
         switch (cfg_pressureType) {
         case 0:
@@ -38,7 +38,7 @@ Item {
         default:
         }
     }
-    
+
     onCfg_windSpeedTypeChanged: {
         switch (cfg_windSpeedType) {
         case 0:
@@ -53,7 +53,7 @@ Item {
         default:
         }
     }
-    
+
     onCfg_timezoneTypeChanged: {
         switch (cfg_timezoneType) {
         case 0:
@@ -65,33 +65,33 @@ Item {
         default:
         }
     }
-    
+
     Component.onCompleted: {
         cfg_temperatureTypeChanged()
         cfg_pressureTypeChanged()
         cfg_windSpeedTypeChanged()
         cfg_timezoneTypeChanged()
     }
-    
+
     ExclusiveGroup {
         id: temperatureTypeGroup
     }
-    
+
     ExclusiveGroup {
         id: pressureTypeGroup
     }
-    
+
     ExclusiveGroup {
         id: windSpeedTypeGroup
     }
-    
+
     ExclusiveGroup {
         id: timezoneTypeGroup
     }
-    
+
     GridLayout {
         columns: 2
-        
+
         Label {
             text: i18n("Temperature:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
@@ -124,13 +124,13 @@ Item {
             text: i18n("K")
             onCheckedChanged: if (checked) cfg_temperatureType = 2
         }
-        
+
         Item {
             width: 2
             height: 10
             Layout.columnSpan: 2
         }
-        
+
         Label {
             text: i18n("Pressure:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
@@ -158,13 +158,13 @@ Item {
             text: i18n("mmHg")
             onCheckedChanged: if (checked) cfg_pressureType = 2
         }
-        
+
         Item {
             width: 2
             height: 10
             Layout.columnSpan: 2
         }
-        
+
         Label {
             text: i18n("Wind speed:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
@@ -192,13 +192,13 @@ Item {
             text: i18n("km/h")
             onCheckedChanged: if (checked) cfg_windSpeedType = 2
         }
-        
+
         Item {
             width: 2
             height: 10
             Layout.columnSpan: 2
         }
-        
+
         Label {
             text: i18n("Timezone:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
@@ -221,5 +221,5 @@ Item {
             onCheckedChanged: if (checked) cfg_timezoneType = 1
         }
     }
-    
+
 }

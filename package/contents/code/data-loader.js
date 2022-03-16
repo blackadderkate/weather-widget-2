@@ -2,17 +2,17 @@
 function getLastReloadedTimeText(lastReloaded) {
     var mins = lastReloaded / 60000
     if (mins <= 180) {
-        return i18n("%1 m", Math.round(mins));
+        return i18n("%1 m", Math.round(mins))
     }
 
     var hours = mins / 60
     if (hours <= 48) {
-        return i18n("%1 h", Math.round(hours));
+        return i18n("%1 h", Math.round(hours))
     }
 
     var days = hours / 24
     if (days <= 14) {
-        return i18n("%1 d", Math.round(days));
+        return i18n("%1 d", Math.round(days))
     }
 
     return i18n("hours")
@@ -33,7 +33,7 @@ function getReloadedAgoMs(lastReloaded) {
 
 function getPlasmoidStatus(lastReloaded, inTrayActiveTimeoutSec) {
     var reloadedAgoMs = getReloadedAgoMs(lastReloaded)
-    if (reloadedAgoMs < inTrayActiveTimeoutSec*1000) {
+    if (reloadedAgoMs < inTrayActiveTimeoutSec * 1000) {
         return PlasmaCore.Types.ActiveStatus
     } else {
         return PlasmaCore.Types.PassiveStatus
@@ -52,7 +52,7 @@ function fetchXmlFromInternet(getUrl, successCallback, failureCallback) {
     var xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function () {
         if (xhr.readyState !== XMLHttpRequest.DONE) {
-          dbgprint(xhr.readyState)
+            dbgprint(xhr.readyState)
             return
         }
 
@@ -68,7 +68,7 @@ function fetchXmlFromInternet(getUrl, successCallback, failureCallback) {
         dbgprint('successfully of url-call: ' + getUrl)
 //        dbgprint('responseText: ' + xhr.responseText)
 
-        var xmlString = xhr.responseText;
+        var xmlString = xhr.responseText
         if (!DataLoader.isXmlStringValid(xmlString)) {
             dbgprint('incoming xmlString is not valid: ' + xmlString)
             return
@@ -105,7 +105,7 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
         dbgprint('successfully of url-call: ' + getUrl)
 //        dbgprint('responseText: ' + xhr.responseText)
 
-        var jsonString = xhr.responseText;
+        var jsonString = xhr.responseText
         if (!DataLoader.IsJsonString(jsonString)) {
             dbgprint('incoming jsonString is not valid: ' + jsonString)
             return
@@ -125,9 +125,9 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
 
 function IsJsonString(str) {
     try {
-        JSON.parse(str);
+        JSON.parse(str)
     } catch (e) {
-        return false;
+        return false
     }
-    return true;
+    return true
 }

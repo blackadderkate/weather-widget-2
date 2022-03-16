@@ -1,5 +1,5 @@
-.import "./db/timezoneData.js" as TZData;
-var countries=Array(
+.import "./db/timezoneData.js" as TZData
+var countries = Array(
             {shortCode: "AD" , displayName: "Andorra"},
             {shortCode: "AE" , displayName: "United Arab Emirates"},
             {shortCode: "AF" , displayName: "Afghanistan"},
@@ -246,26 +246,26 @@ var countries=Array(
             {shortCode: "ZA" , displayName: "South Africa"},
             {shortCode: "ZM" , displayName: "Zambia"},
             {shortCode: "ZW" , displayName: "Zimbabwe"}
-);
+)
 function getDisplayNames() {
-    let tmp=Array()
-    countries.forEach(country => {
+    let tmp = Array()
+    countries.forEach(function(country) {
         tmp.push(country["displayName"])
     })
-    return (tmp.sort());
+    return (tmp.sort())
 }
 function getshortCode(displayName) {
     var __FOUND = countries.find(function(post, index) {
         if(post.displayName == displayName)
-            return true;
-    });
+            return true
+    })
     return __FOUND["shortCode"]
 }
 function getDisplayName(shortCode) {
     var __FOUND = countries.find(function(post, index) {
         if(post.shortCode == shortCode)
-            return true;
-    });
+            return true
+    })
     return __FOUND["displayName"]
 }
 function updateListView(filter) {
@@ -278,18 +278,18 @@ function updateListView(filter) {
     }
 }
 function loadCSVDatabase(countryName) {
-    if (countryName.length===0) {
+    if (countryName.length === 0) {
         return
     }
     myCSVData.clear()
-    let filename=Qt.resolvedUrl("./db/"+getshortCode(countryName)+".csv")
+    let filename = Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")
     var xhr = new XMLHttpRequest
     xhr.open("GET", filename)
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            var response = xhr.responseText;
-            var tmpDB=response.split(/\r?\n/)
-            for (var i=0; i < tmpDB.length - 1; i++) {
+            var response = xhr.responseText
+            var tmpDB = response.split(/\r?\n/)
+            for (var i = 0; i < tmpDB.length - 1; i++) {
                 myCSVData.append(parseCSVLine(tmpDB[i]))
             }
             updateListView(locationEdit.text)
@@ -302,7 +302,7 @@ function parseCSVLine(csvLine) {
         return str.replace(/['"]+/g, '')
     }
 
-    var items=csvLine.split(/\t/);
+    var items = csvLine.split(/\t/)
     return ({
                 region: stripquotes((items[0])),
                 locationName: stripquotes(items[1]),
