@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-03-13 16:43+0000\n"
-"PO-Revision-Date: 2022-01-03 22:04+0000\n"
-"Last-Translator: mfroeb\n"
+"PO-Revision-Date: 2022-03-16 11:07+0100\n"
+"Last-Translator: Martin Schnitkemper\n"
 "Language-Team: mfroeb\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -23,23 +24,23 @@ msgstr ""
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
+msgstr "Plasmoid zeigt Wetterinformationen des met.no-Servers"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m"
-msgstr ""
+msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h"
-msgstr ""
+msgstr "%1 s"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d"
-msgstr ""
+msgstr "%1 t"
 
 #: ../../package/contents/code/data-loader.js
 msgid "hours"
-msgstr ""
+msgstr "Stunden"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -101,7 +102,7 @@ msgstr "Einheiten"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Use default font"
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -155,11 +156,11 @@ msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style:"
-msgstr ""
+msgstr "Widget-Schriftstil:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size:"
-msgstr ""
+msgstr "Widget-Schriftgröße:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
@@ -192,15 +193,15 @@ msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Error!"
-msgstr ""
+msgstr "Fehler!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Confirmation"
-msgstr ""
+msgstr "Bestätigung"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Do you want to select this place?"
-msgstr ""
+msgstr "Möchten Sie diesen Ort wählen?"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
@@ -208,29 +209,29 @@ msgstr "Ort von \"Met.no Map\" hinzufügen"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not numeric."
-msgstr ""
+msgstr "Der Breitengrad ist nicht gültig."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
-msgstr ""
+msgstr "Der Breitengrad liegt nicht zwischen -90 und 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not numeric."
-msgstr ""
+msgstr "Der Längengrad ist nicht gültig."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
-msgstr ""
+msgstr "Der Längengrad liegt nicht zwischen -180 und 180."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
-msgstr ""
+msgstr "Der Ortsname ist leer."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Es gibt einen Fehler!"
+msgstr[1] "Es gibt %1 Fehler!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -242,7 +243,7 @@ msgstr "Längengrad"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Altitude"
-msgstr ""
+msgstr "Höhe"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
@@ -254,7 +255,7 @@ msgstr "Ortskennzeichnung"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -266,7 +267,7 @@ msgstr "Anzeigename eingeben"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
-msgstr ""
+msgstr "Standortsuche"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -274,19 +275,19 @@ msgstr "Orte"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
-msgstr ""
+msgstr "Gebiet"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Timezone"
-msgstr ""
+msgstr "Zeitzone"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
-msgstr ""
+msgstr "Suchdaten extrahiert aus Daten von Geonames.org."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Country:"
-msgstr ""
+msgstr "Land:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Filter:"
@@ -326,18 +327,21 @@ msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
+"Met.no-Wettervorhersagedaten, bereitgestellt vom Norwegischen "
+"Meteorologischen Institut."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
 msgstr ""
+"Sonnenaufgangs-/Sonnenuntergangsdaten bereitgestellt von Sunrise - Sunset."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "OWM weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "OWM-Wettervorhersagedaten bereitgestellt von OpenWeather."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Weather icons created by Erik Flowers."
-msgstr ""
+msgstr "Wettersymbole erstellt von Erik Flowers."
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -371,11 +375,11 @@ msgstr "Nächster Ort"
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
-msgstr ""
+msgstr "Nachladen"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr ""
+msgstr "Vorheriger Ort"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
@@ -395,11 +399,11 @@ msgstr "Demnächst"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "in"
@@ -409,6 +413,8 @@ msgstr ""
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
+"Wettervorhersagedaten bereitgestellt vom Norwegischen Meteorologischen "
+"Institut."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
