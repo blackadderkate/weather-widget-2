@@ -35,7 +35,7 @@ Item {
     property int cloudarea: 0
     property int windarea: 28
 
-        property bool meteogramModelChanged: main.meteogramModelChanged
+    property bool meteogramModelChanged: main.meteogramModelChanged
 
 
     property int temperatureYGridCount: 21   // Number of vertical grid Temperature elements
@@ -199,7 +199,7 @@ Item {
             property bool dayBegins: hourFrom === 0
             property bool hourVisible: hourFrom % 2 === 0
             property bool textVisible: hourVisible && index < hourGridModel.count-1
-            property int timePeriod: hourFrom >= 6 && hourFrom <= 18 ? 0 : 1
+            property int timePeriod: isDaytime ? 0 : 1
 
 
             property double precAvg: parseFloat(precipitationAvg) || 0
@@ -532,12 +532,12 @@ Item {
             var obj=meteogramModel.get(i)
             var dateFrom=(obj.from)
             var dateTo=(obj.to)
-                dateFrom.setMinutes(0)
-                dateFrom.setSeconds(0)
-                dateFrom.setMilliseconds(0)
+            dateFrom.setMinutes(0)
+            dateFrom.setSeconds(0)
+            dateFrom.setMilliseconds(0)
             var differenceHours = Math.floor((dateTo.getTime() - dateFrom.getTime()) / oneHourMs)
-            dbgprint(dateFrom + "\t" + dateTo + "\t" + differenceHours)
             var differenceHoursMid = Math.ceil(differenceHours / 2) - 1
+            dbgprint(dateFrom + "\t" + dateTo + "\t" + differenceHours)
             var wd=obj.windDirection
             var ws=obj.windSpeedMps
             var ap=obj.pressureHpa
@@ -552,6 +552,7 @@ Item {
                 hourGridModel.append({
                                       dateFrom: UnitUtils.convertDate(preparedDate, timezoneType),
                                       iconName: j === differenceHoursMid ? icon : '',
+                                      isDaytime: obj.isDaytime,
                                       temperature: airtmp,
                                       precipitationAvg: parseFloat(prec / differenceHours).toFixed(1),
                                       precipitationLabel: (counter === 1) ? "mm" : "",

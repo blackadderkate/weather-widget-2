@@ -47,7 +47,23 @@ Item {
         anchors.top: parent.top
         verticalAlignment: Text.AlignTop
 
-        text: main.placeAlias
+        text: {
+            var t = main.placeAlias
+            switch (timezoneType) {
+                case 0:
+                    break
+                case 1:
+                    t += " (" + i18n("UTC") + ")"
+                    break
+                case 2:
+                    t += " (" + "TBA" + ")"
+                    break
+                default:
+                    t += " (" + "TBA" + ")"
+                    break
+                }
+            return t
+        }
     }
 
     PlasmaComponents.Label {

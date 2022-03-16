@@ -23,6 +23,10 @@ Item {
         return urlPrefix + placeIdentifier
     }
 
+    function parseDate(dateString) {
+        return new Date(dateString + '.000Z')
+    }
+
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
         var placeIdentifier = locationObject.placeIdentifier
 
@@ -42,10 +46,7 @@ Item {
             additionalWeatherInfo.nearFutureWeather.iconName=geticonNumber(futureWeather.data.next_1_hours.summary.symbol_code)
             updateNextDaysModel(readingsArray)
             buildMetogramData(readingsArray)
-            weatherDataFlag = true
-            if ((weatherDataFlag) && (sunRiseSetFlag)) {
-                loadCompleted()
-            }
+            loadCompleted()
         }
 
         function parseISOString(s) {
@@ -57,6 +58,14 @@ Item {
             meteogramModel.clear()
             var readingsLength=(readingsArray.properties.timeseries.length);
             var dateFrom=parseISOString(readingsArray.properties.timeseries[0].time)
+            dbgprint("*******DEBUG: dateFrom=" + dateFrom.toUTCString())
+            dbgprint("*******DEBUG: SunRise=" + additionalWeatherInfo.sunRise.toUTCString())
+            dbgprint("*******DEBUG: SunSet=" + additionalWeatherInfo.sunSet.toUTCString())
+
+            var sunrise1=additionalWeatherInfo.sunRise
+            var sunset1=additionalWeatherInfo.sunSet
+            var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
+
             var precipitation_unit=readingsArray.properties.meta.units["precipitation_amount"]
             var counter=0
             var i=1
@@ -70,9 +79,20 @@ Item {
                 var icon=obj.data.next_1_hours.summary["symbol_code"]
                 var prec=obj.data.next_1_hours.details["precipitation_amount"]
                 counter = (prec > 0) ? counter+1 : 0
+                if (dateFrom > sunrise1 && !isDaytime) {
+                    dbgprint("is day")
+                    isDaytime = true
+                    sunrise1.setDate(sunrise1.getDate() + 1)
+                }
+                if (dateFrom > sunset1 && isDaytime) {
+                    dbgprint("is night")
+                    isDaytime = false
+                    sunset1.setDate(sunset1.getDate() + 1)
+                }
                 meteogramModel.append({
                     from: dateFrom,
                     to: dateTo,
+                    isDaytime: isDaytime,
                     temperature: airtmp,
                     precipitationAvg: prec,
                     precipitationMax: prec,
@@ -82,7 +102,7 @@ Item {
                     pressureHpa: parseFloat(ap),
                     iconName: geticonNumber(icon)
                 })
-                dateFrom=dateTo
+                dateFrom = dateTo
                 i++
             }
             main.meteogramModelChanged = !main.meteogramModelChanged
@@ -173,20 +193,23 @@ Item {
         }
 
         function successSRAS(jsonString) {
+            dbgprint("succesSRAS")
             var readingsArray=JSON.parse(jsonString)
             if ((readingsArray.location !== undefined)) {
-              additionalWeatherInfo.sunRiseTime=formatTime(readingsArray.location.time[0].sunrise.time)
-              additionalWeatherInfo.sunSetTime=formatTime(readingsArray.location.time[0].sunset.time)
+                additionalWeatherInfo.sunRise = parseDate(readingsArray.location.time[0].sunrise.time)
+                additionalWeatherInfo.sunSet = parseDate(readingsArray.location.time[0].sunset.time)
             }
             if ((readingsArray.results !== undefined)) {
-              additionalWeatherInfo.sunRiseTime=formatTime(readingsArray.results.sunrise)
-              additionalWeatherInfo.sunSetTime=formatTime(readingsArray.results.sunset)
+                additionalWeatherInfo.sunRise = parseDate(readingsArray.results.sunrise)
+                additionalWeatherInfo.sunSet = parseDate(readingsArray.results.sunset)
             }
+            dbgprint("additionalWeatherInfo.sunRise = " , additionalWeatherInfo.sunRise.toISOString())
+            dbgprint("additionalWeatherInfo.sunSet  = " , additionalWeatherInfo.sunSet.toISOString())
+            additionalWeatherInfo.sunRiseTime=formatTime(additionalWeatherInfo.sunRise.toISOString())
+            additionalWeatherInfo.sunSetTime=formatTime(additionalWeatherInfo.sunSet.toISOString())
             sunRiseSetFlag=true
-
-            if ((weatherDataFlag) && (sunRiseSetFlag)) {
-                loadCompleted()
-            }
+            var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
+//             var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
         }
 
         function failureCallback() {
@@ -224,10 +247,10 @@ Item {
         var TZURL=""
 
         if (locationObject.timezoneID === -1) {
-          console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
+          dbgprint("Timezone Data not available - using sunrise-sunset.org API")
           TZURL="https://api.sunrise-sunset.org/json?formatted=0&"+placeIdentifier;
         } else {
-          console.log("[weatherWidget] Timezone Data is available - using met.no API")
+          dbgprint("Timezone Data is available - using met.no API")
           if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
             timezoneShortName=TZ.TZData[locationObject.timezoneID].DSTName
           } else {
@@ -240,13 +263,11 @@ Item {
             TZURL+="&offset="+calculateOffset(TZ.TZData[locationObject.timezoneID].Offset)
           }
         }
-        console.log(TZURL);
+//         dbgprint(TZURL);
 
-        var xhr1 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
-        var xhr2 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-//         var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
-//         var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?'+TZURL, successSRAS, failureCallback)
-        return [xhr1, xhr2]
+        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+//         var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?'+TZURL, successSRAS, failureCallback)
+        return [xhr1]
     }
 
     function reloadMeteogramImage(placeIdentifier) {

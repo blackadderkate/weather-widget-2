@@ -489,6 +489,11 @@ Item {
         var limitMsDifference = 1000 * 60 * 60 * 54 // 2.25 days
         var now = new Date()
 
+        var dateFrom = parseDate(xmlModelHourByHour.get(0).from)
+        var sunrise1=additionalWeatherInfo.sunRise
+        var sunset1=additionalWeatherInfo.sunSet
+        var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
+
         for (var i = 0; i < xmlModelHourByHour.count; i++) {
             var obj = xmlModelHourByHour.get(i)
             var dateFrom = parseDate(obj.from)
@@ -511,6 +516,7 @@ Item {
             meteogramModel.append({
                 from: dateFrom,
                 to: dateTo,
+                isDaytime: isDaytime,
                 temperature: parseInt(obj.temperature),
                 precipitationAvg: prec,
                 precipitationLabel: "",
@@ -520,7 +526,16 @@ Item {
                 pressureHpa: parseFloat(obj.pressureHpa),
                 iconName: obj.iconName
             })
-
+            if (dateFrom > sunrise1 && !isDaytime) {
+                dbgprint("is day")
+                isDaytime = true
+                sunrise1.setDate(sunrise1.getDate() + 1)
+            }
+            if (dateFrom > sunset1 && isDaytime) {
+                dbgprint("is night")
+                isDaytime = false
+                sunset1.setDate(sunset1.getDate() + 1)
+            }
             if (firstFromMs === null) {
                 firstFromMs = dateFrom.getTime()
             }
