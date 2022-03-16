@@ -126,8 +126,10 @@ Item {
                 if (reading.data.next_1_hours) {
                     var iconnumber = geticonNumber(reading.data.next_1_hours.summary.symbol_code)
                 }
-                else {
+                else if (reading.data.next_6_hours) {
                     var iconnumber = geticonNumber(reading.data.next_6_hours.summary.symbol_code)
+                } else {
+                  var iconnumber = undefined
                 }
                 var temperature = reading.data.instant.details["air_temperature"]
 
