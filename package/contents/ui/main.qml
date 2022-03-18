@@ -374,14 +374,16 @@ Item {
     }
 
     function updateAdditionalWeatherInfoText() {
-        var sunRise = additionalWeatherInfo.sunRise
-        var sunSet = additionalWeatherInfo.sunSet
-        var now = new Date()
-        sunRise = UnitUtils.convertDate(sunRise, timezoneType)
-        sunSet = UnitUtils.convertDate(sunSet, timezoneType)
-        additionalWeatherInfo.sunRiseTime = Qt.formatTime(sunRise, Qt.locale().timeFormat(Locale.ShortFormat))
-        additionalWeatherInfo.sunSetTime = Qt.formatTime(sunSet, Qt.locale().timeFormat(Locale.ShortFormat))
-        refreshTooltipSubText()
+        if (! additionalWeatherInfo === undefined) {
+            var sunRise = additionalWeatherInfo.sunRise
+            var sunSet = additionalWeatherInfo.sunSet
+            var now = new Date()
+            sunRise = UnitUtils.convertDate(sunRise, timezoneType)
+            sunSet = UnitUtils.convertDate(sunSet, timezoneType)
+            additionalWeatherInfo.sunRiseTime = Qt.formatTime(sunRise, Qt.locale().timeFormat(Locale.ShortFormat))
+            additionalWeatherInfo.sunSetTime = Qt.formatTime(sunSet, Qt.locale().timeFormat(Locale.ShortFormat))
+            refreshTooltipSubText()
+        }
     }
 
     function refreshTooltipSubText() {
