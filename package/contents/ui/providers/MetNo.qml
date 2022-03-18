@@ -58,12 +58,10 @@ Item {
             meteogramModel.clear()
             var readingsLength=(readingsArray.properties.timeseries.length);
             var dateFrom=parseISOString(readingsArray.properties.timeseries[0].time)
-            dbgprint("*******DEBUG: dateFrom=" + dateFrom.toUTCString())
-            dbgprint("*******DEBUG: SunRise=" + additionalWeatherInfo.sunRise.toUTCString())
-            dbgprint("*******DEBUG: SunSet=" + additionalWeatherInfo.sunSet.toUTCString())
 
             var sunrise1=additionalWeatherInfo.sunRise
             var sunset1=additionalWeatherInfo.sunSet
+
             var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
 
             var precipitation_unit=readingsArray.properties.meta.units["precipitation_amount"]
@@ -79,16 +77,20 @@ Item {
                 var icon=obj.data.next_1_hours.summary["symbol_code"]
                 var prec=obj.data.next_1_hours.details["precipitation_amount"]
                 counter = (prec > 0) ? counter+1 : 0
-                if (dateFrom > sunrise1 && !isDaytime) {
-                    dbgprint("is day")
+                dbgprint("dateFrom = " + dateFrom.toUTCString())
+                dbgprint("Sunrise = " + sunrise1.toUTCString())
+                dbgprint("Sunset = " + sunset1.toUTCString())
+
+                if (dateFrom >= sunrise1) {
+                  if (dateFrom < sunset1) {
                     isDaytime = true
+                  } else {
                     sunrise1.setDate(sunrise1.getDate() + 1)
-                }
-                if (dateFrom > sunset1 && isDaytime) {
-                    dbgprint("is night")
-                    isDaytime = false
                     sunset1.setDate(sunset1.getDate() + 1)
+                    isDaytime = false
+                  }
                 }
+                dbgprint(isDaytime ? "isDay\n" : "isNight\n")
                 meteogramModel.append({
                     from: dateFrom,
                     to: dateTo,

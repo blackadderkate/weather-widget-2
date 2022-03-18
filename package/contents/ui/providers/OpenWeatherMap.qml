@@ -493,6 +493,7 @@ Item {
         var sunrise1=additionalWeatherInfo.sunRise
         var sunset1=additionalWeatherInfo.sunSet
         var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
+        dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
 
         for (var i = 0; i < xmlModelHourByHour.count; i++) {
             var obj = xmlModelHourByHour.get(i)
@@ -511,8 +512,22 @@ Item {
 
             var prec = obj.precipitationAvg
             if (typeof(prec)==="string"  && prec==="") {
-              prec = 0
+                prec = 0
             }
+            dbgprint("dateFrom = " + dateFrom.toUTCString())
+            dbgprint("Sunrise = " + sunrise1.toUTCString())
+            dbgprint("Sunset = " + sunset1.toUTCString())
+
+            if (dateFrom >= sunrise1) {
+                if (dateFrom < sunset1) {
+                    isDaytime = true
+                } else {
+                    sunrise1.setDate(sunrise1.getDate() + 1)
+                    sunset1.setDate(sunset1.getDate() + 1)
+                    isDaytime = false
+                }
+            }
+            dbgprint(isDaytime ? "isDay\n" : "isNight\n")
             meteogramModel.append({
                 from: dateFrom,
                 to: dateTo,
@@ -526,16 +541,6 @@ Item {
                 pressureHpa: parseFloat(obj.pressureHpa),
                 iconName: obj.iconName
             })
-            if (dateFrom > sunrise1 && !isDaytime) {
-                dbgprint("is day")
-                isDaytime = true
-                sunrise1.setDate(sunrise1.getDate() + 1)
-            }
-            if (dateFrom > sunset1 && isDaytime) {
-                dbgprint("is night")
-                isDaytime = false
-                sunset1.setDate(sunset1.getDate() + 1)
-            }
             if (firstFromMs === null) {
                 firstFromMs = dateFrom.getTime()
             }
