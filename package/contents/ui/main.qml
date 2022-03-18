@@ -501,8 +501,10 @@ Item {
     }
 
     onTimezoneTypeChanged: {
-        meteogramModelChanged = !meteogramModelChanged
-        updateAdditionalWeatherInfoText()
+        if (lastloadingSuccessTime > 0) {
+            meteogramModelChanged = !meteogramModelChanged
+            updateAdditionalWeatherInfoText()
+        }
     }
 
     function dbgprint(msg) {
