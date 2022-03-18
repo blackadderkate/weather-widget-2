@@ -226,7 +226,6 @@ Item {
         if (!ok) {
             reloadData()
         }
-        reloadData()
         updateLastReloadedText()
         reloadMeteogram()
     }
