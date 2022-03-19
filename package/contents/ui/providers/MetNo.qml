@@ -11,6 +11,7 @@ Item {
     property var locale: Qt.locale()
     property string providerId: 'metno'
     property string urlPrefix: 'https://api.met.no/weatherapi/locationforecast/2.0/compact?'
+    property string forecastPrefix: 'https://www.yr.no/en/forecast/daily-table/'
 
     property bool weatherDataFlag: false
     property bool sunRiseSetFlag: false
@@ -19,8 +20,13 @@ Item {
         return i18n("Weather forecast data provided by The Norwegian Meteorological Institute.")
     }
 
+    function extLongLat(placeIdentifier) {
+        return placeIdentifier.substr(placeIdentifier.indexOf("lat=" )+4,placeIdentifier.indexOf("&lon=")-4) +","+
+               placeIdentifier.substr(placeIdentifier.indexOf("&lon=")+5,placeIdentifier.indexOf("&altitude=")-placeIdentifier.indexOf("&lon=")-5)
+    }
+
     function getCreditLink(placeIdentifier) {
-        return urlPrefix + placeIdentifier
+        return forecastPrefix + extLongLat(placeIdentifier)
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
