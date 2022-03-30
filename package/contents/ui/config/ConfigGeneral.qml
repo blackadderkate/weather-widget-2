@@ -205,10 +205,10 @@ Item {
         visible: false
         onYes: {
             let data=filteredCSVData.get(tableView.currentRow)
-            newMetnoCityLatitudeField.text=data["latitude"]
-            newMetnoCityLongitudeField.text=data["longitude"]
+            newMetnoCityLatitudeField.text=data["latitude"].toFixed(4)
+            newMetnoCityLongitudeField.text=data["longitude"].toFixed(4)
             newMetnoCityAltitudeField.text=data["altitude"]
-            newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longitude"]+"&altitude="+data["altitude"]
+            newMetnoUrl.text="lat="+data["latitude"].toFixed(4)+"&lon="+data["longitude"].toFixed(4)+"&altitude="+data["altitude"]
             let loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
             newMetnoCityAlias.text=loc
             addMetnoCityIdDialog.timezoneID=data["timezoneId"]
@@ -317,7 +317,7 @@ Item {
             TextField {
                 id: newMetnoCityLatitudeField
                 Layout.fillWidth: true
-                validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
+                validator: DoubleValidator { bottom: -90; top: 90; decimals: 4 }
                 textColor: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
                 onTextChanged: {
                     updateUrl()
@@ -336,7 +336,7 @@ Item {
             TextField {
                 id: newMetnoCityLongitudeField
                 Layout.fillWidth: true
-                validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
+                validator: DoubleValidator { bottom: -180; top: 180; decimals: 4 }
                 textColor: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
                 onTextChanged: {
                     updateUrl()
@@ -374,29 +374,20 @@ Item {
                 textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
 
                 function updateFields() {
-                    function localiseFloat(data) {
-                        return Number(data).toLocaleString(Qt.locale(),"f",5)
+                    function updateDataField(field, data) {
+                        var newValue = Number(data !== undefined ? data : 0)
+                        newValue = field !== newMetnoCityAltitudeField ? newValue.toLocaleString(Qt.locale(), 'f', 4) : newValue.toLocaleString(Qt.locale, 'd')
+
+                        if (!field.acceptableInput || field.text.length === 0 || field.text !== newValue) {
+                            field.text = newValue
+                        }
                     }
 
-                    var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                    if (data === undefined)
-                        return
-                    if (data.length === 3) {
-                        var newlat = localiseFloat(data[0])
-                        var newlon = localiseFloat(data[1])
-                        var newalt = Number(data[2])
-                        if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
-                            newMetnoCityLatitudeField.text = newlat
-                        }
-                        if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
-                            newMetnoCityLongitudeField.text = newlon
-                        }
-                        if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
-//                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
-                                newMetnoCityAltitudeField.text = data[2]
-//                             }
-                        }
-                    }
+                    var data = ConfigUtils.metNoPlaceToData(newMetnoUrl.text)
+
+                    updateDataField(newMetnoCityLatitudeField, data['lat'])
+                    updateDataField(newMetnoCityLongitudeField, data['lon'])
+                    updateDataField(newMetnoCityAltitudeField, data['altitude'])
                 }
 
 
@@ -750,12 +741,11 @@ Item {
                                 editEntryNumber = styleData.row
                                 let entry = placesModel.get(styleData.row)
                                 if (entry.providerId === "metno") {
-                                    let url=entry.placeIdentifier
-                                    newMetnoUrl.text = url
-                                    var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                                    newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
-                                    newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
-                                    newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
+                                    newMetnoUrl.text = entry.placeIdentifier
+                                    var data = ConfigUtils.metNoPlaceToData(newMetnoUrl.text)
+                                    newMetnoCityLatitudeField.text = Number(data['lat'] !== undefined ? data['lat'] : 0).toLocaleString(Qt.locale(), 'f', 4)
+                                    newMetnoCityLongitudeField.text = Number(data['lon'] !== undefined ? data['lon'] : 0).toLocaleString(Qt.locale(), 'f', 4)
+                                    newMetnoCityAltitudeField.text = data['altitude'] !== undefined ? data['altitude'] : 0
                                     for (var i = 0; i < timezoneDataModel.count; i++) {
                                         if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
                                             tzComboBox.currentIndex = i
