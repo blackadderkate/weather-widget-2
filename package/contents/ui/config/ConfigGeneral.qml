@@ -376,7 +376,7 @@ Item {
                 function updateFields() {
                     function updateDataField(field, data) {
                         var newValue = Number(data !== undefined ? data : 0)
-                        newValue = field !== newMetnoCityAltitudeField ? newValue.toLocaleString(Qt.locale(), 'f', 4) : newValue.toLocaleString(Qt.locale, 'd')
+                        newValue = field !== newMetnoCityAltitudeField ? newValue.toLocaleString(Qt.locale(), 'f', 4) : newValue.toLocaleString(Qt.locale(), 'd')
 
                         if (!field.acceptableInput || field.text.length === 0 || field.text !== newValue) {
                             field.text = newValue

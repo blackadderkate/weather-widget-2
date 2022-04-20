@@ -16,7 +16,7 @@ function collapseZeroes(numStr) {
     return numStr
 }
 
-function metNoPlaceToData(placeIdentifier, collapse) {
+function placeToData(placeIdentifier, collapse) {
     var placeFragments = placeIdentifier.split('&')
     var placeData = {}
 
@@ -41,7 +41,7 @@ function metNoPlaceToData(placeIdentifier, collapse) {
     return placeData
 }
 
-function metNoDataToPlace(placeData) {
+function dataToPlace(placeData) {
     var placeIdentifier = ''
     var keys = Object.keys(placeData)
 
@@ -52,6 +52,6 @@ function metNoDataToPlace(placeData) {
     return placeIdentifier.slice(0, -1)
 }
 
-function metNoRebuildPlace(placeIdentifier, collapse) {
-    return metNoDataToPlace(metNoPlaceToData(placeIdentifier, collapse))
+function rebuildPlace(placeIdentifier, collapse) {
+    return dataToPlace(placeToData(placeIdentifier, collapse))
 }

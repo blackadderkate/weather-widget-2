@@ -265,7 +265,7 @@ Item {
         plasmoid.configuration.placeIndex = placeIndex
         dbgprint('placeIndex now: ' + plasmoid.configuration.placeIndex)
         var placeObject = places[placeIndex]
-        placeIdentifier = placeObject.providerId === 'metno' ? ConfigUtils.metNoRebuildPlace(placeObject.placeIdentifier, true) : placeObject.placeIdentifier
+        placeIdentifier = placeObject.providerId === 'metno' ? ConfigUtils.rebuildPlace(placeObject.placeIdentifier, true) : placeObject.placeIdentifier
         placeAlias = placeObject.placeAlias
         if (placeObject.timezoneID  === undefined ) {
           placeObject.timezoneID = -1
