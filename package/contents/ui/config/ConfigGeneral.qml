@@ -383,7 +383,7 @@ Item {
                         }
                     }
 
-                    var data = ConfigUtils.metNoPlaceToData(newMetnoUrl.text)
+                    var data = ConfigUtils.placeToData(newMetnoUrl.text)
 
                     updateDataField(newMetnoCityLatitudeField, data['lat'])
                     updateDataField(newMetnoCityLongitudeField, data['lon'])
@@ -742,7 +742,7 @@ Item {
                                 let entry = placesModel.get(styleData.row)
                                 if (entry.providerId === "metno") {
                                     newMetnoUrl.text = entry.placeIdentifier
-                                    var data = ConfigUtils.metNoPlaceToData(newMetnoUrl.text)
+                                    var data = ConfigUtils.placeToData(newMetnoUrl.text)
                                     newMetnoCityLatitudeField.text = Number(data['lat'] !== undefined ? data['lat'] : 0).toLocaleString(Qt.locale(), 'f', 4)
                                     newMetnoCityLongitudeField.text = Number(data['lon'] !== undefined ? data['lon'] : 0).toLocaleString(Qt.locale(), 'f', 4)
                                     newMetnoCityAltitudeField.text = data['altitude'] !== undefined ? data['altitude'] : 0
