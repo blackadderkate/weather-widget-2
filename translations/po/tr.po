@@ -1,0 +1,421 @@
+# Translation of weatherWidget-2 in LANGUAGE
+# Copyright (C) 2022
+# This file is distributed under the same license as the weatherWidget-2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: weatherWidget-2\n"
+"Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
+"POT-Creation-Date: 2022-03-13 16:43+0000\n"
+"PO-Revision-Date: 2022-06-18 04:57+0300\n"
+"Last-Translator: Taylan TATLI\n"
+"Language-Team: \n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: ../../package/metadata.desktop
+msgid "Weather Widget 2"
+msgstr "Hava Durumu Aracı 2"
+
+#: ../../package/metadata.desktop
+msgid "Plasmoid showing weather information from met.no server"
+msgstr "Plasmoid hava durumu bilgilerini met.no sunucusundan gösteriyor"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 m"
+msgstr "%1 d"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 h"
+msgstr "%1 s"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 d"
+msgstr "%1 g"
+
+#: ../../package/contents/code/data-loader.js
+msgid "hours"
+msgstr "saat"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "°C"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr "K"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "inHg"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "mmHg"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "hPa"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "mph"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "km/h"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "m/s"
+
+#: ../../package/contents/config/config.qml
+msgid "General"
+msgstr "Genel"
+
+#: ../../package/contents/config/config.qml
+msgid "Appearance"
+msgstr "Görünüm"
+
+#: ../../package/contents/config/config.qml
+msgid "Units"
+msgstr "Birimler"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr "Varsayılan"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout"
+msgstr "Düzen"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout type:"
+msgstr "Düzen tipi:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Horizontal"
+msgstr "Yatay"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
+msgstr ""
+"NOT: Sistem çekmecesi içerisinde kullanılırken bu ayarın bir etkisi "
+"yoktur."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Vertical"
+msgstr "Dikey"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Compact"
+msgstr "Sıkışık"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "In-Tray Settings"
+msgstr "Sistem Çekmecesi içi Ayarları"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Active timeout:"
+msgstr "Aktif zaman aşımı:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Abbreviation for seconds"
+msgid "sec"
+msgstr "sn"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"NOT: Belirtilen zaman aşımından sonra araç sistem çekmecesinden "
+"gizlenecektir. İstediğiniz zaman sistem çekmecesi \"Girdiler\" "
+"ayarlarından aracı \"Her zaman göster\" olarak ayarlayabilirsiniz."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr "Araç yazı tipi:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr "Araç yazı boyutu:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr "px"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Open Weather Map Konumu Ekle"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "URL'yi buraya yapıştırın"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "Şehir takma adı"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here:"
+msgstr "Buradan şehrinizin ID numarasını arayın:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"...ve tüm URL'yi buraya yapıştırın\n"
+"örn. Bonn, Almanya için http://openweathermap.org/city/2946447."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr "Hata!"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr "Onay"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr "Bu yeri seçmek istiyor musunuz?"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Met.no Konumu Ekle"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not numeric."
+msgstr "Enlem sayısal değer değil."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr "Enlem -90 ile 90 sayıları arasında değil."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not numeric."
+msgstr "Boylam sayısal değer değil."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not between -180 and 180."
+msgstr "Boylam -180 ile 180 sayıları arasında değil."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr "Yer adı boş."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] "Bir hata var!"
+msgstr[1] "%1 hata var!"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Enlem"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr "Boylam"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr "Yükseklik"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr "URL"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Yer Tanımlayıcı"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Ara"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Görüntü Adını Değiştir"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Yer adı girin"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr "Konum Ara"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "Konum"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr "Bölge"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr "Saat Dilimi"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+"Geonames.org tarafından sağlanan verilerden çıkarılan verileri arayın."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr "Ülke:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr "Filtre:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "Plasmoid sürümü:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Source"
+msgstr "Kaynak"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Displayed as"
+msgstr "Görüntü Adı"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Action"
+msgstr "Eylem"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Miscellaneous"
+msgstr "Çeşitli"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Reload interval:"
+msgstr "Yenileme aralığı:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgctxt "Abbreviation for minutes"
+msgid "min"
+msgstr "dk"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+"Met.no hava durumu tahminleri Norveç Meteoroloji Enstitüsü tarafından "
+"sağlanmaktadır."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr ""
+"Gün doğumu/gün batımı verileri Sunrise - Sunset tarafından sağlanmaktadır."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr "OWM hava durumu tahminleri OpenWeather tarafından sağlanmaktadır."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr "Hava durumu simgeleri Erik Flowers tarafından hazırlanmıştır."
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Temperature:"
+msgstr "Sıcaklık:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Pressure:"
+msgstr "Basınç:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Wind speed:"
+msgstr "Rüzgar hızı:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone:"
+msgstr "Saat dilimi:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "My local-time"
+msgstr "Yerel saatim"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "UTC"
+msgstr "UTC"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Next Location"
+msgstr "Sonraki Konum"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "Yenile"
+
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr "Önceki Konum"
+
+#: ../../package/contents/ui/main.qml
+msgid "Resume Updating"
+msgstr "Güncellemeye Devam Et"
+
+#: ../../package/contents/ui/main.qml
+msgid "Pause Updating"
+msgstr "Güncellemeyi Duraklat"
+
+#: ../../package/contents/ui/main.qml
+msgid "%1 ago"
+msgstr "%1 önce"
+
+#: ../../package/contents/ui/main.qml
+msgid "near future"
+msgstr "yakın gelecek"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "mm"
+msgstr "mm"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "cm"
+msgstr "cm"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "in"
+msgstr "in"
+
+#: ../../package/contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute."
+msgstr ""
+"Hava durumu tahminleri Norveç Meteoroloji Enstitüsü tarafından "
+"sağlanmaktadır."
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "bugün"
