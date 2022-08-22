@@ -142,3 +142,8 @@ function convertDate(date, timezoneType) {
     }
     return date
 }
+
+
+function localTime(gmtDate, offsetinSeconds) {
+    return new Date(Date.parse(gmtDate) + (offsetinSeconds*1000))
+}

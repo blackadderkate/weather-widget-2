@@ -1,6 +1,7 @@
 import QtQuick 2.2
 import "../../code/model-utils.js" as ModelUtils
 import "../../code/data-loader.js" as DataLoader
+import "../../code/unit-utils.js" as UnitUtils
 import "../../code/db/timezoneData.js" as TZ
 
 
@@ -11,6 +12,7 @@ Item {
     property var locale: Qt.locale()
     property string providerId: 'metno'
     property string urlPrefix: 'https://api.met.no/weatherapi/locationforecast/2.0/compact?'
+    property int timezoneOffset: 0
 
     property bool weatherDataFlag: false
     property bool sunRiseSetFlag: false
@@ -21,6 +23,10 @@ Item {
 
     function getCreditLink(placeIdentifier) {
         return urlPrefix + placeIdentifier
+    }
+
+    function parseDate(dateString) {
+        return new Date(dateString + '.000Z')
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
@@ -42,10 +48,7 @@ Item {
             additionalWeatherInfo.nearFutureWeather.iconName = geticonNumber(futureWeather.data.next_1_hours.summary.symbol_code)
             updateNextDaysModel(readingsArray)
             buildMetogramData(readingsArray)
-            weatherDataFlag = true
-            if ((weatherDataFlag) && (sunRiseSetFlag)) {
-                loadCompleted()
-            }
+            loadCompleted()
         }
 
         function parseISOString(s) {
@@ -57,6 +60,12 @@ Item {
             meteogramModel.clear()
             var readingsLength = (readingsArray.properties.timeseries.length)
             var dateFrom = parseISOString(readingsArray.properties.timeseries[0].time)
+            var sunrise1 = UnitUtils.localTime(additionalWeatherInfo.sunRise,timezoneOffset)
+            var sunset1 = UnitUtils.localTime(additionalWeatherInfo.sunSet,timezoneOffset)
+            dbgprint("Sunrise \t(GMT)" + additionalWeatherInfo.sunRise.toTimeString() + "\t(LOCAL)" + sunrise1.toTimeString())
+            dbgprint("Sunset \t(GMT)" + additionalWeatherInfo.sunSet.toTimeString() + "\t(LOCAL)" + sunset1.toTimeString())
+            var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
+
             var precipitation_unit = readingsArray.properties.meta.units["precipitation_amount"]
             var counter = 0
             var i = 1
@@ -70,9 +79,22 @@ Item {
                 var icon = obj.data.next_1_hours.summary["symbol_code"]
                 var prec = obj.data.next_1_hours.details["precipitation_amount"]
                 counter = (prec > 0) ? counter + 1 : 0
+                let localtimestamp=UnitUtils.localTime(dateFrom,timezoneOffset)
+                if (localtimestamp >= sunrise1) {
+                  if (localtimestamp < sunset1) {
+                    isDaytime = true
+                  } else {
+                    sunrise1.setDate(sunrise1.getDate() + 1)
+                    sunset1.setDate(sunset1.getDate() + 1)
+                    isDaytime = false
+                  }
+                }
+                dbgprint("Local Time=" + UnitUtils.localTime(dateFrom,timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
+                dbgprint(isDaytime ? "isDay\n" : "isNight\n")
                 meteogramModel.append({
                     from: dateFrom,
                     to: dateTo,
+                    isDaytime: isDaytime,
                     temperature: airtmp,
                     precipitationAvg: prec,
                     precipitationMax: prec,
@@ -175,20 +197,26 @@ Item {
         }
 
         function successSRAS(jsonString) {
-            var readingsArray = JSON.parse(jsonString)
+            dbgprint("succesSRAS")
+            var readingsArray=JSON.parse(jsonString)
             if ((readingsArray.location !== undefined)) {
-              additionalWeatherInfo.sunRiseTime = formatTime(readingsArray.location.time[0].sunrise.time)
-              additionalWeatherInfo.sunSetTime = formatTime(readingsArray.location.time[0].sunset.time)
+                additionalWeatherInfo.sunRise = new Date(readingsArray.location.time[0].sunrise.time)
+                additionalWeatherInfo.sunSet = new Date(readingsArray.location.time[0].sunset.time)
             }
             if ((readingsArray.results !== undefined)) {
-              additionalWeatherInfo.sunRiseTime = formatTime(readingsArray.results.sunrise)
-              additionalWeatherInfo.sunSetTime = formatTime(readingsArray.results.sunset)
+                additionalWeatherInfo.sunRise = new Date(readingsArray.results.sunrise)
+                additionalWeatherInfo.sunSet = new Date(readingsArray.results.sunset)
             }
-            sunRiseSetFlag = true
-
-            if ((weatherDataFlag) && (sunRiseSetFlag)) {
-                loadCompleted()
-            }
+            additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,timezoneOffset).toISOString())
+            additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,timezoneOffset).toISOString())
+            dbgprint("additionalWeatherInfo.sunRise = " , additionalWeatherInfo.sunRise)
+            dbgprint("additionalWeatherInfo.sunSet  = " , additionalWeatherInfo.sunSet)
+            dbgprint(timezoneOffset)
+            dbgprint("additionalWeatherInfo.sunRiseTime = " , additionalWeatherInfo.sunRiseTime)
+            dbgprint("additionalWeatherInfo.sunSetTime  = " , additionalWeatherInfo.sunSetTime)
+            sunRiseSetFlag=true
+            var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
+//             var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
         }
 
         function failureCallback() {
@@ -229,7 +257,7 @@ Item {
           console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
           TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
         } else {
-          console.log("[weatherWidget] Timezone Data is available - using met.no API")
+          dbgprint("Timezone Data is available - using met.no API")
           if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
             timezoneShortName = TZ.TZData[locationObject.timezoneID].DSTName
           } else {
@@ -238,17 +266,17 @@ Item {
           TZURL = 'https://api.met.no/weatherapi/sunrise/2.0/.json?' + placeIdentifier.replace("altitude","height") + "&date=" + formatDate(new Date().toISOString())
           if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
             TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].DSTOffset)
+            timezoneOffset = TZ.TZData[locationObject.timezoneID].DSTOffset
           } else {
             TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].Offset)
+            timezoneOffset = TZ.TZData[locationObject.timezoneID].Offset
           }
         }
-        console.log(TZURL)
+        dbgprint(TZURL);
 
-        var xhr1 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
-        var xhr2 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-//         var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
-//         var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?' + TZURL, successSRAS, failureCallback)
-        return [xhr1, xhr2]
+         var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+//        var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?'+TZURL, successSRAS, failureCallback)
+        return [xhr1]
     }
 
     function reloadMeteogramImage(placeIdentifier) {
