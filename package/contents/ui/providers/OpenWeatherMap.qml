@@ -156,6 +156,10 @@ Item {
             name: 'set'
             query: 'city/sun/@set/string()'
         }
+        XmlRole {
+            name: 'timezoneOffset'
+            query: 'city/timezone/number()'
+        }
     }
 
     property var xmlModelLongTermStatus: xmlModelLongTerm.status
@@ -205,13 +209,20 @@ Item {
         updateTodayModels(todayTimeObj)
         updateMeteogramModel()
         updateNextDaysModel()
-        updateAdditionalWeatherInfoText()
+        refreshTooltipSubText()
     }
 
     function createTodayTimeObj() {
+        function formatTime(ISOdate) {
+            return ISOdate.substr(11,5)
+        }
+
         var currentTimeObj = xmlModelCurrent.get(0)
         additionalWeatherInfo.sunRise = parseDate(currentTimeObj.rise)
         additionalWeatherInfo.sunSet = parseDate(currentTimeObj.set)
+        additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,currentTimeObj.timezoneOffset).toISOString())
+        additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,currentTimeObj.timezoneOffset).toISOString())
+        timezoneShortName = ""
         dbgprint('setting actual weather from current xml model')
         dbgprint('sunRise: ' + additionalWeatherInfo.sunRise)
         dbgprint('sunSet:  ' + additionalWeatherInfo.sunSet)
