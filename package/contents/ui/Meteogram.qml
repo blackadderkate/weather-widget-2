@@ -528,7 +528,6 @@ Item {
         var i = 0
         const oneHourMs = 3600000
         hourGridModel.clear()
-
         while (i < meteogramModel.count) {
             var obj = meteogramModel.get(i)
             var dateFrom = obj.from
@@ -551,7 +550,7 @@ Item {
                 var preparedDate = new Date(dateFrom.getTime() + (j * oneHourMs))
 
                 hourGridModel.append({
-                                      dateFrom: UnitUtils.convertDate(preparedDate, timezoneType),
+                                      dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, main.timezoneOffset),
                                       iconName: j === differenceHoursMid ? icon : '',
                                       isDaytime: obj.isDaytime,
                                       temperature: airtmp,

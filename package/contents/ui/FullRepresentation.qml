@@ -56,7 +56,10 @@ Item {
                     t += " (" + i18n("UTC") + ")"
                     break
                 case 2:
-                    t += " (" + "TBA" + ")"
+                    if (main.timezoneShortName === "") {
+                        main.timezoneShortName = "unknown"
+                    }
+                    t += " (" +  main.timezoneShortName + ")"
                     break
                 default:
                     t += " (" + "TBA" + ")"

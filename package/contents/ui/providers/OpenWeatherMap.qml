@@ -222,7 +222,8 @@ Item {
         additionalWeatherInfo.sunSet = parseDate(currentTimeObj.set)
         additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,currentTimeObj.timezoneOffset).toISOString())
         additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,currentTimeObj.timezoneOffset).toISOString())
-        timezoneShortName = ""
+        main.timezoneOffset=currentTimeObj.timezoneOffset
+        timezoneShortName="LOCAL"
         dbgprint('setting actual weather from current xml model')
         dbgprint('sunRise: ' + additionalWeatherInfo.sunRise)
         dbgprint('sunSet:  ' + additionalWeatherInfo.sunSet)

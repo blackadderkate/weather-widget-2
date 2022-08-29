@@ -133,12 +133,18 @@ function getAmOrPm(hourNumber) {
  */
 var TimezoneType = {
     USER_LOCAL_TIME: 0,
-    UTC: 1
+    UTC: 1,
+    LOCATION_LOCAL_TIME: 2
 }
 
-function convertDate(date, timezoneType) {
+function convertDate(date, timezoneType, offset) {
     if (timezoneType === TimezoneType.UTC) {
         return new Date(date.getTime() + (date.getTimezoneOffset() * 60000))
+    }
+    if (timezoneType === TimezoneType.LOCATION_LOCAL_TIME) {
+        let hrs=((offset))
+        let tmp=date.getTime() + (hrs * 1000) + (date.getTimezoneOffset() * 60000)
+        return new Date(tmp)
     }
     return date
 }

@@ -33,6 +33,7 @@ Item {
     property string cacheKey
     property int timezoneID
     property string timezoneShortName
+    property int timezoneOffset
     property var cacheMap: {}
     property bool renderMeteogram: plasmoid.configuration.renderMeteogram
     property int temperatureType: plasmoid.configuration.temperatureType
