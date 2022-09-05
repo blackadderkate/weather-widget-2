@@ -17,15 +17,20 @@ function createEmptyNextDaysObject() {
 
 function populateNextDaysObject(nextDaysObj) {
     for (var i = 0; i < 4; i++) {
+
         var tempInfo = nextDaysObj.tempInfoArray[i]
         var hidden = false
         if (tempInfo === null) {
             tempInfo = {}
+            nextDaysObj['temperature' + i] = 0
+            nextDaysObj['iconName' + i] = ''
+            nextDaysObj['isPast' + i] = false
             hidden = true
+        } else {
+            nextDaysObj['temperature' + i] = tempInfo.temperature
+            nextDaysObj['iconName' + i] = tempInfo.iconName
+            nextDaysObj['isPast' + i] = tempInfo.isPast
         }
-        nextDaysObj['temperature' + i] = tempInfo.temperature
-        nextDaysObj['iconName' + i] = tempInfo.iconName
         nextDaysObj['hidden' + i] = hidden
-        nextDaysObj['isPast' + i] = tempInfo.isPast
     }
 }
