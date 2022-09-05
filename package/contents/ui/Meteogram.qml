@@ -447,12 +447,16 @@ Item {
             }
 
             onPaint: {
-                context.clearRect(0, 0, width, height)
+                var ctx=getContext("2d")
+                if (ctx !== null) {
+                    ctx.clearRect(0, 0, width, height)
+                    ctx.clearRect(0, 0, width, height)
 
-                context.strokeStyle = pressureColor
-                context.lineWidth = 1 * units.devicePixelRatio;
-                context.path = pressurePath
-                context.stroke()
+                    ctx.strokeStyle = pressureColor
+                    ctx.lineWidth = 1 * units.devicePixelRatio;
+                    ctx.path = pressurePath
+                    ctx.stroke()
+                }
             }
         }
         Canvas {
@@ -474,11 +478,14 @@ Item {
             }
 
             onPaint: {
-                context.clearRect(0, 0, width, height)
-                context.strokeStyle = temperatureWarmColor
-                context.lineWidth = 2 * units.devicePixelRatio;
-                context.path = temperaturePathWarm
-                context.stroke()
+                var ctx=getContext("2d")
+                if (ctx !== null) {
+                    ctx.clearRect(0, 0, width, height)
+                    ctx.strokeStyle = temperatureWarmColor
+                    ctx.lineWidth = 2 * units.devicePixelRatio;
+                    ctx.path = temperaturePathWarm
+                    ctx.stroke()
+                }
             }
         }
 
@@ -501,12 +508,15 @@ Item {
                 }
 
                 onPaint: {
-                    context.clearRect(0, 0, width, height)
+                    var ctx=getContext("2d")
+                    if (ctx !== null) {
+                        ctx.clearRect(0, 0, width, height)
 
-                    context.strokeStyle = temperatureColdColor
-                    context.lineWidth = 2 * units.devicePixelRatio;
-                    context.path = temperaturePathCold
-                    context.stroke()
+                        ctx.strokeStyle = temperatureColdColor
+                        ctx.lineWidth = 2 * units.devicePixelRatio;
+                        ctx.path = temperaturePathCold
+                        ctx.stroke()
+                    }
                 }
             }
         }
