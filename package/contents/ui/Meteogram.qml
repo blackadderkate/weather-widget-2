@@ -28,8 +28,8 @@ Item {
     width: imageWidth
     height: imageHeight + labelHeight// Day Label + Time Label
 
-    property int imageWidth: 800 * units.devicePixelRatio - (labelWidth * 2)
-    property int imageHeight: 320 * units.devicePixelRatio  - labelHeight - cloudarea - windarea
+    property int imageWidth: 800 * Screen.devicePixelRatio - (labelWidth * 2)
+    property int imageHeight: 320 * Screen.devicePixelRatio  - labelHeight - cloudarea - windarea
     property int labelWidth: textMetrics.width
     property int labelHeight: textMetrics.height
 
@@ -62,9 +62,9 @@ Item {
     property color rainColor: textColorLight ? Qt.rgba(0.33, 0.66, 1, 1) : Qt.rgba(0, 0.33, 1, 1)
 
 
-    property int precipitationFontPixelSize: 8 * units.devicePixelRatio
-    property int precipitationHeightMultiplier: 15 * units.devicePixelRatio
-    property int precipitationLabelMargin: 8 * units.devicePixelRatio
+    property int precipitationFontPixelSize: 8 * Screen.devicePixelRatio
+    property int precipitationHeightMultiplier: 15 * Screen.devicePixelRatio
+    property int precipitationLabelMargin: 8 * Screen.devicePixelRatio
 
 /*
     property int temperatureType: 0
@@ -102,7 +102,7 @@ Item {
     TextMetrics {
         id: textMetrics
         font.family: theme.defaultFont.family
-        font.pixelSize: 11 * units.devicePixelRatio
+        font.pixelSize: 11 * Screen.devicePixelRatio
         text: "999999"
     }
 
@@ -140,7 +140,7 @@ Item {
             Rectangle {
                 id: gridLine
                 width: parent.width
-                height: 1 * units.devicePixelRatio
+                height: 1 * Screen.devicePixelRatio
                 color: gridColor
             }
             PlasmaComponents.Label {
@@ -152,7 +152,7 @@ Item {
                 anchors.top: gridLine.top
                 anchors.leftMargin: -labelWidth - 2
                 anchors.topMargin: -labelHeight / 2
-                font.pixelSize: 11 * units.devicePixelRatio
+                font.pixelSize: 11 * Screen.devicePixelRatio
                 font.pointSize: -1
             }
             PlasmaComponents.Label {
@@ -164,7 +164,7 @@ Item {
                 anchors.left: gridLine.right
                 anchors.leftMargin: 2
                 horizontalAlignment: Text.AlignLeft
-                font.pixelSize: 11 * units.devicePixelRatio
+                font.pixelSize: 11 * Screen.devicePixelRatio
                 font.pointSize: -1
                 color: pressureColor
             }
@@ -177,7 +177,7 @@ Item {
         horizontalAlignment: (UnitUtils.getPressureEnding(pressureType).length > 4) ? Text.AlignRight : Text.AlignLeft
         anchors.right: (graphArea.right)
         anchors.rightMargin: -labelWidth
-        font.pixelSize: 11 * units.devicePixelRatio
+        font.pixelSize: 11 * Screen.devicePixelRatio
         font.pointSize: -1
         color: pressureColor
         anchors.bottom: graphArea.top
@@ -234,7 +234,7 @@ Item {
                 anchors.topMargin: 2
                 //                anchors.horizontalCenter: verticalLine.left
                 anchors.horizontalCenter: verticalLine.horizontalCenter
-                font.pixelSize: 11 * units.devicePixelRatio
+                font.pixelSize: 11 * Screen.devicePixelRatio
                 font.pointSize: -1
                 visible: textVisible
             }
@@ -244,7 +244,7 @@ Item {
                 horizontalAlignment: Text.AlignLeft
                 anchors.top: hourText.top
                 anchors.left: hourText.right
-                font.pixelSize: 7 * units.devicePixelRatio
+                font.pixelSize: 7 * Screen.devicePixelRatio
                 font.pointSize: -1
                 visible: textVisible
             }
@@ -318,7 +318,7 @@ Item {
                 anchors.topMargin: -labelHeight
                 anchors.left: parent.left
                 anchors.leftMargin: parent.width / 2
-                font.pixelSize: 11 * units.devicePixelRatio
+                font.pixelSize: 11 * Screen.devicePixelRatio
                 font.pointSize: -1
                 visible: dayBegins && canShowDay
             }
@@ -369,7 +369,7 @@ Item {
                 visible: precLabelVisible
             }
             PlasmaComponents.Label {
-                font.pixelSize: 14 * units.devicePixelRatio
+                font.pixelSize: 14 * Screen.devicePixelRatio
                 font.pointSize: -1
                 width: parent.width
                 anchors.top: parent.top
@@ -453,7 +453,7 @@ Item {
                     ctx.clearRect(0, 0, width, height)
 
                     ctx.strokeStyle = pressureColor
-                    ctx.lineWidth = 1 * units.devicePixelRatio;
+                    ctx.lineWidth = 1 * Screen.devicePixelRatio;
                     ctx.path = pressurePath
                     ctx.stroke()
                 }
@@ -482,7 +482,7 @@ Item {
                 if (ctx !== null) {
                     ctx.clearRect(0, 0, width, height)
                     ctx.strokeStyle = temperatureWarmColor
-                    ctx.lineWidth = 2 * units.devicePixelRatio;
+                    ctx.lineWidth = 2 * Screen.devicePixelRatio;
                     ctx.path = temperaturePathWarm
                     ctx.stroke()
                 }
@@ -513,7 +513,7 @@ Item {
                         ctx.clearRect(0, 0, width, height)
 
                         ctx.strokeStyle = temperatureColdColor
-                        ctx.lineWidth = 2 * units.devicePixelRatio;
+                        ctx.lineWidth = 2 * Screen.devicePixelRatio;
                         ctx.path = temperaturePathCold
                         ctx.stroke()
                     }
