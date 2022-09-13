@@ -14,15 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
+import QtQuick 2.5
+import QtQuick.Window 2.5
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
     id: fullRepresentation
 
-    property int imageWidth: 800 * units.devicePixelRatio // Makes yr.no images grainy,
-    property int imageHeight: 320 * units.devicePixelRatio + defaultFontPixelSize// prefer rendering meteograms
+    property int imageWidth: 800 * Screen.devicePixelRatio  // Makes yr.no images grainy,
+    property int imageHeight: 320 * Screen.devicePixelRatio + defaultFontPixelSize// prefer rendering meteograms
 
     property double defaultFontPixelSize: theme.defaultFont.pixelSize
     property double footerHeight: defaultFontPixelSize
@@ -168,7 +169,8 @@ Item {
         id: hourLegend
         anchors.bottom: parent.bottom
         anchors.bottomMargin: footerHeight + nextDaysVerticalMargin
-        spacing: 1 * units.devicePixelRatio
+        spacing: 1 * Screen.devicePixelRatio
+
         width: hourLegendMargin
         height: nextDaysHeight - defaultFontPixelSize
 

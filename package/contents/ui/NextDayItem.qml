@@ -15,13 +15,14 @@
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
 import QtQuick 2.2
+import QtQuick.Window 2.5
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
 
-    property int itemRowSpacing: 5 * units.devicePixelRatio
+    property int itemRowSpacing: 5 * Screen.devicePixelRatio
     property double periodFontSize: theme.defaultFont.pixelSize
     property double periodHeight: (height - periodFontSize - itemRowSpacing * 4) / 4
     property color lineColor: theme.textColor
@@ -37,7 +38,7 @@ Item {
     Item {
         id: dayTitleLine
         width: parent.width
-        height: 1 * units.devicePixelRatio
+        height: 1 * Screen.devicePixelRatio
         anchors.top: parent.top
         anchors.topMargin: periodFontSize * 0.8
 
@@ -67,7 +68,7 @@ Item {
         anchors.topMargin: periodFontSize
 
         columns: 1
-        rowSpacing: 5 * units.devicePixelRatio
+        rowSpacing: 5 * Screen.devicePixelRatio
 
         height: parent.height - anchors.topMargin
         width: parent.width

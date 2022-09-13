@@ -14,7 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
+import QtQuick 2.5
+import QtQuick.Window 2.5
 import org.kde.plasma.plasmoid 2.0
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
@@ -30,7 +31,7 @@ Item {
     property double defaultFontPixelSize: theme.defaultFont.pixelSize
     property double footerHeight: defaultFontPixelSize * 3.5
 
-    property int nextDaysSpacing: 5 * units.devicePixelRatio
+    property int nextDaysSpacing: 5 * Screen.devicePixelRatio
     property int nextDayHeight: defaultFontPixelSize * 4.9
     property int headingHeight: defaultFontPixelSize * 3
     property int nextDayItemSpacing: defaultFontPixelSize * 0.7
