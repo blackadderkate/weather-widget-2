@@ -67,8 +67,8 @@ Item {
             var dateFrom = parseISOString(readingsArray.properties.timeseries[0].time)
             var sunrise1 = UnitUtils.localTime(additionalWeatherInfo.sunRise,main.timezoneOffset)
             var sunset1 = UnitUtils.localTime(additionalWeatherInfo.sunSet,main.timezoneOffset)
-            dbgprint("Sunrise \t(GMT)" + additionalWeatherInfo.sunRise.toTimeString() + "\t(LOCAL)" + sunrise1.toTimeString())
-            dbgprint("Sunset \t(GMT)" + additionalWeatherInfo.sunSet.toTimeString() + "\t(LOCAL)" + sunset1.toTimeString())
+            dbgprint("Sunrise \t(GMT)" + new Date(additionalWeatherInfo.sunRise).toTimeString() + "\t(LOCAL)" + sunrise1.toTimeString())
+            dbgprint("Sunset \t(GMT)" + new Date(additionalWeatherInfo.sunSet).toTimeString() + "\t(LOCAL)" + sunset1.toTimeString())
             var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
 
             var precipitation_unit = readingsArray.properties.meta.units["precipitation_amount"]
@@ -205,12 +205,12 @@ Item {
             dbgprint("succesSRAS")
             var readingsArray=JSON.parse(jsonString)
             if ((readingsArray.location !== undefined)) {
-                additionalWeatherInfo.sunRise = new Date(readingsArray.location.time[0].sunrise.time)
-                additionalWeatherInfo.sunSet = new Date(readingsArray.location.time[0].sunset.time)
+                additionalWeatherInfo.sunRise = readingsArray.location.time[0].sunrise.time
+                additionalWeatherInfo.sunSet = readingsArray.location.time[0].sunset.time
             }
             if ((readingsArray.results !== undefined)) {
-                additionalWeatherInfo.sunRise = new Date(readingsArray.results.sunrise)
-                additionalWeatherInfo.sunSet = new Date(readingsArray.results.sunset)
+                additionalWeatherInfo.sunRise = readingsArray.results.sunrise
+                additionalWeatherInfo.sunSet = readingsArray.results.sunset
             }
             additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,main.timezoneOffset).toISOString())
             additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,main.timezoneOffset).toISOString())
