@@ -212,13 +212,15 @@ Item {
                 additionalWeatherInfo.sunRise = readingsArray.results.sunrise
                 additionalWeatherInfo.sunSet = readingsArray.results.sunset
             }
+            let sunRiseDate = new Date(additionalWeatherInfo.sunRise)
+            let sunSetDate = new Date(additionalWeatherInfo.sunSet)
             additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,main.timezoneOffset).toISOString())
             additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,main.timezoneOffset).toISOString())
-            dbgprint("additionalWeatherInfo.sunRise = " , additionalWeatherInfo.sunRise)
-            dbgprint("additionalWeatherInfo.sunSet  = " , additionalWeatherInfo.sunSet)
+            dbgprint("additionalWeatherInfo.sunRise = " + sunRiseDate)
+            dbgprint("additionalWeatherInfo.sunSet  = " + sunSetDate)
             dbgprint(main.timezoneOffset)
-            dbgprint("additionalWeatherInfo.sunRiseTime = " , additionalWeatherInfo.sunRiseTime)
-            dbgprint("additionalWeatherInfo.sunSetTime  = " , additionalWeatherInfo.sunSetTime)
+            dbgprint("additionalWeatherInfo.sunRiseTime = " + additionalWeatherInfo.sunRiseTime)
+            dbgprint("additionalWeatherInfo.sunSetTime  = " + additionalWeatherInfo.sunSetTime)
             sunRiseSetFlag=true
             var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
 //             var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
