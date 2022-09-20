@@ -65,8 +65,8 @@ Item {
             meteogramModel.clear()
             var readingsLength = (readingsArray.properties.timeseries.length)
             var dateFrom = parseISOString(readingsArray.properties.timeseries[0].time)
-            var sunrise1 = UnitUtils.localTime(additionalWeatherInfo.sunRise,main.timezoneOffset)
-            var sunset1 = UnitUtils.localTime(additionalWeatherInfo.sunSet,main.timezoneOffset)
+            var sunrise1 = UnitUtils.convertDate(additionalWeatherInfo.sunRise,2,main.timezoneOffset)
+            var sunset1 = UnitUtils.convertDate(additionalWeatherInfo.sunSet,2,main.timezoneOffset)
             dbgprint("Sunrise \t(GMT)" + new Date(additionalWeatherInfo.sunRise).toTimeString() + "\t(LOCAL)" + sunrise1.toTimeString())
             dbgprint("Sunset \t(GMT)" + new Date(additionalWeatherInfo.sunSet).toTimeString() + "\t(LOCAL)" + sunset1.toTimeString())
             var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
@@ -84,7 +84,7 @@ Item {
                 var icon = obj.data.next_1_hours.summary["symbol_code"]
                 var prec = obj.data.next_1_hours.details["precipitation_amount"]
                 counter = (prec > 0) ? counter + 1 : 0
-                let localtimestamp=UnitUtils.localTime(dateFrom,main.timezoneOffset)
+                let localtimestamp=UnitUtils.convertDate(dateFrom,2,main.timezoneOffset)
                 if (localtimestamp >= sunrise1) {
                   if (localtimestamp < sunset1) {
                     isDaytime = true
@@ -94,7 +94,7 @@ Item {
                     isDaytime = false
                   }
                 }
-                dbgprint("Local Time=" + UnitUtils.localTime(dateFrom,main.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
+                dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,main.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
                 dbgprint(isDaytime ? "isDay\n" : "isNight\n")
                 meteogramModel.append({
                     from: dateFrom,
@@ -205,22 +205,15 @@ Item {
             dbgprint("succesSRAS")
             var readingsArray=JSON.parse(jsonString)
             if ((readingsArray.location !== undefined)) {
-                additionalWeatherInfo.sunRise = readingsArray.location.time[0].sunrise.time
-                additionalWeatherInfo.sunSet = readingsArray.location.time[0].sunset.time
+                additionalWeatherInfo.sunRise = new Date(readingsArray.location.time[0].sunrise.time)
+                additionalWeatherInfo.sunSet = new Date(readingsArray.location.time[0].sunset.time)
             }
             if ((readingsArray.results !== undefined)) {
-                additionalWeatherInfo.sunRise = readingsArray.results.sunrise
-                additionalWeatherInfo.sunSet = readingsArray.results.sunset
+                additionalWeatherInfo.sunRise = new Date(readingsArray.results.sunrise)
+                additionalWeatherInfo.sunSet = new Date(readingsArray.results.sunset)
             }
-            let sunRiseDate = new Date(additionalWeatherInfo.sunRise)
-            let sunSetDate = new Date(additionalWeatherInfo.sunSet)
-            additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,main.timezoneOffset).toISOString())
-            additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,main.timezoneOffset).toISOString())
-            dbgprint("additionalWeatherInfo.sunRise = " + sunRiseDate)
-            dbgprint("additionalWeatherInfo.sunSet  = " + sunSetDate)
-            dbgprint(main.timezoneOffset)
-            dbgprint("additionalWeatherInfo.sunRiseTime = " + additionalWeatherInfo.sunRiseTime)
-            dbgprint("additionalWeatherInfo.sunSetTime  = " + additionalWeatherInfo.sunSetTime)
+            additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunRise,main.timezoneType,main.timezoneOffset).toISOString())
+            additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunSet,main.timezoneType,main.timezoneOffset).toISOString())
             sunRiseSetFlag=true
             var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
 //             var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)

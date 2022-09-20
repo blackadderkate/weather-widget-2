@@ -618,7 +618,7 @@ Item {
         width: parent.width
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.3.1'
+            text: i18n("Plasmoid version:") + ' 2.3.2'
             Layout.alignment: Qt.AlignRight
         }
 
