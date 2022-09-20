@@ -373,26 +373,23 @@ Item {
         }
         plasmoid.status = DataLoader.getPlasmoidStatus(lastloadingSuccessTime, inTrayActiveTimeoutSec)
     }
-/*
+
     function updateAdditionalWeatherInfoText() {
         if (additionalWeatherInfo !== undefined) {
-            var sunRise = additionalWeatherInfo.sunRise
-            var sunSet = additionalWeatherInfo.sunSet
-            var now = new Date()
-            sunRise = UnitUtils.convertDate(sunRise, timezoneType)
-            sunSet = UnitUtils.convertDate(sunSet, timezoneType)
+            var sunRise = UnitUtils.convertDate(additionalWeatherInfo.sunRise, timezoneType, timezoneOffset)
+            var sunSet = UnitUtils.convertDate(additionalWeatherInfo.sunSet, timezoneType, timezoneOffset)
             additionalWeatherInfo.sunRiseTime = Qt.formatTime(sunRise, Qt.locale().timeFormat(Locale.ShortFormat))
             additionalWeatherInfo.sunSetTime = Qt.formatTime(sunSet, Qt.locale().timeFormat(Locale.ShortFormat))
         }
     }
-*/
+
     function refreshTooltipSubText() {
         dbgprint('refreshing sub text')
         if (additionalWeatherInfo === undefined || additionalWeatherInfo.nearFutureWeather.iconName === null || actualWeatherModel.count === 0) {
             dbgprint('model not yet ready')
            return
         }
-        //updateAdditionalWeatherInfoText()
+        updateAdditionalWeatherInfoText()
         var nearFutureWeather = additionalWeatherInfo.nearFutureWeather
         var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentProvider.providerId, getPartOfDayIndex())
         var wind1=Math.round(actualWeatherModel.get(0).windDirection)

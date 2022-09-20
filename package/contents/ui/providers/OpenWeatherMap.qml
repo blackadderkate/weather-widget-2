@@ -218,10 +218,10 @@ Item {
         }
 
         var currentTimeObj = xmlModelCurrent.get(0)
-        additionalWeatherInfo.sunRise = currentTimeObj.rise
-        additionalWeatherInfo.sunSet = currentTimeObj.set
-        additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,currentTimeObj.timezoneOffset).toISOString())
-        additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,currentTimeObj.timezoneOffset).toISOString())
+        additionalWeatherInfo.sunRise = new Date(Date.parse(currentTimeObj.rise))
+        additionalWeatherInfo.sunSet = new Date(Date.parse(currentTimeObj.set))
+        additionalWeatherInfo.sunRiseTime=new Date(UnitUtils.localTime(additionalWeatherInfo.sunRise,currentTimeObj.timezoneOffset))
+        additionalWeatherInfo.sunSetTime=new Date(UnitUtils.localTime(additionalWeatherInfo.sunSet,currentTimeObj.timezoneOffset))
         main.timezoneOffset=currentTimeObj.timezoneOffset
         timezoneShortName="LOCAL"
         dbgprint('setting actual weather from current xml model')
