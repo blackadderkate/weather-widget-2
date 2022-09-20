@@ -619,7 +619,7 @@ Item {
     }
 
     function getCreditLabel(placeIdentifier) {
-        return 'Weather forecast data provided by OpenWeather.'
+        return i18n("Weather forecast data provided by OpenWeather.")
     }
 
     function getCreditLink(placeIdentifier) {
