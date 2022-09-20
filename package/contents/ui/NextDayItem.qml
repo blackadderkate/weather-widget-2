@@ -33,6 +33,7 @@ Item {
         anchors.top: parent.top
         height: periodFontSize
         verticalAlignment: Text.AlignBottom
+        fontSizeMode: Text.Fit
     }
 
     Item {
