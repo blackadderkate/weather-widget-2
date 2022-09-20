@@ -218,15 +218,15 @@ Item {
         }
 
         var currentTimeObj = xmlModelCurrent.get(0)
-        additionalWeatherInfo.sunRise = parseDate(currentTimeObj.rise)
-        additionalWeatherInfo.sunSet = parseDate(currentTimeObj.set)
+        additionalWeatherInfo.sunRise = currentTimeObj.rise
+        additionalWeatherInfo.sunSet = currentTimeObj.set
         additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunRise,currentTimeObj.timezoneOffset).toISOString())
         additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.localTime(additionalWeatherInfo.sunSet,currentTimeObj.timezoneOffset).toISOString())
         main.timezoneOffset=currentTimeObj.timezoneOffset
         timezoneShortName="LOCAL"
         dbgprint('setting actual weather from current xml model')
-        dbgprint('sunRise: ' + additionalWeatherInfo.sunRise)
-        dbgprint('sunSet:  ' + additionalWeatherInfo.sunSet)
+        dbgprint('sunRise: ' + parseDate(additionalWeatherInfo.sunRise))
+        dbgprint('sunSet:  ' + parseDate(additionalWeatherInfo.sunSet))
         dbgprint('current: ' + currentTimeObj.temperature)
         return currentTimeObj
     }
@@ -502,8 +502,8 @@ Item {
         var now = new Date()
 
         var dateFrom = parseDate(xmlModelHourByHour.get(0).from)
-        var sunrise1=additionalWeatherInfo.sunRise
-        var sunset1=additionalWeatherInfo.sunSet
+        var sunrise1 = parseDate(additionalWeatherInfo.sunRise)
+        var sunset1 = parseDate(additionalWeatherInfo.sunSet)
         var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
         dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
 
