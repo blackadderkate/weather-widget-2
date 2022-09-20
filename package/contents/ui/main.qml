@@ -505,8 +505,7 @@ Item {
 
     onTimezoneTypeChanged: {
         if (lastloadingSuccessTime > 0) {
-            meteogramModelChanged = !meteogramModelChanged
-            updateAdditionalWeatherInfoText()
+        refreshTooltipSubText()
         }
     }
 
