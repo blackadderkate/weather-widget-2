@@ -2,13 +2,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Jacobtey <jacobtey@gmail.com>, 2016.
+# Damir Islamov <damir@secretlaboratory.ru>, 2022
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-03-13 16:43+0000\n"
-"PO-Revision-Date: 2022-02-14 13:15+0700\n"
+"PO-Revision-Date: 2022-09-29 17:35+0700\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -103,7 +104,7 @@ msgstr "Ед. измерения"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Use default font"
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -154,16 +155,16 @@ msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style:"
-msgstr ""
+msgstr "Шрифт виджета"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size:"
-msgstr ""
+msgstr "Размер шрифта виджета"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
 msgid "px"
-msgstr ""
+msgstr "пикс."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -369,7 +370,7 @@ msgstr "UTC"
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
-msgstr "Следующее"
+msgstr "Следующее местоположение"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -378,7 +379,7 @@ msgstr "Обновить"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr ""
+msgstr "Предыдущее местоположение"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
