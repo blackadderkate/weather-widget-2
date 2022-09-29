@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-13 16:43+0000\n"
+"POT-Creation-Date: 2022-09-29 19:30+0700\n"
 "PO-Revision-Date: 2022-03-14 21:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -206,20 +206,28 @@ msgid "Add Met.no Map Place"
 msgstr "Lägg till plats från Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr "Latituden är inte giltig."
+msgid "The Latitude is not valid."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
 msgstr "Latituden är inte mellan -90 och 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr "Longituden är inte giltig."
+msgid "The Longitude is not valid."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
 msgstr "Longituden är inte mellan -180 och 180."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not valid."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not between -999 and 5000."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
@@ -325,8 +333,7 @@ msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
-"Met.no:s väderleksrapport tillhandahålls av Meteorologisk institutt i "
-"Norge."
+"Met.no:s väderleksrapport tillhandahålls av Meteorologisk institutt i Norge."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
@@ -361,8 +368,13 @@ msgid "My local-time"
 msgstr "Min lokala tid"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
+#: ../../package/contents/ui/FullRepresentation.qml
 msgid "UTC"
 msgstr "UTC"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Location Timezone"
+msgstr ""
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -409,12 +421,21 @@ msgstr "tum"
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
-msgstr ""
-"Väderleksrapporten tillhandahålls av Meteorologisk institutt i Norge."
+msgstr "Väderleksrapporten tillhandahålls av Meteorologisk institutt i Norge."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "idag"
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "Weather forecast data provided by OpenWeather."
+msgstr ""
+
+#~ msgid "The Latitude is not numeric."
+#~ msgstr "Latituden är inte giltig."
+
+#~ msgid "The Longitude is not numeric."
+#~ msgstr "Longituden är inte giltig."
 
 #~ msgid "Offline mode"
 #~ msgstr "Nedkopplat läge"

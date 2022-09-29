@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-13 16:43+0000\n"
+"POT-Creation-Date: 2022-09-29 19:30+0700\n"
 "PO-Revision-Date: 2022-09-29 17:35+0700\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -207,20 +207,28 @@ msgid "Add Met.no Map Place"
 msgstr "Добавить место Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr "Значение широта не числовое."
+msgid "The Latitude is not valid."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
 msgstr "Широта не находится между -90 и 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr "Значение долготы не числовое."
+msgid "The Longitude is not valid."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
 msgstr "Долгота не находится между -180 и 180."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not valid."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not between -999 and 5000."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
@@ -364,8 +372,13 @@ msgid "My local-time"
 msgstr "Местное время"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
+#: ../../package/contents/ui/FullRepresentation.qml
 msgid "UTC"
 msgstr "UTC"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Location Timezone"
+msgstr ""
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -418,6 +431,16 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "сегодня"
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "Weather forecast data provided by OpenWeather."
+msgstr ""
+
+#~ msgid "The Latitude is not numeric."
+#~ msgstr "Значение широта не числовое."
+
+#~ msgid "The Longitude is not numeric."
+#~ msgstr "Значение долготы не числовое."
 
 #~ msgid "Offline mode"
 #~ msgstr "Режим оффлайн"
