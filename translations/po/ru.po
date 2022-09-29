@@ -208,7 +208,7 @@ msgstr "Добавить место Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not valid."
-msgstr ""
+msgstr "Некорректное значение широты."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
@@ -216,7 +216,7 @@ msgstr "Широта не находится между -90 и 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not valid."
-msgstr ""
+msgstr "Некорректное значение долготы."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
@@ -224,11 +224,11 @@ msgstr "Долгота не находится между -180 и 180."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not valid."
-msgstr ""
+msgstr "Некорректное значение высоты"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not between -999 and 5000."
-msgstr ""
+msgstr "Высота не находится между -999 и 5000."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
@@ -378,7 +378,7 @@ msgstr "UTC"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Location Timezone"
-msgstr ""
+msgstr "Часовой пояс местоположения"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -434,7 +434,7 @@ msgstr "сегодня"
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "Данные прогноза погоды предоставлены OpenWeather."
 
 #~ msgid "The Latitude is not numeric."
 #~ msgstr "Значение широта не числовое."
