@@ -99,7 +99,7 @@ msgstr "Внешний вид"
 
 #: ../../package/contents/config/config.qml
 msgid "Units"
-msgstr "Ед. измерения"
+msgstr "Единицы измерения"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Use default font"
@@ -212,7 +212,7 @@ msgstr "Некорректное значение широты."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
-msgstr "Широта не находится между -90 и 90."
+msgstr "Широта вне интервала между -90 и 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not valid."
@@ -220,7 +220,7 @@ msgstr "Некорректное значение долготы."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
-msgstr "Долгота не находится между -180 и 180."
+msgstr "Долгота вне интервала между -180 и 180."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not valid."
@@ -228,7 +228,7 @@ msgstr "Некорректное значение высоты"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not between -999 and 5000."
-msgstr "Высота не находится между -999 и 5000."
+msgstr "Высота вне интервала между -999 и 5000."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
@@ -383,7 +383,7 @@ msgstr "Часовой пояс местоположения"
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
-msgstr "Следующее местоположение"
+msgstr "Следующее место"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -392,7 +392,7 @@ msgstr "Обновить"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr "Предыдущее местоположение"
+msgstr "Предыдущее место"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
