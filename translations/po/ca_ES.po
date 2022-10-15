@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-13 16:43+0000\n"
+"POT-Creation-Date: 2022-09-29 19:30+0700\n"
 "PO-Revision-Date: 2022-02-13 14:00+0100\n"
 "Last-Translator: Eduard Selma <selma@tinet.cat>\n"
 "Language-Team: \n"
@@ -205,19 +205,27 @@ msgid "Add Met.no Map Place"
 msgstr "Afegeix un lloc de Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr "La Latitud no és numèrica."
+msgid "The Latitude is not valid."
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
 msgstr "La Latitud no està entre -90 i 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
+msgid "The Longitude is not valid."
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not valid."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not between -999 and 5000."
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -358,8 +366,13 @@ msgid "My local-time"
 msgstr "Hora local"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
+#: ../../package/contents/ui/FullRepresentation.qml
 msgid "UTC"
 msgstr "UTC"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Location Timezone"
+msgstr ""
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -411,6 +424,13 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "avui"
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "Weather forecast data provided by OpenWeather."
+msgstr ""
+
+#~ msgid "The Latitude is not numeric."
+#~ msgstr "La Latitud no és numèrica."
 
 #~ msgid "Offline mode"
 #~ msgstr "Mode fora de línia"
