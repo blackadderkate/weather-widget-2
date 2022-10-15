@@ -2,13 +2,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Jacobtey <jacobtey@gmail.com>, 2016.
+# Damir Islamov <damir@secretlaboratory.ru>, 2022
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-13 16:43+0000\n"
-"PO-Revision-Date: 2022-02-14 13:15+0700\n"
+"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"PO-Revision-Date: 2022-09-29 17:35+0700\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -16,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
@@ -98,12 +99,12 @@ msgstr "Внешний вид"
 
 #: ../../package/contents/config/config.qml
 msgid "Units"
-msgstr "Ед. измерения"
+msgstr "Единицы измерения"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Use default font"
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -154,16 +155,16 @@ msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style:"
-msgstr ""
+msgstr "Шрифт виджета"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size:"
-msgstr ""
+msgstr "Размер шрифта виджета"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
 msgid "px"
-msgstr ""
+msgstr "пикс."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -206,20 +207,28 @@ msgid "Add Met.no Map Place"
 msgstr "Добавить место Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr "Значение широта не числовое."
+msgid "The Latitude is not valid."
+msgstr "Некорректное значение широты."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
-msgstr "Широта не находится между -90 и 90."
+msgstr "Широта вне интервала между -90 и 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr "Значение долготы не числовое."
+msgid "The Longitude is not valid."
+msgstr "Некорректное значение долготы."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
-msgstr "Долгота не находится между -180 и 180."
+msgstr "Долгота вне интервала между -180 и 180."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not valid."
+msgstr "Некорректное значение высоты"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not between -999 and 5000."
+msgstr "Высота вне интервала между -999 и 5000."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
@@ -363,13 +372,18 @@ msgid "My local-time"
 msgstr "Местное время"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
+#: ../../package/contents/ui/FullRepresentation.qml
 msgid "UTC"
 msgstr "UTC"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Location Timezone"
+msgstr "Часовой пояс местоположения"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
-msgstr "Следующее"
+msgstr "Следующее место"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -378,7 +392,7 @@ msgstr "Обновить"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr ""
+msgstr "Предыдущее место"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
@@ -417,6 +431,16 @@ msgstr ""
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
 msgstr "сегодня"
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "Weather forecast data provided by OpenWeather."
+msgstr "Данные прогноза погоды предоставлены OpenWeather."
+
+#~ msgid "The Latitude is not numeric."
+#~ msgstr "Значение широта не числовое."
+
+#~ msgid "The Longitude is not numeric."
+#~ msgstr "Значение долготы не числовое."
 
 #~ msgid "Offline mode"
 #~ msgstr "Режим оффлайн"
