@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-03-13 16:43+0000\n"
-"PO-Revision-Date: 2022-03-16 11:07+0100\n"
+"POT-Creation-Date: 2022-09-21 10:51+0200\n"
+"PO-Revision-Date: 2022-09-25 10:54+0200\n"
 "Last-Translator: Martin Schnitkemper\n"
 "Language-Team: mfroeb\n"
 "Language: de\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
-msgstr ""
+msgstr "Weather Widget 2"
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
@@ -55,7 +55,7 @@ msgstr "°F"
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -119,8 +119,8 @@ msgstr "Horizontal"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
 msgstr ""
-"ACHTUNG: Diese Einstellung hat keine Auswirkung auf die Anzeige im "
-"Systemabschnitt der Kontrolleiste."
+"HINWEIS: Diese Einstellung hat keine Auswirkung auf die Anzeige im "
+"Systemabschnitt der Kontrollleiste."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Vertical"
@@ -132,7 +132,7 @@ msgstr "Kompakt"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "In-Tray Settings"
-msgstr "Anzeige im Systemabschnitt der Kontrolleiste"
+msgstr "Anzeige im Systemabschnitt der Kontrollleiste"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Active timeout:"
@@ -149,7 +149,7 @@ msgid ""
 "refreshed. You can always set the widget to be always \"Shown\" in system "
 "tray \"Entries\" settings."
 msgstr ""
-"ACHTUNG: Nach dieser Zeit wird das Symbol im Systemabschnitt automatisch "
+"HINWEIS: Nach dieser Zeit wird das Symbol im Systemabschnitt automatisch "
 "ausgeblendet, bis eine Aktualisierung stattfindet. Sie können die Anzeige "
 "der Symbole in den Einstellungen für den Systemabschnitt der Kontrollleiste "
 "verändern."
@@ -165,7 +165,7 @@ msgstr "Widget-Schriftgröße:"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
@@ -188,7 +188,7 @@ msgid ""
 "...and paste here the whole URL\n"
 "e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
 msgstr ""
-"... und fügen Sie die URL hier ein, z.B.\n"
+"... und fügen Sie die URL hier ein, z. B.\n"
 "http://openweathermap.org/city/2946447 für Bonn, Deutschland."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -208,20 +208,28 @@ msgid "Add Met.no Map Place"
 msgstr "Ort von \"Met.no Map\" hinzufügen"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not numeric."
-msgstr "Der Breitengrad ist nicht gültig."
+msgid "The Latitude is not valid."
+msgstr "Der Breitengrad ist ungültig."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
 msgstr "Der Breitengrad liegt nicht zwischen -90 und 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not numeric."
-msgstr "Der Längengrad ist nicht gültig."
+msgid "The Longitude is not valid."
+msgstr "Der Längengrad ist ungültig."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
 msgstr "Der Längengrad liegt nicht zwischen -180 und 180."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not valid."
+msgstr "Die Höhe ist ungültig."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not between -999 and 5000."
+msgstr "Die Höhe liegt nicht zwischen -999 und 5000."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
@@ -247,7 +255,7 @@ msgstr "Höhe"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
@@ -291,7 +299,7 @@ msgstr "Land:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Filter:"
-msgstr ""
+msgstr "Filter:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
@@ -307,7 +315,7 @@ msgstr "Anzeigename"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Action"
-msgstr "Aktionen"
+msgstr "Aktion"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
@@ -327,7 +335,7 @@ msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
-"Met.no-Wettervorhersagedaten, bereitgestellt vom Norwegischen "
+"Met.no-Wettervorhersagedaten bereitgestellt vom Norwegischen "
 "Meteorologischen Institut."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -364,8 +372,13 @@ msgid "My local-time"
 msgstr "Lokalzeit"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
+#: ../../package/contents/ui/FullRepresentation.qml
 msgid "UTC"
 msgstr "Weltzeit (UTC)"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Location Timezone"
+msgstr "Zeitzone des Standorts"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
@@ -407,7 +420,7 @@ msgstr "cm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
@@ -420,31 +433,6 @@ msgstr ""
 msgid "today"
 msgstr "heute"
 
-#~ msgid "Offline mode"
-#~ msgstr "Offline-Modus"
-
-#~ msgid "Loading image..."
-#~ msgstr "Lade Bild..."
-
-#~ msgid "Render meteogram for yr.no"
-#~ msgstr "Meteogram für yr.no erzeugen"
-
-#~ msgid "Add yr.no Place"
-#~ msgstr "Ort von \"yr.no\" hinzufügen"
-
-#~ msgid ""
-#~ "Find your town string in yr.no (english version)\n"
-#~ "and use the URL from your browser to add a new location. E.g. paste "
-#~ "this:\n"
-#~ "http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/"
-#~ msgstr ""
-#~ "Suchen Sie die URL für Ihre Stadt auf \"www.yr.no\" (Englische Version)\n"
-#~ "und fügen Sie diese hier ein, um einen neuen Ort hinzuzufügen, z.B.\n"
-#~ "\"http://www.yr.no/place/Germany/North_Rhine-Westphalia/Bonn/\" für Bonn, "
-#~ "Deutschland"
-
-#~ msgid "humidity"
-#~ msgstr "Feuchtigkeit"
-
-#~ msgid "clouds"
-#~ msgstr "Wolken"
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "Weather forecast data provided by OpenWeather."
+msgstr "Wettervorhersagedaten bereitgestellt von OpenWeather."
