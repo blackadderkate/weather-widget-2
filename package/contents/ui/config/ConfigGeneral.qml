@@ -1,5 +1,6 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.3
+import QtQuick.Controls 2.15 as QC215
 import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -409,7 +410,7 @@ Item {
                     updateFields()
                 }
             }
-            ComboBox {
+            QC215.ComboBox {
                 id: tzComboBox
                 model: timezoneDataModel
                 currentIndex: -1
@@ -554,7 +555,7 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
             }
 
-            ComboBox {
+            QC215.ComboBox {
                 id: countryList
                 anchors.left: countryLabel.right
                 anchors.leftMargin: 20

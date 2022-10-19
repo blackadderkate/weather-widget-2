@@ -1,5 +1,6 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.3
+import QtQuick.Controls 2.15 as QC215
 import QtQuick.Layouts 1.1
 
 Item {
@@ -147,7 +148,7 @@ Item {
         Label {
             text: i18n("Widget font style:")
         }
-        ComboBox {
+        QC215.ComboBox {
             id: fontFamilyComboBox
             Layout.fillWidth: true
             currentIndex: 0
