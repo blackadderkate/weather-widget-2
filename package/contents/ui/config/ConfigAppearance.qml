@@ -178,7 +178,7 @@ Item {
             stepSize: 1
             minimumValue: 4
             value: cfg_widgetFontSize
-            maximumValue: 48
+            maximumValue: 512
             suffix: i18nc("pixels", "px")
             onValueChanged: {
                 cfg_widgetFontSize = widgetFontSize.value
