@@ -1,7 +1,7 @@
 # Translation of weatherWidget-2 in plasma_applet_org.kde.weatherWidget_cs
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Copyright (C) 2022
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# kppr <kppr@email.cz>, 2022.
 #
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-09-29 19:30+0700\n"
 "PO-Revision-Date: 2022-01-03 22:03+0000\n"
-"Last-Translator: Martin Kotelnik <clearmartin@seznam.cz>\n"
-"Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
+"Last-Translator: kppr <kppr@email.cz>\n"
+"Language-Team: kppr <kppr@email.cz>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,72 +19,72 @@ msgstr ""
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
-msgstr ""
+msgstr "Weather Widget 2"
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
+msgstr "Widget pro předpověď počasí"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m"
-msgstr ""
+msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d"
-msgstr ""
+msgstr "%1 d"
 
 #: ../../package/contents/code/data-loader.js
 msgid "hours"
-msgstr ""
+msgstr "hod."
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "inHg"
-msgstr ""
+msgstr "InHg"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "mmHg"
-msgstr ""
+msgstr "mmHg"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "hPa"
-msgstr ""
+msgstr "hPa"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #: ../../package/contents/config/config.qml
 msgid "General"
@@ -101,7 +101,7 @@ msgstr "Jednotky"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Use default font"
 msgid "Default"
-msgstr ""
+msgstr "Default"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -113,19 +113,19 @@ msgstr "Typ zobrazení:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Horizontal"
-msgstr "Horizontální"
+msgstr "horizontální"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
-msgstr "Pozn.: Aplet v liště toto nastavení ignoruje."
+msgstr "Pozn.: Zobrazení widgetu z lišty toto nastavení ignoruje."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Vertical"
-msgstr "Vertikální"
+msgstr "vertikální"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Compact"
-msgstr "Kompaktní"
+msgstr "kompaktní"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "In-Tray Settings"
@@ -138,7 +138,7 @@ msgstr "Skrýt po:"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
 msgid "sec"
-msgstr ""
+msgstr "sek"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid ""
@@ -146,26 +146,26 @@ msgid ""
 "refreshed. You can always set the widget to be always \"Shown\" in system "
 "tray \"Entries\" settings."
 msgstr ""
-"Pozn.: Po tomto čase bude aplet skryt dokud nedojde k jeho aktualizaci. Vždy "
-"je však možné aplet nastavit tak, aby byl stále viditelný tím, že u něj "
-"nastavíte \"Zobrazeno\" v sekci \"Položky\" v nastavení lišty."
+"Pozn.: Po této době bude widget v liště skryt, dokud nedojde k jeho "
+"obnovení. Trvalé zobrazení widgetu je možné pomocí volby \"Vždy zobrazovat\" "
+"v sekci \"Položky\" v nastavení \"Systémové části panelu\"."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style:"
-msgstr ""
+msgstr "Písmo widgetu:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size:"
-msgstr ""
+msgstr "Velikost písma:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
-msgstr "Přidat lokaci Open Weather Map"
+msgstr "Přidat lokaci OpenWeatherMap.org"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Paste URL here"
@@ -173,85 +173,85 @@ msgstr "Vložte URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "City alias"
-msgstr "Alias lokace"
+msgstr "Pojmenování lokace"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Find your city ID by searching here:"
-msgstr "Najděte své city ID pomocí vyhledávání zde:"
+msgstr "Najděte ID své lokace pomocí vyhledávání zde:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 "...and paste here the whole URL\n"
 "e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
 msgstr ""
-"...a sem vložte celé URL\n"
-"např. http://openweathermap.org/city/3065328 pro Prahu, ČR."
+"...a následně vložte výše celou URL:\n"
+"např. https://openweathermap.org/city/3067696 pro Prahu, ČR."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Error!"
-msgstr ""
+msgstr "Chyba!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Confirmation"
-msgstr ""
+msgstr "Potvrzení"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Do you want to select this place?"
-msgstr ""
+msgstr "Chcete vybrat tuto lokaci?"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
-msgstr "Přidat lokaci Met.no Map Map"
+msgstr "Přidat lokaci Yr.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not valid."
-msgstr ""
+msgstr "Šířka (φ) není platná."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
-msgstr ""
+msgstr "Šířka (φ) není mezi -90° až +90°."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not valid."
-msgstr ""
+msgstr "Délka (λ) není platná."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
-msgstr ""
+msgstr "Délka (λ) není mezi -180° až +180°."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not valid."
-msgstr ""
+msgstr "Výška (n.m.) není platná."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not between -999 and 5000."
-msgstr ""
+msgstr "Výška (n.m.) není mezi -999 až +5000."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
-msgstr ""
+msgstr "Pojmenování lokace je prázdné."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Opravte chybu:"
+msgstr[1] "Opravte tyto %1 chyby:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
-msgstr "Zeměpisná šířka"
+msgstr "Šířka (φ)"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Longitude"
-msgstr "Dlouhá síla"
+msgstr "Délka (λ)"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Altitude"
-msgstr ""
+msgstr "Výška (n.m.)"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
@@ -259,19 +259,19 @@ msgstr "ID lokace"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
-msgstr ""
+msgstr "Vyhledat"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
-msgstr "Změnit alias"
+msgstr "Změnit pojmenování"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Enter place alias"
-msgstr "Napište alias lokace"
+msgstr "Vložte pojmenování lokace"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
-msgstr ""
+msgstr "Vyhledávání lokace"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -279,27 +279,27 @@ msgstr "Lokace"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
-msgstr ""
+msgstr "Oblast"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Timezone"
-msgstr ""
+msgstr "Časové pásmo"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
-msgstr ""
+msgstr "zdroj: GeoNames.org"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Country:"
-msgstr ""
+msgstr "Země:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Filter:"
-msgstr ""
+msgstr "Filtr:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
-msgstr "Verze apletu:"
+msgstr "verze"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -307,7 +307,7 @@ msgstr "Zdroj"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
-msgstr "Alias"
+msgstr "Pojmenování"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Action"
@@ -324,25 +324,25 @@ msgstr "Obnovovací interval:"
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgctxt "Abbreviation for minutes"
 msgid "min"
-msgstr ""
+msgstr "min"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
-msgstr ""
+msgstr "Met.no data převzata z Norského meteorologického ústavu."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
-msgstr ""
+msgstr "Časy východu a západu slunce převzaty ze Sunrise-Sunset."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "OWM weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "OWM data převzata z OpenWeatherMap."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Weather icons created by Erik Flowers."
-msgstr ""
+msgstr "Ikony počasí vytvořil Erik Flowers."
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -358,34 +358,34 @@ msgstr "Ryhlost větru:"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Timezone:"
-msgstr "Časová zóna:"
+msgstr "Časové pásmo:"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
-msgstr "Můj místní čas"
+msgstr "můj místní čas"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "UTC"
-msgstr ""
+msgstr "UTC"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Location Timezone"
-msgstr ""
+msgstr "dle lokace"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
-msgstr "Další lokace"
+msgstr "dále"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
-msgstr ""
+msgstr "obnovit"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr ""
+msgstr "zpět"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
@@ -393,7 +393,7 @@ msgstr "Povolit obnovování"
 
 #: ../../package/contents/ui/main.qml
 msgid "Pause Updating"
-msgstr "Zakázat obnovování"
+msgstr "Zastavit obnovování"
 
 #: ../../package/contents/ui/main.qml
 msgid "%1 ago"
@@ -405,20 +405,19 @@ msgstr "brzy bude"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: ../../package/contents/ui/providers/MetNo.qml
-msgid ""
-"Weather forecast data provided by The Norwegian Meteorological Institute."
-msgstr ""
+msgid "Weather forecast data provided by The Norwegian Meteorological Institute."
+msgstr "zdroj: Yr.no"
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
@@ -426,7 +425,7 @@ msgstr "dnes"
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "zdroj: OpenWeatherMap.org"
 
 #~ msgid "Offline mode"
 #~ msgstr "Offline režim"
