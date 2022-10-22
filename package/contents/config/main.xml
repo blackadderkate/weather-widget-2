@@ -17,7 +17,8 @@
           [
             {"providerId": "metno", "placeIdentifier": "lat=52.63333&amp;lon=-1.13333&amp;altitude=65", "placeAlias": "Leicester, UK", "timezoneID": 159},
             {"providerId": "owm", "placeIdentifier": "1609350", "placeAlias": "Bangkok, TH"},
-            {"providerId": "metno", "placeIdentifier": "lat=38.50245&amp;lon=-0.13044&amp;altitude=30", "placeAlias": "Benidorm, ES", "timezoneID": 146 }
+            {"providerId": "metno", "placeIdentifier": "lat=38.50245&amp;lon=-0.13044&amp;altitude=30", "placeAlias": "Benidorm, ES", "timezoneID": 146},
+            {"providerId": "metno", "placeIdentifier": "lat=25.30089&amp;lon=91.69619&amp;altitude=1505","placeAlias":"Cherrapunji, IN","timezoneID":192}
           ]
         </default>
         </entry>
