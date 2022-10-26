@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Jacobtey <jacobtey@gmail.com>, 2016.
 # Damir Islamov <damir@secretlaboratory.ru>, 2022
+# Andrei Stepanov, 2022
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-09-29 19:30+0700\n"
-"PO-Revision-Date: 2022-09-29 17:35+0700\n"
-"Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
+"PO-Revision-Date: 2022-10-26 15:14+0400\n"
+"Last-Translator: Andrei Stepanov\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -141,7 +142,7 @@ msgstr "Время отображения:"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
 msgid "sec"
-msgstr "сек"
+msgstr " с"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid ""
@@ -150,16 +151,16 @@ msgid ""
 "tray \"Entries\" settings."
 msgstr ""
 "ВНИМАНИЕ: По истечении указанного времени виджет будет скрыт в системном "
-"лотке, пока не обновятся данные. Также в разделе  \"Элементы\" настроек "
-"системного лотка можно установить значение \"Показывать всегда\"."
+"лотке, пока не обновятся данные. Также в разделе «Элементы» настроек "
+"системного лотка можно установить значение «Всегда показывать»."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style:"
-msgstr "Шрифт виджета"
+msgstr "Шрифт виджета:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size:"
-msgstr "Размер шрифта виджета"
+msgstr "Размер шрифта виджета:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
@@ -208,7 +209,7 @@ msgstr "Добавить место Met.no"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not valid."
-msgstr "Некорректное значение широты."
+msgstr "Недопустимое значение широты."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
@@ -216,7 +217,7 @@ msgstr "Широта вне интервала между -90 и 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not valid."
-msgstr "Некорректное значение долготы."
+msgstr "Недопустимое значение долготы."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
@@ -224,7 +225,7 @@ msgstr "Долгота вне интервала между -180 и 180."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not valid."
-msgstr "Некорректное значение высоты"
+msgstr "Недопустимое значение высоты."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not between -999 and 5000."
@@ -240,7 +241,7 @@ msgid_plural "There are %1 errors!"
 msgstr[0] "Ошибка!"
 msgstr[1] "%1 ошибки!"
 msgstr[2] "%1 ошибок!"
-msgstr[3] "Ошибка!"
+msgstr[3] "%1 ошибок!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -292,7 +293,7 @@ msgstr "Часовой пояс"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
-msgstr "Данные для поиска извлечены из данных, предоставленных Geonames.org."
+msgstr "Данные для поиска извлечены из сведений, предоставленных Geonames.org."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Country:"
@@ -349,7 +350,7 @@ msgstr "Данные прогноза погоды OWM предоставлен�
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Weather icons created by Erik Flowers."
-msgstr "Иконки погоды созданы Эриком Флауэрсом."
+msgstr "Значки погоды созданы Эриком Флауэрсом."
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
