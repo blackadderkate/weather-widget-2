@@ -206,7 +206,7 @@ Item {
             property double precAvg: parseFloat(precipitationAvg) || 0
             property double precMax: parseFloat(precipitationMax) || 0
 
-            property bool precLabelVisible: precAvg >= 0.1 || precMax >= 0.1
+            property bool precLabelVisible: (precAvg >= 0.1 || precMax >= 0.1) && (index < hourGridModel.count)
 
             property string precAvgStr: precipitationFormat(precAvg)
             property string precMaxStr: precipitationFormat(precMax)
