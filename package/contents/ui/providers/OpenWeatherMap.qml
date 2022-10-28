@@ -162,6 +162,27 @@ Item {
         }
     }
 
+    property int timezoneType : main.timezoneType
+
+    onTimezoneTypeChanged: {
+        getTimeZoneName()
+    }
+
+    function getTimeZoneName() {
+        switch (timezoneType) {
+        case 0:
+            timezoneShortName = getLocalTimeZone()
+            break
+        case 1:
+            timezoneShortName =  i18n("UTC")
+            break
+        case 2:
+            timezoneShortName="LOCAL"
+            break
+        }
+        dbgprint("timezoneName changed to:" + timezoneShortName)
+    }
+
     property var xmlModelLongTermStatus: xmlModelLongTerm.status
     property var xmlModelCurrentStatus: xmlModelCurrent.status
     property var xmlModelHourByHourStatus: xmlModelHourByHour.status
@@ -212,6 +233,7 @@ Item {
         refreshTooltipSubText()
     }
 
+
     function createTodayTimeObj() {
         function formatTime(ISOdate) {
             return ISOdate.substr(11,5)
@@ -223,7 +245,7 @@ Item {
         additionalWeatherInfo.sunRiseTime=new Date(UnitUtils.localTime(additionalWeatherInfo.sunRise,currentTimeObj.timezoneOffset))
         additionalWeatherInfo.sunSetTime=new Date(UnitUtils.localTime(additionalWeatherInfo.sunSet,currentTimeObj.timezoneOffset))
         main.timezoneOffset=currentTimeObj.timezoneOffset
-        timezoneShortName="LOCAL"
+        getTimeZoneName()
         dbgprint('setting actual weather from current xml model')
         dbgprint('sunRise: ' + parseDate(additionalWeatherInfo.sunRise))
         dbgprint('sunSet:  ' + parseDate(additionalWeatherInfo.sunSet))

@@ -144,13 +144,19 @@ Item {
         cacheId: plasmoidCacheId
     }
 
+     PlasmaCore.DataSource {
+        id: dataSource
+        engine: "time"
+        connectedSources: ["Local"]
+        interval: 0
+    }
 
     Component.onCompleted: {
         if (plasmoid.configuration.firstRun) {
-          if (plasmoid.configuration.widgetFontSize === undefined) {
-            plasmoid.configuration.widgetFontSize = 32
-            widgetFontSize = 32
-          }
+            if (plasmoid.configuration.widgetFontSize === undefined) {
+                plasmoid.configuration.widgetFontSize = 32
+                widgetFontSize = 32
+            }
             switch (Qt.locale().measurementSystem) {
                 case (Locale.MetricSystem):
                   plasmoid.configuration.temperatureType = 0
@@ -212,6 +218,10 @@ Item {
 
 // set initial place
         setNextPlace(true)
+    }
+
+    onTimezoneShortNameChanged: {
+        refreshTooltipSubText()
     }
 
     onPlacesJsonStrChanged: {
@@ -280,6 +290,7 @@ Item {
 
         setCurrentProviderAccordingId(placeObject.providerId)
 
+        timezoneShortName = getLocalTimeZone()
         showData()
     }
 
@@ -421,8 +432,17 @@ Item {
     }
 
     function getPartOfDayIndex() {
-        var now = new Date()
-        return additionalWeatherInfo.sunRise < now && now < additionalWeatherInfo.sunSet ? 0 : 1
+        var now = new Date().getTime()
+        let sunrise1 = additionalWeatherInfo.sunRise.getTime()
+        let sunset1 = additionalWeatherInfo.sunSet.getTime()
+        let icon = ((now > sunrise1) && (now < sunset1)) ? 0 : 1
+// setDebugFlag(true)
+        dbgprint(JSON.stringify(additionalWeatherInfo))
+        dbgprint("NOW = " + now + "\tSunrise = " + sunrise1 + "\tSunset = " + sunset1 + "\t" + (icon === 0 ? "isDay" : "isNight"))
+        dbgprint("\t > Sunrise:" + (now > sunrise1) + "\t\t Sunset:" + (now < sunset1))
+// setDebugFlag(false)
+
+        return icon
     }
 
     function abortTooLongConnection(forceAbort) {
@@ -513,8 +533,16 @@ Item {
         print('[weatherWidget] ' + msg)
     }
 
-  function dateNow() {
-    var now=new Date().getTime()
-    return now
-  }
+    function dateNow() {
+        var now=new Date().getTime()
+        return now
+    }
+
+    function setDebugFlag(flag) {
+        debugLogging = flag
+    }
+
+    function getLocalTimeZone() {
+        return dataSource.data["Local"]["Timezone Abbreviation"]
+    }
 }

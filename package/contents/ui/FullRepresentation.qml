@@ -18,6 +18,7 @@ import QtQuick 2.5
 import QtQuick.Window 2.5
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
     id: fullRepresentation
@@ -52,6 +53,7 @@ Item {
             var t = main.placeAlias
             switch (timezoneType) {
                 case 0:
+                    t += " (" + getLocalTimeZone()+ ")"
                     break
                 case 1:
                     t += " (" + i18n("UTC") + ")"
