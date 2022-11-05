@@ -206,7 +206,7 @@ Item {
             property double precAvg: parseFloat(precipitationAvg) || 0
             property double precMax: parseFloat(precipitationMax) || 0
 
-            property bool precLabelVisible: (precAvg >= 0.1 || precMax >= 0.1) && (index < hourGridModel.count)
+            property bool precLabelVisible: (precAvg >= 0.1 || precMax >= 0.1) && (index < hourGridModel.count - 1)
 
             property string precAvgStr: precipitationFormat(precAvg)
             property string precMaxStr: precipitationFormat(precMax)
@@ -330,6 +330,7 @@ Item {
                 anchors.left: verticalLine.left
                 anchors.bottom: verticalLine.bottom
                 anchors.bottomMargin: precipitationLabelMargin
+                visible: index < (hourGridModel.count - 1)
             }
             PlasmaComponents.Label {
                 width: parent.width
