@@ -1,5 +1,5 @@
 # Translation of weatherWidget-2 in plasma_applet_org.kde.weatherWidget_pt_BR
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Copyright (C) 2022
 # This file is distributed under the same license as the PACKAGE package.
 # Tarcisio Oliveira <tarcisiooliveira@protonmail.com>, 2022.
 #
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2022-11-12 19:30+0700\n"
 "PO-Revision-Date: 2016-03-26 21:59+0100\n"
 "Last-Translator: Tarcisio Oliveira <tarcisiooliveira@protonmail.com>\n"
 "Language-Team: Martin Kotelnik <clearmartin@seznam.cz>\n"
