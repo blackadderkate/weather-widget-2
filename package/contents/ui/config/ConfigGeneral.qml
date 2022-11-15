@@ -424,7 +424,7 @@ Item {
                 }
             }
             Label {
-                text: i18n("Place Identifier")+":"
+                text: i18n("Displayed as")+":"
             }
             TextField {
                 id: newMetnoCityAlias
