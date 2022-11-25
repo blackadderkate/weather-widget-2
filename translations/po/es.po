@@ -1,45 +1,47 @@
 # Translation of weatherWidget-2 in plasma_applet_org.kde.weatherWidget_es
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <badiol@yahoo.es>, 2017.
 #
+# FIRST AUTHOR <badiol@yahoo.es>, 2017.
+# victorhck <victorhck@mailbox.org>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
 "POT-Creation-Date: 2022-09-29 19:30+0700\n"
-"PO-Revision-Date: 2022-01-03 22:04+0000\n"
-"Last-Translator: Kepa Badiola <badiol@yahoo.es>\n"
-"Language-Team: spanish <LL@li.org>\n"
+"PO-Revision-Date: 2022-11-25 17:04+0100\n"
+"Last-Translator: victorhck <victorhck@mailbox.org>\n"
+"Language-Team: Spanish <>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Lokalize 22.08.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../package/metadata.desktop
 msgid "Weather Widget 2"
-msgstr ""
+msgstr "Weather Widget 2"
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
-msgstr ""
+msgstr "Plasmoide que muestra información meteorológica del servidor met.no"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 m"
-msgstr ""
+msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: ../../package/contents/code/data-loader.js
 msgid "%1 d"
-msgstr ""
+msgstr "%1 d"
 
 #: ../../package/contents/code/data-loader.js
 msgid "hours"
-msgstr ""
+msgstr "horas"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -54,7 +56,7 @@ msgstr "ºF"
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: ../../package/contents/code/unit-utils.js
 #: ../../package/contents/ui/config/ConfigUnits.qml
@@ -101,7 +103,7 @@ msgstr "Unidades"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Use default font"
 msgid "Default"
-msgstr ""
+msgstr "Predeterminado"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Layout"
@@ -118,8 +120,8 @@ msgstr "Horizontal"
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
 msgstr ""
-"NOTA: No tiene efecto seleccionar tipo de diseño para el plasmoide en la "
-"barra de tareas."
+"NOTA: La configuración del tipo de diseño para el plasmoide en la bandeja no"
+" tiene ningún efecto."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Vertical"
@@ -131,11 +133,11 @@ msgstr "Compacto"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "In-Tray Settings"
-msgstr "Preferencias para barra de tareas"
+msgstr "Configuración para la bandeja del sistema"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Active timeout:"
-msgstr "Cuenta atrás activa:"
+msgstr "Tiempo de espera activo:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
@@ -148,39 +150,39 @@ msgid ""
 "refreshed. You can always set the widget to be always \"Shown\" in system "
 "tray \"Entries\" settings."
 msgstr ""
-"AVISO: Despues de esta cuenta atrás el elemento gráfico se ocultará en la "
-"barra de tareas hastaque sea actualizado. Siempre puede establecer el "
-"elemento gráfico para estar siempre \" Visible\" en labarra de tareas "
-"\"Entradas\" configuración."
+"AVISO: Después de esta cuenta atrás el elemento gráfico se ocultará en la "
+"barra de tareas hasta que sea actualizado. Siempre puede establecer el "
+"elemento gráfico para estar siempre \" Visible\" en la configuración de la "
+"barra de tareas en \"Entradas\" ."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style:"
-msgstr ""
+msgstr "Estilo de fuente del widget:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size:"
-msgstr ""
+msgstr "Tamaño de fuente del widget:"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Open Weather Map Place"
-msgstr "Añadir Lugar de Open Weather Map"
+msgstr "Añadir un lugar de Open Weather Map"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Paste URL here"
-msgstr "Pegar URL aquí"
+msgstr "Pegar la URL aquí"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "City alias"
-msgstr "Alias Ciudad"
+msgstr "Alias ciudad"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Find your city ID by searching here:"
-msgstr "Encuentra la ID de tu ciudad buscando aquí:"
+msgstr "Encuentra el ID de tu ciudad buscando aquí:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid ""
@@ -192,53 +194,53 @@ msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Error!"
-msgstr ""
+msgstr "¡Error!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Confirmation"
-msgstr ""
+msgstr "Confirmación"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Do you want to select this place?"
-msgstr ""
+msgstr "¿Quieres seleccionar este lugar?"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Add Met.no Map Place"
-msgstr "Añadir Lugar de Met.no Map"
+msgstr "Añadir lugar de Met.no Map"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not valid."
-msgstr ""
+msgstr "La latitud no es válida."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Latitude is not between -90 and 90."
-msgstr ""
+msgstr "La latitud no está entre -90 y 90."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not valid."
-msgstr ""
+msgstr "La longitud no es válida."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Longitude is not between -180 and 180."
-msgstr ""
+msgstr "La longitud no está entre -180 y 180."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not valid."
-msgstr ""
+msgstr "La altitud no es válida."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Altitude is not between -999 and 5000."
-msgstr ""
+msgstr "La altitud no está entre -999 y 5000."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "The Place Name is empty."
-msgstr ""
+msgstr "El nombre del lugar está vacío."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "¡Hay un error!"
+msgstr[1] "¡Hay %1 errores!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -246,27 +248,27 @@ msgstr "Latitud"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Longitude"
-msgstr "Longevidad"
+msgstr "Longitud"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Altitude"
-msgstr ""
+msgstr "Altitud"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Place Identifier"
-msgstr "Identificador del Lugar"
+msgstr "Identificador del lugar"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
-msgstr "Cambiar Mostrado Como"
+msgstr "Cambiar mostrado como"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Enter place alias"
@@ -274,7 +276,7 @@ msgstr "Introduce el alias del lugar"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
-msgstr ""
+msgstr "Búsqueda de ubicación"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location"
@@ -282,23 +284,24 @@ msgstr "Ubicación"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
-msgstr ""
+msgstr "Área"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Timezone"
-msgstr ""
+msgstr "Zona horaria"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
 msgstr ""
+"Datos de búsqueda extraídos de los datos proporcionados por Geonames.org."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Country:"
-msgstr ""
+msgstr "País"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Filter:"
-msgstr ""
+msgstr "Filtro:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version:"
@@ -306,7 +309,7 @@ msgstr "Versión del plasmoide:"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
-msgstr "Origen"
+msgstr "Fuente"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
@@ -318,7 +321,7 @@ msgstr "Acción"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
-msgstr "Miscelanea"
+msgstr "Misceláneas"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Reload interval:"
@@ -334,18 +337,21 @@ msgid ""
 "Met.no weather forecast data provided by The Norwegian Meteorological "
 "Institute."
 msgstr ""
+"Met.no datos de pronóstico del tiempo proporcionados por The Norwegian"
+" Meteorological "
+"Institute."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Sunrise/sunset data provided by Sunrise - Sunset."
-msgstr ""
+msgstr "Datos de salida/puesta del sol proporcionados por Sunrise - Sunset."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "OWM weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "Datos de pronóstico del tiempo OWM proporcionados por OpenWeather."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Weather icons created by Erik Flowers."
-msgstr ""
+msgstr "Iconos meteorológicos creados por Erik Flowers."
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Temperature:"
@@ -374,29 +380,29 @@ msgstr "UTC"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Location Timezone"
-msgstr ""
+msgstr "Ubicación de la zona horaria"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
-msgstr "Próxima Ubicación"
+msgstr "Ubicación siguiente"
 
 #: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Reload"
-msgstr ""
+msgstr "Recargar"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr ""
+msgstr "Ubicación previa"
 
 #: ../../package/contents/ui/main.qml
 msgid "Resume Updating"
-msgstr "Reanudar Actualización"
+msgstr "Reanudar la actualización"
 
 #: ../../package/contents/ui/main.qml
 msgid "Pause Updating"
-msgstr "Pausar Actualización"
+msgstr "Pausar la actualización"
 
 #: ../../package/contents/ui/main.qml
 msgid "%1 ago"
@@ -408,20 +414,22 @@ msgstr "futuro próximo"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "mm"
-msgstr ""
+msgstr "mm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "cm"
-msgstr ""
+msgstr "cm"
 
 #: ../../package/contents/ui/Meteogram.qml
 msgid "in"
-msgstr ""
+msgstr "in"
 
 #: ../../package/contents/ui/providers/MetNo.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
+"Datos de pronóstico del tiempo proporcionados por The Norwegian"
+" Meteorological Institute."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "today"
@@ -429,7 +437,7 @@ msgstr "hoy"
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
-msgstr ""
+msgstr "Datos de pronóstico del tiempo proporcionados por OpenWeather."
 
 #~ msgid "Offline mode"
 #~ msgstr "Modo desconectado"
