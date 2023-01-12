@@ -238,10 +238,10 @@ msgstr "Название места пусто."
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "There is an error!"
 msgid_plural "There are %1 errors!"
-msgstr[0] "Ошибка!"
+msgstr[0] "%1 ошибка!"
 msgstr[1] "%1 ошибки!"
 msgstr[2] "%1 ошибок!"
-msgstr[3] "%1 ошибок!"
+msgstr[3] "Ошибка!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
