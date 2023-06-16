@@ -309,14 +309,41 @@ Item {
         GridLayout {
             id: metNoRowLayout
             anchors.fill: parent
-            columns: 8
+            columns: 6
+            property double colWidth: metNoRowLayout.width / 6
+
+            Label {
+                text: i18n("Place Identifier")+":"
+            }
+            TextField {
+                id: newMetnoCityAlias
+                placeholderText: i18n("City alias")
+                Layout.columnSpan: 2
+                Layout.fillWidth: true
+            }
+
+            Label {
+                Layout.columnSpan: 2
+                text: ""
+            }
+
+            Button {
+                text: i18n("Search")
+                Layout.alignment: Qt.AlignRight
+                onClicked: {
+                    searchWindow.open()
+                }
+            }
+
             Label {
                 id: newMetnoCityLatitudeLabel
                 text: i18n("Latitude")+":"
+                width: metNoRowLayout.colWidth
             }
 
             TextField {
                 id: newMetnoCityLatitudeField
+                width: metNoRowLayout.colWidth
                 Layout.fillWidth: true
                 validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
                 textColor: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
@@ -325,17 +352,15 @@ Item {
                 }
             }
 
-            Item {
-                width: 20
-            }
-
             Label {
                 id: newMetnoCityLongitudeLabel
                 text: i18n("Longitude")+":"
+                width: metNoRowLayout.colWidth
             }
 
             TextField {
                 id: newMetnoCityLongitudeField
+                width: metNoRowLayout.colWidth
                 Layout.fillWidth: true
                 validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
                 textColor: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
@@ -345,17 +370,15 @@ Item {
 
             }
 
-            Item {
-                width: 20
-            }
-
             Label {
                 id: newMetnoCityAltitudeLabel
                 text: i18n("Altitude")+":"
+                width: metNoRowLayout.colWidth
             }
 
             TextField {
                 id: newMetnoCityAltitudeField
+                width: metNoRowLayout.colWidth
                 Layout.fillWidth: true
                 validator: IntValidator { bottom: -999; top: 5000 }
                 textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
@@ -410,6 +433,11 @@ Item {
                     updateFields()
                 }
             }
+
+            Label {
+                text: i18n("Timezone")+":"
+            }
+
             QC215.ComboBox {
                 id: tzComboBox
                 model: timezoneDataModel
@@ -421,22 +449,6 @@ Item {
                     if (tzComboBox.currentIndex > 0) {
                         addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
                     }
-                }
-            }
-            Label {
-                text: i18n("Place Identifier")+":"
-            }
-            TextField {
-                id: newMetnoCityAlias
-                placeholderText: i18n("City alias")
-                Layout.columnSpan: 6
-                Layout.fillWidth: true
-            }
-            Button {
-                text: i18n("Search")
-                Layout.alignment: Qt.AlignRight
-                onClicked: {
-                    searchWindow.open()
                 }
             }
         }
