@@ -204,9 +204,9 @@ Item {
         function successSRAS(jsonString) {
             dbgprint("succesSRAS")
             var readingsArray=JSON.parse(jsonString)
-            if ((readingsArray.location !== undefined)) {
-                additionalWeatherInfo.sunRise = new Date(readingsArray.location.time[0].sunrise.time)
-                additionalWeatherInfo.sunSet = new Date(readingsArray.location.time[0].sunset.time)
+            if ((readingsArray.properties !== undefined)) {
+                additionalWeatherInfo.sunRise = new Date(readingsArray.properties.sunrise.time)
+                additionalWeatherInfo.sunSet = new Date(readingsArray.properties.sunset.time)
             }
             if ((readingsArray.results !== undefined)) {
                 additionalWeatherInfo.sunRise = new Date(readingsArray.results.sunrise)
@@ -262,7 +262,7 @@ Item {
           } else {
             timezoneShortName = TZ.TZData[locationObject.timezoneID].TZName
           }
-          TZURL = 'https://api.met.no/weatherapi/sunrise/2.0/.json?' + placeIdentifier.replace("altitude","height") + "&date=" + formatDate(new Date().toISOString())
+          TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
           if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
             TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].DSTOffset)
             main.timezoneOffset = TZ.TZData[locationObject.timezoneID].DSTOffset
