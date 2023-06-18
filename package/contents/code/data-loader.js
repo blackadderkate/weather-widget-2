@@ -92,9 +92,10 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
         if (xhr.readyState !== XMLHttpRequest.DONE) {
             return
         }
-        if ((xhr.status !== 200) && (xhr.status !== 203))  {
-            console.log('ERROR - status: ' + xhr.status)
-            console.log('ERROR - responseText: ' + xhr.responseText)
+
+        if (xhr.status !== 200) {
+            dbgprint('ERROR - status: ' + xhr.status)
+            dbgprint('ERROR - responseText: ' + xhr.responseText)
             failureCallback()
             return
         }
