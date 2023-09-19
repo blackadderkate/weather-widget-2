@@ -1,6 +1,6 @@
-## Quick update.
-Apologies for not being very active on here recently - I've just got a new job and the training is very intense, so I haven't had time to spend on this recently. When my training finishes, I will have a lot more time free to spend on this widget!
-
+## Apologies (again)
+Laptop issues, Covid, and overtime meant I've not been able to do much development on this widget recently.
+At some point the laptop will need to go away for repair, so it might go very quiet around here for a while...
 
 ## About this widget
 This is an updated version of the "plasma-applet-weather-widget" by Kotelnik, but using the Met.No API instead of the Yr.No API which is no longer operational.
