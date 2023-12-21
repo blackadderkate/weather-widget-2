@@ -1,13 +1,13 @@
-import QtQuick 2.2
+import QtQuick 2.15
 import "../../code/model-utils.js" as ModelUtils
 import "../../code/data-loader.js" as DataLoader
 import "../../code/unit-utils.js" as UnitUtils
 import "../../code/db/timezoneData.js" as TZ
-
-
-
 Item {
     id: metno
+
+
+
 
     property var locale: Qt.locale()
     property string providerId: 'metno'
@@ -215,8 +215,9 @@ Item {
             additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunRise,main.timezoneType,main.timezoneOffset).toISOString())
             additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunSet,main.timezoneType,main.timezoneOffset).toISOString())
             sunRiseSetFlag=true
-            var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
-//             var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
+            dbgprint(urlPrefix + placeIdentifier)
+//            var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
+             var xhr2 = DataLoader.fetchJsonFromInternet('http://192.168.0.8/weather.json', successWeather, failureCallback)
         }
 
         function failureCallback() {
@@ -274,11 +275,10 @@ Item {
 
         dbgprint(TZURL);
 
-         var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-//        var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?'+TZURL, successSRAS, failureCallback)
+//        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+        var xhr1 = DataLoader.fetchJsonFromInternet('http://192.168.0.8/sun.json', successSRAS, failureCallback)
         return [xhr1]
     }
-
     function reloadMeteogramImage(placeIdentifier) {
         main.overviewImageSource = ''
     }

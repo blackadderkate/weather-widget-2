@@ -8,17 +8,17 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTIAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.5
-import QtQuick.Window 2.5
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
+import QtQuick 2.15
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.plasma.core as PlasmaCore
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasma5support as Plasma5Support
 
 Item {
     id: fullRepresentation
@@ -26,7 +26,7 @@ Item {
     property int imageWidth: 800 * Screen.devicePixelRatio  // Makes yr.no images grainy,
     property int imageHeight: 320 * Screen.devicePixelRatio + defaultFontPixelSize// prefer rendering meteograms
 
-    property double defaultFontPixelSize: theme.defaultFont.pixelSize
+    property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
     property double footerHeight: defaultFontPixelSize
 
     property int nextDayItemSpacing: defaultFontPixelSize * 0.5
@@ -67,7 +67,7 @@ Item {
                 default:
                     t += " (" + "TBA" + ")"
                     break
-                }
+            }
             return t
         }
     }
@@ -79,7 +79,7 @@ Item {
         anchors.top: parent.top
         verticalAlignment: Text.AlignTop
         visible: !onlyOnePlace
-        color: theme.textColor
+        color: Kirigami.Theme.textColor
         text: i18n("Next Location") + " >>"
     }
 
@@ -111,7 +111,7 @@ Item {
         anchors.rightMargin: 15
         verticalAlignment: Text.AlignTop
         visible: !onlyOnePlace
-        color: theme.textColor
+        color: Kirigami.Theme.textColor
         text: "<< " + i18n("Previous Location")
     }
 
@@ -141,12 +141,8 @@ Item {
         anchors.topMargin: headingHeight
         width: imageWidth
         height: imageHeight
-     }
-  /*
-     *
-     * NEXT DAYS
-     *
-     */
+    }
+
     ListView {
         id: nextDaysView
         anchors.bottom: parent.bottom
@@ -220,6 +216,7 @@ Item {
      * FOOTER
      *
      */
+
     MouseArea {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
@@ -263,7 +260,6 @@ Item {
             main.reloadData()
         }
     }
-
 
     PlasmaComponents.Label {
         id: creditText

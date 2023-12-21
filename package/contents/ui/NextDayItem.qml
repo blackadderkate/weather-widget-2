@@ -14,18 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Window 2.5
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick 2.15
+import QtQuick.Window
+import QtQuick.Layouts
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
 
 Item {
 
     property int itemRowSpacing: 5 * Screen.devicePixelRatio
-    property double periodFontSize: theme.defaultFont.pixelSize
+    property double periodFontSize: Kirigami.Theme.defaultFont.pixelSize
     property double periodHeight: (height - periodFontSize - itemRowSpacing * 4) / 4
-    property color lineColor: theme.textColor
+    property color lineColor: Kirigami.Theme.textColor
 
     PlasmaComponents.Label {
         id: dayTitleText
@@ -53,7 +54,6 @@ Item {
                 GradientStop { position: 1.0; color: Qt.rgba(lineColor.r, lineColor.g, lineColor.b, 0) }
             }
         }
-
     }
 
 

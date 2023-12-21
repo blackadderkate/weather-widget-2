@@ -14,20 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import QtQuick.Controls 1.0
+import QtQuick 2.15
+import QtQuick.Layouts
+import org.kde.plasma.plasmoid
+import org.kde.plasma.core as PlasmaCore
+import QtQuick.Controls
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.plasma.plasma5support as Plasma5Support
+import org.kde.kirigami as Kirigami
+import "providers"
+
 import "../code/data-loader.js" as DataLoader
 import "../code/config-utils.js" as ConfigUtils
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
 import "providers"
 
-Item {
+PlasmoidItem {
     id: main
 
+    toolTipSubText: ''
+    toolTipMainText:''
+// toolTipItem.enabled = false
+
+    property string toolTipArea
     property string placeIdentifier
     property string placeAlias
     property string cacheKey
@@ -73,6 +83,7 @@ Item {
     property string lastReloadedText: '⬇ 0m ago'
     property string tooltipSubText: ''
 
+
     property bool vertical: (plasmoid.formFactor == PlasmaCore.Types.Vertical)
     property bool onDesktop: (plasmoid.location == PlasmaCore.Types.Desktop || plasmoid.location == PlasmaCore.Types.Floating)
     property bool inTray: false
@@ -82,30 +93,23 @@ Item {
 
     property int nextDaysCount: 8
 
-    property bool textColorLight: ((theme.textColor.r + theme.textColor.g + theme.textColor.b) / 3) > 0.5
+    property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
 
     // 0 - standard
     // 1 - vertical
     // 2 - compact
     property int layoutType: plasmoid.configuration.layoutType
 
-    property bool updatingPaused: true
-
     property var currentProvider: null
 
+    property bool updatingPaused: true
     property bool meteogramModelChanged: false
 
     anchors.fill: parent
 
-    property Component crInTray: CompactRepresentationInTray { }
-    property Component cr: CompactRepresentation { }
-
-    property Component frInTray: FullRepresentationInTray { }
-    property Component fr: FullRepresentation { }
-
-    Plasmoid.preferredRepresentation: Plasmoid.compactRepresentation
-    Plasmoid.compactRepresentation: cr
-    Plasmoid.fullRepresentation: fr
+    fullRepresentation: FullRepresentation {  }
+    compactRepresentation: CompactRepresentation {  }
+    preferredRepresentation: compactRepresentation
 
     property bool debugLogging: plasmoid.configuration.debugLogging
 
@@ -115,10 +119,6 @@ Item {
 
     MetNo {
         id: metnoProvider
-    }
-
-    OpenWeatherMap {
-        id: owmProvider
     }
 
     ListModel {
@@ -134,9 +134,9 @@ Item {
     }
 
     function action_toggleUpdatingPaused() {
-        updatingPaused = !updatingPaused
-        abortTooLongConnection(true)
-        plasmoid.setAction('toggleUpdatingPaused', updatingPaused ? i18n("Resume Updating") : i18n("Pause Updating"), updatingPaused ? 'media-playback-start' : 'media-playback-pause');
+        // updatingPaused = !updatingPaused
+        // abortTooLongConnection(true)
+        // Plasmoid.setAction('toggleUpdatingPaused', updatingPaused ? i18n("Resume Updating") : i18n("Pause Updating"), updatingPaused ? 'media-playback-start' : 'media-playback-pause');
     }
 
     WeatherCache {
@@ -144,7 +144,7 @@ Item {
         cacheId: plasmoidCacheId
     }
 
-     PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: dataSource
         engine: "time"
         connectedSources: ["Local"]
@@ -159,26 +159,28 @@ Item {
             }
             switch (Qt.locale().measurementSystem) {
                 case (Locale.MetricSystem):
-                  plasmoid.configuration.temperatureType = 0
-                  plasmoid.configuration.pressureType = 0
-                  plasmoid.configuration.windSpeedType = 2
-                  break;
+                    plasmoid.configuration.temperatureType = 0
+                    plasmoid.configuration.pressureType = 0
+                    plasmoid.configuration.windSpeedType = 2
+                    break;
                 case (Locale.ImperialUSSystem):
-                  plasmoid.configuration.temperatureType = 1
-                  plasmoid.configuration.pressureType = 1
-                  plasmoid.configuration.windSpeedType = 1
-                  break;
+                    plasmoid.configuration.temperatureType = 1
+                    plasmoid.configuration.pressureType = 1
+                    plasmoid.configuration.windSpeedType = 1
+                    break;
                 case (Locale.ImperialUKSystem):
-                  plasmoid.configuration.temperatureType = 0
-                  plasmoid.configuration.pressureType = 0
-                  plasmoid.configuration.windSpeedType = 1
-                  break;
+                    plasmoid.configuration.temperatureType = 0
+                    plasmoid.configuration.pressureType = 0
+                    plasmoid.configuration.windSpeedType = 1
+                    break;
             }
             plasmoid.configuration.firstRun = false
         }
-        inTray = (plasmoid.parent !== null && (plasmoid.parent.pluginName === 'org.kde.plasma.private.systemtray' || plasmoid.parent.objectName === 'taskItemContainer'))
-        plasmoidCacheId = inTray ? plasmoid.parent.id : plasmoid.id
-        dbgprint('inTray=' + inTray + ', plasmoidCacheId=' + plasmoidCacheId)
+        dbgprint(plasmoid.formFactor)
+        dbgprint(plasmoid.location)
+        // inTray = (plasmoid.parent !== null && (plasmoid.parent.pluginName === 'org.kde.plasma.private.systemtray' || plasmoid.parent.objectName === 'taskItemContainer'))
+        // plasmoidCacheId = inTray ? plasmoid.parent.id : plasmoid.id
+        // dbgprint('inTray=' + inTray + ', plasmoidCacheId=' + plasmoidCacheId)
 
         additionalWeatherInfo = {
             sunRise: new Date('2000-01-01T00:00:00'),
@@ -197,8 +199,9 @@ Item {
             Plasmoid.fullRepresentation = frInTray
         }
 
-        // init contextMenu
+
         action_toggleUpdatingPaused()
+        // init contextMenu
 
         var cacheContent = weatherCache.readCache()
 
@@ -216,8 +219,8 @@ Item {
         }
         cacheMap = cacheMap || {}
 
-// set initial place
-        setNextPlace(true)
+        // set initial place
+       setNextPlace(true)
     }
 
     onTimezoneShortNameChanged: {
@@ -250,14 +253,14 @@ Item {
             dbgprint('setting provider metno')
             currentProvider = metnoProvider
         }
-     }
+    }
 
     function setNextPlace(initial,direction) {
         actualWeatherModel.clear()
         nextDaysModel.clear()
         meteogramModel.clear()
         if (direction === undefined) {
-          direction = "+"
+            direction = "+"
         }
 
         var places = ConfigUtils.getPlacesArray()
@@ -279,7 +282,7 @@ Item {
         placeIdentifier = placeObject.placeIdentifier
         placeAlias = placeObject.placeAlias
         if (placeObject.timezoneID  === undefined ) {
-          placeObject.timezoneID = -1
+            placeObject.timezoneID = -1
         }
         timezoneID = parseInt(placeObject.timezoneID)
         dbgprint('next placeIdentifier is: ' + placeIdentifier)
@@ -339,7 +342,7 @@ Item {
     }
 
     function loadFromCache() {
-         dbgprint('loading from cache, config key: ' + cacheKey)
+        dbgprint('loading from cache, config key: ' + cacheKey)
 
         if (alreadyLoadedFromCache) {
             dbgprint('already loaded from cache')
@@ -378,7 +381,7 @@ Item {
     }
 
     function updateLastReloadedText() {
-      dbgprint("updateLastReloadedText: " + lastloadingSuccessTime)
+        dbgprint("updateLastReloadedText: " + lastloadingSuccessTime)
         if (lastloadingSuccessTime > 0) {
             lastReloadedText = '⬇ ' + i18n("%1 ago", DataLoader.getLastReloadedTimeText(dateNow() - lastloadingSuccessTime))
         }
@@ -398,7 +401,7 @@ Item {
         dbgprint('refreshing sub text')
         if (additionalWeatherInfo === undefined || additionalWeatherInfo.nearFutureWeather.iconName === null || actualWeatherModel.count === 0) {
             dbgprint('model not yet ready')
-           return
+            return
         }
         updateAdditionalWeatherInfoText()
         var nearFutureWeather = additionalWeatherInfo.nearFutureWeather
@@ -429,6 +432,7 @@ Item {
         subText += '&nbsp;&nbsp;&nbsp;<font style="font-family: weathericons">' + futureWeatherIcon + '</font></font>'
         subText += '</b>'
         tooltipSubText = subText
+        dbgprint(subText)
     }
 
     function getPartOfDayIndex() {
@@ -436,11 +440,11 @@ Item {
         let sunrise1 = additionalWeatherInfo.sunRise.getTime()
         let sunset1 = additionalWeatherInfo.sunSet.getTime()
         let icon = ((now > sunrise1) && (now < sunset1)) ? 0 : 1
-// setDebugFlag(true)
+        // setDebugFlag(true)
         dbgprint(JSON.stringify(additionalWeatherInfo))
         dbgprint("NOW = " + now + "\tSunrise = " + sunrise1 + "\tSunset = " + sunset1 + "\t" + (icon === 0 ? "isDay" : "isNight"))
         dbgprint("\t > Sunrise:" + (now > sunrise1) + "\t\t Sunset:" + (now < sunset1))
-// setDebugFlag(false)
+        // setDebugFlag(false)
 
         return icon
     }
@@ -462,7 +466,7 @@ Item {
     }
 
     function tryReload() {
-       updateLastReloadedText()
+        updateLastReloadedText()
 
         if (updatingPaused) {
             return
@@ -486,7 +490,7 @@ Item {
 
             updateLastReloadedText()
             if ((lastloadingSuccessTime===0) && (updatingPaused)) {
-              toggleUpdatingPaused()
+                toggleUpdatingPaused()
             }
 
             if (loadingData) {
@@ -497,9 +501,9 @@ Item {
                     nextReload=now + 60000
                 }
             } else {
-              if (now > nextReload) {
-                tryReload()
-              }
+                if (now > nextReload) {
+                    tryReload()
+                }
             }
         }
     }
@@ -522,7 +526,7 @@ Item {
 
     onTimezoneTypeChanged: {
         if (lastloadingSuccessTime > 0) {
-        refreshTooltipSubText()
+            refreshTooltipSubText()
         }
     }
 
@@ -530,7 +534,8 @@ Item {
         if (!debugLogging) {
             return
         }
-        print('[weatherWidget] ' + msg)
+
+        print('[kate weatherWidget] ' + msg)
     }
 
     function dateNow() {

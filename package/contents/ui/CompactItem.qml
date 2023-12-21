@@ -14,11 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
+import QtQuick 2.15
+import QtQuick.Layouts
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.plasma.core as PlasmaCore
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
 
@@ -58,7 +59,6 @@ Item {
 
     function computeWidgetSize() {
         if ((parentWidth > 0) && (parentHeight > 0)) {
-            setDebugFlag(false)
             dbgprint("Widget ParentSize = " + parent.width + "x" + parent.height)
             if (layoutType === 0) {
                 partWidth = vertical ? parentWidth / 2 : parentHeight
@@ -81,7 +81,6 @@ Item {
             compactRepresentation.Layout.preferredHeight = widgetHeight
             compactRepresentation.Layout.preferredWidth = widgetWidth
             compactRepresentation.Layout.maximumWidth - widgetWidth
-            setDebugFlag(false)
         }
     }
 
@@ -130,7 +129,7 @@ Item {
 
         text: temperatureStr
 
-        font.family: plasmoid.configuration.widgetFontName === "" ? (theme.defaultFont) : plasmoid.configuration.widgetFontName
+        font.family: plasmoid.configuration.widgetFontName === "" ? (Kirigami.Theme.defaultFont) : plasmoid.configuration.widgetFontName
         font.pixelSize: layoutType === 2 ? widgetFontSize * 0.7 : widgetFontSize
         font.pointSize: -1
         fontSizeMode: ((! vertical) && (layoutType === 1)) ? Text.VerticalFit : Text.HorizontalFit
@@ -142,7 +141,7 @@ Item {
         samples: 16
         spread: 0.8
         fast: true
-        color: theme.backgroundColor
+        color: Kirigami.Theme.backgroundColor
         source: temperatureText
         visible: layoutType === 2
     }

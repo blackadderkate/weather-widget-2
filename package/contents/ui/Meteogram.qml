@@ -14,12 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.5
-import QtQuick.Window 2.5
-import QtQml.Models 2.5
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import QtQuick.Controls 2.5
+import QtQuick 2.15
+import QtQuick.Window
+import QtQml.Models
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import QtQuick.Controls
+import org.kde.kirigami as Kirigami
 import "../code/unit-utils.js" as UnitUtils
 import "../code/icons.js" as IconTools
 
@@ -53,9 +54,9 @@ Item {
     property int dataArraySize: 2
 
 
-    property bool textColorLight: ((theme.textColor.r + theme.textColor.g + theme.textColor.b) / 3) > 0.5
-    property color gridColor: textColorLight ? Qt.tint(theme.textColor, '#80000000') : Qt.tint(theme.textColor, '#80FFFFFF')
-    property color gridColorHighlight: textColorLight ? Qt.tint(theme.textColor, '#50000000') : Qt.tint(theme.textColor, '#50FFFFFF')
+    property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
+    property color gridColor: textColorLight ? Qt.tint(Kirigami.Theme.textColor, '#80000000') : Qt.tint(Kirigami.Theme.textColor, '#80FFFFFF')
+    property color gridColorHighlight: textColorLight ? Qt.tint(Kirigami.Theme.textColor, '#50000000') : Qt.tint(Kirigami.Theme.textColor, '#50FFFFFF')
     property color pressureColor: textColorLight ? Qt.rgba(0.3, 1, 0.3, 1) : Qt.rgba(0.0, 0.6, 0.0, 1)
     property color temperatureWarmColor: textColorLight ? Qt.rgba(1, 0.3, 0.3, 1) : Qt.rgba(1, 0.0, 0.0, 1)
     property color temperatureColdColor: textColorLight ? Qt.rgba(0.2, 0.7, 1, 1) : Qt.rgba(0.1, 0.5, 1, 1)
@@ -101,7 +102,7 @@ Item {
 
     TextMetrics {
         id: textMetrics
-        font.family: theme.defaultFont.family
+        font.family: Kirigami.Theme.defaultFont.family
         font.pixelSize: 11 * Screen.devicePixelRatio
         text: "999999"
     }
@@ -123,24 +124,21 @@ Item {
         border.color:gridColor
         color: "transparent"
     }
+
     ListView {
         id: horizontalLines1
         model: verticalGridModel
-        anchors.left: graphArea.left
-        anchors.top: graphArea.top
-//         anchors.bottom: graphArea.bottom + labelHeight
-//         anchors.fill: graphArea
-        height: graphArea.height + labelHeight
+        anchors.fill: graphArea
         interactive: false
         delegate: Item {
             height: graphArea.height / (temperatureYGridCount - 1)
-            width: graphArea.width
+            width: imageWidth
             visible:  num % 2 === 0
 
             Rectangle {
                 id: gridLine
                 width: parent.width
-                height: 1 * Screen.devicePixelRatio
+                height: 1
                 color: gridColor
             }
             PlasmaComponents.Label {
@@ -152,7 +150,7 @@ Item {
                 anchors.top: gridLine.top
                 anchors.leftMargin: -labelWidth - 2
                 anchors.topMargin: -labelHeight / 2
-                font.pixelSize: 11 * Screen.devicePixelRatio
+                font.pixelSize: 11
                 font.pointSize: -1
             }
             PlasmaComponents.Label {
@@ -183,6 +181,7 @@ Item {
         anchors.bottom: graphArea.top
         anchors.bottomMargin: 6
     }
+
     ListView {
         id: hourGrid
         model: hourGridModel
@@ -397,7 +396,7 @@ Item {
                     id: precipitationAvgRect
                     width: parent.width
                     height: precAvg * precipitationHeightMultiplier
-                    color: theme.highlightColor
+                    color: Kirigami.Theme.highlightColor
                     anchors.left: parent.horizontalCenter
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: precipitationLabelMargin

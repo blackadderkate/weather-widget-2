@@ -89,20 +89,22 @@ function fetchXmlFromInternet(getUrl, successCallback, failureCallback) {
 function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
     var xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function () {
+        console.log(xhr.readyState + ' -> ' + XMLHttpRequest.DONE)
         if (xhr.readyState !== XMLHttpRequest.DONE) {
             return
         }
+        console.log(xhr.status)
 
         if (xhr.status !== 200) {
-            dbgprint('ERROR - status: ' + xhr.status)
-            dbgprint('ERROR - responseText: ' + xhr.responseText)
+            console.log('ERROR - status: ' + xhr.status)
+            console.log('ERROR - responseText: ' + xhr.responseText)
             failureCallback()
             return
         }
 
         // success
-        dbgprint('successfully loaded from the internet')
-        dbgprint('successfully of url-call: ' + getUrl)
+        console.log('successfully loaded from the internet')
+        console.log('successfully of url-call: ' + getUrl)
 //        dbgprint('responseText: ' + xhr.responseText)
 
         var jsonString = xhr.responseText
@@ -116,6 +118,7 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
     }
     dbgprint('GET url opening: ' + getUrl)
     xhr.open('GET', getUrl)
+    xhr.setRequestHeader("User-Agent","Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 ")
     dbgprint('GET url sending: ' + getUrl)
     xhr.send()
 

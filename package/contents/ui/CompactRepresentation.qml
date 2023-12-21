@@ -8,34 +8,31 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTIAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick 2.15
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.plasma.core as PlasmaCore
+import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
+
 
 Item {
     id: compactRepresentation
 
     anchors.fill: parent
+    property double partHeight: compactItem.widgetHeight
 
     CompactItem {
         id: compactItem
         inTray: false
     }
 
-    property bool isCompactLayout: main.layoutType === 2 ? true : false
-    // Layout.preferredWidth: ((! isCompactLayout ) && (plasmoid.formFactor === PlasmaCore.Types.Horizontal)) ? compactItem.height * 2 : compactItem.height
-    // Layout.preferredHeight: ((! isCompactLayout ) && (plasmoid.formFactor === PlasmaCore.Types.Vertical)) ? parent.width * 2 : parent.width
-
-    property double partHeight: compactItem.widgetHeight
 
     PlasmaComponents.Label {
         id: lastReloadedNotifier
@@ -49,7 +46,7 @@ Item {
 
         font.pixelSize: partHeight * 0.26 * (layoutType === 0 ? 1 : 0.7)
         font.pointSize: -1
-        color: theme.highlightColor
+        color: Kirigami.Theme.highlightColor
 
         text: lastReloadedText
         wrapMode: Text.WordWrap
@@ -62,7 +59,7 @@ Item {
         samples: 16
         spread: 0.8
         fast: true
-        color: theme.backgroundColor
+        color: Kirigami.Theme.backgroundColor
         source: lastReloadedNotifier
         visible: (lastReloadedText.visible === true)
     }
@@ -83,12 +80,12 @@ Item {
             lastReloadedNotifier.visible = false
         }
 
-        onClicked: {
+        onClicked: (mouse)=> {
             if (mouse.button == Qt.MiddleButton) {
                 main.reloadData()
             } else {
-                plasmoid.expanded = !plasmoid.expanded
-                lastReloadedNotifier.visible = !plasmoid.expanded
+                main.expanded = !main.expanded
+                lastReloadedNotifier.visible = !main.expanded
             }
         }
 
@@ -102,6 +99,6 @@ Item {
             textFormat: Text.RichText
             icon: Qt.resolvedUrl('../images/weather-widget.svg')
         }
-    }
 
+    }
 }
