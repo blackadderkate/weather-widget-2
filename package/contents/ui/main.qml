@@ -23,12 +23,12 @@ import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.plasma5support as Plasma5Support
 import org.kde.kirigami as Kirigami
 import "providers"
-
 import "../code/data-loader.js" as DataLoader
 import "../code/config-utils.js" as ConfigUtils
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
-import "providers"
+
+
 
 PlasmoidItem {
     id: main
