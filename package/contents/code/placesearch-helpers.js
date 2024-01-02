@@ -284,7 +284,8 @@ function loadCSVDatabase(countryName) {
         return
     }
     myCSVData.clear()
-    let URL = ("http://weatherwidgetqt6.000webhostapp.com/" + getshortCode(countryName) + ".csv")
+    // let URL = ("http://weatherwidgetqt6.000webhostapp.com/" + getshortCode(countryName) + ".csv") // LIVE ONLY
+    let URL =  Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")   // DEBUGGING ONLY
     dbgprint("URL = " + URL)
     var xhr = new XMLHttpRequest
     xhr.open("GET", URL)
