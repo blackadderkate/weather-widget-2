@@ -8,7 +8,6 @@ import "../../code/db/timezoneData.js" as TZData
 import org.kde.plasma.components 3.0 as Plasmacore
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
-import "../../code/db/all.js" as CSVData
 
 
 Item {
@@ -145,17 +144,58 @@ Item {
         }
     }
     ListModel {
-        id: myCSVData
-    }
-    ListModel {
         id: countryCodesModel
     }
-    ListModel {
+    TableModel {
         id: filteredCSVData
+        TableModelColumn {
+            display: "Location"
+        }
+        TableModelColumn {
+            display: "Area"
+        }
+        TableModelColumn {
+            display: "Latitude"
+        }
+        TableModelColumn {
+            display: "Longitude"
+        }
+        TableModelColumn {
+            display: "Altitude"
+        }
+        TableModelColumn {
+            display: "Timezone"
+        }
+
     }
+    TableModel {
+        id: myCSVData
+
+        TableModelColumn {
+            display: "Location"
+        }
+        TableModelColumn {
+            display: "Area"
+        }
+        TableModelColumn {
+            display: "Latitude"
+        }
+        TableModelColumn {
+            display: "Longitude"
+        }
+        TableModelColumn {
+            display: "Altitude"
+        }
+        TableModelColumn {
+            display: "Timezone"
+        }
+
+    }
+
     ListModel {
         id: timezoneDataModel
     }
+
     ColumnLayout {
         id: rhsColumn
         width: parent.width
@@ -238,7 +278,9 @@ Item {
                 model: placesModelGUI
                 id: mytableView
                 alternatingRows: true
+
                 delegate: myChooser
+
                 DelegateChooser {
                     id: myChooser
                     DelegateChoice {
@@ -937,7 +979,7 @@ Item {
                     append({ display: ("Area") });
                     append({ display: ("Latitude") });
                     append({ display: ("Longitude") });
-                    append({ display: ("Altitude") });
+                    append({ display: ("Alt") });
                     append({ display: ("Timezone") });
                     // append({ display: ("TBA") });
                 }
@@ -949,7 +991,7 @@ Item {
 
         TableView {
             id: searchtableView
-            height: 140
+            implicitHeight: 140
             // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
             // highlightOnFocus: true
             anchors.bottom: row2.top
@@ -957,9 +999,215 @@ Item {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottomMargin: 10
+            anchors.topMargin: mysearchhorizontalHeader.height + 2
             model: filteredCSVData
+            clip: true
+            interactive: true
+            rowSpacing: 1
+            columnSpacing: 1
+
+            boundsBehavior: Flickable.StopAtBounds
 
 
+
+            selectionBehavior: TableView.SelectRows
+            selectionModel: ItemSelectionModel {}
+
+
+            delegate: searchtableChooser
+
+            DelegateChooser {
+                id: searchtableChooser
+                DelegateChoice {
+                    column: 0
+                    delegate: Rectangle {
+                        required property bool selected
+                        required property bool current
+
+                        implicitWidth: searchtableView.width * 0.3
+                        implicitHeight: defaultFontPixelSize + 4
+                        color: selected ? "blue" : "lightgray"
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 1
+                    delegate: Rectangle {
+                        required property bool selected
+                        required property bool current
+
+                        implicitWidth: searchtableView.width * 0.1
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 2
+                    delegate: Rectangle {
+                        required property bool selected
+                        required property bool current
+
+                        implicitWidth: searchtableView.width * 0.15
+                        Text {
+                            id: tableLocation
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 3
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.15
+                        Text {
+                            id: tableLocation
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 4
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.08
+                        Text {
+                            id: tableLocation
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 5
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.22
+                        Text {
+                            id: tableLocation
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
+                }
+
+
+
+
+
+                /*
+                DelegateChoice {
+                    column: 3
+                    id:  myChoice3
+                    delegate: GridLayout {
+                        function findRow(ID) {
+                            var f = 0
+                            while (f < placesModel.rowCount) {
+                                if ((placesModel.rows[f].rowID) == ID) { break; }
+                                f++
+                            }
+                            if (f > placesModel.rowCount) { f=-1 }
+                            return f
+                        }
+                        implicitWidth: mytableView.width * 0.3
+                        columnSpacing: 1
+                        Text {
+                            id: myrowValue
+                            // visible: false
+                            text: display
+                            // font.family: Kirigami.Theme.defaultFont.family
+                            // font.pixelSize: defaultFontPixelSize
+                            // anchors.verticalCenter: parent.verticalCenter
+                        }
+                        Plasmacore.Button {
+                            id:myButton1
+                            icon.name: 'go-up'
+                            property int rownum1: findRow(myrowValue.text)
+                            // enabled: rownum1 > 0  ? true : false
+                            onClicked: {
+                                var row=findRow(myrowValue.text)
+                                if (row > 0) {
+                                    placesModel.moveRow(row, row - 1, 1)
+                                    placesModelGUI.moveRow(row, row - 1, 1)
+                                    placesModelChanged()
+                                    // myButton1.enabled= row === 1  ? false : true
+                                }
+                            }
+                        }
+                        Plasmacore.Button {
+                            id:myButton2
+                            icon.name: 'go-down'
+                            property int rownum2: findRow(myrowValue.text)
+                            // enabled: rownum2 == (placesModelGUI.rowCount - 1)  ? false: true
+                            onClicked: {
+                                var row=findRow(myrowValue.text)
+                                if (row < placesModel.rowCount - 1) {
+                                    placesModel.moveRow(row, row + 1, 1)
+                                    placesModelGUI.moveRow(row, row + 1, 1)
+                                    placesModelChanged()
+                                }
+                            }
+                        }
+                        Plasmacore.Button {
+                            icon.name: 'list-remove'
+                            onClicked: {
+                                var row=findRow(myrowValue.text)
+                                placesModel.removeRow(row, 1)
+                                placesModelGUI.removeRow(row, 1)
+                                placesModelChanged()
+                            }
+                        }
+                        Plasmacore.Button {
+                            icon.name: 'entry-edit'
+                            onClicked: {
+                                var row=findRow(myrowValue.text)
+                                let entry = placesModel.getRow(row)
+                                if (entry.providerId === "metno") {
+                                    let url=entry.placeIdentifier
+                                    newMetnoUrl.text = url
+                                    var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                                    newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
+                                    newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
+                                    newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
+                                    for (var i = 0; i < timezoneDataModel.count; i++) {
+                                        if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
+                                            tzComboBox.currentIndex = i
+                                            timezoneID = entry.timezoneID
+                                            break
+                                        }
+                                    }
+                                    newMetnoCityAlias.text = entry.placeAlias
+                                    addMetnoCityIdDialog.open()
+                                }
+                                if (entry.providerId === "owm") {
+                                    /*
+                                     *                   newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                                     *                   newOwmCityAlias.text = entry.placeAlias
+                                     *                   addOwmCityIdDialog.open()
+
+                                }
+                            }
+                        }
+                    }
+                }
+                */
+
+            }
         }
         standardButtons: Dialog.Ok | Dialog.Cancel
         onAccepted: {
@@ -974,32 +1222,11 @@ Item {
             for (var i=0; i < tmpDB.length - 1 ; i++) {
                 countryCodesModel.append({ id: tmpDB[i] })
                 if (tmpDB[i] === userCountry) {
-                    countryList.currentIndex = i
+//                    countryList.currentIndex = i
                 }
             }
+            countryList.currentIndex=6
             dbgprint(Helper.getshortCode(userCountry))
-            tmpDB=PlacesData["GB"]
-
-
-            dbgprint("Database Size=" + tmpDB.length)
-            for (var i = 0; i < tmpDB.length - 1; i++) {
-                dbgprint("i" + tmpDB[i])
-                // myCSVData.append(Helper.parseCSVLine(tmpDB[i]))
-            }
-            dbgprint("Database Size=" + myCSVData.length)
-
-        }
-        TableView {
-            id: tableView
-//            TableViewColumn { role: "locationName"; title: i18n("Location") }
-//            TableViewColumn { role: "region"; title: i18n("Area"); width :75 }
-//            TableViewColumn { role: "latitude"; title: i18n("Latitude"); width :75 }
-//            TableViewColumn { role: "longitude"; title: i18n("Longitude"); width :75 }
-//            TableViewColumn { role: "altitude"; title: i18n("Altitude"); width :75}
-//            TableViewColumn { role: "timezoneName"; title: i18n("Timezone"); width :100}
-            // onDoubleClicked: {
-                // saveSearchedData.open()
-            // }
         }
         Item {
             id: row1
@@ -1061,6 +1288,7 @@ Item {
                 editable: false
                 onCurrentIndexChanged: {
                     if (countryList.currentIndex > 0) {
+                        dbgprint("Loading Database: "+countryList.textAt(countryList.currentIndex))
                         Helper.loadCSVDatabase(countryList.textAt(countryList.currentIndex))
                     }
                 }
