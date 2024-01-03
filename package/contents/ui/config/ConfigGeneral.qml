@@ -1,7 +1,6 @@
 ﻿import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts
-import QtQuick.Dialogs
 import "../../code/config-utils.js" as ConfigUtils
 import "../../code/placesearch-helpers.js" as Helper
 import "../../code/db/timezoneData.js" as TZData
@@ -189,7 +188,7 @@ Item {
 
     }
 
-// ConfigGeneral home page
+    // ConfigGeneral home page
     ColumnLayout {
         id: rhsColumn
         width: parent.width
@@ -378,10 +377,10 @@ Item {
                                         }
                                         if (entry.providerId === "owm") {
                                             /*
-                                            *                                    newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
-                                            *                                    newOwmCityAlias.text = entry.placeAlias
-                                            *                                    addOwmCityIdDialog.open()
-                                            */
+                                             *                                    newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                                             *                                    newOwmCityAlias.text = entry.placeAlias
+                                             *                                    addOwmCityIdDialog.open()
+                                             */
                                         }
                                     }
                                 }
@@ -580,7 +579,7 @@ Item {
         }
     }
 
-// changePlaceAliasDialog
+    // changePlaceAliasDialog
     Dialog {
         id: changePlaceAliasDialog
         title: i18n("Change Displayed As")
@@ -602,7 +601,7 @@ Item {
         }
     }
 
-// addOwmCityIdDialog
+    // addOwmCityIdDialog
     Dialog {
         id: addOwmCityIdDialog
         title: i18n("Add Open Weather Map Place")
@@ -698,7 +697,7 @@ Item {
     }
 
 
-// addMetnoCityIdDialog
+    // addMetnoCityIdDialog
     Dialog {
 
         id: addMetnoCityIdDialog
@@ -919,10 +918,11 @@ Item {
         }
     }
 
-// searchWindow
+    // searchWindow
     Dialog {
         title: i18n("Location Search")
         id: searchWindow
+        z:1
         implicitWidth: parent.width - 40
         implicitHeight: parent.height - 40
         footer: DialogButtonBox {
@@ -978,7 +978,7 @@ Item {
 
 
             selectionBehavior: TableView.SelectRows
-            selectionModel: ItemSelectionModel {}
+            selectionModel: ItemSelectionModel { }
 
             delegate: searchtableChooser
 
@@ -1002,7 +1002,6 @@ Item {
                         MouseArea {
                             anchors.fill: parent
                             onDoubleClicked: {
-                                searchWindow.visible=false
                                 saveSearchedData.rowNumber=row
                                 saveSearchedData.visible=true
                                 saveSearchedData.open()
@@ -1023,7 +1022,6 @@ Item {
                         MouseArea {
                             anchors.fill: parent
                             onDoubleClicked: {
-                                searchWindow.visible=false
                                 saveSearchedData.rowNumber=row
                                 saveSearchedData.visible=true
                                 saveSearchedData.open()
@@ -1031,7 +1029,6 @@ Item {
                         }
                     }
                 }
-
                 DelegateChoice {
                     column: 2
                     delegate: Rectangle {
@@ -1048,7 +1045,6 @@ Item {
                         MouseArea {
                             anchors.fill: parent
                             onDoubleClicked: {
-                                searchWindow.visible=false
                                 saveSearchedData.rowNumber=row
                                 saveSearchedData.visible=true
                                 saveSearchedData.open()
@@ -1069,7 +1065,6 @@ Item {
                         MouseArea {
                             anchors.fill: parent
                             onDoubleClicked: {
-                                searchWindow.visible=false
                                 saveSearchedData.rowNumber=row
                                 saveSearchedData.visible=true
                                 saveSearchedData.open()
@@ -1090,7 +1085,6 @@ Item {
                         MouseArea {
                             anchors.fill: parent
                             onDoubleClicked: {
-                                searchWindow.visible=false
                                 saveSearchedData.rowNumber=row
                                 saveSearchedData.visible=true
                                 saveSearchedData.open()
@@ -1111,7 +1105,6 @@ Item {
                         MouseArea {
                             anchors.fill: parent
                             onDoubleClicked: {
-                                searchWindow.visible=false
                                 saveSearchedData.rowNumber=row
                                 saveSearchedData.visible=true
                                 saveSearchedData.open()
@@ -1340,7 +1333,7 @@ Item {
     Loader {
         id: saveSearchedData
         property int rowNumber
-            function open() {
+        function open() {
             if (item) {
                 item.open();
             } else {
@@ -1351,35 +1344,34 @@ Item {
 
         active: false
 
-        sourceComponent: MessageDialog {
-
-
+        sourceComponent: Dialog {
             title: i18n("Confirmation")
-            text: i18n("Do you want to select \"" + filteredCSVData.getRow(saveSearchedData.rowNumber).Location + "\" ?")
-            // icon: StandardIcon.Question
-            buttons: MessageDialog.Yes | MessageDialog.No
-            informativeText: ""
+            z:2
+            standardButtons: Dialog.Yes | Dialog.No
             visible: true
-            onButtonClicked: (button, role) => {
-                if (button === MessageDialog.Yes) {
-                    let data=filteredCSVData.getRow(rowNumber)
-                    newMetnoCityLatitudeField.text=data["Latitude"]
-                    newMetnoCityLongitudeField.text=data["Longitude"]
-                    newMetnoCityAltitudeField.text=data["Altitude"]
-                    newMetnoUrl.text="lat="+data["Latitude"]+"&lon="+data["Longitude"]+"&altitude="+data["Altitude"]
-                    let loc=data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
-                    newMetnoCityAlias.text=loc
-                    addMetnoCityIdDialog.timezoneID=data["timezoneId"]
-                    for (var i=0; i < timezoneDataModel.count; i++) {
-                        if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
-                            tzComboBox.currentIndex=i
-                            break
-                        }
+            Text {
+                anchors.fill: parent
+                text: i18n("Do you want to select") + " \"" + filteredCSVData.getRow(saveSearchedData.rowNumber).Location + "\" ?"
+
+            }
+            onAccepted: {
+                let data=filteredCSVData.getRow(rowNumber)
+                newMetnoCityLatitudeField.text=data["Latitude"]
+                newMetnoCityLongitudeField.text=data["Longitude"]
+                newMetnoCityAltitudeField.text=data["Altitude"]
+                newMetnoUrl.text="lat="+data["Latitude"]+"&lon="+data["Longitude"]+"&altitude="+data["Altitude"]
+                let loc=data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+                newMetnoCityAlias.text=loc
+                addMetnoCityIdDialog.timezoneID=data["timezoneId"]
+                for (var i=0; i < timezoneDataModel.count; i++) {
+                    if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
+                        tzComboBox.currentIndex=i
+                        break
                     }
-                    searchWindow.close()
-                    addMetnoCityIdDialog.open()
-                    updatenewMetnoCityOKButton()
                 }
+                searchWindow.close()
+                addMetnoCityIdDialog.open()
+                updatenewMetnoCityOKButton()
             }
             onRejected: {
                 visible = false
