@@ -1,5 +1,5 @@
 import QtQuick 2.2
-import QtQuick.Controls 1.3
+import QtQuick.Controls
 import QtQuick.Controls 2.15 as QC215
 import QtQuick.Layouts 1.1
 
@@ -51,7 +51,7 @@ Item {
         cfg_layoutTypeChanged()
     }
 
-    ExclusiveGroup {
+    ButtonGroup {
         id: layoutTypeGroup
     }
 
@@ -74,11 +74,11 @@ Item {
         }
         Label {
             text: i18n("Layout type:")
-            Layout.alignment: Qt.AlignVCenter|Qt.AlignRight
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
             id: layoutTypeRadioHorizontal
-            exclusiveGroup: layoutTypeGroup
+            ButtonGroup.group: layoutTypeGroup
             text: i18n("Horizontal")
             onCheckedChanged: if (checked) cfg_layoutType = 0;
         }
@@ -95,13 +95,13 @@ Item {
         }
         RadioButton {
             id: layoutTypeRadioVertical
-            exclusiveGroup: layoutTypeGroup
+            ButtonGroup.group: layoutTypeGroup
             text: i18n("Vertical")
             onCheckedChanged: if (checked) cfg_layoutType = 1;
         }
         RadioButton {
             id: layoutTypeRadioCompact
-            exclusiveGroup: layoutTypeGroup
+            ButtonGroup.group: layoutTypeGroup
             text: i18n("Compact")
             onCheckedChanged: if (checked) cfg_layoutType = 2;
         }
@@ -119,27 +119,37 @@ Item {
             Layout.columnSpan: 3
         }
 
+
         Label {
+            id: timeoutLabel
             text: i18n("Active timeout:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
-
+Item {
         SpinBox {
-            id: inTrayActiveTimeoutSec
-            decimals: 0
-            stepSize: 10
-            minimumValue: 10
-            maximumValue: 8000
-            suffix: i18nc("Abbreviation for seconds", "sec")
-        }
-
+                id: inTrayActiveTimeoutSec
+                Layout.alignment: Qt.AlignVCenter
+                stepSize: 10
+                from: 10
+                to: 8000
+//            suffix: i18nc("Abbreviation for seconds", "sec")
+            }
+            Label {
+                text: i18nc("Abbreviation for seconds", "sec")
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left:inTrayActiveTimeoutSec.right
+                anchors.leftMargin: 4
+            }
+}
         Label {
             text: i18n("NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings.")
             Layout.rowSpan: 3
             Layout.preferredWidth: 250
             wrapMode: Text.WordWrap
         }
-        Item {
+
+
+Item {
             width: 2
             height: 20
             Layout.columnSpan: 3
@@ -147,6 +157,7 @@ Item {
 
         Label {
             text: i18n("Widget font style:")
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         QC215.ComboBox {
             id: fontFamilyComboBox
@@ -171,18 +182,30 @@ Item {
 
         Label {
             text: i18n("Widget font size:")
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+            // anchors.verticalCenter: widgetFontSize.verticalCenter
+
+
         }
+        Item {
         SpinBox {
             id: widgetFontSize
-            decimals: 0
+            Layout.alignment: Qt.AlignVCenter
+            anchors.verticalCenter: parent.verticalCenter
+            // decimals: 0
             stepSize: 1
-            minimumValue: 4
+            from: 4
             value: cfg_widgetFontSize
-            maximumValue: 512
-            suffix: i18nc("pixels", "px")
+            to: 512
             onValueChanged: {
                 cfg_widgetFontSize = widgetFontSize.value
             }
+         }
+        Label {
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.left:widgetFontSize.right
+            text: i18nc("pixels", "px")
+        }
         }
     }
 }
