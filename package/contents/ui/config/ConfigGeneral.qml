@@ -376,11 +376,11 @@ Item {
                                             addMetnoCityIdDialog.open()
                                         }
                                         if (entry.providerId === "owm") {
-                                            /*
-                                             *                                    newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
-                                             *                                    newOwmCityAlias.text = entry.placeAlias
-                                             *                                    addOwmCityIdDialog.open()
-                                             */
+                                            newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                                            newOwmCityAlias.text = entry.placeAlias
+                                            addOwmCityIdDialog.placeNumberID = row
+                                            addOwmCityIdDialog.open()
+
                                         }
                                     }
                                 }
@@ -397,11 +397,11 @@ Item {
                 text: 'OWM'
                 width: 100
                 onClicked: {
-                    addMetnoCityIdDialog.placeNumberID = -1
-                    addOwmCityIdDialog.open()
+                    addOwmCityIdDialog.placeNumberID = -1
                     newOwmCityIdField.text = ''
                     newOwmCityAlias.text = ''
                     newOwmCityIdField.focus = true
+                    addOwmCityIdDialog.open()
                 }
             }
 
@@ -605,45 +605,56 @@ Item {
     Dialog {
         id: addOwmCityIdDialog
         title: i18n("Add Open Weather Map Place")
-
+        property int placeNumberID: -1
         width: 500
         height: newOwmCityIdField.height * 9
-
-        standardButtons: Dialog.Ok | Dialog.Cancel
+        footer: DialogButtonBox {
+            id: owmButtons
+            standardButtons: Dialog.Ok | Dialog.Cancel
+        }
 
         onAccepted: {
             var url = newOwmCityIdField.text
             var match = /https?:\/\/openweathermap\.org\/city\/([0-9]+)(\/)?/.exec(url)
+
             var resultString = null
+
             if (match !== null) {
                 resultString = match[1]
-            }
 
-            if (resultString === null) {
-                return
+                dbgprint(addOwmCityIdDialog.placeNumberID)
+                if (addOwmCityIdDialog.placeNumberID === -1) {
+                    placesModel.appendRow({
+                        providerId: 'owm',
+                        placeIdentifier: resultString,
+                        placeAlias: newOwmCityAlias.text,
+                        timezoneID: -1
+                    })
+                } else {
+                    placesModel.setRow(addOwmCityIdDialog.placeNumberID,{
+                        providerId: 'owm',
+                        placeIdentifier: resultString,
+                        placeAlias: newOwmCityAlias.text,
+                        timezoneID: -1
+                    })
+                }
+                placesModelChanged()
+                close()
             }
-
-            if (addOwmCityIdDialog.placeNumberID === -1) {
-                placesModel.append({
-                    providerId: 'owm',
-                    placeIdentifier: resultString,
-                    placeAlias: newOwmCityAlias.text
-                })
-            } else {
-                placesModel.set(addOwmCityIdDialog.placeNumberID,{
-                    providerId: 'owm',
-                    placeIdentifier: resultString,
-                    placeAlias: newOwmCityAlias.text
-                })
-            }
-            placesModelChanged()
-            close()
         }
 
         TextField {
             id: newOwmCityIdField
             placeholderText: i18n("Paste URL here")
             width: parent.width
+            onTextChanged: {
+                var match = /https?:\/\/openweathermap\.org\/city\/([0-9]+)(\/)?/.exec(newOwmCityIdField.text)
+                if (match === null) {
+                    owmButtons.standardButton(Dialog.Ok).enabled = false
+                } else {
+                    owmButtons.standardButton(Dialog.Ok).enabled = true
+                }
+            }
         }
 
         TextField {
@@ -695,7 +706,6 @@ Item {
         }
 
     }
-
 
     // addMetnoCityIdDialog
     Dialog {
