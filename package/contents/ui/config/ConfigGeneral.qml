@@ -8,7 +8,6 @@ import "../../code/db/timezoneData.js" as TZData
 import org.kde.plasma.components 3.0 as Plasmacore
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
-import "../../code/db/all.js" as CSVData
 
 
 Item {
@@ -27,32 +26,23 @@ Item {
     property string cfg_places
     property alias cfg_debugLogging: debugLogging.checked
     property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
-    property int editEntryNumber: -1
-     Component.onCompleted: {
+
+    Component.onCompleted: {
 
         var places = ConfigUtils.getPlacesArray()
         var f = 0
         ConfigUtils.getPlacesArray().forEach(function (placeObj) {
             placesModel.appendRow({
-                                      providerId: placeObj.providerId,
-                                      placeIdentifier: placeObj.placeIdentifier,
-                                      placeAlias: placeObj.placeAlias,
-                                      timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1,
-                                      rowID: f
-                                  })
-            placesModelGUI.appendRow({
-                                         providerId: placeObj.providerId,
-                                         placeIdentifier: placeObj.placeIdentifier,
-                                         placeAlias: placeObj.placeAlias,
-                                         rowID: f
-                                     })
-            f++
+                providerId: placeObj.providerId,
+                placeIdentifier: placeObj.placeIdentifier,
+                placeAlias: placeObj.placeAlias,
+                timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1,
+            })
         })
         let timezoneArray = TZData.TZData.sort(dynamicSort("displayName"))
         timezoneArray.forEach(function (tz) {
             timezoneDataModel.append({displayName: tz.displayName.replace(/_/gi, " "), id: tz.id});
         })
-        placesModelGUI.rows = placesModel.rows
     }
 
     function dynamicSort(property) {
@@ -79,12 +69,12 @@ Item {
         for (var i = 0; i < placesModel.rowCount; i++) {
             var placeObj = placesModel.getRow(i)
             newPlacesArray.push({
-                                    providerId: placeObj.providerId,
-                                    placeIdentifier: placeObj.placeIdentifier,
-                                    placeAlias: placeObj.placeAlias,
-                                    timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
+                providerId: placeObj.providerId,
+                placeIdentifier: placeObj.placeIdentifier,
+                placeAlias: placeObj.placeAlias,
+                timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
 
-                                })
+            })
         }
         cfg_places = JSON.stringify(newPlacesArray)
     }
@@ -92,16 +82,11 @@ Item {
         var latValid = newMetnoCityLatitudeField.acceptableInput
         var longValid = newMetnoCityLongitudeField.acceptableInput
         var altValid = newMetnoCityAltitudeField.acceptableInput
-        dbgprint('******************')
-        dbgprint(latValid)
-        dbgprint(longValid)
-        dbgprint(altValid)
-        dbgprint(newMetnoCityAlias.length)
-        dbgprint(addMetnoCityIdDialog.timezoneID)
-
-        dbgprint('******************')
+        console.log(newMetnoCityAlias.length + "\t" + latValid + "\t" + longValid + "\t" + altValid + "\t" + addMetnoCityIdDialog.timezoneID )
         if ((latValid && longValid && altValid) && (newMetnoCityAlias.length >0) && (addMetnoCityIdDialog.timezoneID > -1)) {
-            buttons.standardButton(Dialog.Ok).enabled = true;
+            buttons.standardButton(Dialog.Ok).enabled = true
+        } else {
+            buttons.standardButton(Dialog.Ok).enabled = false
         }
     }
     function updateUrl() {
@@ -128,6 +113,13 @@ Item {
         updatenewMetnoCityOKButton()
     }
 
+    ListModel {
+        id: timezoneDataModel
+    }
+
+    ListModel {
+        id: countryCodesModel
+    }
 
     TableModel {
         id: placesModel
@@ -144,18 +136,60 @@ Item {
             display: "timezoneID"
         }
     }
-    ListModel {
-        id: myCSVData
-    }
-    ListModel {
-        id: countryCodesModel
-    }
-    ListModel {
+
+    TableModel {
         id: filteredCSVData
+        TableModelColumn {
+            display: "Location"
+        }
+        TableModelColumn {
+            display: "Area"
+        }
+        TableModelColumn {
+            display: "Latitude"
+        }
+        TableModelColumn {
+            display: "Longitude"
+        }
+        TableModelColumn {
+            display: "Altitude"
+        }
+        TableModelColumn {
+            display: "Timezone"
+        }
+        TableModelColumn {
+            display: "timezoneId"
+        }
     }
-    ListModel {
-        id: timezoneDataModel
+
+    TableModel {
+        id: myCSVData
+
+        TableModelColumn {
+            display: "Location"
+        }
+        TableModelColumn {
+            display: "Area"
+        }
+        TableModelColumn {
+            display: "Latitude"
+        }
+        TableModelColumn {
+            display: "Longitude"
+        }
+        TableModelColumn {
+            display: "Altitude"
+        }
+        TableModelColumn {
+            display: "Timezone"
+        }
+        TableModelColumn {
+            display: "timezoneId"
+        }
+
     }
+
+// ConfigGeneral home page
     ColumnLayout {
         id: rhsColumn
         width: parent.width
@@ -185,24 +219,6 @@ Item {
             Layout.preferredWidth: parent.width
             Layout.columnSpan: 2
 
-            TableModel {
-                id: placesModelGUI
-                TableModelColumn {
-                    display: "providerId"
-                }
-                TableModelColumn {
-                    display: "placeIdentifier"
-                }
-                TableModelColumn {
-                    display: "placeAlias"
-                }
-                // TableModelColumn {
-                // display: "timezoneID"
-                // }
-                TableModelColumn {
-                    display: "rowID"
-                }
-            }
             HorizontalHeaderView {
                 id: myhorizontalHeader
                 anchors.left: mytableView.left
@@ -235,10 +251,15 @@ Item {
                 rowSpacing: 1
                 columnSpacing: 1
                 boundsBehavior: Flickable.StopAtBounds
-                model: placesModelGUI
+                model: placesModel
                 id: mytableView
                 alternatingRows: true
+
+                selectionBehavior: TableView.SelectRows
+                selectionModel: ItemSelectionModel {}
+
                 delegate: myChooser
+
                 DelegateChooser {
                     id: myChooser
                     DelegateChoice {
@@ -283,20 +304,11 @@ Item {
                         column: 3
                         id:  myChoice3
                         delegate: GridLayout {
-                            function findRow(ID) {
-                                var f = 0
-                                while (f < placesModel.rowCount) {
-                                    if ((placesModel.rows[f].rowID) == ID) { break; }
-                                    f++
-                                }
-                                if (f > placesModel.rowCount) { f=-1 }
-                                return f
-                            }
                             implicitWidth: mytableView.width * 0.3
                             columnSpacing: 1
                             Text {
                                 id: myrowValue
-                                // visible: false
+                                visible: false
                                 text: display
                                 // font.family: Kirigami.Theme.defaultFont.family
                                 // font.pixelSize: defaultFontPixelSize
@@ -305,69 +317,72 @@ Item {
                             Plasmacore.Button {
                                 id:myButton1
                                 icon.name: 'go-up'
-                                property int rownum1: findRow(myrowValue.text)
-                                // enabled: rownum1 > 0  ? true : false
-                                onClicked: {
-                                    var row=findRow(myrowValue.text)
-                                    if (row > 0) {
-                                        placesModel.moveRow(row, row - 1, 1)
-                                        placesModelGUI.moveRow(row, row - 1, 1)
-                                        placesModelChanged()
-                                        // myButton1.enabled= row === 1  ? false : true
+                                enabled: row === 0  ? false : true
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        if (row > 0) {
+                                            placesModel.moveRow(row, row - 1, 1)
+                                        }
                                     }
                                 }
                             }
                             Plasmacore.Button {
                                 id:myButton2
                                 icon.name: 'go-down'
-                                property int rownum2: findRow(myrowValue.text)
-                                // enabled: rownum2 == (placesModelGUI.rowCount - 1)  ? false: true
-                                onClicked: {
-                                    var row=findRow(myrowValue.text)
-                                    if (row < placesModel.rowCount - 1) {
-                                        placesModel.moveRow(row, row + 1, 1)
-                                        placesModelGUI.moveRow(row, row + 1, 1)
-                                        placesModelChanged()
+                                enabled: row == (placesModel.rowCount - 1)  ? false: true
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        console.log(row)
+                                        if (row<placesModel.rowCount) {
+                                            placesModel.moveRow(row, row + 1, 1)
+                                        }
                                     }
                                 }
                             }
                             Plasmacore.Button {
                                 icon.name: 'list-remove'
-                                onClicked: {
-                                    var row=findRow(myrowValue.text)
-                                    placesModel.removeRow(row, 1)
-                                    placesModelGUI.removeRow(row, 1)
-                                    placesModelChanged()
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        placesModel.removeRow(row, 1)
+                                        placesModelChanged()
+                                    }
                                 }
                             }
                             Plasmacore.Button {
                                 icon.name: 'entry-edit'
-                                onClicked: {
-                                    var row=findRow(myrowValue.text)
-                                    let entry = placesModel.getRow(row)
-                                    if (entry.providerId === "metno") {
-                                        let url=entry.placeIdentifier
-                                        newMetnoUrl.text = url
-                                        var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                                        newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
-                                        newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
-                                        newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
-                                        for (var i = 0; i < timezoneDataModel.count; i++) {
-                                            if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
-                                                tzComboBox.currentIndex = i
-                                                timezoneID = entry.timezoneID
-                                                break
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        let entry = placesModel.getRow(row)
+                                        if (entry.providerId === "metno") {
+                                            let url=entry.placeIdentifier
+                                            newMetnoUrl.text = url
+                                            var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                                            newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
+                                            newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
+                                            newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
+                                            dbgprint("timezone ID=" + entry.timezoneID)
+                                            addMetnoCityIdDialog.timezoneID = entry.timezoneID
+                                            for (var i = 0; i < timezoneDataModel.count; i++) {
+                                                if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
+                                                    tzComboBox.currentIndex = i
+                                                    break
+                                                }
                                             }
+                                            newMetnoCityAlias.text = entry.placeAlias
+                                            addMetnoCityIdDialog.placeNumberID = row
+                                            addMetnoCityIdDialog.open()
                                         }
-                                        newMetnoCityAlias.text = entry.placeAlias
-                                        addMetnoCityIdDialog.open()
-                                    }
-                                    if (entry.providerId === "owm") {
-                                        /*
-                                    newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
-                                    newOwmCityAlias.text = entry.placeAlias
-                                    addOwmCityIdDialog.open()
-    */
+                                        if (entry.providerId === "owm") {
+                                            /*
+                                            *                                    newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                                            *                                    newOwmCityAlias.text = entry.placeAlias
+                                            *                                    addOwmCityIdDialog.open()
+                                            */
+                                        }
                                     }
                                 }
                             }
@@ -383,7 +398,7 @@ Item {
                 text: 'OWM'
                 width: 100
                 onClicked: {
-                    editEntryNumber = -1
+                    addMetnoCityIdDialog.placeNumberID = -1
                     addOwmCityIdDialog.open()
                     newOwmCityIdField.text = ''
                     newOwmCityAlias.text = ''
@@ -397,16 +412,13 @@ Item {
                 width: 100
                 onClicked: {
 
-                    dbgprint("*** 1" + newMetnoCityLatitudeField.text)
-                    dbgprint("*** 2" + newMetnoCityLatitudeField.text)
-                    editEntryNumber = -1
                     newMetnoCityAlias.text = ''
-
                     newMetnoCityLatitudeField.text = ''
                     newMetnoCityLongitudeField.text = ''
                     newMetnoCityAltitudeField.text = ''
                     newMetnoUrl.text = ''
                     newMetnoCityLatitudeField.focus = true
+                    addMetnoCityIdDialog.placeNumberID=-1
                     addMetnoCityIdDialog.open()
                 }
             }
@@ -463,8 +475,6 @@ Item {
     Item {
         anchors.bottom: parent.bottom
         Rectangle {
-            color:  "red"
-
             anchors.fill: parent
             // anchors.top:
         }
@@ -570,8 +580,7 @@ Item {
         }
     }
 
-
-
+// changePlaceAliasDialog
     Dialog {
         id: changePlaceAliasDialog
         title: i18n("Change Displayed As")
@@ -593,6 +602,7 @@ Item {
         }
     }
 
+// addOwmCityIdDialog
     Dialog {
         id: addOwmCityIdDialog
         title: i18n("Add Open Weather Map Place")
@@ -614,18 +624,18 @@ Item {
                 return
             }
 
-            if (editEntryNumber === -1) {
+            if (addOwmCityIdDialog.placeNumberID === -1) {
                 placesModel.append({
-                                       providerId: 'owm',
-                                       placeIdentifier: resultString,
-                                       placeAlias: newOwmCityAlias.text
-                                   })
+                    providerId: 'owm',
+                    placeIdentifier: resultString,
+                    placeAlias: newOwmCityAlias.text
+                })
             } else {
-                placesModel.set(editEntryNumber,{
-                                    providerId: 'owm',
-                                    placeIdentifier: resultString,
-                                    placeAlias: newOwmCityAlias.text
-                                })
+                placesModel.set(addOwmCityIdDialog.placeNumberID,{
+                    providerId: 'owm',
+                    placeIdentifier: resultString,
+                    placeAlias: newOwmCityAlias.text
+                })
             }
             placesModelChanged()
             close()
@@ -687,15 +697,17 @@ Item {
 
     }
 
+
+// addMetnoCityIdDialog
     Dialog {
 
         id: addMetnoCityIdDialog
         title: i18n("Add Met.no Map Place")
 
         property int timezoneID: -1
+        property int placeNumberID: -1
 
         implicitWidth: generalConfigPage.width
-        // implicitHeight: metNoRow1.height * 6
         footer: DialogButtonBox {
             id: buttons
             standardButtons: Dialog.Ok | Dialog.Cancel
@@ -709,9 +721,6 @@ Item {
             implicitHeight: metNoRow1.height * 4
             property int labelWidth: 80
             property int textboxWidth:( metNoRowLayout.width - (3* metNoRowLayout) ) / 3
-            Component.onCompleted: {
-                dbgprint(metNoRowLayout.colwidth)
-            }
             ColumnLayout{
                 spacing: 8
                 RowLayout {
@@ -881,7 +890,8 @@ Item {
 
         }
         onOpened: {
-            buttons.standardButton(Dialog.Ok).enabled = false;
+            updatenewMetnoCityOKButton()
+            // buttons.standardButton(Dialog.Ok).enabled = false;
         }
 
         onAccepted: {
@@ -889,15 +899,15 @@ Item {
             if (resultString.length === 0) {
                 resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
             }
-            if (editEntryNumber === -1) {
-                placesModel.append({
+            if (addMetnoCityIdDialog.placeNumberID === -1) {
+                placesModel.appendRow({
                     providerId: 'metno',
                     placeIdentifier: resultString,
                     placeAlias: newMetnoCityAlias.text,
                     timezoneID: addMetnoCityIdDialog.timezoneID
                 })
             } else {
-                placesModel.set(editEntryNumber,{
+                placesModel.setRow(addMetnoCityIdDialog.placeNumberID,{
                     providerId: 'metno',
                     placeIdentifier: resultString,
                     placeAlias: newMetnoCityAlias.text,
@@ -909,7 +919,7 @@ Item {
         }
     }
 
-
+// searchWindow
     Dialog {
         title: i18n("Location Search")
         id: searchWindow
@@ -937,7 +947,7 @@ Item {
                     append({ display: ("Area") });
                     append({ display: ("Latitude") });
                     append({ display: ("Longitude") });
-                    append({ display: ("Altitude") });
+                    append({ display: ("Alt") });
                     append({ display: ("Timezone") });
                     // append({ display: ("TBA") });
                 }
@@ -946,10 +956,9 @@ Item {
 
 
 
-
         TableView {
             id: searchtableView
-            height: 140
+            implicitHeight: 140
             // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
             // highlightOnFocus: true
             anchors.bottom: row2.top
@@ -957,9 +966,262 @@ Item {
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottomMargin: 10
+            anchors.topMargin: mysearchhorizontalHeader.height + 2
             model: filteredCSVData
+            clip: true
+            interactive: true
+            rowSpacing: 1
+            columnSpacing: 1
+
+            boundsBehavior: Flickable.StopAtBounds
 
 
+
+            selectionBehavior: TableView.SelectRows
+            selectionModel: ItemSelectionModel {}
+
+            delegate: searchtableChooser
+
+            DelegateChooser {
+                id: searchtableChooser
+                DelegateChoice {
+                    column: 0
+
+                    delegate: Rectangle {
+                        required property bool selected
+                        required property bool current
+                        border.width: current ? 2 : 0
+                        implicitWidth: searchtableView.width * 0.3
+                        implicitHeight: defaultFontPixelSize + 4
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onDoubleClicked: {
+                                searchWindow.visible=false
+                                saveSearchedData.rowNumber=row
+                                saveSearchedData.visible=true
+                                saveSearchedData.open()
+                            }
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 1
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.1
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onDoubleClicked: {
+                                searchWindow.visible=false
+                                saveSearchedData.rowNumber=row
+                                saveSearchedData.visible=true
+                                saveSearchedData.open()
+                            }
+                        }
+                    }
+                }
+
+                DelegateChoice {
+                    column: 2
+                    delegate: Rectangle {
+                        required property bool selected
+                        required property bool current
+
+                        implicitWidth: searchtableView.width * 0.15
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onDoubleClicked: {
+                                searchWindow.visible=false
+                                saveSearchedData.rowNumber=row
+                                saveSearchedData.visible=true
+                                saveSearchedData.open()
+                            }
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 3
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.15
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onDoubleClicked: {
+                                searchWindow.visible=false
+                                saveSearchedData.rowNumber=row
+                                saveSearchedData.visible=true
+                                saveSearchedData.open()
+                            }
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 4
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.08
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onDoubleClicked: {
+                                searchWindow.visible=false
+                                saveSearchedData.rowNumber=row
+                                saveSearchedData.visible=true
+                                saveSearchedData.open()
+                            }
+                        }
+                    }
+                }
+                DelegateChoice {
+                    column: 5
+                    delegate: Rectangle {
+                        implicitWidth: searchtableView.width * 0.22
+                        Text {
+                            text: display
+                            font.family: Kirigami.Theme.defaultFont.family
+                            font.pixelSize: defaultFontPixelSize
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                        MouseArea {
+                            anchors.fill: parent
+                            onDoubleClicked: {
+                                searchWindow.visible=false
+                                saveSearchedData.rowNumber=row
+                                saveSearchedData.visible=true
+                                saveSearchedData.open()
+                            }
+                        }
+                    }
+                }
+
+
+
+
+
+                /*
+                 *                DelegateChoice {
+                 *                    column: 3
+                 *                    id:  myChoice3
+                 *                    delegate: GridLayout {
+                 *                        function findRow(ID) {
+                 *                            var f = 0
+                 *                            while (f < placesModel.rowCount) {
+                 *                                if ((placesModel.rows[f].rowID) == ID) { break; }
+                 *                                f++
+            }
+            if (f > placesModel.rowCount) { f=-1 }
+            return f
+            }
+            implicitWidth: mytableView.width * 0.3
+            columnSpacing: 1
+            Text {
+            id: myrowValue
+            // visible: false
+            text: display
+            // font.family: Kirigami.Theme.defaultFont.family
+            // font.pixelSize: defaultFontPixelSize
+            // anchors.verticalCenter: parent.verticalCenter
+            }
+            Plasmacore.Button {
+            id:myButton1
+            icon.name: 'go-up'
+            property int rownum1: findRow(myrowValue.text)
+            // enabled: rownum1 > 0  ? true : false
+            onClicked: {
+            var row=findRow(myrowValue.text)
+            if (row > 0) {
+                placesModel.moveRow(row, row - 1, 1)
+                placesModelGUI.moveRow(row, row - 1, 1)
+                placesModelChanged()
+                // myButton1.enabled= row === 1  ? false : true
+            }
+            }
+            }
+            Plasmacore.Button {
+            id:myButton2
+            icon.name: 'go-down'
+            property int rownum2: findRow(myrowValue.text)
+            // enabled: rownum2 == (placesModelGUI.rowCount - 1)  ? false: true
+            onClicked: {
+            var row=findRow(myrowValue.text)
+            if (row < placesModel.rowCount - 1) {
+                placesModel.moveRow(row, row + 1, 1)
+                placesModelGUI.moveRow(row, row + 1, 1)
+                placesModelChanged()
+            }
+            }
+            }
+            Plasmacore.Button {
+            icon.name: 'list-remove'
+            onClicked: {
+            var row=findRow(myrowValue.text)
+            placesModel.removeRow(row, 1)
+            placesModelGUI.removeRow(row, 1)
+            placesModelChanged()
+            }
+            }
+            Plasmacore.Button {
+            icon.name: 'entry-edit'
+            onClicked: {
+            var row=findRow(myrowValue.text)
+            let entry = placesModel.getRow(row)
+            if (entry.providerId === "metno") {
+                let url=entry.placeIdentifier
+                newMetnoUrl.text = url
+                var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
+                newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
+                newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
+                for (var i = 0; i < timezoneDataModel.count; i++) {
+                    if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
+                        tzComboBox.currentIndex = i
+                        timezoneID = entry.timezoneID
+                        break
+            }
+            }
+            newMetnoCityAlias.text = entry.placeAlias
+            addMetnoCityIdDialog.open()
+            }
+            if (entry.providerId === "owm") {
+                /*
+                 *                   newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                 *                   newOwmCityAlias.text = entry.placeAlias
+                 *                   addOwmCityIdDialog.open()
+                 *
+            }
+            }
+            }
+            }
+            }
+            */
+
+            }
         }
         standardButtons: Dialog.Ok | Dialog.Cancel
         onAccepted: {
@@ -978,28 +1240,6 @@ Item {
                 }
             }
             dbgprint(Helper.getshortCode(userCountry))
-            tmpDB=PlacesData["GB"]
-
-
-            dbgprint("Database Size=" + tmpDB.length)
-            for (var i = 0; i < tmpDB.length - 1; i++) {
-                dbgprint("i" + tmpDB[i])
-                // myCSVData.append(Helper.parseCSVLine(tmpDB[i]))
-            }
-            dbgprint("Database Size=" + myCSVData.length)
-
-        }
-        TableView {
-            id: tableView
-//            TableViewColumn { role: "locationName"; title: i18n("Location") }
-//            TableViewColumn { role: "region"; title: i18n("Area"); width :75 }
-//            TableViewColumn { role: "latitude"; title: i18n("Latitude"); width :75 }
-//            TableViewColumn { role: "longitude"; title: i18n("Longitude"); width :75 }
-//            TableViewColumn { role: "altitude"; title: i18n("Altitude"); width :75}
-//            TableViewColumn { role: "timezoneName"; title: i18n("Timezone"); width :100}
-            // onDoubleClicked: {
-                // saveSearchedData.open()
-            // }
         }
         Item {
             id: row1
@@ -1061,6 +1301,7 @@ Item {
                 editable: false
                 onCurrentIndexChanged: {
                     if (countryList.currentIndex > 0) {
+                        dbgprint("Loading Database: "+countryList.textAt(countryList.currentIndex))
                         Helper.loadCSVDatabase(countryList.textAt(countryList.currentIndex))
                     }
                 }
@@ -1094,268 +1335,294 @@ Item {
         }
     }
 
+
+
+    Loader {
+        id: saveSearchedData
+        property int rowNumber
+            function open() {
+            if (item) {
+                item.open();
+            } else {
+                active = true;
+            }
+            item.visible = true;
+        }
+
+        active: false
+
+        sourceComponent: MessageDialog {
+
+
+            title: i18n("Confirmation")
+            text: i18n("Do you want to select \"" + filteredCSVData.getRow(saveSearchedData.rowNumber).Location + "\" ?")
+            // icon: StandardIcon.Question
+            buttons: MessageDialog.Yes | MessageDialog.No
+            informativeText: ""
+            visible: true
+            onButtonClicked: (button, role) => {
+                if (button === MessageDialog.Yes) {
+                    let data=filteredCSVData.getRow(rowNumber)
+                    newMetnoCityLatitudeField.text=data["Latitude"]
+                    newMetnoCityLongitudeField.text=data["Longitude"]
+                    newMetnoCityAltitudeField.text=data["Altitude"]
+                    newMetnoUrl.text="lat="+data["Latitude"]+"&lon="+data["Longitude"]+"&altitude="+data["Altitude"]
+                    let loc=data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+                    newMetnoCityAlias.text=loc
+                    addMetnoCityIdDialog.timezoneID=data["timezoneId"]
+                    for (var i=0; i < timezoneDataModel.count; i++) {
+                        if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
+                            tzComboBox.currentIndex=i
+                            break
+                        }
+                    }
+                    searchWindow.close()
+                    addMetnoCityIdDialog.open()
+                    updatenewMetnoCityOKButton()
+                }
+            }
+            onRejected: {
+                visible = false
+                searchWindow.visible=true
+            }
+        }
+    }
+
 }
 
 
 
 
 /*
-MessageDialog {
-    id: invalidData
-    title: i18n("Error!")
-    text: ""
-    icon: StandardIcon.Critical
-    informativeText: ""
-    visible: false
-}
-
-MessageDialog {
-    id: saveSearchedData
-    title: i18n("Confirmation")
-    text: i18n("Do you want to select this place?")
-    icon: StandardIcon.Question
-    standardButtons: StandardButton.Yes | StandardButton.No
-    informativeText: ""
-    visible: false
-    onYes: {
-        let data=filteredCSVData.get(tableView.currentRow)
-        newMetnoCityLatitudeField.text=data["latitude"]
-        newMetnoCityLongitudeField.text=data["longitude"]
-        newMetnoCityAltitudeField.text=data["altitude"]
-        newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longitude"]+"&altitude="+data["altitude"]
-        let loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
-        newMetnoCityAlias.text=loc
-        addMetnoCityIdDialog.timezoneID=data["timezoneId"]
-        for (var i=0; i < timezoneDataModel.count; i++) {
-            if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
-                tzComboBox.currentIndex=i
-                break
-            }
-        }
-        searchWindow.close()
-        addMetnoCityIdDialog.open()
-    }
-}
-*/
+ * MessageDialog {
+ *    id: invalidData
+ *    title: i18n("Error!")
+ *    text: ""
+ *    icon: StandardIcon.Critical
+ *    informativeText: ""
+ *    visible: false
+ * }
+ *
+ */
 /*
-Dialog {
-
-    id: addMetnoCityIdDialog
-    title: i18n("Add Met.no Map Place")
-
-    property int timezoneID: -1
-
-    width: 600
-
-    footer: DialogButtonBox {
-        id: buttons
-        standardButtons: Dialog.Ok | Dialog.Cancel
-    }
-
-    onOpened: {
-        buttons.standardButton(Dialog.Ok).enabled = false;
-    }
-
-    onAccepted: {
-        var resultString = newMetnoUrl.text
-        if (resultString.length === 0) {
-            resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
-        }
-        if (editEntryNumber === -1) {
-            placesModel.append({
-                                   providerId: 'metno',
-                                   placeIdentifier: resultString,
-                                   placeAlias: newMetnoCityAlias.text,
-                                   timezoneID: addMetnoCityIdDialog.timezoneID
-                               })
-        } else {
-            placesModel.set(editEntryNumber,{
-                                providerId: 'metno',
-                                placeIdentifier: resultString,
-                                placeAlias: newMetnoCityAlias.text,
-                                timezoneID: addMetnoCityIdDialog.timezoneID
-                            })
-        }
-        placesModelChanged()
-        close()
-    }
-
-
-    Item {
-        id: metNoRowLayout
-        width: 550
-        property int labelWidth: 80
-        property int textboxWidth:( metNoRowLayout.width - (3* metNoRowLayout) ) / 3
-        Component.onCompleted: {
-            dbgprint(metNoRowLayout.colwidth)
-        }
-        ColumnLayout{
-            spacing: 8
-            RowLayout {
-                Layout.preferredWidth: metNoRowLayout.width
-                Label {
-                    text: ("Place Identifier")+": "
-                    Layout.alignment: Qt.AlignVCenter
-                }
-                TextField {
-                    id: newMetnoCityAlias
-                    Layout.alignment: Qt.AlignVCenter
-                    placeholderText: ("City alias")
-                    onTextChanged: {
-                        updateUrl()
-                    }
-                }
-                Item {
-                    // spacer item
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    // Rectangle { anchors.fill: parent; color: "#ffaaaa" } // to visualize the spacer
-                }
-                Button {
-                    text: ("Search")
-
-                    Layout.alignment: Qt.AlignRight
-                    onClicked: {
-                        searchWindow.open()
-                    }
-                }
-            }
-
-            RowLayout {
-                Layout.fillWidth: true
-                Label {
-                    id: newMetnoCityLatitudeLabel
-                    text: ("Latitude")+":"
-                    Layout.preferredWidth: metNoRowLayout.labelWidth
-                    horizontalAlignment: Text.AlignRight
-                }
-                TextField {
-                    id: newMetnoCityLatitudeField
-                    Layout.preferredWidth: metNoRowLayout.textboxWidth
-                    Layout.fillWidth: true
-                    validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
-                    color: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
-                    onTextChanged: {
-                        updateUrl()
-                    }
-                }
-
-                Label {
-                    id: newMetnoCityLongitudeLabel
-                    horizontalAlignment: Text.AlignRight
-                    Layout.preferredWidth: metNoRowLayout.labelWidth
-                    text: ("Longitude")+":"
-                }
-
-                TextField {
-                    validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
-                    Layout.fillWidth: true
-                    Layout.preferredWidth:  metNoRowLayout.textboxWidth
-                    color: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
-                    onTextChanged: {
-                        updateUrl()
-                    }
-                }
-                Label {
-                    id: newMetnoCityAltitudeLabel
-                    horizontalAlignment: Text.AlignRight
-                    Layout.preferredWidth: metNoRowLayout.labelWidth
-                    text: ("Altitude")+":"
-                }
-
-                TextField {
-                    id: newMetnoCityAltitudeField
-                    Layout.fillWidth: true
-                    Layout.preferredWidth:  metNoRowLayout.textboxWidth
-                    validator: IntValidator { bottom: -999; top: 5000 }
-                    color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
-                    onTextChanged: {
-                        updateUrl()
-                    }
-                }
-
-
-
-            }
-            RowLayout {
-                Layout.preferredWidth: metNoRowLayout.width
-                Label {
-                    text: ("Url")+": "
-                    Layout.alignment: Qt.AlignVCenter
-                    horizontalAlignment: Text.AlignRight
-                    Layout.preferredWidth: metNoRowLayout.labelWidth
-                }
-                TextField {
-                    id: newMetnoUrl
-                    placeholderText: ("URL")
-                    Layout.columnSpan: 5
-                    Layout.fillWidth: true
-                    color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
-
-                    function updateFields() {
-                        function localiseFloat(data) {
-                            return Number(data).toLocaleString(Qt.locale(),"f",5)
-                        }
-
-                        var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                        if (data === undefined)
-                            return
-                        if (data.length === 3) {
-                            var newlat = localiseFloat(data[0])
-                            var newlon = localiseFloat(data[1])
-                            var newalt = Number(data[2])
-                            if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
-                                newMetnoCityLatitudeField.text = newlat
-                            }
-                            if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
-                                newMetnoCityLongitudeField.text = newlon
-                            }
-                            if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
-                                //                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
-                                newMetnoCityAltitudeField.text = data[2]
-                                //                             }
-                            }
-                        }
-                        updatenewMetnoCityOKButton()
-                    }
-
-                    onTextChanged: {
-                        updateFields()
-                    }
-
-                    onEditingFinished: {
-                        updateFields()
-                    }
-                }
-            }
-            RowLayout {
-                Layout.fillWidth: true
-                Label {
-                    id: newMetnoCityTimezoneLabel
-                    text: ("Timezone")+":"
-                    Layout.preferredWidth: metNoRowLayout.labelWidth
-                    horizontalAlignment: Text.AlignRight
-                }
-                ComboBox {
-                    id: tzComboBox
-                    model: timezoneDataModel
-                    currentIndex: -1
-                    textRole: "displayName"
-                    Layout.preferredWidth: (metNoRowLayout.labelWidth * 3)
-                    onCurrentIndexChanged: {
-                        if (tzComboBox.currentIndex > 0) {
-                            addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
-                        }
-                        updateUrl()
-                    }
-                }
-            }
-        }
-    }
-
-
-
-}
-
-
-*/
+ * Dialog {
+ *
+ *    id: addMetnoCityIdDialog
+ *    title: i18n("Add Met.no Map Place")
+ *
+ *    property int timezoneID: -1
+ *
+ *    width: 600
+ *
+ *    footer: DialogButtonBox {
+ *        id: buttons
+ *        standardButtons: Dialog.Ok | Dialog.Cancel
+ *    }
+ *
+ *    onOpened: {
+ *        buttons.standardButton(Dialog.Ok).enabled = false;
+ *    }
+ *
+ *    onAccepted: {
+ *        var resultString = newMetnoUrl.text
+ *        if (resultString.length === 0) {
+ *            resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
+ *        }
+ *        if (editEntryNumber === -1) {
+ *            placesModel.append({
+ *                                   providerId: 'metno',
+ *                                   placeIdentifier: resultString,
+ *                                   placeAlias: newMetnoCityAlias.text,
+ *                                   timezoneID: addMetnoCityIdDialog.timezoneID
+ *                               })
+ *        } else {
+ *            placesModel.set(editEntryNumber,{
+ *                                providerId: 'metno',
+ *                                placeIdentifier: resultString,
+ *                                placeAlias: newMetnoCityAlias.text,
+ *                                timezoneID: addMetnoCityIdDialog.timezoneID
+ *                            })
+ *        }
+ *        placesModelChanged()
+ *        close()
+ *    }
+ *
+ *
+ *    Item {
+ *        id: metNoRowLayout
+ *        width: 550
+ *        property int labelWidth: 80
+ *        property int textboxWidth:( metNoRowLayout.width - (3* metNoRowLayout) ) / 3
+ *        Component.onCompleted: {
+ *            dbgprint(metNoRowLayout.colwidth)
+ *        }
+ *        ColumnLayout{
+ *            spacing: 8
+ *            RowLayout {
+ *                Layout.preferredWidth: metNoRowLayout.width
+ *                Label {
+ *                    text: ("Place Identifier")+": "
+ *                    Layout.alignment: Qt.AlignVCenter
+ *                }
+ *                TextField {
+ *                    id: newMetnoCityAlias
+ *                    Layout.alignment: Qt.AlignVCenter
+ *                    placeholderText: ("City alias")
+ *                    onTextChanged: {
+ *                        updateUrl()
+ *                    }
+ *                }
+ *                Item {
+ *                    // spacer item
+ *                    Layout.fillWidth: true
+ *                    Layout.fillHeight: true
+ *                    // Rectangle { anchors.fill: parent; color: "#ffaaaa" } // to visualize the spacer
+ *                }
+ *                Button {
+ *                    text: ("Search")
+ *
+ *                    Layout.alignment: Qt.AlignRight
+ *                    onClicked: {
+ *                        searchWindow.open()
+ *                    }
+ *                }
+ *            }
+ *
+ *            RowLayout {
+ *                Layout.fillWidth: true
+ *                Label {
+ *                    id: newMetnoCityLatitudeLabel
+ *                    text: ("Latitude")+":"
+ *                    Layout.preferredWidth: metNoRowLayout.labelWidth
+ *                    horizontalAlignment: Text.AlignRight
+ *                }
+ *                TextField {
+ *                    id: newMetnoCityLatitudeField
+ *                    Layout.preferredWidth: metNoRowLayout.textboxWidth
+ *                    Layout.fillWidth: true
+ *                    validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
+ *                    color: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
+ *                    onTextChanged: {
+ *                        updateUrl()
+ *                    }
+ *                }
+ *
+ *                Label {
+ *                    id: newMetnoCityLongitudeLabel
+ *                    horizontalAlignment: Text.AlignRight
+ *                    Layout.preferredWidth: metNoRowLayout.labelWidth
+ *                    text: ("Longitude")+":"
+ *                }
+ *
+ *                TextField {
+ *                    validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
+ *                    Layout.fillWidth: true
+ *                    Layout.preferredWidth:  metNoRowLayout.textboxWidth
+ *                    color: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
+ *                    onTextChanged: {
+ *                        updateUrl()
+ *                    }
+ *                }
+ *                Label {
+ *                    id: newMetnoCityAltitudeLabel
+ *                    horizontalAlignment: Text.AlignRight
+ *                    Layout.preferredWidth: metNoRowLayout.labelWidth
+ *                    text: ("Altitude")+":"
+ *                }
+ *
+ *                TextField {
+ *                    id: newMetnoCityAltitudeField
+ *                    Layout.fillWidth: true
+ *                    Layout.preferredWidth:  metNoRowLayout.textboxWidth
+ *                    validator: IntValidator { bottom: -999; top: 5000 }
+ *                    color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+ *                    onTextChanged: {
+ *                        updateUrl()
+ *                    }
+ *                }
+ *
+ *
+ *
+ *            }
+ *            RowLayout {
+ *                Layout.preferredWidth: metNoRowLayout.width
+ *                Label {
+ *                    text: ("Url")+": "
+ *                    Layout.alignment: Qt.AlignVCenter
+ *                    horizontalAlignment: Text.AlignRight
+ *                    Layout.preferredWidth: metNoRowLayout.labelWidth
+ *                }
+ *                TextField {
+ *                    id: newMetnoUrl
+ *                    placeholderText: ("URL")
+ *                    Layout.columnSpan: 5
+ *                    Layout.fillWidth: true
+ *                    color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+ *
+ *                    function updateFields() {
+ *                        function localiseFloat(data) {
+ *                            return Number(data).toLocaleString(Qt.locale(),"f",5)
+ *                        }
+ *
+ *                        var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+ *                        if (data === undefined)
+ *                            return
+ *                        if (data.length === 3) {
+ *                            var newlat = localiseFloat(data[0])
+ *                            var newlon = localiseFloat(data[1])
+ *                            var newalt = Number(data[2])
+ *                            if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
+ *                                newMetnoCityLatitudeField.text = newlat
+ *                            }
+ *                            if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
+ *                                newMetnoCityLongitudeField.text = newlon
+ *                            }
+ *                            if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
+ *                                //                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
+ *                                newMetnoCityAltitudeField.text = data[2]
+ *                                //                             }
+ *                            }
+ *                        }
+ *                        updatenewMetnoCityOKButton()
+ *                    }
+ *
+ *                    onTextChanged: {
+ *                        updateFields()
+ *                    }
+ *
+ *                    onEditingFinished: {
+ *                        updateFields()
+ *                    }
+ *                }
+ *            }
+ *            RowLayout {
+ *                Layout.fillWidth: true
+ *                Label {
+ *                    id: newMetnoCityTimezoneLabel
+ *                    text: ("Timezone")+":"
+ *                    Layout.preferredWidth: metNoRowLayout.labelWidth
+ *                    horizontalAlignment: Text.AlignRight
+ *                }
+ *                ComboBox {
+ *                    id: tzComboBox
+ *                    model: timezoneDataModel
+ *                    currentIndex: -1
+ *                    textRole: "displayName"
+ *                    Layout.preferredWidth: (metNoRowLayout.labelWidth * 3)
+ *                    onCurrentIndexChanged: {
+ *                        if (tzComboBox.currentIndex > 0) {
+ *                            addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
+ *                        }
+ *                        updateUrl()
+ *                    }
+ *                }
+ *            }
+ *        }
+ *    }
+ *
+ *
+ *
+ * }
+ *
+ *
+ */

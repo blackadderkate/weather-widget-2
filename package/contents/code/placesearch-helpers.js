@@ -270,27 +270,31 @@ function getDisplayName(shortCode) {
 }
 function updateListView(filter) {
     filteredCSVData.clear()
-    for (var f = 0; f < myCSVData.rowCount(); f++) {
-        let lc = myCSVData.get(f).locationName.toLowerCase()
-        if (myCSVData.get(f).locationName.toLowerCase().indexOf(filter.toLowerCase()) === 0) {
-            filteredCSVData.append(myCSVData.get(f))
+    for (var f = 0; f < myCSVData.rowCount; f++) {
+        let lc = myCSVData.getRow(f).Location.toLowerCase()
+        if (myCSVData.getRow(f).Location.toLowerCase().indexOf(filter.toLowerCase()) === 0) {
+            filteredCSVData.appendRow(myCSVData.getRow(f))
         }
     }
+    dbgprint("filteredCSVData.rowCount=" + filteredCSVData.rowCount)
 }
 function loadCSVDatabase(countryName) {
+    dbgprint("Entered loadCSVDatabase")
     if (countryName.length === 0) {
         return
     }
     myCSVData.clear()
-    let filename = Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")
+    // let URL = ("http://weatherwidgetqt6.000webhostapp.com/" + getshortCode(countryName) + ".csv") // LIVE ONLY
+    let URL =  Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")   // DEBUGGING ONLY
+    dbgprint("URL = " + URL)
     var xhr = new XMLHttpRequest
-    xhr.open("GET", filename)
+    xhr.open("GET", URL)
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             var response = xhr.responseText
             var tmpDB = response.split(/\r?\n/)
             for (var i = 0; i < tmpDB.length - 1; i++) {
-                myCSVData.append(parseCSVLine(tmpDB[i]))
+                myCSVData.appendRow(parseCSVLine(tmpDB[i]))
             }
             updateListView(locationEdit.text)
         }
@@ -301,15 +305,15 @@ function parseCSVLine(csvLine) {
     function stripquotes(str) {
         return str.replace(/['"]+/g, '')
     }
-
+dbgprint(csvLine)
     var items = csvLine.split(/\t/)
     return ({
-                region: stripquotes((items[0])),
-                locationName: stripquotes(items[1]),
-                latitude: parseFloat(items[2]),
-                longitude: parseFloat(items[3]),
-                altitude: parseInt(items[4]),
+                Area: stripquotes((items[0])),
+                Location: stripquotes(items[1]),
+                Latitude: parseFloat(items[2]),
+                Longitude: parseFloat(items[3]),
+                Altitude: parseInt(items[4]),
                 timezoneId: parseInt(items[5]),
-                timezoneName: TZData.TZData[items[5]].displayName
+                Timezone: TZData.TZData[items[5]].displayName
             })
 }
