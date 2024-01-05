@@ -195,7 +195,7 @@ Item {
         spacing: 2
 
         Label {
-            text: i18n("Plasmoid version:") + ' 2.3.5'
+            text: i18n("Plasmoid version:") + ' 3.0'
             Layout.alignment: Qt.AlignRight
         }
 

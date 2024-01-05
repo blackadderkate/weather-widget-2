@@ -32,7 +32,7 @@
         "ServiceTypes": [
             "Plasma/Applet"
         ],
-        "Version": "2.4",
+        "Version": "3.0a",
         "Website": "https://github.com/blackadderkate/weather-widget-2"
     },
     "X-KDE-ParentApp": "",
