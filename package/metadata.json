@@ -30,5 +30,6 @@
         "Website": "https://github.com/blackadderkate/weather-widget-2"
     },
     "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
     "KPackageStructure": "Plasma/Applet"
 }
