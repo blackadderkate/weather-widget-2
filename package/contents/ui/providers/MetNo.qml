@@ -215,9 +215,11 @@ Item {
             additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunRise,main.timezoneType,main.timezoneOffset).toISOString())
             additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunSet,main.timezoneType,main.timezoneOffset).toISOString())
             sunRiseSetFlag=true
-            dbgprint(urlPrefix + placeIdentifier)
+            var WEATHERURL=urlPrefix + placeIdentifier
+            WEATHERURL=Qt.resolvedUrl('../../code/weather/weather.json')
+            dbgprint(WEATHERURL)
 //            var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
-             var xhr2 = DataLoader.fetchJsonFromInternet('http://192.168.0.8/weather.json', successWeather, failureCallback)
+             var xhr2 = DataLoader.fetchJsonFromInternet(WEATHERURL, successWeather, failureCallback)
         }
 
         function failureCallback() {
@@ -273,10 +275,10 @@ Item {
           }
         }
 
-        dbgprint(TZURL);
-
-//        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-        var xhr1 = DataLoader.fetchJsonFromInternet('http://192.168.0.8/sun.json', successSRAS, failureCallback)
+        TZURL=Qt.resolvedUrl('../../code/weather/sun.json')
+        dbgprint(TZURL)
+        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+//        var xhr1 = DataLoader.fetchJsonFromInternet(Qt.resolvedUrl('../../weather/sun.json'), successSRAS, failureCallback)
         return [xhr1]
     }
     function reloadMeteogramImage(placeIdentifier) {

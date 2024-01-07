@@ -121,6 +121,11 @@ PlasmoidItem {
         id: metnoProvider
     }
 
+    OpenWeatherMap {
+        id: owmProvider
+    }
+
+
     ListModel {
         id: actualWeatherModel
     }

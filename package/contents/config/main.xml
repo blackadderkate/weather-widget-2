@@ -26,7 +26,7 @@
             <default>20</default>
         </entry>
         <entry name="debugLogging" type="Bool">
-            <default>false</default>
+            <default>true</default>
         </entry>
 
         <entry name="xmlCacheJson" type="String">
