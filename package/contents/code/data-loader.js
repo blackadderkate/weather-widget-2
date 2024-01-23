@@ -32,7 +32,11 @@ function getReloadedAgoMs(lastReloaded) {
 }
 
 function getPlasmoidStatus(lastReloaded, inTrayActiveTimeoutSec) {
+    dbgprint2("getPlasmoidStatus")
+    dbgprint("lastReloaded=" + lastReloaded)
+    dbgprint("inTrayActiveTimeoutSec=" + inTrayActiveTimeoutSec)
     var reloadedAgoMs = getReloadedAgoMs(lastReloaded)
+    dbgprint("reloadedAgoMs=" + reloadedAgoMs)
     if (reloadedAgoMs < inTrayActiveTimeoutSec * 1000) {
         return PlasmaCore.Types.ActiveStatus
     } else {
@@ -87,28 +91,40 @@ function fetchXmlFromInternet(getUrl, successCallback, failureCallback) {
 }
 
 function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
+    dbgprint2("fetchJsonFromInternet")
     var xhr = new XMLHttpRequest()
-    xhr.onreadystatechange = function () {
-        dbgprint(xhr.readyState + ' -> ' + XMLHttpRequest.DONE)
-        if (xhr.readyState !== XMLHttpRequest.DONE) {
-            return
-        }
-        dbgprint(xhr.status)
+    xhr.timeout = loadingData.loadingDataTimeoutMs;
+    dbgprint('GET url opening: ' + getUrl)
+    xhr.open('GET', getUrl)
+    xhr.setRequestHeader("User-Agent","Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 ")
+    dbgprint('GET url sending: ' + getUrl)
+    xhr.send()
 
-        if (xhr.status !== 200) {
-            dbgprint('ERROR - status: ' + xhr.status)
-            dbgprint('ERROR - responseText: ' + xhr.responseText)
-            failureCallback()
-            return
-        }
 
-        // success
+    xhr.ontimeout = () => {
+        dbgprint('ERROR - timeout: ' + xhr.status)
+        failureCallback()
+    }
+
+    xhr.onerror = (event) => {
+        dbgprint('ERROR - status: ' + xhr.status)
+        dbgprint('ERROR - responseText: ' + xhr.responseText)
+        failureCallback()
+    }
+
+    xhr.onload =  (event) => {
+        dbgprint('status: ' + xhr.status)
+        // dbgprint('responseText: ' + xhr.responseText)
+    };
+
+    // success
+    xhr.onload = () => {
         dbgprint('successfully loaded from the internet')
         dbgprint('successfully of url-call: ' + getUrl)
-//        dbgprint('responseText: ' + xhr.responseText)
+        dbgprint('responseText: ' + xhr.responseText)
 
         var jsonString = xhr.responseText
-        if (!DataLoader.IsJsonString(jsonString)) {
+        if (!DataLoader.isJsonString(jsonString)) {
             dbgprint('incoming jsonString is not valid: ' + jsonString)
             return
         }
@@ -116,17 +132,11 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
 
         successCallback(jsonString)
     }
-    dbgprint('GET url opening: ' + getUrl)
-    xhr.open('GET', getUrl)
-    xhr.setRequestHeader("User-Agent","Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 ")
-    dbgprint('GET url sending: ' + getUrl)
-    xhr.send()
-
     dbgprint('GET called for url: ' + getUrl)
     return xhr
 }
 
-function IsJsonString(str) {
+function isJsonString(str) {
     try {
         JSON.parse(str)
     } catch (e) {

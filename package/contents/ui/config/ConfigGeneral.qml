@@ -768,7 +768,7 @@ Item {
                     Layout.fillWidth: true
                     Label {
                         id: newMetnoCityLatitudeLabel
-                        text: ("Latitude")+":"
+                        text: i18n("Latitude") + ":"
                         Layout.preferredWidth: metNoRowLayout.labelWidth
                         horizontalAlignment: Text.AlignRight
                     }
@@ -787,7 +787,7 @@ Item {
                         id: newMetnoCityLongitudeLabel
                         horizontalAlignment: Text.AlignRight
                         Layout.preferredWidth: metNoRowLayout.labelWidth
-                        text: ("Longitude")+":"
+                        text: i18n("Longitude") + ":"
                     }
 
                     TextField {
@@ -804,7 +804,7 @@ Item {
                         id: newMetnoCityAltitudeLabel
                         horizontalAlignment: Text.AlignRight
                         Layout.preferredWidth: metNoRowLayout.labelWidth
-                        text: ("Altitude")+":"
+                        text: i18n("Altitude") + ":"
                     }
 
                     TextField {
@@ -817,9 +817,6 @@ Item {
                             updateUrl()
                         }
                     }
-
-
-
                 }
                 RowLayout {
                     Layout.preferredWidth: metNoRowLayout.width
@@ -876,7 +873,7 @@ Item {
                     Layout.fillWidth: true
                     Label {
                         id: newMetnoCityTimezoneLabel
-                        text: ("Timezone")+":"
+                        text: i18n("Timezone") + ":"
                         Layout.preferredWidth: metNoRowLayout.labelWidth
                         horizontalAlignment: Text.AlignRight
                     }
@@ -1391,240 +1388,3 @@ Item {
     }
 
 }
-
-
-
-
-/*
- * MessageDialog {
- *    id: invalidData
- *    title: i18n("Error!")
- *    text: ""
- *    icon: StandardIcon.Critical
- *    informativeText: ""
- *    visible: false
- * }
- *
- */
-/*
- * Dialog {
- *
- *    id: addMetnoCityIdDialog
- *    title: i18n("Add Met.no Map Place")
- *
- *    property int timezoneID: -1
- *
- *    width: 600
- *
- *    footer: DialogButtonBox {
- *        id: buttons
- *        standardButtons: Dialog.Ok | Dialog.Cancel
- *    }
- *
- *    onOpened: {
- *        buttons.standardButton(Dialog.Ok).enabled = false;
- *    }
- *
- *    onAccepted: {
- *        var resultString = newMetnoUrl.text
- *        if (resultString.length === 0) {
- *            resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
- *        }
- *        if (editEntryNumber === -1) {
- *            placesModel.append({
- *                                   providerId: 'metno',
- *                                   placeIdentifier: resultString,
- *                                   placeAlias: newMetnoCityAlias.text,
- *                                   timezoneID: addMetnoCityIdDialog.timezoneID
- *                               })
- *        } else {
- *            placesModel.set(editEntryNumber,{
- *                                providerId: 'metno',
- *                                placeIdentifier: resultString,
- *                                placeAlias: newMetnoCityAlias.text,
- *                                timezoneID: addMetnoCityIdDialog.timezoneID
- *                            })
- *        }
- *        placesModelChanged()
- *        close()
- *    }
- *
- *
- *    Item {
- *        id: metNoRowLayout
- *        width: 550
- *        property int labelWidth: 80
- *        property int textboxWidth:( metNoRowLayout.width - (3* metNoRowLayout) ) / 3
- *        Component.onCompleted: {
- *            dbgprint(metNoRowLayout.colwidth)
- *        }
- *        ColumnLayout{
- *            spacing: 8
- *            RowLayout {
- *                Layout.preferredWidth: metNoRowLayout.width
- *                Label {
- *                    text: ("Place Identifier")+": "
- *                    Layout.alignment: Qt.AlignVCenter
- *                }
- *                TextField {
- *                    id: newMetnoCityAlias
- *                    Layout.alignment: Qt.AlignVCenter
- *                    placeholderText: ("City alias")
- *                    onTextChanged: {
- *                        updateUrl()
- *                    }
- *                }
- *                Item {
- *                    // spacer item
- *                    Layout.fillWidth: true
- *                    Layout.fillHeight: true
- *                    // Rectangle { anchors.fill: parent; color: "#ffaaaa" } // to visualize the spacer
- *                }
- *                Button {
- *                    text: ("Search")
- *
- *                    Layout.alignment: Qt.AlignRight
- *                    onClicked: {
- *                        searchWindow.open()
- *                    }
- *                }
- *            }
- *
- *            RowLayout {
- *                Layout.fillWidth: true
- *                Label {
- *                    id: newMetnoCityLatitudeLabel
- *                    text: ("Latitude")+":"
- *                    Layout.preferredWidth: metNoRowLayout.labelWidth
- *                    horizontalAlignment: Text.AlignRight
- *                }
- *                TextField {
- *                    id: newMetnoCityLatitudeField
- *                    Layout.preferredWidth: metNoRowLayout.textboxWidth
- *                    Layout.fillWidth: true
- *                    validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
- *                    color: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
- *                    onTextChanged: {
- *                        updateUrl()
- *                    }
- *                }
- *
- *                Label {
- *                    id: newMetnoCityLongitudeLabel
- *                    horizontalAlignment: Text.AlignRight
- *                    Layout.preferredWidth: metNoRowLayout.labelWidth
- *                    text: ("Longitude")+":"
- *                }
- *
- *                TextField {
- *                    validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
- *                    Layout.fillWidth: true
- *                    Layout.preferredWidth:  metNoRowLayout.textboxWidth
- *                    color: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
- *                    onTextChanged: {
- *                        updateUrl()
- *                    }
- *                }
- *                Label {
- *                    id: newMetnoCityAltitudeLabel
- *                    horizontalAlignment: Text.AlignRight
- *                    Layout.preferredWidth: metNoRowLayout.labelWidth
- *                    text: ("Altitude")+":"
- *                }
- *
- *                TextField {
- *                    id: newMetnoCityAltitudeField
- *                    Layout.fillWidth: true
- *                    Layout.preferredWidth:  metNoRowLayout.textboxWidth
- *                    validator: IntValidator { bottom: -999; top: 5000 }
- *                    color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
- *                    onTextChanged: {
- *                        updateUrl()
- *                    }
- *                }
- *
- *
- *
- *            }
- *            RowLayout {
- *                Layout.preferredWidth: metNoRowLayout.width
- *                Label {
- *                    text: ("Url")+": "
- *                    Layout.alignment: Qt.AlignVCenter
- *                    horizontalAlignment: Text.AlignRight
- *                    Layout.preferredWidth: metNoRowLayout.labelWidth
- *                }
- *                TextField {
- *                    id: newMetnoUrl
- *                    placeholderText: ("URL")
- *                    Layout.columnSpan: 5
- *                    Layout.fillWidth: true
- *                    color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
- *
- *                    function updateFields() {
- *                        function localiseFloat(data) {
- *                            return Number(data).toLocaleString(Qt.locale(),"f",5)
- *                        }
- *
- *                        var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
- *                        if (data === undefined)
- *                            return
- *                        if (data.length === 3) {
- *                            var newlat = localiseFloat(data[0])
- *                            var newlon = localiseFloat(data[1])
- *                            var newalt = Number(data[2])
- *                            if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
- *                                newMetnoCityLatitudeField.text = newlat
- *                            }
- *                            if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
- *                                newMetnoCityLongitudeField.text = newlon
- *                            }
- *                            if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
- *                                //                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
- *                                newMetnoCityAltitudeField.text = data[2]
- *                                //                             }
- *                            }
- *                        }
- *                        updatenewMetnoCityOKButton()
- *                    }
- *
- *                    onTextChanged: {
- *                        updateFields()
- *                    }
- *
- *                    onEditingFinished: {
- *                        updateFields()
- *                    }
- *                }
- *            }
- *            RowLayout {
- *                Layout.fillWidth: true
- *                Label {
- *                    id: newMetnoCityTimezoneLabel
- *                    text: ("Timezone")+":"
- *                    Layout.preferredWidth: metNoRowLayout.labelWidth
- *                    horizontalAlignment: Text.AlignRight
- *                }
- *                ComboBox {
- *                    id: tzComboBox
- *                    model: timezoneDataModel
- *                    currentIndex: -1
- *                    textRole: "displayName"
- *                    Layout.preferredWidth: (metNoRowLayout.labelWidth * 3)
- *                    onCurrentIndexChanged: {
- *                        if (tzComboBox.currentIndex > 0) {
- *                            addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
- *                        }
- *                        updateUrl()
- *                    }
- *                }
- *            }
- *        }
- *    }
- *
- *
- *
- * }
- *
- *
- */

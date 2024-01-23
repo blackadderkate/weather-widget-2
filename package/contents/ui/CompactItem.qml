@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2015  Martin Kotelnik <clearmartin@seznam.cz>
  *
  * This program is free software; you can redistribute it and/or
@@ -14,12 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Layouts
 import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.core 2.0 as PlasmaCore
 import Qt5Compat.GraphicalEffects
 import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasmoid
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
 
@@ -28,111 +29,107 @@ Item {
 
     anchors.fill: parent
 
-    property bool inTray
-    property int layoutType: inTray ? 2 : main.layoutType
-    property string widgetFontName: main.widgetFontName
-    property string widgetFontSize: main.widgetFontSize
+    property int layoutType: main.layoutType
 
     property double parentWidth: parent.width
     property double parentHeight: parent.height
 
-
-    property double partWidth: 0
-    property double partHeight: 0
-
     property double widgetWidth: 0
-    property double widgetHeight: 0
 
-    onParentWidthChanged: {
-        dbgprint("onParentWidthChanged")
-        computeWidgetSize()
-    }
+    property double fontPixelSize: defaultWidgetSize * (layoutType === 2 ? 0.8 : 0.8)
 
-    onParentHeightChanged: {
-        dbgprint("onParentHeightChanged")
-        computeWidgetSize()
-    }
-
-    onLayoutTypeChanged: {
-        computeWidgetSize()
-    }
-
-    function computeWidgetSize() {
-        if ((parentWidth > 0) && (parentHeight > 0)) {
-            dbgprint("Widget ParentSize = " + parent.width + "x" + parent.height)
-            if (layoutType === 0) {
-                partWidth = vertical ? parentWidth / 2 : parentHeight
-                partHeight = parentHeight
-                widgetWidth = partWidth * 2
-                widgetHeight = partHeight
-            } else if (layoutType === 1) {
-                partWidth = vertical ? parentWidth / 2 : parentWidth / 2
-                partHeight = vertical ? parentWidth  : parentHeight / 2
-                widgetWidth = partWidth
-                widgetHeight = partHeight * 2
-            } else if (layoutType === 2) {
-                partWidth = vertical ? parentWidth : parentHeight
-                partHeight = partWidth
-                widgetWidth = partWidth
-                widgetHeight = partHeight
-            }
-            dbgprint("Individual WidgetSize  = " + partWidth + "x" + partHeight)
-            dbgprint("Combined WidgetSize = " + widgetWidth + "x" + widgetHeight)
-            compactRepresentation.Layout.preferredHeight = widgetHeight
-            compactRepresentation.Layout.preferredWidth = widgetWidth
-            compactRepresentation.Layout.maximumWidth - widgetWidth
-        }
-    }
-
-
-
-    property double fontPixelSize: partHeight * (layoutType === 2 ? 0.7 : 0.7)
-
-    property string iconNameStr:    actualWeatherModel.count > 0 ? IconTools.getIconCode(actualWeatherModel.get(0).iconName, currentProvider.providerId, getPartOfDayIndex()) : ''
-    property string temperatureStr: actualWeatherModel.count > 0 ? UnitUtils.getTemperatureNumberExt(actualWeatherModel.get(0).temperature, temperatureType) : ''
+    property string iconNameStr: main.iconNameStr.length > 0 ? main.iconNameStr : "\uf07b"
+    property string temperatureStr: main.temperatureStr.length > 0 ? main.temperatureStr : "--"
 
     PlasmaComponents.Label {
+        id: compactWeatherIcon
+
+        width: {
+            switch (layoutType) {
+            case 0:
+                return widgetSize / 2
+                break
+            case 1:
+                return widgetSize
+                break
+            case 2:
+                return widgetSize * 0.8
+                break
+
+            }
+        }
+
+        height: {
+            switch (layoutType) {
+            case 0:
+                return defaultWidgetSize
+                break
+            case 1:
+                return defaultWidgetSize / 2
+                break
+            case 2:
+                return defaultWidgetSize * 0.8
+                break
+
+            }
+        }
 
         anchors.left: parent.left
-        anchors.leftMargin: layoutType === 0 ? partWidth : 0
+        anchors.leftMargin: layoutType === 2 ? widgetSize * .1 : layoutType === 1 ? 0 : widgetSize / 2
         anchors.top: parent.top
-        anchors.topMargin: layoutType === 1 ? partHeight : 0
-
-        width: partWidth
-        height: partHeight
-
-        horizontalAlignment: layoutType === 2 ? Text.AlignLeft : Text.AlignHCenter
+        anchors.topMargin: layoutType === 1 ? defaultWidgetSize / 2 : layoutType === 2 ? widgetSize * .2 : 0
+        anchors.fill: parent
+        horizontalAlignment: layoutType === 2 ? Text.AlignRight : Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        fontSizeMode: ((layoutType === 2) || (layoutType===0 && main.vertical)) ? Text.Fit : Text.FixedSize
-
+        fontSizeMode: Text.FixedSize
         font.family: 'weathericons'
         text: iconNameStr
-
         opacity: layoutType === 2 ? 0.8 : 1
-
         font.pixelSize: fontPixelSize
         font.pointSize: -1
+
     }
 
     PlasmaComponents.Label {
         id: temperatureText
 
-        anchors.left: parent.left
-        anchors.leftMargin: layoutType === 2 ? partWidth * 0.25 : 0
-        anchors.top: parent.top
-        anchors.topMargin: 0
-        width: layoutType === 2 ? partWidth * 0.75 : partWidth
-        height: partHeight
+        width: {
+            switch (layoutType) {
+            case 0:
+                return widgetSize / 2
+                break
+            case 1:
+                return widgetSize
+                break
+            case 2:
+                return widgetSize
+                break
 
-        horizontalAlignment: layoutType === 1 ? Text.AlignHCenter : Text.AlignRight
-        verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
+            }
+        }
+
+        height: {
+            switch (layoutType) {
+            case 0:
+                return defaultWidgetSize
+                break
+            case 1:
+                return defaultWidgetSize / 2
+                break
+            case 2:
+                return defaultWidgetSize
+                break
+
+            }
+        }
+
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        fontSizeMode: layoutType === 1 ? Text.HorizontalFit : Text.VerticalFit
 
         text: temperatureStr
-
-        font.family: plasmoid.configuration.widgetFontName === "" ? (Kirigami.Theme.defaultFont) : plasmoid.configuration.widgetFontName
-        font.pixelSize: layoutType === 2 ? widgetFontSize * 0.7 : widgetFontSize
+        font.pixelSize: fontPixelSize
         font.pointSize: -1
-        fontSizeMode: ((! vertical) && (layoutType === 1)) ? Text.VerticalFit : Text.HorizontalFit
     }
 
     DropShadow {
@@ -151,23 +148,25 @@ Item {
         anchors.fill: parent
         visible: false
         running: false
+
+        states: [
+            State {
+                name: 'loading'
+                when: !loadingDataComplete
+
+                PropertyChanges {
+                    target: busyIndicator
+                    visible: true
+                    running: true
+                }
+
+                PropertyChanges {
+                    target: compactItem
+                    opacity: 0.5
+                }
+            }
+        ]
     }
-
-    states: [
-        State {
-            name: 'loading'
-            when: loadingData
-
-            PropertyChanges {
-                target: busyIndicator
-                visible: true
-                running: true
-            }
-
-            PropertyChanges {
-                target: compactItem
-                opacity: 0.5
-            }
-        }
-    ]
 }
+
+

@@ -192,6 +192,8 @@ var WeatherFont = {
 }
 
 function getIconCode(iconName, providerId, partOfDay) {
+    // dbgprint2("getIconCode")
+    // dbgprint("iconName:" + iconName + "\tproviderId:" + providerId + "\tpartOfDay:" + partOfDay)
     var iconCodeParts = null
     if (providerId === 'yrno') {
         iconCodeParts = WeatherFont.iconNameByYrNoCode[iconName]

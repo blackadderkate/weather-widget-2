@@ -2,6 +2,7 @@ import QtQuick 2.2
 import QtQuick.Controls
 import QtQuick.Controls 2.15 as QC215
 import QtQuick.Layouts 1.1
+import org.kde.kirigami as Kirigami
 
 Item {
 
@@ -14,13 +15,13 @@ Item {
     onCfg_layoutTypeChanged: {
         switch (cfg_layoutType) {
         case 0:
-            layoutTypeGroup.current = layoutTypeRadioHorizontal;
+            layoutTypeGroup.checkedButton = layoutTypeRadioHorizontal;
             break;
         case 1:
-            layoutTypeGroup.current = layoutTypeRadioVertical;
+            layoutTypeGroup.checkedButton = layoutTypeRadioVertical;
             break;
         case 2:
-            layoutTypeGroup.current = layoutTypeRadioCompact;
+            layoutTypeGroup.checkedButton = layoutTypeRadioCompact;
             break;
         default:
         }
@@ -36,7 +37,7 @@ Item {
             var foundIndex = 0
             for (var i = 0, j = fonts.length; i < j; ++i) {
                 if (fonts[i] === cfg_widgetFontName) {
-                  foundIndex = i
+                    foundIndex = i
                 }
                 arr.push({text: fonts[i], value: fonts[i]})
             }
@@ -124,15 +125,18 @@ Item {
             id: timeoutLabel
             text: i18n("Active timeout:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+            height: inTrayActiveTimeoutSec.height
+            // anchors.verticalCenter: inTrayActiveTimeoutSec.verticalCenter
         }
-Item {
-        SpinBox {
+        Item {
+            SpinBox {
                 id: inTrayActiveTimeoutSec
                 Layout.alignment: Qt.AlignVCenter
                 stepSize: 10
                 from: 10
                 to: 8000
-//            suffix: i18nc("Abbreviation for seconds", "sec")
+                anchors.verticalCenter: parent.verticalCenter
+                //            suffix: i18nc("Abbreviation for seconds", "sec")
             }
             Label {
                 text: i18nc("Abbreviation for seconds", "sec")
@@ -140,7 +144,7 @@ Item {
                 anchors.left:inTrayActiveTimeoutSec.right
                 anchors.leftMargin: 4
             }
-}
+        }
         Label {
             text: i18n("NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings.")
             Layout.rowSpan: 3
@@ -149,7 +153,7 @@ Item {
         }
 
 
-Item {
+        Item {
             width: 2
             height: 20
             Layout.columnSpan: 3
@@ -163,7 +167,7 @@ Item {
             id: fontFamilyComboBox
             Layout.fillWidth: true
             currentIndex: 0
-            Layout.minimumWidth: units.gridUnit * 10
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
             model: fontsModel
             textRole: "text"
 
@@ -188,24 +192,24 @@ Item {
 
         }
         Item {
-        SpinBox {
-            id: widgetFontSize
-            Layout.alignment: Qt.AlignVCenter
-            anchors.verticalCenter: parent.verticalCenter
-            // decimals: 0
-            stepSize: 1
-            from: 4
-            value: cfg_widgetFontSize
-            to: 512
-            onValueChanged: {
-                cfg_widgetFontSize = widgetFontSize.value
+            SpinBox {
+                id: widgetFontSize
+                Layout.alignment: Qt.AlignVCenter
+                anchors.verticalCenter: parent.verticalCenter
+                // decimals: 0
+                stepSize: 1
+                from: 4
+                value: cfg_widgetFontSize
+                to: 512
+                onValueChanged: {
+                    cfg_widgetFontSize = widgetFontSize.value
+                }
             }
-         }
-        Label {
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.left:widgetFontSize.right
-            text: i18nc("pixels", "px")
-        }
+            Label {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left:widgetFontSize.right
+                text: i18nc("pixels", "px")
+            }
         }
     }
 }

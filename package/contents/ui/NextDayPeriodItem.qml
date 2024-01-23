@@ -23,7 +23,6 @@ Item {
     property string temperature
     property string iconName
     property bool hidden
-    property bool past
     property int partOfDay
     property double pixelFontSize
     
@@ -34,8 +33,29 @@ Item {
         }
     }
     
-    opacity: past ? 0.5 : 1
-    
+
+
+
+    Text {
+        id: temperatureText
+        font.pixelSize: defaultFontPixelSize
+        text: UnitUtils.getTemperatureNumberExt(temperature, temperatureType)
+        // Math.round(temperature) + '[]' + temperatureType
+        visible: ! hidden
+        width: dayTitleLine.width / 2
+        horizontalAlignment: Text.AlignRight
+    }
+    Text {
+        anchors.left: temperatureText.right
+        id: temperatureIcon
+        font.family: 'weathericons'
+        font.pixelSize: defaultFontPixelSize
+        text: (iconName > 0) ? IconTools.getIconCode(iconName, currentPlace.providerId, partOfDay) : '\uf07b'
+        visible: ! hidden
+        width: dayTitleLine.width / 2
+        horizontalAlignment: Text.AlignHCenter
+    }
+    /*
     Item {
         id: temperatureTextItem
         width: parent.width / 2
@@ -70,8 +90,9 @@ Item {
             anchors.centerIn: parent
             
             font.family: 'weathericons'
-            text: hidden ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, partOfDay)
+            text: hidden ? '' : IconTools.getIconCode(iconName, currentPlace.providerId, partOfDay)
         }
     }
+    */
     
 }

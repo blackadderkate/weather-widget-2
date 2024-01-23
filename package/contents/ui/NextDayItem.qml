@@ -17,6 +17,7 @@
 import QtQuick 2.15
 import QtQuick.Window
 import QtQuick.Layouts
+import QtQuick.Shapes 1.6
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import Qt5Compat.GraphicalEffects
 import org.kde.kirigami as Kirigami
@@ -59,11 +60,11 @@ Item {
 
 
 
-    /*
-     *
-     * four item data
-     *
-     */
+/*
+ *
+ * four item data
+ *
+*/
     GridLayout {
         anchors.fill: parent
         anchors.topMargin: periodFontSize
@@ -80,7 +81,6 @@ Item {
             temperature: temperature0
             iconName: (iconName0 != undefined) ? iconName0 : ""
             hidden: hidden0
-            past: isPast0
             partOfDay: 1
             pixelFontSize: periodFontSize
         }
@@ -91,7 +91,6 @@ Item {
             temperature: temperature1
             iconName: (iconName1 != undefined) ? iconName1 : ""
             hidden: hidden1
-            past: isPast1
             partOfDay: 0
             pixelFontSize: periodFontSize
         }
@@ -102,7 +101,6 @@ Item {
             temperature: temperature2
             iconName: (iconName2 != undefined) ? iconName2 : ""
             hidden: hidden2
-            past: isPast2
             partOfDay: 0
             pixelFontSize: periodFontSize
         }
@@ -113,10 +111,8 @@ Item {
             temperature: temperature3
             iconName: (iconName3 != undefined) ? iconName3 : ""
             hidden: hidden3
-            past: isPast3
             partOfDay: 1
             pixelFontSize: periodFontSize
         }
     }
-
 }

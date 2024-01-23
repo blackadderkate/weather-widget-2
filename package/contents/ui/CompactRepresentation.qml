@@ -14,10 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.15
+import QtQuick
 import org.kde.plasma.components 3.0 as PlasmaComponents
-import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.core 2.0 as PlasmaCore
 import QtQuick.Layouts
+import org.kde.plasma.plasmoid
 import Qt5Compat.GraphicalEffects
 import org.kde.kirigami as Kirigami
 
@@ -26,28 +27,27 @@ Item {
     id: compactRepresentation
 
     anchors.fill: parent
-    property double partHeight: compactItem.widgetHeight
+
+    readonly property int defaultWidgetSize: Math.min(compactRepresentation.width,compactRepresentation.height)
+    property int widgetSize: Math.max(compactRepresentation.width,compactRepresentation.height)
 
     CompactItem {
         id: compactItem
-        inTray: false
     }
 
+    Layout.preferredWidth: ((layoutType === 0)) ? defaultWidgetSize * 2 : defaultWidgetSize
 
     PlasmaComponents.Label {
         id: lastReloadedNotifier
 
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: - partHeight * 0.05
+        anchors.bottomMargin: - defaultWidgetSize * 0.05
         verticalAlignment: Text.AlignBottom
         width: parent.width
         fontSizeMode: Text.Fit
-
-        font.pixelSize: partHeight * 0.26 * (layoutType === 0 ? 1 : 0.7)
         font.pointSize: -1
         color: Kirigami.Theme.highlightColor
-
         text: lastReloadedText
         wrapMode: Text.WordWrap
         visible: false
@@ -81,21 +81,22 @@ Item {
         }
 
         onClicked: (mouse)=> {
-            if (mouse.button == Qt.MiddleButton) {
-                main.reloadData()
-            } else {
-                main.expanded = !main.expanded
-                lastReloadedNotifier.visible = !main.expanded
-            }
-        }
+                       if (mouse.button === Qt.MiddleButton) {
+                           loadingData.failedAttemptCount = 0
+                           main.loadDataFromInternet()
+                       } else {
+                           main.expanded = !main.expanded
+                           lastReloadedNotifier.visible = !main.expanded
+                       }
+                   }
 
         PlasmaCore.ToolTipArea {
             id: toolTipArea
             anchors.fill: parent
             active: !plasmoid.expanded
             interactive: true
-            mainText: placeAlias
-            subText: tooltipSubText
+            mainText: main.currentPlace.alias
+            subText:  main.toolTipSubText
             textFormat: Text.RichText
             icon: Qt.resolvedUrl('../images/weather-widget.svg')
         }

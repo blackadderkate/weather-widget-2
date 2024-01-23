@@ -12,13 +12,13 @@ Item {
     onCfg_temperatureTypeChanged: {
         switch (cfg_temperatureType) {
         case 0:
-            temperatureTypeGroup.current = temperatureTypeRadioCelsius;
+            temperatureTypeGroup.checkedButton = temperatureTypeRadioCelsius;
             break;
         case 1:
-            temperatureTypeGroup.current = temperatureTypeRadioFahrenheit;
+            temperatureTypeGroup.checkedButton = temperatureTypeRadioFahrenheit;
             break;
         case 2:
-            temperatureTypeGroup.current = temperatureTypeRadioKelvin;
+            temperatureTypeGroup.checkedButton = temperatureTypeRadioKelvin;
             break;
         default:
         }
@@ -27,28 +27,29 @@ Item {
     onCfg_pressureTypeChanged: {
         switch (cfg_pressureType) {
         case 0:
-            pressureTypeGroup.current = pressureTypeRadioHpa;
+            pressureTypeGroup.checkedButton = pressureTypeRadioHpa;
             break;
         case 1:
-            pressureTypeGroup.current = pressureTypeRadioInhg;
+            pressureTypeGroup.checkedButton = pressureTypeRadioInhg;
             break;
         case 2:
-            pressureTypeGroup.current = pressureTypeRadioMmhg;
+            pressureTypeGroup.checkedButton = pressureTypeRadioMmhg;
             break;
         default:
         }
     }
 
     onCfg_windSpeedTypeChanged: {
+        console.log(cfg_windSpeedType)
         switch (cfg_windSpeedType) {
         case 0:
-            windSpeedTypeGroup.current = windSpeedTypeRadioMps;
+            windSpeedTypeGroup.checkedButton = windSpeedTypeRadioMps;
             break;
         case 1:
-            windSpeedTypeGroup.current = windSpeedTypeRadioMph;
+            windSpeedTypeGroup.checkedButton = windSpeedTypeRadioMph;
             break;
         case 2:
-            windSpeedTypeGroup.current = windSpeedTypeRadioKmh;
+            windSpeedTypeGroup.checkedButton = windSpeedTypeRadioKmh;
             break;
         default:
         }
@@ -57,13 +58,13 @@ Item {
     onCfg_timezoneTypeChanged: {
         switch (cfg_timezoneType) {
         case 0:
-            timezoneTypeGroup.current = timezoneTypeRadioUserLocalTime;
+            timezoneTypeGroup.checkedButton = timezoneTypeRadioUserLocalTime;
             break;
         case 1:
-            timezoneTypeGroup.current = timezoneTypeRadioUtc;
+            timezoneTypeGroup.checkedButton = timezoneTypeRadioUtc;
             break;
         case 2:
-            timezoneTypeGroup.current = timezoneTypeRadioLocationLocal;
+            timezoneTypeGroup.checkedButton = timezoneTypeRadioLocationLocal;
             break;
         default:
         }

@@ -40,8 +40,6 @@ Item {
     implicitWidth: imageWidth
     implicitHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
 
-
-
     PlasmaComponents.Label {
         id: currentLocationText
 
@@ -50,25 +48,31 @@ Item {
         verticalAlignment: Text.AlignTop
 
         text: {
-            var t = main.placeAlias
-            switch (timezoneType) {
-                case 0:
-                    t += " (" + getLocalTimeZone()+ ")"
-                    break
-                case 1:
-                    t += " (" + i18n("UTC") + ")"
-                    break
-                case 2:
-                    if (main.timezoneShortName === "") {
-                        main.timezoneShortName = "unknown"
-                    }
-                    t += " (" +  main.timezoneShortName + ")"
-                    break
-                default:
-                    t += " (" + "TBA" + ")"
-                    break
+            var t = main.fullRepresentationAlias
+            switch (main.timezoneType) {
+            case 0:
+                t += " (" + getLocalTimeZone()+ ")"
+                break
+            case 1:
+                t += " (" + i18n("UTC") + ")"
+                break
+            case 2:
+                if (main.currentPlace.timezoneShortName === "") {
+                    main.currentPlace.timezoneShortName = "unknown"
+                }
+                t += " (" +  main.currentPlace.timezoneShortName + ")"
+                break
+            default:
+                t += " (" + "TBA" + ")"
+                break
             }
             return t
+        }
+        Component.onCompleted: {
+            dbgprint2("FullRepresentation")
+            dbgprint((main.currentPlace.alias))
+            dbgprint2(currentLocationText.text)
+            nextDaysCount = nextDaysModel.count
         }
     }
 
@@ -78,7 +82,7 @@ Item {
         anchors.right: parent.right
         anchors.top: parent.top
         verticalAlignment: Text.AlignTop
-        visible: !onlyOnePlace
+        visible: (placesCount > 1)
         color: Kirigami.Theme.textColor
         text: i18n("Next Location") + " >>"
     }
@@ -110,7 +114,7 @@ Item {
         anchors.top: nextLocationText.top
         anchors.rightMargin: 15
         verticalAlignment: Text.AlignTop
-        visible: !onlyOnePlace
+        visible: (placesCount > 1)
         color: Kirigami.Theme.textColor
         text: "<< " + i18n("Previous Location")
     }

@@ -29,249 +29,199 @@ import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
 
 
-
 PlasmoidItem {
     id: main
 
-    toolTipSubText: ''
-    toolTipMainText:''
-// toolTipItem.enabled = false
-
-    property string toolTipArea
-    property string placeIdentifier
-    property string placeAlias
-    property string cacheKey
-    property int timezoneID
-    property string timezoneShortName
-    property int timezoneOffset
-    property var cacheMap: {}
-    property bool renderMeteogram: plasmoid.configuration.renderMeteogram
-    property int temperatureType: plasmoid.configuration.temperatureType
-    property int pressureType: plasmoid.configuration.pressureType
-    property int windSpeedType: plasmoid.configuration.windSpeedType
-    property int timezoneType: plasmoid.configuration.timezoneType
-    property string widgetFontName: plasmoid.configuration.widgetFontName
-    property int widgetFontSize: plasmoid.configuration.widgetFontSize
-
-    property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
-    property string placesJsonStr: plasmoid.configuration.places
-    property bool onlyOnePlace: true
-
-    property string datetimeFormat: 'yyyy-MM-dd\'T\'hh:mm:ss'
-    property var xmlLocale: Qt.locale('en_GB')
-    property var additionalWeatherInfo: {}
-
-    property string overviewImageSource
-    property string creditLink
-    property string creditLabel
-
-    property int reloadIntervalMin: plasmoid.configuration.reloadIntervalMin   // Download Attempt Frequency in minutes
-    property int reloadIntervalMs: reloadIntervalMin * 60 * 1000               // Download Attempt Frequency in milliseconds
-
-
-    property double lastloadingStartTime: 0       // Time download last attempted.
-    property double lastloadingSuccessTime: 0     // Time download last successful.
-    property double nextReload: 0                 // Time next download is due.
-
-    property bool loadingData: false              // Download Attempt in progress Flag.
-    property int loadingDataTimeoutMs: 15000      // Download Timeout in ms.
-    property var loadingXhrs: []                  // Array of Download Attempt Objects
-    property bool loadingError: false             // Whether the last Download Attempt was successful
-    property bool imageLoadingError: true
-    property bool alreadyLoadedFromCache: false
-
-    property string lastReloadedText: '⬇ 0m ago'
-    property string tooltipSubText: ''
-
-
-    property bool vertical: (plasmoid.formFactor == PlasmaCore.Types.Vertical)
-    property bool onDesktop: (plasmoid.location == PlasmaCore.Types.Desktop || plasmoid.location == PlasmaCore.Types.Floating)
-    property bool inTray: false
-    property string plasmoidCacheId: plasmoid.id
-
-    property int inTrayActiveTimeoutSec: plasmoid.configuration.inTrayActiveTimeoutSec
-
-    property int nextDaysCount: 8
-
-    property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
-
-    // 0 - standard
-    // 1 - vertical
-    // 2 - compact
-    property int layoutType: plasmoid.configuration.layoutType
-
-    property var currentProvider: null
-
-    property bool updatingPaused: true
-    property bool meteogramModelChanged: false
-
-    anchors.fill: parent
-
-    fullRepresentation: FullRepresentation {  }
-    compactRepresentation: CompactRepresentation {  }
-    preferredRepresentation: compactRepresentation
-
-    property bool debugLogging: plasmoid.configuration.debugLogging
-
-    FontLoader {
-        source: '../fonts/weathericons-regular-webfont-2.0.10.ttf'
-    }
-
-    MetNo {
-        id: metnoProvider
-    }
-
-    OpenWeatherMap {
-        id: owmProvider
-    }
-
-
-    ListModel {
-        id: actualWeatherModel
-    }
-
-    ListModel {
-        id: nextDaysModel
-    }
-
-    ListModel {
-        id: meteogramModel
-    }
-
-    function action_toggleUpdatingPaused() {
-        // updatingPaused = !updatingPaused
-        // abortTooLongConnection(true)
-        // Plasmoid.setAction('toggleUpdatingPaused', updatingPaused ? i18n("Resume Updating") : i18n("Pause Updating"), updatingPaused ? 'media-playback-start' : 'media-playback-pause');
-    }
-
+    /* Includes */
     WeatherCache {
         id: weatherCache
-        cacheId: plasmoidCacheId
+        cacheId: cacheData.plasmoidCacheId
     }
-
     Plasma5Support.DataSource {
         id: dataSource
         engine: "time"
         connectedSources: ["Local"]
         interval: 0
     }
+    FontLoader {
+        source: "../fonts/weathericons-regular-webfont-2.0.10.ttf"
+    }
+    MetNo {
+        id: metnoProvider
+    }
+    OpenWeatherMap {
+        id: owmProvider
+    }
+    property bool loadingDataComplete: false
 
-    Component.onCompleted: {
-        if (plasmoid.configuration.firstRun) {
-            if (plasmoid.configuration.widgetFontSize === undefined) {
-                plasmoid.configuration.widgetFontSize = 32
-                widgetFontSize = 32
-            }
-            switch (Qt.locale().measurementSystem) {
-                case (Locale.MetricSystem):
-                    plasmoid.configuration.temperatureType = 0
-                    plasmoid.configuration.pressureType = 0
-                    plasmoid.configuration.windSpeedType = 2
-                    break;
-                case (Locale.ImperialUSSystem):
-                    plasmoid.configuration.temperatureType = 1
-                    plasmoid.configuration.pressureType = 1
-                    plasmoid.configuration.windSpeedType = 1
-                    break;
-                case (Locale.ImperialUKSystem):
-                    plasmoid.configuration.temperatureType = 0
-                    plasmoid.configuration.pressureType = 0
-                    plasmoid.configuration.windSpeedType = 1
-                    break;
-            }
-            plasmoid.configuration.firstRun = false
+    /* GUI layout stuff */
+    compactRepresentation: CompactRepresentation {  }
+    preferredRepresentation: compactRepresentation
+
+    property bool vertical: (plasmoid.formFactor === PlasmaCore.Types.Vertical)
+    property bool onDesktop: (plasmoid.location === PlasmaCore.Types.Desktop || plasmoid.location === PlasmaCore.Types.Floating)
+
+
+    toolTipTextFormat: Text.RichText
+
+    // User Preferences
+    property int layoutType: plasmoid.configuration.layoutType
+    property bool debugLogging: plasmoid.configuration.debugLogging
+    property int inTrayActiveTimeoutSec: plasmoid.configuration.inTrayActiveTimeoutSec
+    property string widgetFontName: plasmoid.configuration.widgetFontName
+    property int widgetFontSize: plasmoid.configuration.widgetFontSize
+    property int temperatureType: plasmoid.configuration.temperatureType
+    property int timezoneType: plasmoid.configuration.timezoneType
+    property int pressureType: plasmoid.configuration.pressureType
+    property int windSpeedType: plasmoid.configuration.windSpeedType
+    property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
+
+
+    // Cache, Last Load Time, Widget Status
+    property string fullRepresentationAlias
+    property string iconNameStr
+    property string temperatureStr
+    property string creditLink
+    property string creditLabel
+    property bool meteogramModelChanged: false
+    property int nextDaysCount
+
+    property var loadingData: ({
+                                   loadingDatainProgress: false,            // Download Attempt in progress Flag.
+                                   loadingDataTimeoutMs: 15000,             // Download Timeout in ms.
+                                   loadingXhrs: [],                         // Array of Download Attempt Objects
+                                   loadingError: false,                     // Whether the last Download Attempt was successful
+                                   lastloadingStartTime: 0,                 // Time download last attempted.
+                                   lastloadingSuccessTime: 0,               // Time download last successful.
+                                   failedAttemptCount: 0
+                               })
+    property string lastReloadedText: "⬇ " + i18n("%1 ago", "?? m")
+
+    property var cacheData: ({
+                                 plasmoidCacheId: plasmoid.id,
+                                 cacheKey: "",
+                                 cacheMap: ({})
+                             })
+
+    // Current Place Data
+    property var currentPlace: ({
+                                    alias: "",
+                                    identifier: "",
+                                    provider: "",
+                                    providerId:"",
+                                    timezoneID: 0,
+                                    timezoneShortName: "",
+                                    timezoneOffset: 0,
+                                    creditLink: "",
+                                    creditLabel: "",
+                                    cacheID: "",
+                                    nextReload: 0
+                                })
+
+    property int placesCount
+
+    property var timerData: ({
+                                 reloadIntervalMin: 0 ,   // Download Attempt Frequency in minutes
+                                 reloadIntervalMs: 0,               // Download Attempt Frequency in milliseconds
+                                 nextReload: 0                 // Time next download is due.
+                             })
+
+
+
+    property bool useOnlineWeatherData: true
+
+
+    /* Data Models */
+    property var currentWeatherModel
+    ListModel {
+        id: nextDaysModel
+    }
+    ListModel {
+        id: meteogramModel
+    }
+
+
+
+    fullRepresentation: FullRepresentation { }
+    onLoadingDataCompleteChanged: {
+        dbgprint2("loadingDataComplete:" + loadingDataComplete)
+    }
+
+
+
+    function dbgprint(msg) {
+        if (!debugLogging) {
+            return
         }
-        dbgprint(plasmoid.formFactor)
-        dbgprint(plasmoid.location)
-        // inTray = (plasmoid.parent !== null && (plasmoid.parent.pluginName === 'org.kde.plasma.private.systemtray' || plasmoid.parent.objectName === 'taskItemContainer'))
-        // plasmoidCacheId = inTray ? plasmoid.parent.id : plasmoid.id
-        // dbgprint('inTray=' + inTray + ', plasmoidCacheId=' + plasmoidCacheId)
 
-        additionalWeatherInfo = {
-            sunRise: new Date('2000-01-01T00:00:00'),
-            sunSet: new Date('2000-01-01T00:00:00'),
-            sunRiseTime: '0:00',
-            sunSetTime: '0:00',
+        print("[kate weatherWidget] " + msg)
+    }
+    function dbgprint2(msg) {
+        if (!debugLogging) {
+            return
+        }
+        console.log("\n\n")
+        console.log("*".repeat(msg.length + 4))
+        console.log("* " + msg +" *")
+        console.log("*".repeat(msg.length + 4))
+    }
+
+    function getLocalTimeZone() {
+        return dataSource.data["Local"]["Timezone Abbreviation"]
+    }
+    function dateNow() {
+        var now=new Date().getTime()
+        return now
+    }
+    function isDay(sunrise,sunset) {
+        dbgprint2("isDay")
+        var now = new Date().getTime()
+        return ((now > sunrise) && (now < sunset)) ? 0 : 1
+    }
+
+    function setCurrentProviderAccordingId(providerId) {
+        currentPlace.providerId=providerId
+        if (providerId === "owm") {
+            dbgprint("setting provider OpenWeatherMap")
+            currentPlace.provider = owmProvider
+        }
+        if (providerId === "metno") {
+            dbgprint("setting provider metno")
+            currentPlace.provider = metnoProvider
+        }
+    }
+    function emptyWeatherModel() {
+        return {
+            temperature: -9999,
+            iconName: 0,
+            windDirection: 0,
+            windSpeedMps: 0,
+            pressureHpa: 0,
+            humidity: 0,
+            cloudiness: 0,
+            sunRise: new Date("2000-01-01T00:00:00"),
+            sunSet: new Date("2000-01-01T00:00:00"),
+            sunRiseTime: "0:00",
+            sunSetTime: "0:00",
             nearFutureWeather: {
                 iconName: null,
                 temperature: null
             }
         }
-
-        // systray settings
-        if (inTray) {
-            Plasmoid.compactRepresentation = crInTray
-            Plasmoid.fullRepresentation = frInTray
-        }
-
-
-        action_toggleUpdatingPaused()
-        // init contextMenu
-
-        var cacheContent = weatherCache.readCache()
-
-        // fill xml cache xml
-        if (cacheContent) {
-            try {
-                cacheMap = JSON.parse(cacheContent)
-                dbgprint('cacheMap initialized - keys:')
-                for (var key in cacheMap) {
-                    dbgprint('  ' + key + ', data: ' + cacheMap[key])
-                }
-            } catch (error) {
-                dbgprint('error parsing cacheContent')
-            }
-        }
-        cacheMap = cacheMap || {}
-
-        // set initial place
-       setNextPlace(true)
     }
-
-    onTimezoneShortNameChanged: {
-        refreshTooltipSubText()
-    }
-
-    onPlacesJsonStrChanged: {
-        if (placesJsonStr === '') {
-            return
-        }
-        onlyOnePlace = ConfigUtils.getPlacesArray().length === 1
-        setNextPlace(true)
-    }
-
-    function showData() {
-        var ok = loadFromCache()
-        if (!ok) {
-            reloadData()
-        }
-        updateLastReloadedText()
-        reloadMeteogram()
-    }
-
-    function setCurrentProviderAccordingId(providerId) {
-        if (providerId === 'owm') {
-            dbgprint('setting provider OpenWeatherMap')
-            currentProvider = owmProvider
-        }
-        if (providerId === "metno") {
-            dbgprint('setting provider metno')
-            currentProvider = metnoProvider
-        }
-    }
-
     function setNextPlace(initial,direction) {
-        actualWeatherModel.clear()
-        nextDaysModel.clear()
-        meteogramModel.clear()
         if (direction === undefined) {
             direction = "+"
         }
+        currentWeatherModel=emptyWeatherModel()
+        nextDaysModel.clear()
+        meteogramModel.clear()
+
 
         var places = ConfigUtils.getPlacesArray()
-        onlyOnePlace = places.length === 1
-        dbgprint('places count=' + places.length + ', placeIndex=' + plasmoid.configuration.placeIndex)
+        placesCount = places.length
         var placeIndex = plasmoid.configuration.placeIndex
+        dbgprint("places count=" + placesCount + ", placeIndex=" + plasmoid.configuration.placeIndex)
         if (!initial) {
             (direction === "+") ? placeIndex++ :placeIndex--
         }
@@ -282,151 +232,145 @@ PlasmoidItem {
             placeIndex = places.length - 1
         }
         plasmoid.configuration.placeIndex = placeIndex
-        dbgprint('placeIndex now: ' + plasmoid.configuration.placeIndex)
+        dbgprint("placeIndex now: " + plasmoid.configuration.placeIndex)
         var placeObject = places[placeIndex]
-        placeIdentifier = placeObject.placeIdentifier
-        placeAlias = placeObject.placeAlias
-        if (placeObject.timezoneID  === undefined ) {
-            placeObject.timezoneID = -1
-        }
-        timezoneID = parseInt(placeObject.timezoneID)
-        dbgprint('next placeIdentifier is: ' + placeIdentifier)
-        cacheKey = DataLoader.generateCacheKey(placeIdentifier)
-        dbgprint('next cacheKey is: ' + cacheKey)
+        currentPlace.identifier = placeObject.placeIdentifier
+        currentPlace.alias = placeObject.placeAlias
+        fullRepresentationAlias=currentPlace.alias
 
-        alreadyLoadedFromCache = false
+        dbgprint(placeObject.timezoneID)
+        dbgprint("*****" + JSON.stringify(placeObject))
+
+        if (placeObject.timezoneID === undefined) {
+            currentPlace.timezoneID = -1
+        } else {
+            currentPlace.timezoneID = parseInt(placeObject.timezoneID)
+        }
+
+        //        (placeObject.timezoneID === undefined) ? (currentPlace.timezoneID = -1) : currentPlace.timezoneID = parseInt(placeObject.timezoneID)
+        // dbgprint("next placeIdentifier is: " + currentPlace.identifier)
+        cacheData.cacheKey = DataLoader.generateCacheKey(currentPlace.identifier)
+        currentPlace.cacheID = DataLoader.generateCacheKey(currentPlace.identifier)
+        dbgprint("cacheKey for " + currentPlace.identifier + " is: " + currentPlace.cacheID)
+        cacheData.alreadyLoadedFromCache = false
 
         setCurrentProviderAccordingId(placeObject.providerId)
 
-        timezoneShortName = getLocalTimeZone()
-        showData()
-    }
+        currentPlace.timezoneShortName = getLocalTimeZone()
 
-    function dataLoadedFromInternet(contentToCache) {
-        dbgprint("Data Loaded From Internet successfully.")
-        loadingData = false
-        nextReload=dateNow() + reloadIntervalMs
-        dbgprint('saving cacheKey = ' + cacheKey)
-        cacheMap[cacheKey] = contentToCache
-        dbgprint('cacheMap now has these keys:')
-        for (var key in cacheMap) {
-            dbgprint('  ' + key)
+        var ok = loadFromCache()
+        dbgprint("CACHE " + ok)
+        if (!ok) {
+            loadDataFromInternet()
         }
-        alreadyLoadedFromCache = false
-        weatherCache.writeCache(JSON.stringify(cacheMap))
-
-        reloadMeteogram()
-        lastloadingSuccessTime=dateNow()
-        updateLastReloadedText()
-
-        loadFromCache()
     }
+    function loadDataFromInternet() {
+        dbgprint2("loadDataFromInternet")
 
+        if (loadingData.loadingDatainProgress) {
+            dbgprint("still loading")
+            return
+        }
+        loadingDataComplete=false
+        loadingData.loadingDatainProgress = true
+        loadingData.lastloadingStartTime=dateNow()
+        loadingData.nextReload = -1
+        loadingData.loadingXhrs = currentPlace.provider.loadDataFromInternet(
+                    dataLoadedFromInternet,
+                    reloadDataFailureCallback,
+                    { placeIdentifier: currentPlace.identifier, timezoneID: currentPlace.timezoneID })
+
+    }
+    function dataLoadedFromInternet() {
+        dbgprint2("dataLoadedFromInternet")
+        dbgprint("Data Loaded From Internet successfully.")
+
+        loadingData.lastloadingSuccessTime = dateNow()
+        loadingData.loadingDatainProgress = false
+        loadingData.nextReload = dateNow() + timerData.reloadIntervalMs
+        loadingData.failedAttemptCount = 0
+        currentPlace.nextReload = dateNow() + timerData.reloadIntervalMs
+        dbgprint(dateNow() + " + " +  timerData.reloadIntervalMs + " = " + loadingData.nextReload)
+
+        nextDaysCount = nextDaysModel.count
+
+        saveToCache()
+
+        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+        meteogramModelChanged = !meteogramModelChanged
+        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+
+        updateLastReloadedText()
+        updateCompactItem()
+        refreshTooltipSubText()
+
+        creditLink = currentPlace.provider.getCreditLink(currentPlace.identifier)
+        creditLabel = currentPlace.provider.getCreditLabel(currentPlace.identifier)
+    }
     function reloadDataFailureCallback() {
         dbgprint("Failed to Load Data successfully.")
-        main.loadingData = false
-        handleLoadError()
-    }
-
-    function reloadData() {
-        dbgprint("reloadData")
-
-        if (loadingData) {
-            dbgprint('still loading')
-            return
-        }
-
-        loadingData = true
-        lastloadingStartTime=dateNow()
-        loadingXhrs = currentProvider.loadDataFromInternet(dataLoadedFromInternet, reloadDataFailureCallback, { placeIdentifier: placeIdentifier, timezoneID: timezoneID })
-
-    }
-
-    function reloadMeteogram() {
-        currentProvider.reloadMeteogramImage(placeIdentifier)
-    }
-
-    function loadFromCache() {
-        dbgprint('loading from cache, config key: ' + cacheKey)
-
-        if (alreadyLoadedFromCache) {
-            dbgprint('already loaded from cache')
-            return true
-        }
-
-        creditLink = currentProvider.getCreditLink(placeIdentifier)
-        creditLabel = currentProvider.getCreditLabel(placeIdentifier)
-
-        if (!cacheMap || !cacheMap[cacheKey]) {
-            dbgprint('cache not available')
-            return false
-        }
-
-        var success = currentProvider.setWeatherContents(cacheMap[cacheKey])
-        if (!success) {
-            dbgprint('setting weather contents not successful')
-            return false
-        }
-
-        alreadyLoadedFromCache = true
-        return true
-    }
-
-    function handleLoadError() {
-        dbgprint('Error getting weather data. Scheduling data reload...')
-        nextReload = dateNow()
+        cacheData.loadingDatainProgress = false
+        dbgprint("Error getting weather data. Scheduling data reload...")
+        loadingData.nextReload = dateNow()
         loadFromCache()
     }
-
-    onInTrayActiveTimeoutSecChanged: {
-        if (placesJsonStr === '') {
-            return
-        }
-        updateLastReloadedText()
-    }
-
     function updateLastReloadedText() {
-        dbgprint("updateLastReloadedText: " + lastloadingSuccessTime)
-        if (lastloadingSuccessTime > 0) {
-            lastReloadedText = '⬇ ' + i18n("%1 ago", DataLoader.getLastReloadedTimeText(dateNow() - lastloadingSuccessTime))
+        dbgprint("updateLastReloadedText: " + loadingData.lastloadingSuccessTime)
+        if (loadingData.lastloadingSuccessTime > 0) {
+            lastReloadedText = '⬇ ' + i18n("%1 ago", DataLoader.getLastReloadedTimeText(dateNow() - loadingData.lastloadingSuccessTime))
         }
-        plasmoid.status = DataLoader.getPlasmoidStatus(lastloadingSuccessTime, inTrayActiveTimeoutSec)
+        plasmoid.status = DataLoader.getPlasmoidStatus(loadingData.lastloadingSuccessTime, inTrayActiveTimeoutSec)
+        dbgprint(plasmoid.status)
     }
+    function updateCompactItem(){
+        dbgprint2("updateCompactItem")
+        dbgprint(JSON.stringify(currentWeatherModel))
+        let icon=currentWeatherModel.iconName
+        let isDaytime=isDay(currentWeatherModel.sunrise,currentWeatherModel.sunset)
+        iconNameStr = (icon > 0) ? IconTools.getIconCode(icon, currentPlace.providerId, isDaytime) : '\uf07b'
+        temperatureStr = currentWeatherModel.temperature !== 9999 ? UnitUtils.getTemperatureNumberExt(currentWeatherModel.temperature, temperatureType) : '--'
+    }
+    function getPartOfDayIndex() {
+        var now = new Date().getTime()
+        let sunrise1 = currentWeatherModel.sunRise.getTime()
+        let sunset1 = currentWeatherModel.sunSet.getTime()
+        let icon = ((now > sunrise1) && (now < sunset1)) ? 0 : 1
+        // dbgprint(JSON.stringify(currentWeatherModel))
+        // dbgprint("NOW = " + now + "\tSunrise = " + sunrise1 + "\tSunset = " + sunset1 + "\t" + (icon === 0 ? "isDay" : "isNight"))
+        // dbgprint("\t > Sunrise:" + (now > sunrise1) + "\t\t Sunset:" + (now < sunset1))
+        // setDebugFlag(false)
 
-    function updateAdditionalWeatherInfoText() {
-        if (additionalWeatherInfo !== undefined) {
-            var sunRise = UnitUtils.convertDate(additionalWeatherInfo.sunRise, timezoneType, timezoneOffset)
-            var sunSet = UnitUtils.convertDate(additionalWeatherInfo.sunSet, timezoneType, timezoneOffset)
-            additionalWeatherInfo.sunRiseTime = Qt.formatTime(sunRise, Qt.locale().timeFormat(Locale.ShortFormat))
-            additionalWeatherInfo.sunSetTime = Qt.formatTime(sunSet, Qt.locale().timeFormat(Locale.ShortFormat))
-        }
+        return icon
     }
 
     function refreshTooltipSubText() {
-        dbgprint('refreshing sub text')
-        if (additionalWeatherInfo === undefined || additionalWeatherInfo.nearFutureWeather.iconName === null || actualWeatherModel.count === 0) {
+        // dbgprint(JSON.stringify(currentWeatherModel))
+        dbgprint2('refreshTooltipSubText')
+        if (currentWeatherModel === undefined || currentWeatherModel.nearFutureWeather.iconName === null || currentWeatherModel.count === 0) {
             dbgprint('model not yet ready')
             return
         }
-        updateAdditionalWeatherInfoText()
-        var nearFutureWeather = additionalWeatherInfo.nearFutureWeather
-        var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentProvider.providerId, getPartOfDayIndex())
-        var wind1=Math.round(actualWeatherModel.get(0).windDirection)
+        // updatecurrentWeatherModelText()
+        var nearFutureWeather = currentWeatherModel.nearFutureWeather
+        var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentPlace.providerId, getPartOfDayIndex())
+        var wind1=Math.round(currentWeatherModel.windDirection)
         var windDirectionIcon = IconTools.getWindDirectionIconCode(wind1)
         var subText = ''
-        subText += '<br /><font size="4" style="font-family: weathericons;">' + windDirectionIcon + '</font><font size="4"> ' + wind1 + '\u00B0 &nbsp; @ ' + UnitUtils.getWindSpeedText(actualWeatherModel.get(0).windSpeedMps, windSpeedType) + '</font>'
-        subText += '<br /><font size="4">' + UnitUtils.getPressureText(actualWeatherModel.get(0).pressureHpa, pressureType) + '</font>'
+        subText += '<br /><font size="4" style="font-family: weathericons;">' + windDirectionIcon + '</font><font size="4"> ' + wind1 + '\u00B0 &nbsp; @ ' + UnitUtils.getWindSpeedText(currentWeatherModel.windSpeedMps, windSpeedType) + '</font>'
+        subText += '<br /><font size="4">' + UnitUtils.getPressureText(currentWeatherModel.pressureHpa, pressureType) + '</font>'
         subText += '<br /><table>'
-        if ((actualWeatherModel.get(0).humidity !== undefined) && (actualWeatherModel.get(0).cloudiness !== undefined)) {
+        if ((currentWeatherModel.humidity !== undefined) && (currentWeatherModel.cloudiness !== undefined)) {
             subText += '<tr>'
-            subText += '<td><font size="4"><font style="font-family: weathericons">\uf07a</font>&nbsp;' + actualWeatherModel.get(0).humidity + '%</font></td>'
-            subText += '<td><font size="4"><font style="font-family: weathericons">\uf013</font>&nbsp;' + actualWeatherModel.get(0).cloudiness + '%</font></td>'
+            subText += '<td><font size="4"><font style="font-family: weathericons">\uf07a</font>&nbsp;' + currentWeatherModel.humidity + '%</font></td>'
+            subText += '<td><font size="4"><font style="font-family: weathericons">\uf013</font>&nbsp;' + currentWeatherModel.cloudiness + '%</font></td>'
             subText += '</tr>'
             subText += '<tr><td>&nbsp;</td><td></td></tr>'
         }
         subText += '<tr>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + additionalWeatherInfo.sunRiseTime + ' '+timezoneShortName + '&nbsp;&nbsp;&nbsp;</font></td>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + additionalWeatherInfo.sunSetTime + ' '+timezoneShortName + '</font></td>'
+        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + currentWeatherModel.sunRiseTime + ' ' + currentPlace.timezoneShortName + '&nbsp;&nbsp;&nbsp;</font></td>'
+        subText += '</tr>'
+        subText += '<tr>'
+        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + currentWeatherModel.sunSetTime + ' ' + currentPlace.timezoneShortName + '</font></td>'
         subText += '</tr>'
         subText += '</table>'
 
@@ -436,49 +380,136 @@ PlasmoidItem {
         subText += '<font size="6">&nbsp;&nbsp;&nbsp;' + UnitUtils.getTemperatureNumber(nearFutureWeather.temperature, temperatureType) + UnitUtils.getTemperatureEnding(temperatureType)
         subText += '&nbsp;&nbsp;&nbsp;<font style="font-family: weathericons">' + futureWeatherIcon + '</font></font>'
         subText += '</b>'
-        tooltipSubText = subText
-        dbgprint(subText)
+        toolTipSubText = subText
     }
 
-    function getPartOfDayIndex() {
-        var now = new Date().getTime()
-        let sunrise1 = additionalWeatherInfo.sunRise.getTime()
-        let sunset1 = additionalWeatherInfo.sunSet.getTime()
-        let icon = ((now > sunrise1) && (now < sunset1)) ? 0 : 1
-        // setDebugFlag(true)
-        dbgprint(JSON.stringify(additionalWeatherInfo))
-        dbgprint("NOW = " + now + "\tSunrise = " + sunrise1 + "\tSunset = " + sunset1 + "\t" + (icon === 0 ? "isDay" : "isNight"))
-        dbgprint("\t > Sunrise:" + (now > sunrise1) + "\t\t Sunset:" + (now < sunset1))
-        // setDebugFlag(false)
-
-        return icon
-    }
-
-    function abortTooLongConnection(forceAbort) {
-        if (!loadingData) {
-            return
+    Component.onCompleted: {
+        dbgprint2("MAIN.QML")
+        dbgprint((currentPlace))
+        if (plasmoid.configuration.firstRun) {
+            if (plasmoid.configuration.widgetFontSize === undefined) {
+                plasmoid.configuration.widgetFontSize = 32
+                widgetFontSize = 32
+            }
+            switch (Qt.locale().measurementSystem) {
+            case (Locale.MetricSystem):
+                plasmoid.configuration.temperatureType = 0
+                plasmoid.configuration.pressureType = 0
+                plasmoid.configuration.windSpeedType = 2
+                break;
+            case (Locale.ImperialUSSystem):
+                plasmoid.configuration.temperatureType = 1
+                plasmoid.configuration.pressureType = 1
+                plasmoid.configuration.windSpeedType = 1
+                break;
+            case (Locale.ImperialUKSystem):
+                plasmoid.configuration.temperatureType = 0
+                plasmoid.configuration.pressureType = 0
+                plasmoid.configuration.windSpeedType = 1
+                break;
+            }
+            plasmoid.configuration.firstRun = false
         }
-        if (forceAbort) {
-            dbgprint('timeout reached, aborting existing xhrs')
-            loadingXhrs.forEach(function (xhr) {
-                xhr.abort()
-            })
-            reloadDataFailureCallback()
-        } else {
-            dbgprint('regular loading, no aborting yet')
-            return
+        timerData.reloadIntervalMin=plasmoid.configuration.reloadIntervalMin
+        timerData.reloadIntervalMs=timerData.reloadIntervalMin * 60000
+
+        dbgprint("plasmoid.formFactor:" + plasmoid.formFactor)
+        dbgprint("plasmoid.location:" + plasmoid.location)
+        dbgprint("plasmoid.configuration.layoutType:" + plasmoid.configuration.layoutType)
+
+
+        dbgprint2(" Load Cache")
+        var cacheContent = weatherCache.readCache()
+
+        dbgprint("readCache result length: " + cacheContent.length)
+
+        // fill cache
+        if (cacheContent) {
+            try {
+                cacheData.cacheMap = JSON.parse(cacheContent)
+                dbgprint("cacheMap initialized - keys:")
+                for (var key in cacheData.cacheMap) {
+                    dbgprint("  " + key + ", data: " + cacheData.cacheMap[key])
+                }
+            } catch (error) {
+                dbgprint("error parsing cacheContent")
+            }
         }
+        cacheData.cacheMap = cacheData.cacheMap || {}
+
+        dbgprint2("get Default Place")
+        setNextPlace(true)
+
     }
 
-    function tryReload() {
-        updateLastReloadedText()
 
-        if (updatingPaused) {
-            return
+
+    function loadFromCache() {
+        dbgprint2("loadFromCache")
+        dbgprint('loading from cache, config key: ' + cacheData.cacheKey)
+
+        if (cacheData.alreadyLoadedFromCache) {
+            dbgprint('already loaded from cache')
+            return true
+        }
+        if (!cacheData.cacheMap || !cacheData.cacheMap[cacheData.cacheKey]) {
+            dbgprint('cache not available')
+            return false
         }
 
-        reloadData()
+        currentPlace = cacheData.cacheMap[cacheData.cacheKey][1]
+        currentWeatherModel = cacheData.cacheMap[cacheData.cacheKey][2]
+        dbgprint(JSON.stringify(currentWeatherModel))
+        let meteogramModelData = JSON.parse( cacheData.cacheMap[cacheData.cacheKey][3])
+        let nextDaysModelData = JSON.parse( cacheData.cacheMap[cacheData.cacheKey][4])
+        // dbgprint(cacheData.cacheMap[cacheData.cacheKey][4])
+        meteogramModel.clear()
+        for (var i = 0; i < meteogramModelData.length; ++i) {
+            meteogramModelData[i]['from'] = new Date(Date.parse(meteogramModelData[i]['from']))
+            meteogramModelData[i]['to'] = new Date(Date.parse(meteogramModelData[i]['to']))
+            meteogramModel.append(meteogramModelData[i])
+        }
+
+        nextDaysModel.clear()
+        for (var i = 0; i < nextDaysModelData.length; ++i) {
+            // meteogramModelData[i]['from'] = new Date(Date.parse(meteogramModelData[i]['from']))
+            // meteogramModelData[i]['to'] = new Date(Date.parse(meteogramModelData[i]['to']))
+            nextDaysModel.append(nextDaysModelData[i])
+        }
+        dbgprint(nextDaysModelData.length)
+        nextDaysCount = nextDaysModel.count
+
+
+        updateCompactItem()
+        refreshTooltipSubText()
+        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+        meteogramModelChanged = !meteogramModelChanged
+        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+        return true
     }
+    function saveToCache() {
+        dbgprint2("saveCache")
+        dbgprint(currentPlace.alias)
+        let cacheID = currentPlace.cacheID
+
+
+        var meteogramModelData = ([])
+        for (var i = 0; i < meteogramModel.count; ++i) {
+            meteogramModelData.push(meteogramModel.get(i))
+        }
+
+        var nextDayModelData = ([])
+        for (i = 0; i < nextDaysModel.count; ++i) {
+            // dbgprint(JSON.stringify(nextDaysModel.get(i)))
+            nextDayModelData.push(nextDaysModel.get(i))
+        }
+
+        let contentToCache = {1: currentPlace, 2: currentWeatherModel, 3: JSON.stringify(meteogramModelData), 4: JSON.stringify(nextDayModelData)}
+        print("saving cacheKey = " + cacheID)
+
+        cacheData.cacheMap[cacheID] = contentToCache
+    }
+
 
     Timer {
         interval: 10000
@@ -487,72 +518,36 @@ PlasmoidItem {
         onTriggered: {
             var now=dateNow()
             dbgprint("*** Timer triggered")
-            dbgprint("*** loadingData Flag : " + loadingData)
-            dbgprint("*** Last Load Success: " + (lastloadingSuccessTime))
-            dbgprint("*** Next Load Due    : " + (nextReload))
+            dbgprint("*** loadingData Flag : " + loadingData.loadingDatainProgress)
+            dbgprint("*** loadingData failedAttemptCount : " + loadingData.failedAttemptCount)
+            dbgprint("*** Last Load Success: " + (loadingData.lastloadingSuccessTime))
+            dbgprint("*** Next Load Due    : " + (currentPlace.nextReload))
             dbgprint("*** Time Now         : " + now)
-            dbgprint("*** Next Load in     : " + Math.round((nextReload - now) / 1000) + " sec = "+ ((nextReload - now) / 60000).toFixed(2) + " min")
+            dbgprint("*** Next Load in     : " + Math.round((currentPlace.nextReload - now) / 1000) + " sec = "+ ((currentPlace.nextReload - now) / 60000).toFixed(2) + " min")
 
             updateLastReloadedText()
-            if ((lastloadingSuccessTime===0) && (updatingPaused)) {
-                toggleUpdatingPaused()
-            }
+            // if ((loadingData.lastloadingSuccessTime === 0) && (updatingPaused)) {
+                // currentPlace.nextReload=now + 60000()
+            // }
 
-            if (loadingData) {
-                dbgprint("Timeout in:" + (lastloadingStartTime + loadingDataTimeoutMs - now))
-                if (now > (lastloadingStartTime + loadingDataTimeoutMs)) {
-                    console.log("Timed out downloading weather data - aborting attempt. Retrying in 60 seconds time.")
-                    abortTooLongConnection(true)
-                    nextReload=now + 60000
+            if (loadingData.loadingDatainProgress) {
+                dbgprint("Timeout in:" + (loadingData.lastloadingStartTime + loadingData.loadingDataTimeoutMs - now))
+                if (now > (loadingData.lastloadingStartTime + loadingData.loadingDataTimeoutMs)) {
+                    loadingData.failedAttemptCount++
+                    let retryTime = Math.min(loadingData.failedAttemptCount, 30) * 30
+                    console.log("Timed out downloading weather data - aborting attempt. Retrying in " + retryTime  +" seconds time.")
+                    loadingData.loadingDatainProgress = false
+                    loadingData.lastloadingSuccessTime = 0
+                    currentPlace.nextReload = now + (retryTime * 1000)
                 }
             } else {
-                if (now > nextReload) {
-                    tryReload()
+                if (now > currentPlace.nextReload) {
+                    loadDataFromInternet()
                 }
             }
+
         }
     }
 
-    onTemperatureTypeChanged: {
-        refreshTooltipSubText()
-    }
 
-    onPressureTypeChanged: {
-        refreshTooltipSubText()
-    }
-
-    onWindSpeedTypeChanged: {
-        refreshTooltipSubText()
-    }
-
-    onTwelveHourClockEnabledChanged: {
-        refreshTooltipSubText()
-    }
-
-    onTimezoneTypeChanged: {
-        if (lastloadingSuccessTime > 0) {
-            refreshTooltipSubText()
-        }
-    }
-
-    function dbgprint(msg) {
-        if (!debugLogging) {
-            return
-        }
-
-        print('[kate weatherWidget] ' + msg)
-    }
-
-    function dateNow() {
-        var now=new Date().getTime()
-        return now
-    }
-
-    function setDebugFlag(flag) {
-        debugLogging = flag
-    }
-
-    function getLocalTimeZone() {
-        return dataSource.data["Local"]["Timezone Abbreviation"]
-    }
 }
