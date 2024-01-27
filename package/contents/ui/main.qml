@@ -75,7 +75,7 @@ PlasmoidItem {
     property int pressureType: plasmoid.configuration.pressureType
     property int windSpeedType: plasmoid.configuration.windSpeedType
     property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
-
+    property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
 
     // Cache, Last Load Time, Widget Status
     property string fullRepresentationAlias
@@ -147,6 +147,10 @@ PlasmoidItem {
         dbgprint2("loadingDataComplete:" + loadingDataComplete)
     }
 
+    onEnv_QML_XHR_ALLOW_FILE_READChanged: {
+        plasmoid.configuration.qml_XHR_ALLOW_FILE_READ = env_QML_XHR_ALLOW_FILE_READ
+        dbgprint("QML_XHR_ALLOW_FILE_READ Enabled: " + env_QML_XHR_ALLOW_FILE_READ)
+    }
 
 
     function dbgprint(msg) {
@@ -386,7 +390,22 @@ PlasmoidItem {
     Component.onCompleted: {
         dbgprint2("MAIN.QML")
         dbgprint((currentPlace))
+
         if (plasmoid.configuration.firstRun) {
+            let URL =  Qt.resolvedUrl("../code/db/GI.csv")   // DEBUGGING ONLY
+            var xhr = new XMLHttpRequest()
+            xhr.timeout = loadingData.loadingDataTimeoutMs;
+            dbgprint('Test local file opening - url: ' + URL)
+            xhr.open('GET', URL)
+            xhr.setRequestHeader("User-Agent","Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 ")
+            xhr.send()
+            xhr.onload =  (event) => {
+                dbgprint("env_QML_XHR_ALLOW_FILE_READ = 1. Using uiltin Location databases...")
+                env_QML_XHR_ALLOW_FILE_READ = true
+            }
+
+
+
             if (plasmoid.configuration.widgetFontSize === undefined) {
                 plasmoid.configuration.widgetFontSize = 32
                 widgetFontSize = 32

@@ -280,12 +280,15 @@ function updateListView(filter) {
 }
 function loadCSVDatabase(countryName) {
     dbgprint("Entered loadCSVDatabase")
+    dbgprint("QML_XHR_ALLOW_FILE_READ = 1 : " + env_QML_XHR_ALLOW_FILE_READ)
     if (countryName.length === 0) {
         return
     }
     myCSVData.clear()
-    // let URL = ("http://weatherwidgetqt6.000webhostapp.com/" + getshortCode(countryName) + ".csv") // LIVE ONLY
-    let URL =  Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")   // DEBUGGING ONLY
+    var URL = ("http://weatherwidgetqt6.000webhostapp.com/" + getshortCode(countryName) + ".csv") // LIVE ONLY
+    if (env_QML_XHR_ALLOW_FILE_READ) {
+        URL =  Qt.resolvedUrl("./db/" + getshortCode(countryName) + ".csv")   // DEBUGGING ONLY
+    }
     dbgprint("URL = " + URL)
     var xhr = new XMLHttpRequest
     xhr.open("GET", URL)
@@ -305,7 +308,7 @@ function parseCSVLine(csvLine) {
     function stripquotes(str) {
         return str.replace(/['"]+/g, '')
     }
-dbgprint(csvLine)
+// dbgprint(csvLine)
     var items = csvLine.split(/\t/)
     return ({
                 Area: stripquotes((items[0])),

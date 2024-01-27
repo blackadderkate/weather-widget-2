@@ -1,6 +1,5 @@
 import QtQuick 2.2
 import QtQuick.Controls
-import QtQuick.Controls 2.15 as QC215
 import QtQuick.Layouts 1.1
 import org.kde.kirigami as Kirigami
 
@@ -163,7 +162,7 @@ Item {
             text: i18n("Widget font style:")
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
-        QC215.ComboBox {
+        ComboBox {
             id: fontFamilyComboBox
             Layout.fillWidth: true
             currentIndex: 0

@@ -1,10 +1,9 @@
 ﻿import QtQuick
-import QtQuick.Controls 2.15
+import QtQuick.Controls
 import QtQuick.Layouts
 import "../../code/config-utils.js" as ConfigUtils
 import "../../code/placesearch-helpers.js" as Helper
 import "../../code/db/timezoneData.js" as TZData
-import org.kde.plasma.components 3.0 as Plasmacore
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 
@@ -25,7 +24,7 @@ Item {
     property string cfg_places
     property alias cfg_debugLogging: debugLogging.checked
     property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
-
+    property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
     Component.onCompleted: {
 
         var places = ConfigUtils.getPlacesArray()
@@ -313,7 +312,7 @@ Item {
                                 // font.pixelSize: defaultFontPixelSize
                                 // anchors.verticalCenter: parent.verticalCenter
                             }
-                            Plasmacore.Button {
+                            Button {
                                 id:myButton1
                                 icon.name: 'go-up'
                                 enabled: row === 0  ? false : true
@@ -326,7 +325,7 @@ Item {
                                     }
                                 }
                             }
-                            Plasmacore.Button {
+                            Button {
                                 id:myButton2
                                 icon.name: 'go-down'
                                 enabled: row == (placesModel.rowCount - 1)  ? false: true
@@ -340,7 +339,7 @@ Item {
                                     }
                                 }
                             }
-                            Plasmacore.Button {
+                            Button {
                                 icon.name: 'list-remove'
                                 MouseArea {
                                     anchors.fill: parent
@@ -350,7 +349,7 @@ Item {
                                     }
                                 }
                             }
-                            Plasmacore.Button {
+                            Button {
                                 icon.name: 'entry-edit'
                                 MouseArea {
                                     anchors.fill: parent
@@ -1148,7 +1147,7 @@ Item {
             // font.pixelSize: defaultFontPixelSize
             // anchors.verticalCenter: parent.verticalCenter
             }
-            Plasmacore.Button {
+            Button {
             id:myButton1
             icon.name: 'go-up'
             property int rownum1: findRow(myrowValue.text)
@@ -1163,7 +1162,7 @@ Item {
             }
             }
             }
-            Plasmacore.Button {
+            Button {
             id:myButton2
             icon.name: 'go-down'
             property int rownum2: findRow(myrowValue.text)
@@ -1177,7 +1176,7 @@ Item {
             }
             }
             }
-            Plasmacore.Button {
+            Button {
             icon.name: 'list-remove'
             onClicked: {
             var row=findRow(myrowValue.text)
@@ -1186,7 +1185,7 @@ Item {
             placesModelChanged()
             }
             }
-            Plasmacore.Button {
+            Button {
             icon.name: 'entry-edit'
             onClicked: {
             var row=findRow(myrowValue.text)
@@ -1230,7 +1229,9 @@ Item {
             }
         }
         onOpened: {
+            // debugLogging = true
             let locale=Qt.locale().name.substr(3,2)
+            dbgprint(locale)
             let userCountry=Helper.getDisplayName(locale)
             let tmpDB=Helper.getDisplayNames()
             for (var i=0; i < tmpDB.length - 1 ; i++) {

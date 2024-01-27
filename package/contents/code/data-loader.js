@@ -100,7 +100,6 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
     dbgprint('GET url sending: ' + getUrl)
     xhr.send()
 
-
     xhr.ontimeout = () => {
         dbgprint('ERROR - timeout: ' + xhr.status)
         failureCallback()
@@ -121,7 +120,7 @@ function fetchJsonFromInternet(getUrl, successCallback, failureCallback) {
     xhr.onload = () => {
         dbgprint('successfully loaded from the internet')
         dbgprint('successfully of url-call: ' + getUrl)
-        dbgprint('responseText: ' + xhr.responseText)
+        // dbgprint('responseText: ' + xhr.responseText)
 
         var jsonString = xhr.responseText
         if (!DataLoader.isJsonString(jsonString)) {
