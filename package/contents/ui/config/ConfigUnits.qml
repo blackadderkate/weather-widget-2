@@ -9,64 +9,65 @@ Item {
     property int cfg_windSpeedType
     property int cfg_timezoneType
 
+
     onCfg_temperatureTypeChanged: {
         switch (cfg_temperatureType) {
-        case 0:
-            temperatureTypeGroup.checkedButton = temperatureTypeRadioCelsius;
-            break;
-        case 1:
-            temperatureTypeGroup.checkedButton = temperatureTypeRadioFahrenheit;
-            break;
-        case 2:
-            temperatureTypeGroup.checkedButton = temperatureTypeRadioKelvin;
-            break;
-        default:
+            case 0:
+                temperatureTypeRadioCelsius.checked = true
+                break
+            case 1:
+                temperatureTypeRadioFahrenheit.checked = true
+                break
+            case 2:
+                temperatureTypeRadioKelvin.checked = true
+                break
+            default:
         }
     }
 
     onCfg_pressureTypeChanged: {
         switch (cfg_pressureType) {
-        case 0:
-            pressureTypeGroup.checkedButton = pressureTypeRadioHpa;
-            break;
-        case 1:
-            pressureTypeGroup.checkedButton = pressureTypeRadioInhg;
-            break;
-        case 2:
-            pressureTypeGroup.checkedButton = pressureTypeRadioMmhg;
-            break;
-        default:
+            case 0:
+                pressureTypeRadioHpa.checked = true
+                break
+            case 1:
+                pressureTypeRadioInhg.checked = true
+                break
+            case 2:
+                pressureTypeRadioMmhg.checked = true
+                break
+            default:
         }
     }
 
     onCfg_windSpeedTypeChanged: {
         console.log(cfg_windSpeedType)
         switch (cfg_windSpeedType) {
-        case 0:
-            windSpeedTypeGroup.checkedButton = windSpeedTypeRadioMps;
-            break;
-        case 1:
-            windSpeedTypeGroup.checkedButton = windSpeedTypeRadioMph;
-            break;
-        case 2:
-            windSpeedTypeGroup.checkedButton = windSpeedTypeRadioKmh;
-            break;
-        default:
+            case 0:
+                windSpeedTypeRadioMps.checked = true
+                break
+            case 1:
+                windSpeedTypeRadioMph.checked = true
+                break
+            case 2:
+                windSpeedTypeRadioKmh.checked = true
+                break
+            default:
         }
     }
 
     onCfg_timezoneTypeChanged: {
         switch (cfg_timezoneType) {
-        case 0:
-            timezoneTypeGroup.checkedButton = timezoneTypeRadioUserLocalTime;
-            break;
-        case 1:
-            timezoneTypeGroup.checkedButton = timezoneTypeRadioUtc;
-            break;
-        case 2:
-            timezoneTypeGroup.checkedButton = timezoneTypeRadioLocationLocal;
-            break;
-        default:
+            case 0:
+                timezoneTypeRadioUserLocalTime.checked = true
+                break
+            case 1:
+                timezoneTypeRadioUtc.checked = true
+                break
+            case 2:
+                timezoneTypeRadioLocationLocal.checked = true
+                break
+            default:
         }
     }
 
