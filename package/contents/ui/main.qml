@@ -560,8 +560,7 @@ PlasmoidItem {
                     loadingData.loadingDatainProgress = false
                     loadingData.lastloadingSuccessTime = 0
                     currentPlace.nextReload = now + (retryTime * 1000)
-
-                    CompactRepresentation.busyIndicator.running = false
+                    loadingDataComplete = true
                 }
             } else {
                 if (now > currentPlace.nextReload) {
