@@ -81,8 +81,6 @@ PlasmoidItem {
     property string fullRepresentationAlias
     property string iconNameStr
     property string temperatureStr
-    property string creditLink
-    property string creditLabel
     property bool meteogramModelChanged: false
     property int nextDaysCount
 
@@ -260,7 +258,6 @@ PlasmoidItem {
 
         setCurrentProviderAccordingId(placeObject.providerId)
 
-        currentPlace.timezoneShortName = getLocalTimeZone()
 
         var ok = loadFromCache()
         dbgprint("CACHE " + ok)
@@ -298,7 +295,6 @@ PlasmoidItem {
 
         nextDaysCount = nextDaysModel.count
 
-        saveToCache()
 
         dbgprint("meteogramModelChanged:" + meteogramModelChanged)
         meteogramModelChanged = !meteogramModelChanged
@@ -308,8 +304,9 @@ PlasmoidItem {
         updateCompactItem()
         refreshTooltipSubText()
 
-        creditLink = currentPlace.provider.getCreditLink(currentPlace.identifier)
-        creditLabel = currentPlace.provider.getCreditLabel(currentPlace.identifier)
+        currentPlace.creditLink = currentPlace.provider.getCreditLink(currentPlace.identifier)
+        currentPlace.creditLabel = currentPlace.provider.getCreditLabel(currentPlace.identifier)
+        saveToCache()
     }
     function reloadDataFailureCallback() {
         dbgprint("Failed to Load Data successfully.")
@@ -400,7 +397,7 @@ PlasmoidItem {
             xhr.setRequestHeader("User-Agent","Mozilla/5.0 (X11; Linux x86_64) Gecko/20100101 ")
             xhr.send()
             xhr.onload =  (event) => {
-                dbgprint("env_QML_XHR_ALLOW_FILE_READ = 1. Using uiltin Location databases...")
+                dbgprint("env_QML_XHR_ALLOW_FILE_READ = 1. Using Builtin Location databases...")
                 env_QML_XHR_ALLOW_FILE_READ = true
             }
 
@@ -476,9 +473,13 @@ PlasmoidItem {
             return false
         }
 
-        currentPlace = cacheData.cacheMap[cacheData.cacheKey][1]
+        currentPlace = JSON.parse(cacheData.cacheMap[cacheData.cacheKey][1])
+
+        // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
+
         currentWeatherModel = cacheData.cacheMap[cacheData.cacheKey][2]
-        dbgprint(JSON.stringify(currentWeatherModel))
+        // dbgprint("currentPlace:\t"  + currentPlace.alias + "\t" + currentPlace.identifier + "\t" + currentPlace.timezoneID + "\t" + currentPlace.timezoneShortName + "\t")
+        // dbgprint(JSON.stringify(currentWeatherModel))
         let meteogramModelData = JSON.parse( cacheData.cacheMap[cacheData.cacheKey][3])
         let nextDaysModelData = JSON.parse( cacheData.cacheMap[cacheData.cacheKey][4])
         // dbgprint(cacheData.cacheMap[cacheData.cacheKey][4])
@@ -498,12 +499,12 @@ PlasmoidItem {
         dbgprint(nextDaysModelData.length)
         nextDaysCount = nextDaysModel.count
 
-
         updateCompactItem()
         refreshTooltipSubText()
         dbgprint("meteogramModelChanged:" + meteogramModelChanged)
         meteogramModelChanged = !meteogramModelChanged
         dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+
         return true
     }
     function saveToCache() {
@@ -522,10 +523,11 @@ PlasmoidItem {
             // dbgprint(JSON.stringify(nextDaysModel.get(i)))
             nextDayModelData.push(nextDaysModel.get(i))
         }
+        currentPlace.provider = ""
+        // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
 
-        let contentToCache = {1: currentPlace, 2: currentWeatherModel, 3: JSON.stringify(meteogramModelData), 4: JSON.stringify(nextDayModelData)}
+        let contentToCache = {1: JSON.stringify(currentPlace), 2: currentWeatherModel, 3: JSON.stringify(meteogramModelData), 4: JSON.stringify(nextDayModelData)}
         print("saving cacheKey = " + cacheID)
-
         cacheData.cacheMap[cacheID] = contentToCache
     }
 
@@ -558,6 +560,8 @@ PlasmoidItem {
                     loadingData.loadingDatainProgress = false
                     loadingData.lastloadingSuccessTime = 0
                     currentPlace.nextReload = now + (retryTime * 1000)
+
+                    CompactRepresentation.busyIndicator.running = false
                 }
             } else {
                 if (now > currentPlace.nextReload) {

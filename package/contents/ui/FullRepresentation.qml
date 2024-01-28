@@ -272,7 +272,7 @@ Item {
         anchors.bottom: parent.bottom
         verticalAlignment: Text.AlignBottom
 
-        text: creditLabel
+        text: currentPlace.creditLabel
     }
 
     MouseArea {
@@ -282,8 +282,8 @@ Item {
         hoverEnabled: true
 
         onClicked: {
-            dbgprint('opening: ', creditLink)
-            Qt.openUrlExternally(creditLink)
+            dbgprint('opening: ', currentPlace.creditLink)
+            Qt.openUrlExternally(currentPlace.creditLink)
         }
 
         onEntered: {
