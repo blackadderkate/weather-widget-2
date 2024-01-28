@@ -63,6 +63,7 @@ Item {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
     function placesModelChanged() {
+        dbgprint("placesModelChanged")
         var newPlacesArray = []
         for (var i = 0; i < placesModel.rowCount; i++) {
             var placeObj = placesModel.getRow(i)
@@ -321,6 +322,7 @@ Item {
                                     onClicked: {
                                         if (row > 0) {
                                             placesModel.moveRow(row, row - 1, 1)
+                                            placesModelChanged()
                                         }
                                     }
                                 }
@@ -332,9 +334,9 @@ Item {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        console.log(row)
                                         if (row<placesModel.rowCount) {
                                             placesModel.moveRow(row, row + 1, 1)
+                                            placesModelChanged()
                                         }
                                     }
                                 }
