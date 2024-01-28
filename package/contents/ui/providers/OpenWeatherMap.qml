@@ -36,7 +36,7 @@ Item {
         if (xmlModelComplete == false) {
             return
         }
-
+        getTimeZoneName()
         updatecurrentWeather()
         updateNextDaysModel()
         buildMetogramData()
@@ -44,24 +44,34 @@ Item {
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
+        dbgprint2("OWM loadDataFromInternet")
         var loadedData = {
             current: null,
             hourByHour: null,
             longTerm: null
         }
+        let url1 = ""
+        let url2 = ""
+        let url3 = ""
 
         var placeIdentifier = locationObject.placeIdentifier
         var versionParam = '&v=' + new Date().getTime()
         if (! useOnlineWeatherData) {
-            xmlModelCurrent.source=Qt.resolvedUrl('../../code/weather/current.xml')
-            xmlModelLongTerm.source=Qt.resolvedUrl('../../code/weather/daily.xml')
-            xmlModelHourByHour.source=Qt.resolvedUrl('../../code/weather/forecast.xml')
+            url1 = Qt.resolvedUrl('../../code/weather/current.xml')
+            url2 = Qt.resolvedUrl('../../code/weather/daily.xml')
+            url3 = Qt.resolvedUrl('../../code/weather/forecast.xml')
         } else {
 
-            xmlModelCurrent.source=urlPrefix + '/weather?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
-            xmlModelLongTerm.source=urlPrefix + '/forecast/daily?id=' + placeIdentifier + '&cnt=8' + appIdAndModeSuffix + versionParam
-            xmlModelHourByHour.source=urlPrefix + '/forecast?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
+            url1 = urlPrefix + '/weather?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
+            url2 = urlPrefix + '/forecast/daily?id=' + placeIdentifier + '&cnt=8' + appIdAndModeSuffix + versionParam
+            url3 = urlPrefix + '/forecast?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
         }
+        dbgprint("xmlModelCurrent = " + url1)
+        dbgprint("xmlModelLongTerm = " + url2)
+        dbgprint("xmlModelHourByHour = " + url3)
+        xmlModelCurrent.source = url1
+        xmlModelLongTerm.source = url2
+        xmlModelHourByHour.source = url3
     }
 
     function updatecurrentWeather() {
@@ -231,6 +241,7 @@ Item {
     }
 
     function getTimeZoneName() {
+        dbgprint2("getTimeZoneName")
         switch (timezoneType) {
         case 0:
             currentPlace.timezoneShortName = getLocalTimeZone()
@@ -252,7 +263,7 @@ Item {
     function formatTime(ISOdate) {
         return ISOdate.substr(11,5)
     }
-
+/*
     function createTodayTimeObj() {
         dbgprint2("createTodayTimeObj")
         function formatTime(ISOdate) {
@@ -286,7 +297,7 @@ Item {
         dbgprint('current: ' + currentTimeObj.temperature)
         return currentTimeObj
     }
-
+*/
     function loadCompleted() {
         main.loadingDataComplete = true
         dataLoadedFromInternet()
