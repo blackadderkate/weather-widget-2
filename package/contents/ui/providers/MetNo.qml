@@ -85,45 +85,55 @@ Item {
 
             let wd = readingsArray.properties.timeseries
             let wdPtr = 0
-            let x = 0
             while ((wdPtr < wd.length) && (((new Date(wd[wdPtr].time).getHours() - 3) % 6 ) != 0)) { wdPtr++ }
-            let t = 0
+            let x = 0
             let y = 0
-            let myOffset = 3
             let nextDaysData = blankObject()
             let airTemp = -999
 
-            while (x < 8 && y < 3) {
-                 if (wd[wdPtr].data.next_1_hours === undefined) { myOffset = 0} else { myOffset = 3}
-               let tm1 = new Date(wd[wdPtr].time)
-                let tm2 = tm1.getHours() - myOffset
-                t = (tm2 % 6)
-
-                dbgprint("wdPtr" + wdPtr)
-
-                if (t == 0) {
-                    let y = (tm2) / 6
-                    // dbgprint("\t\t\t\ttx:" + x + "\ty:" +y)
+            while (wd[wdPtr].data.next_1_hours !== undefined) {
+                let tm = (new Date(wd[wdPtr].time)).getHours()
+                if (tm % 6 === 3) {
+                    y = parseInt(tm / 6)
+                    dbgprint("wdPtr:" + wdPtr + "\t x = " + x + "\t y = " + y)
                     airTemp = wd[wdPtr].data.instant.details["air_temperature"]
                     nextDaysData['dayTitle'] = composeNextDayTitle(new Date(wd[wdPtr].time))
                     nextDaysData['temperature' + y] = airTemp
                     nextDaysData['hidden' + y] = false
-                    let obj = ""
-                    if (wd[wdPtr].data.next_1_hours === undefined) {
-                        obj = wd[wdPtr].data.next_6_hours.summary["symbol_code"]}
-                    else {
-                        obj = wd[wdPtr].data.next_1_hours.summary["symbol_code"]}
+                    let obj = wd[wdPtr].data.next_1_hours.summary["symbol_code"]
                     nextDaysData['iconName' + y] = geticonNumber(obj)
-
                     if (y == 3) {
                         nextDaysModel.append(nextDaysData)
                         nextDaysData=blankObject()
                         x++
                     }
+
                 }
                 wdPtr++
             }
-            // main.nextDaysCount = nextDaysModel.count
+
+            while ((wdPtr < wd.length) && (wd[wdPtr].data.next_6_hours !== undefined))
+            {
+                let tm = (new Date(wd[wdPtr].time)).getHours()
+                y = parseInt((tm - 3) / 6)
+                dbgprint("wdPtr:" + wdPtr + "\t y = " + y)
+                airTemp = wd[wdPtr].data.instant.details["air_temperature"]
+                nextDaysData['dayTitle'] = composeNextDayTitle(new Date(wd[wdPtr].time))
+                nextDaysData['temperature' + y] = airTemp
+                nextDaysData['hidden' + y] = false
+                let obj = wd[wdPtr].data.next_6_hours.summary["symbol_code"]
+                nextDaysData['iconName' + y] = geticonNumber(obj)
+                if (y == 3) {
+                    nextDaysModel.append(nextDaysData)
+                    nextDaysData=blankObject()
+                    x++
+                }
+                wdPtr++
+                dbgprint(JSON.stringify(wd[wdPtr]))
+            }
+            if (y < 3) {
+                nextDaysModel.append(nextDaysData)
+            }
             dbgprint("nextDaysModel Count:" + nextDaysModel.count)
         }
 
