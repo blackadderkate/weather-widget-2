@@ -276,7 +276,6 @@ PlasmoidItem {
         loadingData.loadingDatainProgress = true
         loadingData.lastloadingStartTime=dateNow()
         loadingData.nextReload = -1
-        setCurrentProviderAccordingId(placeObject.providerId)
         loadingData.loadingXhrs = currentPlace.provider.loadDataFromInternet(
                     dataLoadedFromInternet,
                     reloadDataFailureCallback,
@@ -475,6 +474,7 @@ PlasmoidItem {
         }
 
         currentPlace = JSON.parse(cacheData.cacheMap[cacheData.cacheKey][1])
+        setCurrentProviderAccordingId(currentPlace.providerId)
 
         // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
 
