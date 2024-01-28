@@ -85,19 +85,26 @@ Item {
 
             let wd = readingsArray.properties.timeseries
             let wdPtr = 0
-            while ((wdPtr < wd.length) && (((new Date(wd[wdPtr].time).getHours() - 3) % 6 ) != 0)) { wdPtr++ }
+            let tmp =  UnitUtils.convertDate(new Date(wd[wdPtr].time), 2 , currentPlace.timezoneOffset)
+            while ((wdPtr < wd.length) && ((tmp.getHours() - 3) % 6 ) != 0) {
+
+                wdPtr++
+                tmp =  UnitUtils.convertDate(new Date(wd[wdPtr].time), 2 , currentPlace.timezoneOffset)
+            }
             let x = 0
             let y = 0
             let nextDaysData = blankObject()
             let airTemp = -999
 
             while (wd[wdPtr].data.next_1_hours !== undefined) {
-                let tm = (new Date(wd[wdPtr].time)).getHours()
+                let tm1 = new Date(wd[wdPtr].time)
+                let tm2 = UnitUtils.convertDate(tm1 , 2 , currentPlace.timezoneOffset)
+                let tm = tm2.getHours()
                 if (tm % 6 === 3) {
                     y = parseInt(tm / 6)
-                    dbgprint("wdPtr:" + wdPtr + "\t x = " + x + "\t y = " + y)
+                    dbgprint("wdPtr:" + wdPtr + "\t tm = " + tm + "\t x = " + x + "\t y = " + y)
                     airTemp = wd[wdPtr].data.instant.details["air_temperature"]
-                    nextDaysData['dayTitle'] = composeNextDayTitle(new Date(wd[wdPtr].time))
+                    nextDaysData['dayTitle'] = composeNextDayTitle(tm2)
                     nextDaysData['temperature' + y] = airTemp
                     nextDaysData['hidden' + y] = false
                     let obj = wd[wdPtr].data.next_1_hours.summary["symbol_code"]
@@ -114,16 +121,19 @@ Item {
 
             while ((wdPtr < wd.length) && (wd[wdPtr].data.next_6_hours !== undefined))
             {
-                let tm = (new Date(wd[wdPtr].time)).getHours()
-                y = parseInt((tm - 3) / 6)
-                dbgprint("wdPtr:" + wdPtr + "\t y = " + y)
+                let tm1 = new Date(wd[wdPtr].time)
+                let tm2 = UnitUtils.convertDate(tm1 , 2 , currentPlace.timezoneOffset)
+                let tm = tm2.getHours()
+                // print (tm1, tm2, tm)
+                y = parseInt((tm) / 6)
+                dbgprint("wdPtr:" + wdPtr + "\t tm = " + tm + "\t x = " + x + "\t y = " + y)
                 airTemp = wd[wdPtr].data.instant.details["air_temperature"]
-                nextDaysData['dayTitle'] = composeNextDayTitle(new Date(wd[wdPtr].time))
+                nextDaysData['dayTitle'] = composeNextDayTitle(tm2)
                 nextDaysData['temperature' + y] = airTemp
                 nextDaysData['hidden' + y] = false
                 let obj = wd[wdPtr].data.next_6_hours.summary["symbol_code"]
                 nextDaysData['iconName' + y] = geticonNumber(obj)
-                if (y == 3) {
+                if ((y == 3) && nextDaysData["temperature2"] !== -999) {
                     nextDaysModel.append(nextDaysData)
                     nextDaysData=blankObject()
                     x++
@@ -131,7 +141,7 @@ Item {
                 wdPtr++
                 dbgprint(JSON.stringify(wd[wdPtr]))
             }
-            if (y < 3) {
+            if ((y < 3) && (x < 8)) {
                 nextDaysModel.append(nextDaysData)
             }
             dbgprint("nextDaysModel Count:" + nextDaysModel.count)
