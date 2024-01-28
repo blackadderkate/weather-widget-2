@@ -276,6 +276,7 @@ PlasmoidItem {
         loadingData.loadingDatainProgress = true
         loadingData.lastloadingStartTime=dateNow()
         loadingData.nextReload = -1
+        setCurrentProviderAccordingId(placeObject.providerId)
         loadingData.loadingXhrs = currentPlace.provider.loadDataFromInternet(
                     dataLoadedFromInternet,
                     reloadDataFailureCallback,
