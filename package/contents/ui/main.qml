@@ -27,7 +27,7 @@ import "../code/data-loader.js" as DataLoader
 import "../code/config-utils.js" as ConfigUtils
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
-
+import "../code/db/timezoneData.js" as TZ
 
 PlasmoidItem {
     id: main
@@ -182,14 +182,14 @@ PlasmoidItem {
     }
 
     function setCurrentProviderAccordingId(providerId) {
-        currentPlace.providerId=providerId
+        currentPlace.providerId = providerId
         if (providerId === "owm") {
             dbgprint("setting provider OpenWeatherMap")
-            currentPlace.provider = owmProvider
+            return owmProvider
         }
         if (providerId === "metno") {
             dbgprint("setting provider metno")
-            currentPlace.provider = metnoProvider
+            return metnoProvider
         }
     }
     function emptyWeatherModel() {
@@ -236,12 +236,24 @@ PlasmoidItem {
         plasmoid.configuration.placeIndex = placeIndex
         dbgprint("placeIndex now: " + plasmoid.configuration.placeIndex)
         var placeObject = places[placeIndex]
+
         currentPlace.identifier = placeObject.placeIdentifier
         currentPlace.alias = placeObject.placeAlias
+        currentPlace.timezoneID = placeObject.timezoneID
+        currentPlace.providerId = placeObject.providerId
+        if (currentPlace.providerId === "metno") {
+            let tzData = TZ.TZData[currentPlace.timezoneID]
+            if (TZ.isDST(tzData.DSTData)){
+                currentPlace.timezoneShortName = tzData.DSTName
+                currentPlace.timezoneOffset = tzData.DSTOffset
+            }
+            else
+                currentPlace.timezoneShortName = tzData.TZName
+                currentPlace.timezoneOffset = tzData.Offset
+        } else {
+            currentPlace.timezoneShortName = "LOCAL"
+        }
         fullRepresentationAlias=currentPlace.alias
-
-        dbgprint(placeObject.timezoneID)
-        dbgprint("*****" + JSON.stringify(placeObject))
 
         if (placeObject.timezoneID === undefined) {
             currentPlace.timezoneID = -1
@@ -249,14 +261,12 @@ PlasmoidItem {
             currentPlace.timezoneID = parseInt(placeObject.timezoneID)
         }
 
-        //        (placeObject.timezoneID === undefined) ? (currentPlace.timezoneID = -1) : currentPlace.timezoneID = parseInt(placeObject.timezoneID)
-        // dbgprint("next placeIdentifier is: " + currentPlace.identifier)
         cacheData.cacheKey = DataLoader.generateCacheKey(currentPlace.identifier)
         currentPlace.cacheID = DataLoader.generateCacheKey(currentPlace.identifier)
         dbgprint("cacheKey for " + currentPlace.identifier + " is: " + currentPlace.cacheID)
         cacheData.alreadyLoadedFromCache = false
 
-        setCurrentProviderAccordingId(placeObject.providerId)
+        currentPlace.provider = setCurrentProviderAccordingId(placeObject.providerId)
 
 
         var ok = loadFromCache()
@@ -276,6 +286,7 @@ PlasmoidItem {
         loadingData.loadingDatainProgress = true
         loadingData.lastloadingStartTime=dateNow()
         loadingData.nextReload = -1
+        currentPlace.provider = setCurrentProviderAccordingId(currentPlace.providerId)
         loadingData.loadingXhrs = currentPlace.provider.loadDataFromInternet(
                     dataLoadedFromInternet,
                     reloadDataFailureCallback,
@@ -474,7 +485,7 @@ PlasmoidItem {
         }
 
         currentPlace = JSON.parse(cacheData.cacheMap[cacheData.cacheKey][1])
-        setCurrentProviderAccordingId(currentPlace.providerId)
+        currentPlace.provider = setCurrentProviderAccordingId(currentPlace.providerId)
 
         // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
 
@@ -538,8 +549,8 @@ PlasmoidItem {
         running: true
         repeat: true
         onTriggered: {
+            dbgprint2("Timer Triggered")
             var now=dateNow()
-            dbgprint("*** Timer triggered")
             dbgprint("*** loadingData Flag : " + loadingData.loadingDatainProgress)
             dbgprint("*** loadingData failedAttemptCount : " + loadingData.failedAttemptCount)
             dbgprint("*** Last Load Success: " + (loadingData.lastloadingSuccessTime))

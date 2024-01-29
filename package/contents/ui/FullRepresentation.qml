@@ -36,9 +36,35 @@ Item {
     property double nextDayItemWidth: (imageWidth / nextDaysCount) - nextDayItemSpacing - hourLegendMargin / nextDaysCount
     property int headingHeight: defaultFontPixelSize * 2
     property double hourLegendBottomMargin: defaultFontPixelSize * 0.2
+    property string fullRepresentationAlias: main.fullRepresentationAlias
 
     implicitWidth: imageWidth
     implicitHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
+
+    onFullRepresentationAliasChanged: {
+
+        for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
+        var t = main.fullRepresentationAlias
+
+            switch (main.timezoneType) {
+                case 0:
+                    t += " (" + getLocalTimeZone()+ ")"
+                    break
+                case 1:
+                    t += " (" + i18n("UTC") + ")"
+                    break
+                case 2:
+                    if (main.currentPlace.timezoneShortName === "") {
+                        main.currentPlace.timezoneShortName = "unknown"
+                    }
+                    t += " (" +  main.currentPlace.timezoneShortName + ")"
+                    break
+                default:
+                    t += " (" + "TBA" + ")"
+                    break
+            }
+            currentLocationText.text = t
+    }
 
     PlasmaComponents.Label {
         id: currentLocationText
@@ -47,27 +73,7 @@ Item {
         anchors.top: parent.top
         verticalAlignment: Text.AlignTop
 
-        text: {
-            var t = main.fullRepresentationAlias
-            switch (main.timezoneType) {
-            case 0:
-                t += " (" + getLocalTimeZone()+ ")"
-                break
-            case 1:
-                t += " (" + i18n("UTC") + ")"
-                break
-            case 2:
-                if (main.currentPlace.timezoneShortName === "") {
-                    main.currentPlace.timezoneShortName = "unknown"
-                }
-                t += " (" +  main.currentPlace.timezoneShortName + ")"
-                break
-            default:
-                t += " (" + "TBA" + ")"
-                break
-            }
-            return t
-        }
+        text: ""
         Component.onCompleted: {
             dbgprint2("FullRepresentation")
             dbgprint((main.currentPlace.alias))
@@ -261,7 +267,7 @@ Item {
         }
 
         onClicked: {
-            main.reloadData()
+            main.loadDataFromInternet()
         }
     }
 

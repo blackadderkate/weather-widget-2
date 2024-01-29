@@ -2,7 +2,7 @@ import QtQuick 2.15
 import "../../code/model-utils.js" as ModelUtils
 import "../../code/data-loader.js" as DataLoader
 import "../../code/unit-utils.js" as UnitUtils
-import "../../code/db/timezoneData.js" as TZ
+
 Item {
     id: metno
 
@@ -139,7 +139,6 @@ Item {
                     x++
                 }
                 wdPtr++
-                dbgprint(JSON.stringify(wd[wdPtr]))
             }
             if ((y < 3) && (x < 8)) {
                 nextDaysModel.append(nextDaysData)
@@ -214,7 +213,7 @@ Item {
             return Qt.locale().dayName(date.getDay(), Locale.ShortFormat) + ' ' + date.getDate() + '/' + (date.getMonth() + 1)
         }
         function successSRAS(jsonString) {
-            dbgprint("succesSRAS")
+            dbgprint("successSRAS")
             var readingsArray = JSON.parse(jsonString)
             dbgprint(JSON.stringify(readingsArray.properties.sunrise))
             dbgprint(JSON.stringify(currentWeatherModel))
@@ -229,12 +228,12 @@ Item {
             currentWeatherModel.sunRiseTime = formatTime(UnitUtils.convertDate(currentWeatherModel.sunRise, main.timezoneType, main.currentPlace.timezoneOffset).toISOString())
             currentWeatherModel.sunSetTime = formatTime(UnitUtils.convertDate(currentWeatherModel.sunSet, main.timezoneType, main.currentPlace.timezoneOffset).toISOString())
             sunRiseSetFlag = true
-            var WEATHERURL = urlPrefix + placeIdentifier
+            var weatherURL = urlPrefix + placeIdentifier
             if (! useOnlineWeatherData) {
-                WEATHERURL = Qt.resolvedUrl('../../code/weather/weather.json')
+                weatherURL = Qt.resolvedUrl('../../code/weather/weather.json')
             }
-            dbgprint(WEATHERURL)
-            var xhr2 = DataLoader.fetchJsonFromInternet(WEATHERURL, successWeather, failureCallback)
+            dbgprint("Downloading Weather Data from: " + weatherURL)
+            var xhr2 = DataLoader.fetchJsonFromInternet(weatherURL, successWeather, failureCallback)
         }
 
         function failureCallback() {
@@ -255,46 +254,23 @@ Item {
             return(sign + hrs + ":" + mins)
         }
 
-        function isDST(DSTPeriods) {
-            if(DSTPeriods === undefined)
-                return (false)
-
-            let now = new Date().getTime() / 1000
-            let isDSTflag = false
-            for (let f = 0; f < DSTPeriods.length; f++) {
-                if ((now >= DSTPeriods[f].DSTStart) && (now <= DSTPeriods[f].DSTEnd)) {
-                    isDSTflag = true
-                }
-            }
-            return(isDSTflag)
-        }
-
         weatherDataFlag = false
         sunRiseSetFlag = false
         var TZURL = ""
-        if (locationObject.timezoneID === -1) {
+
+        if (currentPlace.timezoneID === -1) {
             console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
             TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
         } else {
             dbgprint("Timezone Data is available - using met.no API")
-            if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
-                currentPlace.timezoneShortName = TZ.TZData[locationObject.timezoneID].DSTName
-            } else {
-                currentPlace.timezoneShortName = TZ.TZData[locationObject.timezoneID].TZName
-            }
+
             TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
-            if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
-                TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].DSTOffset)
-                currentPlace.timezoneOffset = TZ.TZData[locationObject.timezoneID].DSTOffset
-            } else {
-                TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].Offset)
-                currentPlace.timezoneOffset = TZ.TZData[locationObject.timezoneID].Offset
-            }
+                TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
         }
         if (! useOnlineWeatherData) {
-            TZURL=Qt.resolvedUrl('../../code/weather/sun.json')
+            TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
         }
-        dbgprint(TZURL)
+        dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
         var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
         return [xhr1]
     }
