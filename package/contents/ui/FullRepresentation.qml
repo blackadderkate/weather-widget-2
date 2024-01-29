@@ -43,7 +43,7 @@ Item {
 
     onFullRepresentationAliasChanged: {
 
-        for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
+        // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
         var t = main.fullRepresentationAlias
 
             switch (main.timezoneType) {
