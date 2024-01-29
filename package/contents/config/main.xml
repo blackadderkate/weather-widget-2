@@ -31,10 +31,6 @@
         <entry name="qml_XHR_ALLOW_FILE_READ" type="Bool">
             <default>false</default>
         </entry>
-
-        <entry name="xmlCacheJson" type="String">
-            <default></default>
-        </entry>
     </group>
 
     <group name="Appearance">
@@ -56,7 +52,7 @@
             <default></default>
         </entry>
         <entry name="widgetFontSize" type="Int">
-            <default>32</default>
+            <default>60</default>
         </entry>
     </group>
 
