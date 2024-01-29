@@ -35,11 +35,23 @@ Item {
     property double parentHeight: parent.height
 
     property double widgetWidth: 0
+    property int widgetFontSize: plasmoid.configuration.widgetFontSize
+    property string widgetFontName: plasmoid.configuration.widgetFontName
 
-    property double fontPixelSize: defaultWidgetSize * (layoutType === 2 ? 0.8 : 0.8)
+// property double fontPixelSize: defaultWidgetSize * (layoutType === 2 ? 0.95 : 0.8)
 
     property string iconNameStr: main.iconNameStr.length > 0 ? main.iconNameStr : "\uf07b"
     property string temperatureStr: main.temperatureStr.length > 0 ? main.temperatureStr : "--"
+
+    onWidgetFontSizeChanged: {
+        compactWeatherIcon.font.pixelSize = widgetFontSize
+        temperatureText.font.pixelSize = widgetFontSize
+    }
+    onWidgetFontNameChanged: {
+        temperatureText.font.family = widgetFontName
+
+    }
+
 
     PlasmaComponents.Label {
         id: compactWeatherIcon
