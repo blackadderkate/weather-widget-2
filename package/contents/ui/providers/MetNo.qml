@@ -43,6 +43,7 @@ Item {
             updatecurrentWeather(readingsArray)
             updateNextDaysModel(readingsArray)
             buildMetogramData(readingsArray)
+            refreshTooltipSubText()
             loadCompleted()
         }
 
@@ -215,18 +216,14 @@ Item {
         function successSRAS(jsonString) {
             dbgprint("successSRAS")
             var readingsArray = JSON.parse(jsonString)
-            dbgprint(JSON.stringify(readingsArray.properties.sunrise))
+            dbgprint("Sunrise:" + JSON.stringify(readingsArray.properties.sunrise))
             dbgprint(JSON.stringify(currentWeatherModel))
             if ((readingsArray.properties !== undefined)) {
                 currentWeatherModel.sunRise = new Date(readingsArray.properties.sunrise.time)
                 currentWeatherModel.sunSet = new Date(readingsArray.properties.sunset.time)
+                currentWeatherModel.sunRiseTime = (readingsArray.properties.sunrise.time).substr(11,5)
+                currentWeatherModel.sunSetTime = (readingsArray.properties.sunset.time).substr(11,5)
             }
-            if ((readingsArray.results !== undefined)) {
-                currentWeatherModel.sunRise = new Date(readingsArray.results.sunrise)
-                currentWeatherModel.sunSet = new Date(readingsArray.results.sunset)
-            }
-            currentWeatherModel.sunRiseTime = formatTime(UnitUtils.convertDate(currentWeatherModel.sunRise, main.timezoneType, main.currentPlace.timezoneOffset).toISOString())
-            currentWeatherModel.sunSetTime = formatTime(UnitUtils.convertDate(currentWeatherModel.sunSet, main.timezoneType, main.currentPlace.timezoneOffset).toISOString())
             sunRiseSetFlag = true
             var weatherURL = urlPrefix + placeIdentifier
             if (! useOnlineWeatherData) {

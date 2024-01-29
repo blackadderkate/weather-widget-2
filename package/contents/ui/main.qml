@@ -362,7 +362,9 @@ PlasmoidItem {
             dbgprint('model not yet ready')
             return
         }
-        // updatecurrentWeatherModelText()
+        // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
+        // for(const [key,value] of Object.entries(currentWeatherModel)) { console.log(`  ${key}: ${value}`) }
+
         var nearFutureWeather = currentWeatherModel.nearFutureWeather
         var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentPlace.providerId, getPartOfDayIndex())
         var wind1=Math.round(currentWeatherModel.windDirection)
@@ -392,6 +394,7 @@ PlasmoidItem {
         subText += '<font size="6">&nbsp;&nbsp;&nbsp;' + UnitUtils.getTemperatureNumber(nearFutureWeather.temperature, temperatureType) + UnitUtils.getTemperatureEnding(temperatureType)
         subText += '&nbsp;&nbsp;&nbsp;<font style="font-family: weathericons">' + futureWeatherIcon + '</font></font>'
         subText += '</b>'
+        toolTipMainText = currentPlace.alias
         toolTipSubText = subText
     }
 
