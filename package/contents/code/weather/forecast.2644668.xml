@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<weatherdata>
+<location>
+<name>
+Leicester</name>
+<type/>
+<country>
+GB</country>
+<timezone>
+0</timezone>
+<location altitude="0" latitude="52.6386" longitude="-1.1317" geobase="geonames" geobaseid="2644668"/>
+</location>
+<credit/>
+<meta>
+<lastupdate/>
+<calctime>
+0</calctime>
+<nextupdate/>
+</meta>
+<sun rise="2024-02-05T07:41:09" set="2024-02-05T16:55:48"/>
+<forecast>
+<time from="2024-02-05T15:00:00" to="2024-02-05T18:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="246" code="WSW" name="West-southwest"/>
+<windSpeed mps="8.72" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="15.88" unit="m/s"/>
+<temperature unit="celsius" value="11.03" min="10.29" max="11.03"/>
+<feels_like value="10.15" unit="celsius"/>
+<pressure unit="hPa" value="1013"/>
+<humidity value="75" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-05T18:00:00" to="2024-02-05T21:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="244" code="WSW" name="West-southwest"/>
+<windSpeed mps="8.54" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="15.58" unit="m/s"/>
+<temperature unit="celsius" value="10.71" min="10.07" max="10.71"/>
+<feels_like value="9.74" unit="celsius"/>
+<pressure unit="hPa" value="1013"/>
+<humidity value="73" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-05T21:00:00" to="2024-02-06T00:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="244" code="WSW" name="West-southwest"/>
+<windSpeed mps="9.02" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="17.34" unit="m/s"/>
+<temperature unit="celsius" value="10.64" min="10.45" max="10.64"/>
+<feels_like value="9.67" unit="celsius"/>
+<pressure unit="hPa" value="1012"/>
+<humidity value="73" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-06T00:00:00" to="2024-02-06T03:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="243" code="WSW" name="West-southwest"/>
+<windSpeed mps="9.59" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="18.83" unit="m/s"/>
+<temperature unit="celsius" value="10.79" min="10.79" max="10.79"/>
+<feels_like value="9.83" unit="celsius"/>
+<pressure unit="hPa" value="1009"/>
+<humidity value="73" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-06T03:00:00" to="2024-02-06T06:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="240" code="WSW" name="West-southwest"/>
+<windSpeed mps="9.73" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="18.43" unit="m/s"/>
+<temperature unit="celsius" value="10.67" min="10.67" max="10.67"/>
+<feels_like value="9.75" unit="celsius"/>
+<pressure unit="hPa" value="1008"/>
+<humidity value="75" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-06T06:00:00" to="2024-02-06T09:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0"/>
+<windDirection deg="238" code="WSW" name="West-southwest"/>
+<windSpeed mps="9.88" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="17.63" unit="m/s"/>
+<temperature unit="celsius" value="10.48" min="10.48" max="10.48"/>
+<feels_like value="9.7" unit="celsius"/>
+<pressure unit="hPa" value="1007"/>
+<humidity value="81" unit="%"/>
+<clouds value="overcast clouds" all="97" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-06T09:00:00" to="2024-02-06T12:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0.01"/>
+<windDirection deg="242" code="WSW" name="West-southwest"/>
+<windSpeed mps="10.37" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="18.29" unit="m/s"/>
+<temperature unit="celsius" value="11.27" min="11.27" max="11.27"/>
+<feels_like value="10.52" unit="celsius"/>
+<pressure unit="hPa" value="1006"/>
+<humidity value="79" unit="%"/>
+<clouds value="overcast clouds" all="98" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-06T12:00:00" to="2024-02-06T15:00:00">
+<symbol number="500" name="light rain" var="10d"/>
+<precipitation probability="0.57" unit="3h" value="0.7" type="rain"/>
+<windDirection deg="240" code="WSW" name="West-southwest"/>
+<windSpeed mps="9.97" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="20.52" unit="m/s"/>
+<temperature unit="celsius" value="10.76" min="10.76" max="10.76"/>
+<feels_like value="10.22" unit="celsius"/>
+<pressure unit="hPa" value="1004"/>
+<humidity value="89" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-06T15:00:00" to="2024-02-06T18:00:00">
+<symbol number="501" name="moderate rain" var="10n"/>
+<precipitation probability="0.94" unit="3h" value="5.84" type="rain"/>
+<windDirection deg="6" code="N" name="North"/>
+<windSpeed mps="3.96" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="8.44" unit="m/s"/>
+<temperature unit="celsius" value="7.17" min="7.17" max="7.17"/>
+<feels_like value="4.55" unit="celsius"/>
+<pressure unit="hPa" value="1005"/>
+<humidity value="95" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="3925"/>
+</time>
+<time from="2024-02-06T18:00:00" to="2024-02-06T21:00:00">
+<symbol number="501" name="moderate rain" var="10n"/>
+<precipitation probability="1" unit="3h" value="7.52" type="rain"/>
+<windDirection deg="39" code="NE" name="NorthEast"/>
+<windSpeed mps="4.48" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="5.67" unit="m/s"/>
+<temperature unit="celsius" value="4.48" min="4.48" max="4.48"/>
+<feels_like value="0.95" unit="celsius"/>
+<pressure unit="hPa" value="1007"/>
+<humidity value="95" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="4557"/>
+</time>
+<time from="2024-02-06T21:00:00" to="2024-02-07T00:00:00">
+<symbol number="501" name="moderate rain" var="10n"/>
+<precipitation probability="1" unit="3h" value="3.82" type="rain"/>
+<windDirection deg="58" code="ENE" name="East-northeast"/>
+<windSpeed mps="2.42" unit="m/s" name="Light breeze"/>
+<windGust gust="3.86" unit="m/s"/>
+<temperature unit="celsius" value="3.41" min="3.41" max="3.41"/>
+<feels_like value="1.09" unit="celsius"/>
+<pressure unit="hPa" value="1008"/>
+<humidity value="95" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="2802"/>
+</time>
+<time from="2024-02-07T00:00:00" to="2024-02-07T03:00:00">
+<symbol number="500" name="light rain" var="10n"/>
+<precipitation probability="0.59" unit="3h" value="1.06" type="rain"/>
+<windDirection deg="83" code="E" name="East"/>
+<windSpeed mps="3.4" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="5.91" unit="m/s"/>
+<temperature unit="celsius" value="3.26" min="3.26" max="3.26"/>
+<feels_like value="0.12" unit="celsius"/>
+<pressure unit="hPa" value="1007"/>
+<humidity value="95" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="5718"/>
+</time>
+<time from="2024-02-07T03:00:00" to="2024-02-07T06:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0.55"/>
+<windDirection deg="80" code="E" name="East"/>
+<windSpeed mps="3.1" unit="m/s" name="Light breeze"/>
+<windGust gust="5.24" unit="m/s"/>
+<temperature unit="celsius" value="3.4" min="3.4" max="3.4"/>
+<feels_like value="0.51" unit="celsius"/>
+<pressure unit="hPa" value="1006"/>
+<humidity value="93" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-07T06:00:00" to="2024-02-07T09:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0.06"/>
+<windDirection deg="93" code="E" name="East"/>
+<windSpeed mps="2.6" unit="m/s" name="Light breeze"/>
+<windGust gust="4.74" unit="m/s"/>
+<temperature unit="celsius" value="3.34" min="3.34" max="3.34"/>
+<feels_like value="0.84" unit="celsius"/>
+<pressure unit="hPa" value="1007"/>
+<humidity value="92" unit="%"/>
+<clouds value="overcast clouds" all="95" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-07T09:00:00" to="2024-02-07T12:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0"/>
+<windDirection deg="115" code="ESE" name="East-southeast"/>
+<windSpeed mps="2.02" unit="m/s" name="Light breeze"/>
+<windGust gust="2.07" unit="m/s"/>
+<temperature unit="celsius" value="5.12" min="5.12" max="5.12"/>
+<feels_like value="3.49" unit="celsius"/>
+<pressure unit="hPa" value="1006"/>
+<humidity value="77" unit="%"/>
+<clouds value="overcast clouds" all="97" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-07T12:00:00" to="2024-02-07T15:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0"/>
+<windDirection deg="128" code="SE" name="SouthEast"/>
+<windSpeed mps="0.73" unit="m/s" name="Calm"/>
+<windGust gust="0.73" unit="m/s"/>
+<temperature unit="celsius" value="5.31" min="5.31" max="5.31"/>
+<feels_like value="5.31" unit="celsius"/>
+<pressure unit="hPa" value="1005"/>
+<humidity value="75" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-07T15:00:00" to="2024-02-07T18:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="96" code="E" name="East"/>
+<windSpeed mps="0.85" unit="m/s" name="Calm"/>
+<windGust gust="1" unit="m/s"/>
+<temperature unit="celsius" value="4.73" min="4.73" max="4.73"/>
+<feels_like value="4.73" unit="celsius"/>
+<pressure unit="hPa" value="1005"/>
+<humidity value="80" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-07T18:00:00" to="2024-02-07T21:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="127" code="SE" name="SouthEast"/>
+<windSpeed mps="1.86" unit="m/s" name="Light breeze"/>
+<windGust gust="2.32" unit="m/s"/>
+<temperature unit="celsius" value="4.49" min="4.49" max="4.49"/>
+<feels_like value="2.93" unit="celsius"/>
+<pressure unit="hPa" value="1005"/>
+<humidity value="81" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-07T21:00:00" to="2024-02-08T00:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="124" code="SE" name="SouthEast"/>
+<windSpeed mps="2.37" unit="m/s" name="Light breeze"/>
+<windGust gust="3.94" unit="m/s"/>
+<temperature unit="celsius" value="4.22" min="4.22" max="4.22"/>
+<feels_like value="2.09" unit="celsius"/>
+<pressure unit="hPa" value="1003"/>
+<humidity value="80" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-08T00:00:00" to="2024-02-08T03:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0.09"/>
+<windDirection deg="107" code="ESE" name="East-southeast"/>
+<windSpeed mps="3.86" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="7.07" unit="m/s"/>
+<temperature unit="celsius" value="3.85" min="3.85" max="3.85"/>
+<feels_like value="0.53" unit="celsius"/>
+<pressure unit="hPa" value="1001"/>
+<humidity value="89" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-08T03:00:00" to="2024-02-08T06:00:00">
+<symbol number="501" name="moderate rain" var="10n"/>
+<precipitation probability="1" unit="3h" value="3.69" type="rain"/>
+<windDirection deg="99" code="E" name="East"/>
+<windSpeed mps="7.15" unit="m/s" name="Moderate breeze"/>
+<windGust gust="12.86" unit="m/s"/>
+<temperature unit="celsius" value="2.52" min="2.52" max="2.52"/>
+<feels_like value="-2.73" unit="celsius"/>
+<pressure unit="hPa" value="996"/>
+<humidity value="97" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="3652"/>
+</time>
+<time from="2024-02-08T06:00:00" to="2024-02-08T09:00:00">
+<symbol number="501" name="moderate rain" var="10d"/>
+<precipitation probability="1" unit="3h" value="5.98" type="rain"/>
+<windDirection deg="102" code="ESE" name="East-southeast"/>
+<windSpeed mps="8.18" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="15.17" unit="m/s"/>
+<temperature unit="celsius" value="3.18" min="3.18" max="3.18"/>
+<feels_like value="-2.25" unit="celsius"/>
+<pressure unit="hPa" value="992"/>
+<humidity value="97" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="3747"/>
+</time>
+<time from="2024-02-08T09:00:00" to="2024-02-08T12:00:00">
+<symbol number="501" name="moderate rain" var="10d"/>
+<precipitation probability="1" unit="3h" value="3.6" type="rain"/>
+<windDirection deg="111" code="ESE" name="East-southeast"/>
+<windSpeed mps="5.09" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="10.68" unit="m/s"/>
+<temperature unit="celsius" value="4.84" min="4.84" max="4.84"/>
+<feels_like value="1.09" unit="celsius"/>
+<pressure unit="hPa" value="988"/>
+<humidity value="98" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="4893"/>
+</time>
+<time from="2024-02-08T12:00:00" to="2024-02-08T15:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0.33"/>
+<windDirection deg="189" code="S" name="South"/>
+<windSpeed mps="2.23" unit="m/s" name="Light breeze"/>
+<windGust gust="6.81" unit="m/s"/>
+<temperature unit="celsius" value="8.29" min="8.29" max="8.29"/>
+<feels_like value="7.01" unit="celsius"/>
+<pressure unit="hPa" value="986"/>
+<humidity value="98" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-08T15:00:00" to="2024-02-08T18:00:00">
+<symbol number="500" name="light rain" var="10n"/>
+<precipitation probability="0.99" unit="3h" value="2.56" type="rain"/>
+<windDirection deg="187" code="S" name="South"/>
+<windSpeed mps="4.67" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="11.87" unit="m/s"/>
+<temperature unit="celsius" value="9.49" min="9.49" max="9.49"/>
+<feels_like value="7.08" unit="celsius"/>
+<pressure unit="hPa" value="984"/>
+<humidity value="97" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="4792"/>
+</time>
+<time from="2024-02-08T18:00:00" to="2024-02-08T21:00:00">
+<symbol number="501" name="moderate rain" var="10n"/>
+<precipitation probability="1" unit="3h" value="4.34" type="rain"/>
+<windDirection deg="175" code="S" name="South"/>
+<windSpeed mps="8.09" unit="m/s" name="Fresh Breeze"/>
+<windGust gust="15.77" unit="m/s"/>
+<temperature unit="celsius" value="9.24" min="9.24" max="9.24"/>
+<feels_like value="5.66" unit="celsius"/>
+<pressure unit="hPa" value="982"/>
+<humidity value="92" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-08T21:00:00" to="2024-02-09T00:00:00">
+<symbol number="501" name="moderate rain" var="10n"/>
+<precipitation probability="1" unit="3h" value="3.63" type="rain"/>
+<windDirection deg="182" code="S" name="South"/>
+<windSpeed mps="7.69" unit="m/s" name="Moderate breeze"/>
+<windGust gust="15.05" unit="m/s"/>
+<temperature unit="celsius" value="9.25" min="9.25" max="9.25"/>
+<feels_like value="5.78" unit="celsius"/>
+<pressure unit="hPa" value="979"/>
+<humidity value="94" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T00:00:00" to="2024-02-09T03:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0.18"/>
+<windDirection deg="194" code="SSW" name="South-southwest"/>
+<windSpeed mps="5.85" unit="m/s" name="Moderate breeze"/>
+<windGust gust="12.55" unit="m/s"/>
+<temperature unit="celsius" value="9.84" min="9.84" max="9.84"/>
+<feels_like value="7.09" unit="celsius"/>
+<pressure unit="hPa" value="979"/>
+<humidity value="91" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T03:00:00" to="2024-02-09T06:00:00">
+<symbol number="500" name="light rain" var="10n"/>
+<precipitation probability="0.3" unit="3h" value="0.17" type="rain"/>
+<windDirection deg="178" code="S" name="South"/>
+<windSpeed mps="6.15" unit="m/s" name="Moderate breeze"/>
+<windGust gust="12.45" unit="m/s"/>
+<temperature unit="celsius" value="9.8" min="9.8" max="9.8"/>
+<feels_like value="6.94" unit="celsius"/>
+<pressure unit="hPa" value="978"/>
+<humidity value="93" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T06:00:00" to="2024-02-09T09:00:00">
+<symbol number="500" name="light rain" var="10d"/>
+<precipitation probability="0.43" unit="3h" value="0.19" type="rain"/>
+<windDirection deg="166" code="SSE" name="South-southeast"/>
+<windSpeed mps="6.42" unit="m/s" name="Moderate breeze"/>
+<windGust gust="12.61" unit="m/s"/>
+<temperature unit="celsius" value="9.77" min="9.77" max="9.77"/>
+<feels_like value="6.82" unit="celsius"/>
+<pressure unit="hPa" value="978"/>
+<humidity value="92" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T09:00:00" to="2024-02-09T12:00:00">
+<symbol number="500" name="light rain" var="10d"/>
+<precipitation probability="1" unit="3h" value="2.62" type="rain"/>
+<windDirection deg="197" code="SSW" name="South-southwest"/>
+<windSpeed mps="7.18" unit="m/s" name="Moderate breeze"/>
+<windGust gust="12.3" unit="m/s"/>
+<temperature unit="celsius" value="10.79" min="10.79" max="10.79"/>
+<feels_like value="10.22" unit="celsius"/>
+<pressure unit="hPa" value="978"/>
+<humidity value="88" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T12:00:00" to="2024-02-09T15:00:00">
+<symbol number="500" name="light rain" var="10d"/>
+<precipitation probability="0.21" unit="3h" value="0.13" type="rain"/>
+<windDirection deg="197" code="SSW" name="South-southwest"/>
+<windSpeed mps="7.19" unit="m/s" name="Moderate breeze"/>
+<windGust gust="12.65" unit="m/s"/>
+<temperature unit="celsius" value="10.93" min="10.93" max="10.93"/>
+<feels_like value="10.27" unit="celsius"/>
+<pressure unit="hPa" value="978"/>
+<humidity value="84" unit="%"/>
+<clouds value="overcast clouds" all="97" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T15:00:00" to="2024-02-09T18:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="190" code="S" name="South"/>
+<windSpeed mps="6.21" unit="m/s" name="Moderate breeze"/>
+<windGust gust="13.27" unit="m/s"/>
+<temperature unit="celsius" value="8.7" min="8.7" max="8.7"/>
+<feels_like value="5.52" unit="celsius"/>
+<pressure unit="hPa" value="980"/>
+<humidity value="83" unit="%"/>
+<clouds value="overcast clouds" all="98" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T18:00:00" to="2024-02-09T21:00:00">
+<symbol number="804" name="overcast clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="185" code="S" name="South"/>
+<windSpeed mps="6.61" unit="m/s" name="Moderate breeze"/>
+<windGust gust="14.28" unit="m/s"/>
+<temperature unit="celsius" value="8.04" min="8.04" max="8.04"/>
+<feels_like value="4.55" unit="celsius"/>
+<pressure unit="hPa" value="981"/>
+<humidity value="81" unit="%"/>
+<clouds value="overcast clouds" all="91" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-09T21:00:00" to="2024-02-10T00:00:00">
+<symbol number="803" name="broken clouds" var="04n"/>
+<precipitation probability="0"/>
+<windDirection deg="183" code="S" name="South"/>
+<windSpeed mps="5.8" unit="m/s" name="Moderate breeze"/>
+<windGust gust="13.1" unit="m/s"/>
+<temperature unit="celsius" value="6.88" min="6.88" max="6.88"/>
+<feels_like value="3.36" unit="celsius"/>
+<pressure unit="hPa" value="983"/>
+<humidity value="84" unit="%"/>
+<clouds value="broken clouds" all="61" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-10T00:00:00" to="2024-02-10T03:00:00">
+<symbol number="801" name="few clouds" var="02n"/>
+<precipitation probability="0"/>
+<windDirection deg="181" code="S" name="South"/>
+<windSpeed mps="5.73" unit="m/s" name="Moderate breeze"/>
+<windGust gust="13.65" unit="m/s"/>
+<temperature unit="celsius" value="6.41" min="6.41" max="6.41"/>
+<feels_like value="2.79" unit="celsius"/>
+<pressure unit="hPa" value="983"/>
+<humidity value="86" unit="%"/>
+<clouds value="few clouds" all="12" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-10T03:00:00" to="2024-02-10T06:00:00">
+<symbol number="801" name="few clouds" var="02n"/>
+<precipitation probability="0"/>
+<windDirection deg="183" code="S" name="South"/>
+<windSpeed mps="6.1" unit="m/s" name="Moderate breeze"/>
+<windGust gust="13.63" unit="m/s"/>
+<temperature unit="celsius" value="6.31" min="6.31" max="6.31"/>
+<feels_like value="2.52" unit="celsius"/>
+<pressure unit="hPa" value="984"/>
+<humidity value="88" unit="%"/>
+<clouds value="few clouds" all="14" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-10T06:00:00" to="2024-02-10T09:00:00">
+<symbol number="803" name="broken clouds" var="04d"/>
+<precipitation probability="0"/>
+<windDirection deg="180" code="S" name="South"/>
+<windSpeed mps="6.67" unit="m/s" name="Moderate breeze"/>
+<windGust gust="14.09" unit="m/s"/>
+<temperature unit="celsius" value="6.74" min="6.74" max="6.74"/>
+<feels_like value="2.86" unit="celsius"/>
+<pressure unit="hPa" value="986"/>
+<humidity value="88" unit="%"/>
+<clouds value="broken clouds" all="69" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-10T09:00:00" to="2024-02-10T12:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0"/>
+<windDirection deg="183" code="S" name="South"/>
+<windSpeed mps="6.53" unit="m/s" name="Moderate breeze"/>
+<windGust gust="10.94" unit="m/s"/>
+<temperature unit="celsius" value="9.21" min="9.21" max="9.21"/>
+<feels_like value="6.07" unit="celsius"/>
+<pressure unit="hPa" value="988"/>
+<humidity value="81" unit="%"/>
+<clouds value="overcast clouds" all="85" unit="%"/>
+<visibility value="10000"/>
+</time>
+<time from="2024-02-10T12:00:00" to="2024-02-10T15:00:00">
+<symbol number="804" name="overcast clouds" var="04d"/>
+<precipitation probability="0"/>
+<windDirection deg="183" code="S" name="South"/>
+<windSpeed mps="5.6" unit="m/s" name="Moderate breeze"/>
+<windGust gust="9.96" unit="m/s"/>
+<temperature unit="celsius" value="9.39" min="9.39" max="9.39"/>
+<feels_like value="6.6" unit="celsius"/>
+<pressure unit="hPa" value="989"/>
+<humidity value="80" unit="%"/>
+<clouds value="overcast clouds" all="100" unit="%"/>
+<visibility value="10000"/>
+</time>
+</forecast>
+</weatherdata>
