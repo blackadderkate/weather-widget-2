@@ -66,21 +66,21 @@ Item {
             url2 = urlPrefix + '/forecast/daily?id=' + placeIdentifier + '&cnt=8' + appIdAndModeSuffix + versionParam
             url3 = urlPrefix + '/forecast?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
         }
+        main.debugLogging = 1
         dbgprint("xmlModelCurrent = " + url1)
         dbgprint("xmlModelLongTerm = " + url2)
         dbgprint("xmlModelHourByHour = " + url3)
+        main.debugLogging = 0
         xmlModelCurrent.source = url1
         xmlModelLongTerm.source = url2
         xmlModelHourByHour.source = url3
     }
 
     function updatecurrentWeather() {
-
         dbgprint2('updatecurrentWeather')
 
         var now = new Date()
         dbgprint('now: ' + now)
-
 
         var tooOldCurrentDataLimit = new Date(now.getTime() - (2 * 60 * 60 * 1000))
         var nearFutureWeather = currentWeatherModel.nearFutureWeather
@@ -96,10 +96,14 @@ Item {
         currentWeatherModel.windDirection = parseFloat(obj.windDirection)
         currentWeatherModel.cloudiness = obj.cloudiness
         currentWeatherModel.updated = obj.updated
-        currentWeatherModel.sunRise = parseDate(obj.rise)
-        currentWeatherModel.sunSet = parseDate(obj.set)
-        currentWeatherModel.sunRiseTime=formatTime(UnitUtils.convertDate(currentWeatherModel.sunRise,main.timezoneType,main.currentPlace.timezoneOffset).toISOString())
-        currentWeatherModel.sunSetTime=formatTime(UnitUtils.convertDate(currentWeatherModel.sunSet,main.timezoneType,main.currentPlace.timezoneOffset).toISOString())
+        let sunRise = Date.parse(obj.rise)
+        let sunSet = Date.parse(obj.set)
+        let tz = parseInt(obj.timezoneOffset) * 1000
+        currentPlace.timezoneOffset = tz
+        currentWeatherModel.sunRise = new Date (sunRise)
+        currentWeatherModel.sunSet= new Date (sunSet)
+        currentWeatherModel.sunRiseTime = new Date (sunRise + tz).toTimeString()
+        currentWeatherModel.sunSetTime = new Date (sunSet + tz).toTimeString()
         dbgprint2('EXIT updatecurrentWeather')
     }
 
@@ -114,69 +118,141 @@ Item {
             }
             return myblankObject
         }
+
+        main.debugLogging = 1
         dbgprint2("updateNextDaysModel")
-        dbgprint(xmlModelHourByHour.count)
-        let wdPtr = 0
-        let x = 0
-        while ((wdPtr < xmlModelHourByHour.count) && (((new Date(xmlModelHourByHour.get(wdPtr).from).getHours() - 3) % 6 ) != 0)) { wdPtr++; dbgprint(wdPtr) }
-        let t = 0
-        let y = 0
-        let myOffset = 3
-        let nextDaysData=blankObject()
-        let airTemp = -999
 
-        while (x < 5 && y < 3 && wdPtr < xmlModelHourByHour.count) {
-            let tm1 = new Date(xmlModelHourByHour.get(wdPtr).from)
-            if (wdPtr < 64) {myOffset = 3} else {myOffset = 0}
-            let tm2 = tm1.getHours() - myOffset
-            t = (tm2 % 6)
-            if (t == 0) {
-                let y = (tm2) / 6
-                airTemp=parseInt(xmlModelHourByHour.get(wdPtr).temperature)
-                nextDaysData['dayTitle']=composeNextDayTitle(new Date(xmlModelHourByHour.get(wdPtr).from))
-                nextDaysData['temperature' + y] = airTemp
-                nextDaysData['hidden' + y] = false
-                let obj = ""
-                nextDaysData['iconName' + y] = xmlModelHourByHour.get(wdPtr).iconName
+        let updatedDateTime = xmlModelCurrent.get(0).updated
+        let timezoneOffset = xmlModelCurrent.get(0).timezoneOffset
 
-                if (y==3) {
-                    nextDaysModel.append(nextDaysData)
-                    nextDaysData = blankObject()
-                    x++
-                }
+        let updatedDateTimeStamp = Date.parse(updatedDateTime)
+        let updatedDateTimeStampLocal = convertToLocalTime(Date.parse(updatedDateTime),timezoneOffset * 1000)
+        let hr = new Date(updatedDateTimeStampLocal).getHours()
+        let y = parseInt((hr + 3) / 6)
+
+        let dataTime = new Date(updatedDateTimeStampLocal)
+        // dbgprint2(militaryGMTOffsetFromNumeric(tz1))
+        dbgprint("XML Updated At:\t"+ updatedDateTime + "\t" + new Date(updatedDateTimeStamp) + "\t" + new Date(updatedDateTimeStampLocal))
+        // dbgprint("XML Updated At:\t"+ t1 + "Z" + militaryGMTOffsetFromNumeric(tz1))
+        // let t2 = Date.parse(t1 + "Z" + militaryGMTOffsetFromNumeric(tz1))
+        // let t3 = new Date(t2)
+        // dbgprint("XML Updated At:\t" + t3 + " (local)")
+        // let timeArray = t1.split(/[T:-]/)
+        // let hr = parseInt(timeArray[3])
+        // let x = 0
+        // let y = parseInt((hr + 3) / 6)
+        let nextDaysData = blankObject()
+        dbgprint2("HR = " + hr + "\tY = " + y)
+
+
+
+        let ptr = 0
+        dbgprint("*********************************************************************")
+        dbgprint("Parsing Data starting at Row " + ptr + " of xmlModelLongTerm")
+
+        while (ptr < xmlModelLongTerm.count) {
+            let obj = xmlModelLongTerm.get(ptr)
+            if (y === 0) {
+                nextDaysData['temperature0'] = parseInt(obj.temperatureMorning)
+                nextDaysData['iconName0'] = obj.iconName
+                dbgprint("Added data for Row " + (x + 1) + " Column " + (y + 1))
+                nextDaysData['hidden0'] = false
+                y++
             }
-            wdPtr++
+            if (y === 1) {
+                nextDaysData['temperature1'] = parseInt(obj.temperatureDay)
+                nextDaysData['iconName1'] = obj.iconName
+                dbgprint("Added data for Row " + (x + 1) + " Column " + (y + 1))
+                nextDaysData['hidden1'] = false
+                y++
+            }
+            if (y === 2) {
+                nextDaysData['temperature2'] = parseInt(obj.temperatureEvening)
+                nextDaysData['iconName2'] = obj.iconName
+                dbgprint("Added data for Row " + (x + 1) + " Column " + (y + 1))
+                nextDaysData['hidden2'] = false
+                y++
+            }
+            nextDaysData['temperature3'] = parseInt(obj.temperatureNight)
+            nextDaysData['iconName3'] = obj.iconName
+            dbgprint("Added data for Row " + (x + 1) + " Column 4")
+            nextDaysData['hidden3'] = false
+            nextDaysData['dayTitle'] =  composeNextDayTitle(dataTime)
+            dataTime.setDate(dataTime.getDate() + 1)
+            dbgprint("*** PUSHED ROW " + x + "\t" + nextDaysData['dayTitle'])
+
+            nextDaysModel.append(nextDaysData)
+            // for(const [key,value] of Object.entries(nextDaysData)) { console.log(`  ${key}: ${value}`) }
+
+            x++
+            y = 0
+            nextDaysData = blankObject()
+            ptr++
         }
+
+/* Overwrite nextDaysModel with more accurate data from Daily XML Model where available */
+        x = 0
+        y = 0
+        ptr = 0
+        nextDaysData=blankObject()
+
+        while (ptr < xmlModelHourByHour.count) {
+            let obj = xmlModelHourByHour.get(ptr)
+            let t = convertToLocalTime(obj.from, timezoneOffset * 1000)
+            let h = 3 + (parseInt(t.getHours() / 6) * 6)
+            y = parseInt(h / 6)
+            dbgprint("GetHours=" + t.getHours() + "\th=" + h + "\ty=" +y)
+            nextDaysData['dayTitle'] = composeNextDayTitle(t)
+            nextDaysData['temperature' + y] = parseInt(obj.temperature)
+            nextDaysData['hidden' + y] = false
+            nextDaysData['iconName' + y] = obj.iconName
+            if (y === 3) {
+                dbgprint("*** Replaced ROW " + x + "\t" + nextDaysData['dayTitle'])
+                nextDaysModel.remove(x,1)
+                nextDaysModel.insert(x,nextDaysData)
+                nextDaysData=blankObject()
+                x++
+                y = 0
+            }
+            ptr = ptr + 2
+        }
+
         dbgprint("nextDaysModel Count:" + nextDaysModel.count)
         dbgprint2("EXIT updateNextDaysModel")
+        main.debugLogging = 0
     }
 
 
     function buildMetogramData() {
-        dbgprint('updating meteogram models')
+        main.debugLogging = 0
+        dbgprint2("buildMetogramData (OWM)" + currentPlace.identifier)
 
         meteogramModel.clear()
 
         var firstFromMs = null
         var limitMsDifference = 1000 * 60 * 60 * 54 // 2.25 days
-        var now = new Date()
-        now = parseDate(xmlModelHourByHour.get(0).from)
-        var dateFrom = parseDate(xmlModelHourByHour.get(0).from)
+        var now = new Date(convertToLocalTime(xmlModelHourByHour.get(0).from, currentPlace.timezoneOffset))
+
+
+        var dateFrom = now
+        var dateTo = now
         var sunrise1 = (currentWeatherModel.sunRise)
         var sunset1 = (currentWeatherModel.sunSet)
         var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
-        dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
+        // dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
 
         for (var i = 0; i < xmlModelHourByHour.count; i++) {
             var obj = xmlModelHourByHour.get(i)
-            dateFrom = parseDate(obj.from)
-            var dateTo = parseDate(obj.to)
+            dateFrom = convertToLocalTime(obj.from, currentPlace.timezoneOffset)
+            dateTo = convertToLocalTime(obj.to, currentPlace.timezoneOffset)
+            // dbgprint("obj.from=" + obj.from + "\tobj.to=" + obj.to + "\tdateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
+
             if (now > dateTo) {
                 continue
             }
 
             if (dateFrom <= now && now <= dateTo) {
-                dbgprint('foundNow')
+                // dbgprint('foundNow')
                 dateFrom = now
             }
 
@@ -184,9 +260,7 @@ Item {
             if ((typeof(prec) === "string")  && (prec === "")) {
                 prec = 0
             }
-            dbgprint("dateFrom = " + dateFrom.toUTCString())
-            dbgprint("Sunrise = " + sunrise1.toUTCString())
-            dbgprint("Sunset = " + sunset1.toUTCString())
+            // dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString())
 
             if (dateFrom >= sunrise1) {
                 if (dateFrom < sunset1) {
@@ -197,10 +271,12 @@ Item {
                     isDaytime = false
                 }
             }
-            dbgprint(isDaytime ? "isDay\n" : "isNight\n")
+            // dbgprint(isDaytime ? "isDay\n" : "isNight\n")
+            // dbgprint2(new Date(Date.parse(obj.from)))
+            dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,currentPlace.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
             meteogramModel.append({
-                                      from: dateFrom,
-                                      to: dateTo,
+                                      from: new Date(Date.parse(obj.from)),
+                                      to:new Date(Date.parse(obj.to)),
                                       isDaytime: isDaytime,
                                       temperature: parseFloat(obj.temperature),
                                       precipitationAvg: parseFloat(prec),
@@ -212,19 +288,29 @@ Item {
                                       iconName: obj.iconName
                                   })
             if (firstFromMs === null) {
-                firstFromMs = dateFrom.getTime()
+                firstFromMs = new Date(dateFrom).getTime()
             }
 
-            if (dateTo.getTime() - firstFromMs > limitMsDifference) {
+            if (new Date(dateTo).getTime() - firstFromMs > limitMsDifference) {
                 dbgprint('breaking')
                 break
             }
         }
 
         dbgprint('meteogramModel.count = ' + meteogramModel.count)
+        main.debugLogging = 0
+
     }
 
+    function convertToLocalTime(dateString, timezoneOffset) {
+        if ((dateString instanceof Date) || (typeof dateString === 'string'))  {
+            dateString = Date.parse(dateString)
+        }
+
+        return new Date(dateString + timezoneOffset)
+    }
     function composeNextDayTitle(date) {
+        dbgprint2("composeNextDayTitle    " + date)
         return Qt.locale().dayName(date.getDay(), Locale.ShortFormat) + ' ' + date.getDate() + '/' + (date.getMonth() + 1)
     }
 
@@ -256,48 +342,14 @@ Item {
         dbgprint("timezoneName changed to:" + currentPlace.timezoneShortName)
     }
 
-    function parseDate(dateString) {
-        return new Date(dateString + '.000Z')
+    function localTime(date){
+        let t = Date.parse(date) + parseInt(currentPlace.timezoneOffset)
+        return new Date(t)
     }
-
     function formatTime(ISOdate) {
         return ISOdate.substr(11,5)
     }
-/*
-    function createTodayTimeObj() {
-        dbgprint2("createTodayTimeObj")
-        function formatTime(ISOdate) {
-            return ISOdate.substr(11,5)
-        }
 
-        var currentTimeObj = xmlModelCurrent.get(0)
-        dbgprint(JSON.stringify(currentTimeObj))
-
-
-        dbgprint(new Date(Date.parse(currentTimeObj.rise)))
-
-        currentWeatherModel.sunRise = new Date(Date.parse(currentTimeObj.rise))
-        currentWeatherModel.sunSet = new Date(Date.parse(currentTimeObj.set))
-
-        dbgprint('sunRise 1: ' + (currentWeatherModel.sunRise))
-        dbgprint('sunSet  1: ' + (currentWeatherModel.sunSet))
-
-
-        currentWeatherModel.sunRiseTime=new Date(UnitUtils.localTime(currentWeatherModel.sunRise,currentTimeObj.timezoneOffset))
-        currentWeatherModel.sunSetTime=new Date(UnitUtils.localTime(currentWeatherModel.sunSet,currentTimeObj.timezoneOffset))
-
-        dbgprint('sunRiseTime 1: ' + parseDate(currentWeatherModel.sunRiseTime))
-        dbgprint('sunSetTime  1: ' + parseDate(currentWeatherModel.sunSetTime))
-
-        currentPlace.timezoneOffset=currentTimeObj.timezoneOffset
-
-        getTimeZoneName()
-
-        dbgprint('setting actual weather from current xml model')
-        dbgprint('current: ' + currentTimeObj.temperature)
-        return currentTimeObj
-    }
-*/
     function loadCompleted() {
         main.loadingDataComplete = true
         dataLoadedFromInternet()
@@ -317,6 +369,7 @@ Item {
         XmlListModelRole { name: "updated"; elementName: "lastupdate"; attributeName: "value" }
         XmlListModelRole { name: "rise"; elementName: "city/sun"; attributeName: "rise" }
         XmlListModelRole { name: "set"; elementName: "city/sun"; attributeName: "set" }
+        XmlListModelRole { name: "cityName"; elementName: "city"; attributeName: "name"  }
         XmlListModelRole { name: "timezoneOffset"; elementName: "city/timezone" }
 
         function get(i) {
