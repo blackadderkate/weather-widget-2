@@ -148,7 +148,8 @@ Item {
         }
 
         function buildMetogramData(readingsArray) {
-            dbgprint2("buildMetogramData")
+            main.debugLogging = 0
+            dbgprint2("buildMetogramData (MetNo)" + currentPlace.identifier)
             meteogramModel.clear()
             var readingsLength = (readingsArray.properties.timeseries.length)
             var dateFrom = parseISOString(readingsArray.properties.timeseries[0].time)
@@ -181,8 +182,7 @@ Item {
                         isDaytime = false
                     }
                 }
-                // dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,currentPlace.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
-                // dbgprint(isDaytime ? "isDay\n" : "isNight\n")
+                dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,currentPlace.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString() + "\t" + (isDaytime ? "isDay\n" : "isNight\n"))
                 meteogramModel.append({
                                           from: dateFrom,
                                           to: dateTo,
@@ -200,6 +200,8 @@ Item {
                 i++
             }
             main.loadingDataComplete = true
+            main.debugLogging = 0
+
         }
 
         function formatTime(ISOdate) {
