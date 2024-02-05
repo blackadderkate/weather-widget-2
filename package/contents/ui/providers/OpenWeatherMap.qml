@@ -57,9 +57,9 @@ Item {
         var placeIdentifier = locationObject.placeIdentifier
         var versionParam = '&v=' + new Date().getTime()
         if (! useOnlineWeatherData) {
-            url1 = Qt.resolvedUrl('../../code/weather/current.xml')
-            url2 = Qt.resolvedUrl('../../code/weather/daily.xml')
-            url3 = Qt.resolvedUrl('../../code/weather/forecast.xml')
+            url1 = Qt.resolvedUrl('../../code/weather/current.' + placeIdentifier + '.xml')
+            url2 = Qt.resolvedUrl('../../code/weather/daily.' + placeIdentifier + '.xml')
+            url3 = Qt.resolvedUrl('../../code/weather/forecast.' + placeIdentifier + '.xml')
         } else {
 
             url1 = urlPrefix + '/weather?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
