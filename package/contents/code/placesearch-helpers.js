@@ -1,4 +1,4 @@
-.import "./db/timezoneData.js" as TZData
+.import "./timezoneData.js" as TZData
 var countries = Array(
             {shortCode: "AD" , displayName: "Andorra"},
             {shortCode: "AE" , displayName: "United Arab Emirates"},

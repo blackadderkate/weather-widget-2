@@ -52,7 +52,6 @@ Item {
 
     property int dataArraySize: 2
 
-
     property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
     property color gridColor: textColorLight ? Qt.tint(Kirigami.Theme.textColor, '#80000000') : Qt.tint(Kirigami.Theme.textColor, '#80FFFFFF')
     property color gridColorHighlight: textColorLight ? Qt.tint(Kirigami.Theme.textColor, '#50000000') : Qt.tint(Kirigami.Theme.textColor, '#50FFFFFF')
@@ -299,7 +298,6 @@ Item {
                     }
                 }
             }
-
             PlasmaComponents.Label {
                 id: dayTest
                 text: Qt.locale().dayName(dateFrom.getDay(), Locale.LongFormat)
@@ -483,8 +481,8 @@ Item {
     }
 
     function buildMetogramData() {
-        dbgprint2("buildMetogramData")
-        var precipitation_unit = meteogramModel.get(0).precipitationLabel
+        main.debugLogging = 0
+        dbgprint2("buildMetogramData (meteogram)")
         var counter = 0
         var i = 0
         const oneHourMs = 3600000
@@ -509,9 +507,8 @@ Item {
             for (var j = 0; j < differenceHours; j++) {
                 counter = (prec > 0) ? counter + 1 : 0
                 var preparedDate = new Date(dateFrom.getTime() + (j * oneHourMs))
-
                 hourGridModel.append({
-                                         dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, main.currentPlace.timezoneOffset),
+                                         dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, main.currentPlace.timezoneOffset / 1000),
                                          iconName: j === differenceHoursMid ? icon : '',
                                          isDaytime: obj.isDaytime,
                                          temperature: airtmp,
@@ -532,6 +529,7 @@ Item {
             hourGridModel.setProperty(i, 'canShowDay', false)
         }
         hourGridModel.setProperty(hourGridModel.count - 1, 'canShowPrec', false)
+        main.debugLogging = 0
     }
 
     function buildCurves() {

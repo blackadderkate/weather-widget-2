@@ -3,7 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "../../code/config-utils.js" as ConfigUtils
 import "../../code/placesearch-helpers.js" as Helper
-import "../../code/db/timezoneData.js" as TZData
+import "../../code/timezoneData.js" as TZData
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 

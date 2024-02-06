@@ -27,7 +27,7 @@ import "../code/data-loader.js" as DataLoader
 import "../code/config-utils.js" as ConfigUtils
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
-import "../code/db/timezoneData.js" as TZ
+import "../code/timezoneData.js" as TZ
 
 PlasmoidItem {
     id: main

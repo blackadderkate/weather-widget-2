@@ -58,39 +58,39 @@ Item {
 
         width: {
             switch (layoutType) {
-            case 0:
-                return widgetSize / 2
-                break
-            case 1:
-                return widgetSize
-                break
-            case 2:
-                return widgetSize * 0.8
-                break
+                case 0:
+                    return widgetSize / 2
+                    break
+                case 1:
+                    return widgetSize
+                    break
+                case 2:
+                    return widgetSize * 0.6
+                    break
 
             }
         }
 
         height: {
             switch (layoutType) {
-            case 0:
-                return defaultWidgetSize
-                break
-            case 1:
-                return defaultWidgetSize / 2
-                break
-            case 2:
-                return defaultWidgetSize * 0.8
-                break
+                case 0:
+                    return defaultWidgetSize
+                    break
+                case 1:
+                    return defaultWidgetSize / 2
+                    break
+                case 2:
+                    return defaultWidgetSize * 0.6
+                    break
 
             }
         }
 
         anchors.left: parent.left
-        anchors.leftMargin: layoutType === 2 ? widgetSize * .1 : layoutType === 1 ? 0 : widgetSize / 2
+        anchors.leftMargin: layoutType === 2 ? 0 : layoutType === 1 ? 0 : widgetSize / 2
         anchors.top: parent.top
-        anchors.topMargin: layoutType === 1 ? defaultWidgetSize / 2 : layoutType === 2 ? widgetSize * .2 : 0
-        anchors.fill: parent
+        anchors.topMargin: layoutType === 1 ? defaultWidgetSize / 2 : layoutType === 2 ? 0 : 0
+        // anchors.fill: parent
         horizontalAlignment: layoutType === 2 ? Text.AlignRight : Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         fontSizeMode: Text.FixedSize
@@ -107,33 +107,37 @@ Item {
 
         width: {
             switch (layoutType) {
-            case 0:
-                return widgetSize / 2
-                break
-            case 1:
-                return widgetSize
-                break
-            case 2:
-                return widgetSize
-                break
+                case 0:
+                    return widgetSize / 2
+                    break
+                case 1:
+                    return widgetSize
+                    break
+                case 2:
+                    return widgetSize * 0.65
+                    break
 
             }
         }
 
         height: {
             switch (layoutType) {
-            case 0:
-                return defaultWidgetSize
-                break
-            case 1:
-                return defaultWidgetSize / 2
-                break
-            case 2:
-                return defaultWidgetSize
-                break
+                case 0:
+                    return defaultWidgetSize
+                    break
+                case 1:
+                    return defaultWidgetSize / 2
+                    break
+                case 2:
+                    return defaultWidgetSize * 0.65
+                    break
 
             }
         }
+        anchors.left: (layoutType === 2) ? undefined : parent.left
+        anchors.top: (layoutType === 2) ? undefined : parent.top
+        anchors.right: (layoutType === 2) ? parent.right: undefined
+        anchors.bottom: (layoutType === 2) ? parent.bottom: undefined
 
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
