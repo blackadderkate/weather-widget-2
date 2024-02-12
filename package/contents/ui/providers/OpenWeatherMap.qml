@@ -119,7 +119,6 @@ Item {
             return myblankObject
         }
 
-        main.debugLogging = 1
         dbgprint2("updateNextDaysModel")
 
         let updatedDateTime = xmlModelCurrent.get(0).updated

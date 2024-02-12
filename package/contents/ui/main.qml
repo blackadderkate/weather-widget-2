@@ -306,17 +306,17 @@ PlasmoidItem {
 
         nextDaysCount = nextDaysModel.count
 
-
-        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
-        meteogramModelChanged = !meteogramModelChanged
-        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
-
         updateLastReloadedText()
         updateCompactItem()
         refreshTooltipSubText()
 
         currentPlace.creditLink = currentPlace.provider.getCreditLink(currentPlace.identifier)
         currentPlace.creditLabel = currentPlace.provider.getCreditLabel(currentPlace.identifier)
+
+        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+        meteogramModelChanged = !meteogramModelChanged
+        dbgprint("meteogramModelChanged:" + meteogramModelChanged)
+
         saveToCache()
     }
     function reloadDataFailureCallback() {
