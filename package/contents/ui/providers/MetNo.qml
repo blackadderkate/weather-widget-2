@@ -24,7 +24,7 @@ Item {
     function extLongLat(placeIdentifier) {
         dbgprint(placeIdentifier)
         return placeIdentifier.substr(placeIdentifier.indexOf("lat=" ) + 4,placeIdentifier.indexOf("&lon=")-4) + "," +
-            placeIdentifier.substr(placeIdentifier.indexOf("&lon=") + 5,placeIdentifier.indexOf("&altitude=") - placeIdentifier.indexOf("&lon=") - 5)
+        placeIdentifier.substr(placeIdentifier.indexOf("&lon=") + 5,placeIdentifier.indexOf("&altitude=") - placeIdentifier.indexOf("&lon=") - 5)
     }
 
     function getCreditLink(placeIdentifier) {
@@ -66,8 +66,17 @@ Item {
             currentWeatherModel.temperature = currentWeather.data.instant.details["air_temperature"]
             currentWeatherModel.nearFutureWeather.temperature = futureWeather.data.instant.details["air_temperature"]
             currentWeatherModel.nearFutureWeather.iconName = geticonNumber(futureWeather.data.next_1_hours.summary.symbol_code)
-            dbgprint(JSON.stringify(currentWeatherModel))
 
+            let sunRise = UnitUtils.convertDate(currentWeatherModel.sunRise,2,currentPlace.timezoneOffset)
+            let sunSet = UnitUtils.convertDate(currentWeatherModel.sunSet,2,currentPlace.timezoneOffset)
+            let updated = UnitUtils.convertDate(new Date(readingsArray.properties.timeseries[0].time) , 2 , currentPlace.timezoneOffset)
+
+            dbgprint("Updated=" + readingsArray.properties.timeseries[0].time + "\t" + currentWeatherModel.sunRise + "\t" + currentWeatherModel.sunSet)
+            dbgprint("Updated=" + updated/1000 + "\t" + sunRise/1000 + "\t" + sunSet/1000)
+            dbgprint("Updated=" + updated/1000 + "\t" + (updated > sunRise) + "\t" + (updated < sunSet))
+            currentWeatherModel.isDay = ((updated > sunRise) && (updated < sunSet)) ? 0 : 1
+
+            dbgprint(JSON.stringify(currentWeatherModel))
         }
 
         function updateNextDaysModel(readingsArray) {
@@ -184,18 +193,18 @@ Item {
                 }
                 dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,currentPlace.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString() + "\t" + (isDaytime ? "isDay\n" : "isNight\n"))
                 meteogramModel.append({
-                                          from: dateFrom,
-                                          to: dateTo,
-                                          isDaytime: isDaytime,
-                                          temperature: parseFloat(airtmp),
-                                          precipitationAvg: parseFloat(prec),
-                                          precipitationMax: parseFloat(prec),
-                                          precipitationLabel: (counter === 1) ? "mm" : "",
-                                          windDirection: parseFloat(wd),
-                                          windSpeedMps: parseFloat(ws),
-                                          pressureHpa: parseFloat(ap),
-                                          iconName: geticonNumber(icon)
-                                      })
+                    from: dateFrom,
+                    to: dateTo,
+                    isDaytime: isDaytime,
+                    temperature: parseFloat(airtmp),
+                                      precipitationAvg: parseFloat(prec),
+                                      precipitationMax: parseFloat(prec),
+                                      precipitationLabel: (counter === 1) ? "mm" : "",
+                                      windDirection: parseFloat(wd),
+                                      windSpeedMps: parseFloat(ws),
+                                      pressureHpa: parseFloat(ap),
+                                      iconName: geticonNumber(icon)
+                })
                 dateFrom = dateTo
                 i++
             }
@@ -264,7 +273,7 @@ Item {
             dbgprint("Timezone Data is available - using met.no API")
 
             TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
-                TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
+            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
         }
         if (! useOnlineWeatherData) {
             TZURL = Qt.resolvedUrl('../../code/weather/sun.json')

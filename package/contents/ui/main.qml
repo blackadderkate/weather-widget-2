@@ -175,11 +175,6 @@ PlasmoidItem {
         var now=new Date().getTime()
         return now
     }
-    function isDay(sunrise,sunset) {
-        dbgprint2("isDay")
-        var now = new Date().getTime()
-        return ((now > sunrise) && (now < sunset)) ? 0 : 1
-    }
 
     function setCurrentProviderAccordingId(providerId) {
         currentPlace.providerId = providerId
@@ -205,6 +200,7 @@ PlasmoidItem {
             sunSet: new Date("2000-01-01T00:00:00"),
             sunRiseTime: "0:00",
             sunSetTime: "0:00",
+            isDay: false,
             nearFutureWeather: {
                 iconName: null,
                 temperature: null
@@ -337,22 +333,9 @@ PlasmoidItem {
     function updateCompactItem(){
         dbgprint2("updateCompactItem")
         dbgprint(JSON.stringify(currentWeatherModel))
-        let icon=currentWeatherModel.iconName
-        let isDaytime=isDay(currentWeatherModel.sunrise,currentWeatherModel.sunset)
-        iconNameStr = (icon > 0) ? IconTools.getIconCode(icon, currentPlace.providerId, isDaytime) : '\uf07b'
+        let icon = currentWeatherModel.iconName
+        iconNameStr = (icon > 0) ? IconTools.getIconCode(icon, currentPlace.providerId, currentWeatherModel.isDay) : '\uf07b'
         temperatureStr = currentWeatherModel.temperature !== 9999 ? UnitUtils.getTemperatureNumberExt(currentWeatherModel.temperature, temperatureType) : '--'
-    }
-    function getPartOfDayIndex() {
-        var now = new Date().getTime()
-        let sunrise1 = currentWeatherModel.sunRise.getTime()
-        let sunset1 = currentWeatherModel.sunSet.getTime()
-        let icon = ((now > sunrise1) && (now < sunset1)) ? 0 : 1
-        // dbgprint(JSON.stringify(currentWeatherModel))
-        // dbgprint("NOW = " + now + "\tSunrise = " + sunrise1 + "\tSunset = " + sunset1 + "\t" + (icon === 0 ? "isDay" : "isNight"))
-        // dbgprint("\t > Sunrise:" + (now > sunrise1) + "\t\t Sunset:" + (now < sunset1))
-        // setDebugFlag(false)
-
-        return icon
     }
 
     function refreshTooltipSubText() {
@@ -366,7 +349,7 @@ PlasmoidItem {
         // for(const [key,value] of Object.entries(currentWeatherModel)) { console.log(`  ${key}: ${value}`) }
 
         var nearFutureWeather = currentWeatherModel.nearFutureWeather
-        var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentPlace.providerId, getPartOfDayIndex())
+        var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentPlace.providerId, (currentWeatherModel.isDay ? 0 : 1))
         var wind1=Math.round(currentWeatherModel.windDirection)
         var windDirectionIcon = IconTools.getWindDirectionIconCode(wind1)
         var subText = ''

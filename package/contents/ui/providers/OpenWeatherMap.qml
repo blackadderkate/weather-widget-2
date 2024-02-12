@@ -77,7 +77,7 @@ Item {
     }
 
     function updatecurrentWeather() {
-        dbgprint2('updatecurrentWeather')
+        dbgprint2('updatecurrentWeather (OWM)')
 
         var now = new Date()
         dbgprint('now: ' + now)
@@ -98,12 +98,22 @@ Item {
         currentWeatherModel.updated = obj.updated
         let sunRise = Date.parse(obj.rise)
         let sunSet = Date.parse(obj.set)
+        let updated = Date.parse(obj.updated)
         let tz = parseInt(obj.timezoneOffset) * 1000
         currentPlace.timezoneOffset = tz
         currentWeatherModel.sunRise = new Date (sunRise)
         currentWeatherModel.sunSet= new Date (sunSet)
         currentWeatherModel.sunRiseTime = new Date (sunRise + tz).toTimeString()
         currentWeatherModel.sunSetTime = new Date (sunSet + tz).toTimeString()
+        dbgprint("Updated=" + updated/1000 + "\t" + sunRise/1000 + "\t" + sunSet/1000)
+        dbgprint("Updated=" + updated/1000 + "\t" + (updated > sunRise) + "\t" + (updated < sunSet))
+        currentWeatherModel.isDay = ((updated > sunRise) && (updated < sunSet)) ? 0 : 1
+        dbgprint(
+            "Updated=" + new Date(updated).toTimeString() +
+            "\t Sunrise=" + currentWeatherModel.sunRiseTime +
+            "\tSunset=" + currentWeatherModel.sunSetTime + "\t" +
+            ((currentWeatherModel.isDay === 0) ? "isDay\n" : "isNight\n"))
+
         dbgprint2('EXIT updatecurrentWeather')
     }
 
@@ -119,6 +129,7 @@ Item {
             return myblankObject
         }
 
+        main.debugLogging = 0
         dbgprint2("updateNextDaysModel")
 
         let updatedDateTime = xmlModelCurrent.get(0).updated
@@ -189,7 +200,7 @@ Item {
             ptr++
         }
 
-/* Overwrite nextDaysModel with more accurate data from Daily XML Model where available */
+        /* Overwrite nextDaysModel with more accurate data from Daily XML Model where available */
         x = 0
         y = 0
         ptr = 0
@@ -238,7 +249,7 @@ Item {
         var sunrise1 = (currentWeatherModel.sunRise)
         var sunset1 = (currentWeatherModel.sunSet)
         var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
-        // dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
+        dbgprint("dateFrom = " + dateFrom.toUTCString() + "\tSunrise = " + sunrise1.toUTCString() + "\tSunset = " + sunset1.toUTCString() + "\t" + (isDaytime ? "isDay" : "isNight"))
 
         for (var i = 0; i < xmlModelHourByHour.count; i++) {
             var obj = xmlModelHourByHour.get(i)
@@ -274,18 +285,18 @@ Item {
             // dbgprint2(new Date(Date.parse(obj.from)))
             dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,currentPlace.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
             meteogramModel.append({
-                                      from: new Date(Date.parse(obj.from)),
-                                      to:new Date(Date.parse(obj.to)),
-                                      isDaytime: isDaytime,
-                                      temperature: parseFloat(obj.temperature),
-                                      precipitationAvg: parseFloat(prec),
-                                      precipitationLabel: "",
-                                      precipitationMax: parseFloat(prec),
-                                      windDirection: parseFloat(obj.windDirection),
-                                      windSpeedMps: parseFloat(obj.windSpeedMps),
-                                      pressureHpa: parseFloat(obj.pressureHpa),
-                                      iconName: obj.iconName
-                                  })
+                from: new Date(Date.parse(obj.from)),
+                                  to:new Date(Date.parse(obj.to)),
+                                  isDaytime: isDaytime,
+                                  temperature: parseFloat(obj.temperature),
+                                  precipitationAvg: parseFloat(prec),
+                                  precipitationLabel: "",
+                                  precipitationMax: parseFloat(prec),
+                                  windDirection: parseFloat(obj.windDirection),
+                                  windSpeedMps: parseFloat(obj.windSpeedMps),
+                                  pressureHpa: parseFloat(obj.pressureHpa),
+                                  iconName: obj.iconName
+            })
             if (firstFromMs === null) {
                 firstFromMs = new Date(dateFrom).getTime()
             }
@@ -328,15 +339,15 @@ Item {
     function getTimeZoneName() {
         dbgprint2("getTimeZoneName")
         switch (timezoneType) {
-        case 0:
-            currentPlace.timezoneShortName = getLocalTimeZone()
-            break
-        case 1:
-            currentPlace.timezoneShortName =  i18n("UTC")
-            break
-        case 2:
-            currentPlace.timezoneShortName="LOCAL"
-            break
+            case 0:
+                currentPlace.timezoneShortName = getLocalTimeZone()
+                break
+            case 1:
+                currentPlace.timezoneShortName =  i18n("UTC")
+                break
+            case 2:
+                currentPlace.timezoneShortName="LOCAL"
+                break
         }
         dbgprint("timezoneName changed to:" + currentPlace.timezoneShortName)
     }
