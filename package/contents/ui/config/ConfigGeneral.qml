@@ -10,7 +10,7 @@ import org.kde.kirigami as Kirigami
 
 Item {
     function dbgprint(msg) {
-        if (!debugLogging) {
+        if (!cfg_debugLogging) {
             return
         }
 
@@ -205,27 +205,14 @@ Item {
             Layout.alignment: Qt.AlignLeft
         }
 
-
-        Rectangle {
-            id: placesTable
-            width: parent.width
-            // columnSpacing: 1
-            // rowSpacing: 1
-            border.color:  Kirigami.Theme.alternateBackgroundColor
-            border.width: 1
-            clip: true
-            Layout.preferredHeight: 180
-            Layout.preferredWidth: parent.width
-            Layout.columnSpan: 2
-
             HorizontalHeaderView {
                 id: myhorizontalHeader
-                anchors.left: mytableView.left
-                anchors.leftMargin: 0
-                anchors.topMargin: 2
-                anchors.top: parent.top
-                anchors.right: parent.right
-                anchors.rightMargin: 2
+                // anchors.left: mytableView.left
+                // anchors.leftMargin: 0
+                // anchors.topMargin: 2
+                // anchors.top: parent.top
+                // anchors.right: parent.right
+                // anchors.rightMargin: 2
 
                 syncView: mytableView
                 clip: true
@@ -239,12 +226,35 @@ Item {
                     }
                 }
             }
+        ScrollView {
+            id: placesTable
+            width: parent.width
+            // columnSpacing: 1
+            // rowSpacing: 1
+            // border.color:  Kirigami.Theme.alternateBackgroundColor
+            // border.width: 1
+            clip: true
+            Layout.preferredHeight: 180
+            Layout.preferredWidth: parent.width
+            Layout.columnSpan: 2
+
+
             TableView {
                 anchors.fill: parent
-                anchors.leftMargin: 2
-                anchors.topMargin: myhorizontalHeader.height + 2
-                anchors.rightMargin: 0
+                // anchors.leftMargin: 2
+                // anchors.topMargin: myhorizontalHeader.height + 2
+                // anchors.rightMargin: 0
+
+
+                property var columnWidths: [10, 40, 25, 22]
+                columnWidthProvider: function (column) {
+                    let aw = placesTable.width - placesTable.effectiveScrollBarWidth
+                    return parseInt(aw * columnWidths[column] / 100 )
+
+                }
+
                 implicitHeight: 200
+                implicitWidth: 600
                 clip: true
                 interactive: true
                 rowSpacing: 1
@@ -264,8 +274,6 @@ Item {
                     DelegateChoice {
                         column: 0
                         delegate: Rectangle {
-                            implicitWidth: mytableView.width * 0.1
-                            implicitHeight: defaultFontPixelSize
                             Text {
                                 text: display
                                 font.family: Kirigami.Theme.defaultFont.family
@@ -277,25 +285,26 @@ Item {
                     DelegateChoice {
                         column: 1
                         delegate: Rectangle {
-                            implicitWidth: mytableView.width * 0.45
                             Text {
                                 text: display
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
                                 anchors.verticalCenter: parent.verticalCenter
+                                elide: Text.ElideRight
+                                clip: true
                             }
                         }
                     }
                     DelegateChoice {
                         column: 2
                         delegate: Rectangle {
-                            implicitWidth: mytableView.width * 0.2
                             Text {
                                 id: tableLocation
                                 text: display
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
                                 anchors.verticalCenter: parent.verticalCenter
+                                clip: true
                             }
                         }
                     }
@@ -303,15 +312,11 @@ Item {
                         column: 3
                         id:  myChoice3
                         delegate: GridLayout {
-                            implicitWidth: mytableView.width * 0.3
                             columnSpacing: 1
                             Text {
                                 id: myrowValue
                                 visible: false
                                 text: display
-                                // font.family: Kirigami.Theme.defaultFont.family
-                                // font.pixelSize: defaultFontPixelSize
-                                // anchors.verticalCenter: parent.verticalCenter
                             }
                             Button {
                                 id:myButton1
@@ -334,7 +339,7 @@ Item {
                                 MouseArea {
                                     anchors.fill: parent
                                     onClicked: {
-                                        if (row<placesModel.rowCount) {
+                                        if (row < placesModel.rowCount) {
                                             placesModel.moveRow(row, row + 1, 1)
                                             placesModelChanged()
                                         }
@@ -930,7 +935,7 @@ Item {
     Dialog {
         title: i18n("Location Search")
         id: searchWindow
-        z:1
+        z: 1
         implicitWidth: parent.width - 40
         implicitHeight: parent.height - 40
         footer: DialogButtonBox {
@@ -940,12 +945,12 @@ Item {
 
         HorizontalHeaderView {
             id: mysearchhorizontalHeader
-            anchors.left: searchtableView.left
-            anchors.leftMargin: 0
-            anchors.topMargin: 2
-            anchors.top: parent.top
-            anchors.right: parent.right
-            anchors.rightMargin: 2
+            // anchors.left: searchtableView.left
+            // anchors.leftMargin: 0
+            // anchors.topMargin: 2
+            // anchors.top: parent.top
+            // anchors.right: parent.right
+            // anchors.rightMargin: 2
 
             syncView: searchtableView
             clip: true
@@ -962,19 +967,41 @@ Item {
             }
         }
 
+        ScrollView {
+            id: placesTable1
+            width: parent.width
+            // columnSpacing: 1
+            // rowSpacing: 1
+            // border.color:  Kirigami.Theme.alternateBackgroundColor
+            // border.width: 1
+            clip: true
+            Layout.preferredHeight: 180
+            Layout.preferredWidth: parent.width
+            Layout.maximumHeight: 180
 
-
-        TableView {
-            id: searchtableView
-            implicitHeight: 140
-            // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
-            // highlightOnFocus: true
+            Layout.columnSpan: 2
+            // anchors.fill: parent
             anchors.bottom: row2.top
             anchors.right: parent.right
             anchors.left: parent.left
             anchors.top: parent.top
-            anchors.bottomMargin: 10
+            // anchors.bottomMargin: 10
             anchors.topMargin: mysearchhorizontalHeader.height + 2
+
+            TableView {
+            id: searchtableView
+            anchors.fill: parent
+            anchors.bottomMargin: 10 + placesTable1.effectiveScrollBarHeight
+            anchors.rightMargin: 10 + placesTable1.effectiveScrollBarWidth
+            // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
+            // highlightOnFocus: true
+            property var columnWidths: [30, 15, 15, 12, 12, 30, -1]
+            columnWidthProvider: function (column) {
+                let aw = placesTable1.width - placesTable1.effectiveScrollBarWidth
+                return parseInt(aw * columnWidths[column] / 100 )
+
+            }
+
             model: filteredCSVData
             clip: true
             interactive: true
@@ -982,7 +1009,9 @@ Item {
             columnSpacing: 1
 
             boundsBehavior: Flickable.StopAtBounds
-
+            implicitHeight: 200
+            implicitWidth: 600
+            Layout.maximumHeight: 200
 
 
             selectionBehavior: TableView.SelectRows
@@ -1020,7 +1049,8 @@ Item {
                 DelegateChoice {
                     column: 1
                     delegate: Rectangle {
-                        implicitWidth: searchtableView.width * 0.1
+                        implicitHeight: defaultFontPixelSize + 4
+                        // implicitWidth: searchtableView.width * 0.1
                         Text {
                             text: display
                             font.family: Kirigami.Theme.defaultFont.family
@@ -1042,8 +1072,8 @@ Item {
                     delegate: Rectangle {
                         required property bool selected
                         required property bool current
-
-                        implicitWidth: searchtableView.width * 0.15
+                        implicitHeight: defaultFontPixelSize + 4
+                        // implicitWidth: searchtableView.width * 0.15
                         Text {
                             text: display
                             font.family: Kirigami.Theme.defaultFont.family
@@ -1063,7 +1093,8 @@ Item {
                 DelegateChoice {
                     column: 3
                     delegate: Rectangle {
-                        implicitWidth: searchtableView.width * 0.15
+                        implicitHeight: defaultFontPixelSize + 4
+                        // implicitWidth: searchtableView.width * 0.15
                         Text {
                             text: display
                             font.family: Kirigami.Theme.defaultFont.family
@@ -1083,7 +1114,8 @@ Item {
                 DelegateChoice {
                     column: 4
                     delegate: Rectangle {
-                        implicitWidth: searchtableView.width * 0.08
+                        implicitHeight: defaultFontPixelSize + 4
+                        // implicitWidth: searchtableView.width * 0.08
                         Text {
                             text: display
                             font.family: Kirigami.Theme.defaultFont.family
@@ -1103,7 +1135,8 @@ Item {
                 DelegateChoice {
                     column: 5
                     delegate: Rectangle {
-                        implicitWidth: searchtableView.width * 0.22
+                        height: defaultFontPixelSize + 4
+                        // implicitWidth: searchtableView.width * 0.22
                         Text {
                             text: display
                             font.family: Kirigami.Theme.defaultFont.family
@@ -1120,118 +1153,17 @@ Item {
                         }
                     }
                 }
-
-
-
-
-
-                /*
-                 *                DelegateChoice {
-                 *                    column: 3
-                 *                    id:  myChoice3
-                 *                    delegate: GridLayout {
-                 *                        function findRow(ID) {
-                 *                            var f = 0
-                 *                            while (f < placesModel.rowCount) {
-                 *                                if ((placesModel.rows[f].rowID) == ID) { break; }
-                 *                                f++
             }
-            if (f > placesModel.rowCount) { f=-1 }
-            return f
-            }
-            implicitWidth: mytableView.width * 0.3
-            columnSpacing: 1
-            Text {
-            id: myrowValue
-            // visible: false
-            text: display
-            // font.family: Kirigami.Theme.defaultFont.family
-            // font.pixelSize: defaultFontPixelSize
-            // anchors.verticalCenter: parent.verticalCenter
-            }
-            Button {
-            id:myButton1
-            icon.name: 'go-up'
-            property int rownum1: findRow(myrowValue.text)
-            // enabled: rownum1 > 0  ? true : false
-            onClicked: {
-            var row=findRow(myrowValue.text)
-            if (row > 0) {
-                placesModel.moveRow(row, row - 1, 1)
-                placesModelGUI.moveRow(row, row - 1, 1)
-                placesModelChanged()
-                // myButton1.enabled= row === 1  ? false : true
-            }
-            }
-            }
-            Button {
-            id:myButton2
-            icon.name: 'go-down'
-            property int rownum2: findRow(myrowValue.text)
-            // enabled: rownum2 == (placesModelGUI.rowCount - 1)  ? false: true
-            onClicked: {
-            var row=findRow(myrowValue.text)
-            if (row < placesModel.rowCount - 1) {
-                placesModel.moveRow(row, row + 1, 1)
-                placesModelGUI.moveRow(row, row + 1, 1)
-                placesModelChanged()
-            }
-            }
-            }
-            Button {
-            icon.name: 'list-remove'
-            onClicked: {
-            var row=findRow(myrowValue.text)
-            placesModel.removeRow(row, 1)
-            placesModelGUI.removeRow(row, 1)
-            placesModelChanged()
-            }
-            }
-            Button {
-            icon.name: 'entry-edit'
-            onClicked: {
-            var row=findRow(myrowValue.text)
-            let entry = placesModel.getRow(row)
-            if (entry.providerId === "metno") {
-                let url=entry.placeIdentifier
-                newMetnoUrl.text = url
-                var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
-                newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
-                newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
-                for (var i = 0; i < timezoneDataModel.count; i++) {
-                    if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
-                        tzComboBox.currentIndex = i
-                        timezoneID = entry.timezoneID
-                        break
-            }
-            }
-            newMetnoCityAlias.text = entry.placeAlias
-            addMetnoCityIdDialog.open()
-            }
-            if (entry.providerId === "owm") {
-                /*
-                 *                   newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
-                 *                   newOwmCityAlias.text = entry.placeAlias
-                 *                   addOwmCityIdDialog.open()
-                 *
-            }
-            }
-            }
-            }
-            }
-            */
-
             }
         }
         standardButtons: Dialog.Ok | Dialog.Cancel
         onAccepted: {
-            if(tableView.currentRow > -1) {
+            if(searchtableView.currentRow > -1) {
                 saveSearchedData.open()
             }
         }
         onOpened: {
-            // debugLogging = true
+            // cfg_debugLogging = true
             let locale=Qt.locale().name.substr(3,2)
             dbgprint(locale)
             let userCountry=Helper.getDisplayName(locale)
@@ -1304,9 +1236,11 @@ Item {
                 editable: false
                 onCurrentIndexChanged: {
                     if (countryList.currentIndex > 0) {
-                        dbgprint("Loading Database: "+countryList.textAt(countryList.currentIndex))
+                        // dbgprint("Loading Database: "+countryList.textAt(countryList.currentIndex))
                         Helper.loadCSVDatabase(countryList.textAt(countryList.currentIndex))
+                        // Helper.loadCSVDatabase("Malta")
                     }
+                    dbgprint(myCSVData.length)
                 }
             }
             Label {
