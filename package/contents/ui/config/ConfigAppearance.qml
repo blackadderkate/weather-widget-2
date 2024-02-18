@@ -73,7 +73,7 @@ Item {
             Layout.columnSpan: 3
         }
         Label {
-            text: i18n("Layout type:")
+            text: i18n("Layout type") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
@@ -122,7 +122,7 @@ Item {
 
         Label {
             id: timeoutLabel
-            text: i18n("Active timeout:")
+            text: i18n("Active timeout") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
             height: inTrayActiveTimeoutSec.height
             // anchors.verticalCenter: inTrayActiveTimeoutSec.verticalCenter
@@ -159,7 +159,7 @@ Item {
         }
 
         Label {
-            text: i18n("Widget font style:")
+            text: i18n("Widget font style") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         ComboBox {
@@ -184,7 +184,7 @@ Item {
         }
 
         Label {
-            text: i18n("Widget font size:")
+            text: i18n("Widget font size") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
             // anchors.verticalCenter: widgetFontSize.verticalCenter
 

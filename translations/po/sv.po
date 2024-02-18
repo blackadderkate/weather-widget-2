@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-02-18 09:43-0800\n"
 "PO-Revision-Date: 2022-03-14 21:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,24 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
+"X-Language: sv\n"
+"X-Source-Language: C\n"
 
 #: ../../package/metadata.desktop
-msgid "Weather Widget 2"
-msgstr "Weather Widget 2"
+msgid "Weather Widget 3"
+msgstr ""
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
 msgstr "Plasmoid som visar väderinformation från met.no"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 m"
 msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 h"
 msgstr "%1 t"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 d"
 msgstr "%1 d"
 
@@ -109,8 +114,8 @@ msgid "Layout"
 msgstr "Layout"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Layout type:"
-msgstr "Layouttyp:"
+msgid "Layout type"
+msgstr "Layouttyp"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Horizontal"
@@ -135,8 +140,8 @@ msgid "In-Tray Settings"
 msgstr "Aktivitetsinställningar"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Active timeout:"
-msgstr "Aktiv tidsgräns:"
+msgid "Active timeout"
+msgstr "Aktiv tidsgräns"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
@@ -153,12 +158,12 @@ msgstr ""
 "den uppdateras. Du kan ställa in så att den alltid visas i inställningarna."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font style:"
-msgstr "Plasmoidens typsnitt:"
+msgid "Widget font style"
+msgstr "Plasmoidens typsnitt"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font size:"
-msgstr "Typsnittsstorlek:"
+msgid "Widget font size"
+msgstr "Typsnittsstorlek"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
@@ -166,78 +171,12 @@ msgid "px"
 msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Open Weather Map Place"
-msgstr "Lägg till plats från Open Weather Map"
+msgid "Location"
+msgstr "Plats"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Paste URL here"
-msgstr "Klistra in URL här"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "City alias"
-msgstr "Stadsnamn"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Find your city ID by searching here:"
-msgstr "Hitta din stads ID genom att söka här:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid ""
-"...and paste here the whole URL\n"
-"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
-msgstr ""
-"...och klistra in hela URL:en här\n"
-"t.ex. http://openweathermap.org/city/2694762 för Linköping."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Error!"
-msgstr "Fel!"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Confirmation"
-msgstr "Bekräftelse"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Do you want to select this place?"
-msgstr "Är du säker på att du vill välja denna plats?"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Met.no Map Place"
-msgstr "Lägg till plats från Met.no"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not valid."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr "Latituden är inte mellan -90 och 90."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not valid."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr "Longituden är inte mellan -180 och 180."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not valid."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not between -999 and 5000."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr "Platsnamnet är tomt."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] "Ett fel uppstod!"
-msgstr[1] "%1 fel uppstod!"
+msgid "Area"
+msgstr "Område"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -252,76 +191,37 @@ msgid "Altitude"
 msgstr "Höjd"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "URL"
-msgstr "URL"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Platsidentiferare"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr "Söl"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Change Displayed As"
-msgstr "Ändring visas som"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Enter place alias"
-msgstr "Ange platsnamn"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location Search"
-msgstr "Platssök"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Plats"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr "Område"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Timezone"
 msgstr "Tidszon"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search data extracted from data provided by Geonames.org."
-msgstr "Sökdata är ett urval av data hämtad från Geonames.org."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Country:"
-msgstr "Land:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Filter:"
-msgstr "Filter:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Plasmoidversion:"
+msgid "Plasmoid version"
+msgstr "Plasmoidversion"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Källa"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Platsidentiferare"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
 msgstr "Visas som"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Action"
-msgstr "Åtgärd"
+msgid "Description"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Övrigt"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Reload interval:"
-msgstr "Uppdateringsintervall:"
+msgid "Reload interval"
+msgstr "Plasmoidversion"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgctxt "Abbreviation for minutes"
@@ -347,21 +247,89 @@ msgstr "OWM:s väderleksrapport tillhandahålls av OpenWeather."
 msgid "Weather icons created by Erik Flowers."
 msgstr "Väderikonerna är skapade av Erik Flowers."
 
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Temperature:"
-msgstr "Temperatur:"
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Ändring visas som"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Ange platsnamn"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Lägg till plats från Open Weather Map"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "Klistra in URL här"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "Stadsnamn"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here"
+msgstr "Hitta din stads ID genom att söka här"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"...och klistra in hela URL:en här\n"
+"t.ex. http://openweathermap.org/city/2694762 för Linköping."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Lägg till plats från Met.no"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Söl"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr "URL"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr "Platssök"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Alt"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr "Sökdata är ett urval av data hämtad från Geonames.org."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country"
+msgstr "Land"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter"
+msgstr "Filter"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr "Bekräftelse"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Pressure:"
-msgstr "Tryck:"
+msgid "Temperature"
+msgstr "Temperatur"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Wind speed:"
-msgstr "Vindhastighet:"
+msgid "Pressure"
+msgstr "Tryck"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone:"
-msgstr "Tidszon:"
+msgid "Wind speed"
+msgstr "Vindhastighet"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
@@ -369,6 +337,7 @@ msgstr "Min lokala tid"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 
@@ -376,29 +345,20 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr ""
 
-#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Nästa plats"
-
-#: ../../package/contents/ui/FullRepresentationInTray.qml
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr "Uppdatera"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr "Föregående plats"
 
-#: ../../package/contents/ui/main.qml
-msgid "Resume Updating"
-msgstr "Återuppta uppdatering"
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "Uppdatera"
 
 #: ../../package/contents/ui/main.qml
-msgid "Pause Updating"
-msgstr "Pausa uppdatering"
-
-#: ../../package/contents/ui/main.qml
+#, qt-format
 msgid "%1 ago"
 msgstr "%1 sedan"
 
@@ -419,17 +379,88 @@ msgid "in"
 msgstr "tum"
 
 #: ../../package/contents/ui/providers/MetNo.qml
+#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr "Väderleksrapporten tillhandahålls av Meteorologisk institutt i Norge."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
-msgid "today"
-msgstr "idag"
-
-#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
 msgstr ""
+
+#~ msgid "Weather Widget 2"
+#~ msgstr "Weather Widget 2"
+
+#~ msgid "Layout type:"
+#~ msgstr "Layouttyp:"
+
+#~ msgid "Active timeout:"
+#~ msgstr "Aktiv tidsgräns:"
+
+#~ msgid "Widget font style:"
+#~ msgstr "Plasmoidens typsnitt:"
+
+#~ msgid "Widget font size:"
+#~ msgstr "Typsnittsstorlek:"
+
+#~ msgid "Find your city ID by searching here:"
+#~ msgstr "Hitta din stads ID genom att söka här:"
+
+#~ msgid "Error!"
+#~ msgstr "Fel!"
+
+#~ msgid "Do you want to select this place?"
+#~ msgstr "Är du säker på att du vill välja denna plats?"
+
+#~ msgid "The Latitude is not between -90 and 90."
+#~ msgstr "Latituden är inte mellan -90 och 90."
+
+#~ msgid "The Longitude is not between -180 and 180."
+#~ msgstr "Longituden är inte mellan -180 och 180."
+
+#~ msgid "The Place Name is empty."
+#~ msgstr "Platsnamnet är tomt."
+
+#~ msgid "There is an error!"
+#~ msgid_plural "There are %1 errors!"
+#~ msgstr[0] "Ett fel uppstod!"
+#~ msgstr[1] "%1 fel uppstod!"
+
+#~ msgid "Country:"
+#~ msgstr "Land:"
+
+#~ msgid "Filter:"
+#~ msgstr "Filter:"
+
+#~ msgid "Plasmoid version:"
+#~ msgstr "Plasmoidversion:"
+
+#~ msgid "Action"
+#~ msgstr "Åtgärd"
+
+#~ msgid "Reload interval:"
+#~ msgstr "Uppdateringsintervall:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Temperatur:"
+
+#~ msgid "Pressure:"
+#~ msgstr "Tryck:"
+
+#~ msgid "Wind speed:"
+#~ msgstr "Vindhastighet:"
+
+#~ msgid "Timezone:"
+#~ msgstr "Tidszon:"
+
+#~ msgid "Resume Updating"
+#~ msgstr "Återuppta uppdatering"
+
+#~ msgid "Pause Updating"
+#~ msgstr "Pausa uppdatering"
+
+#~ msgid "today"
+#~ msgstr "idag"
 
 #~ msgid "The Latitude is not numeric."
 #~ msgstr "Latituden är inte giltig."

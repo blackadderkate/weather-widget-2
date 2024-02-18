@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-02-18 09:43-0800\n"
 "PO-Revision-Date: 2022-10-21 23:46+0200\n"
 "Last-Translator: Tomasz Przybył <fademind@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -14,27 +14,31 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 3.1.1\n"
+"X-Language: pl\n"
+"X-Source-Language: C\n"
 
 #: ../../package/metadata.desktop
-msgid "Weather Widget 2"
-msgstr "Weather Widget 2"
+msgid "Weather Widget 3"
+msgstr ""
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
 msgstr "Plasmoid pokazujący informacje o pogodzie z serwera met.no"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 m"
 msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 h"
 msgstr "%1 h"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 d"
 msgstr "%1 d"
 
@@ -109,8 +113,8 @@ msgid "Layout"
 msgstr "Rozmieszczenie"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Layout type:"
-msgstr "Typ wyglądu:"
+msgid "Layout type"
+msgstr "Typ wyglądu"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Horizontal"
@@ -134,8 +138,8 @@ msgid "In-Tray Settings"
 msgstr "Ustawienia ikony w zasobniku"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Active timeout:"
-msgstr "Czas aktywności:"
+msgid "Active timeout"
+msgstr "Czas aktywności"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
@@ -157,12 +161,12 @@ msgstr ""
 "dla samodzielnego plasmoidu dodanego jako osobny element Panelu."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font style:"
-msgstr "Styl czcionki widżetu:"
+msgid "Widget font style"
+msgstr "Styl czcionki widżetu"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font size:"
-msgstr "Rozmiar czcionki widżetu:"
+msgid "Widget font size"
+msgstr "Rozmiar czcionki widżetu"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
@@ -170,79 +174,12 @@ msgid "px"
 msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Open Weather Map Place"
-msgstr "Dodaj miejscowość z Open Weather"
+msgid "Location"
+msgstr "Lokalizacja"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Paste URL here"
-msgstr "Wklej URL tutaj"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "City alias"
-msgstr "Alias miasta"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Find your city ID by searching here:"
-msgstr "Wyszukaj ID twojego miasta tutaj:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid ""
-"...and paste here the whole URL\n"
-"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
-msgstr ""
-"i wklej tutaj URL\n"
-"np. http://openweathermap.org/city/756135 dla Warszawa, Polska."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Error!"
-msgstr "Błąd!"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Confirmation"
-msgstr "Potwierdzenie"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Do you want to select this place?"
-msgstr "Czy chcesz wybrać to miejsce?"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Met.no Map Place"
-msgstr "Dodaj miejscowość z Met.no"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not valid."
-msgstr "Szerokość geograficzna jest nieprawidłowa."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr "Szerokość geograficzna nie mieści się w przedziale od -90 do 90."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not valid."
-msgstr "Długość geograficzna jest nieprawidłowa."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr "Długość geograficzna nie mieści się w przedziale od -180 do 180."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not valid."
-msgstr "Wysokość geograficzna jest nieprawidłowa."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not between -999 and 5000."
-msgstr "Wysokość geograficzna nie mieści się w przedziale od -999 do 5000."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr "Nazwa miejsca jest pusta."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] "Wystąpił błąd!"
-msgstr[1] "Wystąpiły %1 błędy!"
-msgstr[2] "Wystąpiły %1 błędy!"
+msgid "Area"
+msgstr "Obszar"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -257,77 +194,37 @@ msgid "Altitude"
 msgstr "Wysokość geograficzna"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "URL"
-msgstr "URL"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "ID miejsca"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr "Szukaj"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Change Displayed As"
-msgstr "Zmień wyświetlanie na"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Enter place alias"
-msgstr "Wpisz alias miejsca"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location Search"
-msgstr "Wyszukiwanie lokalizacji"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Lokalizacja"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr "Obszar"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Timezone"
 msgstr "Strefa czasowa"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search data extracted from data provided by Geonames.org."
-msgstr ""
-"Dane wyszukiwania wyodrębnione z danych dostarczonych przez Geonames.org."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Country:"
-msgstr "Kraj:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Filter:"
-msgstr "Filtr:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Wersja plasmoidu:"
+msgid "Plasmoid version"
+msgstr "Wersja plasmoidu"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Źródło"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "ID miejsca"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
 msgstr "Alias"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Action"
-msgstr "Akcja"
+msgid "Description"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Różne"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Reload interval:"
-msgstr "Aktualizuj co:"
+msgid "Reload interval"
+msgstr "Aktualizuj co"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgctxt "Abbreviation for minutes"
@@ -354,21 +251,90 @@ msgstr "Dane prognozy pogody OWM dostarczone przez OpenWeather."
 msgid "Weather icons created by Erik Flowers."
 msgstr "Ikony pogody stworzone przez Erika Flowersa."
 
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Temperature:"
-msgstr "Temperatura:"
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Zmień wyświetlanie na"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Wpisz alias miejsca"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Dodaj miejscowość z Open Weather"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "Wklej URL tutaj"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "Alias miasta"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here"
+msgstr "Wyszukaj ID twojego miasta tutaj"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"i wklej tutaj URL\n"
+"np. http://openweathermap.org/city/756135 dla Warszawa, Polska."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Dodaj miejscowość z Met.no"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Szukaj"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr "URL"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr "Wyszukiwanie lokalizacji"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Alt"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+"Dane wyszukiwania wyodrębnione z danych dostarczonych przez Geonames.org."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr "Potwierdzenie"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Pressure:"
-msgstr "Ciśnienie:"
+msgid "Temperature"
+msgstr "Temperatura"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Wind speed:"
-msgstr "Prędkość wiatru:"
+msgid "Pressure"
+msgstr "Ciśnienie"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone:"
-msgstr "Strefa czasowa:"
+msgid "Wind speed"
+msgstr "Prędkość wiatru"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
@@ -376,6 +342,7 @@ msgstr "Czas lokalny"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 
@@ -383,29 +350,20 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr "Strefa czasowa lokalizacji"
 
-#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Następne miejsce"
-
-#: ../../package/contents/ui/FullRepresentationInTray.qml
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr "Przeładuj"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr "Poprzednie miejsce"
 
-#: ../../package/contents/ui/main.qml
-msgid "Resume Updating"
-msgstr "Wznów aktualizację"
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "Przeładuj"
 
 #: ../../package/contents/ui/main.qml
-msgid "Pause Updating"
-msgstr "Wstrzymaj aktualizację"
-
-#: ../../package/contents/ui/main.qml
+#, qt-format
 msgid "%1 ago"
 msgstr "%1 temu"
 
@@ -426,18 +384,102 @@ msgid "in"
 msgstr "in"
 
 #: ../../package/contents/ui/providers/MetNo.qml
+#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
 "Dane prognozy pogody dostarczone przez Norweski Instytut Meteorologiczny."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
-msgid "today"
-msgstr "dzisiaj"
-
-#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
 msgstr "Dane prognozy pogody dostarczone przez OpenWeather."
+
+#~ msgid "Weather Widget 2"
+#~ msgstr "Weather Widget 2"
+
+#~ msgid "Layout type:"
+#~ msgstr "Typ wyglądu:"
+
+#~ msgid "Active timeout:"
+#~ msgstr "Czas aktywności:"
+
+#~ msgid "Widget font style:"
+#~ msgstr "Styl czcionki widżetu:"
+
+#~ msgid "Widget font size:"
+#~ msgstr "Rozmiar czcionki widżetu:"
+
+#~ msgid "Find your city ID by searching here:"
+#~ msgstr "Wyszukaj ID twojego miasta tutaj:"
+
+#~ msgid "Error!"
+#~ msgstr "Błąd!"
+
+#~ msgid "Do you want to select this place?"
+#~ msgstr "Czy chcesz wybrać to miejsce?"
+
+#~ msgid "The Latitude is not valid."
+#~ msgstr "Szerokość geograficzna jest nieprawidłowa."
+
+#~ msgid "The Latitude is not between -90 and 90."
+#~ msgstr "Szerokość geograficzna nie mieści się w przedziale od -90 do 90."
+
+#~ msgid "The Longitude is not valid."
+#~ msgstr "Długość geograficzna jest nieprawidłowa."
+
+#~ msgid "The Longitude is not between -180 and 180."
+#~ msgstr "Długość geograficzna nie mieści się w przedziale od -180 do 180."
+
+#~ msgid "The Altitude is not valid."
+#~ msgstr "Wysokość geograficzna jest nieprawidłowa."
+
+#~ msgid "The Altitude is not between -999 and 5000."
+#~ msgstr "Wysokość geograficzna nie mieści się w przedziale od -999 do 5000."
+
+#~ msgid "The Place Name is empty."
+#~ msgstr "Nazwa miejsca jest pusta."
+
+#~ msgid "There is an error!"
+#~ msgid_plural "There are %1 errors!"
+#~ msgstr[0] "Wystąpił błąd!"
+#~ msgstr[1] "Wystąpiły %1 błędy!"
+#~ msgstr[2] "Wystąpiły %1 błędy!"
+
+#~ msgid "Country:"
+#~ msgstr "Kraj:"
+
+#~ msgid "Filter:"
+#~ msgstr "Filtr:"
+
+#~ msgid "Plasmoid version:"
+#~ msgstr "Wersja plasmoidu:"
+
+#~ msgid "Action"
+#~ msgstr "Akcja"
+
+#~ msgid "Reload interval:"
+#~ msgstr "Aktualizuj co:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Temperatura:"
+
+#~ msgid "Pressure:"
+#~ msgstr "Ciśnienie:"
+
+#~ msgid "Wind speed:"
+#~ msgstr "Prędkość wiatru:"
+
+#~ msgid "Timezone:"
+#~ msgstr "Strefa czasowa:"
+
+#~ msgid "Resume Updating"
+#~ msgstr "Wznów aktualizację"
+
+#~ msgid "Pause Updating"
+#~ msgstr "Wstrzymaj aktualizację"
+
+#~ msgid "today"
+#~ msgstr "dzisiaj"
 
 #~ msgid "Offline mode"
 #~ msgstr "Tryb offline"

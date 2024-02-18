@@ -163,7 +163,6 @@ Item {
 
     TableModel {
         id: myCSVData
-
         TableModelColumn {
             display: "Location"
         }
@@ -195,7 +194,7 @@ Item {
         spacing: 2
 
         Label {
-            text: i18n("Plasmoid version:") + ' 3.0'
+            text: i18n("Plasmoid version") + ": 3.0"
             Layout.alignment: Qt.AlignRight
         }
 
@@ -218,10 +217,10 @@ Item {
                 clip: true
                 model: ListModel {
                     Component.onCompleted: {
-                        append({ display: ("Source") });
-                        append({ display: ("Place Identifier") });
-                        append({ display: ("Displayed as") });
-                        append({ display: ("Description") });
+                        append({ display: i18n("Source") });
+                        append({ display: i18n("Place Identifier") });
+                        append({ display: i18n("Displayed as") });
+                        append({ display: i18n("Action") });
                         // append({ display: ("TBA") });
                     }
                 }
@@ -445,7 +444,7 @@ Item {
                 id: reloadLabel1
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
-                text: i18n("Reload interval:")
+                text: i18n("Reload interval") + ":"
                 Layout.alignment: Qt.AlignLeft
                 rightPadding: 6
             }
@@ -676,7 +675,7 @@ Item {
             anchors.top: newOwmCityAlias.bottom
             anchors.topMargin: 10
             font.italic: true
-            text: i18n("Find your city ID by searching here:")
+            text: i18n("Find your city ID by searching here") + ":"
         }
 
         Label {
@@ -742,7 +741,7 @@ Item {
                     id: metNoRow1
                     Layout.preferredWidth: metNoRowLayout.width
                     Label {
-                        text: ("Place Identifier")+": "
+                        text: ("Place Identifier") + ":"
                         Layout.alignment: Qt.AlignVCenter
                     }
                     TextField {
@@ -760,7 +759,7 @@ Item {
                         // Rectangle { anchors.fill: parent; color: "#ffaaaa" } // to visualize the spacer
                     }
                     Button {
-                        text: ("Search")
+                        text: i18n("Search")
 
                         Layout.alignment: Qt.AlignRight
                         onClicked: {
@@ -810,7 +809,7 @@ Item {
                         id: newMetnoCityAltitudeLabel
                         horizontalAlignment: Text.AlignRight
                         Layout.preferredWidth: metNoRowLayout.labelWidth
-                        text: i18n("Altitude") + ":"
+                        text: i18n("Altitude") + ": "
                     }
 
                     TextField {
@@ -827,14 +826,14 @@ Item {
                 RowLayout {
                     Layout.preferredWidth: metNoRowLayout.width
                     Label {
-                        text: ("Url")+": "
+                        text: i18n("Url")+": "
                         Layout.alignment: Qt.AlignVCenter
                         horizontalAlignment: Text.AlignRight
                         Layout.preferredWidth: metNoRowLayout.labelWidth
                     }
                     TextField {
                         id: newMetnoUrl
-                        placeholderText: ("URL")
+                        placeholderText: i18n("URL")
                         Layout.columnSpan: 5
                         Layout.fillWidth: true
                         color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
@@ -879,7 +878,7 @@ Item {
                     Layout.fillWidth: true
                     Label {
                         id: newMetnoCityTimezoneLabel
-                        text: i18n("Timezone") + ":"
+                        text: i18n("Timezone") + ": "
                         Layout.preferredWidth: metNoRowLayout.labelWidth
                         horizontalAlignment: Text.AlignRight
                     }
@@ -956,12 +955,12 @@ Item {
             clip: true
             model: ListModel {
                 Component.onCompleted: {
-                    append({ display: ("Location")  });
-                    append({ display: ("Area") });
-                    append({ display: ("Latitude") });
-                    append({ display: ("Longitude") });
-                    append({ display: ("Alt") });
-                    append({ display: ("Timezone") });
+                    append({ display: i18n("Location")  });
+                    append({ display: i18n("Area") });
+                    append({ display: i18n("Latitude") });
+                    append({ display: i18n("Longitude") });
+                    append({ display: i18n("Alt") });
+                    append({ display: i18n("Timezone") });
                     // append({ display: ("TBA") });
                 }
             }
@@ -1219,7 +1218,7 @@ Item {
             anchors.bottomMargin: 0
             Label {
                 id: countryLabel
-                text: i18n("Country:")
+                text: i18n("Country") + ":"
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
@@ -1248,7 +1247,7 @@ Item {
                 anchors.right: locationEdit.left
                 anchors.rightMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Filter:")
+                text: i18n("Filter") + ":"
             }
             TextField {
                 id: locationEdit

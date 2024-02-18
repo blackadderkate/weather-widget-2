@@ -98,7 +98,7 @@ Item {
         columns: 2
 
         Label {
-            text: i18n("Temperature:")
+            text: i18n("Temperature") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
@@ -137,7 +137,7 @@ Item {
         }
 
         Label {
-            text: i18n("Pressure:")
+            text: i18n("Pressure") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
@@ -171,7 +171,7 @@ Item {
         }
 
         Label {
-            text: i18n("Wind speed:")
+            text: i18n("Wind speed") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
@@ -205,7 +205,7 @@ Item {
         }
 
         Label {
-            text: i18n("Timezone:")
+            text: i18n("Timezone") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
