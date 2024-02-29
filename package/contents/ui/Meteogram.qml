@@ -487,6 +487,20 @@ Item {
         var i = 0
         const oneHourMs = 3600000
         hourGridModel.clear()
+
+        let offset = 0
+        switch (main.timezoneType) {
+            case (0):
+                offset = dataSource.data["Local"]["timezoneOffset"]
+                break;
+            case (1):
+                offset = 0
+                break;
+            case (2):
+                offset = currentPlace.timezoneOffset
+                break;
+        }
+
         while (i < meteogramModel.count) {
             var obj = meteogramModel.get(i)
             var dateFrom = obj.from
@@ -508,7 +522,7 @@ Item {
                 counter = (prec > 0) ? counter + 1 : 0
                 var preparedDate = new Date(dateFrom.getTime() + (j * oneHourMs))
                 hourGridModel.append({
-                                         dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, main.currentPlace.timezoneOffset / 1000),
+                                         dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, offset),
                                          iconName: j === differenceHoursMid ? icon : '',
                                          isDaytime: obj.isDaytime,
                                          temperature: airtmp,

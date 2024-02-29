@@ -340,9 +340,9 @@ PlasmoidItem {
 
     function refreshTooltipSubText() {
         // dbgprint(JSON.stringify(currentWeatherModel))
-        dbgprint2('refreshTooltipSubText')
+        dbgprint2("refreshTooltipSubText")
         if (currentWeatherModel === undefined || currentWeatherModel.nearFutureWeather.iconName === null || currentWeatherModel.count === 0) {
-            dbgprint('model not yet ready')
+            dbgprint("model not yet ready")
             return
         }
         // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
@@ -352,31 +352,35 @@ PlasmoidItem {
         var futureWeatherIcon = IconTools.getIconCode(nearFutureWeather.iconName, currentPlace.providerId, (currentWeatherModel.isDay ? 0 : 1))
         var wind1=Math.round(currentWeatherModel.windDirection)
         var windDirectionIcon = IconTools.getWindDirectionIconCode(wind1)
-        var subText = ''
-        subText += '<br /><font size="4" style="font-family: weathericons;">' + windDirectionIcon + '</font><font size="4"> ' + wind1 + '\u00B0 &nbsp; @ ' + UnitUtils.getWindSpeedText(currentWeatherModel.windSpeedMps, windSpeedType) + '</font>'
-        subText += '<br /><font size="4">' + UnitUtils.getPressureText(currentWeatherModel.pressureHpa, pressureType) + '</font>'
-        subText += '<br /><table>'
+        var subText = ""
+        subText += "<br /><font size=\"4\" style=\"font-family: weathericons;\">" + windDirectionIcon + "</font><font size=\"4\"> " + wind1 + "\u00B0 &nbsp; @ " + UnitUtils.getWindSpeedText(currentWeatherModel.windSpeedMps, windSpeedType) + "</font>"
+        subText += "<br /><font size=\"4\">" + UnitUtils.getPressureText(currentWeatherModel.pressureHpa, pressureType) + "</font>"
+        subText += "<br /><table>"
         if ((currentWeatherModel.humidity !== undefined) && (currentWeatherModel.cloudiness !== undefined)) {
-            subText += '<tr>'
-            subText += '<td><font size="4"><font style="font-family: weathericons">\uf07a</font>&nbsp;' + currentWeatherModel.humidity + '%</font></td>'
-            subText += '<td><font size="4"><font style="font-family: weathericons">\uf013</font>&nbsp;' + currentWeatherModel.cloudiness + '%</font></td>'
-            subText += '</tr>'
-            subText += '<tr><td>&nbsp;</td><td></td></tr>'
+            subText += "<tr>"
+            subText += "<td><font size=\"4\"><font style=\"font-family: weathericons\">\uf07a</font>&nbsp;" + currentWeatherModel.humidity + "%</font></td>"
+            subText += "<td><font size=\"4\"><font style=\"font-family: weathericons\">\uf013</font>&nbsp;" + currentWeatherModel.cloudiness + "%</font></td>"
+            subText += "</tr>"
+            subText += "<tr><td>&nbsp;</td><td></td></tr>"
         }
-        subText += '<tr>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf051</font>&nbsp;' + currentWeatherModel.sunRiseTime + ' ' + currentPlace.timezoneShortName + '&nbsp;&nbsp;&nbsp;</font></td>'
-        subText += '</tr>'
-        subText += '<tr>'
-        subText += '<td><font size="4"><font style="font-family: weathericons">\uf052</font>&nbsp;' + currentWeatherModel.sunSetTime + ' ' + currentPlace.timezoneShortName + '</font></td>'
-        subText += '</tr>'
-        subText += '</table>'
+        subText += "<tr>"
+        let tzName = "GMT"
+        if (timezoneType === 0) { tzName = getLocalTimeZone() }
+        if (timezoneType === 1) { tzName = "GMT" }
+        if (timezoneType === 2) { tzName = currentPlace.timezoneShortName }
+        subText += "<td><font size=\"4\"><font style=\"font-family: weathericons\">\uf051</font>&nbsp;" + currentWeatherModel.sunRiseTime + " " + tzName + "&nbsp;&nbsp;&nbsp;</font></td>"
+        subText += "</tr>"
+        subText += "<tr>"
+        subText += "<td><font size=\"4\"><font style=\"font-family: weathericons\">\uf052</font>&nbsp;" + currentWeatherModel.sunSetTime + " " + tzName + "</font></td>"
+        subText += "</tr>"
+        subText += "</table>"
 
-        subText += '<br /><br />'
-        subText += '<font size="3">' + i18n("near future") + '</font>'
-        subText += '<b>'
-        subText += '<font size="6">&nbsp;&nbsp;&nbsp;' + UnitUtils.getTemperatureNumber(nearFutureWeather.temperature, temperatureType) + UnitUtils.getTemperatureEnding(temperatureType)
-        subText += '&nbsp;&nbsp;&nbsp;<font style="font-family: weathericons">' + futureWeatherIcon + '</font></font>'
-        subText += '</b>'
+        subText += "<br /><br />"
+        subText += "<font size=\"3\">" + i18n("near future") + "</font>"
+        subText += "<b>"
+        subText += "<font size=\"6\">&nbsp;&nbsp;&nbsp;" + UnitUtils.getTemperatureNumber(nearFutureWeather.temperature, temperatureType) + UnitUtils.getTemperatureEnding(temperatureType)
+        subText += "&nbsp;&nbsp;&nbsp;<font style=\"font-family: weathericons\">" + futureWeatherIcon + "</font></font>"
+        subText += "</b>"
         toolTipMainText = currentPlace.alias
         toolTipSubText = subText
     }

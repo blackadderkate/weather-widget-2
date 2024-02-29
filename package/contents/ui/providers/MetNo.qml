@@ -36,6 +36,9 @@ Item {
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
+        main.debugLogging = 1
+        dbgprint2("loadDataFromInternet" + currentPlace.alias)
+
         var placeIdentifier = locationObject.placeIdentifier
 
         function successWeather(jsonString) {
@@ -79,7 +82,13 @@ Item {
             dbgprint(JSON.stringify(currentWeatherModel))
         }
 
+        function createDate(t) {
+            let arr = t.split(":")
+            return Date.parse(new Date(1970, 1, 1, arr[0], arr[1], 0))/1000
+        }
+
         function updateNextDaysModel(readingsArray) {
+            main.debugLogging = 0
             dbgprint2("updateNextDaysModel")
             nextDaysModel.clear()
 
@@ -93,32 +102,61 @@ Item {
                 return myblankObject
             }
 
+            let offset = 0
+            switch (main.timezoneType) {
+                case (0):
+                    offset = dataSource.data["Local"]["timezoneOffset"]
+                    break;
+                case (1):
+                    offset = 0
+                    break;
+                case (2):
+                    offset = currentPlace.timezoneOffset
+                    break;
+            }
+
             let wd = readingsArray.properties.timeseries
             let wdPtr = 0
-            let tmp =  UnitUtils.convertDate(new Date(wd[wdPtr].time), 2 , currentPlace.timezoneOffset)
-            while ((wdPtr < wd.length) && ((tmp.getHours() - 3) % 6 ) != 0) {
+            var localTime =  UnitUtils.convertDate(new Date(wd[wdPtr].time), 2, currentPlace.timezoneOffset)
+            var displayTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), main.timezoneType, offset)
+            while ((wdPtr < wd.length) && ((displayTime.getHours() - 3) % 6 ) != 0) {
 
                 wdPtr++
-                tmp =  UnitUtils.convertDate(new Date(wd[wdPtr].time), 2 , currentPlace.timezoneOffset)
+                displayTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), main.timezoneType, offset)
             }
             let x = 0
             let y = 0
             let nextDaysData = blankObject()
             let airTemp = -999
 
+            var sunrise1 = UnitUtils.convertDate(currentWeatherModel.sunRise,2,currentPlace.timezoneOffset)
+            var sunset1 = UnitUtils.convertDate(currentWeatherModel.sunSet,2,currentPlace.timezoneOffset)
+            dbgprint("**********************")
+            dbgprint(sunrise1 + "\t" + sunset1)
+            var ss = Date.parse(sunset1) / 1000
+            var sr = Date.parse(sunrise1) / 1000
+
             while (wd[wdPtr].data.next_1_hours !== undefined) {
-                let tm1 = new Date(wd[wdPtr].time)
-                let tm2 = UnitUtils.convertDate(tm1 , 2 , currentPlace.timezoneOffset)
-                let tm = tm2.getHours()
-                if (tm % 6 === 3) {
-                    y = parseInt(tm / 6)
-                    dbgprint("wdPtr:" + wdPtr + "\t tm = " + tm + "\t x = " + x + "\t y = " + y)
-                    airTemp = wd[wdPtr].data.instant.details["air_temperature"]
-                    nextDaysData['dayTitle'] = composeNextDayTitle(tm2)
-                    nextDaysData['temperature' + y] = airTemp
+                localTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), 2, currentPlace.timezoneOffset)
+                displayTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), main.timezoneType, offset)
+                let lt = Date.parse(localTime) / 1000
+
+                while (lt > (sr + 86400)) {
+                    dbgprint("+")
+                    sr = sr + 86400
+                    ss = ss + 86400
+                }
+                if (displayTime.getHours() % 6 === 3) {
+                    let isDayTime =  ((lt >= sr ) && (lt <= ss)) ? 0 : 1
+                    y = Math.trunc(displayTime.getHours() / 6,0)
+                    dbgprint("wdPtr:" + wdPtr + "\t" + wd[wdPtr].time + "\t x = " + x + "\t y = " + y)
+                    dbgprint(isDayTime + "\t\t" + displayTime + "\t" + localTime+ "\t" + new Date(sr * 1000) + "\t" + new Date(ss * 1000) )
+                    nextDaysData['dayTitle'] = composeNextDayTitle(displayTime)
+                    nextDaysData['temperature' + y] = wd[wdPtr].data.instant.details["air_temperature"]
                     nextDaysData['hidden' + y] = false
                     let obj = wd[wdPtr].data.next_1_hours.summary["symbol_code"]
                     nextDaysData['iconName' + y] = geticonNumber(obj)
+                    nextDaysData['partOfDay' + y] = isDayTime
                     if (y == 3) {
                         nextDaysModel.append(nextDaysData)
                         nextDaysData=blankObject()
@@ -131,22 +169,35 @@ Item {
 
             while ((wdPtr < wd.length) && (wd[wdPtr].data.next_6_hours !== undefined))
             {
-                let tm1 = new Date(wd[wdPtr].time)
-                let tm2 = UnitUtils.convertDate(tm1 , 2 , currentPlace.timezoneOffset)
-                let tm = tm2.getHours()
-                // print (tm1, tm2, tm)
-                y = parseInt((tm) / 6)
-                dbgprint("wdPtr:" + wdPtr + "\t tm = " + tm + "\t x = " + x + "\t y = " + y)
-                airTemp = wd[wdPtr].data.instant.details["air_temperature"]
-                nextDaysData['dayTitle'] = composeNextDayTitle(tm2)
-                nextDaysData['temperature' + y] = airTemp
-                nextDaysData['hidden' + y] = false
-                let obj = wd[wdPtr].data.next_6_hours.summary["symbol_code"]
-                nextDaysData['iconName' + y] = geticonNumber(obj)
-                if ((y == 3) && nextDaysData["temperature2"] !== -999) {
-                    nextDaysModel.append(nextDaysData)
-                    nextDaysData=blankObject()
-                    x++
+                let t = new Date(wd[wdPtr].time)
+                t.setHours(t.getHours() + 3)
+                localTime = UnitUtils.convertDate(t, 2, currentPlace.timezoneOffset)
+                displayTime = UnitUtils.convertDate(t, main.timezoneType, offset)
+                let lt = Date.parse(localTime) / 1000
+
+                while (lt > (sr + 86400)) {
+                    dbgprint("+")
+                    sr = sr + 86400
+                    ss = ss + 86400
+                }
+                dbgprint("****\t" + displayTime.getHours())
+                {
+                    let isDayTime =  ((lt >= sr ) && (lt <= ss)) ? 0 : 1
+                    y = Math.trunc(displayTime.getHours() / 6,0)
+                    dbgprint("wdPtr:" + wdPtr + "\t" + wd[wdPtr].time + "\t x = " + x + "\t y = " + y)
+                    dbgprint(isDayTime + "\t\t" + displayTime + "\t" + localTime+ "\t" + new Date(sr * 1000) + "\t" + new Date(ss * 1000) )
+                    dbgprint("\t\t" + displayTime + "\t" + lt+ "\t" + (sr) + "\t" + (ss) )
+                    nextDaysData['dayTitle'] = composeNextDayTitle(displayTime)
+                    nextDaysData['temperature' + y] = wd[wdPtr].data.instant.details["air_temperature"]
+                    nextDaysData['hidden' + y] = false
+                    let obj = wd[wdPtr].data.next_6_hours.summary["symbol_code"]
+                    nextDaysData['iconName' + y] = geticonNumber(obj)
+                    nextDaysData['partOfDay' + y] = isDayTime
+                    if (y == 3) {
+                        nextDaysModel.append(nextDaysData)
+                        nextDaysData=blankObject()
+                        x++
+                    }
                 }
                 wdPtr++
             }
@@ -154,6 +205,7 @@ Item {
                 nextDaysModel.append(nextDaysData)
             }
             dbgprint("nextDaysModel Count:" + nextDaysModel.count)
+            main.debugLogging = 0
         }
 
         function buildMetogramData(readingsArray) {
@@ -210,7 +262,6 @@ Item {
             }
             main.loadingDataComplete = true
             main.debugLogging = 0
-
         }
 
         function formatTime(ISOdate) {
@@ -224,23 +275,40 @@ Item {
         function composeNextDayTitle(date) {
             return Qt.locale().dayName(date.getDay(), Locale.ShortFormat) + ' ' + date.getDate() + '/' + (date.getMonth() + 1)
         }
+
         function successSRAS(jsonString) {
-            dbgprint("successSRAS")
+            main.debugLogging = 0
+            dbgprint2("successSRAS")
             var readingsArray = JSON.parse(jsonString)
             dbgprint("Sunrise:" + JSON.stringify(readingsArray.properties.sunrise))
-            dbgprint(JSON.stringify(currentWeatherModel))
+            let offset = 0
+            switch (main.timezoneType) {
+                case (0):
+                    offset = dataSource.data["Local"]["timezoneOffset"]
+                    break;
+                case (1):
+                    offset = 0
+                    break;
+                case (2):
+                    offset = currentPlace.timezoneOffset
+                    break;
+            }
+
             if ((readingsArray.properties !== undefined)) {
                 currentWeatherModel.sunRise = new Date(readingsArray.properties.sunrise.time)
                 currentWeatherModel.sunSet = new Date(readingsArray.properties.sunset.time)
-                currentWeatherModel.sunRiseTime = (readingsArray.properties.sunrise.time).substr(11,5)
-                currentWeatherModel.sunSetTime = (readingsArray.properties.sunset.time).substr(11,5)
+
+                currentWeatherModel.sunRiseTime = UnitUtils.convertDate(currentWeatherModel.sunRise, main.timezoneType, offset).toTimeString()
+                currentWeatherModel.sunSetTime = UnitUtils.convertDate(currentWeatherModel.sunSet, main.timezoneType, offset).toTimeString()
             }
+            dbgprint(JSON.stringify(currentWeatherModel))
             sunRiseSetFlag = true
             var weatherURL = urlPrefix + placeIdentifier
             if (! useOnlineWeatherData) {
                 weatherURL = Qt.resolvedUrl('../../code/weather/weather.json')
             }
             dbgprint("Downloading Weather Data from: " + weatherURL)
+            main.debugLogging = 0
             var xhr2 = DataLoader.fetchJsonFromInternet(weatherURL, successWeather, failureCallback)
         }
 
@@ -273,15 +341,17 @@ Item {
             dbgprint("Timezone Data is available - using met.no API")
 
             TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
-            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
+//            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
         }
         if (! useOnlineWeatherData) {
             TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
         }
         dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
+        main.debugLogging = 0
         var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
         return [xhr1]
     }
+
     function reloadMeteogramImage(placeIdentifier) {
         main.overviewImageSource = ""
     }

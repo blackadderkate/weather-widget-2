@@ -81,7 +81,7 @@ Item {
             temperature: temperature0
             iconName: (iconName0 != undefined) ? iconName0 : ""
             hidden: hidden0
-            partOfDay: 1
+            partOfDay: partOfDay0
             pixelFontSize: periodFontSize
         }
 
@@ -91,7 +91,7 @@ Item {
             temperature: temperature1
             iconName: (iconName1 != undefined) ? iconName1 : ""
             hidden: hidden1
-            partOfDay: 0
+            partOfDay: partOfDay1
             pixelFontSize: periodFontSize
         }
 
@@ -101,7 +101,7 @@ Item {
             temperature: temperature2
             iconName: (iconName2 != undefined) ? iconName2 : ""
             hidden: hidden2
-            partOfDay: 0
+            partOfDay: partOfDay2
             pixelFontSize: periodFontSize
         }
 
@@ -111,7 +111,7 @@ Item {
             temperature: temperature3
             iconName: (iconName3 != undefined) ? iconName3 : ""
             hidden: hidden3
-            partOfDay: 1
+            partOfDay: partOfDay3
             pixelFontSize: periodFontSize
         }
     }
