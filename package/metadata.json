@@ -25,7 +25,7 @@
         "Description[zh_CN]": "添加 Open Weather Map",
         "Icon": "weather-clouds",
         "Id": "org.kde.weatherWidget-3",
-        "Version": "3.0",
+        "Version": "3.0.0b1",
         "License": "GPL2",
         "Website": "https://github.com/blackadderkate/weather-widget-2"
     },
