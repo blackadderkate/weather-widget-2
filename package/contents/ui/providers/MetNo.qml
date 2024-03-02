@@ -36,10 +36,6 @@ Item {
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
-        main.debugLogging = 1
-        dbgprint2("loadDataFromInternet" + currentPlace.alias)
-
-        var placeIdentifier = locationObject.placeIdentifier
 
         function successWeather(jsonString) {
             var readingsArray = JSON.parse(jsonString)
@@ -105,7 +101,7 @@ Item {
             let offset = 0
             switch (main.timezoneType) {
                 case (0):
-                    offset = dataSource.data["Local"]["timezoneOffset"]
+                    offset = dataSource.data["Local"]["Offset"]
                     break;
                 case (1):
                     offset = 0
@@ -284,7 +280,7 @@ Item {
             let offset = 0
             switch (main.timezoneType) {
                 case (0):
-                    offset = dataSource.data["Local"]["timezoneOffset"]
+                    offset = dataSource.data["Local"]["Offset"]
                     break;
                 case (1):
                     offset = 0
@@ -330,6 +326,10 @@ Item {
             return(sign + hrs + ":" + mins)
         }
 
+        main.debugLogging = 1
+        dbgprint2("loadDataFromInternet" + currentPlace.alias)
+
+        var placeIdentifier = locationObject.placeIdentifier
         weatherDataFlag = false
         sunRiseSetFlag = false
         var TZURL = ""
