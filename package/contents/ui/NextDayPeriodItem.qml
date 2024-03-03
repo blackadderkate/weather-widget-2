@@ -18,6 +18,7 @@ import QtQuick 2.15
 import org.kde.plasma.components 3.0 as PlasmaComponents
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
+import org.kde.kirigami as Kirigami
 
 Item {
     property string temperature
@@ -44,6 +45,8 @@ Item {
         visible: ! hidden
         width: dayTitleLine.width / 2
         horizontalAlignment: Text.AlignRight
+        color: Kirigami.Theme.textColor
+
     }
     Text {
         anchors.left: temperatureText.right
@@ -54,6 +57,7 @@ Item {
         visible: ! hidden
         width: dayTitleLine.width / 2
         horizontalAlignment: Text.AlignHCenter
+        color: Kirigami.Theme.textColor
     }
     /*
     Item {
