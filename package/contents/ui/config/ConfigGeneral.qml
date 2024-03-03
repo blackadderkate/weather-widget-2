@@ -369,7 +369,7 @@ Item {
                                     onClicked: {
                                         let entry = placesModel.getRow(row)
                                         if (entry.providerId === "metno") {
-                                            let url=entry.placeIdentifier
+                                            let url = entry.placeIdentifier
                                             newMetnoUrl.text = url
                                             var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                                             newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
@@ -850,7 +850,7 @@ Item {
                                 return Number(data).toLocaleString(Qt.locale(),"f",5)
                             }
 
-                            var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                            var data = newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                             if (data === undefined)
                                 return
                                 if (data.length === 3) {
@@ -1047,8 +1047,8 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 onDoubleClicked: {
-                                    saveSearchedData.rowNumber=row
-                                    saveSearchedData.visible=true
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
                                     saveSearchedData.open()
                                 }
                             }
@@ -1070,8 +1070,8 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 onDoubleClicked: {
-                                    saveSearchedData.rowNumber=row
-                                    saveSearchedData.visible=true
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
                                     saveSearchedData.open()
                                 }
                             }
@@ -1095,8 +1095,8 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 onDoubleClicked: {
-                                    saveSearchedData.rowNumber=row
-                                    saveSearchedData.visible=true
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
                                     saveSearchedData.open()
                                 }
                             }
@@ -1118,8 +1118,8 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 onDoubleClicked: {
-                                    saveSearchedData.rowNumber=row
-                                    saveSearchedData.visible=true
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
                                     saveSearchedData.open()
                                 }
                             }
@@ -1141,8 +1141,8 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 onDoubleClicked: {
-                                    saveSearchedData.rowNumber=row
-                                    saveSearchedData.visible=true
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
                                     saveSearchedData.open()
                                 }
                             }
@@ -1164,8 +1164,8 @@ Item {
                             MouseArea {
                                 anchors.fill: parent
                                 onDoubleClicked: {
-                                    saveSearchedData.rowNumber=row
-                                    saveSearchedData.visible=true
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
                                     saveSearchedData.open()
                                 }
                             }
@@ -1182,10 +1182,10 @@ Item {
         }
         onOpened: {
             // cfg_debugLogging = true
-            let locale=Qt.locale().name.substr(3,2)
+            let locale = Qt.locale().name.substr(3,2)
             dbgprint(locale)
-            let userCountry=Helper.getDisplayName(locale)
-            let tmpDB=Helper.getDisplayNames()
+            let userCountry = Helper.getDisplayName(locale)
+            let tmpDB = Helper.getDisplayNames()
             for (var i=0; i < tmpDB.length - 1 ; i++) {
                 countryCodesModel.append({ id: tmpDB[i] })
                 if (tmpDB[i] === userCountry) {
@@ -1317,17 +1317,17 @@ Item {
 
             }
             onAccepted: {
-                let data=filteredCSVData.getRow(rowNumber)
-                newMetnoCityLatitudeField.text=data["Latitude"]
-                newMetnoCityLongitudeField.text=data["Longitude"]
-                newMetnoCityAltitudeField.text=data["Altitude"]
+                let data = filteredCSVData.getRow(rowNumber)
+                newMetnoCityLatitudeField.text = data["Latitude"]
+                newMetnoCityLongitudeField.text = data["Longitude"]
+                newMetnoCityAltitudeField.text = data["Altitude"]
                 newMetnoUrl.text="lat="+data["Latitude"]+"&lon="+data["Longitude"]+"&altitude="+data["Altitude"]
-                let loc=data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
-                newMetnoCityAlias.text=loc
-                addMetnoCityIdDialog.timezoneID=data["timezoneId"]
+                let loc = data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+                newMetnoCityAlias.text = loc
+                addMetnoCityIdDialog.timezoneID = data["timezoneId"]
                 for (var i=0; i < timezoneDataModel.count; i++) {
                     if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
-                        tzComboBox.currentIndex=i
+                        tzComboBox.currentIndex = i
                         break
                     }
                 }
@@ -1337,7 +1337,7 @@ Item {
             }
             onRejected: {
                 visible = false
-                searchWindow.visible=true
+                searchWindow.visible = true
             }
         }
     }
