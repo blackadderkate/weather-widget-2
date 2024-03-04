@@ -26,6 +26,9 @@ Item {
     property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
     property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
     property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
+    property var backgroundColor: Kirigami.Theme.backgroundColor
+    property var alternateBackgroundColor: Kirigami.Theme.alternateBackgroundColor
+    property var highlightColor: Kirigami.Theme.highlightColor
 
 
     Component.onCompleted: {
@@ -229,10 +232,6 @@ Item {
         ScrollView {
             id: placesTable
             width: parent.width
-            // columnSpacing: 1
-            // rowSpacing: 1
-            // border.color:  Kirigami.Theme.alternateBackgroundColor
-            // border.width: 1
             clip: true
             Layout.preferredHeight: 180
             Layout.preferredWidth: parent.width
@@ -241,11 +240,6 @@ Item {
 
             TableView {
                 anchors.fill: parent
-                // anchors.leftMargin: 2
-                // anchors.topMargin: myhorizontalHeader.height + 2
-                // anchors.rightMargin: 0
-
-
                 property var columnWidths: [10, 40, 25, 22]
                 columnWidthProvider: function (column) {
                     let aw = placesTable.width - placesTable.effectiveScrollBarWidth
@@ -274,7 +268,7 @@ Item {
                     DelegateChoice {
                         column: 0
                         delegate: Rectangle {
-                            color: Kirigami.Theme.backgroundColor
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -287,7 +281,7 @@ Item {
                     DelegateChoice {
                         column: 1
                         delegate: Rectangle {
-                            color: Kirigami.Theme.backgroundColor
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -302,7 +296,7 @@ Item {
                     DelegateChoice {
                         column: 2
                         delegate: Rectangle {
-                            color: Kirigami.Theme.backgroundColor
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 id: tableLocation
                                 text: display
@@ -951,13 +945,6 @@ Item {
 
         HorizontalHeaderView {
             id: mysearchhorizontalHeader
-            // anchors.left: searchtableView.left
-            // anchors.leftMargin: 0
-            // anchors.topMargin: 2
-            // anchors.top: parent.top
-            // anchors.right: parent.right
-            // anchors.rightMargin: 2
-
             syncView: searchtableView
             clip: true
             model: ListModel {
@@ -976,10 +963,6 @@ Item {
         ScrollView {
             id: placesTable1
             width: parent.width
-            // columnSpacing: 1
-            // rowSpacing: 1
-            // border.color:  Kirigami.Theme.alternateBackgroundColor
-            // border.width: 1
             clip: true
             Layout.preferredHeight: 180
             Layout.preferredWidth: parent.width
@@ -1002,6 +985,7 @@ Item {
                 // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
                 // highlightOnFocus: true
                 property var columnWidths: [30, 15, 15, 12, 12, 30, -1]
+                property int selectedRow: -1
                 columnWidthProvider: function (column) {
                     let aw = placesTable1.width - placesTable1.effectiveScrollBarWidth
                     return parseInt(aw * columnWidths[column] / 100 )
@@ -1036,16 +1020,20 @@ Item {
                             border.width: current ? 2 : 0
                             implicitWidth: searchtableView.width * 0.3
                             implicitHeight: defaultFontPixelSize + 4
-                            color: Kirigami.Theme.backgroundColor
+                                color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
                                 anchors.verticalCenter: parent.verticalCenter
+                                anchors.fill: parent
                             }
                             MouseArea {
                                 anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
                                 onDoubleClicked: {
                                     saveSearchedData.rowNumber = row
                                     saveSearchedData.visible = true
@@ -1059,7 +1047,7 @@ Item {
                         delegate: Rectangle {
                             implicitHeight: defaultFontPixelSize + 4
                             // implicitWidth: searchtableView.width * 0.1
-                            color: Kirigami.Theme.backgroundColor
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -1069,6 +1057,9 @@ Item {
                             }
                             MouseArea {
                                 anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
                                 onDoubleClicked: {
                                     saveSearchedData.rowNumber = row
                                     saveSearchedData.visible = true
@@ -1083,8 +1074,7 @@ Item {
                             required property bool selected
                             required property bool current
                             implicitHeight: defaultFontPixelSize + 4
-                            color: Kirigami.Theme.backgroundColor
-                            // implicitWidth: searchtableView.width * 0.15
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -1094,6 +1084,9 @@ Item {
                             }
                             MouseArea {
                                 anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
                                 onDoubleClicked: {
                                     saveSearchedData.rowNumber = row
                                     saveSearchedData.visible = true
@@ -1106,8 +1099,7 @@ Item {
                         column: 3
                         delegate: Rectangle {
                             implicitHeight: defaultFontPixelSize + 4
-                            color: Kirigami.Theme.backgroundColor
-                            // implicitWidth: searchtableView.width * 0.15
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -1117,6 +1109,9 @@ Item {
                             }
                             MouseArea {
                                 anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
                                 onDoubleClicked: {
                                     saveSearchedData.rowNumber = row
                                     saveSearchedData.visible = true
@@ -1129,8 +1124,7 @@ Item {
                         column: 4
                         delegate: Rectangle {
                             implicitHeight: defaultFontPixelSize + 4
-                            color: Kirigami.Theme.backgroundColor
-                            // implicitWidth: searchtableView.width * 0.08
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -1140,6 +1134,9 @@ Item {
                             }
                             MouseArea {
                                 anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
                                 onDoubleClicked: {
                                     saveSearchedData.rowNumber = row
                                     saveSearchedData.visible = true
@@ -1152,8 +1149,7 @@ Item {
                         column: 5
                         delegate: Rectangle {
                             height: defaultFontPixelSize + 4
-                            color: Kirigami.Theme.backgroundColor
-                            // implicitWidth: searchtableView.width * 0.22
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 text: display
                                 color: Kirigami.Theme.textColor
@@ -1163,6 +1159,9 @@ Item {
                             }
                             MouseArea {
                                 anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
                                 onDoubleClicked: {
                                     saveSearchedData.rowNumber = row
                                     saveSearchedData.visible = true
