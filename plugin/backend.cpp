@@ -25,7 +25,7 @@ void Backend::writeCache(const QString &cacheContent, const QString &plasmoidId)
     QFile file( fileName );
     if (file.open(QIODevice::WriteOnly)) {
         QTextStream outstream( &file );
-        outstream << cacheContent << endl;
+        outstream << cacheContent << "\n";
     } else {
         qDebug() << "error opening file";
     }
