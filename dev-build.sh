@@ -16,7 +16,7 @@ fi
 
 pushd  ./build
 
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DQML_INSTALL_DIR=/usr/lib/qt6/qml -DLOCALE_INSTALL_DIR=/usr/share/locale -DCMAKE_BUILD_TYPE=Release -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON -DQT_MAJOR_VERSION=6
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
 make
 if [ $? -eq 0 ]; then
   sudo make install

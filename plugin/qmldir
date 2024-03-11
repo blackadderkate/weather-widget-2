@@ -1,3 +1,3 @@
-module org.kde.private.weatherWidget
+module org.kde.private.weatherWidget-3
 
 plugin plasmoidplugin
