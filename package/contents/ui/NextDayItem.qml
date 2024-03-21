@@ -24,7 +24,7 @@ import org.kde.kirigami as Kirigami
 
 Item {
 
-    property int itemRowSpacing: 5 * Screen.devicePixelRatio
+    property int itemRowSpacing: 5
     property double periodFontSize: Kirigami.Theme.defaultFont.pixelSize
     property double periodHeight: (height - periodFontSize - itemRowSpacing * 4) / 4
     property color lineColor: Kirigami.Theme.textColor
@@ -41,7 +41,7 @@ Item {
     Item {
         id: dayTitleLine
         width: parent.width
-        height: 1 * Screen.devicePixelRatio
+        height: 1
         anchors.top: parent.top
         anchors.topMargin: periodFontSize * 0.8
 
@@ -70,7 +70,7 @@ Item {
         anchors.topMargin: periodFontSize
 
         columns: 1
-        rowSpacing: 5 * Screen.devicePixelRatio
+        rowSpacing: 5
 
         height: parent.height - anchors.topMargin
         width: parent.width

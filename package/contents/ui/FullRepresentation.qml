@@ -23,8 +23,8 @@ import org.kde.plasma.plasma5support as Plasma5Support
 Item {
     id: fullRepresentation
 
-    property int imageWidth: 800 * Screen.devicePixelRatio  // Makes yr.no images grainy,
-    property int imageHeight: 320 * Screen.devicePixelRatio + defaultFontPixelSize// prefer rendering meteograms
+    property int imageWidth: 800
+    property int imageHeight: 320 + defaultFontPixelSize
 
     property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
     property double footerHeight: defaultFontPixelSize
@@ -177,7 +177,7 @@ Item {
         id: hourLegend
         anchors.bottom: parent.bottom
         anchors.bottomMargin: footerHeight + nextDaysVerticalMargin
-        spacing: 1 * Screen.devicePixelRatio
+        spacing: 1
 
         width: hourLegendMargin
         height: nextDaysHeight - defaultFontPixelSize
