@@ -55,8 +55,18 @@ PlasmoidItem {
     property bool loadingDataComplete: false
 
     /* GUI layout stuff */
-    compactRepresentation: CompactRepresentation {  }
-    preferredRepresentation: compactRepresentation
+    property Component fr: FullRepresentation { }
+    property Component cr: CompactRepresentation { }
+    property Component frInTray: FullRepresentationInTray { }
+    property Component crInTray: CompactRepresentationInTray { }
+
+    compactRepresentation: inTray ? crInTray : cr
+    fullRepresentation: inTray ? frInTray : fr
+
+    switchWidth: 256
+    switchHeight: 128
+
+    preferredRepresentation: inTray ? undefined: compactRepresentation
 
     property bool vertical: (plasmoid.formFactor === PlasmaCore.Types.Vertical)
     property bool onDesktop: (plasmoid.location === PlasmaCore.Types.Desktop || plasmoid.location === PlasmaCore.Types.Floating)
@@ -76,6 +86,7 @@ PlasmoidItem {
     property int windSpeedType: plasmoid.configuration.windSpeedType
     property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
     property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
+    property bool inTray: (plasmoid.containment.containmentType === 129) && ((plasmoid.formFactor === 2) || (plasmoid.formFactor === 3))
 
     // Cache, Last Load Time, Widget Status
     property string fullRepresentationAlias
@@ -140,7 +151,6 @@ PlasmoidItem {
 
 
 
-    fullRepresentation: FullRepresentation { }
     onLoadingDataCompleteChanged: {
         dbgprint2("loadingDataComplete:" + loadingDataComplete)
     }
@@ -283,6 +293,8 @@ PlasmoidItem {
         loadingData.lastloadingStartTime=dateNow()
         loadingData.nextReload = -1
         currentPlace.provider = setCurrentProviderAccordingId(currentPlace.providerId)
+        currentPlace.creditLink = currentPlace.provider.getCreditLink(currentPlace.identifier)
+        currentPlace.creditLabel = currentPlace.provider.getCreditLabel(currentPlace.identifier)
         loadingData.loadingXhrs = currentPlace.provider.loadDataFromInternet(
                     dataLoadedFromInternet,
                     reloadDataFailureCallback,
@@ -305,10 +317,6 @@ PlasmoidItem {
         updateLastReloadedText()
         updateCompactItem()
         refreshTooltipSubText()
-
-        currentPlace.creditLink = currentPlace.provider.getCreditLink(currentPlace.identifier)
-        currentPlace.creditLabel = currentPlace.provider.getCreditLabel(currentPlace.identifier)
-
         dbgprint("meteogramModelChanged:" + meteogramModelChanged)
         meteogramModelChanged = !meteogramModelChanged
         dbgprint("meteogramModelChanged:" + meteogramModelChanged)
@@ -386,6 +394,7 @@ PlasmoidItem {
     }
 
     Component.onCompleted: {
+        debugLogging = 0
         dbgprint2("MAIN.QML")
         dbgprint((currentPlace))
 
@@ -402,12 +411,11 @@ PlasmoidItem {
                 env_QML_XHR_ALLOW_FILE_READ = true
             }
 
-
-
             if (plasmoid.configuration.widgetFontSize === undefined) {
                 plasmoid.configuration.widgetFontSize = 32
                 widgetFontSize = 32
             }
+
             switch (Qt.locale().measurementSystem) {
             case (Locale.MetricSystem):
                 plasmoid.configuration.temperatureType = 0
@@ -433,7 +441,11 @@ PlasmoidItem {
         dbgprint("plasmoid.formFactor:" + plasmoid.formFactor)
         dbgprint("plasmoid.location:" + plasmoid.location)
         dbgprint("plasmoid.configuration.layoutType:" + plasmoid.configuration.layoutType)
-
+        dbgprint("plasmoid.containment.containmentType:" + plasmoid.containment.containmentType)
+        if (inTray) {
+            dbgprint("IN TRAY!")
+        }
+        debugLogging = 0
 
         dbgprint2(" Load Cache")
         var cacheContent = weatherCache.readCache()

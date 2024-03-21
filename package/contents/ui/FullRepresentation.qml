@@ -19,6 +19,7 @@ import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasma5support as Plasma5Support
+import QtQuick.Layouts
 
 Item {
     id: fullRepresentation
@@ -41,29 +42,34 @@ Item {
     implicitWidth: imageWidth
     implicitHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
 
+    Layout.minimumWidth: imageWidth
+    Layout.minimumHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
+    Layout.preferredWidth: imageWidth
+    Layout.preferredHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
+
     onFullRepresentationAliasChanged: {
 
         // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
         var t = main.fullRepresentationAlias
 
-            switch (main.timezoneType) {
-                case 0:
-                    t += " (" + getLocalTimeZone()+ ")"
-                    break
-                case 1:
-                    t += " (" + i18n("UTC") + ")"
-                    break
-                case 2:
-                    if (main.currentPlace.timezoneShortName === "") {
-                        main.currentPlace.timezoneShortName = "unknown"
-                    }
-                    t += " (" +  main.currentPlace.timezoneShortName + ")"
-                    break
-                default:
-                    t += " (" + "TBA" + ")"
-                    break
-            }
-            currentLocationText.text = t
+        switch (main.timezoneType) {
+            case 0:
+                t += " (" + getLocalTimeZone()+ ")"
+                break
+            case 1:
+                t += " (" + i18n("UTC") + ")"
+                break
+            case 2:
+                if (main.currentPlace.timezoneShortName === "") {
+                    main.currentPlace.timezoneShortName = "unknown"
+                }
+                t += " (" +  main.currentPlace.timezoneShortName + ")"
+                break
+            default:
+                t += " (" + "TBA" + ")"
+                break
+        }
+        currentLocationText.text = t
     }
 
     PlasmaComponents.Label {
