@@ -71,7 +71,7 @@ Item {
             url2 = urlPrefix + '/forecast/daily?id=' + placeIdentifier + '&cnt=8' + appIdAndModeSuffix + versionParam
             url3 = urlPrefix + '/forecast?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
         }
-        main.debugLogging = 1
+        main.debugLogging = 0
         dbgprint("xmlModelCurrent = " + url1)
         dbgprint("xmlModelLongTerm = " + url2)
         dbgprint("xmlModelHourByHour = " + url3)
@@ -491,9 +491,9 @@ dbgprint2("***************************************************")
         return new Date(dateString + timezoneOffset)
     }
     function composeNextDayTitle(date) {
-        // main.debugLogging = 1
-        // dbgprint2("composeNextDayTitle    " + date)
-        // main.debugLogging = 0
+        main.debugLogging = 0
+        dbgprint2("composeNextDayTitle    " + date)
+        main.debugLogging = 0
         return Qt.locale().dayName(date.getDay(), Locale.ShortFormat) + ' ' + date.getDate() + '/' + (date.getMonth() + 1)
     }
 
