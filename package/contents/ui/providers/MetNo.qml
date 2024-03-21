@@ -37,6 +37,31 @@ Item {
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
 
+        main.debugLogging = 0
+        dbgprint2("loadDataFromInternet: " + currentPlace.alias)
+
+        var placeIdentifier = locationObject.placeIdentifier
+        weatherDataFlag = false
+        sunRiseSetFlag = false
+        var TZURL = ""
+
+        if (currentPlace.timezoneID === -1) {
+            console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
+            TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
+        } else {
+            dbgprint("Timezone Data is available - using met.no API")
+
+            TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
+            //            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
+        }
+        if (! useOnlineWeatherData) {
+            TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
+        }
+        dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
+        main.debugLogging = 0
+        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+        return [xhr1]
+
         function successWeather(jsonString) {
             var readingsArray = JSON.parse(jsonString)
             updatecurrentWeather(readingsArray)
@@ -325,31 +350,6 @@ Item {
             let sign = (seconds >= 0) ? "+" : "-"
             return(sign + hrs + ":" + mins)
         }
-
-        main.debugLogging = 1
-        dbgprint2("loadDataFromInternet" + currentPlace.alias)
-
-        var placeIdentifier = locationObject.placeIdentifier
-        weatherDataFlag = false
-        sunRiseSetFlag = false
-        var TZURL = ""
-
-        if (currentPlace.timezoneID === -1) {
-            console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
-            TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
-        } else {
-            dbgprint("Timezone Data is available - using met.no API")
-
-            TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
-//            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
-        }
-        if (! useOnlineWeatherData) {
-            TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
-        }
-        dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
-        main.debugLogging = 0
-        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-        return [xhr1]
     }
 
     function reloadMeteogramImage(placeIdentifier) {
