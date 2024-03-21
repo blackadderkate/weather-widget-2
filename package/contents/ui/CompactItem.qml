@@ -94,7 +94,8 @@ Item {
         fontSizeMode: (main.inTray) ? Text.Fit : Text.FixedSize
         font.family: 'weathericons'
         text: iconNameStr
-        opacity: layoutType === 2 ? 0.8 : 1
+        color: Kirigami.Theme.textColor
+        opacity: ((layoutType === 2) && (! main.inTray)) ? 0.8 : 1
         font.pixelSize: fontPixelSize
     }
 
@@ -140,6 +141,7 @@ Item {
         fontSizeMode: layoutType === 1 ? Text.HorizontalFit : Text.VerticalFit
 
         text: temperatureStr
+        color: Kirigami.Theme.textColor
         font.pixelSize: fontPixelSize
     }
 
