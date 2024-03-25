@@ -5,6 +5,7 @@ import "../../code/config-utils.js" as ConfigUtils
 import "../../code/placesearch-helpers.js" as Helper
 import "../../code/timezoneData.js" as TZData
 import Qt.labs.qmlmodels
+import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
 KCM.SimpleKCM {
