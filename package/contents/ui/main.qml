@@ -87,6 +87,7 @@ PlasmoidItem {
     property bool twelveHourClockEnabled: Qt.locale().timeFormat(Locale.ShortFormat).toString().indexOf('AP') > -1
     property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
     property bool inTray: (plasmoid.containment.containmentType === 129) && ((plasmoid.formFactor === 2) || (plasmoid.formFactor === 3))
+    readonly property string placesStr: plasmoid.configuration.places
 
     // Cache, Last Load Time, Widget Status
     property string fullRepresentationAlias
@@ -160,6 +161,12 @@ PlasmoidItem {
         dbgprint("QML_XHR_ALLOW_FILE_READ Enabled: " + env_QML_XHR_ALLOW_FILE_READ)
     }
 
+    onPlacesStrChanged: {
+        if (currentPlace != ConfigUtils.getPlacesArray()[plasmoid.configuration.placeIndex].placeAlias) {
+            setNextPlace(true)
+        }
+
+    }
 
     function dbgprint(msg) {
         if (!debugLogging) {
@@ -231,7 +238,7 @@ PlasmoidItem {
         var placeIndex = plasmoid.configuration.placeIndex
         dbgprint("places count=" + placesCount + ", placeIndex=" + plasmoid.configuration.placeIndex)
         if (!initial) {
-            (direction === "+") ? placeIndex++ :placeIndex--
+            (direction === "+") ? placeIndex++ : placeIndex--
         }
         if (placeIndex > places.length - 1) {
             placeIndex = 0
