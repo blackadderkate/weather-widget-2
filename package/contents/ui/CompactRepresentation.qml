@@ -89,7 +89,6 @@ Item {
                 loadingData.failedAttemptCount = 0
                 main.loadDataFromInternet()
             } else {
-                debugLogging = 0
                 dbgprint("CompactRepresentation")
                 let t = main.expanded
                 if (t) {
@@ -98,7 +97,6 @@ Item {
                     dbgprint("Opening FullRepresentation")
                 }
                 main.expanded = ! main.expanded
-                debugLogging = 0
             }
         }
     }

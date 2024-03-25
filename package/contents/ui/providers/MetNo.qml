@@ -37,7 +37,6 @@ Item {
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
 
-        main.debugLogging = 0
         dbgprint2("loadDataFromInternet: " + currentPlace.alias)
 
         var placeIdentifier = locationObject.placeIdentifier
@@ -58,7 +57,6 @@ Item {
             TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
         }
         dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
-        main.debugLogging = 0
         var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
         return [xhr1]
 
@@ -109,7 +107,6 @@ Item {
         }
 
         function updateNextDaysModel(readingsArray) {
-            main.debugLogging = 0
             dbgprint2("updateNextDaysModel")
             nextDaysModel.clear()
 
@@ -226,11 +223,9 @@ Item {
                 nextDaysModel.append(nextDaysData)
             }
             dbgprint("nextDaysModel Count:" + nextDaysModel.count)
-            main.debugLogging = 0
         }
 
         function buildMetogramData(readingsArray) {
-            main.debugLogging = 0
             dbgprint2("buildMetogramData (MetNo)" + currentPlace.identifier)
             meteogramModel.clear()
             var readingsLength = (readingsArray.properties.timeseries.length)
@@ -282,7 +277,6 @@ Item {
                 i++
             }
             main.loadingDataComplete = true
-            main.debugLogging = 0
         }
 
         function formatTime(ISOdate) {
@@ -298,7 +292,6 @@ Item {
         }
 
         function successSRAS(jsonString) {
-            main.debugLogging = 0
             dbgprint2("successSRAS")
             var readingsArray = JSON.parse(jsonString)
             dbgprint("Sunrise:" + JSON.stringify(readingsArray.properties.sunrise))
@@ -329,7 +322,6 @@ Item {
                 weatherURL = Qt.resolvedUrl('../../code/weather/weather.json')
             }
             dbgprint("Downloading Weather Data from: " + weatherURL)
-            main.debugLogging = 0
             var xhr2 = DataLoader.fetchJsonFromInternet(weatherURL, successWeather, failureCallback)
         }
 

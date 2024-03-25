@@ -394,7 +394,6 @@ PlasmoidItem {
     }
 
     Component.onCompleted: {
-        debugLogging = 0
         dbgprint2("MAIN.QML")
         dbgprint((currentPlace))
 
@@ -445,7 +444,6 @@ PlasmoidItem {
         if (inTray) {
             dbgprint("IN TRAY!")
         }
-        debugLogging = 0
 
         dbgprint2(" Load Cache")
         var cacheContent = weatherCache.readCache()

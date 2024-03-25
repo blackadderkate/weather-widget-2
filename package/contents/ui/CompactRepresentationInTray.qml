@@ -39,7 +39,6 @@ Item {
         hoverEnabled: true
 
         onClicked: {
-            debugLogging = 0
             dbgprint("CompactRepresentationInTray")
             let t = main.expanded
             if (t) {
@@ -49,7 +48,6 @@ Item {
 
             }
             main.expanded = ! main.expanded
-            debugLogging = 0
         }
     }
 }

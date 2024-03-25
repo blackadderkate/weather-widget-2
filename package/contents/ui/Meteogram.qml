@@ -481,7 +481,6 @@ Item {
     }
 
     function buildMetogramData() {
-        main.debugLogging = 0
         dbgprint2("buildMetogramData (meteogram)")
         var counter = 0
         var i = 0
@@ -543,7 +542,6 @@ Item {
             hourGridModel.setProperty(i, 'canShowDay', false)
         }
         hourGridModel.setProperty(hourGridModel.count - 1, 'canShowPrec', false)
-        main.debugLogging = 0
     }
 
     function buildCurves() {
