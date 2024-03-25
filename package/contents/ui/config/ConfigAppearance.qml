@@ -2,8 +2,9 @@ import QtQuick 2.2
 import QtQuick.Controls
 import QtQuick.Layouts 1.1
 import org.kde.kirigami as Kirigami
+import org.kde.kcmutils as KCM
 
-Item {
+KCM.SimpleKCM {
 
     id: appearancePage
     property int cfg_layoutType

@@ -1,8 +1,9 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import org.kde.kcmutils as KCM
 
-Item {
+KCM.SimpleKCM {
 
     property int cfg_temperatureType
     property int cfg_pressureType
