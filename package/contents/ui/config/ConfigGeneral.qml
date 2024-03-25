@@ -7,7 +7,6 @@ import "../../code/timezoneData.js" as TZData
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
 
-
 Item {
     function dbgprint(msg) {
         if (!cfg_debugLogging) {
@@ -270,11 +269,12 @@ Item {
                         delegate: Rectangle {
                             color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
+                                anchors.fill: parent
                                 text: display
                                 color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: 0
-                                anchors.verticalCenter: parent.verticalCenter
+                                verticalAlignment: Text.AlignVCenter
                             }
                         }
                     }
@@ -283,11 +283,12 @@ Item {
                         delegate: Rectangle {
                             color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
+                                anchors.fill: parent
                                 text: display
                                 color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
-                                anchors.verticalCenter: parent.verticalCenter
+                                verticalAlignment: Text.AlignVCenter
                                 elide: Text.ElideRight
                                 clip: true
                             }
@@ -298,12 +299,14 @@ Item {
                         delegate: Rectangle {
                             color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
+                                anchors.fill: parent
                                 id: tableLocation
                                 text: display
                                 color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
-                                anchors.verticalCenter: parent.verticalCenter
+                                verticalAlignment: Text.AlignVCenter
+                                elide: Text.ElideRight
                                 clip: true
                             }
                         }
@@ -355,6 +358,7 @@ Item {
                                         placesModelChanged()
                                     }
                                 }
+                                enabled: (placesModel.rowCount > 1)
                             }
                             Button {
                                 icon.name: 'entry-edit'
@@ -1180,7 +1184,6 @@ Item {
             }
         }
         onOpened: {
-            // cfg_debugLogging = true
             let locale = Qt.locale().name.substr(3,2)
             dbgprint(locale)
             let userCountry = Helper.getDisplayName(locale)
