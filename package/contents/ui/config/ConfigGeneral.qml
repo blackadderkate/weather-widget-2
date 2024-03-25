@@ -197,7 +197,7 @@ KCM.SimpleKCM {
         spacing: 2
 
         Label {
-            text: i18n("Plasmoid version") + ": 3.0"
+            text: i18n("Plasmoid version") + ": 3.0.0"
             Layout.alignment: Qt.AlignRight
         }
 
