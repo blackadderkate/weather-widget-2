@@ -28,23 +28,28 @@ Item {
 
     anchors.fill: parent
 
-    readonly property int defaultWidgetSize: Math.min(compactRepresentation.width,compactRepresentation.height)
-    property int widgetSize: Math.max(compactRepresentation.width,compactRepresentation.height)
+    readonly property int widgetWidth: compactRepresentation.width
+    readonly property int widgetHeight: compactRepresentation.height
+
+    readonly property int minWidgetSize: Math.min(widgetWidth,widgetHeight)
+    readonly property int maxWidgetSize: Math.max(widgetWidth,widgetHeight)
 
     CompactItem {
         id: compactItem
     }
 
-    Layout.preferredWidth: ((layoutType === 0)) ? defaultWidgetSize * 2 : defaultWidgetSize
+    Layout.preferredWidth: ((layoutType === 0)) ? maxWidgetSize : minWidgetSize
 
     PlasmaComponents.Label {
         id: lastReloadedNotifier
 
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: - defaultWidgetSize * 0.05
+        anchors.bottomMargin: - widgetHeight * 0.05
         verticalAlignment: Text.AlignBottom
-        width: parent.width
+        width: widgetWidth
+        height: widgetHeight * 0.2
+        elide: Text.ElideRight
         fontSizeMode: Text.Fit
         font.pointSize: -1
         color: Kirigami.Theme.highlightColor
@@ -64,7 +69,6 @@ Item {
         visible: (lastReloadedText.visible === true)
     }
 
-
     MouseArea {
         anchors.fill: parent
 
@@ -81,25 +85,19 @@ Item {
         }
 
         onClicked: (mouse)=> {
-                       if (mouse.button === Qt.MiddleButton) {
-                           loadingData.failedAttemptCount = 0
-                           main.loadDataFromInternet()
-                       } else {
-                           main.expanded = !main.expanded
-                           lastReloadedNotifier.visible = !main.expanded
-                       }
-                   }
-
-        PlasmaCore.ToolTipArea {
-            id: toolTipArea
-            anchors.fill: parent
-            active: !plasmoid.expanded
-            interactive: true
-            mainText: main.currentPlace.alias
-            subText:  main.toolTipSubText
-            textFormat: Text.RichText
-            icon: Qt.resolvedUrl('../images/weather-widget.svg')
+            if (mouse.button === Qt.MiddleButton) {
+                loadingData.failedAttemptCount = 0
+                main.loadDataFromInternet()
+            } else {
+                dbgprint("CompactRepresentation")
+                let t = main.expanded
+                if (t) {
+                    dbgprint("Closing FullRepresentation")
+                } else {
+                    dbgprint("Opening FullRepresentation")
+                }
+                main.expanded = ! main.expanded
+            }
         }
-
     }
 }

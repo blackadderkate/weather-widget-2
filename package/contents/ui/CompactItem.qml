@@ -26,10 +26,9 @@ import "../code/unit-utils.js" as UnitUtils
 
 Item {
     id: compactItem
-
     anchors.fill: parent
 
-    property int layoutType: main.layoutType
+    property int layoutType: (main.inTray) ? 2 : main.layoutType
 
     property double parentWidth: parent.width
     property double parentHeight: parent.height
@@ -38,7 +37,7 @@ Item {
     property int widgetFontSize: plasmoid.configuration.widgetFontSize
     property string widgetFontName: plasmoid.configuration.widgetFontName
 
-// property double fontPixelSize: defaultWidgetSize * (layoutType === 2 ? 0.95 : 0.8)
+    property double fontPixelSize: minWidgetSize * (layoutType === 2 ? 0.95 : 0.8)
 
     property string iconNameStr: main.iconNameStr.length > 0 ? main.iconNameStr : "\uf07b"
     property string temperatureStr: main.temperatureStr.length > 0 ? main.temperatureStr : "--"
@@ -55,17 +54,16 @@ Item {
 
     PlasmaComponents.Label {
         id: compactWeatherIcon
-
         width: {
             switch (layoutType) {
                 case 0:
-                    return widgetSize / 2
+                    return minWidgetSize / 2
                     break
                 case 1:
-                    return widgetSize
+                    return minWidgetSize
                     break
                 case 2:
-                    return widgetSize * 0.6
+                    return minWidgetSize
                     break
 
             }
@@ -74,32 +72,31 @@ Item {
         height: {
             switch (layoutType) {
                 case 0:
-                    return defaultWidgetSize
+                    return minWidgetSize
                     break
                 case 1:
-                    return defaultWidgetSize / 2
+                    return minWidgetSize / 2
                     break
                 case 2:
-                    return defaultWidgetSize * 0.6
+                    return minWidgetSize
                     break
 
             }
         }
 
         anchors.left: parent.left
-        anchors.leftMargin: layoutType === 2 ? 0 : layoutType === 1 ? 0 : widgetSize / 2
+        anchors.leftMargin: (layoutType === 2) ? 0 : layoutType === 1 ? 0 : minWidgetSize / 2
         anchors.top: parent.top
-        anchors.topMargin: layoutType === 1 ? defaultWidgetSize / 2 : layoutType === 2 ? 0 : 0
+        anchors.topMargin: layoutType === 1 ? minWidgetSize / 2 : layoutType === 2 ? 0 : 0
         // anchors.fill: parent
-        horizontalAlignment: layoutType === 2 ? Text.AlignRight : Text.AlignHCenter
+        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        fontSizeMode: Text.FixedSize
+        fontSizeMode: (main.inTray) ? Text.Fit : Text.FixedSize
         font.family: 'weathericons'
         text: iconNameStr
-        opacity: layoutType === 2 ? 0.8 : 1
+        color: Kirigami.Theme.textColor
+        opacity: ((layoutType === 2) && (! main.inTray)) ? 0.8 : 1
         font.pixelSize: fontPixelSize
-        font.pointSize: -1
-
     }
 
     PlasmaComponents.Label {
@@ -108,13 +105,13 @@ Item {
         width: {
             switch (layoutType) {
                 case 0:
-                    return widgetSize / 2
+                    return minWidgetSize / 2
                     break
                 case 1:
-                    return widgetSize
+                    return minWidgetSize
                     break
                 case 2:
-                    return widgetSize * 0.65
+                    return minWidgetSize * 0.75
                     break
 
             }
@@ -123,20 +120,20 @@ Item {
         height: {
             switch (layoutType) {
                 case 0:
-                    return defaultWidgetSize
+                    return minWidgetSize
                     break
                 case 1:
-                    return defaultWidgetSize / 2
+                    return minWidgetSize / 2
                     break
                 case 2:
-                    return defaultWidgetSize * 0.65
+                    return minWidgetSize * 0.75
                     break
 
             }
         }
-        anchors.left: (layoutType === 2) ? undefined : parent.left
         anchors.top: (layoutType === 2) ? undefined : parent.top
-        anchors.right: (layoutType === 2) ? parent.right: undefined
+        anchors.left: (layoutType === 2) ? undefined : parent.left
+        anchors.right: (layoutType === 2) ? parent.right : undefined
         anchors.bottom: (layoutType === 2) ? parent.bottom: undefined
 
         horizontalAlignment: Text.AlignHCenter
@@ -144,8 +141,8 @@ Item {
         fontSizeMode: layoutType === 1 ? Text.HorizontalFit : Text.VerticalFit
 
         text: temperatureStr
+        color: Kirigami.Theme.textColor
         font.pixelSize: fontPixelSize
-        font.pointSize: -1
     }
 
     DropShadow {

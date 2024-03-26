@@ -37,6 +37,29 @@ Item {
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
 
+        dbgprint2("loadDataFromInternet: " + currentPlace.alias)
+
+        var placeIdentifier = locationObject.placeIdentifier
+        weatherDataFlag = false
+        sunRiseSetFlag = false
+        var TZURL = ""
+
+        if (currentPlace.timezoneID === -1) {
+            console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
+            TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
+        } else {
+            dbgprint("Timezone Data is available - using met.no API")
+
+            TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
+            //            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
+        }
+        if (! useOnlineWeatherData) {
+            TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
+        }
+        dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
+        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+        return [xhr1]
+
         function successWeather(jsonString) {
             var readingsArray = JSON.parse(jsonString)
             updatecurrentWeather(readingsArray)
@@ -84,7 +107,6 @@ Item {
         }
 
         function updateNextDaysModel(readingsArray) {
-            main.debugLogging = 0
             dbgprint2("updateNextDaysModel")
             nextDaysModel.clear()
 
@@ -201,11 +223,9 @@ Item {
                 nextDaysModel.append(nextDaysData)
             }
             dbgprint("nextDaysModel Count:" + nextDaysModel.count)
-            main.debugLogging = 0
         }
 
         function buildMetogramData(readingsArray) {
-            main.debugLogging = 0
             dbgprint2("buildMetogramData (MetNo)" + currentPlace.identifier)
             meteogramModel.clear()
             var readingsLength = (readingsArray.properties.timeseries.length)
@@ -257,7 +277,6 @@ Item {
                 i++
             }
             main.loadingDataComplete = true
-            main.debugLogging = 0
         }
 
         function formatTime(ISOdate) {
@@ -273,7 +292,6 @@ Item {
         }
 
         function successSRAS(jsonString) {
-            main.debugLogging = 0
             dbgprint2("successSRAS")
             var readingsArray = JSON.parse(jsonString)
             dbgprint("Sunrise:" + JSON.stringify(readingsArray.properties.sunrise))
@@ -304,7 +322,6 @@ Item {
                 weatherURL = Qt.resolvedUrl('../../code/weather/weather.json')
             }
             dbgprint("Downloading Weather Data from: " + weatherURL)
-            main.debugLogging = 0
             var xhr2 = DataLoader.fetchJsonFromInternet(weatherURL, successWeather, failureCallback)
         }
 
@@ -325,31 +342,6 @@ Item {
             let sign = (seconds >= 0) ? "+" : "-"
             return(sign + hrs + ":" + mins)
         }
-
-        main.debugLogging = 1
-        dbgprint2("loadDataFromInternet" + currentPlace.alias)
-
-        var placeIdentifier = locationObject.placeIdentifier
-        weatherDataFlag = false
-        sunRiseSetFlag = false
-        var TZURL = ""
-
-        if (currentPlace.timezoneID === -1) {
-            console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
-            TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
-        } else {
-            dbgprint("Timezone Data is available - using met.no API")
-
-            TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
-//            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
-        }
-        if (! useOnlineWeatherData) {
-            TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
-        }
-        dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
-        main.debugLogging = 0
-        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-        return [xhr1]
     }
 
     function reloadMeteogramImage(placeIdentifier) {

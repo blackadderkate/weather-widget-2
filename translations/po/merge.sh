@@ -5,9 +5,13 @@
 # https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems/Outside_KDE_repositories
 # https://invent.kde.org/sysadmin/l10n-scripty/-/blob/master/extract-messages.sh
 DIR=`cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd`
-plasmoidName=`kreadconfig5 --file="$DIR/../../package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
+plasmoidName=`jq -r .KPlugin.Id "$DIR/../../package/metadata.json"`
+echo "widgetName=$plasmoidName"
+website=`jq -r .KPlugin.Website "$DIR/../../package/metadata.json"`
 widgetName="${plasmoidName##*.}" # Strip namespace
-website=`kreadconfig5 --file="$DIR/../../package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Website"`
+echo "widgetName=$widgetName"
+#plasmoidName=`kreadconfig5 --file="$DIR/../../package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Name"`
+#website=`kreadconfig5 --file="$DIR/../../package/metadata.desktop" --group="Desktop Entry" --key="X-KDE-PluginInfo-Website"`
 bugAddress="$website"
 packageRoot="../.." # Root of translatable sources
 projectName="plasma_applet_${plasmoidName}" # project name
@@ -30,7 +34,7 @@ echo "[merge] Extracting messages"
 potArgs="--from-code=UTF-8 --width=200 --add-location=file"
 
 # Don't extract Icon string if xgettext version < 0.20.2
-iconArgs="-k -kName -kGenericName -kComment -kKeywords"
+iconArgs="-kName -kGenericName -kComment -kKeywords"
 REGEX="([0-9]{1,3}\.)+([0-9]{1,3})"
 VERBOSE=$(xgettext -V)
 VER="0.0.0.0"
@@ -41,7 +45,7 @@ IFS=. read ver1 ver2 ver3 ver4 <<< $VER
 
 if [ $((ver1)) -eq 0 ]; then
   if [ $((ver2)) -ge 21 ]; then
-    iconArgs=""
+iconArgs="-kName -kGenericName -kComment -kKeywords"
   fi
   if [ $((ver2)) -eq 20 ] && [ $((ver2)) -ge 2 ]; then
     iconArgs=""
@@ -49,8 +53,17 @@ if [ $((ver1)) -eq 0 ]; then
 else
   iconArgs=""
 fi
+#!/bin/sh
+Name=`jq -r .KPlugin.Name ../../package/metadata.json`
+Description=`jq -r .KPlugin.Description ../../package/metadata.json`
+Category=`jq -r .KPlugin.Category ../../package/metadata.json`
+NAME=`jq -r .KPlugin.Name ../../package/metadata.json`
+echo -e  "[Desktop Entry]\nName=$Name\nDescription=$Description\nComment=$Description\nCategory=$Category" > ../../package/metadata.desktop
+
+
 
 find "${packageRoot}" -name '*.desktop' | sort > "${DIR}/infiles.list"
+# echo "xgettext ${potArgs} ${iconArgs} --files-from=\"${DIR}/infiles.list\" --language=Desktop -D \"${packageRoot}\" -D \"${DIR}\" -o \"template.pot.new\""
 xgettext \
 	${potArgs} \
 	${iconArgs} \
@@ -175,63 +188,6 @@ done
 echo "[merge] Done merging messages"
 
 #---
-echo "[merge] Updating .desktop file"
-
-# Generate LINGUAS for msgfmt
-if [ -f "$DIR/LINGUAS" ]; then
-	rm "$DIR/LINGUAS"
-fi
-touch "$DIR/LINGUAS"
-for cat in $catalogs; do
-	catLocale=`basename ${cat%.*}`
-	echo "${catLocale}" >> "$DIR/LINGUAS"
-done
-echo "cp -f $DIR/../../package/metadata.desktop $DIR/template.desktop"
-
-cp -f "$DIR/../../package/metadata.desktop" "$DIR/template.desktop"
-sed -i '/^Name\[/ d; /^GenericName\[/ d; /^Comment\[/ d; /^Keywords\[/ d' "$DIR/template.desktop"
-
-echo "msgfmt --desktop --template=\"$DIR/template.desktop\" -d \"$DIR/\" -o \"$DIR/new.desktop\""
-msgfmt --desktop --template="$DIR/template.desktop" -d "$DIR/" -o "$DIR/new.desktop"
-
-echo "**********************************************"
-
-
-# Delete empty msgid messages that used the po header
-if [ ! -z "$(grep '^Name=$' "$DIR/new.desktop")" ]; then
-	echo "[merge] Name in metadata.desktop is empty!"
-	sed -i '/^Name\[/ d' "$DIR/new.desktop"
-fi
-if [ ! -z "$(grep '^GenericName=$' "$DIR/new.desktop")" ]; then
-	echo "[merge] GenericName in metadata.desktop is empty!"
-	sed -i '/^GenericName\[/ d' "$DIR/new.desktop"
-fi
-if [ ! -z "$(grep '^Comment=$' "$DIR/new.desktop")" ]; then
-	echo "[merge] Comment in metadata.desktop is empty!"
-	sed -i '/^Comment\[/ d' "$DIR/new.desktop"
-fi
-if [ ! -z "$(grep '^Keywords=$' "$DIR/new.desktop")" ]; then
-	echo "[merge] Keywords in metadata.desktop is empty!"
-	sed -i '/^Keywords\[/ d' "$DIR/new.desktop"
-fi
-
-# Place translations at the bottom of the desktop file.
-translatedLines=`cat "$DIR/new.desktop" | grep "]="`
-if [ ! -z "${translatedLines}" ]; then
-	sed -i '/^Name\[/ d; /^GenericName\[/ d; /^Comment\[/ d; /^Keywords\[/ d' "$DIR/new.desktop"
-	if [ "$(tail -c 2 "$DIR/new.desktop" | wc -l)" != "2" ]; then
-		# Does not end with 2 empty lines, so add an empty line.
-		echo "" >> "$DIR/new.desktop"
-	fi
-	echo "${translatedLines}" >> "$DIR/new.desktop"
-fi
-
-# Cleanup
-mv "$DIR/new.desktop" "$DIR/../../package/metadata.desktop"
-rm "$DIR/template.desktop"
-rm "$DIR/LINGUAS"
-
-#---
 # Populate ReadMe.md
 echo "[merge] Updating translate/ReadMe.md"
 sed -i -E 's`share\/plasma\/plasmoids\/(.+)\/translate`share/plasma/plasmoids/'"${plasmoidName}"'/translate`' ../ReadMe.md
@@ -241,5 +197,5 @@ fi
 sed -i '/^|/ d' ../ReadMe.md # Remove status table from ReadMe
 cat ./Status.md >> ../ReadMe.md
 rm ./Status.md
-
+rm ../../package/metadata.desktop
 echo "[merge] Done"

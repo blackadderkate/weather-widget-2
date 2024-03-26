@@ -71,18 +71,15 @@ Item {
             url2 = urlPrefix + '/forecast/daily?id=' + placeIdentifier + '&cnt=8' + appIdAndModeSuffix + versionParam
             url3 = urlPrefix + '/forecast?id=' + placeIdentifier + appIdAndModeSuffix + versionParam
         }
-        main.debugLogging = 1
         dbgprint("xmlModelCurrent = " + url1)
         dbgprint("xmlModelLongTerm = " + url2)
         dbgprint("xmlModelHourByHour = " + url3)
-        main.debugLogging = 0
         xmlModelCurrent.source = url1
         xmlModelLongTerm.source = url2
         xmlModelHourByHour.source = url3
     }
 
     function updatecurrentWeather() {
-        main.debugLogging = 0
         dbgprint2('updatecurrentWeather (OWM)')
 
         var now = new Date()
@@ -121,7 +118,6 @@ Item {
             ((currentWeatherModel.isDay === 0) ? "isDay\n" : "isNight\n"))
 
         dbgprint2('EXIT updatecurrentWeather')
-        main.debugLogging = 0
     }
 
     function updateNextDaysModel() {
@@ -137,7 +133,6 @@ Item {
             return myblankObject
         }
 
-        main.debugLogging = 0
         dbgprint2("updateNextDaysModel")
         nextDaysModel.clear()
 
@@ -348,11 +343,9 @@ dbgprint2("***************************************************")
         }
         dbgprint("nextDaysModel Count:" + nextDaysModel.count)
         dbgprint2("EXIT updateNextDaysModel")
-        main.debugLogging = 0
     }
 
     function buildMetogramData() {
-        main.debugLogging = 0
         dbgprint2("buildMetogramData (OWM)" + currentPlace.identifier)
 
         var offset = 0
@@ -479,7 +472,6 @@ dbgprint2("***************************************************")
         }
 */
         dbgprint('meteogramModel.count = ' + meteogramModel.count)
-        main.debugLogging = 0
 
     }
 
@@ -491,9 +483,7 @@ dbgprint2("***************************************************")
         return new Date(dateString + timezoneOffset)
     }
     function composeNextDayTitle(date) {
-        // main.debugLogging = 1
-        // dbgprint2("composeNextDayTitle    " + date)
-        // main.debugLogging = 0
+        dbgprint2("composeNextDayTitle    " + date)
         return Qt.locale().dayName(date.getDay(), Locale.ShortFormat) + ' ' + date.getDate() + '/' + (date.getMonth() + 1)
     }
 

@@ -6,9 +6,9 @@ import "../../code/placesearch-helpers.js" as Helper
 import "../../code/timezoneData.js" as TZData
 import Qt.labs.qmlmodels
 import org.kde.kirigami as Kirigami
+import org.kde.kcmutils as KCM
 
-
-Item {
+KCM.SimpleKCM {
     function dbgprint(msg) {
         if (!cfg_debugLogging) {
             return
@@ -25,6 +25,12 @@ Item {
     property alias cfg_debugLogging: debugLogging.checked
     property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
     property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
+    property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
+    property var backgroundColor: Kirigami.Theme.backgroundColor
+    property var alternateBackgroundColor: Kirigami.Theme.alternateBackgroundColor
+    property var highlightColor: Kirigami.Theme.highlightColor
+
+
     Component.onCompleted: {
 
         var places = ConfigUtils.getPlacesArray()
@@ -78,10 +84,11 @@ Item {
         cfg_places = JSON.stringify(newPlacesArray)
     }
     function updatenewMetnoCityOKButton() {
+        dbgprint("updatenewMetnoCityOKButton")
         var latValid = newMetnoCityLatitudeField.acceptableInput
         var longValid = newMetnoCityLongitudeField.acceptableInput
         var altValid = newMetnoCityAltitudeField.acceptableInput
-        console.log(newMetnoCityAlias.length + "\t" + latValid + "\t" + longValid + "\t" + altValid + "\t" + addMetnoCityIdDialog.timezoneID )
+        dbgprint(newMetnoCityAlias.length + "\t" + latValid + "\t" + longValid + "\t" + altValid + "\t" + addMetnoCityIdDialog.timezoneID )
         if ((latValid && longValid && altValid) && (newMetnoCityAlias.length >0) && (addMetnoCityIdDialog.timezoneID > -1)) {
             buttons.standardButton(Dialog.Ok).enabled = true
         } else {
@@ -156,9 +163,6 @@ Item {
         TableModelColumn {
             display: "Timezone"
         }
-        TableModelColumn {
-            display: "timezoneId"
-        }
     }
 
     TableModel {
@@ -194,7 +198,7 @@ Item {
         spacing: 2
 
         Label {
-            text: i18n("Plasmoid version") + ": 3.0"
+            text: i18n("Plasmoid version") + ": 3.0.0"
             Layout.alignment: Qt.AlignRight
         }
 
@@ -228,10 +232,6 @@ Item {
         ScrollView {
             id: placesTable
             width: parent.width
-            // columnSpacing: 1
-            // rowSpacing: 1
-            // border.color:  Kirigami.Theme.alternateBackgroundColor
-            // border.width: 1
             clip: true
             Layout.preferredHeight: 180
             Layout.preferredWidth: parent.width
@@ -240,11 +240,6 @@ Item {
 
             TableView {
                 anchors.fill: parent
-                // anchors.leftMargin: 2
-                // anchors.topMargin: myhorizontalHeader.height + 2
-                // anchors.rightMargin: 0
-
-
                 property var columnWidths: [10, 40, 25, 22]
                 columnWidthProvider: function (column) {
                     let aw = placesTable.width - placesTable.effectiveScrollBarWidth
@@ -273,22 +268,28 @@ Item {
                     DelegateChoice {
                         column: 0
                         delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
+                                anchors.fill: parent
                                 text: display
+                                color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: 0
-                                anchors.verticalCenter: parent.verticalCenter
+                                verticalAlignment: Text.AlignVCenter
                             }
                         }
                     }
                     DelegateChoice {
                         column: 1
                         delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
+                                anchors.fill: parent
                                 text: display
+                                color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
-                                anchors.verticalCenter: parent.verticalCenter
+                                verticalAlignment: Text.AlignVCenter
                                 elide: Text.ElideRight
                                 clip: true
                             }
@@ -297,12 +298,16 @@ Item {
                     DelegateChoice {
                         column: 2
                         delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
+                                anchors.fill: parent
                                 id: tableLocation
                                 text: display
+                                color: Kirigami.Theme.textColor
                                 font.family: Kirigami.Theme.defaultFont.family
                                 font.pixelSize: defaultFontPixelSize
-                                anchors.verticalCenter: parent.verticalCenter
+                                verticalAlignment: Text.AlignVCenter
+                                elide: Text.ElideRight
                                 clip: true
                             }
                         }
@@ -354,6 +359,7 @@ Item {
                                         placesModelChanged()
                                     }
                                 }
+                                enabled: (placesModel.rowCount > 1)
                             }
                             Button {
                                 icon.name: 'entry-edit'
@@ -362,7 +368,7 @@ Item {
                                     onClicked: {
                                         let entry = placesModel.getRow(row)
                                         if (entry.providerId === "metno") {
-                                            let url=entry.placeIdentifier
+                                            let url = entry.placeIdentifier
                                             newMetnoUrl.text = url
                                             var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                                             newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
@@ -843,7 +849,7 @@ Item {
                                 return Number(data).toLocaleString(Qt.locale(),"f",5)
                             }
 
-                            var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                            var data = newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
                             if (data === undefined)
                                 return
                                 if (data.length === 3) {
@@ -944,13 +950,6 @@ Item {
 
         HorizontalHeaderView {
             id: mysearchhorizontalHeader
-            // anchors.left: searchtableView.left
-            // anchors.leftMargin: 0
-            // anchors.topMargin: 2
-            // anchors.top: parent.top
-            // anchors.right: parent.right
-            // anchors.rightMargin: 2
-
             syncView: searchtableView
             clip: true
             model: ListModel {
@@ -969,10 +968,6 @@ Item {
         ScrollView {
             id: placesTable1
             width: parent.width
-            // columnSpacing: 1
-            // rowSpacing: 1
-            // border.color:  Kirigami.Theme.alternateBackgroundColor
-            // border.width: 1
             clip: true
             Layout.preferredHeight: 180
             Layout.preferredWidth: parent.width
@@ -988,171 +983,199 @@ Item {
             anchors.topMargin: mysearchhorizontalHeader.height + 2
 
             TableView {
-            id: searchtableView
-            anchors.fill: parent
-            anchors.bottomMargin: 10 + placesTable1.effectiveScrollBarHeight
-            anchors.rightMargin: 10 + placesTable1.effectiveScrollBarWidth
-            // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
-            // highlightOnFocus: true
-            property var columnWidths: [30, 15, 15, 12, 12, 30, -1]
-            columnWidthProvider: function (column) {
-                let aw = placesTable1.width - placesTable1.effectiveScrollBarWidth
-                return parseInt(aw * columnWidths[column] / 100 )
+                id: searchtableView
+                anchors.fill: parent
+                anchors.bottomMargin: 10 + placesTable1.effectiveScrollBarHeight
+                anchors.rightMargin: 10 + placesTable1.effectiveScrollBarWidth
+                // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
+                // highlightOnFocus: true
+                property var columnWidths: [30, 15, 15, 12, 12, 30, -1]
+                property int selectedRow: -1
+                columnWidthProvider: function (column) {
+                    let aw = placesTable1.width - placesTable1.effectiveScrollBarWidth
+                    return parseInt(aw * columnWidths[column] / 100 )
 
-            }
+                }
 
-            model: filteredCSVData
-            clip: true
-            interactive: true
-            rowSpacing: 1
-            columnSpacing: 1
+                model: filteredCSVData
+                clip: true
+                interactive: true
+                rowSpacing: 1
+                columnSpacing: 1
 
-            boundsBehavior: Flickable.StopAtBounds
-            implicitHeight: 200
-            implicitWidth: 600
-            Layout.maximumHeight: 200
+                boundsBehavior: Flickable.StopAtBounds
+                implicitHeight: 200
+                implicitWidth: 600
+                Layout.maximumHeight: 200
 
 
-            selectionBehavior: TableView.SelectRows
-            selectionModel: ItemSelectionModel { }
+                selectionBehavior: TableView.SelectRows
+                selectionModel: ItemSelectionModel { }
 
-            delegate: searchtableChooser
+                delegate: searchtableChooser
 
-            DelegateChooser {
-                id: searchtableChooser
-                DelegateChoice {
-                    column: 0
+                DelegateChooser {
+                    id: searchtableChooser
+                    DelegateChoice {
+                        column: 0
 
-                    delegate: Rectangle {
-                        required property bool selected
-                        required property bool current
-                        border.width: current ? 2 : 0
-                        implicitWidth: searchtableView.width * 0.3
-                        implicitHeight: defaultFontPixelSize + 4
-                        Text {
-                            text: display
-                            font.family: Kirigami.Theme.defaultFont.family
-                            font.pixelSize: defaultFontPixelSize
-                            anchors.verticalCenter: parent.verticalCenter
+                        delegate: Rectangle {
+                            required property bool selected
+                            required property bool current
+                            border.width: current ? 2 : 0
+                            implicitWidth: searchtableView.width * 0.3
+                            implicitHeight: defaultFontPixelSize + 4
+                                color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.fill: parent
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
                         }
-                        MouseArea {
-                            anchors.fill: parent
-                            onDoubleClicked: {
-                                saveSearchedData.rowNumber=row
-                                saveSearchedData.visible=true
-                                saveSearchedData.open()
+                    }
+                    DelegateChoice {
+                        column: 1
+                        delegate: Rectangle {
+                            implicitHeight: defaultFontPixelSize + 4
+                            // implicitWidth: searchtableView.width * 0.1
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 2
+                        delegate: Rectangle {
+                            required property bool selected
+                            required property bool current
+                            implicitHeight: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 3
+                        delegate: Rectangle {
+                            implicitHeight: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 4
+                        delegate: Rectangle {
+                            implicitHeight: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 5
+                        delegate: Rectangle {
+                            height: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
                             }
                         }
                     }
                 }
-                DelegateChoice {
-                    column: 1
-                    delegate: Rectangle {
-                        implicitHeight: defaultFontPixelSize + 4
-                        // implicitWidth: searchtableView.width * 0.1
-                        Text {
-                            text: display
-                            font.family: Kirigami.Theme.defaultFont.family
-                            font.pixelSize: defaultFontPixelSize
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        MouseArea {
-                            anchors.fill: parent
-                            onDoubleClicked: {
-                                saveSearchedData.rowNumber=row
-                                saveSearchedData.visible=true
-                                saveSearchedData.open()
-                            }
-                        }
-                    }
-                }
-                DelegateChoice {
-                    column: 2
-                    delegate: Rectangle {
-                        required property bool selected
-                        required property bool current
-                        implicitHeight: defaultFontPixelSize + 4
-                        // implicitWidth: searchtableView.width * 0.15
-                        Text {
-                            text: display
-                            font.family: Kirigami.Theme.defaultFont.family
-                            font.pixelSize: defaultFontPixelSize
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        MouseArea {
-                            anchors.fill: parent
-                            onDoubleClicked: {
-                                saveSearchedData.rowNumber=row
-                                saveSearchedData.visible=true
-                                saveSearchedData.open()
-                            }
-                        }
-                    }
-                }
-                DelegateChoice {
-                    column: 3
-                    delegate: Rectangle {
-                        implicitHeight: defaultFontPixelSize + 4
-                        // implicitWidth: searchtableView.width * 0.15
-                        Text {
-                            text: display
-                            font.family: Kirigami.Theme.defaultFont.family
-                            font.pixelSize: defaultFontPixelSize
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        MouseArea {
-                            anchors.fill: parent
-                            onDoubleClicked: {
-                                saveSearchedData.rowNumber=row
-                                saveSearchedData.visible=true
-                                saveSearchedData.open()
-                            }
-                        }
-                    }
-                }
-                DelegateChoice {
-                    column: 4
-                    delegate: Rectangle {
-                        implicitHeight: defaultFontPixelSize + 4
-                        // implicitWidth: searchtableView.width * 0.08
-                        Text {
-                            text: display
-                            font.family: Kirigami.Theme.defaultFont.family
-                            font.pixelSize: defaultFontPixelSize
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        MouseArea {
-                            anchors.fill: parent
-                            onDoubleClicked: {
-                                saveSearchedData.rowNumber=row
-                                saveSearchedData.visible=true
-                                saveSearchedData.open()
-                            }
-                        }
-                    }
-                }
-                DelegateChoice {
-                    column: 5
-                    delegate: Rectangle {
-                        height: defaultFontPixelSize + 4
-                        // implicitWidth: searchtableView.width * 0.22
-                        Text {
-                            text: display
-                            font.family: Kirigami.Theme.defaultFont.family
-                            font.pixelSize: defaultFontPixelSize
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        MouseArea {
-                            anchors.fill: parent
-                            onDoubleClicked: {
-                                saveSearchedData.rowNumber=row
-                                saveSearchedData.visible=true
-                                saveSearchedData.open()
-                            }
-                        }
-                    }
-                }
-            }
             }
         }
         standardButtons: Dialog.Ok | Dialog.Cancel
@@ -1162,11 +1185,10 @@ Item {
             }
         }
         onOpened: {
-            // cfg_debugLogging = true
-            let locale=Qt.locale().name.substr(3,2)
+            let locale = Qt.locale().name.substr(3,2)
             dbgprint(locale)
-            let userCountry=Helper.getDisplayName(locale)
-            let tmpDB=Helper.getDisplayNames()
+            let userCountry = Helper.getDisplayName(locale)
+            let tmpDB = Helper.getDisplayNames()
             for (var i=0; i < tmpDB.length - 1 ; i++) {
                 countryCodesModel.append({ id: tmpDB[i] })
                 if (tmpDB[i] === userCountry) {
@@ -1298,17 +1320,17 @@ Item {
 
             }
             onAccepted: {
-                let data=filteredCSVData.getRow(rowNumber)
-                newMetnoCityLatitudeField.text=data["Latitude"]
-                newMetnoCityLongitudeField.text=data["Longitude"]
-                newMetnoCityAltitudeField.text=data["Altitude"]
+                let data = filteredCSVData.getRow(rowNumber)
+                newMetnoCityLatitudeField.text = data["Latitude"]
+                newMetnoCityLongitudeField.text = data["Longitude"]
+                newMetnoCityAltitudeField.text = data["Altitude"]
                 newMetnoUrl.text="lat="+data["Latitude"]+"&lon="+data["Longitude"]+"&altitude="+data["Altitude"]
-                let loc=data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
-                newMetnoCityAlias.text=loc
-                addMetnoCityIdDialog.timezoneID=data["timezoneId"]
+                let loc = data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+                newMetnoCityAlias.text = loc
+                addMetnoCityIdDialog.timezoneID = data["timezoneId"]
                 for (var i=0; i < timezoneDataModel.count; i++) {
                     if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
-                        tzComboBox.currentIndex=i
+                        tzComboBox.currentIndex = i
                         break
                     }
                 }
@@ -1318,7 +1340,7 @@ Item {
             }
             onRejected: {
                 visible = false
-                searchWindow.visible=true
+                searchWindow.visible = true
             }
         }
     }

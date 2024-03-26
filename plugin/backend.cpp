@@ -15,7 +15,7 @@ void Backend::writeCache(const QString &cacheContent, const QString &plasmoidId)
     
     qDebug() << "backend: writing cache, plasmoidId = " + plasmoidId;
 
-    QString fileDir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/plasmoids/org.kde.weatherWidget-2/");
+    QString fileDir(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + "/plasmoids/org.kde.weatherWidget-3/");
     QDir().mkpath(fileDir);
     
     QString fileName(fileDir + "plasmoidId-" + plasmoidId + ".json");
@@ -25,7 +25,7 @@ void Backend::writeCache(const QString &cacheContent, const QString &plasmoidId)
     QFile file( fileName );
     if (file.open(QIODevice::WriteOnly)) {
         QTextStream outstream( &file );
-        outstream << cacheContent << endl;
+        outstream << cacheContent << "\n";
     } else {
         qDebug() << "error opening file";
     }
@@ -38,7 +38,7 @@ QString Backend::readCache(const QString &plasmoidId) {
     qDebug() << "backend: reading cache, plasmoidId = " + plasmoidId;
 
     QString fileName(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
-    fileName += "/plasmoids/org.kde.weatherWidget-2/plasmoidId-";
+    fileName += "/plasmoids/org.kde.weatherWidget-3/plasmoidId-";
     fileName += plasmoidId;
     fileName += ".json";
 

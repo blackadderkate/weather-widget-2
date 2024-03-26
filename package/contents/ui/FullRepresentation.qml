@@ -19,12 +19,13 @@ import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.core as PlasmaCore
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.plasma5support as Plasma5Support
+import QtQuick.Layouts
 
 Item {
     id: fullRepresentation
 
-    property int imageWidth: 800 * Screen.devicePixelRatio  // Makes yr.no images grainy,
-    property int imageHeight: 320 * Screen.devicePixelRatio + defaultFontPixelSize// prefer rendering meteograms
+    property int imageWidth: 800
+    property int imageHeight: 320 + defaultFontPixelSize
 
     property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
     property double footerHeight: defaultFontPixelSize
@@ -41,29 +42,34 @@ Item {
     implicitWidth: imageWidth
     implicitHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
 
+    Layout.minimumWidth: imageWidth
+    Layout.minimumHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
+    Layout.preferredWidth: imageWidth
+    Layout.preferredHeight: headingHeight + imageHeight + footerHeight + nextDaysHeight + 14
+
     onFullRepresentationAliasChanged: {
 
         // for(const [key,value] of Object.entries(currentPlace)) { console.log(`  ${key}: ${value}`) }
         var t = main.fullRepresentationAlias
 
-            switch (main.timezoneType) {
-                case 0:
-                    t += " (" + getLocalTimeZone()+ ")"
-                    break
-                case 1:
-                    t += " (" + i18n("UTC") + ")"
-                    break
-                case 2:
-                    if (main.currentPlace.timezoneShortName === "") {
-                        main.currentPlace.timezoneShortName = "unknown"
-                    }
-                    t += " (" +  main.currentPlace.timezoneShortName + ")"
-                    break
-                default:
-                    t += " (" + "TBA" + ")"
-                    break
-            }
-            currentLocationText.text = t
+        switch (main.timezoneType) {
+            case 0:
+                t += " (" + getLocalTimeZone()+ ")"
+                break
+            case 1:
+                t += " (" + i18n("UTC") + ")"
+                break
+            case 2:
+                if (main.currentPlace.timezoneShortName === "") {
+                    main.currentPlace.timezoneShortName = "unknown"
+                }
+                t += " (" +  main.currentPlace.timezoneShortName + ")"
+                break
+            default:
+                t += " (" + "TBA" + ")"
+                break
+        }
+        currentLocationText.text = t
     }
 
     PlasmaComponents.Label {
@@ -177,7 +183,7 @@ Item {
         id: hourLegend
         anchors.bottom: parent.bottom
         anchors.bottomMargin: footerHeight + nextDaysVerticalMargin
-        spacing: 1 * Screen.devicePixelRatio
+        spacing: 1
 
         width: hourLegendMargin
         height: nextDaysHeight - defaultFontPixelSize
