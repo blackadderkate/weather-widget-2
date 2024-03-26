@@ -100,10 +100,11 @@ Item {
     }
 
     MouseArea {
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: (nextLocationText.visible) ? Qt.PointingHandCursor : Qt.ArrowCursor
         anchors.fill: nextLocationText
 
-        hoverEnabled: true
+        hoverEnabled: nextLocationText.visible
+        enabled: nextLocationText.visible
 
         onClicked: {
             dbgprint('clicked next location')
@@ -132,10 +133,11 @@ Item {
     }
 
     MouseArea {
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: (prevLocationText.visible) ? Qt.PointingHandCursor : Qt.ArrowCursor
         anchors.fill: prevLocationText
 
-        hoverEnabled: true
+        hoverEnabled: prevLocationText.visible
+        enabled: prevLocationText.visible
 
         onClicked: {
             dbgprint('clicked previous location')

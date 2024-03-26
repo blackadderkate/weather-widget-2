@@ -162,7 +162,10 @@ PlasmoidItem {
     }
 
     onPlacesStrChanged: {
-        if (currentPlace != ConfigUtils.getPlacesArray()[plasmoid.configuration.placeIndex].placeAlias) {
+        let places = ConfigUtils.getPlacesArray()
+        let placesCount = places.length - 1
+        let i = Math.min(plasmoid.configuration.placeIndex, placesCount)
+        if (currentPlace != places[i].placeAlias) {
             setNextPlace(true)
         }
 
