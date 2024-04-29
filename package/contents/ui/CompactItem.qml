@@ -57,7 +57,7 @@ GridLayout {
         Layout.minimumWidth: iconAndText.vertical ? 0 : sizehelperText.paintedWidth
         Layout.maximumWidth: iconAndText.vertical ? Infinity : Layout.minimumWidth
 
-        Layout.minimumHeight: iconAndText.vertical ? sizehelperText.paintedHeight : 0
+        Layout.minimumHeight: iconAndText.vertical ? sizehelperText.paintedHeight : (main.onDesktop ? sizehelperText.paintedHeight : 0)
         Layout.maximumHeight: iconAndText.vertical ? Layout.minimumHeight : Infinity
 
         Text {

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kcmutils as KCM
+import org.kde.kirigami as Kirigami
 
 KCM.SimpleKCM {
 
@@ -94,35 +95,24 @@ KCM.SimpleKCM {
         id: timezoneTypeGroup
     }
 
-    GridLayout {
-        columns: 2
+    Kirigami.FormLayout {
 
-        Label {
-            text: i18n("Temperature") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-        }
         RadioButton {
+            Kirigami.FormData.label: i18n("Temperature") + ":"
+
             id: temperatureTypeRadioCelsius
             ButtonGroup.group: temperatureTypeGroup
             text: i18n("°C")
             onCheckedChanged: if (checked) cfg_temperatureType = 0
         }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 1
-        }
+
         RadioButton {
             id: temperatureTypeRadioFahrenheit
             ButtonGroup.group: temperatureTypeGroup
             text: i18n("°F")
             onCheckedChanged: if (checked) cfg_temperatureType = 1
         }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 1
-        }
+
         RadioButton {
             id: temperatureTypeRadioKelvin
             ButtonGroup.group: temperatureTypeGroup
@@ -131,32 +121,25 @@ KCM.SimpleKCM {
         }
 
         Item {
-            width: 2
-            height: 10
-            Layout.columnSpan: 2
+            Kirigami.FormData.isSection: true
         }
 
-        Label {
-            text: i18n("Pressure") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-        }
         RadioButton {
+            Kirigami.FormData.label: i18n("Pressure") + ":"
+
             id: pressureTypeRadioHpa
             ButtonGroup.group: pressureTypeGroup
             text: i18n("hPa")
             onCheckedChanged: if (checked) cfg_pressureType = 0
         }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 2
-        }
+
         RadioButton {
             id: pressureTypeRadioInhg
             ButtonGroup.group: pressureTypeGroup
             text: i18n("inHg")
             onCheckedChanged: if (checked) cfg_pressureType = 1
         }
+
         RadioButton {
             id: pressureTypeRadioMmhg
             ButtonGroup.group: pressureTypeGroup
@@ -165,32 +148,25 @@ KCM.SimpleKCM {
         }
 
         Item {
-            width: 2
-            height: 10
-            Layout.columnSpan: 2
+            Kirigami.FormData.isSection: true
         }
 
-        Label {
-            text: i18n("Wind speed") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-        }
         RadioButton {
+            Kirigami.FormData.label: i18n("Wind speed") + ":"
+
             id: windSpeedTypeRadioMps
             ButtonGroup.group: windSpeedTypeGroup
             text: i18n("m/s")
             onCheckedChanged: if (checked) cfg_windSpeedType = 0
         }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 2
-        }
+
         RadioButton {
             id: windSpeedTypeRadioMph
             ButtonGroup.group: windSpeedTypeGroup
             text: i18n("mph")
             onCheckedChanged: if (checked) cfg_windSpeedType = 1
         }
+
         RadioButton {
             id: windSpeedTypeRadioKmh
             ButtonGroup.group: windSpeedTypeGroup
@@ -199,37 +175,25 @@ KCM.SimpleKCM {
         }
 
         Item {
-            width: 2
-            height: 10
-            Layout.columnSpan: 2
+            Kirigami.FormData.isSection: true
         }
 
-        Label {
-            text: i18n("Timezone") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-        }
         RadioButton {
+            Kirigami.FormData.label: i18n("Timezone") + ":"
+
             id: timezoneTypeRadioUserLocalTime
             ButtonGroup.group: timezoneTypeGroup
             text: i18n("My local-time")
             onCheckedChanged: if (checked) cfg_timezoneType = 0
         }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 1
-        }
+
         RadioButton {
             id: timezoneTypeRadioUtc
             ButtonGroup.group: timezoneTypeGroup
             text: i18n("UTC")
             onCheckedChanged: if (checked) cfg_timezoneType = 1
         }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 1
-        }
+
         RadioButton {
             id: timezoneTypeRadioLocationLocal
             ButtonGroup.group: timezoneTypeGroup

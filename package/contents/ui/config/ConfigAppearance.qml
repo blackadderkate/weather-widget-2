@@ -58,118 +58,84 @@ KCM.SimpleKCM {
         id: layoutTypeGroup
     }
 
-    GridLayout {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        columns: 3
-
-        Item {
-            width: 2
-            height: 10
-            Layout.columnSpan: 3
+    Kirigami.FormLayout {
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Layout")
         }
 
-        Label {
-            text: i18n("Layout")
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-            font.bold: true
-            Layout.columnSpan: 3
-        }
-        Label {
-            text: i18n("Layout type") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-        }
         RadioButton {
+            Kirigami.FormData.label: i18n("Layout type") + ":"
             id: layoutTypeRadioHorizontal
+            Layout.row: 0
+            Layout.column: 0
             ButtonGroup.group: layoutTypeGroup
             text: i18n("Horizontal")
             onCheckedChanged: if (checked) cfg_layoutType = 0;
         }
-        Label {
-            text: i18n("NOTE: Setting layout type for in-tray plasmoid has no effect.")
-            Layout.rowSpan: 3
-            Layout.preferredWidth: 250
-            wrapMode: Text.WordWrap
-        }
-        Item {
-            width: 2
-            height: 2
-            Layout.rowSpan: 2
-        }
         RadioButton {
             id: layoutTypeRadioVertical
+            Layout.row: 1
+            Layout.column: 0
             ButtonGroup.group: layoutTypeGroup
             text: i18n("Vertical")
             onCheckedChanged: if (checked) cfg_layoutType = 1;
         }
         RadioButton {
             id: layoutTypeRadioCompact
+            Layout.row: 2
+            Layout.column: 0
             ButtonGroup.group: layoutTypeGroup
             text: i18n("Compact")
             onCheckedChanged: if (checked) cfg_layoutType = 2;
         }
 
-        Item {
-            width: 2
-            height: 20
-            Layout.columnSpan: 3
-        }
-
         Label {
-            text: i18n("In-Tray Settings")
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-            font.bold: true
-            Layout.columnSpan: 3
+            text: i18n("NOTE: Setting layout type for in-tray plasmoid has no effect.")
+            font: Kirigami.Theme.smallFont
+            Layout.preferredWidth: 250
+            wrapMode: Text.WordWrap
         }
 
-
-        Label {
-            id: timeoutLabel
-            text: i18n("Active timeout") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-            height: inTrayActiveTimeoutSec.height
-            // anchors.verticalCenter: inTrayActiveTimeoutSec.verticalCenter
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("In-Tray Settings")
         }
-        Item {
+
+        RowLayout {
+            Kirigami.FormData.label: i18n("Active timeout") + ":"
+            spacing: Kirigami.Units.smallSpacing
             SpinBox {
                 id: inTrayActiveTimeoutSec
                 Layout.alignment: Qt.AlignVCenter
                 stepSize: 10
                 from: 10
                 to: 8000
-                anchors.verticalCenter: parent.verticalCenter
                 //            suffix: i18nc("Abbreviation for seconds", "sec")
             }
             Label {
                 text: i18nc("Abbreviation for seconds", "sec")
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left:inTrayActiveTimeoutSec.right
-                anchors.leftMargin: 4
             }
         }
+
         Label {
             text: i18n("NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings.")
-            Layout.rowSpan: 3
+            font: Kirigami.Theme.smallFont
             Layout.preferredWidth: 250
             wrapMode: Text.WordWrap
         }
 
-
         Item {
-            width: 2
-            height: 20
-            Layout.columnSpan: 3
+            Kirigami.FormData.isSection: true
         }
 
-        Label {
-            text: i18n("Widget font style") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-        }
         ComboBox {
+            Kirigami.FormData.label: i18n("Widget font style") + ":"
             id: fontFamilyComboBox
             Layout.fillWidth: true
             currentIndex: 0
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+            //Layout.minimumWidth: Kirigami.Units.gridUnit * 10
+            Layout.preferredWidth: 300
             model: fontsModel
             textRole: "text"
 
@@ -180,41 +146,28 @@ KCM.SimpleKCM {
                 }
             }
         }
-        Item {
-            width: 2
-            height: 20
-            Layout.columnSpan: 3
-        }
 
-        Label {
-            text: i18n("Show last reloaded time") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+        Item {
+            Kirigami.FormData.isSection: true
         }
 
         CheckBox {
+            Kirigami.FormData.label: i18n("Show last reloaded time") + ":"
             id: showLastReloadedTime
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignLeft
         }
 
         Item {
-            width: 2
-            height: 20
-            Layout.columnSpan: 3
+            Kirigami.FormData.isSection: true
         }
 
-        Label {
-            text: i18n("Widget font size") + ":"
-            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-            // anchors.verticalCenter: widgetFontSize.verticalCenter
-
-
-        }
-        Item {
+        RowLayout {
+            Kirigami.FormData.label: i18n("Widget font size") + ":"
+            spacing: Kirigami.Units.smallSpacing
             SpinBox {
                 id: widgetFontSize
                 Layout.alignment: Qt.AlignVCenter
-                anchors.verticalCenter: parent.verticalCenter
                 // decimals: 0
                 stepSize: 1
                 from: 4
@@ -225,8 +178,6 @@ KCM.SimpleKCM {
                 }
             }
             Label {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left:widgetFontSize.right
                 text: i18nc("pixels", "px")
             }
         }

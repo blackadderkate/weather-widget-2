@@ -193,62 +193,60 @@ KCM.SimpleKCM {
 
     // ConfigGeneral home page
     ColumnLayout {
-        id: rhsColumn
-        width: parent.width
-        spacing: 2
+        spacing: 0
 
-        Label {
-            text: i18n("Plasmoid version") + ": " + plasmoid.metaData.version
-            Layout.alignment: Qt.AlignRight
-        }
-
-        Label {
+        Kirigami.Heading {
             text: i18n("Location")
-            font.bold: true
-            Layout.alignment: Qt.AlignLeft
+            type: Kirigami.Heading.Type.Primary
+            level: 3
+            Layout.alignment: Qt.AlignCenter
         }
 
-            HorizontalHeaderView {
-                id: myhorizontalHeader
-                // anchors.left: mytableView.left
-                // anchors.leftMargin: 0
-                // anchors.topMargin: 2
-                // anchors.top: parent.top
-                // anchors.right: parent.right
-                // anchors.rightMargin: 2
+        Kirigami.Separator {
+            Layout.fillWidth: true
+            Layout.margins: Kirigami.Units.largeSpacing
+        }
 
-                syncView: mytableView
-                clip: true
-                model: ListModel {
-                    Component.onCompleted: {
-                        append({ display: i18n("Source") });
-                        append({ display: i18n("Place Identifier") });
-                        append({ display: i18n("Displayed as") });
-                        append({ display: i18n("Action") });
-                        // append({ display: ("TBA") });
-                    }
+        HorizontalHeaderView {
+            id: myhorizontalHeader
+            // anchors.left: mytableView.left
+            // anchors.leftMargin: 0
+            // anchors.topMargin: 2
+            // anchors.top: parent.top
+            // anchors.right: parent.right
+            // anchors.rightMargin: 2
+
+            syncView: mytableView
+            clip: true
+            model: ListModel {
+                Component.onCompleted: {
+                    append({ display: i18n("Source") });
+                    append({ display: i18n("Place Identifier") });
+                    append({ display: i18n("Displayed as") });
+                    append({ display: i18n("Action") });
+                    // append({ display: ("TBA") });
                 }
             }
+        }
         ScrollView {
             id: placesTable
             width: parent.width
             clip: true
-            Layout.preferredHeight: 180
+            Layout.maximumHeight: 180
             Layout.preferredWidth: parent.width
-            Layout.columnSpan: 2
-
 
             TableView {
                 anchors.fill: parent
-                property var columnWidths: [10, 40, 25, 22]
+                property var columnWidths: [15, 35, 25, 25]
                 columnWidthProvider: function (column) {
-                    let aw = placesTable.width - placesTable.effectiveScrollBarWidth
-                    return parseInt(aw * columnWidths[column] / 100 )
-
+                    let minW = 500
+                    let horizontalMargin = placesTable.effectiveScrollBarWidth !== 0 ? placesTable.effectiveScrollBarWidth : Kirigami.Units.smallSpacing
+                    let aw = (placesTable.width > minW ? placesTable.width : minW) - horizontalMargin
+                    return parseInt(aw * columnWidths[column] / 100)
                 }
 
                 implicitHeight: 200
-                implicitWidth: 600
+                implicitWidth: 500
                 clip: true
                 interactive: true
                 rowSpacing: 1
@@ -268,6 +266,7 @@ KCM.SimpleKCM {
                     DelegateChoice {
                         column: 0
                         delegate: Rectangle {
+                            implicitHeight: Kirigami.Units.gridUnit * 2
                             color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
                             Text {
                                 anchors.fill: parent
@@ -315,83 +314,91 @@ KCM.SimpleKCM {
                     DelegateChoice {
                         column: 3
                         id:  myChoice3
-                        delegate: GridLayout {
-                            columnSpacing: 1
-                            Text {
-                                id: myrowValue
-                                visible: false
-                                text: display
-                            }
-                            Button {
-                                id:myButton1
-                                icon.name: 'go-up'
-                                enabled: row === 0  ? false : true
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        if (row > 0) {
-                                            placesModel.moveRow(row, row - 1, 1)
-                                            placesModelChanged()
-                                        }
-                                    }
+                        delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            GridLayout {
+                                anchors.fill: parent
+                                columnSpacing: 1
+                                Text {
+                                    id: myrowValue
+                                    visible: false
+                                    text: "display"
                                 }
-                            }
-                            Button {
-                                id:myButton2
-                                icon.name: 'go-down'
-                                enabled: row == (placesModel.rowCount - 1)  ? false: true
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        if (row < placesModel.rowCount) {
-                                            placesModel.moveRow(row, row + 1, 1)
-                                            placesModelChanged()
-                                        }
-                                    }
-                                }
-                            }
-                            Button {
-                                icon.name: 'list-remove'
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        placesModel.removeRow(row, 1)
-                                        placesModelChanged()
-                                    }
-                                }
-                                enabled: (placesModel.rowCount > 1)
-                            }
-                            Button {
-                                icon.name: 'entry-edit'
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        let entry = placesModel.getRow(row)
-                                        if (entry.providerId === "metno") {
-                                            let url = entry.placeIdentifier
-                                            newMetnoUrl.text = url
-                                            var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                                            newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
-                                            newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
-                                            newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
-                                            dbgprint("timezone ID=" + entry.timezoneID)
-                                            addMetnoCityIdDialog.timezoneID = entry.timezoneID
-                                            for (var i = 0; i < timezoneDataModel.count; i++) {
-                                                if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
-                                                    tzComboBox.currentIndex = i
-                                                    break
-                                                }
+                                Button {
+                                    id:myButton1
+                                    icon.name: 'go-up'
+                                    enabled: row === 0  ? false : true
+                                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            if (row > 0) {
+                                                placesModel.moveRow(row, row - 1, 1)
+                                                placesModelChanged()
                                             }
-                                            newMetnoCityAlias.text = entry.placeAlias
-                                            addMetnoCityIdDialog.placeNumberID = row
-                                            addMetnoCityIdDialog.open()
                                         }
-                                        if (entry.providerId === "owm") {
-                                            newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
-                                            newOwmCityAlias.text = entry.placeAlias
-                                            addOwmCityIdDialog.placeNumberID = row
-                                            addOwmCityIdDialog.open()
+                                    }
+                                }
+                                Button {
+                                    id:myButton2
+                                    icon.name: 'go-down'
+                                    enabled: row == (placesModel.rowCount - 1)  ? false: true
+                                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            if (row < placesModel.rowCount) {
+                                                placesModel.moveRow(row, row + 1, 1)
+                                                placesModelChanged()
+                                            }
+                                        }
+                                    }
+                                }
+                                Button {
+                                    icon.name: 'list-remove'
+                                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            placesModel.removeRow(row, 1)
+                                            placesModelChanged()
+                                        }
+                                    }
+                                    enabled: (placesModel.rowCount > 1)
+                                }
+                                Button {
+                                    icon.name: 'entry-edit'
+                                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            let entry = placesModel.getRow(row)
+                                            if (entry.providerId === "metno") {
+                                                let url = entry.placeIdentifier
+                                                newMetnoUrl.text = url
+                                                var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                                                newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
+                                                newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
+                                                newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
+                                                dbgprint("timezone ID=" + entry.timezoneID)
+                                                addMetnoCityIdDialog.timezoneID = entry.timezoneID
+                                                for (var i = 0; i < timezoneDataModel.count; i++) {
+                                                    if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
+                                                        tzComboBox.currentIndex = i
+                                                        break
+                                                    }
+                                                }
+                                                newMetnoCityAlias.text = entry.placeAlias
+                                                addMetnoCityIdDialog.placeNumberID = row
+                                                addMetnoCityIdDialog.open()
+                                            }
+                                            if (entry.providerId === "owm") {
+                                                newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                                                newOwmCityAlias.text = entry.placeAlias
+                                                addOwmCityIdDialog.placeNumberID = row
+                                                addOwmCityIdDialog.open()
 
+                                            }
                                         }
                                     }
                                 }
@@ -402,11 +409,18 @@ KCM.SimpleKCM {
             }
 
         }
-        Row {
+
+        Kirigami.FormLayout {
+
+            Item {
+                Kirigami.FormData.isSection: true
+            }
+
             Button {
+                Kirigami.FormData.label: i18n("Add Open Weather Map Place") + ":"
                 icon.name: 'list-add'
-                text: 'OWM'
-                width: 100
+                //text: 'OWM'
+                //Layout.minimumWidth: Kirigami.Units.gridUnit * 6
                 onClicked: {
                     addOwmCityIdDialog.placeNumberID = -1
                     newOwmCityIdField.text = ''
@@ -417,11 +431,11 @@ KCM.SimpleKCM {
             }
 
             Button {
+                Kirigami.FormData.label: i18n("Add Met.no Map Place") + ":"
                 icon.name: 'list-add'
-                text: 'metno'
-                width: 100
+                //text: 'metno'
+                //Layout.minimumWidth: Kirigami.Units.gridUnit * 6
                 onClicked: {
-
                     newMetnoCityAlias.text = ''
                     newMetnoCityLatitudeField.text = ''
                     newMetnoCityLongitudeField.text = ''
@@ -432,166 +446,166 @@ KCM.SimpleKCM {
                     addMetnoCityIdDialog.open()
                 }
             }
-        }
 
-        Label {
-            topPadding: 16
-            bottomPadding: 6
-            text: i18n("Miscellaneous")
-            font.bold: true
-            Layout.alignment: Qt.AlignLeft
-        }
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Miscellaneous")
+            }
 
-        Item {
-            id: reloadItem
-            width: parent.width
+            RowLayout {
+                Kirigami.FormData.label: i18n("Reload interval") + ":"
+                id: reloadItem
+                spacing: Kirigami.Units.smallSpacing
 
-            Label {
-                id: reloadLabel1
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left: parent.left
-                text: i18n("Reload interval") + ":"
+                SpinBox {
+                    id: reloadIntervalMin
+                    stepSize: 10
+
+                    from: 20
+                    to: 120
+                    // suffix: i18nc("Abbreviation for minutes", "min")
+
+                }
+                Label {
+                    text: i18nc("Abbreviation for minutes", "min")
+                    leftPadding: 6
+                }
+            }
+
+            CheckBox {
+                Kirigami.FormData.label: "Debug"
+                id: debugLogging
+                checked: false
                 Layout.alignment: Qt.AlignLeft
-                rightPadding: 6
+                visible: false
             }
-            SpinBox {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left:reloadLabel1.right
-                id: reloadIntervalMin
-                stepSize: 10
 
-                from: 20
-                to: 120
-                // suffix: i18nc("Abbreviation for minutes", "min")
-
-            }
             Label {
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.left:reloadIntervalMin.right
-                text: i18nc("Abbreviation for minutes", "min")
-                leftPadding: 6
+                Kirigami.FormData.label: i18n("Plasmoid version") + ":"
+                text: plasmoid.metaData.version
+                Layout.alignment: Qt.AlignRight
             }
         }
 
-        CheckBox {
-            id: debugLogging
-            checked: false
-            text: "Debug"
-            Layout.alignment: Qt.AlignLeft
-            visible: false
+        Kirigami.Separator {
+            Layout.margins: Kirigami.Units.gridUnit
         }
 
-    }
-    Item {
-        anchors.bottom: parent.bottom
-        Rectangle {
-            anchors.fill: parent
-            // anchors.top:
-        }
-        Label {
-            id: attribution1
-            anchors.bottom: attribution2.top
-            anchors.bottomMargin: 2
-            font: Kirigami.Theme.smallFont
-            text: i18n("Met.no weather forecast data provided by The Norwegian Meteorological Institute.")
-            MouseArea {
-                cursorShape: Qt.PointingHandCursor
-                anchors.fill: attribution1
+        ColumnLayout {
+            spacing: 0
 
-                hoverEnabled: true
+            Label {
+                id: attribution1
+                font: Kirigami.Theme.smallFont
+                text: i18n("Met.no weather forecast data provided by The Norwegian Meteorological Institute.")
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                MouseArea {
+                    cursorShape: Qt.PointingHandCursor
+                    anchors.fill: attribution1
 
-                onClicked: {
-                    Qt.openUrlExternally('https://www.met.no/en/About-us')
-                }
+                    hoverEnabled: true
 
-                onEntered: {
-                    attribution1.font.underline = true
-                }
+                    onClicked: {
+                        Qt.openUrlExternally('https://www.met.no/en/About-us')
+                    }
 
-                onExited: {
-                    attribution1.font.underline = false
+                    onEntered: {
+                        attribution1.font.underline = true
+                    }
+
+                    onExited: {
+                        attribution1.font.underline = false
+                    }
                 }
             }
-        }
-        Label {
-            id: attribution2
-            anchors.bottom: attribution3.top
-            anchors.bottomMargin: 2
-            font: Kirigami.Theme.smallFont
-            text: i18n("Sunrise/sunset data provided by Sunrise - Sunset.")
-            MouseArea {
-                cursorShape: Qt.PointingHandCursor
-                anchors.fill: attribution2
 
-                hoverEnabled: true
+            Label {
+                id: attribution2
+                font: Kirigami.Theme.smallFont
+                text: i18n("Sunrise/sunset data provided by Sunrise - Sunset.")
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                MouseArea {
+                    cursorShape: Qt.PointingHandCursor
+                    anchors.fill: attribution2
 
-                onClicked: {
-                    Qt.openUrlExternally('https://sunrise-sunset.org/about')
-                }
+                    hoverEnabled: true
 
-                onEntered: {
-                    attribution2.font.underline = true
-                }
+                    onClicked: {
+                        Qt.openUrlExternally('https://sunrise-sunset.org/about')
+                    }
 
-                onExited: {
-                    attribution2.font.underline = false
-                }
-            }
-        }
-        Label {
-            id: attribution3
-            anchors.bottom: attribution4.top
-            anchors.bottomMargin: 2
-            font: Kirigami.Theme.smallFont
-            text: i18n("OWM weather forecast data provided by OpenWeather.")
-            MouseArea {
-                cursorShape: Qt.PointingHandCursor
-                anchors.fill: attribution3
+                    onEntered: {
+                        attribution2.font.underline = true
+                    }
 
-                hoverEnabled: true
-
-                onClicked: {
-                    Qt.openUrlExternally('https://openweathermap.org/about-us')
-                }
-
-                onEntered: {
-                    attribution3.font.underline = true
-                }
-
-                onExited: {
-                    attribution3.font.underline = false
+                    onExited: {
+                        attribution2.font.underline = false
+                    }
                 }
             }
-        }
-        Label {
-            id: attribution4
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            font: Kirigami.Theme.smallFont
-            text: i18n("Weather icons created by Erik Flowers.")
-            MouseArea {
-                cursorShape: Qt.PointingHandCursor
-                anchors.fill: attribution4
 
-                hoverEnabled: true
+            Label {
+                id: attribution3
+                font: Kirigami.Theme.smallFont
+                text: i18n("OWM weather forecast data provided by OpenWeather.")
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                MouseArea {
+                    cursorShape: Qt.PointingHandCursor
+                    anchors.fill: attribution3
 
-                onClicked: {
-                    Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
+                    hoverEnabled: true
+
+                    onClicked: {
+                        Qt.openUrlExternally('https://openweathermap.org/about-us')
+                    }
+
+                    onEntered: {
+                        attribution3.font.underline = true
+                    }
+
+                    onExited: {
+                        attribution3.font.underline = false
+                    }
                 }
+            }
 
-                onEntered: {
-                    attribution4.font.underline = true
-                }
+            Label {
+                id: attribution4
+                font: Kirigami.Theme.smallFont
+                text: i18n("Weather icons created by Erik Flowers.")
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                MouseArea {
+                    cursorShape: Qt.PointingHandCursor
+                    anchors.fill: attribution4
 
-                onExited: {
-                    attribution4.font.underline = false
+                    hoverEnabled: true
+
+                    onClicked: {
+                        Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
+                    }
+
+                    onEntered: {
+                        attribution4.font.underline = true
+                    }
+
+                    onExited: {
+                        attribution4.font.underline = false
+                    }
                 }
             }
         }
     }
 
     // changePlaceAliasDialog
-    Dialog {
+    /*Dialog {
         id: changePlaceAliasDialog
         title: i18n("Change Displayed As")
 
@@ -610,7 +624,7 @@ KCM.SimpleKCM {
             placeholderText: i18n("Enter place alias")
             width: parent.width
         }
-    }
+    }*/
 
     // addOwmCityIdDialog
     Dialog {
@@ -1294,8 +1308,6 @@ KCM.SimpleKCM {
             }
         }
     }
-
-
 
     Loader {
         id: saveSearchedData
