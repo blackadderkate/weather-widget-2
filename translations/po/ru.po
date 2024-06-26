@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-06-26 19:27+0800\n"
 "PO-Revision-Date: 2022-09-29 17:35+0700\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -243,6 +243,14 @@ msgstr[2] "%1 ошибок!"
 msgstr[3] "Ошибка!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Идентификатор места"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Поиск"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Широта"
 
@@ -259,12 +267,8 @@ msgid "URL"
 msgstr "URL-адрес"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Идентификатор места"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr "Поиск"
+msgid "Timezone"
+msgstr "Часовой пояс"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -285,10 +289,6 @@ msgstr "Местоположение"
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
 msgstr "Зона"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Timezone"
-msgstr "Часовой пояс"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
@@ -373,6 +373,7 @@ msgstr "Местное время"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 

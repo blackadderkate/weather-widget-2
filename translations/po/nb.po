@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-06-26 19:27+0800\n"
 "PO-Revision-Date: 2022-10-28 13:45+0200\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -241,6 +241,14 @@ msgstr[0] "Det er en feil!"
 msgstr[1] "Det er %1 feil!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Stedsidentifikator"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Søk"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Breddegrad"
 
@@ -257,12 +265,8 @@ msgid "URL"
 msgstr "URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Stedsidentifikator"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr "Søk"
+msgid "Timezone"
+msgstr "Tidssone"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -283,10 +287,6 @@ msgstr "Plassering"
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
 msgstr "Område"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Timezone"
-msgstr "Tidssone"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
@@ -369,6 +369,7 @@ msgstr "Min lokaltid"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 

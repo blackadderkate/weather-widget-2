@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-06-26 19:27+0800\n"
 "PO-Revision-Date: 2022-10-21 23:46+0200\n"
 "Last-Translator: Tomasz Przybył <fademind@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -245,6 +245,14 @@ msgstr[1] "Wystąpiły %1 błędy!"
 msgstr[2] "Wystąpiły %1 błędy!"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "ID miejsca"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Szukaj"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Szerokość geograficzna"
 
@@ -261,12 +269,8 @@ msgid "URL"
 msgstr "URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "ID miejsca"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr "Szukaj"
+msgid "Timezone"
+msgstr "Strefa czasowa"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Change Displayed As"
@@ -287,10 +291,6 @@ msgstr "Lokalizacja"
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
 msgstr "Obszar"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Timezone"
-msgstr "Strefa czasowa"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Search data extracted from data provided by Geonames.org."
@@ -376,6 +376,7 @@ msgstr "Czas lokalny"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 

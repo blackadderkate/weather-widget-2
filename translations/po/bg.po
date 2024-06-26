@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-06-26 19:27+0800\n"
 "PO-Revision-Date: 2022-01-03 22:02+0000\n"
 "Last-Translator: bvbfan\n"
 "Language-Team: bvbfan\n"
@@ -238,6 +238,14 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Идентификатор за място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
 msgstr "Ширина"
 
@@ -254,11 +262,7 @@ msgid "URL"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Идентификатор за място"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
+msgid "Timezone"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -279,10 +283,6 @@ msgstr "Местоположение"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Area"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Timezone"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -366,6 +366,7 @@ msgstr "Локално време"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 
