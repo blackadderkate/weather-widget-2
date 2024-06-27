@@ -747,13 +747,13 @@ KCM.SimpleKCM {
                     id: metNoRow1
                     Layout.preferredWidth: metNoRowLayout.width
                     Label {
-                        text: ("Place Identifier") + ":"
+                        text: i18n("Place Identifier") + ":"
                         Layout.alignment: Qt.AlignVCenter
                     }
                     TextField {
                         id: newMetnoCityAlias
                         Layout.alignment: Qt.AlignVCenter
-                        placeholderText: ("City alias")
+                        placeholderText: i18n("City alias")
                         onTextChanged: {
                             updateUrl()
                         }

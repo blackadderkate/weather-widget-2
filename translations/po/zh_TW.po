@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2024-02-18 09:43-0800\n"
+"POT-Creation-Date: 2024-06-27 09:12+0800\n"
 "PO-Revision-Date: 2022-01-03 22:18+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <chinese-l10n@googlegroups.com>\n"
@@ -28,17 +28,14 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 m"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 h"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 d"
 msgstr ""
 
@@ -150,10 +147,16 @@ msgid ""
 "NOTE: After this timeout widget will be hidden in system tray until "
 "refreshed. You can always set the widget to be always \"Shown\" in system "
 "tray \"Entries\" settings."
-msgstr "注意：過了此逾時時間後，這個小工具將會隱藏至系統匣中，直到重新整理為止。您還是可以在系統匣「項目」設定中將其設定為總是「顯示」。"
+msgstr ""
+"注意：過了此逾時時間後，這個小工具將會隱藏至系統匣中，直到重新整理為止。您還"
+"是可以在系統匣「項目」設定中將其設定為總是「顯示」。"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font style"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Show last reloaded time"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
@@ -166,33 +169,12 @@ msgid "px"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "位置"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Latitude"
-msgstr "緯度"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longitude"
-msgstr "長身材"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Altitude"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone"
-msgstr "时区"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version"
 msgstr "部件版本"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "位置"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -207,8 +189,8 @@ msgid "Displayed as"
 msgstr "顯示為"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Description"
-msgstr ""
+msgid "Action"
+msgstr "動作"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
@@ -282,11 +264,36 @@ msgid "Search"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "緯度"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr "長身材"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Url"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone"
+msgstr "时区"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -339,20 +346,21 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "下一個位置"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr ""
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr ""
 
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr ""
-
 #: ../../package/contents/ui/main.qml
-#, qt-format
 msgid "%1 ago"
 msgstr "%1 前"
 
@@ -373,7 +381,6 @@ msgid "in"
 msgstr ""
 
 #: ../../package/contents/ui/providers/MetNo.qml
-#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
@@ -393,9 +400,6 @@ msgstr ""
 
 #~ msgid "Plasmoid version:"
 #~ msgstr "Plasmoid 版本:"
-
-#~ msgid "Action"
-#~ msgstr "動作"
 
 #~ msgid "Reload interval:"
 #~ msgstr "重新載入間隔："

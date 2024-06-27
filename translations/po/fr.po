@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2024-02-18 09:43-0800\n"
+"POT-Creation-Date: 2024-06-27 09:12+0800\n"
 "PO-Revision-Date: 2022-01-03 22:37+0000\n"
 "Last-Translator: David Geiger <david.david@mageialinux-online.org>\n"
 "Language-Team: French (http://www.mageialinux-online.org/)\n"
@@ -32,17 +32,14 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 m"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 h"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 d"
 msgstr ""
 
@@ -166,6 +163,10 @@ msgid "Widget font style"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Show last reloaded time"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size"
 msgstr ""
 
@@ -175,33 +176,12 @@ msgid "px"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Emplacement"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Latitude"
-msgstr "Latitude"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longitude"
-msgstr "Longitude"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Altitude"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone"
-msgstr "Fuseau Horaire"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version"
 msgstr "Version du plasmoïde"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "Emplacement"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -216,8 +196,8 @@ msgid "Displayed as"
 msgstr "Affiché comme"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Description"
-msgstr ""
+msgid "Action"
+msgstr "Action"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
@@ -291,11 +271,36 @@ msgid "Search"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Latitude"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr "Longitude"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Url"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone"
+msgstr "Fuseau Horaire"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -348,20 +353,21 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Emplacement suivant"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr ""
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr ""
 
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr ""
-
 #: ../../package/contents/ui/main.qml
-#, qt-format
 msgid "%1 ago"
 msgstr "il y a %1"
 
@@ -382,7 +388,6 @@ msgid "in"
 msgstr ""
 
 #: ../../package/contents/ui/providers/MetNo.qml
-#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
@@ -402,9 +407,6 @@ msgstr ""
 
 #~ msgid "Plasmoid version:"
 #~ msgstr "Version du plasmoïde:"
-
-#~ msgid "Action"
-#~ msgstr "Action"
 
 #~ msgid "Reload interval:"
 #~ msgstr "Intervalle de rechargement :"

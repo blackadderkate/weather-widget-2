@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-3\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2024-02-18 09:43-0800\n"
+"POT-Creation-Date: 2024-06-27 09:12+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,6 +140,10 @@ msgid "Widget font style"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Show last reloaded time"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size"
 msgstr ""
 
@@ -149,31 +153,11 @@ msgid "px"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Latitude"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longitude"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Altitude"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -189,7 +173,7 @@ msgid "Displayed as"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Description"
+msgid "Action"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -260,11 +244,35 @@ msgid "Search"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Url"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
@@ -315,16 +323,16 @@ msgstr ""
 msgid "Location Timezone"
 msgstr ""
 
-#: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/FullRepresentationInTray.qml ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
+msgstr ""
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
 msgstr ""
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
-msgstr ""
-
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
 msgstr ""
 
 #: ../../package/contents/ui/main.qml
@@ -347,7 +355,7 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: ../../package/contents/ui/providers/MetNo.qml ../../package/contents/ui/providers/OpenWeatherMapJS.qml
+#: ../../package/contents/ui/providers/MetNo.qml
 msgid "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2024-02-18 09:43-0800\n"
+"POT-Creation-Date: 2024-06-27 09:12+0800\n"
 "PO-Revision-Date: 2022-03-13 19:39+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
@@ -29,17 +29,14 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr "Een plasmoid die weerinformatie toont van de met.no-server"
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 m"
 msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 h"
 msgstr "%1 u"
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 d"
 msgstr "%1 d"
 
@@ -163,6 +160,10 @@ msgid "Widget font style"
 msgstr "Lettertypestijl"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Show last reloaded time"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Widget font size"
 msgstr "Tekstgrootte"
 
@@ -172,33 +173,12 @@ msgid "px"
 msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Locatie"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr "Gebied"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Latitude"
-msgstr "Breedtegraad"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longitude"
-msgstr "Lengtegraad"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Altitude"
-msgstr "Hoogte"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone"
-msgstr "Tijdzone"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version"
 msgstr "Plasmoid-versie"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "Locatie"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -213,8 +193,8 @@ msgid "Displayed as"
 msgstr "Wordt getoond als"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Description"
-msgstr ""
+msgid "Action"
+msgstr "Actie"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
@@ -290,12 +270,37 @@ msgid "Search"
 msgstr "Zoeken"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Breedtegraad"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr "Lengtegraad"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr "Hoogte"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Url"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
 msgstr "URL"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone"
+msgstr "Tijdzone"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
 msgstr "Locatie zoeken"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr "Gebied"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Alt"
@@ -347,20 +352,21 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr ""
 
+#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Volgende locatie"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "Vernieuwen"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr "Vorige locatie"
 
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr "Vernieuwen"
-
 #: ../../package/contents/ui/main.qml
-#, qt-format
 msgid "%1 ago"
 msgstr "%1 geleden"
 
@@ -381,7 +387,6 @@ msgid "in"
 msgstr "in"
 
 #: ../../package/contents/ui/providers/MetNo.qml
-#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
@@ -438,9 +443,6 @@ msgstr ""
 
 #~ msgid "Plasmoid version:"
 #~ msgstr "Plasmoid-versie:"
-
-#~ msgid "Action"
-#~ msgstr "Actie"
 
 #~ msgid "Reload interval:"
 #~ msgstr "Bijwerktussenpoos:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2024-02-18 09:43-0800\n"
+"POT-Creation-Date: 2024-06-27 09:12+0800\n"
 "PO-Revision-Date: 2022-09-29 17:35+0700\n"
 "Last-Translator: Damir Islamov <damir@secretlaboratory.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Language: ru\n"
 "X-Source-Language: C\n"
 
@@ -30,17 +31,14 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr "Плазмоид, показывающий информацию о погоде с сервера met.no"
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 m"
 msgstr "%1 м"
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 h"
 msgstr "%1 ч"
 
 #: ../../package/contents/code/data-loader.js
-#, qt-format
 msgid "%1 d"
 msgstr "%1 д"
 
@@ -175,33 +173,12 @@ msgid "px"
 msgstr "пикс."
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Местоположение"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr "Зона"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Latitude"
-msgstr "Широта"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Longitude"
-msgstr "Долгота"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Altitude"
-msgstr "Высота"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone"
-msgstr "Часовой пояс"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Plasmoid version"
 msgstr "Версия плазмоида"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "Местоположение"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
@@ -216,8 +193,8 @@ msgid "Displayed as"
 msgstr "Отображать как"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Description"
-msgstr ""
+msgid "Action"
+msgstr "Действие"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
@@ -293,12 +270,37 @@ msgid "Search"
 msgstr "Поиск"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "Широта"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr "Долгота"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr "Высота"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Url"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "URL"
 msgstr "URL-адрес"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone"
+msgstr "Часовой пояс"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Location Search"
 msgstr "Поиск местоположения"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr "Зона"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Alt"
@@ -350,20 +352,21 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr "Часовой пояс местоположения"
 
+#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Следующее место"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "Обновить"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr "Предыдущее место"
 
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr "Обновить"
-
 #: ../../package/contents/ui/main.qml
-#, qt-format
 msgid "%1 ago"
 msgstr "%1 назад"
 
@@ -384,7 +387,6 @@ msgid "in"
 msgstr "дм"
 
 #: ../../package/contents/ui/providers/MetNo.qml
-#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
@@ -453,9 +455,6 @@ msgstr "Данные прогноза погоды предоставлены Op
 
 #~ msgid "Plasmoid version:"
 #~ msgstr "Версия плазмоида:"
-
-#~ msgid "Action"
-#~ msgstr "Действие"
 
 #~ msgid "Reload interval:"
 #~ msgstr "Интервал обновления:"

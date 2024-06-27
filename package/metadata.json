@@ -22,7 +22,7 @@
         "Description[nl]": "Een plasmoid die weerinformatie toont van de met.no-server",
         "Description[ru]": "Плазмоид, показывающий информацию о погоде с сервера met.no",
         "Description[sv]": "Plasmoid som visar väderinformation från met.no",
-        "Description[zh_CN]": "添加 Open Weather Map",
+        "Description[zh_CN]": "显示来自 Met.no 服务器的天气信息的 Plasma 挂件",
         "Icon": "weather-clouds",
         "Id": "org.kde.weatherWidget-3",
         "Version": "3.0.4",
