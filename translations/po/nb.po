@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weatherWidget-2\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-02-18 09:43-0800\n"
 "PO-Revision-Date: 2022-10-28 13:45+0200\n"
 "Last-Translator: Johnny A. Solbu <johnny@solbu.net>\n"
 "Language-Team: Norwegian Bokmaal <l10n-no@lister.huftis.org>\n"
@@ -17,24 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.3\n"
+"X-Language: nb\n"
+"X-Source-Language: C\n"
 
 #: ../../package/metadata.desktop
-msgid "Weather Widget 2"
-msgstr "Weather Widget 2"
+msgid "Weather Widget 3"
+msgstr ""
 
 #: ../../package/metadata.desktop
 msgid "Plasmoid showing weather information from met.no server"
 msgstr "Plasmoid som viser værinformasjon fra met.no"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 m"
 msgstr "%1 m"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 h"
 msgstr "%1 h"
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 d"
 msgstr "%1 d"
 
@@ -109,8 +114,8 @@ msgid "Layout"
 msgstr "Utforming"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Layout type:"
-msgstr "Utformingstype:"
+msgid "Layout type"
+msgstr "Utformingstype"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Horizontal"
@@ -135,8 +140,8 @@ msgid "In-Tray Settings"
 msgstr "Systemkurvinnstillinger"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Active timeout:"
-msgstr "Aktiv tidsavbrudd:"
+msgid "Active timeout"
+msgstr "Aktiv tidsavbrudd"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
@@ -154,12 +159,12 @@ msgstr ""
 "i «Oppføringer» i systemkurv-innstillinger."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font style:"
-msgstr "Widget-fontstørrelse:"
+msgid "Widget font style"
+msgstr "Widget-fontstørrelse"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font size:"
-msgstr "Widget-skriftstørrelse:"
+msgid "Widget font size"
+msgstr "Widget-skriftstørrelse"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "pixels"
@@ -167,78 +172,12 @@ msgid "px"
 msgstr "px"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Open Weather Map Place"
-msgstr "Legg til plassering fra Open Weather Map"
+msgid "Location"
+msgstr "Plassering"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Paste URL here"
-msgstr "Lim inn URL her"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "City alias"
-msgstr "By-alias"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Find your city ID by searching here:"
-msgstr "Finn din By-ID ved å søke her:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid ""
-"...and paste here the whole URL\n"
-"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
-msgstr ""
-"...og lim inn hele URL-en her\n"
-"f.eks. http://openweathermap.org/city/2946447 for Bonn, Tyskland."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Error!"
-msgstr "Feil!"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Confirmation"
-msgstr "Bekreftelse"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Do you want to select this place?"
-msgstr "Ønsker du å velge dette stedet?"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Met.no Map Place"
-msgstr "Legg til plassering fra Met.no"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not valid."
-msgstr "Breddegraden er ikke gyldig."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr "Breddegraden er ikke mellom -90 og 90."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not valid."
-msgstr "Lengdegraden er ikke gyldig."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr "Lengdegraden er ikke mellom -180 og 180."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not valid."
-msgstr "Høyden over havet er ikke gyldig."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not between -999 and 5000."
-msgstr "Høyden over havet er ikke mellom -999 og 5000."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr "Stedsnavnet er tomt."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] "Det er en feil!"
-msgstr[1] "Det er %1 feil!"
+msgid "Area"
+msgstr "Område"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -253,76 +192,37 @@ msgid "Altitude"
 msgstr "Høyde"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "URL"
-msgstr "URL"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Stedsidentifikator"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr "Søk"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Change Displayed As"
-msgstr "Endre Vist som"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Enter place alias"
-msgstr "Legg inn Stedsalias"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location Search"
-msgstr "Stedssøk"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Plassering"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr "Område"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Timezone"
 msgstr "Tidssone"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search data extracted from data provided by Geonames.org."
-msgstr "Søkedata hentet ut fra data levert av Geonames.org."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Country:"
-msgstr "Land:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Filter:"
-msgstr "Filter:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Plasmoid-versjon:"
+msgid "Plasmoid version"
+msgstr "Plasmoid-versjon"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Kilde"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Stedsidentifikator"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
 msgstr "Vist som"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Action"
-msgstr "Handling"
+msgid "Description"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Annet"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Reload interval:"
-msgstr "Oppdateringsintervall:"
+msgid "Reload interval"
+msgstr "Oppdateringsintervall"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgctxt "Abbreviation for minutes"
@@ -347,21 +247,89 @@ msgstr "OWM-værmeldingsdata levert av OpenWeather."
 msgid "Weather icons created by Erik Flowers."
 msgstr "Vær-ikoner er laget av Erik Flowers."
 
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Temperature:"
-msgstr "Temperatur:"
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Endre Vist som"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Legg inn Stedsalias"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Legg til plassering fra Open Weather Map"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "Lim inn URL her"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "By-alias"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here"
+msgstr "Finn din By-ID ved å søke her"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"...og lim inn hele URL-en her\n"
+"f.eks. http://openweathermap.org/city/2946447 for Bonn, Tyskland."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Legg til plassering fra Met.no"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "Søk"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr "URL"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr "Stedssøk"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Alt"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr "Søkedata hentet ut fra data levert av Geonames.org."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country"
+msgstr "Land"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr "Bekreftelse"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Pressure:"
-msgstr "Trykk:"
+msgid "Temperature"
+msgstr "Temperatur"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Wind speed:"
-msgstr "Vindhastighet:"
+msgid "Pressure"
+msgstr "Trykk"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone:"
-msgstr "Tidssone:"
+msgid "Wind speed"
+msgstr "Vindhastighet"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
@@ -369,6 +337,7 @@ msgstr "Min lokaltid"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 
@@ -376,29 +345,20 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr "Steds-tidssone"
 
-#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Neste plassering"
-
-#: ../../package/contents/ui/FullRepresentationInTray.qml
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr "Oppdater"
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr "Forrige plassering"
 
-#: ../../package/contents/ui/main.qml
-msgid "Resume Updating"
-msgstr "Gjenoppta oppdatering"
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "Oppdater"
 
 #: ../../package/contents/ui/main.qml
-msgid "Pause Updating"
-msgstr "Pause oppdatering"
-
-#: ../../package/contents/ui/main.qml
+#, qt-format
 msgid "%1 ago"
 msgstr "%1 siden"
 
@@ -419,17 +379,100 @@ msgid "in"
 msgstr "tommer"
 
 #: ../../package/contents/ui/providers/MetNo.qml
+#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr "Værmeldingsdata levert av Meteorologisk institutt."
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
-msgid "today"
-msgstr "i dag"
-
-#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
 msgstr "Værmeldingsdata levert av OpenWeather."
+
+#~ msgid "Weather Widget 2"
+#~ msgstr "Weather Widget 2"
+
+#~ msgid "Layout type:"
+#~ msgstr "Utformingstype:"
+
+#~ msgid "Active timeout:"
+#~ msgstr "Aktiv tidsavbrudd:"
+
+#~ msgid "Widget font style:"
+#~ msgstr "Widget-fontstørrelse:"
+
+#~ msgid "Widget font size:"
+#~ msgstr "Widget-skriftstørrelse:"
+
+#~ msgid "Find your city ID by searching here:"
+#~ msgstr "Finn din By-ID ved å søke her:"
+
+#~ msgid "Error!"
+#~ msgstr "Feil!"
+
+#~ msgid "Do you want to select this place?"
+#~ msgstr "Ønsker du å velge dette stedet?"
+
+#~ msgid "The Latitude is not valid."
+#~ msgstr "Breddegraden er ikke gyldig."
+
+#~ msgid "The Latitude is not between -90 and 90."
+#~ msgstr "Breddegraden er ikke mellom -90 og 90."
+
+#~ msgid "The Longitude is not valid."
+#~ msgstr "Lengdegraden er ikke gyldig."
+
+#~ msgid "The Longitude is not between -180 and 180."
+#~ msgstr "Lengdegraden er ikke mellom -180 og 180."
+
+#~ msgid "The Altitude is not valid."
+#~ msgstr "Høyden over havet er ikke gyldig."
+
+#~ msgid "The Altitude is not between -999 and 5000."
+#~ msgstr "Høyden over havet er ikke mellom -999 og 5000."
+
+#~ msgid "The Place Name is empty."
+#~ msgstr "Stedsnavnet er tomt."
+
+#~ msgid "There is an error!"
+#~ msgid_plural "There are %1 errors!"
+#~ msgstr[0] "Det er en feil!"
+#~ msgstr[1] "Det er %1 feil!"
+
+#~ msgid "Country:"
+#~ msgstr "Land:"
+
+#~ msgid "Filter:"
+#~ msgstr "Filter:"
+
+#~ msgid "Plasmoid version:"
+#~ msgstr "Plasmoid-versjon:"
+
+#~ msgid "Action"
+#~ msgstr "Handling"
+
+#~ msgid "Reload interval:"
+#~ msgstr "Oppdateringsintervall:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Temperatur:"
+
+#~ msgid "Pressure:"
+#~ msgstr "Trykk:"
+
+#~ msgid "Wind speed:"
+#~ msgstr "Vindhastighet:"
+
+#~ msgid "Timezone:"
+#~ msgstr "Tidssone:"
+
+#~ msgid "Resume Updating"
+#~ msgstr "Gjenoppta oppdatering"
+
+#~ msgid "Pause Updating"
+#~ msgstr "Pause oppdatering"
+
+#~ msgid "today"
+#~ msgstr "i dag"
 
 #~ msgid "The Latitude is not numeric."
 #~ msgstr "Breddegraden er ikke numerisk."

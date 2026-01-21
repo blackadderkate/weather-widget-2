@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2015  Martin Kotelnik <clearmartin@seznam.cz>
  *
  * This program is free software; you can redistribute it and/or
@@ -14,161 +14,179 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick
+import QtQuick.Layouts
+import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.plasmoid
 import "../code/icons.js" as IconTools
 import "../code/unit-utils.js" as UnitUtils
 
-Item {
-    id: compactItem
+
+GridLayout {
+    id: iconAndText
 
     anchors.fill: parent
 
-    property bool inTray
-    property int layoutType: inTray ? 2 : main.layoutType
-    property string widgetFontName: main.widgetFontName
-    property string widgetFontSize: main.widgetFontSize
+    property bool vertical: main.vertical
 
-    property double parentWidth: parent.width
-    property double parentHeight: parent.height
+    property int layoutType: main.layoutType
 
+    property int widgetFontSize: plasmoid.configuration.widgetFontSize
+    property string widgetFontName: (plasmoid.configuration.widgetFontName === "") ? Kirigami.Theme.defaultFont : plasmoid.configuration.widgetFontName
 
-    property double partWidth: 0
-    property double partHeight: 0
+    property string iconNameStr: main.iconNameStr.length > 0 ? main.iconNameStr : "\uf07b"
+    property string temperatureStr: main.temperatureStr.length > 0 ? main.temperatureStr : "--"
 
-    property double widgetWidth: 0
-    property double widgetHeight: 0
+    columnSpacing: 0
+    rowSpacing: 0
 
-    onParentWidthChanged: {
-        dbgprint("onParentWidthChanged")
-        computeWidgetSize()
-    }
+    rows: (layoutType === 0) ? 1 : 2
+    columns: (layoutType === 0) ? 2 : 1
 
-    onParentHeightChanged: {
-        dbgprint("onParentHeightChanged")
-        computeWidgetSize()
-    }
+    Item {
+        // Otherwise it takes up too much space while loading
+        visible: temperatureText.text.length > 0
 
-    onLayoutTypeChanged: {
-        computeWidgetSize()
-    }
+        Layout.alignment: Qt.AlignCenter
 
-    function computeWidgetSize() {
-        if ((parentWidth > 0) && (parentHeight > 0)) {
-            setDebugFlag(false)
-            dbgprint("Widget ParentSize = " + parent.width + "x" + parent.height)
-            if (layoutType === 0) {
-                partWidth = vertical ? parentWidth / 2 : parentHeight
-                partHeight = parentHeight
-                widgetWidth = partWidth * 2
-                widgetHeight = partHeight
-            } else if (layoutType === 1) {
-                partWidth = vertical ? parentWidth / 2 : parentWidth / 2
-                partHeight = vertical ? parentWidth  : parentHeight / 2
-                widgetWidth = partWidth
-                widgetHeight = partHeight * 2
-            } else if (layoutType === 2) {
-                partWidth = vertical ? parentWidth : parentHeight
-                partHeight = partWidth
-                widgetWidth = partWidth
-                widgetHeight = partHeight
+        Layout.fillWidth: iconAndText.vertical
+        Layout.fillHeight: !iconAndText.vertical
+        Layout.minimumWidth: iconAndText.vertical ? 0 : sizehelperText.paintedWidth
+        Layout.maximumWidth: iconAndText.vertical ? Infinity : Layout.minimumWidth
+
+        Layout.minimumHeight: iconAndText.vertical ? sizehelperText.paintedHeight : 0
+        Layout.maximumHeight: iconAndText.vertical ? Layout.minimumHeight : Infinity
+
+        Text {
+            id: sizehelperText
+
+            font {
+                family: temperatureText.font.family
+                weight: temperatureText.font.weight
+                italic: temperatureText.font.italic
+                pixelSize: (main.onDesktop) ? Math.max(Kirigami.Units.gridUnit, widgetFontSize) : Math.min(Kirigami.Units.gridUnit, widgetFontSize) // random "big enough" size - this is used as a max pixelSize by the fontSizeMode
             }
-            dbgprint("Individual WidgetSize  = " + partWidth + "x" + partHeight)
-            dbgprint("Combined WidgetSize = " + widgetWidth + "x" + widgetHeight)
-            compactRepresentation.Layout.preferredHeight = widgetHeight
-            compactRepresentation.Layout.preferredWidth = widgetWidth
-            compactRepresentation.Layout.maximumWidth - widgetWidth
-            setDebugFlag(false)
+            minimumPixelSize: Math.round(Kirigami.Units.gridUnit / 2)
+            fontSizeMode: main.onDesktop ? Text.Text.FixedSize : iconAndText.vertical ? Text.HorizontalFit : Text.VerticalFit
+            wrapMode: Text.NoWrap
+
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            anchors {
+                leftMargin: Kirigami.Units.smallSpacing
+                rightMargin: Kirigami.Units.smallSpacing
+            }
+            // These magic values are taken from the digital clock, so that the
+            // text sizes here are identical with various clock text sizes
+            height: {
+                const textHeightScaleFactor = (parent.height > 26) ? 0.7 : 0.9;
+                return Math.min (parent.height * textHeightScaleFactor, 3 * Kirigami.Theme.defaultFont.pixelSize);
+            }
+            visible: false
+
+            // pattern to reserve some constant space TODO: improve and take formatting/i18n into account
+            text: "888°"
+        }
+
+        PlasmaComponents.Label {
+            id: temperatureText
+
+            font {
+                weight: Font.Normal
+                family: widgetFontName
+                pixelSize: widgetFontSize
+                pointSize: 0 // we need to unset pointSize otherwise it breaks the Text.Fit size mode
+            }
+            minimumPixelSize: Math.round(Kirigami.Units.gridUnit / 2)
+            fontSizeMode: Text.Fit
+            wrapMode: Text.NoWrap
+
+            height: 0
+            width: 0
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            text: temperatureStr
+            anchors {
+                fill: parent
+                //leftMargin: Kirigami.Units.smallSpacing
+                //rightMargin: Kirigami.Units.smallSpacing
+            }
         }
     }
 
 
+    Item {
+        // Otherwise it takes up too much space while loading
+        visible: compactWeatherIcon.text.length > 0
 
-    property double fontPixelSize: partHeight * (layoutType === 2 ? 0.7 : 0.7)
+        Layout.alignment: Qt.AlignCenter
 
-    property string iconNameStr:    actualWeatherModel.count > 0 ? IconTools.getIconCode(actualWeatherModel.get(0).iconName, currentProvider.providerId, getPartOfDayIndex()) : ''
-    property string temperatureStr: actualWeatherModel.count > 0 ? UnitUtils.getTemperatureNumberExt(actualWeatherModel.get(0).temperature, temperatureType) : ''
+        Layout.fillWidth: iconAndText.vertical
+        Layout.fillHeight: !iconAndText.vertical
+        Layout.minimumWidth: iconAndText.vertical ? 0 : sizehelperIcon.paintedWidth
+        Layout.maximumWidth: iconAndText.vertical ? Infinity : Layout.minimumWidth
 
-    PlasmaComponents.Label {
+        Layout.minimumHeight: iconAndText.vertical ? sizehelperIcon.paintedHeight : 0
+        Layout.maximumHeight: iconAndText.vertical ? Layout.minimumHeight : Infinity
 
-        anchors.left: parent.left
-        anchors.leftMargin: layoutType === 0 ? partWidth : 0
-        anchors.top: parent.top
-        anchors.topMargin: layoutType === 1 ? partHeight : 0
+        Text {
+            id: sizehelperIcon
 
-        width: partWidth
-        height: partHeight
-
-        horizontalAlignment: layoutType === 2 ? Text.AlignLeft : Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        fontSizeMode: ((layoutType === 2) || (layoutType===0 && main.vertical)) ? Text.Fit : Text.FixedSize
-
-        font.family: 'weathericons'
-        text: iconNameStr
-
-        opacity: layoutType === 2 ? 0.8 : 1
-
-        font.pixelSize: fontPixelSize
-        font.pointSize: -1
-    }
-
-    PlasmaComponents.Label {
-        id: temperatureText
-
-        anchors.left: parent.left
-        anchors.leftMargin: layoutType === 2 ? partWidth * 0.25 : 0
-        anchors.top: parent.top
-        anchors.topMargin: 0
-        width: layoutType === 2 ? partWidth * 0.75 : partWidth
-        height: partHeight
-
-        horizontalAlignment: layoutType === 1 ? Text.AlignHCenter : Text.AlignRight
-        verticalAlignment: layoutType === 2 ? Text.AlignBottom : Text.AlignVCenter
-
-        text: temperatureStr
-
-        font.family: plasmoid.configuration.widgetFontName === "" ? (theme.defaultFont) : plasmoid.configuration.widgetFontName
-        font.pixelSize: layoutType === 2 ? widgetFontSize * 0.7 : widgetFontSize
-        font.pointSize: -1
-        fontSizeMode: ((! vertical) && (layoutType === 1)) ? Text.VerticalFit : Text.HorizontalFit
-    }
-
-    DropShadow {
-        anchors.fill: temperatureText
-        radius: 3
-        samples: 16
-        spread: 0.8
-        fast: true
-        color: theme.backgroundColor
-        source: temperatureText
-        visible: layoutType === 2
-    }
-
-    PlasmaComponents.BusyIndicator {
-        id: busyIndicator
-        anchors.fill: parent
-        visible: false
-        running: false
-    }
-
-    states: [
-        State {
-            name: 'loading'
-            when: loadingData
-
-            PropertyChanges {
-                target: busyIndicator
-                visible: true
-                running: true
+            font {
+                family: compactWeatherIcon.font.family
+                weight: compactWeatherIcon.font.weight
+                italic: compactWeatherIcon.font.italic
+                pixelSize: (main.onDesktop) ? Math.max(Kirigami.Units.gridUnit, widgetFontSize) : Math.min(Kirigami.Units.gridUnit, widgetFontSize) // random "big enough" size - this is used as a max pixelSize by the fontSizeMode
             }
+            minimumPixelSize: Math.round(Kirigami.Units.gridUnit / 2)
+            fontSizeMode: main.onDesktop ? Text.Text.FixedSize : iconAndText.vertical ? Text.HorizontalFit : Text.VerticalFit
+            wrapMode: Text.NoWrap
 
-            PropertyChanges {
-                target: compactItem
-                opacity: 0.5
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            anchors {
+                leftMargin: Kirigami.Units.smallSpacing
+                rightMargin: Kirigami.Units.smallSpacing
+            }
+            // These magic values are taken from the digital clock, so that the
+            // text sizes here are identical with various clock text sizes
+            height: {
+                const textHeightScaleFactor = (parent.height > 26) ? 0.7 : 0.9;
+                return Math.min (parent.height * textHeightScaleFactor, 3 * Kirigami.Theme.defaultFont.pixelSize);
+            }
+            visible: false
+
+            // pattern to reserve some constant space TODO: improve and take formatting/i18n into account
+            text: "XXX"
+        }
+
+        PlasmaComponents.Label {
+            id: compactWeatherIcon
+
+            font {
+                weight: Font.Normal
+                family: 'weathericons'
+                pixelSize: widgetFontSize
+                pointSize: 0 // we need to unset pointSize otherwise it breaks the Text.Fit size mode
+            }
+            minimumPixelSize: Math.round(Kirigami.Units.gridUnit / 2)
+            fontSizeMode: Text.Fit
+            wrapMode: Text.NoWrap
+
+            height: 0
+            width: 0
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            text: iconNameStr
+            anchors {
+                fill: parent
+                //leftMargin: Kirigami.Units.smallSpacing
+                //rightMargin: Kirigami.Units.smallSpacing
             }
         }
-    ]
+    }
 }
+

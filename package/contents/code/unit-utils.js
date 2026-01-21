@@ -138,6 +138,8 @@ var TimezoneType = {
 }
 
 function convertDate(date, timezoneType, offset) {
+    // dbgprint("convertDate")
+    // dbgprint(date + "\t" + "timezoneType:" + timezoneType + "\t" + offset)
     if (timezoneType === TimezoneType.UTC) {
         return new Date(date.getTime() + (date.getTimezoneOffset() * 60000))
     }

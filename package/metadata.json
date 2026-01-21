@@ -1,0 +1,35 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "kate.buckley@gmail.com",
+                "Name": "Kate Buckley"
+            }
+        ],
+        "Name": "Weather Widget 3",
+        "Name[cs]": "Weather Widget 3",
+        "Name[de]": "Weather Widget 3",
+        "Name[nb]": "Weather Widget 3",
+        "Name[nl]": "Weerwidget 3",
+        "Name[ru]": "Виджет погоды 3",
+        "Name[sv]": "Weather Widget 3",
+        "Category": "Environment and Weather",
+        "Description": "Plasmoid showing weather information from met.no server",
+        "Description[ca_ES]": "Plasmoid que mostra informació del temps del servidor de met.no",
+        "Description[cs]": "Widget pro předpověď počasí",
+        "Description[de]": "Plasmoid zeigt Wetterinformationen des met.no-Servers",
+        "Description[nb]": "Plasmoid som viser værinformasjon fra met.no",
+        "Description[nl]": "Een plasmoid die weerinformatie toont van de met.no-server",
+        "Description[ru]": "Плазмоид, показывающий информацию о погоде с сервера met.no",
+        "Description[sv]": "Plasmoid som visar väderinformation från met.no",
+        "Description[zh_CN]": "添加 Open Weather Map",
+        "Icon": "weather-clouds",
+        "Id": "org.kde.weatherWidget-3",
+        "Version": "3.0.4",
+        "License": "GPL2",
+        "Website": "https://github.com/blackadderkate/weather-widget-2"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-NotificationAreaCategory": "SystemServices",
+    "KPackageStructure": "Plasma/Applet"
+}

@@ -1,40 +1,52 @@
-import QtQuick 2.2
-import QtQuick.Controls 1.3
-import QtQuick.Controls 2.15 as QC215
-import QtQuick.Layouts 1.1
-import QtQuick.Dialogs 1.2
-import org.kde.plasma.core 2.0 as PlasmaCore
+﻿import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import "../../code/config-utils.js" as ConfigUtils
 import "../../code/placesearch-helpers.js" as Helper
-import "../../code/db/timezoneData.js" as TZData
-Item {
+import "../../code/timezoneData.js" as TZData
+import Qt.labs.qmlmodels
+import org.kde.kirigami as Kirigami
+import org.kde.kcmutils as KCM
+
+KCM.SimpleKCM {
+    function dbgprint(msg) {
+        if (!cfg_debugLogging) {
+            return
+        }
+
+        print('[kate weatherWidget] ' + msg)
+    }
+
+
+    id: generalConfigPage
 
     property alias cfg_reloadIntervalMin: reloadIntervalMin.value
     property string cfg_places
     property alias cfg_debugLogging: debugLogging.checked
+    property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
+    property bool env_QML_XHR_ALLOW_FILE_READ: plasmoid.configuration.qml_XHR_ALLOW_FILE_READ
+    property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
+    property var backgroundColor: Kirigami.Theme.backgroundColor
+    property var alternateBackgroundColor: Kirigami.Theme.alternateBackgroundColor
+    property var highlightColor: Kirigami.Theme.highlightColor
 
-
-    property int editEntryNumber: -1
-
-    ListModel {
-        id: placesModel
-    }
 
     Component.onCompleted: {
+
         var places = ConfigUtils.getPlacesArray()
+        var f = 0
         ConfigUtils.getPlacesArray().forEach(function (placeObj) {
-            placesModel.append({
-                                   providerId: placeObj.providerId,
-                                   placeIdentifier: placeObj.placeIdentifier,
-                                   placeAlias: placeObj.placeAlias,
-                                   timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
-                               })
+            placesModel.appendRow({
+                providerId: placeObj.providerId,
+                placeIdentifier: placeObj.placeIdentifier,
+                placeAlias: placeObj.placeAlias,
+                timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1,
+            })
         })
         let timezoneArray = TZData.TZData.sort(dynamicSort("displayName"))
         timezoneArray.forEach(function (tz) {
             timezoneDataModel.append({displayName: tz.displayName.replace(/_/gi, " "), id: tz.id});
         })
-
     }
 
     function dynamicSort(property) {
@@ -53,88 +65,607 @@ Item {
             }
         }
     }
-
     function isNumeric(n) {
         return !isNaN(parseFloat(n)) && isFinite(n);
     }
-
     function placesModelChanged() {
+        dbgprint("placesModelChanged")
         var newPlacesArray = []
-        for (var i = 0; i < placesModel.count; i++) {
-            var placeObj = placesModel.get(i)
+        for (var i = 0; i < placesModel.rowCount; i++) {
+            var placeObj = placesModel.getRow(i)
             newPlacesArray.push({
-                                    providerId: placeObj.providerId,
-                                    placeIdentifier: placeObj.placeIdentifier,
-                                    placeAlias: placeObj.placeAlias,
-                                    timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
+                providerId: placeObj.providerId,
+                placeIdentifier: placeObj.placeIdentifier,
+                placeAlias: placeObj.placeAlias,
+                timezoneID: (placeObj.timezoneID !== undefined) ? placeObj.timezoneID : -1
 
-                                })
+            })
         }
         cfg_places = JSON.stringify(newPlacesArray)
-        print('[weatherWidget] places: ' + cfg_places)
     }
-
+    function updatenewMetnoCityOKButton() {
+        dbgprint("updatenewMetnoCityOKButton")
+        var latValid = newMetnoCityLatitudeField.acceptableInput
+        var longValid = newMetnoCityLongitudeField.acceptableInput
+        var altValid = newMetnoCityAltitudeField.acceptableInput
+        dbgprint(newMetnoCityAlias.length + "\t" + latValid + "\t" + longValid + "\t" + altValid + "\t" + addMetnoCityIdDialog.timezoneID )
+        if ((latValid && longValid && altValid) && (newMetnoCityAlias.length >0) && (addMetnoCityIdDialog.timezoneID > -1)) {
+            buttons.standardButton(Dialog.Ok).enabled = true
+        } else {
+            buttons.standardButton(Dialog.Ok).enabled = false
+        }
+    }
     function updateUrl() {
         var Url=""
-        if (newMetnoCityLatitudeField.acceptableInput) {
+        var latValid = newMetnoCityLatitudeField.acceptableInput
+        var longValid = newMetnoCityLongitudeField.acceptableInput
+        var altValid = newMetnoCityAltitudeField.acceptableInput
+        if (latValid) {
             Url += "lat=" + (Number.fromLocaleString(newMetnoCityLatitudeField.text))
         }
-        if (newMetnoCityLongitudeField.acceptableInput) {
+        if (longValid) {
             if (Url.length > 0) {
                 Url += "&"
             }
             Url += "lon=" + (Number.fromLocaleString(newMetnoCityLongitudeField.text))
         }
-        if (newMetnoCityAltitudeField.acceptableInput) {
+        if (altValid) {
             if (Url.length > 0) {
                 Url += "&"
             }
             Url += "altitude=" + (Number.fromLocaleString(newMetnoCityAltitudeField.text))
         }
         newMetnoUrl.text = Url
+        updatenewMetnoCityOKButton()
     }
 
+    ListModel {
+        id: timezoneDataModel
+    }
+
+    ListModel {
+        id: countryCodesModel
+    }
+
+    TableModel {
+        id: placesModel
+        TableModelColumn {
+            display: "providerId"
+        }
+        TableModelColumn {
+            display: "placeIdentifier"
+        }
+        TableModelColumn {
+            display: "placeAlias"
+        }
+        TableModelColumn {
+            display: "timezoneID"
+        }
+    }
+
+    TableModel {
+        id: filteredCSVData
+        TableModelColumn {
+            display: "Location"
+        }
+        TableModelColumn {
+            display: "Area"
+        }
+        TableModelColumn {
+            display: "Latitude"
+        }
+        TableModelColumn {
+            display: "Longitude"
+        }
+        TableModelColumn {
+            display: "Altitude"
+        }
+        TableModelColumn {
+            display: "Timezone"
+        }
+    }
+
+    TableModel {
+        id: myCSVData
+        TableModelColumn {
+            display: "Location"
+        }
+        TableModelColumn {
+            display: "Area"
+        }
+        TableModelColumn {
+            display: "Latitude"
+        }
+        TableModelColumn {
+            display: "Longitude"
+        }
+        TableModelColumn {
+            display: "Altitude"
+        }
+        TableModelColumn {
+            display: "Timezone"
+        }
+        TableModelColumn {
+            display: "timezoneId"
+        }
+
+    }
+
+    // ConfigGeneral home page
+    ColumnLayout {
+        id: rhsColumn
+        width: parent.width
+        spacing: 2
+
+        Label {
+            text: i18n("Plasmoid version") + ": " + plasmoid.metaData.version
+            Layout.alignment: Qt.AlignRight
+        }
+
+        Label {
+            text: i18n("Location")
+            font.bold: true
+            Layout.alignment: Qt.AlignLeft
+        }
+
+            HorizontalHeaderView {
+                id: myhorizontalHeader
+                // anchors.left: mytableView.left
+                // anchors.leftMargin: 0
+                // anchors.topMargin: 2
+                // anchors.top: parent.top
+                // anchors.right: parent.right
+                // anchors.rightMargin: 2
+
+                syncView: mytableView
+                clip: true
+                model: ListModel {
+                    Component.onCompleted: {
+                        append({ display: i18n("Source") });
+                        append({ display: i18n("Place Identifier") });
+                        append({ display: i18n("Displayed as") });
+                        append({ display: i18n("Action") });
+                        // append({ display: ("TBA") });
+                    }
+                }
+            }
+        ScrollView {
+            id: placesTable
+            width: parent.width
+            clip: true
+            Layout.preferredHeight: 180
+            Layout.preferredWidth: parent.width
+            Layout.columnSpan: 2
+
+
+            TableView {
+                anchors.fill: parent
+                property var columnWidths: [10, 40, 25, 22]
+                columnWidthProvider: function (column) {
+                    let aw = placesTable.width - placesTable.effectiveScrollBarWidth
+                    return parseInt(aw * columnWidths[column] / 100 )
+
+                }
+
+                implicitHeight: 200
+                implicitWidth: 600
+                clip: true
+                interactive: true
+                rowSpacing: 1
+                columnSpacing: 1
+                boundsBehavior: Flickable.StopAtBounds
+                model: placesModel
+                id: mytableView
+                alternatingRows: true
+
+                selectionBehavior: TableView.SelectRows
+                selectionModel: ItemSelectionModel {}
+
+                delegate: myChooser
+
+                DelegateChooser {
+                    id: myChooser
+                    DelegateChoice {
+                        column: 0
+                        delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                anchors.fill: parent
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: 0
+                                verticalAlignment: Text.AlignVCenter
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 1
+                        delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                anchors.fill: parent
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                verticalAlignment: Text.AlignVCenter
+                                elide: Text.ElideRight
+                                clip: true
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 2
+                        delegate: Rectangle {
+                            color: (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                anchors.fill: parent
+                                id: tableLocation
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                verticalAlignment: Text.AlignVCenter
+                                elide: Text.ElideRight
+                                clip: true
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 3
+                        id:  myChoice3
+                        delegate: GridLayout {
+                            columnSpacing: 1
+                            Text {
+                                id: myrowValue
+                                visible: false
+                                text: display
+                            }
+                            Button {
+                                id:myButton1
+                                icon.name: 'go-up'
+                                enabled: row === 0  ? false : true
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        if (row > 0) {
+                                            placesModel.moveRow(row, row - 1, 1)
+                                            placesModelChanged()
+                                        }
+                                    }
+                                }
+                            }
+                            Button {
+                                id:myButton2
+                                icon.name: 'go-down'
+                                enabled: row == (placesModel.rowCount - 1)  ? false: true
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        if (row < placesModel.rowCount) {
+                                            placesModel.moveRow(row, row + 1, 1)
+                                            placesModelChanged()
+                                        }
+                                    }
+                                }
+                            }
+                            Button {
+                                icon.name: 'list-remove'
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        placesModel.removeRow(row, 1)
+                                        placesModelChanged()
+                                    }
+                                }
+                                enabled: (placesModel.rowCount > 1)
+                            }
+                            Button {
+                                icon.name: 'entry-edit'
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        let entry = placesModel.getRow(row)
+                                        if (entry.providerId === "metno") {
+                                            let url = entry.placeIdentifier
+                                            newMetnoUrl.text = url
+                                            var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                                            newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
+                                            newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
+                                            newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
+                                            dbgprint("timezone ID=" + entry.timezoneID)
+                                            addMetnoCityIdDialog.timezoneID = entry.timezoneID
+                                            for (var i = 0; i < timezoneDataModel.count; i++) {
+                                                if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
+                                                    tzComboBox.currentIndex = i
+                                                    break
+                                                }
+                                            }
+                                            newMetnoCityAlias.text = entry.placeAlias
+                                            addMetnoCityIdDialog.placeNumberID = row
+                                            addMetnoCityIdDialog.open()
+                                        }
+                                        if (entry.providerId === "owm") {
+                                            newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
+                                            newOwmCityAlias.text = entry.placeAlias
+                                            addOwmCityIdDialog.placeNumberID = row
+                                            addOwmCityIdDialog.open()
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        Row {
+            Button {
+                icon.name: 'list-add'
+                text: 'OWM'
+                width: 100
+                onClicked: {
+                    addOwmCityIdDialog.placeNumberID = -1
+                    newOwmCityIdField.text = ''
+                    newOwmCityAlias.text = ''
+                    newOwmCityIdField.focus = true
+                    addOwmCityIdDialog.open()
+                }
+            }
+
+            Button {
+                icon.name: 'list-add'
+                text: 'metno'
+                width: 100
+                onClicked: {
+
+                    newMetnoCityAlias.text = ''
+                    newMetnoCityLatitudeField.text = ''
+                    newMetnoCityLongitudeField.text = ''
+                    newMetnoCityAltitudeField.text = ''
+                    newMetnoUrl.text = ''
+                    newMetnoCityLatitudeField.focus = true
+                    addMetnoCityIdDialog.placeNumberID=-1
+                    addMetnoCityIdDialog.open()
+                }
+            }
+        }
+
+        Label {
+            topPadding: 16
+            bottomPadding: 6
+            text: i18n("Miscellaneous")
+            font.bold: true
+            Layout.alignment: Qt.AlignLeft
+        }
+
+        Item {
+            id: reloadItem
+            width: parent.width
+
+            Label {
+                id: reloadLabel1
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left: parent.left
+                text: i18n("Reload interval") + ":"
+                Layout.alignment: Qt.AlignLeft
+                rightPadding: 6
+            }
+            SpinBox {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left:reloadLabel1.right
+                id: reloadIntervalMin
+                stepSize: 10
+
+                from: 20
+                to: 120
+                // suffix: i18nc("Abbreviation for minutes", "min")
+
+            }
+            Label {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left:reloadIntervalMin.right
+                text: i18nc("Abbreviation for minutes", "min")
+                leftPadding: 6
+            }
+        }
+
+        CheckBox {
+            id: debugLogging
+            checked: false
+            text: "Debug"
+            Layout.alignment: Qt.AlignLeft
+            visible: false
+        }
+
+    }
+    Item {
+        anchors.bottom: parent.bottom
+        Rectangle {
+            anchors.fill: parent
+            // anchors.top:
+        }
+        Label {
+            id: attribution1
+            anchors.bottom: attribution2.top
+            anchors.bottomMargin: 2
+            font: Kirigami.Theme.smallFont
+            text: i18n("Met.no weather forecast data provided by The Norwegian Meteorological Institute.")
+            MouseArea {
+                cursorShape: Qt.PointingHandCursor
+                anchors.fill: attribution1
+
+                hoverEnabled: true
+
+                onClicked: {
+                    Qt.openUrlExternally('https://www.met.no/en/About-us')
+                }
+
+                onEntered: {
+                    attribution1.font.underline = true
+                }
+
+                onExited: {
+                    attribution1.font.underline = false
+                }
+            }
+        }
+        Label {
+            id: attribution2
+            anchors.bottom: attribution3.top
+            anchors.bottomMargin: 2
+            font: Kirigami.Theme.smallFont
+            text: i18n("Sunrise/sunset data provided by Sunrise - Sunset.")
+            MouseArea {
+                cursorShape: Qt.PointingHandCursor
+                anchors.fill: attribution2
+
+                hoverEnabled: true
+
+                onClicked: {
+                    Qt.openUrlExternally('https://sunrise-sunset.org/about')
+                }
+
+                onEntered: {
+                    attribution2.font.underline = true
+                }
+
+                onExited: {
+                    attribution2.font.underline = false
+                }
+            }
+        }
+        Label {
+            id: attribution3
+            anchors.bottom: attribution4.top
+            anchors.bottomMargin: 2
+            font: Kirigami.Theme.smallFont
+            text: i18n("OWM weather forecast data provided by OpenWeather.")
+            MouseArea {
+                cursorShape: Qt.PointingHandCursor
+                anchors.fill: attribution3
+
+                hoverEnabled: true
+
+                onClicked: {
+                    Qt.openUrlExternally('https://openweathermap.org/about-us')
+                }
+
+                onEntered: {
+                    attribution3.font.underline = true
+                }
+
+                onExited: {
+                    attribution3.font.underline = false
+                }
+            }
+        }
+        Label {
+            id: attribution4
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 2
+            font: Kirigami.Theme.smallFont
+            text: i18n("Weather icons created by Erik Flowers.")
+            MouseArea {
+                cursorShape: Qt.PointingHandCursor
+                anchors.fill: attribution4
+
+                hoverEnabled: true
+
+                onClicked: {
+                    Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
+                }
+
+                onEntered: {
+                    attribution4.font.underline = true
+                }
+
+                onExited: {
+                    attribution4.font.underline = false
+                }
+            }
+        }
+    }
+
+    // changePlaceAliasDialog
+    Dialog {
+        id: changePlaceAliasDialog
+        title: i18n("Change Displayed As")
+
+        standardButtons: Dialog.Ok | Dialog.Cancel
+
+        onAccepted: {
+            placesModel.setProperty(changePlaceAliasDialog.tableIndex, 'placeAlias', newPlaceAliasField.text)
+            placesModelChanged()
+            changePlaceAliasDialog.close()
+        }
+
+        property int tableIndex: 0
+
+        TextField {
+            id: newPlaceAliasField
+            placeholderText: i18n("Enter place alias")
+            width: parent.width
+        }
+    }
+
+    // addOwmCityIdDialog
     Dialog {
         id: addOwmCityIdDialog
         title: i18n("Add Open Weather Map Place")
-
+        property int placeNumberID: -1
         width: 500
-
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        height: newOwmCityIdField.height * 9
+        footer: DialogButtonBox {
+            id: owmButtons
+            standardButtons: Dialog.Ok | Dialog.Cancel
+        }
 
         onAccepted: {
             var url = newOwmCityIdField.text
             var match = /https?:\/\/openweathermap\.org\/city\/([0-9]+)(\/)?/.exec(url)
+
             var resultString = null
+
             if (match !== null) {
                 resultString = match[1]
-            }
 
-            if (resultString === null) {
-                return
+                dbgprint(addOwmCityIdDialog.placeNumberID)
+                if (addOwmCityIdDialog.placeNumberID === -1) {
+                    placesModel.appendRow({
+                        providerId: 'owm',
+                        placeIdentifier: resultString,
+                        placeAlias: newOwmCityAlias.text,
+                        timezoneID: -1
+                    })
+                } else {
+                    placesModel.setRow(addOwmCityIdDialog.placeNumberID,{
+                        providerId: 'owm',
+                        placeIdentifier: resultString,
+                        placeAlias: newOwmCityAlias.text,
+                        timezoneID: -1
+                    })
+                }
+                placesModelChanged()
+                close()
             }
-
-            if (editEntryNumber === -1) {
-                placesModel.append({
-                                       providerId: 'owm',
-                                       placeIdentifier: resultString,
-                                       placeAlias: newOwmCityAlias.text
-                                   })
-            } else {
-                placesModel.set(editEntryNumber,{
-                                    providerId: 'owm',
-                                    placeIdentifier: resultString,
-                                    placeAlias: newOwmCityAlias.text
-                                })
-            }
-            placesModelChanged()
-            close()
         }
 
         TextField {
             id: newOwmCityIdField
             placeholderText: i18n("Paste URL here")
             width: parent.width
+            onTextChanged: {
+                var match = /https?:\/\/openweathermap\.org\/city\/([0-9]+)(\/)?/.exec(newOwmCityIdField.text)
+                if (match === null) {
+                    owmButtons.standardButton(Dialog.Ok).enabled = false
+                } else {
+                    owmButtons.standardButton(Dialog.Ok).enabled = true
+                }
+            }
         }
 
         TextField {
@@ -150,7 +681,7 @@ Item {
             anchors.top: newOwmCityAlias.bottom
             anchors.topMargin: 10
             font.italic: true
-            text: i18n("Find your city ID by searching here:")
+            text: i18n("Find your city ID by searching here") + ":"
         }
 
         Label {
@@ -187,99 +718,197 @@ Item {
 
     }
 
-    MessageDialog {
-        id: invalidData
-        title: i18n("Error!")
-        text: ""
-        icon: StandardIcon.Critical
-        informativeText: ""
-        visible: false
-    }
-
-    MessageDialog {
-        id: saveSearchedData
-        title: i18n("Confirmation")
-        text: i18n("Do you want to select this place?")
-        icon: StandardIcon.Question
-        standardButtons: StandardButton.Yes | StandardButton.No
-        informativeText: ""
-        visible: false
-        onYes: {
-            let data=filteredCSVData.get(tableView.currentRow)
-            newMetnoCityLatitudeField.text=data["latitude"]
-            newMetnoCityLongitudeField.text=data["longitude"]
-            newMetnoCityAltitudeField.text=data["altitude"]
-            newMetnoUrl.text="lat="+data["latitude"]+"&lon="+data["longitude"]+"&altitude="+data["altitude"]
-            let loc=data["locationName"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
-            newMetnoCityAlias.text=loc
-            addMetnoCityIdDialog.timezoneID=data["timezoneId"]
-            for (var i=0; i < timezoneDataModel.count; i++) {
-                if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
-                    tzComboBox.currentIndex=i
-                    break
-                }
-            }
-            searchWindow.close()
-            addMetnoCityIdDialog.open()
-        }
-    }
-
+    // addMetnoCityIdDialog
     Dialog {
+
         id: addMetnoCityIdDialog
         title: i18n("Add Met.no Map Place")
 
         property int timezoneID: -1
+        property int placeNumberID: -1
 
-        width: 500
+        implicitWidth: generalConfigPage.width
+        footer: DialogButtonBox {
+            id: buttons
+            standardButtons: Dialog.Ok | Dialog.Cancel
+        }
 
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
-        onActionChosen: {
 
-            function between(x, min, max) {
-                return x >= min && x <= max;
+        Item {
+            anchors.fill: parent
+            id: metNoRowLayout
+            // implicitWidth: 550
+            implicitHeight: metNoRow1.height * 4
+            property int labelWidth: 80
+            property int textboxWidth:( metNoRowLayout.width - (3* metNoRowLayout) ) / 3
+            ColumnLayout{
+                spacing: 8
+                RowLayout {
+                    id: metNoRow1
+                    Layout.preferredWidth: metNoRowLayout.width
+                    Label {
+                        text: ("Place Identifier") + ":"
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                    TextField {
+                        id: newMetnoCityAlias
+                        Layout.alignment: Qt.AlignVCenter
+                        placeholderText: ("City alias")
+                        onTextChanged: {
+                            updateUrl()
+                        }
+                    }
+                    Item {
+                        // spacer item
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        // Rectangle { anchors.fill: parent; color: "#ffaaaa" } // to visualize the spacer
+                    }
+                    Button {
+                        text: i18n("Search")
+
+                        Layout.alignment: Qt.AlignRight
+                        onClicked: {
+                            addMetnoCityIdDialog.close()
+                            searchWindow.open()
+                        }
+                    }
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    Label {
+                        id: newMetnoCityLatitudeLabel
+                        text: i18n("Latitude") + ":"
+                        Layout.preferredWidth: metNoRowLayout.labelWidth
+                        horizontalAlignment: Text.AlignRight
+                    }
+                    TextField {
+                        id: newMetnoCityLatitudeField
+                        Layout.preferredWidth: metNoRowLayout.textboxWidth
+                        Layout.fillWidth: true
+                        validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
+                        color: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
+                        onTextChanged: {
+                            updateUrl()
+                        }
+                    }
+
+                    Label {
+                        id: newMetnoCityLongitudeLabel
+                        horizontalAlignment: Text.AlignRight
+                        Layout.preferredWidth: metNoRowLayout.labelWidth
+                        text: i18n("Longitude") + ":"
+                    }
+
+                    TextField {
+                        id: newMetnoCityLongitudeField
+                        validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
+                        Layout.fillWidth: true
+                        Layout.preferredWidth:  metNoRowLayout.textboxWidth
+                        color: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
+                        onTextChanged: {
+                            updateUrl()
+                        }
+                    }
+                    Label {
+                        id: newMetnoCityAltitudeLabel
+                        horizontalAlignment: Text.AlignRight
+                        Layout.preferredWidth: metNoRowLayout.labelWidth
+                        text: i18n("Altitude") + ": "
+                    }
+
+                    TextField {
+                        id: newMetnoCityAltitudeField
+                        Layout.fillWidth: true
+                        Layout.preferredWidth:  metNoRowLayout.textboxWidth
+                        validator: IntValidator { bottom: -999; top: 5000 }
+                        color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+                        onTextChanged: {
+                            updateUrl()
+                        }
+                    }
+                }
+                RowLayout {
+                    Layout.preferredWidth: metNoRowLayout.width
+                    Label {
+                        text: i18n("Url")+": "
+                        Layout.alignment: Qt.AlignVCenter
+                        horizontalAlignment: Text.AlignRight
+                        Layout.preferredWidth: metNoRowLayout.labelWidth
+                    }
+                    TextField {
+                        id: newMetnoUrl
+                        placeholderText: i18n("URL")
+                        Layout.columnSpan: 5
+                        Layout.fillWidth: true
+                        color: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
+
+                        function updateFields() {
+                            function localiseFloat(data) {
+                                return Number(data).toLocaleString(Qt.locale(),"f",5)
+                            }
+
+                            var data = newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
+                            if (data === undefined)
+                                return
+                                if (data.length === 3) {
+                                    var newlat = localiseFloat(data[0])
+                                    var newlon = localiseFloat(data[1])
+                                    var newalt = Number(data[2])
+                                    if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
+                                        newMetnoCityLatitudeField.text = newlat
+                                    }
+                                    if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
+                                        newMetnoCityLongitudeField.text = newlon
+                                    }
+                                    if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
+                                        //                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
+                                        newMetnoCityAltitudeField.text = data[2]
+                                        //                             }
+                                    }
+                                }
+                                updatenewMetnoCityOKButton()
+                        }
+
+                        onTextChanged: {
+                            updateFields()
+                        }
+
+                        onEditingFinished: {
+                            updateFields()
+                        }
+                    }
+                }
+                RowLayout {
+                    Layout.fillWidth: true
+                    Label {
+                        id: newMetnoCityTimezoneLabel
+                        text: i18n("Timezone") + ": "
+                        Layout.preferredWidth: metNoRowLayout.labelWidth
+                        horizontalAlignment: Text.AlignRight
+                    }
+                    ComboBox {
+                        id: tzComboBox
+                        model: timezoneDataModel
+                        currentIndex: -1
+                        textRole: "displayName"
+                        Layout.preferredWidth: (metNoRowLayout.labelWidth * 3)
+                        onCurrentIndexChanged: {
+                            if (tzComboBox.currentIndex > 0) {
+                                addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
+                            }
+                            updateUrl()
+                        }
+                    }
+                }
             }
 
-            if (action.button === Dialog.Ok) {
-                var reason=""
-                var reasoncount=0;
-                var latValid = newMetnoCityLatitudeField.acceptableInput
-                var longValid = newMetnoCityLongitudeField.acceptableInput
-                var altValid = newMetnoCityAltitudeField.acceptableInput
 
-                action.accepted = false
-
-                if (!(latValid)) {
-                    reason+=i18n("The Latitude is not valid.")+"\n"
-                    reason+=i18n("The Latitude is not between -90 and 90.")+"\n"
-                    reasoncount++
-                }
-
-                if (!(longValid)) {
-                    reason+=i18n("The Longitude is not valid.")+"\n"
-                    reason+=i18n("The Longitude is not between -180 and 180.")+"\n"
-                    reasoncount++
-                }
-
-                if (! altValid) {
-                    reason+=i18n("The Altitude is not valid.")+"\n"
-                    reason+=i18n("The Altitude is not between -999 and 5000.")+"\n"
-                    reasoncount++
-                }
-
-                if (newMetnoCityAlias.text.length === 0) {
-                    reason+=i18n("The Place Name is empty.")+"\n"
-                    reasoncount++
-                }
-
-                if (reasoncount === 0 ) {
-                    action.accepted = true
-                } else {
-                    action.accepted = false
-                    invalidData.text=i18np("There is an error!", "There are %1 errors!",reasoncount)
-                    invalidData.informativeText=reason
-                    invalidData.open()
-                }
-            }
+        }
+        onOpened: {
+            updatenewMetnoCityOKButton()
+            // buttons.standardButton(Dialog.Ok).enabled = false;
         }
 
         onAccepted: {
@@ -287,236 +916,288 @@ Item {
             if (resultString.length === 0) {
                 resultString="lat="+newMetnoCityLatitudeField.text+"&lon="+newMetnoCityLongitudeField.text+"&altitude="+newMetnoCityAltitudeField.text
             }
-            if (editEntryNumber === -1) {
-                placesModel.append({
-                                       providerId: 'metno',
-                                       placeIdentifier: resultString,
-                                       placeAlias: newMetnoCityAlias.text,
-                                       timezoneID: addMetnoCityIdDialog.timezoneID
-                                   })
+            if (addMetnoCityIdDialog.placeNumberID === -1) {
+                placesModel.appendRow({
+                    providerId: 'metno',
+                    placeIdentifier: resultString,
+                    placeAlias: newMetnoCityAlias.text,
+                    timezoneID: addMetnoCityIdDialog.timezoneID
+                })
             } else {
-                placesModel.set(editEntryNumber,{
-                                    providerId: 'metno',
-                                    placeIdentifier: resultString,
-                                    placeAlias: newMetnoCityAlias.text,
-                                    timezoneID: addMetnoCityIdDialog.timezoneID
-                                })
+                placesModel.setRow(addMetnoCityIdDialog.placeNumberID,{
+                    providerId: 'metno',
+                    placeIdentifier: resultString,
+                    placeAlias: newMetnoCityAlias.text,
+                    timezoneID: addMetnoCityIdDialog.timezoneID
+                })
             }
             placesModelChanged()
             close()
         }
-
-        GridLayout {
-            id: metNoRowLayout
-            anchors.fill: parent
-            columns: 6
-            property double colWidth: metNoRowLayout.width / 6
-
-            Label {
-                text: i18n("Place Identifier")+":"
-            }
-            TextField {
-                id: newMetnoCityAlias
-                placeholderText: i18n("City alias")
-                Layout.columnSpan: 2
-                Layout.fillWidth: true
-            }
-
-            Label {
-                Layout.columnSpan: 2
-                text: ""
-            }
-
-            Button {
-                text: i18n("Search")
-                Layout.alignment: Qt.AlignRight
-                onClicked: {
-                    searchWindow.open()
-                }
-            }
-
-            Label {
-                id: newMetnoCityLatitudeLabel
-                text: i18n("Latitude")+":"
-                width: metNoRowLayout.colWidth
-            }
-
-            TextField {
-                id: newMetnoCityLatitudeField
-                width: metNoRowLayout.colWidth
-                Layout.fillWidth: true
-                validator: DoubleValidator { bottom: -90; top: 90; decimals: 5 }
-                textColor: acceptableInput ? newMetnoCityLatitudeLabel.color : "red"
-                onTextChanged: {
-                    updateUrl()
-                }
-            }
-
-            Label {
-                id: newMetnoCityLongitudeLabel
-                text: i18n("Longitude")+":"
-                width: metNoRowLayout.colWidth
-            }
-
-            TextField {
-                id: newMetnoCityLongitudeField
-                width: metNoRowLayout.colWidth
-                Layout.fillWidth: true
-                validator: DoubleValidator { bottom: -180; top: 180; decimals: 5 }
-                textColor: acceptableInput ? newMetnoCityLongitudeLabel.color : "red"
-                onTextChanged: {
-                    updateUrl()
-                }
-
-            }
-
-            Label {
-                id: newMetnoCityAltitudeLabel
-                text: i18n("Altitude")+":"
-                width: metNoRowLayout.colWidth
-            }
-
-            TextField {
-                id: newMetnoCityAltitudeField
-                width: metNoRowLayout.colWidth
-                Layout.fillWidth: true
-                validator: IntValidator { bottom: -999; top: 5000 }
-                textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
-                onTextChanged: {
-                    updateUrl()
-                }
-            }
-
-            Label {
-                text: i18n("URL")+":"
-            }
-            TextField {
-                id: newMetnoUrl
-                placeholderText: i18n("URL")
-                Layout.columnSpan: 5
-                Layout.fillWidth: true
-                textColor: acceptableInput ? newMetnoCityAltitudeLabel.color : "red"
-
-                function updateFields() {
-                    function localiseFloat(data) {
-                        return Number(data).toLocaleString(Qt.locale(),"f",5)
-                    }
-
-                    var data=newMetnoUrl.text.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                    if (data === undefined)
-                        return
-                    if (data.length === 3) {
-                        var newlat = localiseFloat(data[0])
-                        var newlon = localiseFloat(data[1])
-                        var newalt = Number(data[2])
-                        if ((! newMetnoCityLatitudeField.acceptableInput) || (newMetnoCityLatitudeField.text.length === 0) || (newMetnoCityLatitudeField.text !== newlat)) {
-                            newMetnoCityLatitudeField.text = newlat
-                        }
-                        if ((! newMetnoCityLongitudeField.acceptableInput) || (newMetnoCityLongitudeField.text.length === 0) || (newMetnoCityLongitudeField.text !== newlon)) {
-                            newMetnoCityLongitudeField.text = newlon
-                        }
-                        if ((! newMetnoCityAltitudeField.acceptableInput) || (newMetnoCityAltitudeField.text.length === 0)  || (newMetnoCityAltitudeField.text !== data[2])) {
-//                             if ((newalt >= newMetnoCityAltitudeField.validator.bottom) && (newalt <= newMetnoCityAltitudeField.validator.top)) {
-                                newMetnoCityAltitudeField.text = data[2]
-//                             }
-                        }
-                    }
-                }
-
-
-
-                onTextChanged: {
-                    updateFields()
-                }
-
-                onEditingFinished: {
-                    updateFields()
-                }
-            }
-
-            Label {
-                text: i18n("Timezone")+":"
-            }
-
-            QC215.ComboBox {
-                id: tzComboBox
-                model: timezoneDataModel
-                currentIndex: -1
-                textRole: "displayName"
-                Layout.columnSpan: 2
-                Layout.fillWidth: true
-                onCurrentIndexChanged: {
-                    if (tzComboBox.currentIndex > 0) {
-                        addMetnoCityIdDialog.timezoneID = timezoneDataModel.get(tzComboBox.currentIndex).id
-                    }
-                }
-            }
-        }
     }
 
-    Dialog {
-        id: changePlaceAliasDialog
-        title: i18n("Change Displayed As")
-
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
-
-        onAccepted: {
-            placesModel.setProperty(changePlaceAliasDialog.tableIndex, 'placeAlias', newPlaceAliasField.text)
-            placesModelChanged()
-            changePlaceAliasDialog.close()
-        }
-
-        property int tableIndex: 0
-
-        TextField {
-            id: newPlaceAliasField
-            placeholderText: i18n("Enter place alias")
-            width: parent.width
-        }
-    }
-
+    // searchWindow
     Dialog {
         title: i18n("Location Search")
         id: searchWindow
-        width: 640
-        height: 400
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        z: 1
+        implicitWidth: parent.width - 40
+        implicitHeight: parent.height - 40
+        footer: DialogButtonBox {
+            id: searchWindowButtons
+            standardButtons: Dialog.Ok | Dialog.Cancel
+        }
+
+        HorizontalHeaderView {
+            id: mysearchhorizontalHeader
+            syncView: searchtableView
+            clip: true
+            model: ListModel {
+                Component.onCompleted: {
+                    append({ display: i18n("Location")  });
+                    append({ display: i18n("Area") });
+                    append({ display: i18n("Latitude") });
+                    append({ display: i18n("Longitude") });
+                    append({ display: i18n("Alt") });
+                    append({ display: i18n("Timezone") });
+                    // append({ display: ("TBA") });
+                }
+            }
+        }
+
+        ScrollView {
+            id: placesTable1
+            width: parent.width
+            clip: true
+            Layout.preferredHeight: 180
+            Layout.preferredWidth: parent.width
+            Layout.maximumHeight: 180
+
+            Layout.columnSpan: 2
+            // anchors.fill: parent
+            anchors.bottom: row2.top
+            anchors.right: parent.right
+            anchors.left: parent.left
+            anchors.top: parent.top
+            // anchors.bottomMargin: 10
+            anchors.topMargin: mysearchhorizontalHeader.height + 2
+
+            TableView {
+                id: searchtableView
+                anchors.fill: parent
+                anchors.bottomMargin: 10 + placesTable1.effectiveScrollBarHeight
+                anchors.rightMargin: 10 + placesTable1.effectiveScrollBarWidth
+                // verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
+                // highlightOnFocus: true
+                property var columnWidths: [30, 15, 15, 12, 12, 30, -1]
+                property int selectedRow: -1
+                columnWidthProvider: function (column) {
+                    let aw = placesTable1.width - placesTable1.effectiveScrollBarWidth
+                    return parseInt(aw * columnWidths[column] / 100 )
+
+                }
+
+                model: filteredCSVData
+                clip: true
+                interactive: true
+                rowSpacing: 1
+                columnSpacing: 1
+
+                boundsBehavior: Flickable.StopAtBounds
+                implicitHeight: 200
+                implicitWidth: 600
+                Layout.maximumHeight: 200
+
+
+                selectionBehavior: TableView.SelectRows
+                selectionModel: ItemSelectionModel { }
+
+                delegate: searchtableChooser
+
+                DelegateChooser {
+                    id: searchtableChooser
+                    DelegateChoice {
+                        column: 0
+
+                        delegate: Rectangle {
+                            required property bool selected
+                            required property bool current
+                            border.width: current ? 2 : 0
+                            implicitWidth: searchtableView.width * 0.3
+                            implicitHeight: defaultFontPixelSize + 4
+                                color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.fill: parent
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 1
+                        delegate: Rectangle {
+                            implicitHeight: defaultFontPixelSize + 4
+                            // implicitWidth: searchtableView.width * 0.1
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 2
+                        delegate: Rectangle {
+                            required property bool selected
+                            required property bool current
+                            implicitHeight: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 3
+                        delegate: Rectangle {
+                            implicitHeight: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 4
+                        delegate: Rectangle {
+                            implicitHeight: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                    DelegateChoice {
+                        column: 5
+                        delegate: Rectangle {
+                            height: defaultFontPixelSize + 4
+                            color: (row === searchtableView.selectedRow) ? highlightColor : (row % 2) === 0 ? backgroundColor : alternateBackgroundColor
+                            Text {
+                                text: display
+                                color: Kirigami.Theme.textColor
+                                font.family: Kirigami.Theme.defaultFont.family
+                                font.pixelSize: defaultFontPixelSize
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    searchtableView.selectedRow = row
+                                }
+                                onDoubleClicked: {
+                                    saveSearchedData.rowNumber = row
+                                    saveSearchedData.visible = true
+                                    saveSearchedData.open()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        standardButtons: Dialog.Ok | Dialog.Cancel
         onAccepted: {
-            if(tableView.currentRow > -1) {
+            if (searchtableView.selectedRow > -1) {
+                saveSearchedData.rowNumber = searchtableView.selectedRow
+                saveSearchedData.visible = true
                 saveSearchedData.open()
             }
         }
-        Component.onCompleted: {
-            let locale=Qt.locale().name.substr(3,2)
-            let userCountry=Helper.getDisplayName(locale)
-            let tmpDB=Helper.getDisplayNames()
+        onOpened: {
+            let locale = Qt.locale().name.substr(3,2)
+            dbgprint(locale)
+            let userCountry = Helper.getDisplayName(locale)
+            let tmpDB = Helper.getDisplayNames()
             for (var i=0; i < tmpDB.length - 1 ; i++) {
                 countryCodesModel.append({ id: tmpDB[i] })
                 if (tmpDB[i] === userCountry) {
                     countryList.currentIndex = i
                 }
             }
-        }
-        TableView {
-            id: tableView
-            height: 140
-            verticalScrollBarPolicy: Qt.ScrollBarAsNeeded
-            highlightOnFocus: true
-            anchors.bottom: row2.top
-            anchors.right: parent.right
-            anchors.left: parent.left
-            anchors.top: parent.top
-            anchors.bottomMargin: 10
-            model: filteredCSVData
-            TableViewColumn { role: "locationName"; title: i18n("Location") }
-            TableViewColumn { role: "region"; title: i18n("Area"); width :75 }
-            TableViewColumn { role: "latitude"; title: i18n("Latitude"); width :75 }
-            TableViewColumn { role: "longitude"; title: i18n("Longitude"); width :75 }
-            TableViewColumn { role: "altitude"; title: i18n("Altitude"); width :75}
-            TableViewColumn { role: "timezoneName"; title: i18n("Timezone"); width :100}
-            onDoubleClicked: {
-                saveSearchedData.open()
-            }
+            dbgprint(Helper.getshortCode(userCountry))
         }
         Item {
             id: row1
@@ -561,13 +1242,13 @@ Item {
             anchors.bottomMargin: 0
             Label {
                 id: countryLabel
-                text: i18n("Country:")
+                text: i18n("Country") + ":"
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
             }
 
-            QC215.ComboBox {
+            ComboBox {
                 id: countryList
                 anchors.left: countryLabel.right
                 anchors.leftMargin: 20
@@ -578,8 +1259,11 @@ Item {
                 editable: false
                 onCurrentIndexChanged: {
                     if (countryList.currentIndex > 0) {
+                        // dbgprint("Loading Database: "+countryList.textAt(countryList.currentIndex))
                         Helper.loadCSVDatabase(countryList.textAt(countryList.currentIndex))
+                        // Helper.loadCSVDatabase("Malta")
                     }
+                    dbgprint(myCSVData.length)
                 }
             }
             Label {
@@ -587,7 +1271,7 @@ Item {
                 anchors.right: locationEdit.left
                 anchors.rightMargin: 10
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Filter:")
+                text: i18n("Filter") + ":"
             }
             TextField {
                 id: locationEdit
@@ -609,361 +1293,58 @@ Item {
                 }
             }
         }
+    }
 
 
 
-        ListModel {
-            id: myCSVData
+    Loader {
+        id: saveSearchedData
+        property int rowNumber
+        function open() {
+            if (item) {
+                item.open();
+            } else {
+                active = true;
+            }
+            item.visible = true;
         }
-        ListModel {
-            id: countryCodesModel
-        }
-        ListModel {
-            id: filteredCSVData
-        }
-        ListModel {
-            id: timezoneDataModel
+
+        active: false
+
+        sourceComponent: Dialog {
+            title: i18n("Confirmation")
+            z:2
+            standardButtons: Dialog.Yes | Dialog.No
+            visible: true
+            Text {
+                anchors.fill: parent
+                text: i18n("Do you want to select") + " \"" + filteredCSVData.getRow(saveSearchedData.rowNumber).Location + "\" ?"
+
+            }
+            onAccepted: {
+                let data = filteredCSVData.getRow(rowNumber)
+                newMetnoCityLatitudeField.text = data["Latitude"]
+                newMetnoCityLongitudeField.text = data["Longitude"]
+                newMetnoCityAltitudeField.text = data["Altitude"]
+                newMetnoUrl.text="lat="+data["Latitude"]+"&lon="+data["Longitude"]+"&altitude="+data["Altitude"]
+                let loc = data["Location"]+", "+Helper.getshortCode(countryList.textAt(countryList.currentIndex))
+                newMetnoCityAlias.text = loc
+                addMetnoCityIdDialog.timezoneID = data["timezoneId"]
+                for (var i=0; i < timezoneDataModel.count; i++) {
+                    if (timezoneDataModel.get(i).id == Number(data["timezoneId"])) {
+                        tzComboBox.currentIndex = i
+                        break
+                    }
+                }
+                searchWindow.close()
+                addMetnoCityIdDialog.open()
+                updatenewMetnoCityOKButton()
+            }
+            onRejected: {
+                visible = false
+                searchWindow.visible = true
+            }
         }
     }
 
-    ColumnLayout{
-        id: rhsColumn
-        width: parent.width
-
-        Label {
-            text: i18n("Plasmoid version:") + ' 2.3.4'
-            Layout.alignment: Qt.AlignRight
-        }
-
-        Label {
-            text: i18n("Location")
-            font.bold: true
-            Layout.alignment: Qt.AlignLeft
-        }
-
-        TableView {
-            id: placesTable
-            width: parent.width
-
-            TableViewColumn {
-                id: providerIdCol
-                role: 'providerId'
-                title: i18n("Source")
-                width: parent.width * 0.1
-
-                delegate: Label {
-                    text: styleData.value
-                    elide: Text.ElideRight
-                    anchors.left: parent ? parent.left : undefined
-                    anchors.leftMargin: 5
-                    anchors.right: parent ? parent.right : undefined
-                    anchors.rightMargin: 5
-                }
-            }
-
-            TableViewColumn {
-                id: placeIdentifierCol
-                role: 'placeIdentifier'
-                title: i18n("Place Identifier")
-                width: parent.width * 0.4
-
-                delegate: Label {
-                    text: styleData.value
-                    elide: Text.ElideRight
-                    anchors.left: parent ? parent.left : undefined
-                    anchors.leftMargin: 5
-                    anchors.right: parent ? parent.right : undefined
-                    anchors.rightMargin: 5
-                }
-            }
-
-            TableViewColumn {
-                role: 'placeAlias'
-                title: i18n("Displayed as")
-                width: parent.width * 0.2
-
-                delegate: MouseArea {
-
-                    anchors.fill: parent
-
-                    Label {
-                        id: placeAliasText
-                        text: styleData.value
-                        height: parent.height
-                        anchors.left: parent.left
-                        anchors.leftMargin: 5
-                        anchors.right: parent.right
-                        anchors.rightMargin: 5
-                    }
-
-                    PlasmaCore.IconItem {
-                        id: noAliasWarningIcon
-                        anchors.left: parent.left
-                        anchors.leftMargin: 5
-                        visible: placeAliasText.text === ''
-                        height: parent.height
-                        width: height
-                        source: 'document-edit'
-                    }
-
-                    cursorShape: Qt.PointingHandCursor
-
-                    onClicked: {
-                        changePlaceAliasDialog.open()
-                        changePlaceAliasDialog.tableIndex = styleData.row
-                        newPlaceAliasField.text = placeAliasText.text
-                        newPlaceAliasField.focus = true
-                    }
-                }
-            }
-
-            TableViewColumn {
-                title: i18n("Action")
-                width: parent.width * 0.2
-
-                delegate: Item {
-
-                    GridLayout {
-                        height: parent.height
-                        columns: 4
-                        rowSpacing: 0
-
-                        Button {
-                            iconName: 'go-up'
-                            Layout.fillHeight: true
-                            onClicked: {
-                                placesModel.move(styleData.row, styleData.row - 1, 1)
-                                placesModelChanged()
-                            }
-                            enabled: styleData.row > 0
-                        }
-
-                        Button {
-                            iconName: 'go-down'
-                            Layout.fillHeight: true
-                            onClicked: {
-                                placesModel.move(styleData.row, styleData.row + 1, 1)
-                                placesModelChanged()
-                            }
-                            enabled: styleData.row < placesModel.count - 1
-                        }
-
-                        Button {
-                            iconName: 'list-remove'
-                            Layout.fillHeight: true
-                            onClicked: {
-                                placesModel.remove(styleData.row)
-                                placesModelChanged()
-                            }
-                        }
-                        Button {
-                            iconName: 'entry-edit'
-                            Layout.fillHeight: true
-                            onClicked: {
-                                editEntryNumber = styleData.row
-                                let entry = placesModel.get(styleData.row)
-                                if (entry.providerId === "metno") {
-                                    let url=entry.placeIdentifier
-                                    newMetnoUrl.text = url
-                                    var data = url.match(RegExp("([+-]?[0-9]{1,5}[.]?[0-9]{0,5})","g"))
-                                    newMetnoCityLatitudeField.text = Number(data[0]).toLocaleString(Qt.locale(),"f",5)
-                                    newMetnoCityLongitudeField.text = Number(data[1]).toLocaleString(Qt.locale(),"f",5)
-                                    newMetnoCityAltitudeField.text = (data[2] === undefined) ? 0:data[2]
-                                    for (var i = 0; i < timezoneDataModel.count; i++) {
-                                        if (timezoneDataModel.get(i).id == Number(entry.timezoneID)) {
-                                            tzComboBox.currentIndex = i
-                                            addMetnoCityIdDialog.timezoneID = entry.timezoneID
-                                            break
-                                        }
-                                    }
-                                    newMetnoCityAlias.text = entry.placeAlias
-                                    addMetnoCityIdDialog.open()
-                                }
-                                if (entry.providerId === "owm") {
-                                    newOwmCityIdField.text = "https://openweathermap.org/city/"+entry.placeIdentifier
-                                    newOwmCityAlias.text = entry.placeAlias
-                                    addOwmCityIdDialog.open()
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-            model: placesModel
-            Layout.preferredHeight: 150
-            Layout.preferredWidth: parent.width
-            Layout.columnSpan: 2
-        }
-
-        Row {
-            Button {
-                iconName: 'list-add'
-                text: 'OWM'
-                width: 100
-                onClicked: {
-                    editEntryNumber = -1
-                    addOwmCityIdDialog.open()
-                    newOwmCityIdField.text = ''
-                    newOwmCityAlias.text = ''
-                    newOwmCityIdField.focus = true
-                }
-            }
-
-            Button {
-                iconName: 'list-add'
-                text: 'metno'
-                width: 100
-                onClicked: {
-                    editEntryNumber = -1
-                    newMetnoCityAlias.text = ''
-                    newMetnoCityLatitudeField.text = ''
-                    newMetnoCityLongitudeField.text = ''
-                    newMetnoCityAltitudeField.text = ''
-                    newMetnoUrl.text = ''
-                    newMetnoCityLatitudeField.focus = true
-                    addMetnoCityIdDialog.open()
-                }
-            }
-        }
-
-        Label {
-            topPadding: 16
-            bottomPadding: 4
-            text: i18n("Miscellaneous")
-            font.bold: true
-            Layout.alignment: Qt.AlignLeft
-        }
-
-        Row {
-            Label {
-                text: i18n("Reload interval:")
-                Layout.alignment: Qt.AlignLeft
-                anchors.verticalCenter: parent.verticalCenter
-                rightPadding: 6
-            }
-            SpinBox {
-                id: reloadIntervalMin
-                decimals: 0
-                stepSize: 10
-                minimumValue: 20
-                maximumValue: 120
-                suffix: i18nc("Abbreviation for minutes", "min")
-            }
-        }
-
-        CheckBox {
-            id: debugLogging
-            checked: false
-            text: "Debug"
-            Layout.alignment: Qt.AlignLeft
-            visible: false
-        }
-    }
-
-    Item {
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        Label {
-            id: attribution1
-            anchors.bottom: attribution2.top
-            anchors.bottomMargin: 2
-            font.pointSize: 8
-            text: i18n("Met.no weather forecast data provided by The Norwegian Meteorological Institute.")
-        }
-        Label {
-            id: attribution2
-            anchors.bottom: attribution3.top
-            anchors.bottomMargin: 2
-            font.pointSize: 8
-            text: i18n("Sunrise/sunset data provided by Sunrise - Sunset.")
-        }
-        Label {
-            id: attribution3
-            anchors.bottom: attribution4.top
-            anchors.bottomMargin: 2
-            font.pointSize: 8
-            text: i18n("OWM weather forecast data provided by OpenWeather.")
-        }
-        Label {
-            id: attribution4
-            anchors.bottom: parent.bottom
-            anchors.bottomMargin: 2
-            font.pointSize: 8
-            text: i18n("Weather icons created by Erik Flowers.")
-        }
-        MouseArea {
-            cursorShape: Qt.PointingHandCursor
-            anchors.fill: attribution1
-
-            hoverEnabled: true
-
-            onClicked: {
-                Qt.openUrlExternally('https://www.met.no/en/About-us')
-            }
-
-            onEntered: {
-                owmLink.font.underline = true
-            }
-
-            onExited: {
-                owmLink.font.underline = false
-            }
-        }
-        MouseArea {
-            cursorShape: Qt.PointingHandCursor
-            anchors.fill: attribution2
-
-            hoverEnabled: true
-
-            onClicked: {
-                Qt.openUrlExternally('https://sunrise-sunset.org/about')
-            }
-
-            onEntered: {
-                owmLink.font.underline = true
-            }
-
-            onExited: {
-                owmLink.font.underline = false
-            }
-        }
-        MouseArea {
-            cursorShape: Qt.PointingHandCursor
-            anchors.fill: attribution3
-
-            hoverEnabled: true
-
-            onClicked: {
-                Qt.openUrlExternally('https://openweathermap.org/about-us')
-            }
-
-            onEntered: {
-                owmLink.font.underline = true
-            }
-
-            onExited: {
-                owmLink.font.underline = false
-            }
-        }
-        MouseArea {
-            cursorShape: Qt.PointingHandCursor
-            anchors.fill: attribution4
-
-            hoverEnabled: true
-
-            onClicked: {
-                Qt.openUrlExternally('https://erikflowers.github.io/weather-icons/')
-            }
-
-            onEntered: {
-                owmLink.font.underline = true
-            }
-
-            onExited: {
-                owmLink.font.underline = false
-            }
-        }
-    }
 }

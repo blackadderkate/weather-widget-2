@@ -8,52 +8,94 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTIAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import org.kde.plasma.plasmoid 2.0
+import QtQuick
+import org.kde.plasma.components 3.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick.Layouts
+import org.kde.plasma.plasmoid
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
 
-Item {
+
+Loader {
     id: compactRepresentation
 
     anchors.fill: parent
+    readonly property bool vertical: (Plasmoid.formFactor == PlasmaCore.Types.Vertical)
 
-    CompactItem {
+    property bool showLastReloadedTime: plasmoid.configuration.showLastReloadedTime
+
+    property int layoutType: main.layoutType
+    property int defaultWidgetSize: -1
+
+    sourceComponent: !(layoutType === 2) ? compactItem : compactItemCompact
+
+    Layout.fillWidth: compactRepresentation.vertical
+    Layout.fillHeight: !compactRepresentation.vertical
+    Layout.minimumWidth: item.Layout.minimumWidth
+    Layout.minimumHeight: item.Layout.minimumHeight
+
+
+    Component {
         id: compactItem
-        inTray: false
+        CompactItem {
+            vertical: compactRepresentation.vertical
+        }
     }
 
-    property bool isCompactLayout: main.layoutType === 2 ? true : false
-    // Layout.preferredWidth: ((! isCompactLayout ) && (plasmoid.formFactor === PlasmaCore.Types.Horizontal)) ? compactItem.height * 2 : compactItem.height
-    // Layout.preferredHeight: ((! isCompactLayout ) && (plasmoid.formFactor === PlasmaCore.Types.Vertical)) ? parent.width * 2 : parent.width
 
-    property double partHeight: compactItem.widgetHeight
+    Component {
+        id: compactItemCompact
+        CompactItemCompact {
+        }
+    }
 
     PlasmaComponents.Label {
         id: lastReloadedNotifier
-
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: - partHeight * 0.05
+        anchors.bottomMargin: - defaultWidgetSize * 0.05
         verticalAlignment: Text.AlignBottom
         width: parent.width
         fontSizeMode: Text.Fit
-
-        font.pixelSize: partHeight * 0.26 * (layoutType === 0 ? 1 : 0.7)
         font.pointSize: -1
-        color: theme.highlightColor
-
+        minimumPixelSize: 1
+        color: Kirigami.Theme.highlightColor
         text: lastReloadedText
-        wrapMode: Text.WordWrap
+        elide: Text.ElideRight
         visible: false
+    }
+
+
+    PlasmaComponents.BusyIndicator {
+        id: busyIndicator
+        anchors.fill: parent
+        visible: false
+        running: false
+
+        states: [
+            State {
+                name: 'loading'
+                when: !loadingDataComplete
+
+                PropertyChanges {
+                    target: busyIndicator
+                    visible: true
+                    running: true
+                }
+
+                PropertyChanges {
+                    target: compactItem
+                    //opacity: 0.5
+                }
+            }
+        ]
     }
 
     DropShadow {
@@ -62,7 +104,7 @@ Item {
         samples: 16
         spread: 0.8
         fast: true
-        color: theme.backgroundColor
+        color: Kirigami.Theme.backgroundColor
         source: lastReloadedNotifier
         visible: (lastReloadedText.visible === true)
     }
@@ -76,19 +118,29 @@ Item {
         hoverEnabled: true
 
         onEntered: {
-            lastReloadedNotifier.visible = !plasmoid.expanded
+            if (showLastReloadedTime)
+            {
+                lastReloadedNotifier.visible = !plasmoid.expanded
+            }
         }
 
         onExited: {
-            lastReloadedNotifier.visible = false
+            if (showLastReloadedTime)
+            {
+                lastReloadedNotifier.visible = false
+            }
         }
 
-        onClicked: {
-            if (mouse.button == Qt.MiddleButton) {
-                main.reloadData()
+        onClicked: (mouse)=> {
+            if (mouse.button === Qt.MiddleButton) {
+                loadingData.failedAttemptCount = 0
+                main.loadDataFromInternet()
             } else {
-                plasmoid.expanded = !plasmoid.expanded
-                lastReloadedNotifier.visible = !plasmoid.expanded
+                main.expanded = !main.expanded
+                if (showLastReloadedTime)
+                {
+                    lastReloadedNotifier.visible = !main.expanded
+                }
             }
         }
 
@@ -97,11 +149,16 @@ Item {
             anchors.fill: parent
             active: !plasmoid.expanded
             interactive: true
-            mainText: placeAlias
-            subText: tooltipSubText
+            mainText: main.currentPlace.alias
+            subText:  main.toolTipSubText
             textFormat: Text.RichText
             icon: Qt.resolvedUrl('../images/weather-widget.svg')
         }
     }
 
+    Component.onCompleted: {
+        if ((defaultWidgetSize === -1) && (compactRepresentation.width > 0 ||  compactRepresentation.height)) {
+            defaultWidgetSize = Math.min(compactRepresentation.width, compactRepresentation.height)
+        }
+    }
 }

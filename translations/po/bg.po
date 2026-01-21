@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
-"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"POT-Creation-Date: 2024-02-18 09:43-0800\n"
 "PO-Revision-Date: 2022-01-03 22:02+0000\n"
 "Last-Translator: bvbfan\n"
 "Language-Team: bvbfan\n"
@@ -16,9 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: bg\n"
+"X-Source-Language: en\n"
 
 #: ../../package/metadata.desktop
-msgid "Weather Widget 2"
+msgid "Weather Widget 3"
 msgstr ""
 
 #: ../../package/metadata.desktop
@@ -26,14 +29,17 @@ msgid "Plasmoid showing weather information from met.no server"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 m"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 h"
 msgstr ""
 
 #: ../../package/contents/code/data-loader.js
+#, qt-format
 msgid "%1 d"
 msgstr ""
 
@@ -108,8 +114,8 @@ msgid "Layout"
 msgstr "Оформление"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Layout type:"
-msgstr "Тип оформление:"
+msgid "Layout type"
+msgstr "Тип оформление"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgid "Horizontal"
@@ -132,8 +138,8 @@ msgid "In-Tray Settings"
 msgstr "Настройки за системният панел"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Active timeout:"
-msgstr "Активен за:"
+msgid "Active timeout"
+msgstr "Активен за"
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
 msgctxt "Abbreviation for seconds"
@@ -151,11 +157,11 @@ msgstr ""
 "панел."
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font style:"
+msgid "Widget font style"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
-msgid "Widget font size:"
+msgid "Widget font size"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigAppearance.qml
@@ -164,78 +170,12 @@ msgid "px"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Open Weather Map Place"
-msgstr "Добави Open Weather Map място"
+msgid "Location"
+msgstr "Местоположение"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Paste URL here"
-msgstr "Постави URL тук"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "City alias"
-msgstr "Град"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Find your city ID by searching here:"
-msgstr "Намери ID-то на своят град тук:"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid ""
-"...and paste here the whole URL\n"
-"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgid "Area"
 msgstr ""
-"... и Копирай тук цялото URL\n"
-"http://openweathermap.org/city/2946447 for Bonn, Germany."
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Error!"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Confirmation"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Do you want to select this place?"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Add Met.no Map Place"
-msgstr "Добави Met.no Map място"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not valid."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Latitude is not between -90 and 90."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not valid."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Longitude is not between -180 and 180."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not valid."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Altitude is not between -999 and 5000."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "The Place Name is empty."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "There is an error!"
-msgid_plural "There are %1 errors!"
-msgstr[0] ""
-msgstr[1] ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Latitude"
@@ -250,76 +190,37 @@ msgid "Altitude"
 msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "URL"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Place Identifier"
-msgstr "Идентификатор за място"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Change Displayed As"
-msgstr "Промени Покажи като"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Enter place alias"
-msgstr "Добави място"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location Search"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Location"
-msgstr "Местоположение"
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Area"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
+#: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "Timezone"
-msgstr ""
+msgstr "Времева зона"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Search data extracted from data provided by Geonames.org."
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Country:"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Filter:"
-msgstr ""
-
-#: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Plasmoid version:"
-msgstr "Джаджа версия:"
+msgid "Plasmoid version"
+msgstr "Джаджа версия"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Source"
 msgstr "Ресурс"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "Идентификатор за място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Displayed as"
 msgstr "Покажи като"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Action"
-msgstr "Действие"
+msgid "Description"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgid "Miscellaneous"
 msgstr "Други"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
-msgid "Reload interval:"
-msgstr "Интервал на обновяване:"
+msgid "Reload interval"
+msgstr "Интервал на обновяване"
 
 #: ../../package/contents/ui/config/ConfigGeneral.qml
 msgctxt "Abbreviation for minutes"
@@ -344,21 +245,89 @@ msgstr ""
 msgid "Weather icons created by Erik Flowers."
 msgstr ""
 
-#: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Temperature:"
-msgstr "Температура:"
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "Промени Покажи като"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "Добави място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Добави Open Weather Map място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "Постави URL тук"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "Град"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here"
+msgstr "Намери ID-то на своят град тук"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"... и Копирай тук цялото URL\n"
+"http://openweathermap.org/city/2946447 for Bonn, Germany."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Добави Met.no Map място"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Alt"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr ""
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select"
+msgstr ""
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Pressure:"
-msgstr "Налягане:"
+msgid "Temperature"
+msgstr "Температура"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Wind speed:"
-msgstr "Скоростта на вятъра:"
+msgid "Pressure"
+msgstr "Налягане"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
-msgid "Timezone:"
-msgstr "Времева зона:"
+msgid "Wind speed"
+msgstr "Скоростта на вятъра"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 msgid "My local-time"
@@ -366,6 +335,7 @@ msgstr "Локално време"
 
 #: ../../package/contents/ui/config/ConfigUnits.qml
 #: ../../package/contents/ui/FullRepresentation.qml
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "UTC"
 msgstr "UTC"
 
@@ -373,29 +343,20 @@ msgstr "UTC"
 msgid "Location Timezone"
 msgstr ""
 
-#: ../../package/contents/ui/FullRepresentationInTray.qml
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Next Location"
 msgstr "Следващо местоположение"
-
-#: ../../package/contents/ui/FullRepresentationInTray.qml
-#: ../../package/contents/ui/FullRepresentation.qml
-msgid "Reload"
-msgstr ""
 
 #: ../../package/contents/ui/FullRepresentation.qml
 msgid "Previous Location"
 msgstr ""
 
-#: ../../package/contents/ui/main.qml
-msgid "Resume Updating"
-msgstr "Поднови Обновяването"
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr ""
 
 #: ../../package/contents/ui/main.qml
-msgid "Pause Updating"
-msgstr "Спри Обновяването"
-
-#: ../../package/contents/ui/main.qml
+#, qt-format
 msgid "%1 ago"
 msgstr "преди %1"
 
@@ -416,17 +377,53 @@ msgid "in"
 msgstr ""
 
 #: ../../package/contents/ui/providers/MetNo.qml
+#: ../../package/contents/ui/providers/OpenWeatherMapJS.qml
 msgid ""
 "Weather forecast data provided by The Norwegian Meteorological Institute."
 msgstr ""
 
 #: ../../package/contents/ui/providers/OpenWeatherMap.qml
-msgid "today"
-msgstr "днес"
-
-#: ../../package/contents/ui/providers/OpenWeatherMap.qml
 msgid "Weather forecast data provided by OpenWeather."
 msgstr ""
+
+#~ msgid "Layout type:"
+#~ msgstr "Тип оформление:"
+
+#~ msgid "Active timeout:"
+#~ msgstr "Активен за:"
+
+#~ msgid "Find your city ID by searching here:"
+#~ msgstr "Намери ID-то на своят град тук:"
+
+#~ msgid "Plasmoid version:"
+#~ msgstr "Джаджа версия:"
+
+#~ msgid "Action"
+#~ msgstr "Действие"
+
+#~ msgid "Reload interval:"
+#~ msgstr "Интервал на обновяване:"
+
+#~ msgid "Temperature:"
+#~ msgstr "Температура:"
+
+#~ msgid "Pressure:"
+#~ msgstr "Налягане:"
+
+#~ msgid "Wind speed:"
+#~ msgstr "Скоростта на вятъра:"
+
+#~ msgid "Timezone:"
+#~ msgstr "Времева зона:"
+
+#~ msgid "Resume Updating"
+#~ msgstr "Поднови Обновяването"
+
+#~ msgid "Pause Updating"
+#~ msgstr "Спри Обновяването"
+
+#~ msgid "today"
+#~ msgstr "днес"
 
 #~ msgid "Offline mode"
 #~ msgstr "Работа без интернет"

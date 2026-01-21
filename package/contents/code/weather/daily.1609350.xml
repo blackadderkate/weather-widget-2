@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weatherdata>
+<location>
+<name>Bangkok</name>
+<type/>
+<country>TH</country>
+<timezone>25200</timezone>
+<location altitude="0" latitude="13.75" longitude="100.5167" geobase="geonames" geobaseid="1609350"/>
+</location>
+<credit/>
+<meta>
+<lastupdate/>
+<calctime>0</calctime>
+<nextupdate/>
+</meta>
+<sun rise="2024-01-28T23:45:35" set="2024-01-29T11:15:59"/>
+<forecast>
+<time day="2024-01-29">
+<sun rise="2024-01-28T23:45:35" set="2024-01-29T11:15:59"/>
+<symbol number="801" name="few clouds" var="02d"/>
+<precipitation probability="0.08"/>
+<windDirection deg="102" code="ESE" name="East-southeast"/>
+<windSpeed mps="4.94" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="6.39" unit="m/s"/>
+<temperature day="31.84" min="25.9" max="33.91" night="29.45" eve="32.68" morn="26.16" unit="celsius"/>
+<feels_like day="31.56" night="29.62" eve="32.2" morn="26.16" unit="celsius"/>
+<pressure unit="hPa" value="1016"/>
+<humidity value="37" unit="%"/>
+<clouds value="few clouds" all="16" unit="%"/>
+</time>
+<time day="2024-01-30">
+<sun rise="2024-01-29T23:45:29" set="2024-01-30T11:16:27"/>
+<symbol number="802" name="scattered clouds" var="03d"/>
+<precipitation probability="0"/>
+<windDirection deg="195" code="SSW" name="South-southwest"/>
+<windSpeed mps="4.81" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="6.46" unit="m/s"/>
+<temperature day="33.43" min="27.71" max="34.17" night="28.35" eve="31.52" morn="27.71" unit="celsius"/>
+<feels_like day="33.81" night="30.37" eve="32.11" morn="27.82" unit="celsius"/>
+<pressure unit="hPa" value="1014"/>
+<humidity value="37" unit="%"/>
+<clouds value="scattered clouds" all="44" unit="%"/>
+</time>
+<time day="2024-01-31">
+<sun rise="2024-01-30T23:45:23" set="2024-01-31T11:16:56"/>
+<symbol number="801" name="few clouds" var="02d"/>
+<precipitation probability="0.28"/>
+<windDirection deg="197" code="SSW" name="South-southwest"/>
+<windSpeed mps="5.64" unit="m/s" name="Moderate breeze"/>
+<windGust gust="7.83" unit="m/s"/>
+<temperature day="33.14" min="26.97" max="33.84" night="28.39" eve="30.87" morn="27.02" unit="celsius"/>
+<feels_like day="34.94" night="31.29" eve="32.6" morn="29.23" unit="celsius"/>
+<pressure unit="hPa" value="1013"/>
+<humidity value="44" unit="%"/>
+<clouds value="few clouds" all="15" unit="%"/>
+</time>
+<time day="2024-02-01">
+<sun rise="2024-01-31T23:45:15" set="2024-02-01T11:17:23"/>
+<symbol number="802" name="scattered clouds" var="03d"/>
+<precipitation probability="0.33"/>
+<windDirection deg="193" code="SSW" name="South-southwest"/>
+<windSpeed mps="6.11" unit="m/s" name="Moderate breeze"/>
+<windGust gust="9.54" unit="m/s"/>
+<temperature day="34.16" min="26.9" max="34.16" night="28.51" eve="30.13" morn="26.9" unit="celsius"/>
+<feels_like day="35.71" night="31.85" eve="32.11" morn="29.35" unit="celsius"/>
+<pressure unit="hPa" value="1012"/>
+<humidity value="40" unit="%"/>
+<clouds value="scattered clouds" all="45" unit="%"/>
+</time>
+<time day="2024-02-02">
+<sun rise="2024-02-01T23:45:06" set="2024-02-02T11:17:50"/>
+<symbol number="801" name="few clouds" var="02d"/>
+<precipitation probability="0"/>
+<windDirection deg="181" code="S" name="South"/>
+<windSpeed mps="5.86" unit="m/s" name="Moderate breeze"/>
+<windGust gust="9.8" unit="m/s"/>
+<temperature day="33.95" min="27.18" max="33.95" night="28.55" eve="29.69" morn="27.18" unit="celsius"/>
+<feels_like day="36.71" night="32.1" eve="32.63" morn="30.04" unit="celsius"/>
+<pressure unit="hPa" value="1011"/>
+<humidity value="45" unit="%"/>
+<clouds value="few clouds" all="13" unit="%"/>
+</time>
+<time day="2024-02-03">
+<sun rise="2024-02-02T23:44:57" set="2024-02-03T11:18:17"/>
+<symbol number="800" name="sky is clear" var="01d"/>
+<precipitation probability="0.04"/>
+<windDirection deg="177" code="S" name="South"/>
+<windSpeed mps="5.81" unit="m/s" name="Moderate breeze"/>
+<windGust gust="9.89" unit="m/s"/>
+<temperature day="33.96" min="27.2" max="33.96" night="28.51" eve="29.94" morn="27.2" unit="celsius"/>
+<feels_like day="36.16" night="32.34" eve="32.52" morn="30.19" unit="celsius"/>
+<pressure unit="hPa" value="1012"/>
+<humidity value="43" unit="%"/>
+<clouds value="clear sky" all="4" unit="%"/>
+</time>
+<time day="2024-02-04">
+<sun rise="2024-02-03T23:44:46" set="2024-02-04T11:18:43"/>
+<symbol number="500" name="light rain" var="10d"/>
+<precipitation probability="0.32" value="0.53" type="rain"/>
+<windDirection deg="198" code="SSW" name="South-southwest"/>
+<windSpeed mps="5.86" unit="m/s" name="Moderate breeze"/>
+<windGust gust="9.47" unit="m/s"/>
+<temperature day="35.86" min="26.64" max="36.35" night="28.71" eve="30.58" morn="26.64" unit="celsius"/>
+<feels_like day="34.17" night="31.77" eve="31.26" morn="26.64" unit="celsius"/>
+<pressure unit="hPa" value="1011"/>
+<humidity value="21" unit="%"/>
+<clouds value="clear sky" all="7" unit="%"/>
+</time>
+<time day="2024-02-05">
+<sun rise="2024-02-04T23:44:34" set="2024-02-05T11:19:08"/>
+<symbol number="800" name="sky is clear" var="01d"/>
+<precipitation probability="0"/>
+<windDirection deg="178" code="S" name="South"/>
+<windSpeed mps="5.29" unit="m/s" name="Gentle Breeze"/>
+<windGust gust="8.2" unit="m/s"/>
+<temperature day="35.68" min="26.55" max="36.98" night="29.05" eve="31.46" morn="26.55" unit="celsius"/>
+<feels_like day="34.27" night="30.24" eve="30.93" morn="26.55" unit="celsius"/>
+<pressure unit="hPa" value="1010"/>
+<humidity value="23" unit="%"/>
+<clouds value="clear sky" all="7" unit="%"/>
+</time>
+</forecast>
+</weatherdata>

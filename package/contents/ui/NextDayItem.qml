@@ -14,24 +14,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
-import QtQuick.Window 2.5
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick 2.15
+import QtQuick.Window
+import QtQuick.Layouts
+import QtQuick.Shapes 1.6
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
 
 Item {
 
-    property int itemRowSpacing: 5 * Screen.devicePixelRatio
-    property double periodFontSize: theme.defaultFont.pixelSize
+    property int itemRowSpacing: 5
+    property double periodFontSize: Kirigami.Theme.defaultFont.pixelSize
     property double periodHeight: (height - periodFontSize - itemRowSpacing * 4) / 4
-    property color lineColor: theme.textColor
+    property color lineColor: Kirigami.Theme.textColor
 
     PlasmaComponents.Label {
         id: dayTitleText
         text: dayTitle
         anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
         height: periodFontSize
+        horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignBottom
         fontSizeMode: Text.Fit
     }
@@ -39,7 +44,7 @@ Item {
     Item {
         id: dayTitleLine
         width: parent.width
-        height: 1 * Screen.devicePixelRatio
+        height: 1
         anchors.top: parent.top
         anchors.topMargin: periodFontSize * 0.8
 
@@ -53,23 +58,22 @@ Item {
                 GradientStop { position: 1.0; color: Qt.rgba(lineColor.r, lineColor.g, lineColor.b, 0) }
             }
         }
-
     }
 
 
 
 
-    /*
-     *
-     * four item data
-     *
-     */
+/*
+ *
+ * four item data
+ *
+*/
     GridLayout {
         anchors.fill: parent
         anchors.topMargin: periodFontSize
 
         columns: 1
-        rowSpacing: 5 * Screen.devicePixelRatio
+        rowSpacing: 5
 
         height: parent.height - anchors.topMargin
         width: parent.width
@@ -80,8 +84,7 @@ Item {
             temperature: temperature0
             iconName: (iconName0 != undefined) ? iconName0 : ""
             hidden: hidden0
-            past: isPast0
-            partOfDay: 1
+            partOfDay: partOfDay0
             pixelFontSize: periodFontSize
         }
 
@@ -91,8 +94,7 @@ Item {
             temperature: temperature1
             iconName: (iconName1 != undefined) ? iconName1 : ""
             hidden: hidden1
-            past: isPast1
-            partOfDay: 0
+            partOfDay: partOfDay1
             pixelFontSize: periodFontSize
         }
 
@@ -102,8 +104,7 @@ Item {
             temperature: temperature2
             iconName: (iconName2 != undefined) ? iconName2 : ""
             hidden: hidden2
-            past: isPast2
-            partOfDay: 0
+            partOfDay: partOfDay2
             pixelFontSize: periodFontSize
         }
 
@@ -113,10 +114,8 @@ Item {
             temperature: temperature3
             iconName: (iconName3 != undefined) ? iconName3 : ""
             hidden: hidden3
-            past: isPast3
-            partOfDay: 1
+            partOfDay: partOfDay3
             pixelFontSize: periodFontSize
         }
     }
-
 }

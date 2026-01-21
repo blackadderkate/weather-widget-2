@@ -1,28 +1,31 @@
 import QtQuick 2.2
-import QtQuick.Controls 1.3
-import QtQuick.Controls 2.15 as QC215
+import QtQuick.Controls
 import QtQuick.Layouts 1.1
+import org.kde.kirigami as Kirigami
+import org.kde.kcmutils as KCM
 
-Item {
+KCM.SimpleKCM {
 
     id: appearancePage
     property int cfg_layoutType
     property alias cfg_inTrayActiveTimeoutSec: inTrayActiveTimeoutSec.value
     property string cfg_widgetFontName: plasmoid.configuration.widgetFontName
     property string cfg_widgetFontSize: plasmoid.configuration.widgetFontSize
+    property alias cfg_showLastReloadedTime: showLastReloadedTime.checked
+
 
     onCfg_layoutTypeChanged: {
         switch (cfg_layoutType) {
-        case 0:
-            layoutTypeGroup.current = layoutTypeRadioHorizontal;
-            break;
-        case 1:
-            layoutTypeGroup.current = layoutTypeRadioVertical;
-            break;
-        case 2:
-            layoutTypeGroup.current = layoutTypeRadioCompact;
-            break;
-        default:
+            case 0:
+                layoutTypeGroup.checkedButton = layoutTypeRadioHorizontal;
+                break;
+            case 1:
+                layoutTypeGroup.checkedButton = layoutTypeRadioVertical;
+                break;
+            case 2:
+                layoutTypeGroup.checkedButton = layoutTypeRadioCompact;
+                break;
+            default:
         }
     }
 
@@ -36,7 +39,7 @@ Item {
             var foundIndex = 0
             for (var i = 0, j = fonts.length; i < j; ++i) {
                 if (fonts[i] === cfg_widgetFontName) {
-                  foundIndex = i
+                    foundIndex = i
                 }
                 arr.push({text: fonts[i], value: fonts[i]})
             }
@@ -51,7 +54,7 @@ Item {
         cfg_layoutTypeChanged()
     }
 
-    ExclusiveGroup {
+    ButtonGroup {
         id: layoutTypeGroup
     }
 
@@ -73,12 +76,12 @@ Item {
             Layout.columnSpan: 3
         }
         Label {
-            text: i18n("Layout type:")
-            Layout.alignment: Qt.AlignVCenter|Qt.AlignRight
+            text: i18n("Layout type") + ":"
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
         RadioButton {
             id: layoutTypeRadioHorizontal
-            exclusiveGroup: layoutTypeGroup
+            ButtonGroup.group: layoutTypeGroup
             text: i18n("Horizontal")
             onCheckedChanged: if (checked) cfg_layoutType = 0;
         }
@@ -95,13 +98,13 @@ Item {
         }
         RadioButton {
             id: layoutTypeRadioVertical
-            exclusiveGroup: layoutTypeGroup
+            ButtonGroup.group: layoutTypeGroup
             text: i18n("Vertical")
             onCheckedChanged: if (checked) cfg_layoutType = 1;
         }
         RadioButton {
             id: layoutTypeRadioCompact
-            exclusiveGroup: layoutTypeGroup
+            ButtonGroup.group: layoutTypeGroup
             text: i18n("Compact")
             onCheckedChanged: if (checked) cfg_layoutType = 2;
         }
@@ -119,26 +122,39 @@ Item {
             Layout.columnSpan: 3
         }
 
+
         Label {
-            text: i18n("Active timeout:")
+            id: timeoutLabel
+            text: i18n("Active timeout") + ":"
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+            height: inTrayActiveTimeoutSec.height
+            // anchors.verticalCenter: inTrayActiveTimeoutSec.verticalCenter
         }
-
-        SpinBox {
-            id: inTrayActiveTimeoutSec
-            decimals: 0
-            stepSize: 10
-            minimumValue: 10
-            maximumValue: 8000
-            suffix: i18nc("Abbreviation for seconds", "sec")
+        Item {
+            SpinBox {
+                id: inTrayActiveTimeoutSec
+                Layout.alignment: Qt.AlignVCenter
+                stepSize: 10
+                from: 10
+                to: 8000
+                anchors.verticalCenter: parent.verticalCenter
+                //            suffix: i18nc("Abbreviation for seconds", "sec")
+            }
+            Label {
+                text: i18nc("Abbreviation for seconds", "sec")
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left:inTrayActiveTimeoutSec.right
+                anchors.leftMargin: 4
+            }
         }
-
         Label {
             text: i18n("NOTE: After this timeout widget will be hidden in system tray until refreshed. You can always set the widget to be always \"Shown\" in system tray \"Entries\" settings.")
             Layout.rowSpan: 3
             Layout.preferredWidth: 250
             wrapMode: Text.WordWrap
         }
+
+
         Item {
             width: 2
             height: 20
@@ -146,20 +162,21 @@ Item {
         }
 
         Label {
-            text: i18n("Widget font style:")
+            text: i18n("Widget font style") + ":"
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
-        QC215.ComboBox {
+        ComboBox {
             id: fontFamilyComboBox
             Layout.fillWidth: true
             currentIndex: 0
-            Layout.minimumWidth: units.gridUnit * 10
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 10
             model: fontsModel
             textRole: "text"
 
             onCurrentIndexChanged: {
                 var current = model.get(currentIndex)
                 if (current) {
-                    cfg_widgetFontName = currentIndex === 0 ? "" : current.value
+                    cfg_widgetFontName = currentIndex === 0 ? Kirigami.Theme.defaultFont : current.value
                 }
             }
         }
@@ -170,18 +187,47 @@ Item {
         }
 
         Label {
-            text: i18n("Widget font size:")
+            text: i18n("Show last reloaded time") + ":"
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
         }
-        SpinBox {
-            id: widgetFontSize
-            decimals: 0
-            stepSize: 1
-            minimumValue: 4
-            value: cfg_widgetFontSize
-            maximumValue: 512
-            suffix: i18nc("pixels", "px")
-            onValueChanged: {
-                cfg_widgetFontSize = widgetFontSize.value
+
+        CheckBox {
+            id: showLastReloadedTime
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignLeft
+        }
+
+        Item {
+            width: 2
+            height: 20
+            Layout.columnSpan: 3
+        }
+
+        Label {
+            text: i18n("Widget font size") + ":"
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+            // anchors.verticalCenter: widgetFontSize.verticalCenter
+
+
+        }
+        Item {
+            SpinBox {
+                id: widgetFontSize
+                Layout.alignment: Qt.AlignVCenter
+                anchors.verticalCenter: parent.verticalCenter
+                // decimals: 0
+                stepSize: 1
+                from: 4
+                value: cfg_widgetFontSize
+                to: 512
+                onValueChanged: {
+                    cfg_widgetFontSize = widgetFontSize.value
+                }
+            }
+            Label {
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left:widgetFontSize.right
+                text: i18nc("pixels", "px")
             }
         }
     }

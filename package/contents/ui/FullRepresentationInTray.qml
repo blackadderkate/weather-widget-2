@@ -14,87 +14,93 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.5
-import QtQuick.Window 2.5
-import org.kde.plasma.plasmoid 2.0
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.0
-import QtQuick.Controls 1.0
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import org.kde.ksvg as KSvg
+import org.kde.kirigami as Kirigami
 
 Item {
     id: fullRepresentation
 
-    width: parent.width
+    property double defaultFontPixelSize: Kirigami.Theme.defaultFont.pixelSize
 
-    property double defaultFontPixelSize: theme.defaultFont.pixelSize
-    property double footerHeight: defaultFontPixelSize * 3.5
+    Layout.minimumWidth: main.switchWidth
+    Layout.minimumHeight: headingHeight + (nextDayHeight * 5) + footerHeight
 
-    property int nextDaysSpacing: 5 * Screen.devicePixelRatio
-    property int nextDayHeight: defaultFontPixelSize * 4.9
-    property int headingHeight: defaultFontPixelSize * 3
-    property int nextDayItemSpacing: defaultFontPixelSize * 0.7
+    Layout.preferredWidth: defaultFontPixelSize * 30
+    Layout.preferredHeight: headingHeight + (nextDayHeight * 5) + footerHeight
+
+    property int headingHeight: defaultFontPixelSize * 2
+    property double footerHeight: defaultFontPixelSize * 3
+
+    property int nextDaysSpacing: defaultFontPixelSize
+    property int nextDayHeight: defaultFontPixelSize * 4
+    property int nextDayItemSpacing: defaultFontPixelSize
 
     property double headingTopMargin: defaultFontPixelSize
 
-    property color lineColor: theme.textColor
+    property color lineColor: Kirigami.Theme.textColor
+
 
     PlasmaComponents.Label {
         id: currentLocationText
+        text: main.currentPlace.alias
 
-        anchors.left: parent.left
         anchors.top: parent.top
+        anchors.left: parent.left
 
-        text: main.placeAlias
+        height: headingHeight
+        width: parent.width / 2
+
+        color: Kirigami.Theme.textColor
+
+        verticalAlignment: Text.AlignTop
     }
 
     PlasmaComponents.Label {
         id: nextLocationText
-
-        anchors.right: parent.right
-        anchors.top: parent.top
-        visible: !onlyOnePlace
-
         text: i18n("Next Location")
-        color: theme.textColor
+
+        anchors.top: parent.top
+        anchors.right: parent.right
+
+        height: headingHeight
+        width: parent.width / 2
+
+        visible: (placesCount > 1)
+
+        color: Kirigami.Theme.textColor
+
+        horizontalAlignment:Text.AlignRight
+        verticalAlignment: Text.AlignTop
+
+        MouseArea {
+            anchors.fill: parent
+            cursorShape: Qt.PointingHandCursor
+
+            hoverEnabled: true
+
+            onClicked: {
+                main.setNextPlace()
+            }
+            onEntered: {
+                nextLocationText.font.underline = true
+            }
+            onExited: {
+                nextLocationText.font.underline = false
+            }
+        }
     }
 
-    MouseArea {
-        cursorShape: Qt.PointingHandCursor
-        anchors.fill: nextLocationText
 
-        hoverEnabled: true
-
-        onClicked: {
-            dbgprint('clicked next location')
-            main.setNextPlace()
-        }
-
-        onEntered: {
-            nextLocationText.font.underline = true
-        }
-
-        onExited: {
-            nextLocationText.font.underline = false
-        }
-    }
-
-
-
-
-    /*
-     *
-     * NEXT DAYS
-     *
-     */
     ScrollView {
         id: nextDays
 
-        anchors.top: parent.top
-        anchors.topMargin: headingHeight
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: footerHeight
+        anchors.top: currentLocationText.bottom
+        anchors.bottom: frFooter.top
+        anchors.bottomMargin:  defaultFontPixelSize / 2
 
         width: parent.width
 
@@ -102,27 +108,25 @@ Item {
             id: nextDaysView
 
             anchors.fill: parent
-            width: parent.width
-            height: parent.height
-
             model: nextDaysModel
+
             orientation: Qt.Vertical
             spacing: nextDayItemSpacing
             interactive: false
 
             delegate: Item {
 
-                width: nextDaysView.width
-                height: nextDayHeight
+                width: nextDaysView.width - 50
+                height: (defaultFontPixelSize * 3.6)
 
                 property string svgLineName: 'horizontal-line'
 
-                PlasmaCore.SvgItem {
-                    id: dayTitleLine
+                KSvg.SvgItem {
+                    anchors.top: dayTitleText.top
                     width: parent.width
                     height: lineSvg.elementSize(svgLineName).height
                     elementId: svgLineName
-                    svg: PlasmaCore.Svg {
+                    svg: KSvg.Svg {
                         id: lineSvg
                         imagePath: 'widgets/line'
                     }
@@ -130,186 +134,185 @@ Item {
 
                 PlasmaComponents.Label {
                     id: dayTitleText
-
-                    anchors.top: dayTitleLine.bottom
-                    anchors.topMargin: units.smallSpacing * 0.5
+                    anchors.topMargin: Kirigami.Units.smallSpacing * 0.5
                     verticalAlignment: Text.AlignTop
-
                     text: dayTitle
+                    font.pixelSize: defaultFontPixelSize * 1.5
+                    font.bold: true
                 }
 
-
-
-                /*
-                *
-                * four item data
-                *
-                */
-                property double periodMargin: defaultFontPixelSize * 1.5
-                property double periodItemWidth: (width - periodMargin * 4) / 4
-                property double periodItemHeight: nextDayHeight - headingTopMargin
-                property double periodFontSize: periodItemHeight * 0.45
+                property double periodMargin: defaultFontPixelSize * 0.5
+                property double periodItemWidth: (nextDaysView.width - 10 - (periodMargin * 4)) / 4
+                property double periodItemHeight: defaultFontPixelSize * 2
 
                 Item {
 
-                    anchors.top: parent.top
-                    anchors.topMargin: headingTopMargin
-
+                    anchors.top: dayTitleText.bottom
                     height: periodItemHeight
 
                     NextDayPeriodItem {
                         id: period1
+
                         width: periodItemWidth
                         height: parent.height
+
                         temperature: temperature0
                         iconName: iconName0
                         hidden: hidden0
-                        past: isPast0
-                        partOfDay: 1
-                        pixelFontSize: periodFontSize
+                        partOfDay: partOfDay0
+                        pixelFontSize: defaultFontPixelSize * 1.5
                     }
 
                     NextDayPeriodItem {
                         id: period2
-                        width: periodItemWidth
-                        height: parent.height
-                        temperature: temperature1
-                        iconName: iconName1
-                        hidden: hidden1
-                        past: isPast1
-                        partOfDay: 0
-                        pixelFontSize: periodFontSize
 
                         anchors.left: period1.right
                         anchors.leftMargin: periodMargin
+
+                        width: periodItemWidth
+                        height: parent.height
+
+                        temperature: temperature1
+                        iconName: iconName1
+                        hidden: hidden1
+                        partOfDay: partOfDay1
+                        pixelFontSize: defaultFontPixelSize * 1.5
                     }
 
                     NextDayPeriodItem {
                         id: period3
-                        width: periodItemWidth
-                        height: parent.height
-                        temperature: temperature2
-                        iconName: iconName2
-                        hidden: hidden2
-                        past: isPast2
-                        partOfDay: 0
-                        pixelFontSize: periodFontSize
 
                         anchors.left: period2.right
                         anchors.leftMargin: periodMargin
+
+                        width: periodItemWidth
+                        height: parent.height
+
+                        temperature: temperature2
+                        iconName: iconName2
+                        hidden: hidden2
+                        partOfDay: partOfDay3
+                        pixelFontSize: defaultFontPixelSize * 1.5
                     }
 
                     NextDayPeriodItem {
                         id: period4
-                        width: periodItemWidth
-                        height: parent.height
-                        temperature: temperature3
-                        iconName: iconName3
-                        hidden: hidden3
-                        past: isPast3
-                        partOfDay: 1
-                        pixelFontSize: periodFontSize
 
                         anchors.left: period3.right
                         anchors.leftMargin: periodMargin
+
+                        width: periodItemWidth
+                        height: parent.height
+
+                        temperature: temperature3
+                        iconName: iconName3
+                        hidden: hidden3
+                        partOfDay: partOfDay3
+                        pixelFontSize: defaultFontPixelSize * 1.5
                     }
                 }
-
             }
         }
     }
 
+    Rectangle {
+        id: frFooter
 
+        anchors.bottom: fullRepresentation.bottom
+        anchors.left: fullRepresentation.left
+        anchors.right: fullRepresentation.right
+        height: footerHeight
 
+        color: Kirigami.Theme.backgroundColor
 
-    /*
-     *
-     * FOOTER
-     *
-     */
-    MouseArea {
-        id: reloadMouseArea
+        MouseArea {
+            id: lastReloadArea
+            cursorShape: Qt.PointingHandCursor
 
-        anchors.top: nextDays.bottom
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
-        anchors.topMargin: units.smallSpacing
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
 
-        width: lastReloadedTextComponent.contentWidth
-        height: lastReloadedTextComponent.contentHeight
+            height: footerHeight
+            width: parent.width * 0.25
 
-        hoverEnabled: true
-        cursorShape: Qt.PointingHandCursor
+            hoverEnabled: true
 
-        PlasmaComponents.Label {
-            id: lastReloadedTextComponent
-            anchors.fill: parent
+            PlasmaComponents.Label {
+                id: lastReloadedTextComponent
 
-            verticalAlignment: Text.AlignTop
+                anchors.fill: parent
 
-            text: lastReloadedText
+                text: main.lastReloadedText
+
+                color: Kirigami.Theme.textColor
+                elide: Text.ElideRight
+                maximumLineCount: 3
+                verticalAlignment: Text.AlignBottom
+                wrapMode: Text.WordWrap
+            }
+
+            PlasmaComponents.Label {
+                id: reloadTextComponent
+
+                anchors.fill: parent
+
+                text: '\u21bb '+ i18n("Reload")
+
+                verticalAlignment: Text.AlignBottom
+                visible: false
+            }
+
+            onClicked: {
+                main.loadDataFromInternet()
+            }
+            onEntered: {
+                lastReloadedTextComponent.visible = false
+                reloadTextComponent.visible = true
+            }
+            onExited: {
+                lastReloadedTextComponent.visible = true
+                reloadTextComponent.visible = false
+            }
         }
 
-        PlasmaComponents.Label {
-            id: reloadTextComponent
-            anchors.fill: parent
+        MouseArea {
+            // id: frFooter
 
-            verticalAlignment: Text.AlignTop
+            cursorShape: Qt.PointingHandCursor
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            anchors.left: lastReloadArea.right
 
-            text: '\u21bb '+ i18n("Reload")
-            visible: false
+            hoverEnabled: true
+
+            PlasmaComponents.Label {
+                id: creditText
+                anchors.fill: parent
+
+                text: main.currentPlace.creditLabel
+
+                color: Kirigami.Theme.textColor
+                font: Kirigami.Theme.smallFont
+
+                elide: Text.ElideRight
+                horizontalAlignment: Text.AlignRight
+                verticalAlignment: Text.AlignBottom
+                maximumLineCount: 3
+                wrapMode: Text.WordWrap
+
+            }
+
+            onClicked: {
+                Qt.openUrlExternally(main.currentPlace.creditLink)
+            }
+            onEntered: {
+                creditText.font.underline = true
+            }
+            onExited: {
+                creditText.font.underline = false
+            }
         }
 
-        onEntered: {
-            lastReloadedTextComponent.visible = false
-            reloadTextComponent.visible = true
-        }
-
-        onExited: {
-            lastReloadedTextComponent.visible = true
-            reloadTextComponent.visible = false
-        }
-
-        onClicked: {
-            main.reloadData()
-        }
     }
-
-
-    PlasmaComponents.Label {
-        id: creditText
-
-        anchors.top: nextDays.bottom
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.left: reloadMouseArea.right
-        anchors.topMargin: units.smallSpacing
-        anchors.leftMargin: units.largeSpacing
-
-        text: creditLabel
-        wrapMode: Text.WordWrap
-        maximumLineCount: 3
-        elide: Text.ElideRight
-    }
-
-    MouseArea {
-        cursorShape: Qt.PointingHandCursor
-        anchors.fill: creditText
-
-        hoverEnabled: true
-
-        onClicked: {
-            dbgprint('opening: ', creditLink)
-            Qt.openUrlExternally(creditLink)
-        }
-
-        onEntered: {
-            creditText.font.underline = true
-        }
-
-        onExited: {
-            creditText.font.underline = false
-        }
-    }
-
 }

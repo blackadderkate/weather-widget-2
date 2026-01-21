@@ -1,13 +1,13 @@
-import QtQuick 2.2
+import QtQuick 2.15
 import "../../code/model-utils.js" as ModelUtils
 import "../../code/data-loader.js" as DataLoader
 import "../../code/unit-utils.js" as UnitUtils
-import "../../code/db/timezoneData.js" as TZ
-
-
 
 Item {
     id: metno
+
+
+
 
     property var locale: Qt.locale()
     property string providerId: 'metno'
@@ -22,8 +22,9 @@ Item {
     }
 
     function extLongLat(placeIdentifier) {
-        return placeIdentifier.substr(placeIdentifier.indexOf("lat=" )+4,placeIdentifier.indexOf("&lon=")-4) +","+
-               placeIdentifier.substr(placeIdentifier.indexOf("&lon=")+5,placeIdentifier.indexOf("&altitude=")-placeIdentifier.indexOf("&lon=")-5)
+        dbgprint(placeIdentifier)
+        return placeIdentifier.substr(placeIdentifier.indexOf("lat=" ) + 4,placeIdentifier.indexOf("&lon=")-4) + "," +
+        placeIdentifier.substr(placeIdentifier.indexOf("&lon=") + 5,placeIdentifier.indexOf("&altitude=") - placeIdentifier.indexOf("&lon=") - 5)
     }
 
     function getCreditLink(placeIdentifier) {
@@ -35,24 +36,36 @@ Item {
     }
 
     function loadDataFromInternet(successCallback, failureCallback, locationObject) {
+
+        dbgprint2("loadDataFromInternet: " + currentPlace.alias)
+
         var placeIdentifier = locationObject.placeIdentifier
+        weatherDataFlag = false
+        sunRiseSetFlag = false
+        var TZURL = ""
+
+        if (currentPlace.timezoneID === -1) {
+            console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
+            TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
+        } else {
+            dbgprint("Timezone Data is available - using met.no API")
+
+            TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
+            //            TZURL += "&offset=" + calculateOffset(currentPlace.timezoneOffset)
+        }
+        if (! useOnlineWeatherData) {
+            TZURL = Qt.resolvedUrl('../../code/weather/sun.json')
+        }
+        dbgprint("Downloading Sunrise / Sunset Data from: " + TZURL)
+        var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
+        return [xhr1]
 
         function successWeather(jsonString) {
             var readingsArray = JSON.parse(jsonString)
-            actualWeatherModel.clear()
-            var currentWeather = readingsArray.properties.timeseries[0]
-            var futureWeather = readingsArray.properties.timeseries[1]
-            var iconnumber = geticonNumber(currentWeather.data.next_1_hours.summary.symbol_code)
-            var wd = currentWeather.data.instant.details["wind_from_direction"]
-            var ws = currentWeather.data.instant.details["wind_speed"]
-            var ap = currentWeather.data.instant.details["air_pressure_at_sea_level"]
-            var hm = currentWeather.data.instant.details["relative_humidity"]
-            var cld = currentWeather.data.instant.details["cloud_area_fraction"]
-            actualWeatherModel.append({"temperature": currentWeather.data.instant.details["air_temperature"], "iconName": iconnumber, "windDirection": wd,"windSpeedMps": ws, "pressureHpa": ap, "humidity": hm, "cloudiness": cld})
-            additionalWeatherInfo.nearFutureWeather.temperature = futureWeather.data.instant.details["air_temperature"]
-            additionalWeatherInfo.nearFutureWeather.iconName = geticonNumber(futureWeather.data.next_1_hours.summary.symbol_code)
+            updatecurrentWeather(readingsArray)
             updateNextDaysModel(readingsArray)
             buildMetogramData(readingsArray)
+            refreshTooltipSubText()
             loadCompleted()
         }
 
@@ -61,14 +74,166 @@ Item {
             return new Date(Date.UTC(b[0], --b[1], b[2], b[3], b[4], b[5], b[6]))
         }
 
+        function updatecurrentWeather(readingsArray) {
+            dbgprint2("Build Current Weather")
+
+            var currentWeather = readingsArray.properties.timeseries[0]
+            var futureWeather = readingsArray.properties.timeseries[1]
+            currentWeatherModel.iconName = geticonNumber(currentWeather.data.next_1_hours.summary.symbol_code)
+            currentWeatherModel.windDirection = currentWeather.data.instant.details["wind_from_direction"]
+            currentWeatherModel.windSpeedMps = currentWeather.data.instant.details["wind_speed"]
+            currentWeatherModel.pressureHpa = currentWeather.data.instant.details["air_pressure_at_sea_level"]
+            currentWeatherModel.humidity = currentWeather.data.instant.details["relative_humidity"]
+            currentWeatherModel.cloudiness = currentWeather.data.instant.details["cloud_area_fraction"]
+            currentWeatherModel.temperature = currentWeather.data.instant.details["air_temperature"]
+            currentWeatherModel.nearFutureWeather.temperature = futureWeather.data.instant.details["air_temperature"]
+            currentWeatherModel.nearFutureWeather.iconName = geticonNumber(futureWeather.data.next_1_hours.summary.symbol_code)
+
+            let sunRise = UnitUtils.convertDate(currentWeatherModel.sunRise,2,currentPlace.timezoneOffset)
+            let sunSet = UnitUtils.convertDate(currentWeatherModel.sunSet,2,currentPlace.timezoneOffset)
+            let updated = UnitUtils.convertDate(new Date(readingsArray.properties.timeseries[0].time) , 2 , currentPlace.timezoneOffset)
+
+            dbgprint("Updated=" + readingsArray.properties.timeseries[0].time + "\t" + currentWeatherModel.sunRise + "\t" + currentWeatherModel.sunSet)
+            dbgprint("Updated=" + updated/1000 + "\t" + sunRise/1000 + "\t" + sunSet/1000)
+            dbgprint("Updated=" + updated/1000 + "\t" + (updated > sunRise) + "\t" + (updated < sunSet))
+            currentWeatherModel.isDay = ((updated > sunRise) && (updated < sunSet)) ? 0 : 1
+
+            dbgprint(JSON.stringify(currentWeatherModel))
+        }
+
+        function createDate(t) {
+            let arr = t.split(":")
+            return Date.parse(new Date(1970, 1, 1, arr[0], arr[1], 0))/1000
+        }
+
+        function updateNextDaysModel(readingsArray) {
+            dbgprint2("updateNextDaysModel")
+            nextDaysModel.clear()
+
+            function blankObject() {
+                const myblankObject = {}
+                for(let f = 0; f < 4; f++) {
+                    myblankObject["temperature" + f] = -999
+                    myblankObject["iconName" + f] = ""
+                    myblankObject['hidden' + f] = true
+                }
+                return myblankObject
+            }
+
+            let offset = 0
+            switch (main.timezoneType) {
+                case (0):
+                    offset = dataSource.data["Local"]["Offset"]
+                    break;
+                case (1):
+                    offset = 0
+                    break;
+                case (2):
+                    offset = currentPlace.timezoneOffset
+                    break;
+            }
+
+            let wd = readingsArray.properties.timeseries
+            let wdPtr = 0
+            var localTime =  UnitUtils.convertDate(new Date(wd[wdPtr].time), 2, currentPlace.timezoneOffset)
+            var displayTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), main.timezoneType, offset)
+            while ((wdPtr < wd.length) && ((displayTime.getHours() - 3) % 6 ) != 0) {
+
+                wdPtr++
+                displayTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), main.timezoneType, offset)
+            }
+            let x = 0
+            let y = 0
+            let nextDaysData = blankObject()
+            let airTemp = -999
+
+            var sunrise1 = UnitUtils.convertDate(currentWeatherModel.sunRise,2,currentPlace.timezoneOffset)
+            var sunset1 = UnitUtils.convertDate(currentWeatherModel.sunSet,2,currentPlace.timezoneOffset)
+            dbgprint("**********************")
+            dbgprint(sunrise1 + "\t" + sunset1)
+            var ss = Date.parse(sunset1) / 1000
+            var sr = Date.parse(sunrise1) / 1000
+
+            while (wd[wdPtr].data.next_1_hours !== undefined) {
+                localTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), 2, currentPlace.timezoneOffset)
+                displayTime = UnitUtils.convertDate(new Date(wd[wdPtr].time), main.timezoneType, offset)
+                let lt = Date.parse(localTime) / 1000
+
+                while (lt > (sr + 86400)) {
+                    dbgprint("+")
+                    sr = sr + 86400
+                    ss = ss + 86400
+                }
+                if (displayTime.getHours() % 6 === 3) {
+                    let isDayTime =  ((lt >= sr ) && (lt <= ss)) ? 0 : 1
+                    y = Math.trunc(displayTime.getHours() / 6,0)
+                    dbgprint("wdPtr:" + wdPtr + "\t" + wd[wdPtr].time + "\t x = " + x + "\t y = " + y)
+                    dbgprint(isDayTime + "\t\t" + displayTime + "\t" + localTime+ "\t" + new Date(sr * 1000) + "\t" + new Date(ss * 1000) )
+                    nextDaysData['dayTitle'] = composeNextDayTitle(displayTime)
+                    nextDaysData['temperature' + y] = wd[wdPtr].data.instant.details["air_temperature"]
+                    nextDaysData['hidden' + y] = false
+                    let obj = wd[wdPtr].data.next_1_hours.summary["symbol_code"]
+                    nextDaysData['iconName' + y] = geticonNumber(obj)
+                    nextDaysData['partOfDay' + y] = isDayTime
+                    if (y == 3) {
+                        nextDaysModel.append(nextDaysData)
+                        nextDaysData=blankObject()
+                        x++
+                    }
+
+                }
+                wdPtr++
+            }
+
+            while ((wdPtr < wd.length) && (wd[wdPtr].data.next_6_hours !== undefined))
+            {
+                let t = new Date(wd[wdPtr].time)
+                t.setHours(t.getHours() + 3)
+                localTime = UnitUtils.convertDate(t, 2, currentPlace.timezoneOffset)
+                displayTime = UnitUtils.convertDate(t, main.timezoneType, offset)
+                let lt = Date.parse(localTime) / 1000
+
+                while (lt > (sr + 86400)) {
+                    dbgprint("+")
+                    sr = sr + 86400
+                    ss = ss + 86400
+                }
+                dbgprint("****\t" + displayTime.getHours())
+                {
+                    let isDayTime =  ((lt >= sr ) && (lt <= ss)) ? 0 : 1
+                    y = Math.trunc(displayTime.getHours() / 6,0)
+                    dbgprint("wdPtr:" + wdPtr + "\t" + wd[wdPtr].time + "\t x = " + x + "\t y = " + y)
+                    dbgprint(isDayTime + "\t\t" + displayTime + "\t" + localTime+ "\t" + new Date(sr * 1000) + "\t" + new Date(ss * 1000) )
+                    dbgprint("\t\t" + displayTime + "\t" + lt+ "\t" + (sr) + "\t" + (ss) )
+                    nextDaysData['dayTitle'] = composeNextDayTitle(displayTime)
+                    nextDaysData['temperature' + y] = wd[wdPtr].data.instant.details["air_temperature"]
+                    nextDaysData['hidden' + y] = false
+                    let obj = wd[wdPtr].data.next_6_hours.summary["symbol_code"]
+                    nextDaysData['iconName' + y] = geticonNumber(obj)
+                    nextDaysData['partOfDay' + y] = isDayTime
+                    if (y == 3) {
+                        nextDaysModel.append(nextDaysData)
+                        nextDaysData=blankObject()
+                        x++
+                    }
+                }
+                wdPtr++
+            }
+            if ((y < 3) && (x < 8)) {
+                nextDaysModel.append(nextDaysData)
+            }
+            dbgprint("nextDaysModel Count:" + nextDaysModel.count)
+        }
+
         function buildMetogramData(readingsArray) {
+            dbgprint2("buildMetogramData (MetNo)" + currentPlace.identifier)
             meteogramModel.clear()
             var readingsLength = (readingsArray.properties.timeseries.length)
             var dateFrom = parseISOString(readingsArray.properties.timeseries[0].time)
-            var sunrise1 = UnitUtils.convertDate(additionalWeatherInfo.sunRise,2,main.timezoneOffset)
-            var sunset1 = UnitUtils.convertDate(additionalWeatherInfo.sunSet,2,main.timezoneOffset)
-            dbgprint("Sunrise \t(GMT)" + new Date(additionalWeatherInfo.sunRise).toTimeString() + "\t(LOCAL)" + sunrise1.toTimeString())
-            dbgprint("Sunset \t(GMT)" + new Date(additionalWeatherInfo.sunSet).toTimeString() + "\t(LOCAL)" + sunset1.toTimeString())
+            var sunrise1 = UnitUtils.convertDate(currentWeatherModel.sunRise,2,currentPlace.timezoneOffset)
+            var sunset1 = UnitUtils.convertDate(currentWeatherModel.sunSet,2,currentPlace.timezoneOffset)
+            dbgprint("Sunrise \t(GMT)" + new Date(currentWeatherModel.sunRise).toTimeString() + "\t(LOCAL)" + sunrise1.toTimeString())
+            dbgprint("Sunset \t(GMT)" + new Date(currentWeatherModel.sunSet).toTimeString() + "\t(LOCAL)" + sunset1.toTimeString())
             var isDaytime = (dateFrom > sunrise1) && (dateFrom < sunset1)
 
             var precipitation_unit = readingsArray.properties.meta.units["precipitation_amount"]
@@ -84,35 +249,34 @@ Item {
                 var icon = obj.data.next_1_hours.summary["symbol_code"]
                 var prec = obj.data.next_1_hours.details["precipitation_amount"]
                 counter = (prec > 0) ? counter + 1 : 0
-                let localtimestamp=UnitUtils.convertDate(dateFrom,2,main.timezoneOffset)
+                let localtimestamp = UnitUtils.convertDate(dateFrom, 2 , currentPlace.timezoneOffset)
                 if (localtimestamp >= sunrise1) {
-                  if (localtimestamp < sunset1) {
-                    isDaytime = true
-                  } else {
-                    sunrise1.setDate(sunrise1.getDate() + 1)
-                    sunset1.setDate(sunset1.getDate() + 1)
-                    isDaytime = false
-                  }
+                    if (localtimestamp < sunset1) {
+                        isDaytime = true
+                    } else {
+                        sunrise1.setDate(sunrise1.getDate() + 1)
+                        sunset1.setDate(sunset1.getDate() + 1)
+                        isDaytime = false
+                    }
                 }
-                dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,main.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString())
-                dbgprint(isDaytime ? "isDay\n" : "isNight\n")
+                dbgprint("DateFrom=" + dateFrom.toISOString() + "\tLocal Time=" + UnitUtils.convertDate(dateFrom,2,currentPlace.timezoneOffset).toTimeString() + "\t Sunrise=" + sunrise1.toTimeString() + "\tSunset=" + sunset1.toTimeString() + "\t" + (isDaytime ? "isDay\n" : "isNight\n"))
                 meteogramModel.append({
                     from: dateFrom,
                     to: dateTo,
                     isDaytime: isDaytime,
-                    temperature: airtmp,
-                    precipitationAvg: prec,
-                    precipitationMax: prec,
-                    precipitationLabel: (counter === 1) ? "mm" : "",
-                    windDirection: parseFloat(wd),
-                    windSpeedMps: parseFloat(ws),
-                    pressureHpa: parseFloat(ap),
-                    iconName: geticonNumber(icon)
+                    temperature: parseFloat(airtmp),
+                                      precipitationAvg: parseFloat(prec),
+                                      precipitationMax: parseFloat(prec),
+                                      precipitationLabel: (counter === 1) ? "mm" : "",
+                                      windDirection: parseFloat(wd),
+                                      windSpeedMps: parseFloat(ws),
+                                      pressureHpa: parseFloat(ap),
+                                      iconName: geticonNumber(icon)
                 })
                 dateFrom = dateTo
                 i++
             }
-            main.meteogramModelChanged = !main.meteogramModelChanged
+            main.loadingDataComplete = true
         }
 
         function formatTime(ISOdate) {
@@ -127,164 +291,65 @@ Item {
             return Qt.locale().dayName(date.getDay(), Locale.ShortFormat) + ' ' + date.getDate() + '/' + (date.getMonth() + 1)
         }
 
-        function updateNextDaysModel(readingsArray) {
-
-            function resetobj() {
-                var obj = {}
-                obj.hidden0 = true
-                obj.isPast0 = true
-                obj.hidden1 = true
-                obj.isPast1 = true
-                obj.hidden2 = true
-                obj.isPast2 = true
-                obj.hidden3 = true
-                obj.isPast3 = true
-                return obj
-            }
-
-            nextDaysModel.clear()
-            var readingsLength = (readingsArray.properties.timeseries.length) - 1
-            var dateNow = new Date()
-            var obj = resetobj()
-            for (var i = 0; i < readingsLength; i++) {
-                var reading = readingsArray.properties.timeseries[i]
-                var readingDate = new Date(Date.parse(reading.time)).toLocaleDateString(locale, 'ddd d MMM')
-                var readingTime = formatTime(reading.time)
-                if (reading.data.next_1_hours) {
-                    var iconnumber = geticonNumber(reading.data.next_1_hours.summary.symbol_code)
-                }
-                else if (reading.data.next_6_hours) {
-                    var iconnumber = geticonNumber(reading.data.next_6_hours.summary.symbol_code)
-                } else {
-                  var iconnumber = undefined
-                }
-                var temperature = reading.data.instant.details["air_temperature"]
-
-                if (readingTime === "00:00") {
-                    if ( !(obj.isPast0 && obj.isPast1 && obj.isPast2 && obj.isPast3) && (nextDaysModel.count < 8)) {
-                    nextDaysModel.append(obj) }
-                    obj = resetobj()
-                    obj.dayTitle = readingDate
-                }
-
-                if ((readingTime === "00:00") ||  (readingTime === "03:00")) {
-                    obj.temperature0 = temperature
-                    obj.iconName0 = iconnumber
-                    obj.hidden0 = false
-                    obj.isPast0 = false
-                }
-
-                if  ((readingTime === "06:00") ||  (readingTime === "09:00")) {
-                    obj.temperature1 = temperature
-                    obj.iconName1 = iconnumber
-                    obj.hidden1 = false
-                    obj.isPast1 = false
-                }
-
-                if  ((readingTime === "12:00") ||  (readingTime === "15:00")) {
-                    obj.temperature2 = temperature
-                    obj.iconName2 = iconnumber
-                    obj.hidden2 = false
-                    obj.isPast2 = false
-                }
-
-                if  ((readingTime === "18:00") ||  (readingTime === "21:00")) {
-                    obj.temperature3 = temperature
-                    obj.iconName3 = iconnumber
-                    obj.hidden3 = false
-                    obj.isPast3 = false
-                    if (! obj.dayTitle) {
-                        obj.dayTitle = readingDate
-                    }
-                }
-            }
-            main.nextDaysCount = nextDaysModel.count
-        }
-
         function successSRAS(jsonString) {
-            dbgprint("succesSRAS")
-            var readingsArray=JSON.parse(jsonString)
+            dbgprint2("successSRAS")
+            var readingsArray = JSON.parse(jsonString)
+            dbgprint("Sunrise:" + JSON.stringify(readingsArray.properties.sunrise))
+            let offset = 0
+            switch (main.timezoneType) {
+                case (0):
+                    offset = dataSource.data["Local"]["Offset"]
+                    break;
+                case (1):
+                    offset = 0
+                    break;
+                case (2):
+                    offset = currentPlace.timezoneOffset
+                    break;
+            }
+
             if ((readingsArray.properties !== undefined)) {
-                additionalWeatherInfo.sunRise = new Date(readingsArray.properties.sunrise.time)
-                additionalWeatherInfo.sunSet = new Date(readingsArray.properties.sunset.time)
+                currentWeatherModel.sunRise = new Date(readingsArray.properties.sunrise.time)
+                currentWeatherModel.sunSet = new Date(readingsArray.properties.sunset.time)
+
+                currentWeatherModel.sunRiseTime = UnitUtils.convertDate(currentWeatherModel.sunRise, main.timezoneType, offset).toTimeString()
+                currentWeatherModel.sunSetTime = UnitUtils.convertDate(currentWeatherModel.sunSet, main.timezoneType, offset).toTimeString()
             }
-            if ((readingsArray.results !== undefined)) {
-                additionalWeatherInfo.sunRise = new Date(readingsArray.results.sunrise)
-                additionalWeatherInfo.sunSet = new Date(readingsArray.results.sunset)
+            dbgprint(JSON.stringify(currentWeatherModel))
+            sunRiseSetFlag = true
+            var weatherURL = urlPrefix + placeIdentifier
+            if (! useOnlineWeatherData) {
+                weatherURL = Qt.resolvedUrl('../../code/weather/weather.json')
             }
-            additionalWeatherInfo.sunRiseTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunRise,main.timezoneType,main.timezoneOffset).toISOString())
-            additionalWeatherInfo.sunSetTime=formatTime(UnitUtils.convertDate(additionalWeatherInfo.sunSet,main.timezoneType,main.timezoneOffset).toISOString())
-            sunRiseSetFlag=true
-            var xhr2 = DataLoader.fetchJsonFromInternet(urlPrefix + placeIdentifier, successWeather, failureCallback)
-//             var xhr2 = DataLoader.fetchJsonFromInternet('http://localhost/weather.json', successWeather, failureCallback)
+            dbgprint("Downloading Weather Data from: " + weatherURL)
+            var xhr2 = DataLoader.fetchJsonFromInternet(weatherURL, successWeather, failureCallback)
         }
 
         function failureCallback() {
             dbgprint("DOH!")
+            currentWeatherModel = emptyWeatherModel()
+            // loadingData.loadingDatainProgress=false
+            main.loadingDataComplete = true
         }
 
         function loadCompleted() {
-            refreshTooltipSubText()
             successCallback()
         }
 
         function calculateOffset(seconds) {
-          let hrs = String("0" + Math.floor(Math.abs(seconds) / 3600)).slice(-2)
-          let mins = String("0" + (seconds % 3600)).slice(-2)
-          let sign = (seconds >= 0) ? "+" : "-"
-          return(sign + hrs + ":" + mins)
+            let hrs = String("0" + Math.floor(Math.abs(seconds) / 3600)).slice(-2)
+            let mins = String("0" + (seconds % 3600)).slice(-2)
+            let sign = (seconds >= 0) ? "+" : "-"
+            return(sign + hrs + ":" + mins)
         }
-
-        function isDST(DSTPeriods) {
-          if(DSTPeriods === undefined)
-            return (false)
-
-          let now = new Date().getTime() / 1000
-          let isDSTflag = false
-          for (let f = 0; f < DSTPeriods.length; f++) {
-            if ((now >= DSTPeriods[f].DSTStart) && (now <= DSTPeriods[f].DSTEnd)) {
-              isDSTflag = true
-            }
-          }
-          return(isDSTflag)
-        }
-
-        weatherDataFlag = false
-        sunRiseSetFlag = false
-        var TZURL = ""
-        if (locationObject.timezoneID === -1) {
-          console.log("[weatherWidget] Timezone Data not available - using sunrise-sunset.org API")
-          TZURL = "https://api.sunrise-sunset.org/json?formatted=0&" + placeIdentifier
-        } else {
-          dbgprint("Timezone Data is available - using met.no API")
-          if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
-            timezoneShortName = TZ.TZData[locationObject.timezoneID].DSTName
-          } else {
-            timezoneShortName = TZ.TZData[locationObject.timezoneID].TZName
-          }
-          TZURL = 'https://api.met.no/weatherapi/sunrise/3.0/sun?' + placeIdentifier.replace(/&altitude=[^&]+/,"") + "&date=" + formatDate(new Date().toISOString())
-          if (isDST(TZ.TZData[locationObject.timezoneID].DSTData)) {
-            TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].DSTOffset)
-            main.timezoneOffset = TZ.TZData[locationObject.timezoneID].DSTOffset
-          } else {
-            TZURL += "&offset=" + calculateOffset(TZ.TZData[locationObject.timezoneID].Offset)
-            main.timezoneOffset = TZ.TZData[locationObject.timezoneID].Offset
-          }
-        }
-
-        dbgprint(TZURL);
-
-         var xhr1 = DataLoader.fetchJsonFromInternet(TZURL, successSRAS, failureCallback)
-//        var xhr1 = DataLoader.fetchJsonFromInternet('http://localhost/sunrisesunset.json?'+TZURL, successSRAS, failureCallback)
-        return [xhr1]
     }
 
     function reloadMeteogramImage(placeIdentifier) {
-        main.overviewImageSource = ''
+        main.overviewImageSource = ""
     }
 
     function geticonNumber(text) {
-    var codes = {
+        var codes = {
             "clearsky":    "1",
             "cloudy":    "4",
             "fair":    "2",

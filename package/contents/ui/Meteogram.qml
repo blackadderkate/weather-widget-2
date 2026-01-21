@@ -14,12 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.5
-import QtQuick.Window 2.5
-import QtQml.Models 2.5
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import QtQuick.Controls 2.5
+import QtQuick 2.15
+import QtQuick.Window
+import QtQml.Models
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components 3.0 as PlasmaComponents
+import QtQuick.Controls
+import org.kde.kirigami as Kirigami
 import "../code/unit-utils.js" as UnitUtils
 import "../code/icons.js" as IconTools
 
@@ -28,8 +29,8 @@ Item {
     width: imageWidth
     height: imageHeight + labelHeight// Day Label + Time Label
 
-    property int imageWidth: 800 * Screen.devicePixelRatio - (labelWidth * 2)
-    property int imageHeight: 320 * Screen.devicePixelRatio  - labelHeight - cloudarea - windarea
+    property int imageWidth: 800 - (labelWidth * 2)
+    property int imageHeight: 320  - labelHeight - cloudarea - windarea
     property int labelWidth: textMetrics.width
     property int labelHeight: textMetrics.height
 
@@ -37,7 +38,6 @@ Item {
     property int windarea: 28
 
     property bool meteogramModelChanged: main.meteogramModelChanged
-
 
     property int temperatureYGridCount: 21   // Number of vertical grid Temperature elements
     property double temperatureIncrementDegrees: 0 // Major Step - How much each Temperature grid element rises by in Degrees
@@ -52,31 +52,23 @@ Item {
 
     property int dataArraySize: 2
 
-
-    property bool textColorLight: ((theme.textColor.r + theme.textColor.g + theme.textColor.b) / 3) > 0.5
-    property color gridColor: textColorLight ? Qt.tint(theme.textColor, '#80000000') : Qt.tint(theme.textColor, '#80FFFFFF')
-    property color gridColorHighlight: textColorLight ? Qt.tint(theme.textColor, '#50000000') : Qt.tint(theme.textColor, '#50FFFFFF')
+    property bool textColorLight: ((Kirigami.Theme.textColor.r + Kirigami.Theme.textColor.g + Kirigami.Theme.textColor.b) / 3) > 0.5
+    property color gridColor: textColorLight ? Qt.tint(Kirigami.Theme.textColor, '#80000000') : Qt.tint(Kirigami.Theme.textColor, '#80FFFFFF')
+    property color gridColorHighlight: textColorLight ? Qt.tint(Kirigami.Theme.textColor, '#50000000') : Qt.tint(Kirigami.Theme.textColor, '#50FFFFFF')
     property color pressureColor: textColorLight ? Qt.rgba(0.3, 1, 0.3, 1) : Qt.rgba(0.0, 0.6, 0.0, 1)
     property color temperatureWarmColor: textColorLight ? Qt.rgba(1, 0.3, 0.3, 1) : Qt.rgba(1, 0.0, 0.0, 1)
     property color temperatureColdColor: textColorLight ? Qt.rgba(0.2, 0.7, 1, 1) : Qt.rgba(0.1, 0.5, 1, 1)
     property color rainColor: textColorLight ? Qt.rgba(0.33, 0.66, 1, 1) : Qt.rgba(0, 0.33, 1, 1)
 
 
-    property int precipitationFontPixelSize: 8 * Screen.devicePixelRatio
-    property int precipitationHeightMultiplier: 15 * Screen.devicePixelRatio
-    property int precipitationLabelMargin: 8 * Screen.devicePixelRatio
+    property int precipitationFontPixelSize: 8
+    property int precipitationHeightMultiplier: 15
+    property int precipitationLabelMargin: 8
 
-/*
-    property int temperatureType: 0
-    property int pressureType: 0
-    property int timezoneType: 0
-    property bool twelveHourClockEnabled: false
-    property int windSpeedType: 0
-*/
     property double sampleWidth: imageWidth / (meteogramModel.count - 1)
 
     onMeteogramModelChangedChanged: {
-        dbgprint('meteogram changed')
+        dbgprint2('METEOGRAM changed')
         buildMetogramData()
         processMeteogramData()
         buildCurves()
@@ -95,14 +87,11 @@ Item {
     ListModel {
         id: nextDaysModel
     }
-//     ListModel {
-//         id: meteogramModel
-//     }
 
     TextMetrics {
         id: textMetrics
-        font.family: theme.defaultFont.family
-        font.pixelSize: 11 * Screen.devicePixelRatio
+        font.family: Kirigami.Theme.defaultFont.family
+        font.pixelSize: 11
         text: "999999"
     }
 
@@ -123,24 +112,21 @@ Item {
         border.color:gridColor
         color: "transparent"
     }
+
     ListView {
         id: horizontalLines1
         model: verticalGridModel
-        anchors.left: graphArea.left
-        anchors.top: graphArea.top
-//         anchors.bottom: graphArea.bottom + labelHeight
-//         anchors.fill: graphArea
-        height: graphArea.height + labelHeight
+        anchors.fill: graphArea
         interactive: false
         delegate: Item {
             height: graphArea.height / (temperatureYGridCount - 1)
-            width: graphArea.width
+            width: imageWidth
             visible:  num % 2 === 0
 
             Rectangle {
                 id: gridLine
                 width: parent.width
-                height: 1 * Screen.devicePixelRatio
+                height: 1
                 color: gridColor
             }
             PlasmaComponents.Label {
@@ -152,7 +138,7 @@ Item {
                 anchors.top: gridLine.top
                 anchors.leftMargin: -labelWidth - 2
                 anchors.topMargin: -labelHeight / 2
-                font.pixelSize: 11 * Screen.devicePixelRatio
+                font.pixelSize: 11
                 font.pointSize: -1
             }
             PlasmaComponents.Label {
@@ -164,7 +150,7 @@ Item {
                 anchors.left: gridLine.right
                 anchors.leftMargin: 2
                 horizontalAlignment: Text.AlignLeft
-                font.pixelSize: 11 * Screen.devicePixelRatio
+                font.pixelSize: 11
                 font.pointSize: -1
                 color: pressureColor
             }
@@ -177,12 +163,13 @@ Item {
         horizontalAlignment: (UnitUtils.getPressureEnding(pressureType).length > 4) ? Text.AlignRight : Text.AlignLeft
         anchors.right: (graphArea.right)
         anchors.rightMargin: -labelWidth
-        font.pixelSize: 11 * Screen.devicePixelRatio
+        font.pixelSize: 11
         font.pointSize: -1
         color: pressureColor
         anchors.bottom: graphArea.top
         anchors.bottomMargin: 6
     }
+
     ListView {
         id: hourGrid
         model: hourGridModel
@@ -202,7 +189,6 @@ Item {
             property bool textVisible: hourVisible && index < hourGridModel.count-1
             property int timePeriod: isDaytime ? 0 : 1
 
-
             property double precAvg: parseFloat(precipitationAvg) || 0
             property double precMax: parseFloat(precipitationMax) || 0
 
@@ -210,8 +196,6 @@ Item {
 
             property string precAvgStr: precipitationFormat(precAvg)
             property string precMaxStr: precipitationFormat(precMax)
-
-
 
             Rectangle {
                 id: verticalLine
@@ -223,6 +207,7 @@ Item {
                 anchors.top: parent.top
             }
             anchors.leftMargin: labelWidth
+
             PlasmaComponents.Label {
                 id: hourText
                 text: hourFromStr
@@ -232,19 +217,20 @@ Item {
                 width: hourGrid.hourItemWidth
                 anchors.top: verticalLine.bottom
                 anchors.topMargin: 2
-                //                anchors.horizontalCenter: verticalLine.left
+//                anchors.horizontalCenter: verticalLine.left
                 anchors.horizontalCenter: verticalLine.horizontalCenter
-                font.pixelSize: 11 * Screen.devicePixelRatio
+                font.pixelSize: 11
                 font.pointSize: -1
                 visible: textVisible
             }
+
             PlasmaComponents.Label {
                 text: hourFromEnding
                 verticalAlignment: Text.AlignTop
                 horizontalAlignment: Text.AlignLeft
                 anchors.top: hourText.top
                 anchors.left: hourText.right
-                font.pixelSize: 7 * Screen.devicePixelRatio
+                font.pixelSize: 7
                 font.pointSize: -1
                 visible: textVisible
             }
@@ -254,7 +240,7 @@ Item {
                 return rotation
             }
             function windStrength(windspeed,themecolor) {
-                var img = "images/"
+                var img = "../images/"
                 img += (themecolor) ? "light" : "dark"
                 img += Math.min(5,Math.trunc(windspeed / 5) + 1)
                 return img
@@ -266,6 +252,7 @@ Item {
                 }
                 return ''
             }
+
             Item {
                 id: windspeedAnchor
                 width: parent.width
@@ -297,6 +284,7 @@ Item {
                     anchors.left: parent.left
                     //                    visible: ((windDirection > 0) || (windSpeedMps > 0)) && (! textVisible) && (index > 0) && (index < hourGridModel.count-1)
                 }
+
                 MouseArea {
                     anchors.fill: parent
                     hoverEnabled: true
@@ -318,10 +306,11 @@ Item {
                 anchors.topMargin: -labelHeight
                 anchors.left: parent.left
                 anchors.leftMargin: parent.width / 2
-                font.pixelSize: 11 * Screen.devicePixelRatio
+                font.pixelSize: 11
                 font.pointSize: -1
                 visible: dayBegins && canShowDay
             }
+
             Rectangle {
                 id: precipitationMaxRect
                 width: parent.width
@@ -332,6 +321,7 @@ Item {
                 anchors.bottomMargin: precipitationLabelMargin
                 visible: index < (hourGridModel.count - 1)
             }
+
             PlasmaComponents.Label {
                 width: parent.width
                 text: precMaxStr || precAvgStr
@@ -343,6 +333,7 @@ Item {
                 font.pointSize: -1
                 visible: precLabelVisible
             }
+
             PlasmaComponents.Label {
                 function localisePrecipitationUnit(unitText) {
                     switch (unitText) {
@@ -356,21 +347,19 @@ Item {
                         return unitText
                     }
                 }
+
                 text: localisePrecipitationUnit(precipitationLabel)
                 width: parent.width
-                //                verticalAlignment: Text.AlignTop
-                //                horizontalAlignment: Text.AlignHCenter
                 anchors.left: verticalLine.left
                 anchors.bottom: verticalLine.bottom
-                //                anchors.bottom: verticalLine.bottom
-                anchors.bottomMargin: -precipitationLabelMargin
-                //                anchors.horizontalCenter: precipitationMaxRect.horizontalCenter
+                anchors.bottomMargin: 0
                 font.pixelSize: precipitationFontPixelSize
                 font.pointSize: -1
                 visible: precLabelVisible
             }
+
             PlasmaComponents.Label {
-                font.pixelSize: 14 * Screen.devicePixelRatio
+                font.pixelSize: 14
                 font.pointSize: -1
                 width: parent.width
                 anchors.top: parent.top
@@ -379,56 +368,11 @@ Item {
                 anchors.leftMargin: -8
                 z: 999
                 font.family: 'weathericons'
-                text: (differenceHours === 1 && textVisible) || index === hourGridModel.count-1 || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentProvider.providerId, timePeriod)
+                text: (differenceHours === 1 && textVisible) || index === hourGridModel.count-1 || index === 0 || iconName === '' ? '' : IconTools.getIconCode(iconName, currentPlace.providerId, timePeriod)
                 visible: iconName != "\uf07b"
                 Component.onCompleted: {
-//                   console.log(temperatureYGridCount +" - " + "(" + temperature + " + " + temperatureIncrementDegrees + ") * " +temperatureIncrementPixels + " - " +  font.pixelSize + " * 2.5")
                 }
             }
-            /*
-            Item {
-                visible: canShowPrec
-//                anchors.fill: parent
-                anchors.bottom: verticalLine.bottom
-
-
-
-                Rectangle {
-                    id: precipitationAvgRect
-                    width: parent.width
-                    height: precAvg * precipitationHeightMultiplier
-                    color: theme.highlightColor
-                    anchors.left: parent.horizontalCenter
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: precipitationLabelMargin
-                }
-
-                PlasmaComponents.Label {
-                    function localisePrecipitationUnit(unitText) {
-                        switch (unitText) {
-                        case "mm":
-                            return i18n("mm")
-                        case "cm":
-                            return i18n("cm")
-                        case "in":
-                            return i18n("in")
-                        default:
-                            return unitText
-                        }
-                    }
-                    text: localisePrecipitationUnit(precipitationLabel)
-                    verticalAlignment: Text.AlignTop
-                    horizontalAlignment: Text.AlignHCenter
-                    anchors.top: parent.bottom
-                    anchors.topMargin: -precipitationLabelMargin
-                    anchors.horizontalCenter: precipitationAvgRect.horizontalCenter
-                    font.pixelSize: precipitationFontPixelSize
-                    font.pointSize: -1
-                    visible: precLabelVisible
-                }
-        }
-*/
-
         }
     }
 
@@ -454,12 +398,13 @@ Item {
                     ctx.clearRect(0, 0, width, height)
 
                     ctx.strokeStyle = pressureColor
-                    ctx.lineWidth = 1 * Screen.devicePixelRatio;
+                    ctx.lineWidth = 1
                     ctx.path = pressurePath
                     ctx.stroke()
                 }
             }
         }
+
         Canvas {
             id: meteogramCanvasWarmTemp
             anchors.top: imageWidth.top
@@ -483,7 +428,7 @@ Item {
                 if (ctx !== null) {
                     ctx.clearRect(0, 0, width, height)
                     ctx.strokeStyle = temperatureWarmColor
-                    ctx.lineWidth = 2 * Screen.devicePixelRatio;
+                    ctx.lineWidth = 2
                     ctx.path = temperaturePathWarm
                     ctx.stroke()
                 }
@@ -495,6 +440,7 @@ Item {
             anchors.fill: parent
             anchors.topMargin: meteogramCanvasWarmTemp.height
             clip: true
+
             Canvas {
                 id: meteogramCanvasColdTemp
                 anchors.top: parent.top
@@ -514,7 +460,7 @@ Item {
                         ctx.clearRect(0, 0, width, height)
 
                         ctx.strokeStyle = temperatureColdColor
-                        ctx.lineWidth = 2 * Screen.devicePixelRatio;
+                        ctx.lineWidth = 2
                         ctx.path = temperaturePathCold
                         ctx.stroke()
                     }
@@ -522,6 +468,7 @@ Item {
             }
         }
     }
+
     function repaintCanvas() {
         meteogramCanvasWarmTemp.requestPaint()
         meteogramCanvasColdTemp.requestPaint()
@@ -534,11 +481,25 @@ Item {
     }
 
     function buildMetogramData() {
-        var precipitation_unit = meteogramModel.get(0).precipitationLabel
+        dbgprint2("buildMetogramData (meteogram)")
         var counter = 0
         var i = 0
         const oneHourMs = 3600000
         hourGridModel.clear()
+
+        let offset = 0
+        switch (main.timezoneType) {
+            case (0):
+                offset = dataSource.data["Local"]["timezoneOffset"]
+                break;
+            case (1):
+                offset = 0
+                break;
+            case (2):
+                offset = currentPlace.timezoneOffset
+                break;
+        }
+
         while (i < meteogramModel.count) {
             var obj = meteogramModel.get(i)
             var dateFrom = obj.from
@@ -547,7 +508,7 @@ Item {
             dateFrom.setSeconds(0)
             dateFrom.setMilliseconds(0)
             var differenceHours = Math.floor((dateTo.getTime() - dateFrom.getTime()) / oneHourMs)
-            dbgprint(dateFrom + "\t" + dateTo + "\t" + differenceHours)
+            // dbgprint(dateFrom + "\t" + dateTo + "\t" + differenceHours)
             var differenceHoursMid = Math.ceil(differenceHours / 2) - 1
             var wd = obj.windDirection
             var ws = obj.windSpeedMps
@@ -559,22 +520,21 @@ Item {
             for (var j = 0; j < differenceHours; j++) {
                 counter = (prec > 0) ? counter + 1 : 0
                 var preparedDate = new Date(dateFrom.getTime() + (j * oneHourMs))
-
                 hourGridModel.append({
-                                      dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, main.timezoneOffset),
-                                      iconName: j === differenceHoursMid ? icon : '',
-                                      isDaytime: obj.isDaytime,
-                                      temperature: airtmp,
-                                      precipitationAvg: parseFloat(prec / differenceHours).toFixed(1),
-                                      precipitationLabel: (counter === 1) ? "mm" : "",
-                                      precipitationMax: parseFloat(prec / differenceHours).toFixed(1),
-                                      canShowDay: true,
-                                      canShowPrec: true,
-                                      windDirection: parseFloat(wd),
-                                      windSpeedMps: parseFloat(ws),
-                                      pressureHpa: parseFloat(ap),
-                                      differenceHours: differenceHours
-                                  })
+                                         dateFrom: UnitUtils.convertDate(preparedDate, timezoneType, offset),
+                                         iconName: j === differenceHoursMid ? icon : '',
+                                         isDaytime: obj.isDaytime,
+                                         temperature: airtmp,
+                                         precipitationAvg: parseFloat(prec / differenceHours).toFixed(1),
+                                         precipitationLabel: (counter === 1) ? "mm" : "",
+                                         precipitationMax: parseFloat(prec / differenceHours).toFixed(1),
+                                         canShowDay: true,
+                                         canShowPrec: true,
+                                         windDirection: parseFloat(wd),
+                                         windSpeedMps: parseFloat(ws),
+                                         pressureHpa: parseFloat(ap),
+                                         differenceHours: differenceHours
+                                     })
             }
             i++
         }
@@ -583,7 +543,9 @@ Item {
         }
         hourGridModel.setProperty(hourGridModel.count - 1, 'canShowPrec', false)
     }
+
     function buildCurves() {
+        dbgprint2("buildCurves")
         var newPathElements = []
         var newPressureElements = []
 
@@ -610,6 +572,7 @@ Item {
         pressurePath.pathElements = newPressureElements
         repaintCanvas()
     }
+
     function processMeteogramData() {
         for (var i = 0; i <= temperatureYGridCount; i++) {
             verticalGridModel.append({ num: i })
@@ -641,10 +604,10 @@ Item {
                 maxValue = value
             }
         }
+
         var mid = (maxValue - minValue) / 2 + minValue
         var halfSize = temperatureYGridCount / 2
 
         temperatureIncrementDegrees = Math.round(- (mid - halfSize))
-
     }
 }
