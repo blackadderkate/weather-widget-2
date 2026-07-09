@@ -1,0 +1,436 @@
+# Georgian translation for weatherWidget-2.
+# Copyright (C) 2026 weatherWidget-2's authors.
+# This file is distributed under the same license as the weatherWidget-2 package.
+# Ekaterine Papava <papava.e@gtu.ge>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: weatherWidget-2\n"
+"Report-Msgid-Bugs-To: https://github.com/blackadderkate/weather-widget-2\n"
+"POT-Creation-Date: 2022-09-29 19:30+0700\n"
+"PO-Revision-Date: 2026-07-09 12:46+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <(nothing)>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ../../package/metadata.desktop
+msgid "Weather Widget 2"
+msgstr "Weather Widget 2"
+
+#: ../../package/metadata.desktop
+msgid "Plasmoid showing weather information from met.no server"
+msgstr "პლაზმოიდი, რომელიც აჩვენებს ამინდის ინფორმაციას met.no სერვერიდან"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 m"
+msgstr "%1 წთ"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 h"
+msgstr "%1 სთ"
+
+#: ../../package/contents/code/data-loader.js
+msgid "%1 d"
+msgstr "%1 დ"
+
+#: ../../package/contents/code/data-loader.js
+msgid "hours"
+msgstr "საათი"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°C"
+msgstr "°C"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "°F"
+msgstr "°F"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "K"
+msgstr "K"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "inHg"
+msgstr "დუიმ.ვცწყ"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mmHg"
+msgstr "მმვცწყ"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "hPa"
+msgstr "ჰპა"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "mph"
+msgstr "მ/სთ"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "km/h"
+msgstr "კმ/სთ"
+
+#: ../../package/contents/code/unit-utils.js
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "m/s"
+msgstr "მ/წმ"
+
+#: ../../package/contents/config/config.qml
+msgid "General"
+msgstr "ზოგადი"
+
+#: ../../package/contents/config/config.qml
+msgid "Appearance"
+msgstr "გარეგნობა"
+
+#: ../../package/contents/config/config.qml
+msgid "Units"
+msgstr "საზომი ერთეულები"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Use default font"
+msgid "Default"
+msgstr "ნაგულისხმევი"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout"
+msgstr "განლაგება"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Layout type:"
+msgstr "განლაგების ტიპი:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Horizontal"
+msgstr "ჰორიზონტალური"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "NOTE: Setting layout type for in-tray plasmoid has no effect."
+msgstr ""
+"შენიშვნა: სისტემურ კუთხეში პლაზმოიდის განლაგების ტიპის დაყენებას ეფექტი "
+"არ აქვს."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Vertical"
+msgstr "ვერტიკალური"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Compact"
+msgstr "კომპაქტური"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "In-Tray Settings"
+msgstr "საათთან ჩაკეცვის მორგება"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Active timeout:"
+msgstr "აქტიური მოლოდინის ვადა:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "Abbreviation for seconds"
+msgid "sec"
+msgstr "წმ"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid ""
+"NOTE: After this timeout widget will be hidden in system tray until "
+"refreshed. You can always set the widget to be always \"Shown\" in system "
+"tray \"Entries\" settings."
+msgstr ""
+"შენიშვნა: ამ დროის შემდეგ ვიჯეტი დაიმალება სისტემურ კუთხეში შემდეგ "
+"განახლებამდე. ყოველთვის შეგიძლიათ, დააყენოთ ისე, რომ ვიჯეტი ყოველთვის "
+"\"გამოჩნდეს\" სისტემური კუთხის \"ჩანაწერების\" პარამეტრიდან."
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font style:"
+msgstr "ვიჯეტის ფონტის სტილი:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgid "Widget font size:"
+msgstr "ვიჯეტის ფონტის ზომა:"
+
+#: ../../package/contents/ui/config/ConfigAppearance.qml
+msgctxt "pixels"
+msgid "px"
+msgstr "px"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Open Weather Map Place"
+msgstr "Open Weather Map-ის ადგილის დამატება"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Paste URL here"
+msgstr "ჩასვით URL აქ"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "City alias"
+msgstr "ქალაქის მეტსახელი"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Find your city ID by searching here:"
+msgstr "იპოვეთ თქვენი ქალაქის ID აქ ძებნით:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"...and paste here the whole URL\n"
+"e.g. http://openweathermap.org/city/2946447 for Bonn, Germany."
+msgstr ""
+"... და ჩასვით აქ მთელი URL\n"
+"მაგალითად, http://openweathermap.org/city/2946447 ბონისთვის (გერმანია)."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Error!"
+msgstr "შეცდომა!"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Confirmation"
+msgstr "დადასტურება"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Do you want to select this place?"
+msgstr "გნებავთ ამ ადგილის არჩევა?"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Add Met.no Map Place"
+msgstr "Met.no რუკის ადგილის დამატება"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not valid."
+msgstr "განედი არასწორია."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Latitude is not between -90 and 90."
+msgstr "განედი არაა შუალედიდან -90-90."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not valid."
+msgstr "გრძედი არასწორია."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Longitude is not between -180 and 180."
+msgstr "გრძედი არაა შუალედიდან -180-180."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not valid."
+msgstr "სიმაღლე არასწორია."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Altitude is not between -999 and 5000."
+msgstr "სიმაღლე არაა შუალედიდან -999-5000."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "The Place Name is empty."
+msgstr "ადგილის სახელი ცარიელია."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "There is an error!"
+msgid_plural "There are %1 errors!"
+msgstr[0] "აღმოჩენილია შეცდომა!"
+msgstr[1] "აღმოჩენილია %1 შეცდომა!"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Latitude"
+msgstr "განედი"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Longitude"
+msgstr "გრძედი"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Altitude"
+msgstr "სიმაღლე"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "URL"
+msgstr "URL"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Place Identifier"
+msgstr "ადგილის იდენტიფიკატორი"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search"
+msgstr "ძებნა"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Change Displayed As"
+msgstr "ნაჩვენები მნიშვნელობის შეცვლა"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Enter place alias"
+msgstr "შეიყვანეთ ადგილის ფსევდონიმი"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location Search"
+msgstr "მდებარეობის ძებნა"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Location"
+msgstr "მდებარეობა"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Area"
+msgstr "არე"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Timezone"
+msgstr "დროის სარტყელი"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Search data extracted from data provided by Geonames.org."
+msgstr "Geonames.org-ის მიერ მოწოდებულ მონაცემებში ძებნა."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Country:"
+msgstr "ქვეყანა:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Filter:"
+msgstr "ფილტრი:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Plasmoid version:"
+msgstr "პლაზმოიდის ვერსია:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Source"
+msgstr "წყარო"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Displayed as"
+msgstr "ნაჩვენებია, როგორც"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Action"
+msgstr "ქმედება"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Miscellaneous"
+msgstr "სხვადასხვა"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Reload interval:"
+msgstr "თავიდან ჩატვირთვის ინტერვალი:"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgctxt "Abbreviation for minutes"
+msgid "min"
+msgstr "წთ"
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid ""
+"Met.no weather forecast data provided by The Norwegian Meteorological "
+"Institute."
+msgstr ""
+"Met.no ამინდის პროგნოზის მონაცემები მოწოდებულია ნორვეგიის მეტეოროლოგიური "
+"ინსტიტუტის მიერ."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Sunrise/sunset data provided by Sunrise - Sunset."
+msgstr "Sunrise - Sunset-ის მიერ მოწოდებული აისი/დაისის მონაცემები."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "OWM weather forecast data provided by OpenWeather."
+msgstr "OWM ამინდის პროგნოზის მონაცემები მოწოდებულია OpenWeather-ის მიერ."
+
+#: ../../package/contents/ui/config/ConfigGeneral.qml
+msgid "Weather icons created by Erik Flowers."
+msgstr "ამინდის ხატულები შექმნილია ერიკ ფლაუერსის მიერ."
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Temperature:"
+msgstr "ტემპერატურა:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Pressure:"
+msgstr "წნევა:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Wind speed:"
+msgstr "ქარის სიჩქარე:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Timezone:"
+msgstr "დროის სარტყელი:"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "My local-time"
+msgstr "ჩემი ადგილობრივი დროით"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "UTC"
+msgstr "UTC"
+
+#: ../../package/contents/ui/config/ConfigUnits.qml
+msgid "Location Timezone"
+msgstr "მდებარეობა დროის სარტყელი"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Next Location"
+msgstr "შემდეგი მდებარეობა"
+
+#: ../../package/contents/ui/FullRepresentationInTray.qml
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Reload"
+msgstr "თავიდან ჩატვირთვა"
+
+#: ../../package/contents/ui/FullRepresentation.qml
+msgid "Previous Location"
+msgstr "წინა მდებარეობა"
+
+#: ../../package/contents/ui/main.qml
+msgid "Resume Updating"
+msgstr "განახლების გაგრძელება"
+
+#: ../../package/contents/ui/main.qml
+msgid "Pause Updating"
+msgstr "განახლების შეჩერება"
+
+#: ../../package/contents/ui/main.qml
+msgid "%1 ago"
+msgstr "%1-ის წინ"
+
+#: ../../package/contents/ui/main.qml
+msgid "near future"
+msgstr "უახლოეს მომავალში"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "mm"
+msgstr "მმ"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "cm"
+msgstr "სმ"
+
+#: ../../package/contents/ui/Meteogram.qml
+msgid "in"
+msgstr "დუიმი"
+
+#: ../../package/contents/ui/providers/MetNo.qml
+msgid ""
+"Weather forecast data provided by The Norwegian Meteorological Institute."
+msgstr ""
+"ამინდის პროგნოზის მონაცემები მოწოდებულია ნორვეგიის მეტეოროლოგიური "
+"ინსტიტუტის მიერ."
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "today"
+msgstr "დღეს"
+
+#: ../../package/contents/ui/providers/OpenWeatherMap.qml
+msgid "Weather forecast data provided by OpenWeather."
+msgstr "ამინდის პროგნოზის მონაცემები მოწოდებულია OpenWeather-ის მიერ."
